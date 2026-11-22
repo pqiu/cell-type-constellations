@@ -49,9 +49,12 @@ Each study entry point contains a `CONFIGS` list. The script passes every JSON
 file in that list to the shared processing pipeline. The configuration records
 the reviewed download location, dataset and study identifiers, sample fields,
 quality-control settings, source-specific metadata handling, and other choices
-needed to reproduce that dataset's star maps. Runtime receipts and progress
-files are written with the generated results; they are distinct from the
-version-controlled files in `configs/`.
+needed to reproduce that dataset's star maps. The configurations were assembled
+during data curation from public repository metadata and source-specific review;
+some were initialized from repository APIs or reusable templates and then
+inspected before the final validated processing run. Runtime receipts and
+progress files are written with the generated results; they are distinct from
+the version-controlled files in `configs/`.
 
 Run all entries in the table below to rebuild the full collection. Each script
 is restart-safe: validated outputs are checksum-verified and reused. Downloaded
