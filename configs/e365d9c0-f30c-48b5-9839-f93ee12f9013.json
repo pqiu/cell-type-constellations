@@ -1,0 +1,87 @@
+{
+  "dataset_id": "e365d9c0-f30c-48b5-9839-f93ee12f9013",
+  "study_id": "4f99649a-2021-47a3-9908-2b83c546cbc9",
+  "input_format": "h5ad",
+  "reviewed_pbmc": true,
+  "url": "https://datasets.cellxgene.cziscience.com/7aa13dfa-8e06-4152-b97b-86cbf4613d5a.h5ad",
+  "expected_bytes": 3376223622,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "source_gene_symbols",
+  "sample_columns": [
+    "donor_id",
+    "library_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original deposited37donor codes and21library codes define112dependent donor-by-library views. Preserve each view; do not pool captures or treat libraries as independent people/draws. Donor-level grouping is conservative because collection dates and repeated-draw linkage are unavailable. Collection reports37donors while the preprint mentions38; do not invent the missing RNA participant.",
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "cluster_L2"
+    },
+    "constants": {
+      "source_specimen": "PBMC-derived selected circulating B cells",
+      "source_identity_policy": "37source-coded donor groups,112dependent donor-by-library observations. No exact individual draw dates or independent visit count inferred. Keep library_id/design and repeated donor UID.",
+      "source_geometry_policy": "Only32773deposited human RNA count features in raw.X used; normalized X, embeddings and additional detection-call metadata are not expression geometry or annotation inputs.",
+      "source_gene_policy": "Portal raw row indices are curated GENCODE48 coordinates; original source_gene_ids and source_gene_symbols retained. Annotation uses exact original source symbols. No extra gene mapping or unmeasured-gene imputation.",
+      "source_selection_policy": "Author design labels B/panB/PBMC retained. The deposited object contains B-cell profiles; do not claim full-PBMC composition or pool selection designs.",
+      "source_metadata_policy": "Original author_disease, portal disease/ontology, sex and broad development stage retained. Individual age, treatment and collection dates not imputed.",
+      "source_publication_policy": "Public preprint and newly published CELLxGENE release; no peer-reviewed mechanism or clinical validation claim.",
+      "split_assignment": "unassigned; no discovery model or donor split fitted"
+    }
+  },
+  "source_metadata": {
+    "collection_id": "4f99649a-2021-47a3-9908-2b83c546cbc9",
+    "dataset_version_id": "7aa13dfa-8e06-4152-b97b-86cbf4613d5a",
+    "collection_version_id": "eafbcf54-9e20-4175-a87e-38ac35144881",
+    "source_url": "https://cellxgene.cziscience.com/collections/4f99649a-2021-47a3-9908-2b83c546cbc9",
+    "publication": "https://doi.org/10.64898/2025.12.11.25342083",
+    "publication_is_preprint": true,
+    "published_at": "2026-10-16T16:23:52+00:00",
+    "source_file_manifest": {
+      "url": "https://datasets.cellxgene.cziscience.com/7aa13dfa-8e06-4152-b97b-86cbf4613d5a.h5ad",
+      "retrieved_at": "2026-10-17T16:25:26.255471+00:00",
+      "bytes": 3376223622,
+      "sha256": "bbda435fc80faf64ac8e8f146e99133f1662bcda76fc7c498826b05d3f17934b",
+      "response_headers": {
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "3376223622",
+        "Connection": "close",
+        "Accept-Ranges": "bytes",
+        "Date": "Sat, 17 Oct 2026 16:24:16 GMT",
+        "Server": "AmazonS3",
+        "Last-Modified": "Mon, 05 Oct 2026 21:00:11 GMT",
+        "ETag": "\"28b5f6ca08a3aad626c0caeca276c066-403\"",
+        "x-amz-version-id": ".__Ou9cMMcV4GUQrhsFA0yD2gz.zZEuW",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-storage-class": "INTELLIGENT_TIERING",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 cd7c933aeecec6b6ed40cc7e9156c37c.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "ATL58-P11",
+        "X-Amz-Cf-Id": "DwlgTtblGgncYTgU6SnE78jtByn8NzRTT3ZGZ54rxDvt2U1F5mHOpA=="
+      }
+    },
+    "original_catalog": {
+      "path": "data/catalog/catalog_updates/20261017T162313Z/4f99649a-2021-47a3-9908-2b83c546cbc9.json",
+      "sha256": "45ea75f69df7a7a1309d31195e513b671ebab908a6a24627b0718496830e2a33"
+    },
+    "native_count_and_identity_audit": {
+      "path": "references/datasets/e365_full_human_RNA_and_identity_audit.json",
+      "sha256": "801811bc2d0073bf9d0e5bc4885b9ae5e75d60864b2926a38bc9e2c691f67f5d"
+    },
+    "access": "Public CELLxGENE human gene-expression matrix",
+    "license": "not_verified_in_catalog",
+    "access_terms_url": "https://cellxgene.cziscience.com/terms"
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "physical_sample_mapping_evidence": "Original37donor codes are consistent across112donor-by-library capture views. Source collection dates and draw-to-capture linkage are unavailable, so these are conservative donor-level source groups for accounting; do not claim37exactly dated physical draws or112independent people/draws. Keep all capture views separate."
+}

@@ -1,0 +1,384 @@
+{
+  "dataset_id": "GSE216486_genes001",
+  "study_id": "GSE216486",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original GEO explicitly labels two capture reactions of PatientP1.1. Existing source_sample_id metadata mapping combines both into one biological specimen/P1 donor while retaining source_library_id. Full matching RNA coordinates and duplicate-count checks required; other study samples not extra observations.",
+  "source_metadata": {
+    "accession": "GSE216486",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/36736301/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE216486",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "920b9e836ae82aeabe5b95932ac8a7795c6f03decff45381749e1e3cdad1f1fa",
+    "source_processing": [
+      "QC: Sequence reads quality was assessed using BVAtools (https://bitbucket.org/mugqic/bvatools)",
+      "Pre-processing: Cell Ranger v3.0.1 for scRNA was used to map reads to the hg38 human reference genome assembly, perform filtering, and count barcodes and unique molecular indexes (UMIs).",
+      "Filtering: Genes that were not expressed in any of the datasets were discarded. Cells with >20% of mitochondrial genes were excluded. To filter out low quality cells and doublets, cells falling outside the [-1SD;+2.5SD] interval for the UMI and gene count distribution were excluded. To further identify and remove doublets, we first manually remove cells which co-express cell-specific markers (CD14, CD79A, TRBC1, HBA2 and LILRA4) then the DoubletFinder package v2.0.3 was used to identify and filter out remaining cell doublets (McGinnis et al., 2019).",
+      "Joint sample analysis: After dead cells and doublet removal, the patient and control samples were jointly analyzed using the Seurat v4.0.2 R package (Stuart et al., 2019) and cell clustering was performed using the Uniform Manifold Approximation and Projection dimension reduction method (Becht et al., 2019) using the most variable genes, but excluding mitochondrial and ribosomal protein genes, as well as sex-related genes since the two patients are females. Based on the clustering, we performed subclustering for the large immune cell lineages separately (myeloid/pDC, T/NK lymphocytes, and B cells) to identify residual remaining doublets, hence small residual cell clusters expressing multiple cell-specific markers were excluded. A final UMAP clustering identified fourteen distinct 11 T cell and 2 B cells; myeloid cells were excluded from further analyses because of the low number of cells found in patient samples, which is likely due to poor survival of these cells during sample freezing and shipping. The protein markers identified using CITE-seq were used to ascertain the cell identity to each cluster, in conjunction with the MAST approach (Finak et al., 2015) to identify the marker genes for each cluster, in conjunction with the MAST approach (Finak et al., 2015) to identify the marker genes for each cluster.",
+      "Differential gene expression analysis:  was performed using MAST for each lymphoid cell cluster by comparing the RNA expression from P1.2 and P2 vs the 5 healthy controls. Adjusted p-values were estimated using the Benjamini-Hochberg (BH) procedure. Every significant differentially expressed gene (absolute FC >=1.5 and adj-p-value \u22640.001) was extracted as down- or up-regulated and used for downstream analysis.",
+      "Assembly: hg38",
+      "Supplementary files format and content: Tab-separated values files and matrix files"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6674754",
+      "donor_id": "P1",
+      "source_metadata": {
+        "title": [
+          "Patient P1.1, mRNA-derived cDNA, scRNA-seq (capture reaction 1of2)"
+        ],
+        "geo_accession": [
+          "GSM6674754"
+        ],
+        "status": [
+          "Public on Jan 12 2023"
+        ],
+        "submission_date": [
+          "Oct 24 2022"
+        ],
+        "last_update_date": [
+          "Jan 12 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Whole blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "individual: Patient P1.1",
+          "cell type: Peripheral Blood Mononuclear Cells (PBMC)",
+          "tissue: Whole blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The frozen PBMCs were quickly thawed at 37\u00b0C and gently resuspended by serial additions of DMEM + 10% heat-inactivated FBS, for a final volume of 14ml. Following centrifugation at 300g for 5 min, cells were washed twice with 5ml DMEM + 10% HI-FBS to remove cell debris. Cell counting and viability assessment was done using the LIVE/DEAD\u2122 Viability kit (ThermoFisher Scientific), according to manufacturer\u2019s guidelines.",
+          "Single-cell library: The samples were loaded onto a 10X Genomics Chromium G chip aiming to capture 10,000 cells per samples. The reverse transcription and library preparation was performed using the Chromium Single Cell 3\u2032 v2 Reagent Kits following manufacturers guidelines. The cDNA library quality was assessed using a TapeStation (Agilent).",
+          "Sequencing: The cDNA libraries were sequenced on a HiSeq 4000 sequencer."
+        ],
+        "description": [
+          "10x Genomics",
+          "151of2_MPS12343356_C08_8139"
+        ],
+        "data_processing": [
+          "QC: Sequence reads quality was assessed using BVAtools (https://bitbucket.org/mugqic/bvatools)",
+          "Pre-processing: Cell Ranger v3.0.1 for scRNA was used to map reads to the hg38 human reference genome assembly, perform filtering, and count barcodes and unique molecular indexes (UMIs).",
+          "Filtering: Genes that were not expressed in any of the datasets were discarded. Cells with >20% of mitochondrial genes were excluded. To filter out low quality cells and doublets, cells falling outside the [-1SD;+2.5SD] interval for the UMI and gene count distribution were excluded. To further identify and remove doublets, we first manually remove cells which co-express cell-specific markers (CD14, CD79A, TRBC1, HBA2 and LILRA4) then the DoubletFinder package v2.0.3 was used to identify and filter out remaining cell doublets (McGinnis et al., 2019).",
+          "Joint sample analysis: After dead cells and doublet removal, the patient and control samples were jointly analyzed using the Seurat v4.0.2 R package (Stuart et al., 2019) and cell clustering was performed using the Uniform Manifold Approximation and Projection dimension reduction method (Becht et al., 2019) using the most variable genes, but excluding mitochondrial and ribosomal protein genes, as well as sex-related genes since the two patients are females. Based on the clustering, we performed subclustering for the large immune cell lineages separately (myeloid/pDC, T/NK lymphocytes, and B cells) to identify residual remaining doublets, hence small residual cell clusters expressing multiple cell-specific markers were excluded. A final UMAP clustering identified fourteen distinct 11 T cell and 2 B cells; myeloid cells were excluded from further analyses because of the low number of cells found in patient samples, which is likely due to poor survival of these cells during sample freezing and shipping. The protein markers identified using CITE-seq were used to ascertain the cell identity to each cluster, in conjunction with the MAST approach (Finak et al., 2015) to identify the marker genes for each cluster, in conjunction with the MAST approach (Finak et al., 2015) to identify the marker genes for each cluster.",
+          "Differential gene expression analysis:  was performed using MAST for each lymphoid cell cluster by comparing the RNA expression from P1.2 and P2 vs the 5 healthy controls. Adjusted p-values were estimated using the Benjamini-Hochberg (BH) procedure. Every significant differentially expressed gene (absolute FC >=1.5 and adj-p-value \u22640.001) was extracted as down- or up-regulated and used for downstream analysis.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "David,,Langlais"
+        ],
+        "contact_email": [
+          "david.langlais@mcgill.ca"
+        ],
+        "contact_laboratory": [
+          "Inflammation Genomics Lab"
+        ],
+        "contact_department": [
+          "Human Genetics"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "740 Ave Dr Penfield, rm 4203, McGill Genome Centre"
+        ],
+        "contact_city": [
+          "MONTREAL"
+        ],
+        "contact_state": [
+          "QC"
+        ],
+        "contact_zip/postal_code": [
+          "H3A0G1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31431541",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18014750"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674754/suppl/GSM6674754_151of2_MPS12343356_C08_8139_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674754/suppl/GSM6674754_151of2_MPS12343356_C08_8139_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674754/suppl/GSM6674754_151of2_MPS12343356_C08_8139_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE216486",
+          "GSE216489"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674754/suppl/GSM6674754_151of2_MPS12343356_C08_8139_genes.tsv.gz",
+          "filename": "GSM6674754_151of2_MPS12343356_C08_8139_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674754/suppl/GSM6674754_151of2_MPS12343356_C08_8139_barcodes.tsv.gz",
+          "filename": "GSM6674754_151of2_MPS12343356_C08_8139_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674754/suppl/GSM6674754_151of2_MPS12343356_C08_8139_matrix.mtx.gz",
+          "filename": "GSM6674754_151of2_MPS12343356_C08_8139_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "P1.1",
+        "source_library_id": "GSM6674754",
+        "source_capture_reaction": 1,
+        "disease": "inherited IRF1 deficiency",
+        "source_preparation": "Clinical pediatric PBMC RNA; two independently labeled capture reactions of the same specimen",
+        "source_demographics": "Individual collection age/sex/exact dates/treatment history not joined; no imputation",
+        "source_alias_review": "Both GEO capture1of2/capture2of2 records explicitly name P1.1: one blood specimen/one patient, not two biological replicates. Other CITE-seq blood draws and controls require a separate clinical crosswalk.",
+        "source_geometry_scope": "Merge source cells only when both complete RNA gene coordinates match; library IDs retained and full duplicate-cell/count audit required.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/36736301/"
+      },
+      "genes_member": "GSM6674754_151of2_MPS12343356_C08_8139_genes.tsv.gz",
+      "barcodes_member": "GSM6674754_151of2_MPS12343356_C08_8139_barcodes.tsv.gz",
+      "matrix_member": "GSM6674754_151of2_MPS12343356_C08_8139_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5000,
+        "genes": 33694,
+        "nonzeros": 2370338,
+        "gene_coordinate_sha256": "920b9e836ae82aeabe5b95932ac8a7795c6f03decff45381749e1e3cdad1f1fa",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "920b9e836ae82aeabe5b95932ac8a7795c6f03decff45381749e1e3cdad1f1fa",
+        "source_features": 33694,
+        "source_barcode_rows": 5000,
+        "RNA_positive_barcode_rows": 5000,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    },
+    {
+      "accession": "GSM6674755",
+      "donor_id": "P1",
+      "source_metadata": {
+        "title": [
+          "Patient P1.1, mRNA-derived cDNA, scRNA-seq (capture reaction 2of2)"
+        ],
+        "geo_accession": [
+          "GSM6674755"
+        ],
+        "status": [
+          "Public on Jan 12 2023"
+        ],
+        "submission_date": [
+          "Oct 24 2022"
+        ],
+        "last_update_date": [
+          "Jan 12 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Whole blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "individual: Patient P1.1",
+          "cell type: Peripheral Blood Mononuclear Cells (PBMC)",
+          "tissue: Whole blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The frozen PBMCs were quickly thawed at 37\u00b0C and gently resuspended by serial additions of DMEM + 10% heat-inactivated FBS, for a final volume of 14ml. Following centrifugation at 300g for 5 min, cells were washed twice with 5ml DMEM + 10% HI-FBS to remove cell debris. Cell counting and viability assessment was done using the LIVE/DEAD\u2122 Viability kit (ThermoFisher Scientific), according to manufacturer\u2019s guidelines.",
+          "Single-cell library: The samples were loaded onto a 10X Genomics Chromium G chip aiming to capture 10,000 cells per samples. The reverse transcription and library preparation was performed using the Chromium Single Cell 3\u2032 v2 Reagent Kits following manufacturers guidelines. The cDNA library quality was assessed using a TapeStation (Agilent).",
+          "Sequencing: The cDNA libraries were sequenced on a HiSeq 4000 sequencer."
+        ],
+        "description": [
+          "10x Genomics",
+          "152of2_MPS12341081_G12_8139"
+        ],
+        "data_processing": [
+          "QC: Sequence reads quality was assessed using BVAtools (https://bitbucket.org/mugqic/bvatools)",
+          "Pre-processing: Cell Ranger v3.0.1 for scRNA was used to map reads to the hg38 human reference genome assembly, perform filtering, and count barcodes and unique molecular indexes (UMIs).",
+          "Filtering: Genes that were not expressed in any of the datasets were discarded. Cells with >20% of mitochondrial genes were excluded. To filter out low quality cells and doublets, cells falling outside the [-1SD;+2.5SD] interval for the UMI and gene count distribution were excluded. To further identify and remove doublets, we first manually remove cells which co-express cell-specific markers (CD14, CD79A, TRBC1, HBA2 and LILRA4) then the DoubletFinder package v2.0.3 was used to identify and filter out remaining cell doublets (McGinnis et al., 2019).",
+          "Joint sample analysis: After dead cells and doublet removal, the patient and control samples were jointly analyzed using the Seurat v4.0.2 R package (Stuart et al., 2019) and cell clustering was performed using the Uniform Manifold Approximation and Projection dimension reduction method (Becht et al., 2019) using the most variable genes, but excluding mitochondrial and ribosomal protein genes, as well as sex-related genes since the two patients are females. Based on the clustering, we performed subclustering for the large immune cell lineages separately (myeloid/pDC, T/NK lymphocytes, and B cells) to identify residual remaining doublets, hence small residual cell clusters expressing multiple cell-specific markers were excluded. A final UMAP clustering identified fourteen distinct 11 T cell and 2 B cells; myeloid cells were excluded from further analyses because of the low number of cells found in patient samples, which is likely due to poor survival of these cells during sample freezing and shipping. The protein markers identified using CITE-seq were used to ascertain the cell identity to each cluster, in conjunction with the MAST approach (Finak et al., 2015) to identify the marker genes for each cluster, in conjunction with the MAST approach (Finak et al., 2015) to identify the marker genes for each cluster.",
+          "Differential gene expression analysis:  was performed using MAST for each lymphoid cell cluster by comparing the RNA expression from P1.2 and P2 vs the 5 healthy controls. Adjusted p-values were estimated using the Benjamini-Hochberg (BH) procedure. Every significant differentially expressed gene (absolute FC >=1.5 and adj-p-value \u22640.001) was extracted as down- or up-regulated and used for downstream analysis.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "David,,Langlais"
+        ],
+        "contact_email": [
+          "david.langlais@mcgill.ca"
+        ],
+        "contact_laboratory": [
+          "Inflammation Genomics Lab"
+        ],
+        "contact_department": [
+          "Human Genetics"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "740 Ave Dr Penfield, rm 4203, McGill Genome Centre"
+        ],
+        "contact_city": [
+          "MONTREAL"
+        ],
+        "contact_state": [
+          "QC"
+        ],
+        "contact_zip/postal_code": [
+          "H3A0G1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31431540",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18014751"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674755/suppl/GSM6674755_152of2_MPS12341081_G12_8139_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674755/suppl/GSM6674755_152of2_MPS12341081_G12_8139_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674755/suppl/GSM6674755_152of2_MPS12341081_G12_8139_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE216486",
+          "GSE216489"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674755/suppl/GSM6674755_152of2_MPS12341081_G12_8139_genes.tsv.gz",
+          "filename": "GSM6674755_152of2_MPS12341081_G12_8139_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674755/suppl/GSM6674755_152of2_MPS12341081_G12_8139_barcodes.tsv.gz",
+          "filename": "GSM6674755_152of2_MPS12341081_G12_8139_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6674nnn/GSM6674755/suppl/GSM6674755_152of2_MPS12341081_G12_8139_matrix.mtx.gz",
+          "filename": "GSM6674755_152of2_MPS12341081_G12_8139_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "P1.1",
+        "source_library_id": "GSM6674755",
+        "source_capture_reaction": 2,
+        "disease": "inherited IRF1 deficiency",
+        "source_preparation": "Clinical pediatric PBMC RNA; two independently labeled capture reactions of the same specimen",
+        "source_demographics": "Individual collection age/sex/exact dates/treatment history not joined; no imputation",
+        "source_alias_review": "Both GEO capture1of2/capture2of2 records explicitly name P1.1: one blood specimen/one patient, not two biological replicates. Other CITE-seq blood draws and controls require a separate clinical crosswalk.",
+        "source_geometry_scope": "Merge source cells only when both complete RNA gene coordinates match; library IDs retained and full duplicate-cell/count audit required.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/36736301/"
+      },
+      "genes_member": "GSM6674755_152of2_MPS12341081_G12_8139_genes.tsv.gz",
+      "barcodes_member": "GSM6674755_152of2_MPS12341081_G12_8139_barcodes.tsv.gz",
+      "matrix_member": "GSM6674755_152of2_MPS12341081_G12_8139_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5000,
+        "genes": 33694,
+        "nonzeros": 2487302,
+        "gene_coordinate_sha256": "920b9e836ae82aeabe5b95932ac8a7795c6f03decff45381749e1e3cdad1f1fa",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "920b9e836ae82aeabe5b95932ac8a7795c6f03decff45381749e1e3cdad1f1fa",
+        "source_features": 33694,
+        "source_barcode_rows": 5000,
+        "RNA_positive_barcode_rows": 5000,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

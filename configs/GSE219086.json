@@ -1,0 +1,66 @@
+{
+  "dataset_id": "GSE219086",
+  "study_id": "GSE219086",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE219086_complete_original_RNA_audit.json",
+    "bytes": 10750,
+    "sha256": "3b975a8b936152e5d640d09a7e17165daf8a33e685a413b7cef95b0f82ed1289"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE219086_source_identity_review.json",
+    "bytes": 3505,
+    "sha256": "214d10279d55892556a7b6dca58f37fece5a0afb427ed0496b8563a151fe627f"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Literal CCJ/WJC/ZRdonor fields and Day0/Day28vaccination-relative labels establish three repeated participants/six specimens. Original GSM is the specimen key; keep both days together by donor UID. No identity inferred from RNA/barcodes or clinical similarity.",
+  "physical_sample_mapping_evidence": "Six original whole-PBMC participant/vaccination-day specimens from three literalCCJ/WJC/ZRdonor codes,Day0/28. Repeated samples remain dependent by donor UID. Only original RNAcarriers included; receptor assays and larger trial enrollment do not add sequenced subjects. Source selection for apparent naive-T-cell increases remains explicit.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_vaccination_day_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE219086",
+    "primary_PMID": "38319108",
+    "publication": "https://doi.org/10.1128/spectrum.02435-23",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE219086",
+    "access": "Public original whole-PBMC RNA count triplets/coded metadata; receptor assays excluded.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE219086_source_identity_review.json",
+      "bytes": 3505,
+      "sha256": "214d10279d55892556a7b6dca58f37fece5a0afb427ed0496b8563a151fe627f"
+    },
+    "source_unit": "Six original whole-PBMC participant/vaccination-day specimens from three literalCCJ/WJC/ZRdonor codes,Day0/28. Repeated samples remain dependent by donor UID. Only original RNAcarriers included; receptor assays and larger trial enrollment do not add sequenced subjects. Source selection for apparent naive-T-cell increases remains explicit.",
+    "identity_policy": "Literal CCJ/WJC/ZRdonor fields and Day0/Day28vaccination-relative labels establish three repeated participants/six specimens. Original GSM is the specimen key; keep both days together by donor UID. No identity inferred from RNA/barcodes or clinical similarity.",
+    "clinical_policy": "Source COVID-19convalescent cohort only. Day0/28anchor vaccination, not infection onset. Exact per-person age, sex, infection severity, calendar dates, clinical display-code aliases and individual treatment regimen unassigned. Larger96participant trial enrollment is not a sequenced-subject count.",
+    "reuse_policy": "Only six original RNAcarriers included; TCR/BCRassays and larger clinical cohorts are not additional sequenced specimens. No inference of clinical vaccine benefit/harm or causality from expression centroids. Global aliases unresolved.",
+    "selection_policy": "Source explicitly selected three participants for the most apparent naive-T-cell increases. Preserve this outcome/composition-based ascertainment; these are not an unselected representative cohort, even when phenotype labels are omitted from discovery.",
+    "cell_calling_policy": "Own fixed RNAQC, not a reproduction of author final cell/doublet/cluster selection. Model labels unrestricted; no independently biologically validated annotation or doublet-free claim.",
+    "gene_policy": "All36601original RNA feature IDs and symbols retained in exact supplied order. No highly variable gene selection, symbol modernization, intersection or zero filling.",
+    "count_semantics": "Provided original CellRanger gene UMI counts; no inverse normalization or rounding.",
+    "source_limitations": "Three selected repeated participants; source ascertainment/composition bias preserved. Clinical/global aliases unresolved. No biological annotation, clinical efficacy or constellation validation."
+  }
+}

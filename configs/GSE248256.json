@@ -1,0 +1,71 @@
+{
+  "dataset_id": "GSE248256",
+  "study_id": "GSE248256",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE248256_complete_original_RNA_audit.json",
+    "bytes": 17308,
+    "sha256": "6c41682677164744d685b712829fd89b1248ade4ea5578f3590c4be49f5eb067"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE248256_source_identity_review.json",
+    "bytes": 16314,
+    "sha256": "c68c022c0238f311b7b87406aa435daa5c63400cc97afd76a7eff80a8b6645fd"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exact original archive parent labels match original GEOtitles and the author code filename/SampleID list. Six literal TT04subj subject tokens link their V2/V3 visits. Nine other material IDs are not inferred people: donor_id placeholders are explicitly prefixed unresolved_material and flagged source_donor_identity_verified=False. Entire study is one future split block pending participant alias review. No identity assignment from cell barcodes, demographics, expression or genotypes.",
+  "physical_sample_mapping_evidence": "Twenty-one explicit source sample/material IDs, not21independent donors. Six explicit TT04subject tokens each have V2/V3; nine other source material labels lack explicit participant IDs and use clearly flagged material-scoped donor placeholders. Fifteen donor grouping codes are not15verified independent people. Baseline/trial aliases and global uniqueness unresolved; hold entire study together for future evaluation.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE248256",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE248256",
+    "primary_PMID": "38324637",
+    "primary_DOI": "10.1126/scitranslmed.adi0944",
+    "author_code_DOI": "10.5281/zenodo.10277104",
+    "author_metadata_review": {
+      "path": "references/datasets/GSE248256_author_metadata_acquisition_review.json",
+      "bytes": 2075,
+      "sha256": "fc685bd140937fca10b72289eb0f42003c1b3b46faa7455254949de3d46ec3a6"
+    },
+    "access": "Public original filtered RNA matrices in countmtx archive and public author metadata/code text. Publisher full text returned403; metadata supported directly by original GEO and author Zenodo release.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "GEO_count_data_not_specified; author_Zenodo_code_CC_BY_4.0",
+    "source_sample_review": {
+      "path": "references/datasets/GSE248256_source_identity_review.json",
+      "bytes": 16314,
+      "sha256": "c68c022c0238f311b7b87406aa435daa5c63400cc97afd76a7eff80a8b6645fd"
+    },
+    "source_unit": "Twenty-one explicit source sample/material IDs, not21independent donors. Six explicit TT04subject tokens each have V2/V3; nine other source material labels lack explicit participant IDs and use clearly flagged material-scoped donor placeholders. Fifteen donor grouping codes are not15verified independent people. Baseline/trial aliases and global uniqueness unresolved; hold entire study together for future evaluation.",
+    "identity_policy": "Exact original archive parent labels match original GEOtitles and the author code filename/SampleID list. Six literal TT04subj subject tokens link their V2/V3 visits. Nine other material IDs are not inferred people: donor_id placeholders are explicitly prefixed unresolved_material and flagged source_donor_identity_verified=False. Entire study is one future split block pending participant alias review. No identity assignment from cell barcodes, demographics, expression or genotypes.",
+    "clinical_policy": "Original GEO allergic/non-allergic group preserved. Author Zenodo v3 preprocessing text explicitly assigns Type/Group for all21source SampleIDs: TT04 V2 Allergic/TT-04 baseline; V3 Allergic SLIT/TT-04 1month. Preserve categorical clock and treatment wording, without imputing dates, days, age, sex, individual allergen identity or clinical outcomes. Non-allergic does not assert absence of every disease.",
+    "reuse_policy": "No original accession/PMID/DOI/preprint DOI reference found in completed run records.21source material IDs/15grouping codes include9explicitly unresolved participant placeholders; neither establishes global uniqueness. Raw and filtered triplets are alternative source carriers, not extra samples. SMARTSeq, tissue mass cytometry and receptor analyses in author repository are not extra PBMC participants.",
+    "selection_policy": "All109475source-called filtered RNA cells before own fixed counts>=500/detectedgenes>=200/MTfraction<=0.2/positive library gate;106924retained. No author stricter QC, SingleR predicted-B selection, phenotype filtering or learned integration is imposed. Whole-study split block pending baseline/trial aliases.",
+    "cell_calling_policy": "Cell Ranger filtered_feature_bc_matrix triplets are explicit source calls. Retain full36601nativeRNA axis; raw/unfiltered counterpart values not numerically reviewed or used. Memory-B enrichment affects coverage and composition. Original FigureClusterFinal CSV lacks full cell barcodes; no ordinal cluster-to-cell mapping is attempted.",
+    "gene_policy": "All36601original native Gene Expression Ensembl IDs and source symbols preserved; duplicate symbols remain separate native axes. Original filtered source calls selected explicitly, without using source raw/unfiltered counterparts. No gene intersection, invented IDs, source normalized expression, regression, integration or missing-type zero fill.",
+    "count_semantics": "All135069782stored values in21original source-called filtered carriers finite/nonnegative/integer and exactly pinned. Raw/unfiltered counterpart values not audited or used. All109475sourcecalled cells enter own fixed RNAQC,106924retained; no recreation of author stricter QC/SingleR B-cell selection/integration. SCimilarity supplies common annotation for all retained cells in the enriched fraction.",
+    "source_limitations": "PBMC memory-B enrichment, not unsorted PBMC. Fifteen donor grouping codes include9material placeholders; only6TT04subject codes are explicit repeated-participant tokens. Entire study held together in future splits; no claim of15independent donors. Dates/age/sex/allergen/outcomes/globalaliases unknown. No clinical, annotation, causal or constellation validation."
+  }
+}

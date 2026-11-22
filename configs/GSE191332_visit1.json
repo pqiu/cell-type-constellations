@@ -1,0 +1,166 @@
+{
+  "dataset_id": "GSE191332_visit1",
+  "study_id": "GSE191332",
+  "input_format": "geo_10x_tar",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE191nnn/GSE191332/suppl/GSE191332_Sample_1_3PI_CITE_cellranger.tar.gz",
+  "expected_bytes": 49175752,
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "GEO explicitly describes three visits from one IMRAS participant. GEX and FB assays share specimens; RNA features only.",
+  "source_metadata": {
+    "accession": "GSE191332",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE191332",
+    "access": "Public processed CellRanger counts",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "n_genes": 36601
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM5743936",
+      "donor_id": "IMRAS_source_participant_1",
+      "genes_member": "Sample_1_3PI_CITE_cellranger/filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "Sample_1_3PI_CITE_cellranger/filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "Sample_1_3PI_CITE_cellranger/filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "GEX_Day 0 pre-immune (visit 4)"
+        ],
+        "geo_accession": [
+          "GSM5743936"
+        ],
+        "status": [
+          "Public on Feb 01 2022"
+        ],
+        "submission_date": [
+          "Dec 20 2021"
+        ],
+        "last_update_date": [
+          "Feb 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "day: Day 0",
+          "immune status: pre-immune",
+          "visit: visit 4"
+        ],
+        "treatment_protocol_ch1": [
+          "PBMCs were stained with a panel of 14 barcoded, oligo-conjugated antibodies, and viable cells (CD45+) enriched by FACS."
+        ],
+        "growth_protocol_ch1": [
+          "PBMCs were isolated, cryopreserved, and thawed using standard protocols."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Live frozen PBMCs were obtained from a single vaccinated individual in cohort 1 of the IMRAS trial at day 0, and three- and 14-days post first vaccination. Cells were thawed and washed with RPMI supplemented with 10% FBS and benzonase nuclease (Millipore EMD 0.05 U/ml). PBMCs were resuspended in 100 \u00b5l of PBS supplemented with 2% w/v Fetal Bovine Serum (FBS) and incubated with Fixable Viability Stain 510  and Human BD Fc Block for 30 minutes at room temperature. Cells were washed with 2% FBS PBS before incubating with a panel of previously titrated 14 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-C), including  FITC-anti-CD45. Stained PBMC samples were then sorted by fluorescence activated cell sorting (FACS) on a BD FACSMelody to enrich for live, hematopoietic cells. A standard viable CD45+ cell gating scheme was employed; FSC-A v SSCA (to exclude sub-cellular debris), two FSC-A doublet exclusion gates (FSC-W followed by FSC-H), dead cell exclusion gate (BV510 LIVE/DEAD negative) followed by CD45+ inclusion gate.",
+          "Sorted cells were resuspended in PBS supplemented with 1% BSA. Cells were loaded onto the 10X Chromium system, where we aimed for recovery of ~5000 cells per sample, and subject to partitioning with barcoded 5\u2019 V1.1 chemistry gel-beads (10X Genomics) to generate the Gel-Bead in Emulsions (GEMs). The RT reaction was conducted in the GEMs, barcoded cDNA extracted by post-GEM RT-cleanup, and cDNA and antibody barcodes amplified for 14 cycles. Amplified cDNA was subjected to SPRI bead cleanup at 0.6X. Amplified antibody barcodes were recovered from the supernatant and were processed to generate TotalSeq-C libraries as instructed by the manufacturers (10X Genomics and BioLegend, TotalSeq-C with 10x Feature Barcoding Protocol). The remaining amplified cDNA was subjected to enzymatic fragmentation, end-repair, A-tailing, adapter ligation and 10X specific sample indexing as per manufacturer\u2019s protocol. Libraries were quantified using Bioanalyzer (Agilent) analysis. 10x Genomics scRNA-Seq and TotalSeq-C libraries were pooled and sequenced on an Illumina NovaSeq Sp100 flow cell using the recommended sequencing read lengths of 26 bp (Read 1), 8 bp (i7 Index Read), and 91 bp (Read 2), and depths of 50,000 and 5000 read pairs per cell for the 5\u2019 Gene Expression and TotalSeq-C libraries respectively. Cell Ranger v3.1.0 (10x Genomics) was used to demultiplex raw sequencing data and quantitate transcript levels against the 10x Genomics GRCh38 reference."
+        ],
+        "description": [
+          "IMRAS063.000"
+        ],
+        "data_processing": [
+          "Raw count data was filtered to remove cells where 1) a mitochondrial RNA fraction greater than 7.5% of total RNA counts per cell, and 2) less than 200 or greater than 2500 genes were detected. The resultant count matrix was used to create a Seurat (v4.0.1) object.",
+          "Filtered read counts were normalized, scaled, and corrected for mitochondrial and rRNA read percentages with the SCTransform function. The FB matrix was normalized per feature using center log normalization.",
+          "Cell types in each sample were annotated by mapping to the annotated reference PBMC dataset provided in the Seurat v4 Azimuth workflow. Briefly, anchors between the query and reference datasets were identified using a precomputed supervised PCA on the reference dataset.",
+          "Next, cell type labels from the reference dataset, as well as imputations of all measured protein markers, were transferred to each cell of the query datasets through the previously identified anchors. The query datasets were then merged and projected onto the UMAP structure of the reference.",
+          "The genes expressed in each specific cell cluster were identified using the function FindAllMarkers() from the Seurat4 package, and filtered based on average logarithm of fold changes larger than 1 and FDR < 0.05.",
+          "Genome_build: GRCh38",
+          "Supplementary_files_format_and_content: Output from CellRanger (10X Genomics) which includes three files: barcodes.tsv, features.tsv, and matrix.mtx"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Raphael,,Gottardo"
+        ],
+        "contact_laboratory": [
+          "Gottardo"
+        ],
+        "contact_department": [
+          "VIDD"
+        ],
+        "contact_institute": [
+          "Fred Hutch"
+        ],
+        "contact_address": [
+          "1100 Fairview Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24253001",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13460149"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE191332"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "malaria vaccine study",
+        "days_after_priming_dose": 0,
+        "treatment": "PfSPZ priming vaccination",
+        "age": "not_reported",
+        "sex": "not_reported",
+        "author_cell_type": "not_reported"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

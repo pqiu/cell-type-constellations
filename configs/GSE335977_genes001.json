@@ -1,0 +1,1263 @@
+{
+  "dataset_id": "GSE335977_genes001",
+  "study_id": "GSE335977",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Six source PBMC-derived gamma-delta T-cell draws from six people: three healthy controls and three psoriasis cases. Disease-batch confounding explicit; no longitudinal relationship inferred.",
+  "source_metadata": {
+    "accession": "GSE335977",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335977",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13538830/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335977",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+      "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+      "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+      "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+      "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+      "Assembly: mobivision-GRCh38-2020-A",
+      "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+      "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE335977_source_identity_review.json",
+      "sha256": "34f6995a1819a652548038c6f05bfc0f073e4f0492fed807984c7ec0299df87e"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9824628",
+      "donor_id": "healthy control 1",
+      "source_metadata": {
+        "title": [
+          "gamma-delta T cells from peripheral blood of healthy control 1"
+        ],
+        "geo_accession": [
+          "GSM9824628"
+        ],
+        "status": [
+          "Public on Sep 01 2026"
+        ],
+        "submission_date": [
+          "Jun 22 2026"
+        ],
+        "last_update_date": [
+          "Sep 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: gamma-delta T cells",
+          "disease state: healthy control",
+          "batch: DZOE2023111600-b1"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Samples represent peripheral blood gamma-delta T cells from healthy controls or patients with clinician-diagnosed plaque psoriasis."
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood was collected in EDTA anticoagulant tubes. PBMCs were isolated by density-gradient centrifugation within 2 hours of collection. Live CD45+ lymphocytes were gated after exclusion of doublets and 7-AAD+ dead cells; CD3+ TCR gamma-delta+ cells were sorted by flow cytometry to at least 95% purity with post-sort viability at least 85%."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with anti-human CD45-PE-Cy7, anti-human CD3-FITC, anti-human TCR gamma-delta-BV421, and 7-AAD. Live CD45+ CD3+ TCR gamma-delta+ cells were sorted by FACS and processed for single-cell RNA sequencing.",
+          "Single cells were encapsulated and 3' mRNA libraries were prepared on the MobiNova-100 droplet system using MobiCube 3' RNA kits according to the manufacturer's protocol. Libraries were sequenced on Illumina platforms with paired-end sequencing."
+        ],
+        "description": [
+          "Library name: NPBMC_gdt1",
+          "FACS-enriched peripheral blood CD3+ TCR gamma-delta+ T cells; Estimated cells: 15,331; raw reads: 509,861,335; median genes/cell: 2,028; median UMI/cell: 4,831."
+        ],
+        "data_processing": [
+          "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+          "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+          "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+          "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+          "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+          "Assembly: mobivision-GRCh38-2020-A",
+          "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+          "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Nanxi,,Shi"
+        ],
+        "contact_institute": [
+          "Jinan University"
+        ],
+        "contact_address": [
+          "No. 601, Huangpu Avenue West, Jinan University"
+        ],
+        "contact_city": [
+          "Guangzhou"
+        ],
+        "contact_zip/postal_code": [
+          "510632"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61032491",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33991928"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824628/suppl/GSM9824628_NPBMC_gdt1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824628/suppl/GSM9824628_NPBMC_gdt1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824628/suppl/GSM9824628_NPBMC_gdt1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE335977"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9824628",
+        "source_GEO_title": "gamma-delta T cells from peripheral blood of healthy control 1",
+        "source_participant_code": "healthy control 1",
+        "source_visit_code": "single_source_draw",
+        "condition": "healthy control",
+        "source_disease_as_reported": "healthy control",
+        "source_specimen": "PBMC-derived selected gamma-delta T cells",
+        "source_batch": "DZOE2023111600-b1",
+        "source_characteristics_json": "{\"batch\": \"DZOE2023111600-b1\", \"cell type\": \"gamma-delta T cells\", \"disease state\": \"healthy control\", \"tissue\": \"peripheral blood\"}",
+        "source_BioSample": "SAMN61032491",
+        "source_BioSample_attributes_json": "{\"batch\": \"DZOE2023111600-b1\", \"cell type\": \"gamma-delta T cells\", \"collection_date\": \"missing\", \"disease state\": \"healthy control\", \"geo_loc_name\": \"missing\", \"source_name\": \"peripheral blood\", \"tissue\": \"peripheral blood\"}",
+        "source_identity_policy": "Six selected gamma-delta T-cell specimens from six primary-publication participants: three controls and three psoriasis patients. Reused external GSE194315/GSE151177 are not new source participants.",
+        "source_coverage_policy": "FACS-enriched PBMC gamma-delta T cells only. SCimilarity labels do not prove sorting purity or biological subtype identity. Original filtered RNA count population retained; no whole-PBMC coverage inferred.",
+        "source_preservation_policy": "Original MobiNova-100 3-prime MobiVision intron-included RNA assay retained. No cryopreservation status, culture condition or exact collection date inferred from batch tokens.",
+        "source_missingness_policy": "Individual demographics, severity, medication and dates have no verified per-GSM join here. Healthy controls share batch DZOE2023111600-b1; cases have DZOE20230779058-b2/b3. Disease and source batch are confounded; no disease effect identified by this acquisition.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. No log inverse, Harmony coordinates or source-normalized matrix used as counts.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824628/suppl/GSM9824628_NPBMC_gdt1_features.tsv.gz",
+          "filename": "GSM9824628_NPBMC_gdt1_features.tsv.gz",
+          "expected_bytes": 294266,
+          "sha256": "db7290a01a6b6a68b72aed6771ababe93a91ded04f317a3d1dbd34cd46fec868"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824628/suppl/GSM9824628_NPBMC_gdt1_barcodes.tsv.gz",
+          "filename": "GSM9824628_NPBMC_gdt1_barcodes.tsv.gz",
+          "expected_bytes": 69534,
+          "sha256": "fbfbf925404000e5ce21e5a3887c968286feb27c523eaa6198dbca9d099c9497"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824628/suppl/GSM9824628_NPBMC_gdt1_matrix.mtx.gz",
+          "filename": "GSM9824628_NPBMC_gdt1_matrix.mtx.gz",
+          "expected_bytes": 91340902,
+          "sha256": "b858b98a452d98f80fe072a7a411375aee37f2f239e615d436c879dfe7b24c2f"
+        }
+      ],
+      "genes_member": "GSM9824628_NPBMC_gdt1_features.tsv.gz",
+      "barcodes_member": "GSM9824628_NPBMC_gdt1_barcodes.tsv.gz",
+      "matrix_member": "GSM9824628_NPBMC_gdt1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 15331,
+        "genes": 36601,
+        "nonzeros": 28468593,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 15331,
+        "RNA_positive_barcode_rows": 15331,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 68720787,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 15331,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 15331,
+          "source_positive_RNA_barcodes": 15331,
+          "full_source_RNA_counts": 68720787,
+          "selected_RNA_counts": 68720787,
+          "metadata": {
+            "path": "references/datasets/GSE335977_original_RNA_QC/GSM9824628.csv.gz",
+            "sha256": "8b44d8abe1f1364847a3521c7eb336924a3d805e2a6caf35e7827a0880571bd8"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9824629",
+      "donor_id": "healthy control 2",
+      "source_metadata": {
+        "title": [
+          "gamma-delta T cells from peripheral blood of healthy control 2"
+        ],
+        "geo_accession": [
+          "GSM9824629"
+        ],
+        "status": [
+          "Public on Sep 01 2026"
+        ],
+        "submission_date": [
+          "Jun 22 2026"
+        ],
+        "last_update_date": [
+          "Sep 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: gamma-delta T cells",
+          "disease state: healthy control",
+          "batch: DZOE2023111600-b1"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Samples represent peripheral blood gamma-delta T cells from healthy controls or patients with clinician-diagnosed plaque psoriasis."
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood was collected in EDTA anticoagulant tubes. PBMCs were isolated by density-gradient centrifugation within 2 hours of collection. Live CD45+ lymphocytes were gated after exclusion of doublets and 7-AAD+ dead cells; CD3+ TCR gamma-delta+ cells were sorted by flow cytometry to at least 95% purity with post-sort viability at least 85%."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with anti-human CD45-PE-Cy7, anti-human CD3-FITC, anti-human TCR gamma-delta-BV421, and 7-AAD. Live CD45+ CD3+ TCR gamma-delta+ cells were sorted by FACS and processed for single-cell RNA sequencing.",
+          "Single cells were encapsulated and 3' mRNA libraries were prepared on the MobiNova-100 droplet system using MobiCube 3' RNA kits according to the manufacturer's protocol. Libraries were sequenced on Illumina platforms with paired-end sequencing."
+        ],
+        "description": [
+          "Library name: NPBMC_gdt2",
+          "FACS-enriched peripheral blood CD3+ TCR gamma-delta+ T cells; Estimated cells: 12,317; raw reads: 466,470,686; median genes/cell: 1,660; median UMI/cell: 3,571."
+        ],
+        "data_processing": [
+          "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+          "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+          "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+          "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+          "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+          "Assembly: mobivision-GRCh38-2020-A",
+          "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+          "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Nanxi,,Shi"
+        ],
+        "contact_institute": [
+          "Jinan University"
+        ],
+        "contact_address": [
+          "No. 601, Huangpu Avenue West, Jinan University"
+        ],
+        "contact_city": [
+          "Guangzhou"
+        ],
+        "contact_zip/postal_code": [
+          "510632"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61032490",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33991929"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824629/suppl/GSM9824629_NPBMC_gdt2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824629/suppl/GSM9824629_NPBMC_gdt2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824629/suppl/GSM9824629_NPBMC_gdt2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE335977"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9824629",
+        "source_GEO_title": "gamma-delta T cells from peripheral blood of healthy control 2",
+        "source_participant_code": "healthy control 2",
+        "source_visit_code": "single_source_draw",
+        "condition": "healthy control",
+        "source_disease_as_reported": "healthy control",
+        "source_specimen": "PBMC-derived selected gamma-delta T cells",
+        "source_batch": "DZOE2023111600-b1",
+        "source_characteristics_json": "{\"batch\": \"DZOE2023111600-b1\", \"cell type\": \"gamma-delta T cells\", \"disease state\": \"healthy control\", \"tissue\": \"peripheral blood\"}",
+        "source_BioSample": "SAMN61032490",
+        "source_BioSample_attributes_json": "{\"batch\": \"DZOE2023111600-b1\", \"cell type\": \"gamma-delta T cells\", \"collection_date\": \"missing\", \"disease state\": \"healthy control\", \"geo_loc_name\": \"missing\", \"source_name\": \"peripheral blood\", \"tissue\": \"peripheral blood\"}",
+        "source_identity_policy": "Six selected gamma-delta T-cell specimens from six primary-publication participants: three controls and three psoriasis patients. Reused external GSE194315/GSE151177 are not new source participants.",
+        "source_coverage_policy": "FACS-enriched PBMC gamma-delta T cells only. SCimilarity labels do not prove sorting purity or biological subtype identity. Original filtered RNA count population retained; no whole-PBMC coverage inferred.",
+        "source_preservation_policy": "Original MobiNova-100 3-prime MobiVision intron-included RNA assay retained. No cryopreservation status, culture condition or exact collection date inferred from batch tokens.",
+        "source_missingness_policy": "Individual demographics, severity, medication and dates have no verified per-GSM join here. Healthy controls share batch DZOE2023111600-b1; cases have DZOE20230779058-b2/b3. Disease and source batch are confounded; no disease effect identified by this acquisition.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. No log inverse, Harmony coordinates or source-normalized matrix used as counts.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824629/suppl/GSM9824629_NPBMC_gdt2_features.tsv.gz",
+          "filename": "GSM9824629_NPBMC_gdt2_features.tsv.gz",
+          "expected_bytes": 294266,
+          "sha256": "c52c153a1ea4f4f018f2586c8563cb1a86a52d823046966c0d365ca90612cd47"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824629/suppl/GSM9824629_NPBMC_gdt2_barcodes.tsv.gz",
+          "filename": "GSM9824629_NPBMC_gdt2_barcodes.tsv.gz",
+          "expected_bytes": 56836,
+          "sha256": "430ec1f15970c60c9b3fd1263805e99e9c3117ad960161ee443468af12931205"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824629/suppl/GSM9824629_NPBMC_gdt2_matrix.mtx.gz",
+          "filename": "GSM9824629_NPBMC_gdt2_matrix.mtx.gz",
+          "expected_bytes": 60182120,
+          "sha256": "8df501ee8af8685e9b9a9c5a9bf20bc3290785fef147a50f4df542bff092033e"
+        }
+      ],
+      "genes_member": "GSM9824629_NPBMC_gdt2_features.tsv.gz",
+      "barcodes_member": "GSM9824629_NPBMC_gdt2_barcodes.tsv.gz",
+      "matrix_member": "GSM9824629_NPBMC_gdt2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 12317,
+        "genes": 36601,
+        "nonzeros": 18787924,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 12317,
+        "RNA_positive_barcode_rows": 12317,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 41043258,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 12317,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 12317,
+          "source_positive_RNA_barcodes": 12317,
+          "full_source_RNA_counts": 41043258,
+          "selected_RNA_counts": 41043258,
+          "metadata": {
+            "path": "references/datasets/GSE335977_original_RNA_QC/GSM9824629.csv.gz",
+            "sha256": "fa337d1f03dc5abeb24f65fcacdebd0ec89bf2872dac47c5435a09d11f937507"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9824630",
+      "donor_id": "healthy control 3",
+      "source_metadata": {
+        "title": [
+          "gamma-delta T cells from peripheral blood of healthy control 3"
+        ],
+        "geo_accession": [
+          "GSM9824630"
+        ],
+        "status": [
+          "Public on Sep 01 2026"
+        ],
+        "submission_date": [
+          "Jun 22 2026"
+        ],
+        "last_update_date": [
+          "Sep 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: gamma-delta T cells",
+          "disease state: healthy control",
+          "batch: DZOE2023111600-b1"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Samples represent peripheral blood gamma-delta T cells from healthy controls or patients with clinician-diagnosed plaque psoriasis."
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood was collected in EDTA anticoagulant tubes. PBMCs were isolated by density-gradient centrifugation within 2 hours of collection. Live CD45+ lymphocytes were gated after exclusion of doublets and 7-AAD+ dead cells; CD3+ TCR gamma-delta+ cells were sorted by flow cytometry to at least 95% purity with post-sort viability at least 85%."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with anti-human CD45-PE-Cy7, anti-human CD3-FITC, anti-human TCR gamma-delta-BV421, and 7-AAD. Live CD45+ CD3+ TCR gamma-delta+ cells were sorted by FACS and processed for single-cell RNA sequencing.",
+          "Single cells were encapsulated and 3' mRNA libraries were prepared on the MobiNova-100 droplet system using MobiCube 3' RNA kits according to the manufacturer's protocol. Libraries were sequenced on Illumina platforms with paired-end sequencing."
+        ],
+        "description": [
+          "Library name: NPBMC_gdt3",
+          "FACS-enriched peripheral blood CD3+ TCR gamma-delta+ T cells; Estimated cells: 13,042; raw reads: 521,810,670; median genes/cell: 1,778; median UMI/cell: 3,858."
+        ],
+        "data_processing": [
+          "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+          "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+          "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+          "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+          "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+          "Assembly: mobivision-GRCh38-2020-A",
+          "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+          "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Nanxi,,Shi"
+        ],
+        "contact_institute": [
+          "Jinan University"
+        ],
+        "contact_address": [
+          "No. 601, Huangpu Avenue West, Jinan University"
+        ],
+        "contact_city": [
+          "Guangzhou"
+        ],
+        "contact_zip/postal_code": [
+          "510632"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61032489",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33991930"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824630/suppl/GSM9824630_NPBMC_gdt3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824630/suppl/GSM9824630_NPBMC_gdt3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824630/suppl/GSM9824630_NPBMC_gdt3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE335977"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9824630",
+        "source_GEO_title": "gamma-delta T cells from peripheral blood of healthy control 3",
+        "source_participant_code": "healthy control 3",
+        "source_visit_code": "single_source_draw",
+        "condition": "healthy control",
+        "source_disease_as_reported": "healthy control",
+        "source_specimen": "PBMC-derived selected gamma-delta T cells",
+        "source_batch": "DZOE2023111600-b1",
+        "source_characteristics_json": "{\"batch\": \"DZOE2023111600-b1\", \"cell type\": \"gamma-delta T cells\", \"disease state\": \"healthy control\", \"tissue\": \"peripheral blood\"}",
+        "source_BioSample": "SAMN61032489",
+        "source_BioSample_attributes_json": "{\"batch\": \"DZOE2023111600-b1\", \"cell type\": \"gamma-delta T cells\", \"collection_date\": \"missing\", \"disease state\": \"healthy control\", \"geo_loc_name\": \"missing\", \"source_name\": \"peripheral blood\", \"tissue\": \"peripheral blood\"}",
+        "source_identity_policy": "Six selected gamma-delta T-cell specimens from six primary-publication participants: three controls and three psoriasis patients. Reused external GSE194315/GSE151177 are not new source participants.",
+        "source_coverage_policy": "FACS-enriched PBMC gamma-delta T cells only. SCimilarity labels do not prove sorting purity or biological subtype identity. Original filtered RNA count population retained; no whole-PBMC coverage inferred.",
+        "source_preservation_policy": "Original MobiNova-100 3-prime MobiVision intron-included RNA assay retained. No cryopreservation status, culture condition or exact collection date inferred from batch tokens.",
+        "source_missingness_policy": "Individual demographics, severity, medication and dates have no verified per-GSM join here. Healthy controls share batch DZOE2023111600-b1; cases have DZOE20230779058-b2/b3. Disease and source batch are confounded; no disease effect identified by this acquisition.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. No log inverse, Harmony coordinates or source-normalized matrix used as counts.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824630/suppl/GSM9824630_NPBMC_gdt3_features.tsv.gz",
+          "filename": "GSM9824630_NPBMC_gdt3_features.tsv.gz",
+          "expected_bytes": 294266,
+          "sha256": "fa8a2da77bc5321882c570a9314a794994c2a78628db0eba98c05e2524938119"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824630/suppl/GSM9824630_NPBMC_gdt3_barcodes.tsv.gz",
+          "filename": "GSM9824630_NPBMC_gdt3_barcodes.tsv.gz",
+          "expected_bytes": 60105,
+          "sha256": "4c033c0ec99d87e7c950cd02decc0b76521322e91a6b2a1573b67f44ee9259bc"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824630/suppl/GSM9824630_NPBMC_gdt3_matrix.mtx.gz",
+          "filename": "GSM9824630_NPBMC_gdt3_matrix.mtx.gz",
+          "expected_bytes": 68477239,
+          "sha256": "ebbd9ed218fba4273553d24e6046ed49fc8cb359d2914ddddd1d1cc82407ee37"
+        }
+      ],
+      "genes_member": "GSM9824630_NPBMC_gdt3_features.tsv.gz",
+      "barcodes_member": "GSM9824630_NPBMC_gdt3_barcodes.tsv.gz",
+      "matrix_member": "GSM9824630_NPBMC_gdt3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13042,
+        "genes": 36601,
+        "nonzeros": 21381242,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 13042,
+        "RNA_positive_barcode_rows": 13042,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 47248730,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13042,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13042,
+          "source_positive_RNA_barcodes": 13042,
+          "full_source_RNA_counts": 47248730,
+          "selected_RNA_counts": 47248730,
+          "metadata": {
+            "path": "references/datasets/GSE335977_original_RNA_QC/GSM9824630.csv.gz",
+            "sha256": "93d90da2aacacb4e6ec175553600b61e5efaa5dafd2e814133dec3b8c0425ce5"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9824631",
+      "donor_id": "psoriasis patient 1",
+      "source_metadata": {
+        "title": [
+          "gamma-delta T cells from peripheral blood of psoriasis patient 1"
+        ],
+        "geo_accession": [
+          "GSM9824631"
+        ],
+        "status": [
+          "Public on Sep 01 2026"
+        ],
+        "submission_date": [
+          "Jun 22 2026"
+        ],
+        "last_update_date": [
+          "Sep 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: gamma-delta T cells",
+          "disease state: psoriasis",
+          "batch: DZOE20230779058-b2"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Samples represent peripheral blood gamma-delta T cells from healthy controls or patients with clinician-diagnosed plaque psoriasis."
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood was collected in EDTA anticoagulant tubes. PBMCs were isolated by density-gradient centrifugation within 2 hours of collection. Live CD45+ lymphocytes were gated after exclusion of doublets and 7-AAD+ dead cells; CD3+ TCR gamma-delta+ cells were sorted by flow cytometry to at least 95% purity with post-sort viability at least 85%."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with anti-human CD45-PE-Cy7, anti-human CD3-FITC, anti-human TCR gamma-delta-BV421, and 7-AAD. Live CD45+ CD3+ TCR gamma-delta+ cells were sorted by FACS and processed for single-cell RNA sequencing.",
+          "Single cells were encapsulated and 3' mRNA libraries were prepared on the MobiNova-100 droplet system using MobiCube 3' RNA kits according to the manufacturer's protocol. Libraries were sequenced on Illumina platforms with paired-end sequencing."
+        ],
+        "description": [
+          "Library name: PBMC_gdt1",
+          "FACS-enriched peripheral blood CD3+ TCR gamma-delta+ T cells; Estimated cells: 8,672; raw reads: 328,264,622; median genes/cell: 2,582; median UMI/cell: 7,562."
+        ],
+        "data_processing": [
+          "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+          "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+          "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+          "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+          "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+          "Assembly: mobivision-GRCh38-2020-A",
+          "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+          "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Nanxi,,Shi"
+        ],
+        "contact_institute": [
+          "Jinan University"
+        ],
+        "contact_address": [
+          "No. 601, Huangpu Avenue West, Jinan University"
+        ],
+        "contact_city": [
+          "Guangzhou"
+        ],
+        "contact_zip/postal_code": [
+          "510632"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61032488",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33991931"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824631/suppl/GSM9824631_PBMC_gdt1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824631/suppl/GSM9824631_PBMC_gdt1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824631/suppl/GSM9824631_PBMC_gdt1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE335977"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9824631",
+        "source_GEO_title": "gamma-delta T cells from peripheral blood of psoriasis patient 1",
+        "source_participant_code": "psoriasis patient 1",
+        "source_visit_code": "single_source_draw",
+        "condition": "psoriasis",
+        "source_disease_as_reported": "psoriasis",
+        "source_specimen": "PBMC-derived selected gamma-delta T cells",
+        "source_batch": "DZOE20230779058-b2",
+        "source_characteristics_json": "{\"batch\": \"DZOE20230779058-b2\", \"cell type\": \"gamma-delta T cells\", \"disease state\": \"psoriasis\", \"tissue\": \"peripheral blood\"}",
+        "source_BioSample": "SAMN61032488",
+        "source_BioSample_attributes_json": "{\"batch\": \"DZOE20230779058-b2\", \"cell type\": \"gamma-delta T cells\", \"collection_date\": \"missing\", \"disease state\": \"psoriasis\", \"geo_loc_name\": \"missing\", \"source_name\": \"peripheral blood\", \"tissue\": \"peripheral blood\"}",
+        "source_identity_policy": "Six selected gamma-delta T-cell specimens from six primary-publication participants: three controls and three psoriasis patients. Reused external GSE194315/GSE151177 are not new source participants.",
+        "source_coverage_policy": "FACS-enriched PBMC gamma-delta T cells only. SCimilarity labels do not prove sorting purity or biological subtype identity. Original filtered RNA count population retained; no whole-PBMC coverage inferred.",
+        "source_preservation_policy": "Original MobiNova-100 3-prime MobiVision intron-included RNA assay retained. No cryopreservation status, culture condition or exact collection date inferred from batch tokens.",
+        "source_missingness_policy": "Individual demographics, severity, medication and dates have no verified per-GSM join here. Healthy controls share batch DZOE2023111600-b1; cases have DZOE20230779058-b2/b3. Disease and source batch are confounded; no disease effect identified by this acquisition.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. No log inverse, Harmony coordinates or source-normalized matrix used as counts.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824631/suppl/GSM9824631_PBMC_gdt1_features.tsv.gz",
+          "filename": "GSM9824631_PBMC_gdt1_features.tsv.gz",
+          "expected_bytes": 294266,
+          "sha256": "ec30f0f99cd19de60838b91ebe4e6d7c65e411009daeb71cf9820add5babb172"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824631/suppl/GSM9824631_PBMC_gdt1_barcodes.tsv.gz",
+          "filename": "GSM9824631_PBMC_gdt1_barcodes.tsv.gz",
+          "expected_bytes": 41245,
+          "sha256": "9cd9a43047a549ff24d5ee880c0f8b2ada1759dddc4962f2ef7d0812c167b502"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824631/suppl/GSM9824631_PBMC_gdt1_matrix.mtx.gz",
+          "filename": "GSM9824631_PBMC_gdt1_matrix.mtx.gz",
+          "expected_bytes": 68642587,
+          "sha256": "993fc2b0009cd7337260f94746fa9066447806841db9f4886e116e64195aded6"
+        }
+      ],
+      "genes_member": "GSM9824631_PBMC_gdt1_features.tsv.gz",
+      "barcodes_member": "GSM9824631_PBMC_gdt1_barcodes.tsv.gz",
+      "matrix_member": "GSM9824631_PBMC_gdt1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8672,
+        "genes": 36601,
+        "nonzeros": 21329558,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 8672,
+        "RNA_positive_barcode_rows": 8672,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 65917173,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8672,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8672,
+          "source_positive_RNA_barcodes": 8672,
+          "full_source_RNA_counts": 65917173,
+          "selected_RNA_counts": 65917173,
+          "metadata": {
+            "path": "references/datasets/GSE335977_original_RNA_QC/GSM9824631.csv.gz",
+            "sha256": "f55a6623433934fb9861096328a9a4f9cd72aef96d5319bfd2c329203d9fe26f"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9824632",
+      "donor_id": "psoriasis patient 2",
+      "source_metadata": {
+        "title": [
+          "gamma-delta T cells from peripheral blood of psoriasis patient 2"
+        ],
+        "geo_accession": [
+          "GSM9824632"
+        ],
+        "status": [
+          "Public on Sep 01 2026"
+        ],
+        "submission_date": [
+          "Jun 22 2026"
+        ],
+        "last_update_date": [
+          "Sep 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: gamma-delta T cells",
+          "disease state: psoriasis",
+          "batch: DZOE20230779058-b2"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Samples represent peripheral blood gamma-delta T cells from healthy controls or patients with clinician-diagnosed plaque psoriasis."
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood was collected in EDTA anticoagulant tubes. PBMCs were isolated by density-gradient centrifugation within 2 hours of collection. Live CD45+ lymphocytes were gated after exclusion of doublets and 7-AAD+ dead cells; CD3+ TCR gamma-delta+ cells were sorted by flow cytometry to at least 95% purity with post-sort viability at least 85%."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with anti-human CD45-PE-Cy7, anti-human CD3-FITC, anti-human TCR gamma-delta-BV421, and 7-AAD. Live CD45+ CD3+ TCR gamma-delta+ cells were sorted by FACS and processed for single-cell RNA sequencing.",
+          "Single cells were encapsulated and 3' mRNA libraries were prepared on the MobiNova-100 droplet system using MobiCube 3' RNA kits according to the manufacturer's protocol. Libraries were sequenced on Illumina platforms with paired-end sequencing."
+        ],
+        "description": [
+          "Library name: PBMC_gdt2",
+          "FACS-enriched peripheral blood CD3+ TCR gamma-delta+ T cells; Estimated cells: 9,477; raw reads: 459,329,748; median genes/cell: 2,533; median UMI/cell: 7,209."
+        ],
+        "data_processing": [
+          "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+          "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+          "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+          "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+          "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+          "Assembly: mobivision-GRCh38-2020-A",
+          "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+          "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Nanxi,,Shi"
+        ],
+        "contact_institute": [
+          "Jinan University"
+        ],
+        "contact_address": [
+          "No. 601, Huangpu Avenue West, Jinan University"
+        ],
+        "contact_city": [
+          "Guangzhou"
+        ],
+        "contact_zip/postal_code": [
+          "510632"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61032487",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33991932"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824632/suppl/GSM9824632_PBMC_gdt2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824632/suppl/GSM9824632_PBMC_gdt2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824632/suppl/GSM9824632_PBMC_gdt2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE335977"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9824632",
+        "source_GEO_title": "gamma-delta T cells from peripheral blood of psoriasis patient 2",
+        "source_participant_code": "psoriasis patient 2",
+        "source_visit_code": "single_source_draw",
+        "condition": "psoriasis",
+        "source_disease_as_reported": "psoriasis",
+        "source_specimen": "PBMC-derived selected gamma-delta T cells",
+        "source_batch": "DZOE20230779058-b2",
+        "source_characteristics_json": "{\"batch\": \"DZOE20230779058-b2\", \"cell type\": \"gamma-delta T cells\", \"disease state\": \"psoriasis\", \"tissue\": \"peripheral blood\"}",
+        "source_BioSample": "SAMN61032487",
+        "source_BioSample_attributes_json": "{\"batch\": \"DZOE20230779058-b2\", \"cell type\": \"gamma-delta T cells\", \"collection_date\": \"missing\", \"disease state\": \"psoriasis\", \"geo_loc_name\": \"missing\", \"source_name\": \"peripheral blood\", \"tissue\": \"peripheral blood\"}",
+        "source_identity_policy": "Six selected gamma-delta T-cell specimens from six primary-publication participants: three controls and three psoriasis patients. Reused external GSE194315/GSE151177 are not new source participants.",
+        "source_coverage_policy": "FACS-enriched PBMC gamma-delta T cells only. SCimilarity labels do not prove sorting purity or biological subtype identity. Original filtered RNA count population retained; no whole-PBMC coverage inferred.",
+        "source_preservation_policy": "Original MobiNova-100 3-prime MobiVision intron-included RNA assay retained. No cryopreservation status, culture condition or exact collection date inferred from batch tokens.",
+        "source_missingness_policy": "Individual demographics, severity, medication and dates have no verified per-GSM join here. Healthy controls share batch DZOE2023111600-b1; cases have DZOE20230779058-b2/b3. Disease and source batch are confounded; no disease effect identified by this acquisition.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. No log inverse, Harmony coordinates or source-normalized matrix used as counts.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824632/suppl/GSM9824632_PBMC_gdt2_features.tsv.gz",
+          "filename": "GSM9824632_PBMC_gdt2_features.tsv.gz",
+          "expected_bytes": 294266,
+          "sha256": "3c003348d4f99390cfaa4a1dbca3ddd910b21eb85a3e7ed94b1a99d2b3b9863e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824632/suppl/GSM9824632_PBMC_gdt2_barcodes.tsv.gz",
+          "filename": "GSM9824632_PBMC_gdt2_barcodes.tsv.gz",
+          "expected_bytes": 44755,
+          "sha256": "a93c7f7f1478e5adb3cc6f25ac35b766076b064341fd2899418e93d82272c7ff"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824632/suppl/GSM9824632_PBMC_gdt2_matrix.mtx.gz",
+          "filename": "GSM9824632_PBMC_gdt2_matrix.mtx.gz",
+          "expected_bytes": 73251715,
+          "sha256": "2df3d283facc9c388c06b13cd1b895747d8f3757fab899dc5f854b7455f8f4af"
+        }
+      ],
+      "genes_member": "GSM9824632_PBMC_gdt2_features.tsv.gz",
+      "barcodes_member": "GSM9824632_PBMC_gdt2_barcodes.tsv.gz",
+      "matrix_member": "GSM9824632_PBMC_gdt2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9477,
+        "genes": 36601,
+        "nonzeros": 22861341,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 9477,
+        "RNA_positive_barcode_rows": 9477,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 66872246,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9477,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9477,
+          "source_positive_RNA_barcodes": 9477,
+          "full_source_RNA_counts": 66872246,
+          "selected_RNA_counts": 66872246,
+          "metadata": {
+            "path": "references/datasets/GSE335977_original_RNA_QC/GSM9824632.csv.gz",
+            "sha256": "f6a2021a94dcf3cf741755bf463b4d39088d40d6a109f7f734f0b5e47defcf06"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9824633",
+      "donor_id": "psoriasis patient 3",
+      "source_metadata": {
+        "title": [
+          "gamma-delta T cells from peripheral blood of psoriasis patient 3"
+        ],
+        "geo_accession": [
+          "GSM9824633"
+        ],
+        "status": [
+          "Public on Sep 01 2026"
+        ],
+        "submission_date": [
+          "Jun 22 2026"
+        ],
+        "last_update_date": [
+          "Sep 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: gamma-delta T cells",
+          "disease state: psoriasis",
+          "batch: DZOE20230779058-b3"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Samples represent peripheral blood gamma-delta T cells from healthy controls or patients with clinician-diagnosed plaque psoriasis."
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood was collected in EDTA anticoagulant tubes. PBMCs were isolated by density-gradient centrifugation within 2 hours of collection. Live CD45+ lymphocytes were gated after exclusion of doublets and 7-AAD+ dead cells; CD3+ TCR gamma-delta+ cells were sorted by flow cytometry to at least 95% purity with post-sort viability at least 85%."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with anti-human CD45-PE-Cy7, anti-human CD3-FITC, anti-human TCR gamma-delta-BV421, and 7-AAD. Live CD45+ CD3+ TCR gamma-delta+ cells were sorted by FACS and processed for single-cell RNA sequencing.",
+          "Single cells were encapsulated and 3' mRNA libraries were prepared on the MobiNova-100 droplet system using MobiCube 3' RNA kits according to the manufacturer's protocol. Libraries were sequenced on Illumina platforms with paired-end sequencing."
+        ],
+        "description": [
+          "Library name: PBMC_gdt3",
+          "FACS-enriched peripheral blood CD3+ TCR gamma-delta+ T cells; Estimated cells: 9,870; raw reads: 506,449,025; median genes/cell: 2,467; median UMI/cell: 6,779."
+        ],
+        "data_processing": [
+          "Raw sequencing reads were processed with MobiVision v3.0 (intron included), which integrates STARsolo for alignment and gene quantification.",
+          "Reads were aligned to the mobivision-GRCh38-2020-A reference genome and gene-cell count matrices were generated for each sample.",
+          "Filtered count matrices were used for downstream single-cell analysis in Seurat v4.4.0, including quality control, normalization, variable feature selection, scaling, PCA, Harmony integration, graph clustering, UMAP visualization, and gamma-delta T-cell state annotation.",
+          "Potential doublets and cells failing quality-control criteria were excluded before downstream analyses.",
+          "Cell-state analyses included trajectory inference with Monocle2, cell-cell communication analysis with CellChat, metabolism-associated communication analysis with mebocost, and regulon/perturbation analyses.",
+          "Assembly: mobivision-GRCh38-2020-A",
+          "Supplementary files format and content: Filtered 10x-style matrix files for each sample: barcodes.tsv.gz contains cell barcodes, features.tsv.gz contains gene features, and matrix.mtx.gz contains the sparse gene-cell count matrix.",
+          "Supplementary files format and content: Raw FASTQ files are paired-end reads. For processed files listed with sample prefixes, upload renamed copies matching the metadata filenames."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Nanxi,,Shi"
+        ],
+        "contact_institute": [
+          "Jinan University"
+        ],
+        "contact_address": [
+          "No. 601, Huangpu Avenue West, Jinan University"
+        ],
+        "contact_city": [
+          "Guangzhou"
+        ],
+        "contact_zip/postal_code": [
+          "510632"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61032486",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33991933"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824633/suppl/GSM9824633_PBMC_gdt3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824633/suppl/GSM9824633_PBMC_gdt3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824633/suppl/GSM9824633_PBMC_gdt3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE335977"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9824633",
+        "source_GEO_title": "gamma-delta T cells from peripheral blood of psoriasis patient 3",
+        "source_participant_code": "psoriasis patient 3",
+        "source_visit_code": "single_source_draw",
+        "condition": "psoriasis",
+        "source_disease_as_reported": "psoriasis",
+        "source_specimen": "PBMC-derived selected gamma-delta T cells",
+        "source_batch": "DZOE20230779058-b3",
+        "source_characteristics_json": "{\"batch\": \"DZOE20230779058-b3\", \"cell type\": \"gamma-delta T cells\", \"disease state\": \"psoriasis\", \"tissue\": \"peripheral blood\"}",
+        "source_BioSample": "SAMN61032486",
+        "source_BioSample_attributes_json": "{\"batch\": \"DZOE20230779058-b3\", \"cell type\": \"gamma-delta T cells\", \"collection_date\": \"missing\", \"disease state\": \"psoriasis\", \"geo_loc_name\": \"missing\", \"source_name\": \"peripheral blood\", \"tissue\": \"peripheral blood\"}",
+        "source_identity_policy": "Six selected gamma-delta T-cell specimens from six primary-publication participants: three controls and three psoriasis patients. Reused external GSE194315/GSE151177 are not new source participants.",
+        "source_coverage_policy": "FACS-enriched PBMC gamma-delta T cells only. SCimilarity labels do not prove sorting purity or biological subtype identity. Original filtered RNA count population retained; no whole-PBMC coverage inferred.",
+        "source_preservation_policy": "Original MobiNova-100 3-prime MobiVision intron-included RNA assay retained. No cryopreservation status, culture condition or exact collection date inferred from batch tokens.",
+        "source_missingness_policy": "Individual demographics, severity, medication and dates have no verified per-GSM join here. Healthy controls share batch DZOE2023111600-b1; cases have DZOE20230779058-b2/b3. Disease and source batch are confounded; no disease effect identified by this acquisition.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. No log inverse, Harmony coordinates or source-normalized matrix used as counts.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824633/suppl/GSM9824633_PBMC_gdt3_features.tsv.gz",
+          "filename": "GSM9824633_PBMC_gdt3_features.tsv.gz",
+          "expected_bytes": 294266,
+          "sha256": "98b151202bd64fc9245b10daf38ee42a664b4faa52316cb4317a1061fada6d6a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824633/suppl/GSM9824633_PBMC_gdt3_barcodes.tsv.gz",
+          "filename": "GSM9824633_PBMC_gdt3_barcodes.tsv.gz",
+          "expected_bytes": 46313,
+          "sha256": "bc00fa67b48eaf33fed31156b41268f22abd2b3d75b1f45197a53667772bbc1d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9824nnn/GSM9824633/suppl/GSM9824633_PBMC_gdt3_matrix.mtx.gz",
+          "filename": "GSM9824633_PBMC_gdt3_matrix.mtx.gz",
+          "expected_bytes": 77030755,
+          "sha256": "7665fee72db9c387975eb09f959f8e6aae0fadfa1a5c18f271598469091ce763"
+        }
+      ],
+      "genes_member": "GSM9824633_PBMC_gdt3_features.tsv.gz",
+      "barcodes_member": "GSM9824633_PBMC_gdt3_barcodes.tsv.gz",
+      "matrix_member": "GSM9824633_PBMC_gdt3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9870,
+        "genes": 36601,
+        "nonzeros": 24097824,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 9870,
+        "RNA_positive_barcode_rows": 9870,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 68318672,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9870,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9870,
+          "source_positive_RNA_barcodes": 9870,
+          "full_source_RNA_counts": 68318672,
+          "selected_RNA_counts": 68318672,
+          "metadata": {
+            "path": "references/datasets/GSE335977_original_RNA_QC/GSM9824633.csv.gz",
+            "sha256": "d79ef9415a7611208de54ee78e03350c693ccfe3b4f1a9eb24b46ac12dd14598"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Six source PBMC-derived gamma-delta T-cell draws from six people: three healthy controls and three psoriasis cases. Disease-batch confounding explicit; no longitudinal relationship inferred."
+}

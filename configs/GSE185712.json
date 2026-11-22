@@ -1,0 +1,63 @@
+{
+  "dataset_id": "GSE185712",
+  "study_id": "GSE185712",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE185712_complete_original_RNA_audit.json",
+    "bytes": 13727,
+    "sha256": "c4c97a34fa4fe89502cce467aad504255bc42ede633a2a43adff6735c410bdcf"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE185712_source_identity_review.json",
+    "bytes": 11364,
+    "sha256": "ba97600e4722f1e15f6827ecc7449cf2cb096109de7dcebf9cb6ef542b7f27d7"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Original GEO explicitly supplies Donor1/Donor2 fields and the original README maps each H5 filename to its donor and preparation. Four RNA carriers yield four distinct observation views, linked within two conservative donor/material groups. Antibody-only records are paired source modalities, not extra specimens/people. Literal full cell IDs preserved; no barcode-suffix or RNA-profile identity inference.",
+  "physical_sample_mapping_evidence": "Two conservative source donor/material groups with four dependent RNA preparation views, not six people. README and original GEO donor fields link PBMC RNA/CITE and sorted-T RNA for each donor. Antibody-only paired GEOrecords are not extra RNA observations. Exact physicaldraw/aliquot equivalence and global aliases unknown; no duplicate-cell inference from barcode reuse.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE185712",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE185712",
+    "access": "Public original filtered H5 feature-count carriers and explicit donor/preparation README.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE185712_source_identity_review.json",
+      "bytes": 11364,
+      "sha256": "ba97600e4722f1e15f6827ecc7449cf2cb096109de7dcebf9cb6ef542b7f27d7"
+    },
+    "source_unit": "Two conservative source donor/material groups with four dependent RNA preparation views, not six people. README and original GEO donor fields link PBMC RNA/CITE and sorted-T RNA for each donor. Antibody-only paired GEOrecords are not extra RNA observations. Exact physicaldraw/aliquot equivalence and global aliases unknown; no duplicate-cell inference from barcode reuse.",
+    "identity_policy": "Original GEO explicitly supplies Donor1/Donor2 fields and the original README maps each H5 filename to its donor and preparation. Four RNA carriers yield four distinct observation views, linked within two conservative donor/material groups. Antibody-only records are paired source modalities, not extra specimens/people. Literal full cell IDs preserved; no barcode-suffix or RNA-profile identity inference.",
+    "clinical_policy": "Original GEO donor, healthy disease state, Blood tissue and preparation fields retained. Individual age, sex, collection dates and physical aliquot/draw equivalence unassigned. Source report is not independent biological validation of donor health.",
+    "reuse_policy": "Two source donor/material groups with four dependent preparation views. The same PBMC CITE carrier serves both RNA and antibody GEOrecords; its RNA is counted once. Sorted-T and whole-PBMC RNA remain separate maps, not pooled to construct an artificial population. Cross-study aliases unresolved; no completed original-accession reference found.",
+    "selection_policy": "All14459provided capture cells before fixed RNAQC;14010pass counts>=500,detectedgenes>=200,MTfraction<=0.2,positive-library. No phenotype or confidence filtering. Keep each donor across both preparations in one held-out split; assignment currently unassigned.",
+    "cell_calling_policy": "Cell Ranger filtered feature matrices are source cell calls. Select all Gene Expression rows by explicit feature_type, preserving36601native human gene IDs and duplicate symbols.17antibody features in each PBMC carrier are excluded from RNA and aligned-reference normalization denominators. Sorted-T enrichment affects coverage/composition; no source cached per-cellQC was supplied.",
+    "gene_policy": "All36601provided native human RNA gene IDs preserved with source symbols, including duplicate symbols as separate native axes. Select RNA by explicit feature_type; exclude17antibody features per PBMC carrier from geometry and RNA/reference libraries. No gene intersection, invented IDs or zero-filled missing types.",
+    "count_semantics": "Every stored original H5 value, including antibodies, finite/nonnegative/integer. Geometry uses unchanged original Gene Expression counts only. No author per-cell cachedQC is supplied; own RNAQC is derived from original counts. Sorted-T selection and PBMC/CITE preparation are preserved as distinct observation views.",
+    "source_limitations": "Two source donors, four dependent RNA views, not six independent specimens. Sorted-T and PBMC/CITE preparation differ. Exact draw/aliquot/global aliases and individual age/sex remain unknown. No causal, biological annotation or constellation validation."
+  }
+}

@@ -1,0 +1,2853 @@
+{
+  "dataset_id": "GSE349910_genes001",
+  "study_id": "GSE349910",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "16original24hPBMC draws/16source patients;8placebo+8KAND567,4IMH/4noIMH per arm. Broader FRACTAL71patient trial is not71deposited RNA samples.",
+  "source_metadata": {
+    "accession": "GSE349910",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE349910",
+      "https://doi.org/10.1093/eurheartj/ehaf784.1773"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE349910",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+    "source_processing": [
+      "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+      "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+      "Assembly: GRCh38-2024-A",
+      "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE349910_source_identity_review.json",
+      "sha256": "4fe123c7a591733625231fd7cd507eb41bb381c011e19304bc5ccf406e916427"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM10103478",
+      "donor_id": "01_11_01",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, IMH, rep 1"
+        ],
+        "geo_accession": [
+          "GSM10103478"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 01_11_01",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023171",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577512"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103478/suppl/GSM10103478_01_11_01_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103478",
+        "source_GEO_title": "PBMC, placebo, IMH, rep 1",
+        "source_BioSample": "SAMN64023171",
+        "source_participant_code": "01_11_01",
+        "source_library_code": "01_11_01",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "1",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103478_01_11_01_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          15425,
+          38606
+        ],
+        "nonzeros": 43624927,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 15425,
+        "cells": 15425,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 15425,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 15425,
+          "full_source_RNA_counts": 131958486,
+          "selected_RNA_counts": 131958486,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103478.csv.gz",
+            "sha256": "2d3063b276f145092e0c3ea4f58ce91f0477cf156cf862915f53a72dfec05a7b"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103478/suppl/GSM10103478_01_11_01_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103478_01_11_01_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 62674605,
+          "sha256": "489e7a9bf165d1dce0c3d1785fcaced82b77f1b7fae1d4e76bf09e54da7b6416"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103479",
+      "donor_id": "02_11_07",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, IMH, rep 2"
+        ],
+        "geo_accession": [
+          "GSM10103479"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 02_11_07",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023170",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577513"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103479/suppl/GSM10103479_02_11_07_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103479",
+        "source_GEO_title": "PBMC, placebo, IMH, rep 2",
+        "source_BioSample": "SAMN64023170",
+        "source_participant_code": "02_11_07",
+        "source_library_code": "02_11_07",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "2",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103479_02_11_07_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          16684,
+          38606
+        ],
+        "nonzeros": 28974876,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 16684,
+        "cells": 16684,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 16684,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 16684,
+          "full_source_RNA_counts": 93506568,
+          "selected_RNA_counts": 93506568,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103479.csv.gz",
+            "sha256": "b37e7fb345e46c1e776e09011f41c5dfece092ad024b7a77633a770d65ef2763"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103479/suppl/GSM10103479_02_11_07_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103479_02_11_07_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 43199420,
+          "sha256": "e431de92a280a1058c9f764f0f91a7721ee6ba4277553d4be42a0e994b26a38f"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103480",
+      "donor_id": "03_11_08",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, IMH, rep 3"
+        ],
+        "geo_accession": [
+          "GSM10103480"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 03_11_08",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023169",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577514"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103480/suppl/GSM10103480_03_11_08_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103480",
+        "source_GEO_title": "PBMC, placebo, IMH, rep 3",
+        "source_BioSample": "SAMN64023169",
+        "source_participant_code": "03_11_08",
+        "source_library_code": "03_11_08",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "3",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103480_03_11_08_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          16879,
+          38606
+        ],
+        "nonzeros": 39680352,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 16879,
+        "cells": 16879,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 16879,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 16879,
+          "full_source_RNA_counts": 106148495,
+          "selected_RNA_counts": 106148495,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103480.csv.gz",
+            "sha256": "1518d821f8266dc74cf790c06484102a7c94cfb1a0740d6f545e621f670cc7cd"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103480/suppl/GSM10103480_03_11_08_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103480_03_11_08_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 57271152,
+          "sha256": "cfaeba5a4992e9b0094777d37b230ed1874d6c64afc3510cbf4d7a5812458d20"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103481",
+      "donor_id": "04_11_13",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, IMH, rep 4"
+        ],
+        "geo_accession": [
+          "GSM10103481"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 04_11_13",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023168",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577515"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103481/suppl/GSM10103481_04_11_13_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103481",
+        "source_GEO_title": "PBMC, placebo, IMH, rep 4",
+        "source_BioSample": "SAMN64023168",
+        "source_participant_code": "04_11_13",
+        "source_library_code": "04_11_13",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "4",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103481_04_11_13_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10358,
+          38606
+        ],
+        "nonzeros": 25633905,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 10358,
+        "cells": 10358,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10358,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10358,
+          "full_source_RNA_counts": 74977579,
+          "selected_RNA_counts": 74977579,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103481.csv.gz",
+            "sha256": "55113eb54051b7faf6c77f7427f41c88c338dab8a2c9810719f71084e1ff08ae"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103481/suppl/GSM10103481_04_11_13_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103481_04_11_13_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 37369285,
+          "sha256": "4519bf389ce359294da1012ea6c0f168663364419746b6d361eedb0f76855dd6"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103482",
+      "donor_id": "05_11_09",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, no IMH, rep 1"
+        ],
+        "geo_accession": [
+          "GSM10103482"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 05_11_09",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023167",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577516"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103482/suppl/GSM10103482_05_11_09_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103482",
+        "source_GEO_title": "PBMC, KAND567, no IMH, rep 1",
+        "source_BioSample": "SAMN64023167",
+        "source_participant_code": "05_11_09",
+        "source_library_code": "05_11_09",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "1",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103482_05_11_09_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          14365,
+          38606
+        ],
+        "nonzeros": 30389557,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 14365,
+        "cells": 14365,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14365,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14365,
+          "full_source_RNA_counts": 85887399,
+          "selected_RNA_counts": 85887399,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103482.csv.gz",
+            "sha256": "d6bcd1ee1793b5343cb99cbdd548227b29fc4a8206475ed1c40d3bf9153fd3e2"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103482/suppl/GSM10103482_05_11_09_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103482_05_11_09_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 44334536,
+          "sha256": "23bdf09d1d3530c2237cea418aa258797199c7b444eabc490d6a754a8dcdfab7"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103483",
+      "donor_id": "06_11_18",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, no IMH, rep 2"
+        ],
+        "geo_accession": [
+          "GSM10103483"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 06_11_18",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023166",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577517"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103483/suppl/GSM10103483_06_11_18_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103483",
+        "source_GEO_title": "PBMC, KAND567, no IMH, rep 2",
+        "source_BioSample": "SAMN64023166",
+        "source_participant_code": "06_11_18",
+        "source_library_code": "06_11_18",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "2",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103483_06_11_18_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          12757,
+          38606
+        ],
+        "nonzeros": 35381363,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 12757,
+        "cells": 12757,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 12757,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 12757,
+          "full_source_RNA_counts": 107477929,
+          "selected_RNA_counts": 107477929,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103483.csv.gz",
+            "sha256": "7c5e2ae31fb164a8c462926d5a3a0dbac9d7c99ddb271e69978757f53b6043cc"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103483/suppl/GSM10103483_06_11_18_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103483_06_11_18_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 51184500,
+          "sha256": "918812c8ffb3186bac4c5ebf033703de78af61dfce7dfb7e61d41a39342fffcb"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103484",
+      "donor_id": "07_11_19",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, no IMH, rep 3"
+        ],
+        "geo_accession": [
+          "GSM10103484"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 07_11_19",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023165",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577518"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103484/suppl/GSM10103484_07_11_19_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103484",
+        "source_GEO_title": "PBMC, KAND567, no IMH, rep 3",
+        "source_BioSample": "SAMN64023165",
+        "source_participant_code": "07_11_19",
+        "source_library_code": "07_11_19",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "3",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103484_07_11_19_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3270,
+          38606
+        ],
+        "nonzeros": 7007391,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 3270,
+        "cells": 3270,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3270,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3270,
+          "full_source_RNA_counts": 23721689,
+          "selected_RNA_counts": 23721689,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103484.csv.gz",
+            "sha256": "91f73198395ef19fbbc286d6551f309e4781d1a85c33d93c4913e384ac49cff0"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103484/suppl/GSM10103484_07_11_19_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103484_07_11_19_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 10657766,
+          "sha256": "4f51768ff5e901c4879adfc1b8de773e7b665b7cf82c738ca7b3a96dc8818f5d"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103485",
+      "donor_id": "08_11_20",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, no IMH, rep 4"
+        ],
+        "geo_accession": [
+          "GSM10103485"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 08_11_20",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023164",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577519"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103485/suppl/GSM10103485_08_11_20_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103485",
+        "source_GEO_title": "PBMC, KAND567, no IMH, rep 4",
+        "source_BioSample": "SAMN64023164",
+        "source_participant_code": "08_11_20",
+        "source_library_code": "08_11_20",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "4",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103485_08_11_20_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          21370,
+          38606
+        ],
+        "nonzeros": 48972004,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 21370,
+        "cells": 21370,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 21370,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 21370,
+          "full_source_RNA_counts": 127484676,
+          "selected_RNA_counts": 127484676,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103485.csv.gz",
+            "sha256": "03a9ddc8ecba2384bd5968190ec36475e7431465942e2d2eabc7e9ccbe7fc9c0"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103485/suppl/GSM10103485_08_11_20_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103485_08_11_20_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 70358807,
+          "sha256": "652ae8f85d68f66bf4a1f299ae2983cd876a5b7e639963cca9492b450d05ccd1"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103486",
+      "donor_id": "09_11_10",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, no IMH, rep 1"
+        ],
+        "geo_accession": [
+          "GSM10103486"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 09_11_10",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023163",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577520"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103486/suppl/GSM10103486_09_11_10_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103486",
+        "source_GEO_title": "PBMC, placebo, no IMH, rep 1",
+        "source_BioSample": "SAMN64023163",
+        "source_participant_code": "09_11_10",
+        "source_library_code": "09_11_10",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "1",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103486_09_11_10_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          16634,
+          38606
+        ],
+        "nonzeros": 32780234,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 16634,
+        "cells": 16634,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 16634,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 16634,
+          "full_source_RNA_counts": 80695534,
+          "selected_RNA_counts": 80695534,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103486.csv.gz",
+            "sha256": "124433ce47ebfb329b72478dc835449b393b45fd2a83e66153cfa550d1b09537"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103486/suppl/GSM10103486_09_11_10_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103486_09_11_10_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 47558686,
+          "sha256": "eff555e0427b1fe7426de052db62f8d74d87c6f5b349ef44859e8e5823e9d57e"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103487",
+      "donor_id": "10_11_16",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, no IMH, rep 2"
+        ],
+        "geo_accession": [
+          "GSM10103487"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 10_11_16",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023162",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577521"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103487/suppl/GSM10103487_10_11_16_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103487",
+        "source_GEO_title": "PBMC, placebo, no IMH, rep 2",
+        "source_BioSample": "SAMN64023162",
+        "source_participant_code": "10_11_16",
+        "source_library_code": "10_11_16",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "2",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103487_10_11_16_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          22774,
+          38606
+        ],
+        "nonzeros": 54524247,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 22774,
+        "cells": 22774,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 22774,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 22774,
+          "full_source_RNA_counts": 146479429,
+          "selected_RNA_counts": 146479429,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103487.csv.gz",
+            "sha256": "0b3719740f90cf4be954d7ae8aef7cfeb4c3a1dbbc14d96d70b75ddc2b67dc4f"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103487/suppl/GSM10103487_10_11_16_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103487_10_11_16_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 77942284,
+          "sha256": "dfd04b711f5a36b8d4fa2846d479b49dc18a48e10a5f998a6a1d5a4a4b9d60b6"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103488",
+      "donor_id": "11_11_23",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, no IMH, rep 3"
+        ],
+        "geo_accession": [
+          "GSM10103488"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 11_11_23",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023161",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577522"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103488/suppl/GSM10103488_11_11_23_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103488",
+        "source_GEO_title": "PBMC, placebo, no IMH, rep 3",
+        "source_BioSample": "SAMN64023161",
+        "source_participant_code": "11_11_23",
+        "source_library_code": "11_11_23",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "3",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103488_11_11_23_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          14575,
+          38606
+        ],
+        "nonzeros": 31587365,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 14575,
+        "cells": 14575,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14575,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14575,
+          "full_source_RNA_counts": 86198881,
+          "selected_RNA_counts": 86198881,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103488.csv.gz",
+            "sha256": "0e1ae78230e95402c8101d43df9d4e2917059d14be1d18d9ef0daedcbe2f5811"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103488/suppl/GSM10103488_11_11_23_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103488_11_11_23_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 46025171,
+          "sha256": "c6eedcf8eba5ab00bdcc6adc58599f2533a11560f7a04b623155971bafb3a201"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103489",
+      "donor_id": "12_11_24",
+      "source_metadata": {
+        "title": [
+          "PBMC, placebo, no IMH, rep 4"
+        ],
+        "geo_accession": [
+          "GSM10103489"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: no IMH",
+          "treatment: placebo"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 12_11_24",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023160",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577523"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103489/suppl/GSM10103489_12_11_24_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103489",
+        "source_GEO_title": "PBMC, placebo, no IMH, rep 4",
+        "source_BioSample": "SAMN64023160",
+        "source_participant_code": "12_11_24",
+        "source_library_code": "12_11_24",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "placebo",
+        "source_IMH_status_as_reported": "no IMH",
+        "source_GEO_genotype_field_as_reported": "no IMH",
+        "source_replicate_as_reported": "4",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"no IMH\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"no IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"placebo\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103489_12_11_24_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          14163,
+          38606
+        ],
+        "nonzeros": 28315090,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 14163,
+        "cells": 14163,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14163,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14163,
+          "full_source_RNA_counts": 81863808,
+          "selected_RNA_counts": 81863808,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103489.csv.gz",
+            "sha256": "df58c595f25e78cddd87eb5a0fb685ae50af0ca82c5c86e3afe991d97a243341"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103489/suppl/GSM10103489_12_11_24_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103489_12_11_24_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 41796687,
+          "sha256": "0452753c1b46ad5e06ac43d34b2e93399615acb31c944558ef6ab425cc8334c6"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103490",
+      "donor_id": "13_11_12",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, IMH, rep 1"
+        ],
+        "geo_accession": [
+          "GSM10103490"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 13_11_12",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023159",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577524"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103490/suppl/GSM10103490_13_11_12_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103490",
+        "source_GEO_title": "PBMC, KAND567, IMH, rep 1",
+        "source_BioSample": "SAMN64023159",
+        "source_participant_code": "13_11_12",
+        "source_library_code": "13_11_12",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "1",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103490_13_11_12_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          16285,
+          38606
+        ],
+        "nonzeros": 37369911,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 16285,
+        "cells": 16285,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 16285,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 16285,
+          "full_source_RNA_counts": 91188020,
+          "selected_RNA_counts": 91188020,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103490.csv.gz",
+            "sha256": "02ba08e35ff1901a44aba9ddda574d6dcfab95aaae7cbfb3704cdb4848e1edfa"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103490/suppl/GSM10103490_13_11_12_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103490_13_11_12_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 53448371,
+          "sha256": "45334dee841291f2bf571c60f87a3533d7dcaae4881366f7b4eacc571c980e2e"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103491",
+      "donor_id": "14_11_25",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, IMH, rep 2"
+        ],
+        "geo_accession": [
+          "GSM10103491"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 14_11_25",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023158",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577525"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103491/suppl/GSM10103491_14_11_25_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103491",
+        "source_GEO_title": "PBMC, KAND567, IMH, rep 2",
+        "source_BioSample": "SAMN64023158",
+        "source_participant_code": "14_11_25",
+        "source_library_code": "14_11_25",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "2",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103491_14_11_25_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          18646,
+          38606
+        ],
+        "nonzeros": 38076848,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 18646,
+        "cells": 18646,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 18646,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 18646,
+          "full_source_RNA_counts": 104224830,
+          "selected_RNA_counts": 104224830,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103491.csv.gz",
+            "sha256": "158cefb5b0fafe55267bd4bfac85031a71ca88587c42fa8009fb2e2c83f320c1"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103491/suppl/GSM10103491_14_11_25_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103491_14_11_25_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 55610661,
+          "sha256": "10be269cd13453f7f1bb0edfe778cda21677e89b32c2b3c1c111e040598fc66b"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103492",
+      "donor_id": "15_11_27",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, IMH, rep 3"
+        ],
+        "geo_accession": [
+          "GSM10103492"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 15_11_27",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023157",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577526"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103492/suppl/GSM10103492_15_11_27_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103492",
+        "source_GEO_title": "PBMC, KAND567, IMH, rep 3",
+        "source_BioSample": "SAMN64023157",
+        "source_participant_code": "15_11_27",
+        "source_library_code": "15_11_27",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "3",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103492_15_11_27_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          18526,
+          38606
+        ],
+        "nonzeros": 33282116,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 18526,
+        "cells": 18526,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 18526,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 18526,
+          "full_source_RNA_counts": 80146377,
+          "selected_RNA_counts": 80146377,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103492.csv.gz",
+            "sha256": "2ece2b226e4a2bf0ce6b0f6054bb51ddb6f6df74aba0b1bc6f2f56fddbf4b437"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103492/suppl/GSM10103492_15_11_27_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103492_15_11_27_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 48969769,
+          "sha256": "0255bc81e4a8dc9f1f30ff2cd212e9fdbf419ea80a2888e8cd37c5799b8fed43"
+        }
+      ]
+    },
+    {
+      "accession": "GSM10103493",
+      "donor_id": "16_11_30",
+      "source_metadata": {
+        "title": [
+          "PBMC, KAND567, IMH, rep 4"
+        ],
+        "geo_accession": [
+          "GSM10103493"
+        ],
+        "status": [
+          "Public on Oct 12 2026"
+        ],
+        "submission_date": [
+          "Oct 07 2026"
+        ],
+        "last_update_date": [
+          "Oct 12 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "genotype: IMH",
+          "treatment: KAND567"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients with anterior STEMI were precribed either placebo or KAND567 and donated a blood sample 24 hours after treatment. Peripheral blood mononuclear cells (PBMCs) were isolated from these samples and frozen at -800C. After thawing, cells were washed, counted and resuspended in PBS supplemented with 0.04% w/v BSA.",
+          "The libraries were generated according to the manufacturer\u2019s instructions (User Guide CG000733, Rev A Chromium GEM-X  Single Cell 5' Reagent Kits v3, 10x Genomics). Briefly, barcoded beads, PBMC resuspended in master mix and partitioning oil were combined and loaded onto the GEM-X 5\u2019 chip in order to generate gel bead-in-emulsion (GEMs). The gel bead was then dissolved and any co-partitioned cell was lysed. The cell lysate was incubated with a master mix containing reverse transcription reagents and poly(dT) primers, along with gel bead primers containing Illumina R1 (read 1) sequencing primer, a 10x barcode, a unique molecular identifier and a template switch oligo, which lead to the generation of 10x barcoded first strand cDNA from poly-A RNA. The first strand cDNA from each sample was then purified with silane magnetic beads and full-length cDNA amplified by PCR. Following enzymatic fragmentation, the appropriately sized cDNA amplicons were used to construct the 5\u2019 gene expression library. During library construction, P5, P7, i5 and i7 sample indexes and Illumina R2 (read 2) primer sequence were added, such that the final libraries contained the P5 and P7 primers used in the Illumina amplification."
+        ],
+        "description": [
+          "Library name: 16_11_30",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Using 10X Genomics' CellRanger v8.0.1, the raw BCL files from the sequencer were converted to FASTQ format using the mkfastq function.",
+          "Again using CellRanger v8.0.1, counts were generated on per sample basis using CellRanger's multi function, outputting a filtered feature count matrix in .h5 format.",
+          "Assembly: GRCh38-2024-A",
+          "Supplementary files format and content: HDF5 \u2013 a binary format storing a barcode matrix for each sample"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Ioakim,,Spyridopoulos"
+        ],
+        "contact_laboratory": [
+          "Translational and Clinical Research"
+        ],
+        "contact_institute": [
+          "Newcastle University"
+        ],
+        "contact_address": [
+          "International Centre for Life, Central Parkway"
+        ],
+        "contact_city": [
+          "Newcastle Upon Tyne"
+        ],
+        "contact_zip/postal_code": [
+          "NE1 3BZ"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN64023156",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35577527"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103493/suppl/GSM10103493_16_11_30_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE349910"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM10103493",
+        "source_GEO_title": "PBMC, KAND567, IMH, rep 4",
+        "source_BioSample": "SAMN64023156",
+        "source_participant_code": "16_11_30",
+        "source_library_code": "16_11_30",
+        "source_visit_code": "24h_after_treatment",
+        "source_capture_label": "primary_PBMC_RNA",
+        "condition": "anterior STEMI",
+        "source_treatment": "KAND567",
+        "source_IMH_status_as_reported": "IMH",
+        "source_GEO_genotype_field_as_reported": "IMH",
+        "source_replicate_as_reported": "4",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"genotype\": \"IMH\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_BioSample_attributes_json": "{\"cell type\": \"PBMC\", \"collection_date\": \"missing\", \"genotype\": \"IMH\", \"geo_loc_name\": \"missing\", \"source_name\": \"Blood\", \"tissue\": \"Blood\", \"treatment\": \"KAND567\"}",
+        "source_specimen": "peripheral blood mononuclear cells",
+        "source_identity_policy": "Original GEO explicitly describes sixteen patients: eight placebo and eight KAND567, one24hRNA observation each. Retain complete original library tokens as study-scoped person labels, without parsing their components into dates or global identifiers.",
+        "source_outcome_policy": "IMH/no IMH is the reported intramyocardial haemorrhage outcome. GEO stores it under genotype; no germline genotype inferred. Four original records per treatment/outcome stratum.",
+        "source_missingness_policy": "Individual age, sex, collection dates, race/ethnicity and infarct severity measurements unavailable. BioSample missing strings retained as original metadata, not harmonized values.",
+        "source_count_policy": "Original filtered CellRanger8.0.1 multi RNA count matrices; source GRCh38-2024-A reference string retained alongside literal native H5genome label. No pre-QC droplets reconstructed.",
+        "split_assignment": "unassigned; each source-scoped person kept intact; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM10103493_16_11_30_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          20666,
+          38606
+        ],
+        "nonzeros": 34464612,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1",
+        "source_barcode_rows": 20666,
+        "cells": 20666,
+        "genes": 38606,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 38606
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE349910_original_RNA_QC/0354fab196a6a77f3704cdc437ea9ebbfc69dfe2ca93f5d17b421a0dff877cf1_genes.csv.gz",
+          "sha256": "08ee30fa912e1f446055c2bca00982bf8481de6c0739c76c273bcc6374e04a9c"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 20666,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 20666,
+          "full_source_RNA_counts": 84858832,
+          "selected_RNA_counts": 84858832,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE349910_original_RNA_QC/GSM10103493.csv.gz",
+            "sha256": "5ee752c148c93c47dfc7f4839aff5faab09c6f85153e0fb607af8d4169dd6cb0"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10103nnn/GSM10103493/suppl/GSM10103493_16_11_30_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10103493_16_11_30_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 50849995,
+          "sha256": "ba39f26cb04336a9a6a09db5addbc78312bdc40e7319c8b45bd3d2b0a5ffd1b7"
+        }
+      ]
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "16original24hPBMC draws/16source patients;8placebo+8KAND567,4IMH/4noIMH per arm. Broader FRACTAL71patient trial is not71deposited RNA samples."
+}

@@ -1,0 +1,1822 @@
+{
+  "dataset_id": "GSE173303",
+  "study_id": "GSE173303",
+  "input_format": "geo_mtx_table",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "orig.ident"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Strict exact barcode join of whole-data metadata to combined counts; retain Blood rows only. Eight original PBMC source IDs map one-to-one to peripheral-blood GSM records. A-prefix aliases explicitly matched to published numeric-B titles; source IDs retained.",
+  "source_metadata": {
+    "accession": "GSE173303",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE173303",
+    "access": "Public GEO processed matrices and metadata",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "n_genes": 21831,
+    "source_cells": 89717,
+    "selected_pbmc_cells": 59255,
+    "gene_identifier_type": "source gene symbols",
+    "original_records": {
+      "GSM5265174": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 7"
+        ],
+        "geo_accession": [
+          "GSM5265174"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871150",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679805"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265175": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 40"
+        ],
+        "geo_accession": [
+          "GSM5265175"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871149",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679806"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265176": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 45"
+        ],
+        "geo_accession": [
+          "GSM5265176"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871147",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679807"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265177": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 56"
+        ],
+        "geo_accession": [
+          "GSM5265177"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871145",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679792"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265178": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 62"
+        ],
+        "geo_accession": [
+          "GSM5265178"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871144",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679793"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265179": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 63"
+        ],
+        "geo_accession": [
+          "GSM5265179"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871142",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679794"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265180": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 65"
+        ],
+        "geo_accession": [
+          "GSM5265180"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871141",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679795"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265181": {
+        "title": [
+          "Synovial fluid cells isolated from patients with arthritis-irAE 76"
+        ],
+        "geo_accession": [
+          "GSM5265181"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Synovial fluid"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Synovial fluid cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871140",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679796"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265182": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 7B"
+        ],
+        "geo_accession": [
+          "GSM5265182"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871139",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679797"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265183": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 40B"
+        ],
+        "geo_accession": [
+          "GSM5265183"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871138",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679798"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265184": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 45B"
+        ],
+        "geo_accession": [
+          "GSM5265184"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871166",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679799"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265185": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 56B"
+        ],
+        "geo_accession": [
+          "GSM5265185"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871165",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679800"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265186": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 62B"
+        ],
+        "geo_accession": [
+          "GSM5265186"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871164",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679801"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265187": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 63B"
+        ],
+        "geo_accession": [
+          "GSM5265187"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871163",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679802"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265188": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 65B"
+        ],
+        "geo_accession": [
+          "GSM5265188"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871162",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679803"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "GSM5265189": {
+        "title": [
+          "Peripheral blood cells isolated from patients with arthritis-irAE 76B"
+        ],
+        "geo_accession": [
+          "GSM5265189"
+        ],
+        "status": [
+          "Public on Mar 01 2022"
+        ],
+        "submission_date": [
+          "Apr 26 2021"
+        ],
+        "last_update_date": [
+          "Mar 01 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell types: Peripheral blood mononuclear cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cDNA were generated for sequencing using standard 10X Genomic protocols",
+          "RNA libraries were prepared for sequencing using standard 10X Genomic protocols"
+        ],
+        "data_processing": [
+          "Reagents, consumables, reaction master mixes, reaction volumes, cycling numbers, cycling conditions, and clean-up steps were completed following 10X Genomics\u2019 guidelines (found in 10X Genomics\u2019 Chromium Single Cell V(D)J Reagent Kits User Guide-Revision L). Quality control steps after cDNA amplification and library preparation steps were carried out by running QubitTM 1X dsDNA HS Assay (Thermo Fisher Scientific) along with Bioanalyzer High-Sensitivity DNA Analysis (Agilent) for concentration and quality assessments. Library sample concentrations were verified with quantitative polymerase chain reaction using a KAPA Library Quantification Kit (Roche). Samples were normalized to 10 nM for pooling. The gene expression libraries and TCR libraries were pooled in a ratio of 5 volumes gene expression library to 1 volume TCR library. The pool was sequenced using a NovaSeq6000 S4-200 cycle flow cell (Illumina). The run parameters used were 26 cycles for read 1, 91 cycles for read 2, 8 cycles for index 1, and 0 cycles for index 2, as stipulated in the protocol mentioned above. Raw sequencing data (fastq file) was demultiplexed and analyzed with 10X Genomics Cell Ranger software using the standard default settings and the cell ranger count command to generate html quality control metrics and cloupe/vloupe files for each sample.",
+          "Raw single-cell RNA-seq data were processed using 10X Genomics Cell Ranger (v3.1.0), including demultiplexing the FASTQ reads.",
+          "Aligning fastq files to the human reference genome (GRCh38, v3.0.0, from 10X Genomics)",
+          "Counting the unique molecular identifier (UMI) (by using \u2018\u2018cellranger count\u2019\u2019 function).",
+          "All patient samples from each dataset were then aggregated by using the \u2018\u2018cellranger aggr\u2019\u2019 function without depth normalization. As a result, a digital cell by gene expression matrix was generated, containing the number of UMIs for each gene detected in each cell.",
+          "In addition, we carried out a number of steps to filter out poor quality data. First, we removed cells with high mitochondrial gene expression because damaged and dead cells often exhibit extensive mitochondrial contamination 60. Specifically, we calculate the proportion of UMIs from mitochondrial genes (all genes with names start with \u201cMT-\u201d or \u201cmt-\u201d) for each cell, then remove cells which contain more than 15% mitochondrial UMIs. Second, we removed cells for which less than 200 genes were detected. Third, doublets were identified using a multi-step approach: 1) library complexity: cells with high complexity libraries (in which detected transcripts are aligned to more than 6500 genes) were removed; 2) Cluster distribution: doublets or multiplets likely form distinct clusters with hybrid expression features and exhibit an aberrantly high gene count; 3) cluster marker gene expression: cells of a cluster express markers from distinct lineages (e.g., cells in the T-cell cluster showed expression of myeloid cell markers and vice versa); 4) doublet detection algorithm: scrublet(version 2020 update) , an algorithm to predict doublets in scRNA-seq data, was applied to further identify and clean doublets that could have been missed by steps 1-3.",
+          "We carefully reviewed canonical marker genes expression on UMAP plots and repeated the above steps multiple times to ensure elimination of most barcodes associated with cell doublets. Forth, we use \u201cRunHarmony\u201d function of \u201charmony\u201d R package 62 to offset the batch effect. In the end, we retained a total of 116,797 cell datasets.",
+          "Supplementary_files_format_and_content: barcodes.tsv.gz: cell IDs, tab-seperated text file.  Features.tsv.gz: gene IDs, tab-separated text file. Matrix.mtx.gz: the 2D matrix in sparse format. Tab-separated. Value and x, y-D index.subT_data_metadata.tsv.gz, tab-separated, T cell annotation, such sub-T cell type, cluster information. whole_data_metadata.tsv.gz, whole cell annotation."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Linghua,,Wang"
+        ],
+        "contact_email": [
+          "LWang22@mdanderson.org"
+        ],
+        "contact_department": [
+          "Genomic medicine"
+        ],
+        "contact_institute": [
+          "MD Anderson Cancer Center"
+        ],
+        "contact_address": [
+          "1881 EAST ROAD"
+        ],
+        "contact_city": [
+          "Houston"
+        ],
+        "contact_zip/postal_code": [
+          "77054"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18871161",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX10679804"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE173303"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      }
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "matrix_assets": {
+    "features": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173303/suppl/GSE173303_features.tsv.gz",
+      "filename": "GSE173303_features.tsv.gz",
+      "expected_bytes": 157846
+    },
+    "barcodes": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173303/suppl/GSE173303_barcodes.tsv.gz",
+      "filename": "GSE173303_barcodes.tsv.gz",
+      "expected_bytes": 369558
+    },
+    "matrix": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173303/suppl/GSE173303_matrix.mtx.gz",
+      "filename": "GSE173303_matrix.mtx.gz",
+      "expected_bytes": 442234813
+    },
+    "metadata": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173303/suppl/GSE173303_whole_data_metadata.tsv.gz",
+      "filename": "GSE173303_whole_data_metadata.tsv.gz",
+      "expected_bytes": 2404618
+    }
+  },
+  "metadata_separator": "\t",
+  "metadata_index_column": "barcode",
+  "source_tissue_column": "control",
+  "source_pbmc_value": "Blood",
+  "source_sample_column": "orig.ident",
+  "source_donor_column": "orig.ident",
+  "specimen_metadata": [
+    {
+      "source_sample_id": "45B",
+      "donor_id": "45B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265184",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Mono",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "62B",
+      "donor_id": "62B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265186",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Mono",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "63B",
+      "donor_id": "63B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265187",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Mono",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "65B",
+      "donor_id": "65B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265188",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Combo",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "76B",
+      "donor_id": "76B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265189",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Combo",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "A40B",
+      "donor_id": "A40B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265183",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Combo",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "A56B",
+      "donor_id": "A56B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265185",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Combo",
+      "age": "not_reported",
+      "sex": "not_reported"
+    },
+    {
+      "source_sample_id": "A7B",
+      "donor_id": "A7B",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_gsm": "GSM5265182",
+      "disease": "immune checkpoint inhibitor-associated inflammatory arthritis",
+      "source_therapy_group": "Mono",
+      "age": "not_reported",
+      "sex": "not_reported"
+    }
+  ],
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "cell.types"
+    }
+  }
+}

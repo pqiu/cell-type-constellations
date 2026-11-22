@@ -1,0 +1,104 @@
+{
+  "dataset_id": "GSE279945_author_sc_counts_reannotated_with_counts",
+  "study_id": "GSE279945",
+  "reviewed_pbmc": true,
+  "url": "https://openproblems-bio.s3.amazonaws.com/public/neurips-2023-competition/sc_counts_reannotated_with_counts.h5ad",
+  "expected_bytes": 3515260667,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "__index__",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_columns": [
+    "plate_name",
+    "well"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Explicit original plate_name/well/donor_id per cell; complete observed567well set and within-well metadata checked against original raw.X object.",
+  "physical_sample_mapping_evidence": "Three source healthy donor/PBMC-lot material groups; exact blood-draw dates unavailable. Each observed culture well is a dependent view, not an additional independent biological specimen.",
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "cell_type",
+      "condition": "sm_name"
+    },
+    "constants": {
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_condition_kind": "ex_vivo_compound",
+      "source_clinical_condition": "healthy_source_donor",
+      "source_age_unit": "years_as_reported",
+      "source_material_policy": "Three source healthy donor/PBMC-lot material groups; exact blood-draw dates unavailable. Each observed culture well is a dependent view, not an additional independent biological specimen.",
+      "source_split_policy": "Unassigned. Source benchmark split is preserved as metadata and is not an independent-donor split. All wells and baseline assays of the same source donor must share a future project split.",
+      "source_gene_policy": "All21265provided native gene-symbol coordinates retained. No invented Ensembl IDs or missing-gene zero filling; native libraries define star geometry.",
+      "source_QC_policy": "Own500count/200gene/20percentMTQC; all37provided MT-prefixed RNA rows includingrRNA/tRNA contribute. Source filtering/reannotation and omitted design wells not reconstructed.",
+      "source_clinical_policy": "Ex vivo compound, dose and timepoint are culture metadata, not patient medication or disease severity. Exact draw dates and global donor aliases unavailable.",
+      "source_primary_scope": "Actual deposited298087cells/567observed wells differ from primary301785cells/576design wells; missing rows/wells not imputed. Three donors, six plates and48pooled libraries.",
+      "source_library_policy": "Author library_id uses plate_row labels. An exact48pair cell-ID crosswalk preserves original GEO SRTP names; no per-cell GSM inferred from capture order."
+    },
+    "value_maps": {
+      "age": {
+        "source": "donor_id",
+        "values": {
+          "Donor 1": 45,
+          "Donor 2": 52,
+          "Donor 3": 45
+        }
+      },
+      "sex": {
+        "source": "donor_id",
+        "values": {
+          "Donor 1": "female",
+          "Donor 2": "male",
+          "Donor 3": "male"
+        }
+      },
+      "source_primary_BMI": {
+        "source": "donor_id",
+        "values": {
+          "Donor 1": 25.4,
+          "Donor 2": 37.2,
+          "Donor 3": 24.7
+        }
+      },
+      "source_primary_CMV_as_reported": {
+        "source": "donor_id",
+        "values": {
+          "Donor 1": "Neg",
+          "Donor 2": "Pos",
+          "Donor 3": "Neg"
+        }
+      }
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE279945",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279945",
+    "primary_DOI": "10.52202/079017-0650",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE279945_source_identity_review.json",
+      "sha256": "989f65248a9c5d08026cc75829c6b4e10055abf22c27e36bbe3abe998b1aed5f"
+    },
+    "original_count_audit": {
+      "path": "references/datasets/GSE279945_author_original_native_RNA_count_audit.json",
+      "sha256": "0b1d2140e7b7f49c0d0674dba3bc8c8ca1aefe32bbfd59c16596f5332b05c7c0"
+    },
+    "original_count_equivalence": {
+      "path": "references/datasets/GSE279945_original_GEO_and_author_raw_count_equivalence.json",
+      "sha256": "7626388b4a3c39b89d17b4c75e6129e807213d5a0d197f625ba7d0adcde78daf"
+    },
+    "access": "Public GEO and explicitly public unsigned author S3 processed RNA count objects; no sequencing reads requested",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "CC BY4.0, primary appendixA.2 page18",
+    "sample_count_policy": "Three source healthy donor/PBMC-lot material groups; exact blood-draw dates unavailable. Each observed culture well is a dependent view, not an additional independent biological specimen.",
+    "baseline_policy": "Baseline nuclear RNA and cultured single-cell RNA derive from the same three donor codes. Retain native coordinate/assay groups separately; no extra donor count for baseline, hashtags or chromatin."
+  }
+}

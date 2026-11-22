@@ -1,0 +1,82 @@
+{
+  "dataset_id": "GSE161918_native_reassembled",
+  "study_id": "GSE161918",
+  "input_format": "partitioned_h5ad_counts",
+  "reviewed_pbmc": true,
+  "source_assets": [
+    {
+      "filename": "GSE161918_21d3e683-80a4-4d9b-bc89-ebb2df513dde.h5ad",
+      "url": "https://datasets.cellxgene.cziscience.com/3c83c0d9-af52-4f4b-96cf-a4d20ebdfb63.h5ad",
+      "expected_bytes": 1738950879,
+      "sha256": "55cb38afe925dd242ec4b711759e1bea5b6b6cfe0fe3effe48ab349eca394e58",
+      "expected_cells": 246964,
+      "partition_label": "author_adaptive_partition"
+    },
+    {
+      "filename": "GSE161918_30cd5311-6c09-46c9-94f1-71fe4b91813c.h5ad",
+      "url": "https://datasets.cellxgene.cziscience.com/60cc18b6-07c0-4fd5-8ae2-c1e8c0461731.h5ad",
+      "expected_bytes": 971636085,
+      "sha256": "56b6aff004bd6a0671c34d149917810c9053cb52c4b378c208204fb6a8570cce",
+      "expected_cells": 125117,
+      "partition_label": "author_innate_partition"
+    }
+  ],
+  "partition_reassembly_evidence": "Two public author adaptive/innate partitions have disjoint original cell IDs and exactly identical 30,000 native RNA gene IDs/symbols. Reunite unchanged raw.X rows before SCimilarity; author cell labels/embeddings are not used to construct expression geometry. Exact original donor_id plus timepoint define 67 observed source groups, 65 after excluding HDML/HDVO alternate-freezing controls. These are source donor/visit groups, not sequencing lanes, bulk samples, or globally proven unique draws. Clinical time fields agree within groups across partitions.",
+  "source_gene_symbol_column": "feature_name",
+  "raw_location": "X",
+  "annotation_gene_column": "feature_name",
+  "sample_columns": [
+    "donor_id",
+    "timepoint"
+  ],
+  "sample_mapping_evidence": "Two public author adaptive/innate partitions have disjoint original cell IDs and exactly identical 30,000 native RNA gene IDs/symbols. Reunite unchanged raw.X rows before SCimilarity; author cell labels/embeddings are not used to construct expression geometry. Exact original donor_id plus timepoint define 67 observed source groups, 65 after excluding HDML/HDVO alternate-freezing controls. These are source donor/visit groups, not sequencing lanes, bulk samples, or globally proven unique draws. Clinical time fields agree within groups across partitions.",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "exclude_source_values": {
+    "donor_id": [
+      "HDML",
+      "HDVO"
+    ]
+  },
+  "metadata_mapping": {
+    "constants": {
+      "source_identity_policy": "Donor/timepoint groups from published cell metadata; original onset/hospital days retained. T0/T1 are not assigned common calendar intervals across donors.",
+      "source_selection_policy": "Original study combines sorted/enriched and unsorted PBMC material; original per-cell capture sorting provenance is not resolved by adaptive/innate author-label partitions. Composition and type coverage may reflect selection.",
+      "source_exclusion_policy": "Original GEO design excludes HDML/HDVO alternate-freezing samples. CHI014 technical control and SHD8 author-excluded donor are absent from these deposited atlas partitions; no new samples inferred.",
+      "source_geometry_policy": "Use unchanged native RNA counts, cell TP10K and cell log1p(TP10K) means. Native 30,000-gene deposited coverage retained; other source genes unavailable, not zero-filled.",
+      "source_overlap_policy": "GSE161918, HCA ae62bb31-55ca-4127-b0fb-b1771a604645 and CELLxGENE ed9185e3-5b82-40c7-9824-b2141590c7f0 are repository aliases. No completed exports found for these source records before this acquisition; global donor overlap unresolved."
+    }
+  },
+  "source_metadata": {
+    "accession": "GSE161918",
+    "publication": "https://doi.org/10.1016/j.cell.2021.02.018",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE161918",
+    "collection_url": "https://cellxgene.cziscience.com/collections/ed9185e3-5b82-40c7-9824-b2141590c7f0",
+    "HCA_url": "https://explore.data.humancellatlas.org/projects/ae62bb31-55ca-4127-b0fb-b1771a604645",
+    "access": "Public processed human PBMC RNA count matrices; unrelated molecular modalities not acquired.",
+    "access_terms_url": "https://cellxgene.cziscience.com/terms",
+    "license": "HCA project page states CC BY 4.0; preserve atlas and original publication attribution.",
+    "raw_count_location": "Original raw.X in each atlas partition; source X normalized and omitted.",
+    "partition_fixture": {
+      "passed": true,
+      "adapter_sha256": "d7d97916b8d46c85cdea51e15668141a5db2cff709eb1cdd07a850ccc0a39b7b",
+      "checks": [
+        "exact native RNA count rows",
+        "cell and gene identities/order",
+        "normalized X ignored",
+        "source assets preserved",
+        "overlapping cells rejected",
+        "reordered axes rejected",
+        "negative counts rejected"
+      ]
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

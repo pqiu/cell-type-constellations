@@ -1,0 +1,66 @@
+{
+  "dataset_id": "GSE188620",
+  "study_id": "GSE188620",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE188620_complete_original_RNA_audit.json",
+    "bytes": 14344,
+    "sha256": "3b0596a5cd4c10c3e5890c5ab7acf7697353d4441b1bab8f39a554c272a3b841"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE188620_source_identity_review.json",
+    "bytes": 3999,
+    "sha256": "4c0f19aca81fee349c3321ffa9ab0663121b2d7cf342855ebcd52833d8d874a3"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Literal GEO patient codes103-018/103-026/103-029/103-051 and Pre vaccine/Post vaccine fields establish four repeated participants/eight screening/surgery specimens. Original GSM is the specimen key; keep both phases together by donor UID. No identity inferred from RNA/barcodes or clinical similarity.",
+  "physical_sample_mapping_evidence": "Eight original PBMC screening/surgery specimens from four literal participant codes,103-018/103-026/103-029/103-051. Repeated phases remain dependent by donor UID. Only original RNA triplets included; receptor contigs, bulk tumour RNA and larger17person trial do not add PBMC specimens. Four participants were selected as immunological responders by mass cytometry; preserve ascertainment context.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_treatment_phase_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE188620",
+    "primary_PMID": "34882581",
+    "publication": "https://doi.org/10.1172/JCI151239",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188620",
+    "access": "Public original whole-PBMC RNA count triplets/coded metadata; receptor assays excluded.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE188620_source_identity_review.json",
+      "bytes": 3999,
+      "sha256": "4c0f19aca81fee349c3321ffa9ab0663121b2d7cf342855ebcd52833d8d874a3"
+    },
+    "source_unit": "Eight original PBMC screening/surgery specimens from four literal participant codes,103-018/103-026/103-029/103-051. Repeated phases remain dependent by donor UID. Only original RNA triplets included; receptor contigs, bulk tumour RNA and larger17person trial do not add PBMC specimens. Four participants were selected as immunological responders by mass cytometry; preserve ascertainment context.",
+    "identity_policy": "Literal GEO patient codes103-018/103-026/103-029/103-051 and Pre vaccine/Post vaccine fields establish four repeated participants/eight screening/surgery specimens. Original GSM is the specimen key; keep both phases together by donor UID. No identity inferred from RNA/barcodes or clinical similarity.",
+    "clinical_policy": "Source low-grade glioma cohort, screening before and surgery after neoadjuvant vaccination. Exact individual age, sex, collection day, treatment dose and clinical outcomes unassigned. Larger17participant trial is not the PBMC scRNA participant count.",
+    "reuse_policy": "Only eight original PBMC RNAcarriers included; receptor contigs, bulk tumour RNA and larger clinical cohorts are not additional PBMC specimens. No clinical efficacy or causal inference from expression centroids. Global aliases unresolved.",
+    "selection_policy": "Source explicitly selected four immunological responders using mass cytometry. Preserve outcome/composition-based ascertainment; these are not an unselected representative cohort, even when phenotype labels are omitted from discovery.",
+    "cell_calling_policy": "Own fixed RNAQC, not a reproduction of author final cell/doublet/cluster selection. Model labels unrestricted; no independently biologically validated annotation or doublet-free claim.",
+    "gene_policy": "All33538original RNA feature IDs and symbols retained in exact supplied order. No highly variable gene selection, symbol modernization, intersection or zero filling.",
+    "count_semantics": "Provided original CellRanger gene UMI counts; no inverse normalization or rounding.",
+    "source_limitations": "Four selected repeated participants; source ascertainment/composition bias preserved. Exact demographics/days/outcomes and global aliases unresolved. No biological annotation, clinical efficacy or constellation validation."
+  }
+}

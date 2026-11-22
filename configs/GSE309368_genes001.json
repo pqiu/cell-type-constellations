@@ -1,0 +1,2264 @@
+{
+  "dataset_id": "GSE309368_genes001",
+  "study_id": "GSE309368",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original donor labels, exact RNA asset names and Ficoll low-density CD11b-selected source protocol agree. Five healthy and eight OCSCC source codes; thirteen high-density blood counterparts and eight tumors excluded from this phase and not new independent donors.",
+  "source_metadata": {
+    "accession": "GSE309368",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/41385607/",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE309368"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE309368",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+    "source_processing": [
+      "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Tab-separated values files and matrix files."
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "genes": 36601,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "source_coordinate_format": "Original native H5 Ensembl ID/name arrays, retained in original order"
+      }
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9266318",
+      "donor_id": "HD1",
+      "source_metadata": {
+        "title": [
+          "Healthy donor 1, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266318"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HD_1_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976248",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696021"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266318/suppl/GSM9266318_HD1_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266318_HD1_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 9628224,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5502,
+          "full_source_RNA_counts": 23819870,
+          "selected_RNA_counts": 23175375,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266318.csv.gz",
+            "sha256": "528b397b43a3aff14b0b748d9d1bcde9ca706e3bc7ae46b3b6e3ea6b4e84bce8"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266318/suppl/GSM9266318_HD1_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266318_HD1_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 14598566,
+          "sha256": "2decaad7f753fd23944f292fa5441b78568554c34bd01c611da552161abc007e"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HD1",
+        "condition": "Healthy control",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266319",
+      "donor_id": "HD2",
+      "source_metadata": {
+        "title": [
+          "Healthy donor 2, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266319"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HD_2_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976247",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696022"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266319/suppl/GSM9266319_HD2_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266319_HD2_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 13583210,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10000,
+          "full_source_RNA_counts": 33596147,
+          "selected_RNA_counts": 33596147,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266319.csv.gz",
+            "sha256": "cbbb2afce16061a0a64a8af5043f6ed32a0998b9957072e7c2e840538c3ea829"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266319/suppl/GSM9266319_HD2_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266319_HD2_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 20226536,
+          "sha256": "6ff092f40bd50b270bfec118d45f821c26cdd1ace74aa573368928bca9b6889f"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HD2",
+        "condition": "Healthy control",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266320",
+      "donor_id": "HD3",
+      "source_metadata": {
+        "title": [
+          "Healthy donor 3, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266320"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HD_3_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976246",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696023"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266320/suppl/GSM9266320_HD3_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266320_HD3_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 7572089,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5193,
+          "full_source_RNA_counts": 18805506,
+          "selected_RNA_counts": 18087643,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266320.csv.gz",
+            "sha256": "a5fe6d10ce657bf3786a348cd311b489f63eb9d0319c47ed9a70bc2dddb10ce5"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266320/suppl/GSM9266320_HD3_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266320_HD3_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 11804445,
+          "sha256": "a4adb1479b529fd95f07e56aea60cb3fa95d3fae202aeaff2728a74147c45e5b"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HD3",
+        "condition": "Healthy control",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266321",
+      "donor_id": "HD4",
+      "source_metadata": {
+        "title": [
+          "Healthy donor 4, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266321"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HD_4_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976245",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696024"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266321/suppl/GSM9266321_HD4_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266321_HD4_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 21341387,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7959,
+          "full_source_RNA_counts": 59554353,
+          "selected_RNA_counts": 59275740,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266321.csv.gz",
+            "sha256": "e9fecdd1463358ce69faf43d1d1f760a8b8deeff1de0a87c98b7c46c09c61cde"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266321/suppl/GSM9266321_HD4_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266321_HD4_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 30809242,
+          "sha256": "a543d7fe177a982f42484646d2a8b7203911b9712d3c2cb01c9936fff357b151"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HD4",
+        "condition": "Healthy control",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266322",
+      "donor_id": "HD5",
+      "source_metadata": {
+        "title": [
+          "Healthy donor 5, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266322"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HD_5_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976244",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696025"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266322/suppl/GSM9266322_HD5_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266322_HD5_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 5176552,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6279,
+          "full_source_RNA_counts": 8754519,
+          "selected_RNA_counts": 8042641,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266322.csv.gz",
+            "sha256": "1ad77a72868a51412e978aad6ceb8e3e6b02f34556e38c30256e051fda0058e5"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266322/suppl/GSM9266322_HD5_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266322_HD5_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 8260716,
+          "sha256": "902197e3b434cc18f3d9572e6add3f3dab7be44eca19edaf3682c81621b9bc65"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HD5",
+        "condition": "Healthy control",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266328",
+      "donor_id": "HNSCC1",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 1, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266328"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_1_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976238",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696032"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266328/suppl/GSM9266328_HNSCC1_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266328_HNSCC1_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 13333128,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7656,
+          "full_source_RNA_counts": 36375413,
+          "selected_RNA_counts": 35910439,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266328.csv.gz",
+            "sha256": "5b2ff5504d40156df5a6abd0b11c1ba7987e7c0b34c67f1515e016d39df2da1c"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266328/suppl/GSM9266328_HNSCC1_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266328_HNSCC1_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 19828198,
+          "sha256": "88962c03e9d1c4110a9ea37e9e51aba1396ad43919605d0d0d47500a41c26d7d"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC1",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266329",
+      "donor_id": "HNSCC2",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 2, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266329"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_2_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976237",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696033"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266329/suppl/GSM9266329_HNSCC2_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266329_HNSCC2_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 5015322,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3913,
+          "full_source_RNA_counts": 10540479,
+          "selected_RNA_counts": 9661171,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266329.csv.gz",
+            "sha256": "1a9e3c950d9cb9b6dbc452667c3af1a0598399c44be0e0c94efdbb1c8f5db201"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266329/suppl/GSM9266329_HNSCC2_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266329_HNSCC2_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 8092656,
+          "sha256": "a755b0bcd3fa35a509da5b7650b208dfa94b2deae02b3f438cfc416c894087cd"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC2",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266330",
+      "donor_id": "HNSCC3",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 3, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266330"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_3_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976236",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696034"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266330/suppl/GSM9266330_HNSCC3_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266330_HNSCC3_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 6767494,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3466,
+          "full_source_RNA_counts": 20419322,
+          "selected_RNA_counts": 19593798,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266330.csv.gz",
+            "sha256": "29fae1646029c898244c0dd71d14500e04d8782173ccb6cab4179a7ab0db44c6"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266330/suppl/GSM9266330_HNSCC3_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266330_HNSCC3_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 10530748,
+          "sha256": "fc0004367dc4d5b126541ce040332490443585a646fc53dcbbfbe2a78c1a0c33"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC3",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266331",
+      "donor_id": "HNSCC4",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 4, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266331"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_4_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976235",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696035"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266331/suppl/GSM9266331_HNSCC4_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266331_HNSCC4_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 7760379,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6131,
+          "full_source_RNA_counts": 20113002,
+          "selected_RNA_counts": 19457768,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266331.csv.gz",
+            "sha256": "72a0ebf2e4642f19cdec18b1dd8bd92a9c3f0ee11b14d67afe1a8d6fb2999380"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266331/suppl/GSM9266331_HNSCC4_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266331_HNSCC4_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 12150671,
+          "sha256": "73146c5f917c7b1fcd9dae92a94d5bd7534c9be0fead0df17cdb7ebe7a94023a"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC4",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266332",
+      "donor_id": "HNSCC5",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 5, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266332"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_5_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976234",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696036"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266332/suppl/GSM9266332_HNSCC5_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266332_HNSCC5_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 13813388,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4087,
+          "full_source_RNA_counts": 45302869,
+          "selected_RNA_counts": 45015255,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266332.csv.gz",
+            "sha256": "b8e25b2565755ab107b51d9b4e4323956da11046d48297c18f43e410fdbffc0d"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266332/suppl/GSM9266332_HNSCC5_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266332_HNSCC5_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 20139596,
+          "sha256": "0c261e1bfdeb500aa4dd9a8de4f2bfd6f96192ce24c57650d1dea75a2b7b204a"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC5",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266333",
+      "donor_id": "HNSCC6",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 6, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266333"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_6_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976233",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696037"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266333/suppl/GSM9266333_HNSCC6_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266333_HNSCC6_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 1748323,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2139,
+          "full_source_RNA_counts": 2378462,
+          "selected_RNA_counts": 1581437,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266333.csv.gz",
+            "sha256": "95132be1dd4363078cdc97f6d9bb42dbabbfc82cbde5906964c8a72f7fef8954"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266333/suppl/GSM9266333_HNSCC6_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266333_HNSCC6_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 3082931,
+          "sha256": "ff0608a21e11d7f4ecf40e785ba328c0b471beacc65754b544201307ac57691b"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC6",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266334",
+      "donor_id": "HNSCC7",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 7, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266334"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_7_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976232",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696038"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266334/suppl/GSM9266334_HNSCC7_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266334_HNSCC7_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 35906435,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10000,
+          "full_source_RNA_counts": 127013539,
+          "selected_RNA_counts": 127013539,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266334.csv.gz",
+            "sha256": "75ae4ee9fd866813a825ce77ecceb22ee50494900e86b9f0f76b5120ec6eb003"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266334/suppl/GSM9266334_HNSCC7_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266334_HNSCC7_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 50795795,
+          "sha256": "82917fe508fad4df6bcf27fe56dcab0234e5c78f94490ce15ae02bc1f8896052"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC7",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    },
+    {
+      "accession": "GSM9266335",
+      "donor_id": "HNSCC8",
+      "source_metadata": {
+        "title": [
+          "OCSCC patient 8, peripheral blood, low density CD11b+ cells"
+        ],
+        "geo_accession": [
+          "GSM9266335"
+        ],
+        "status": [
+          "Public on Sep 26 2025"
+        ],
+        "submission_date": [
+          "Sep 26 2025"
+        ],
+        "last_update_date": [
+          "Dec 02 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: tissue",
+          "cell type: CD11b+ cells"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole peripheral blood was collected via venipuncture into EDTA vacutainers (BD) and processed immediately. Blood was diluted 1:1 in PBS and layered onto 15 mL Ficoll-Paque (Cytiva) for density gradient centrifugation (400 \u00d7 g, 30 min, room temperature, no acceleration or brake). The distal fraction containing red blood cells (RBCs) and high-density neutrophils was harvested and subjected to two rounds of RBC depletion (STEMCELL) followed by one round of RBC lysis (BioLegend), according to manufacturer instructions. The intermediate buffy coat layer containing low-density mononuclear cells and neutrophils was collected and subjected to two rounds of platelet removal by dilution in PBS with 2% fetal bovine serum (FBS) and centrifugation (120 \u00d7 g, 10 min, room temperature, no acceleration or brake). CD11b\u207a cells were isolated from both high-density and low-density blood fractions using positive magnetic selection. Tumor biopsies were transported from the operating room to the laboratory and processed immediately. Tissues were minced into <1 mm fragments and enzymatically and mechanically dissociated into single-cell suspensions using the Human Tumor Dissociation Kit and gentleMACS Dissociator (Miltenyi Biotec) following manufacturer protocols. CD45\u207a leukocytes were isolated from dissociated tumor suspensions using positive magnetic selection. Isolated cells were washed in PBS, filtered through 70 \u03bcm strainers, and assessed for viability and concentration using acridine orange/propidium iodide (AO/PI) staining on a Cellometer Auto 2000 (Nexcelom). Cells were adjusted to 1,000 cells/\u03bcL and loaded onto the 10x Genomics Chromium Controller with a target recovery of 8,000 cells per sample.",
+          "Cells were mixed with 5\u2019 v2 or 3\u2019 v3 Next GEM Kit reagents (10X Genomics) and single cells were captured along with barcoded gelbeads. Following reverse transcription, cDNA was amplified, and gene expression libraries were constructed according to the manufacturer\u2019s recommendations. Each DNA library was loaded into a sequencing lane on a NovaSeq system (Illumina) and was sequenced with paired-end reads of 75 bp."
+        ],
+        "description": [
+          "Library name: HNSCC_8_PBMC_Low"
+        ],
+        "data_processing": [
+          "The quality of sequencing reads was assessed using FastQC and MultiQC. Demultiplexed FASTQ files were processed with Cell Ranger (v7.1.0, 10x Genomics) using default parameters to align reads to the human reference genome GRCh38 and generate per-sample gene expression matrices of unique molecular identifier (UMI) counts. The resulting gene-barcode matrices were imported into Seurat (v4.0.1, R package) for quality control and downstream analysis. Cells were excluded if they met any of the following criteria: (1) fewer than 200 or more than 5000 detected genes, (2) greater than 20% reads mapping to mitochondrial genes, or (3) fewer than 400 or more than 20,000 detected UMIs, indicating potential low-quality cells or doublets. Remaining high-quality cells were normalized using the NormalizeData function (method = \"LogNormalize\", scale.factor = 10,000). Highly variable genes (n = 2,000) were identified using the FindVariableFeatures function with the \"vst\" method. Data were scaled and centered with ScaleData. Dimensionality reduction was performed by principal component analysis (PCA) using the top 30 principal components. These components were used to construct a shared nearest-neighbor (SNN) graph (FindNeighbors) and define clusters (FindClusters). Cell type annotation was performed using SingleR (v1.8.1), referencing the MonacoImmuneData() datasets. Non-neutrophils were removed from downstream analysis. For visualization, the uniform manifold approximation and projection (UMAP) algorithm was applied to project the cells into two-dimensional space.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Clint,Tanner,Allen"
+        ],
+        "contact_email": [
+          "clint.allen@nih.gov"
+        ],
+        "contact_phone": [
+          "240-858-7773"
+        ],
+        "contact_laboratory": [
+          "Allen Lab"
+        ],
+        "contact_department": [
+          "NIDCD"
+        ],
+        "contact_institute": [
+          "NIH"
+        ],
+        "contact_address": [
+          "10 Center Drive, Room 7N240C"
+        ],
+        "contact_city": [
+          "Bethesda"
+        ],
+        "contact_state": [
+          "MD"
+        ],
+        "contact_zip/postal_code": [
+          "20892"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN51976231",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30696039"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266335/suppl/GSM9266335_HNSCC8_LD_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE309368"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9266335_HNSCC8_LD_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10000,
+          36601
+        ],
+        "nonzeros": 33439599,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10000,
+        "cells": 10000,
+        "genes": 36601,
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE309368_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "2792a910fd7426c4c3d8a737efaf64d9fc951aa43930f1fc1cae59dc7ea58665"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8279,
+          "full_source_RNA_counts": 136866443,
+          "selected_RNA_counts": 136254040,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE309368_original_RNA_QC/GSM9266335.csv.gz",
+            "sha256": "4b35c3587845deb350218cba48ee6e40b65e800cf8d15a864b6a2968a2818e09"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9266nnn/GSM9266335/suppl/GSM9266335_HNSCC8_LD_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9266335_HNSCC8_LD_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 46773028,
+          "sha256": "7e353f775ad988eaf0ef4ab2491454071864f773cd60f801b74ec435213794a6"
+        }
+      ],
+      "metadata": {
+        "source_participant_code": "HNSCC8",
+        "condition": "Oral cavity squamous cell carcinoma",
+        "source_specimen": "Ficoll low-density blood fraction, CD11b-positive selection",
+        "source_identity_policy": "Exact original source title and RNA asset basename agree on donor and low-density compartment. One selected capture per source code; dense-blood and tumor counterparts are not new independent participants.",
+        "source_selection_policy": "CD11b-positive enrichment from low-density buffy coat; selected myeloid cells and low-density neutrophils can occur. Not whole-PBMC composition. No removal of cells merely for a neutrophil annotation.",
+        "source_processing_policy": "Original deposited filtered Gene Expression counts used. Source methods describe later Seurat filtering, normalization and non-neutrophil removal; do not assume these later steps were applied to the deposited Cell Ranger count carrier. Apply unchanged project RNA QC independently.",
+        "source_demographic_policy": "Individual age, sex, stage, prior therapy and exact draw date not independently joined; no cohort-average imputation.",
+        "source_alias_policy": "Source healthy and HNSCC prefixes kept distinct; global cross-study identity unresolved.",
+        "split_assignment": "unassigned; keep same participant compartments and any later visits together"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "preconversion_min_rna_counts": 500
+}

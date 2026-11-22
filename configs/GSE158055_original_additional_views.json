@@ -1,0 +1,63 @@
+{
+  "dataset_id": "GSE158055_original_additional_views",
+  "study_id": "0a839c4b-10d0-4d64-9272-684c49a2c8ba",
+  "input_format": "native_mtx_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_columns": [
+    "sampleID"
+  ],
+  "physical_sample_columns": [
+    "source_material_group_code"
+  ],
+  "sample_mapping_evidence": "Exact original cellName/sampleID field plus original GEO and workbook accession/patient joins; retain all68capture views independently.",
+  "physical_sample_mapping_evidence": "Conservative source participant/day material groups, a lower-bound accounting unit. Different source days imply distinct observations; multiple sorting/capture labels on one day are not extra independent specimens. Healthy control labels define one conservative group per participant without inventing dates. No claim that nominally grouped captures share an exact physical draw or aliquot.",
+  "native_count_audit": {
+    "path": "references/datasets/GSE158055_complete_original_native_RNA_count_audit.json",
+    "sha256": "407ee373ae5fe9c0c0bb9a5dd2258c21b12bc70fd72be70cb739108621093db9"
+  },
+  "material_accounting_review": {
+    "path": "references/datasets/GSE158055_original_material_accounting_review.json",
+    "sha256": "b065a1208b19b0653e49d22250c75e3fc6983570b9d18aa828597d5348429383"
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "celltype",
+      "condition": "source_severity_as_reported",
+      "age": "source_age_as_reported",
+      "sex": "source_sex_as_reported"
+    },
+    "constants": {
+      "source_age_unit": "years_as_reported_in_primary_cohort"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE158055",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158055",
+    "publication": "https://doi.org/10.1016/j.cell.2021.01.053",
+    "access": "Public original processed sparse RNA counts and original sample/cell metadata. Raw sequencing unavailable for patient privacy and not requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "original_material_accounting_review": {
+      "path": "references/datasets/GSE158055_original_material_accounting_review.json",
+      "sha256": "b065a1208b19b0653e49d22250c75e3fc6983570b9d18aa828597d5348429383"
+    },
+    "additional_group_count": 27,
+    "additional_study_donor_codes": 21,
+    "total_observed_accounting_groups": 32,
+    "total_observed_donor_codes": 26,
+    "observation_views": 68,
+    "sample_count_policy": "Incremental union against existing110source sample groups. Five nominal patient/day matches to existing groups add views/cells but no material/donor count. Remaining27conservative source patient/day groups include21source donor codes absent from existing106codes. Exact shared aliquots are unverified; no capture pooling."
+  }
+}

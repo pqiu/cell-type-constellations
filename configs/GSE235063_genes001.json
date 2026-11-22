@@ -1,0 +1,3163 @@
+{
+  "dataset_id": "GSE235063_genes001",
+  "study_id": "GSE235063",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Exact original GEO patient/visit titles, source Blood/Ficoll protocol and original author patient/library/sample rows identify13draws/11people. Raw triplets selected explicitly; processed normalized matrices,62marrow specimens and private sequencing reads excluded.",
+  "source_metadata": {
+    "accession": "GSE235063",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235063",
+      "https://pubmed.ncbi.nlm.nih.gov/37977148/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235063",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+    "source_processing": [
+      "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+      "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+      "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+      "Assembly: HG38",
+      "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "genes": 33538,
+        "excluded_non_RNA_features": 0,
+        "complete_primary_mitochondrial_gene_symbols": true,
+        "annotation_symbol_overlap": 28113,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE235063_gene_coordinates/25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21.csv.gz",
+          "sha256": "a49f9a2674125f12530760f3cd034e6ecbef912780f1cba68a0ddac70fc03050"
+        },
+        "identifier_policy": "Original gene IDs and original symbols retained. Only explicitly configured aliases/prefixes are used for annotation; no genome assembly or Ensembl IDs invented."
+      }
+    ],
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE235063_source_identity_review.json",
+      "sha256": "977229f8b8c16bb5259c1dcd967222de44cd96fc5efea329c4cfddb8a4d63790"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7494259",
+      "donor_id": "PAUZRT",
+      "source_metadata": {
+        "title": [
+          "PAUZRT_Rem_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494259"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494259_AML16_REM_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494259_AML16_REM_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494259_AML16_REM_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494259_AML16_REM_processed_metadata.tsv.gz",
+        "sha256": "2a41343a137d3dd76802fb5a6b1c2b03ecca3f6e7125dd7be0e843134f2ee1b9",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494259_AML16_REM_processed_metadata.tsv.gz",
+        "source_author_cells": 5153
+      },
+      "metadata": {
+        "source_participant_code": "PAUZRT",
+        "source_visit_code": "Rem",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Remission",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAUZRT",
+        "source_author_Patient_Sample": "Remission",
+        "source_author_Library_ID": "AML16_REM",
+        "source_author_GEO_ID": "PAUZRT_Rem_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "155",
+        "source_author_Disease_free_days": "548",
+        "source_author_Clinical_Blast_Percent": "NA",
+        "source_author_Expected_Driving_Aberration": "RUNX1-RUNX1T1",
+        "source_author_Subgroup": "RUNX",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_raw_genes.tsv.gz",
+          "filename": "GSM7494259_AML16_REM_raw_genes.tsv.gz",
+          "expected_bytes": 254822,
+          "sha256": "81139c7261ae993f4e3f61b8fa0bad7b657d2129e0f7bf68a7e39c5d7b0f9f4b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_raw_barcodes.tsv.gz",
+          "filename": "GSM7494259_AML16_REM_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367603,
+          "sha256": "a9cb43a3e403f85f993040a2a48bb7cb3d98429b834f1b987cf38d6f61ddc0f2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494259/suppl/GSM7494259_AML16_REM_raw_matrix.mtx.gz",
+          "filename": "GSM7494259_AML16_REM_raw_matrix.mtx.gz",
+          "expected_bytes": 56851099,
+          "sha256": "878371f1f776c8b2dd964ec0c17b3148eef985b1f37000bf96ce934c10c5680c"
+        }
+      ],
+      "genes_member": "GSM7494259_AML16_REM_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494259_AML16_REM_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494259_AML16_REM_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 16435109,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1042529,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 45926425,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6657,
+          "source_positive_RNA_barcodes": 1042529,
+          "full_source_RNA_counts": 45926425,
+          "selected_RNA_counts": 40175953,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494259.csv.gz",
+            "sha256": "e5611ca563a828f2a505aa8ae5f32bd047fc73f51a0045ce3fea88612dd74bbd"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494260",
+      "donor_id": "PAWNYX",
+      "source_metadata": {
+        "title": [
+          "PAWNYX_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494260"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494260_AML6_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494260_AML6_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494260_AML6_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494260_AML6_DX_processed_metadata.tsv.gz",
+        "sha256": "9262773d82739b99dc1a8bf3ff0ae84775f336540081e9b9985689f053c0abf9",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494260_AML6_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 6327
+      },
+      "metadata": {
+        "source_participant_code": "PAWNYX",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAWNYX",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML6_DX",
+        "source_author_GEO_ID": "PAWNYX_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "90",
+        "source_author_Disease_free_days": "335",
+        "source_author_Clinical_Blast_Percent": "80",
+        "source_author_Expected_Driving_Aberration": "KMT2A-MLLT3",
+        "source_author_Subgroup": "KMT2A",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494260_AML6_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254820,
+          "sha256": "ba4da21a9c6fe6ad401fc2d60334505f7f0e1432bc00738c0eb043810cb44bf7"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494260_AML6_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367601,
+          "sha256": "5108bbc5f8ce794ae0ddaee4b8da3f644909164a40f19e7e51aa2db4c6e83f3d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494260/suppl/GSM7494260_AML6_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494260_AML6_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 79014793,
+          "sha256": "b8f5d80a7c5c6aa33f088e3cf40be11975febcdf9d60990658fecf6b0fbbab73"
+        }
+      ],
+      "genes_member": "GSM7494260_AML6_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494260_AML6_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494260_AML6_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 22985881,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1597126,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 67085300,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9381,
+          "source_positive_RNA_barcodes": 1597126,
+          "full_source_RNA_counts": 67085300,
+          "selected_RNA_counts": 57308735,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494260.csv.gz",
+            "sha256": "4f78bf90bf951c732ee08ad330b726128409516ffbbcb7638b1e4094e1c79a41"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494283",
+      "donor_id": "PAXGDG",
+      "source_metadata": {
+        "title": [
+          "PAXGDG_Rel_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494283"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494283_AML17_REL_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494283_AML17_REL_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494283_AML17_REL_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494283_AML17_REL_processed_metadata.tsv.gz",
+        "sha256": "00370f0109a00fc2ec061b0f2756de049b9c08c2369d2a3c52849080a38638e9",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494283_AML17_REL_processed_metadata.tsv.gz",
+        "source_author_cells": 9167
+      },
+      "metadata": {
+        "source_participant_code": "PAXGDG",
+        "source_visit_code": "Rel",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Relapse",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAXGDG",
+        "source_author_Patient_Sample": "Relapse",
+        "source_author_Library_ID": "AML17_REL",
+        "source_author_GEO_ID": "PAXGDG_Rel_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "68",
+        "source_author_Disease_free_days": "545",
+        "source_author_Clinical_Blast_Percent": "19",
+        "source_author_Expected_Driving_Aberration": "CBFB-MYH11",
+        "source_author_Subgroup": "CBFB",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_raw_genes.tsv.gz",
+          "filename": "GSM7494283_AML17_REL_raw_genes.tsv.gz",
+          "expected_bytes": 254822,
+          "sha256": "e579c8180ecb12949c584d639cdd52cac0448490dc90db51281908b5109e2491"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_raw_barcodes.tsv.gz",
+          "filename": "GSM7494283_AML17_REL_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367603,
+          "sha256": "73ae5725b76c0368686406157c489acd6290ec51c7a84aa96df01fcc8dfebbb0"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494283/suppl/GSM7494283_AML17_REL_raw_matrix.mtx.gz",
+          "filename": "GSM7494283_AML17_REL_raw_matrix.mtx.gz",
+          "expected_bytes": 61044197,
+          "sha256": "37f8ef0b0ca41801e5bd5058157f505a016cf78998f018b6815d9e472c4cab48"
+        }
+      ],
+      "genes_member": "GSM7494283_AML17_REL_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494283_AML17_REL_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494283_AML17_REL_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 17392550,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1181216,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 45552494,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9972,
+          "source_positive_RNA_barcodes": 1181216,
+          "full_source_RNA_counts": 45552494,
+          "selected_RNA_counts": 39678127,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494283.csv.gz",
+            "sha256": "1328462ae10f1ec986a977b5a3550662dfc46adb0d50227b6b4d96ac3eb58c5a"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494288",
+      "donor_id": "PAVBCV",
+      "source_metadata": {
+        "title": [
+          "PAVBCV_Rem_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494288"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494288_AML27_REM_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494288_AML27_REM_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494288_AML27_REM_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494288_AML27_REM_processed_metadata.tsv.gz",
+        "sha256": "d9de130f8f7f791f72c85f99be1bc243109f16cbcf2e865b7034c89ee8f158f4",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494288_AML27_REM_processed_metadata.tsv.gz",
+        "source_author_cells": 6673
+      },
+      "metadata": {
+        "source_participant_code": "PAVBCV",
+        "source_visit_code": "Rem",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Remission",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAVBCV",
+        "source_author_Patient_Sample": "Remission",
+        "source_author_Library_ID": "AML27_REM",
+        "source_author_GEO_ID": "PAVBCV_Rem_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "15",
+        "source_author_Disease_free_days": "104",
+        "source_author_Clinical_Blast_Percent": "NA",
+        "source_author_Expected_Driving_Aberration": "SPTBN1-ALK",
+        "source_author_Subgroup": "Other",
+        "source_author_Known_CNVs": "monosomy7",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_raw_genes.tsv.gz",
+          "filename": "GSM7494288_AML27_REM_raw_genes.tsv.gz",
+          "expected_bytes": 254822,
+          "sha256": "d9eb4bf2dbb57d8c3bea3c83cd41994fafc728e94e13cc02bdbec642a5b104fd"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_raw_barcodes.tsv.gz",
+          "filename": "GSM7494288_AML27_REM_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367603,
+          "sha256": "b909b6e05a4b293c5a5f88aa0799edef930fa3362112acc264d8daba3c8091ed"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494288/suppl/GSM7494288_AML27_REM_raw_matrix.mtx.gz",
+          "filename": "GSM7494288_AML27_REM_raw_matrix.mtx.gz",
+          "expected_bytes": 54699393,
+          "sha256": "ca3a50e68c19778285be98de9ce4bbdef069a7327c01de59e1ab944b2c6fc710"
+        }
+      ],
+      "genes_member": "GSM7494288_AML27_REM_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494288_AML27_REM_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494288_AML27_REM_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 15736410,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1043956,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 45270301,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7694,
+          "source_positive_RNA_barcodes": 1043956,
+          "full_source_RNA_counts": 45270301,
+          "selected_RNA_counts": 41015451,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494288.csv.gz",
+            "sha256": "bce59420a5123320268ca8050b683911a06195c4d8eb270b8a2bb9a2027b5a79"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494289",
+      "donor_id": "PAWRVC",
+      "source_metadata": {
+        "title": [
+          "PAWRVC_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494289"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494289_AML9_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494289_AML9_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494289_AML9_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494289_AML9_DX_processed_metadata.tsv.gz",
+        "sha256": "b7cdba92cc60cd687c994b5af67bbac9dd68f33aedf00fd9ac44982cd93f57e8",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494289_AML9_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 7836
+      },
+      "metadata": {
+        "source_participant_code": "PAWRVC",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAWRVC",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML9_DX",
+        "source_author_GEO_ID": "PAWRVC_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "117",
+        "source_author_Disease_free_days": "503",
+        "source_author_Clinical_Blast_Percent": "21",
+        "source_author_Expected_Driving_Aberration": "KMT2A-MLLT3",
+        "source_author_Subgroup": "KMT2A",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494289_AML9_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254820,
+          "sha256": "f0cc125b6e0799d0bcc58b337fb5f9b9b7275cd49309685ff65eb78b81f7ebeb"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494289_AML9_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367601,
+          "sha256": "90841cded9070037a2664ae5a94c83a139e10a75db01942ff285a3c20c608b51"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494289/suppl/GSM7494289_AML9_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494289_AML9_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 88960064,
+          "sha256": "f87a42e864c0d9e4bcc885bc11826b26098108dee75036eab9674b1a98db8a28"
+        }
+      ],
+      "genes_member": "GSM7494289_AML9_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494289_AML9_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494289_AML9_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 26024951,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1641841,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 79797796,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9008,
+          "source_positive_RNA_barcodes": 1641841,
+          "full_source_RNA_counts": 79797796,
+          "selected_RNA_counts": 73251954,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494289.csv.gz",
+            "sha256": "a9c17e9f28be906220c291f16e14c74d8846af07cb9ca25dbdfd943019f8992a"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494292",
+      "donor_id": "PAWTSD",
+      "source_metadata": {
+        "title": [
+          "PAWTSD_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494292"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494292_AML10_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494292_AML10_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494292_AML10_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494292_AML10_DX_processed_metadata.tsv.gz",
+        "sha256": "68c48a2586a2ab9279b966730412865629d13cfe1bf9e877d8e65e8aaf0524f8",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494292_AML10_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 5279
+      },
+      "metadata": {
+        "source_participant_code": "PAWTSD",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAWTSD",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML10_DX",
+        "source_author_GEO_ID": "PAWTSD_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "39",
+        "source_author_Disease_free_days": "633",
+        "source_author_Clinical_Blast_Percent": "79",
+        "source_author_Expected_Driving_Aberration": "KMT2A-MLLT3",
+        "source_author_Subgroup": "KMT2A",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494292_AML10_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254821,
+          "sha256": "679b056f1b1689320b3f65a149adc1ff8c39b312a6774170cc8a9eef40506111"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494292_AML10_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367602,
+          "sha256": "b86d04ea4012812172c19deed087cab0ec00f94ff5585fa3a61d2215f0a80b43"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494292/suppl/GSM7494292_AML10_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494292_AML10_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 60180315,
+          "sha256": "7314cf47d86a3bfc7d98998783766dcd60ea6b1cfa3e41ad1fbebfd3db32c3c1"
+        }
+      ],
+      "genes_member": "GSM7494292_AML10_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494292_AML10_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494292_AML10_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 17882386,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 863184,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 48329484,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7303,
+          "source_positive_RNA_barcodes": 863184,
+          "full_source_RNA_counts": 48329484,
+          "selected_RNA_counts": 44322344,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494292.csv.gz",
+            "sha256": "ecd24f75ff4148a0fcce7a114777f349e43eb7b4f02f4e22ba953214f895d6e2"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494295",
+      "donor_id": "PAWWCW",
+      "source_metadata": {
+        "title": [
+          "PAWWCW_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494295"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494295_AML11_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494295_AML11_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494295_AML11_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494295_AML11_DX_processed_metadata.tsv.gz",
+        "sha256": "0a2c0b55ec547a1c0d81339c5de0efa065314b1178830cf4fbcbde11871f550d",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494295_AML11_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 7335
+      },
+      "metadata": {
+        "source_participant_code": "PAWWCW",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAWWCW",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML11_DX",
+        "source_author_GEO_ID": "PAWWCW_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "0",
+        "source_author_Disease_free_days": "472",
+        "source_author_Clinical_Blast_Percent": "60",
+        "source_author_Expected_Driving_Aberration": "KMT2A-MLLT10",
+        "source_author_Subgroup": "KMT2A",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494295_AML11_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254821,
+          "sha256": "29a5859757e39459718474fe971c02b747e47eed39c00997c497f607f53aae60"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494295_AML11_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367602,
+          "sha256": "193895391884e22bad9ed8dd774ac3130cd4e828ffbd5ebbc89fa0b95832208d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494295/suppl/GSM7494295_AML11_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494295_AML11_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 71519175,
+          "sha256": "1df42f0631279007646e62f4dc1b28273f0c93be4c756fd9ef65bf4311d75c01"
+        }
+      ],
+      "genes_member": "GSM7494295_AML11_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494295_AML11_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494295_AML11_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 21284570,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1061299,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 64594811,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8696,
+          "source_positive_RNA_barcodes": 1061299,
+          "full_source_RNA_counts": 64594811,
+          "selected_RNA_counts": 61057870,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494295.csv.gz",
+            "sha256": "be4ec0986c57e9fa619c986f1c106dd287e18eaf32f7838824732165075df172"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494296",
+      "donor_id": "PAWWCW",
+      "source_metadata": {
+        "title": [
+          "PAWWCW_Rel_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494296"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494296_AML11_REL_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494296_AML11_REL_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494296_AML11_REL_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494296_AML11_REL_processed_metadata.tsv.gz",
+        "sha256": "4b1bb6d79e7b9e461696d2efe79a61767dcd5d25e2a44739399122d81950fd54",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494296_AML11_REL_processed_metadata.tsv.gz",
+        "source_author_cells": 8365
+      },
+      "metadata": {
+        "source_participant_code": "PAWWCW",
+        "source_visit_code": "Rel",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Relapse",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAWWCW",
+        "source_author_Patient_Sample": "Relapse",
+        "source_author_Library_ID": "AML11_REL",
+        "source_author_GEO_ID": "PAWWCW_Rel_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "0",
+        "source_author_Disease_free_days": "472",
+        "source_author_Clinical_Blast_Percent": "76",
+        "source_author_Expected_Driving_Aberration": "KMT2A-MLLT10",
+        "source_author_Subgroup": "KMT2A",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_raw_genes.tsv.gz",
+          "filename": "GSM7494296_AML11_REL_raw_genes.tsv.gz",
+          "expected_bytes": 254822,
+          "sha256": "8cec70bc5e3a1b87d5eb92f39802a2bee91d18825a5ea094a4d21990243b27a6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_raw_barcodes.tsv.gz",
+          "filename": "GSM7494296_AML11_REL_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367603,
+          "sha256": "d1dd9581c57c189882b18b9319b91262bc4ef215d8662536d88a2bc1749aa847"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494296/suppl/GSM7494296_AML11_REL_raw_matrix.mtx.gz",
+          "filename": "GSM7494296_AML11_REL_raw_matrix.mtx.gz",
+          "expected_bytes": 46608949,
+          "sha256": "fe5b9bfbc4e4a6a2f277becce9001647c9f5c5f4685e199f32525fba7a9899ef"
+        }
+      ],
+      "genes_member": "GSM7494296_AML11_REL_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494296_AML11_REL_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494296_AML11_REL_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 13300356,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 884681,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 43938507,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9178,
+          "source_positive_RNA_barcodes": 884681,
+          "full_source_RNA_counts": 43938507,
+          "selected_RNA_counts": 40152926,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494296.csv.gz",
+            "sha256": "50cdecd2712fc9717ce9f4223b470adf3582de0b82e58e37b0accf1a930570ca"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494297",
+      "donor_id": "PAWWCW",
+      "source_metadata": {
+        "title": [
+          "PAWWCW_Rem_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494297"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494297_AML11_REM_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494297_AML11_REM_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494297_AML11_REM_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494297_AML11_REM_processed_metadata.tsv.gz",
+        "sha256": "39ea539f97b5e3b6e8e6820a8caf9113a727bdadb726d436070ef593b38a9247",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494297_AML11_REM_processed_metadata.tsv.gz",
+        "source_author_cells": 5525
+      },
+      "metadata": {
+        "source_participant_code": "PAWWCW",
+        "source_visit_code": "Rem",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Remission",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAWWCW",
+        "source_author_Patient_Sample": "Remission",
+        "source_author_Library_ID": "AML11_REM",
+        "source_author_GEO_ID": "PAWWCW_Rem_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "0",
+        "source_author_Disease_free_days": "472",
+        "source_author_Clinical_Blast_Percent": "NA",
+        "source_author_Expected_Driving_Aberration": "KMT2A-MLLT10",
+        "source_author_Subgroup": "KMT2A",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_raw_genes.tsv.gz",
+          "filename": "GSM7494297_AML11_REM_raw_genes.tsv.gz",
+          "expected_bytes": 254822,
+          "sha256": "108b7296574436b05da21920fbfb7fb451bcf467870cb5deca796764aa44a460"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_raw_barcodes.tsv.gz",
+          "filename": "GSM7494297_AML11_REM_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367603,
+          "sha256": "6c0a8de858986d1db9443df94cfc0b5470162d1d0cab8b8458c63d8ff5175b52"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494297/suppl/GSM7494297_AML11_REM_raw_matrix.mtx.gz",
+          "filename": "GSM7494297_AML11_REM_raw_matrix.mtx.gz",
+          "expected_bytes": 50839803,
+          "sha256": "e924d99ce02676d11688d43b963f0d799f7832432d0fc7ec37d267765898e67b"
+        }
+      ],
+      "genes_member": "GSM7494297_AML11_REM_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494297_AML11_REM_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494297_AML11_REM_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 14758293,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 780022,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 45870475,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6931,
+          "source_positive_RNA_barcodes": 780022,
+          "full_source_RNA_counts": 45870475,
+          "selected_RNA_counts": 41628980,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494297.csv.gz",
+            "sha256": "60d3da0c9046fa4930dc9dc79a28549f54074d41ad397054da90b6f64e4cd0e6"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494309",
+      "donor_id": "PAXLWH",
+      "source_metadata": {
+        "title": [
+          "PAXLWH_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494309"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm C"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494309_AML23_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494309_AML23_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494309_AML23_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494309_AML23_DX_processed_metadata.tsv.gz",
+        "sha256": "5c7dcb203a0a9d1de2f4ed195f4c62fa7e4986277f38ad5ed1784db58cc5f449",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494309_AML23_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 1413
+      },
+      "metadata": {
+        "source_participant_code": "PAXLWH",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm C",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAXLWH",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML23_DX",
+        "source_author_GEO_ID": "PAXLWH_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "39",
+        "source_author_Disease_free_days": "587",
+        "source_author_Clinical_Blast_Percent": "72",
+        "source_author_Expected_Driving_Aberration": "NUP98-NSD1",
+        "source_author_Subgroup": "FLT",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494309_AML23_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254821,
+          "sha256": "b39248c59b883142ec8479f7d0029b45efc288f40d4b0a5be0b74b327850f96d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494309_AML23_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367602,
+          "sha256": "c283d2f34c7be8519b5662c01db63007f2f5542115b5041ae434cbe50821109c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494309/suppl/GSM7494309_AML23_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494309_AML23_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 16014558,
+          "sha256": "324812735fc42c4736fe80aa75a2c5fb3bccc39f150205ab6ea771eee501889d"
+        }
+      ],
+      "genes_member": "GSM7494309_AML23_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494309_AML23_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494309_AML23_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 4401297,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 747927,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 15037090,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5829,
+          "source_positive_RNA_barcodes": 747927,
+          "full_source_RNA_counts": 15037090,
+          "selected_RNA_counts": 9929410,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494309.csv.gz",
+            "sha256": "7e134ec2d36d6d836b2f516ebd5f1c34997dc803abb57b0bb8be6f46b58fae9e"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494316",
+      "donor_id": "PAUUWT",
+      "source_metadata": {
+        "title": [
+          "PAUUWT_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494316"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494316_AML25_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494316_AML25_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494316_AML25_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494316_AML25_DX_processed_metadata.tsv.gz",
+        "sha256": "ea64c3565d1ec63351c2a8f2deac43a53dc1daa9448a3c76e9f97cde7f25deb4",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494316_AML25_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 6227
+      },
+      "metadata": {
+        "source_participant_code": "PAUUWT",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAUUWT",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML25_DX",
+        "source_author_GEO_ID": "PAUUWT_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "137",
+        "source_author_Disease_free_days": "299",
+        "source_author_Clinical_Blast_Percent": "61",
+        "source_author_Expected_Driving_Aberration": "None",
+        "source_author_Subgroup": "Other",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494316_AML25_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254821,
+          "sha256": "050e6ca21ef36afd43ae0f57f8f1212a2f94135446febd2f56fd3ab795d68bb0"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494316_AML25_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367602,
+          "sha256": "74979428644a0d25f19c6886909f08719eb255506cb842b21d75718408cf7562"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494316/suppl/GSM7494316_AML25_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494316_AML25_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 63812052,
+          "sha256": "177258e03c6ade6a29cf23938d509e3998adea8227b214077357eebce9f5f0c0"
+        }
+      ],
+      "genes_member": "GSM7494316_AML25_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494316_AML25_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494316_AML25_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 18743155,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1125902,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 62827245,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8674,
+          "source_positive_RNA_barcodes": 1125902,
+          "full_source_RNA_counts": 62827245,
+          "selected_RNA_counts": 57585021,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494316.csv.gz",
+            "sha256": "5846dd1eb6f91bcb6d20c3190ca52e5406f8e9a15aac3973955dc11bccf9a558"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494321",
+      "donor_id": "PAUVAT",
+      "source_metadata": {
+        "title": [
+          "PAUVAT_Rem_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494321"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494321_AML26_REM_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494321_AML26_REM_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494321_AML26_REM_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494321_AML26_REM_processed_metadata.tsv.gz",
+        "sha256": "adb04bd04777a704894183b8a1d7e8619cdd9280b1d53a8f8b6e43bc4b4dd720",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494321_AML26_REM_processed_metadata.tsv.gz",
+        "source_author_cells": 3010
+      },
+      "metadata": {
+        "source_participant_code": "PAUVAT",
+        "source_visit_code": "Rem",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Remission",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAUVAT",
+        "source_author_Patient_Sample": "Remission",
+        "source_author_Library_ID": "AML26_REM",
+        "source_author_GEO_ID": "PAUVAT_Rem_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "102",
+        "source_author_Disease_free_days": "291",
+        "source_author_Clinical_Blast_Percent": "NA",
+        "source_author_Expected_Driving_Aberration": "MLLT10-NAP1L1",
+        "source_author_Subgroup": "Other",
+        "source_author_Known_CNVs": "None",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_raw_genes.tsv.gz",
+          "filename": "GSM7494321_AML26_REM_raw_genes.tsv.gz",
+          "expected_bytes": 254822,
+          "sha256": "fcdfcead3665271c3f91a77366285af3d5d866fd075fd6e9aa119a3f145f6993"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_raw_barcodes.tsv.gz",
+          "filename": "GSM7494321_AML26_REM_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367603,
+          "sha256": "29af9da49f927da4922b9a8487c9190c741707c44f383bc884d65e53b8b9a6c0"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494321/suppl/GSM7494321_AML26_REM_raw_matrix.mtx.gz",
+          "filename": "GSM7494321_AML26_REM_raw_matrix.mtx.gz",
+          "expected_bytes": 34243230,
+          "sha256": "c34f70d0d97fa8a657b975c34e77e14bb4cb642b1b01bb1ea4b54bb53d00425c"
+        }
+      ],
+      "genes_member": "GSM7494321_AML26_REM_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494321_AML26_REM_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494321_AML26_REM_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 9645652,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1056615,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 35593617,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3845,
+          "source_positive_RNA_barcodes": 1056615,
+          "full_source_RNA_counts": 35593617,
+          "selected_RNA_counts": 31307067,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494321.csv.gz",
+            "sha256": "c3fdcabceb70a6f59410793a7c35ae5e881cb256ebb79ba78e69f2ee3d15588f"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7494324",
+      "donor_id": "PAVGJG",
+      "source_metadata": {
+        "title": [
+          "PAVGJG_Dx_scRNA"
+        ],
+        "geo_accession": [
+          "GSM7494324"
+        ],
+        "status": [
+          "Public on Nov 20 2023"
+        ],
+        "submission_date": [
+          "Jun 15 2023"
+        ],
+        "last_update_date": [
+          "Nov 20 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Blood cells",
+          "tissue: Blood",
+          "treatment: Arm B"
+        ],
+        "treatment_protocol_ch1": [
+          "For this study, a cohort of 28 patients who were enrolled in the Children\u2019s Oncology Group (COG) Phase III AAML1031 trial (clinicaltrials.gov, NCT01371981) were studied using single cell sequencing. For the generation of the single cell datasets, patients were selected from Arm B (Standard Chemotherapy (ADE 10+3+5) + Bortezomib (n=24)) or Arm C (Standard Chemotherapy (ADE 10+3) + Sorafenib (n=4)). Four patients that were taken from Arm B were long-term remission patients (no event for at least five years after treatment). None of the patients that were sequenced longitudinally underwent stem cell transplantation."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At diagnosis, remission or relapse, bone marrow or blood samples were taken and Ficoll-enrichment was performed followed by viable cryopreservation of the cells (in FBS + DMSO) and long-term storage in liquid nitrogen at the COG biorepository.Cryopreserved samples were taken from liquid nitrogen and thawed in thawing media (50% FBS (ThermoFisher Scientific) + 40% HBSS (Stemcell Technologies) + 100ug/ml DNAseI (Sigma)). Cells were centrifuged (300g for 5 minutes), and washed once with 10ml of ice-cold HBSS + 10% FBS. A second wash with 1ml of HBSS + 10% FBS was performed followed by passing the cell suspension through a 40\u00b5m FlowMi filter (SP Bel-Art) into a new 1.5ml Eppendorf tube",
+          "Single-cell 3\u2019 RNA-seq libraries were generated using the Chromium Single Cell 3\u2019 Library & Gel Bead Kit v3.0 (10X Genomics) following the manufacturer\u2019s protocol.Library quality was assessed using the Agilent High Sensitivity DNA kit and libraries were quantified using the Qubit dsDNA HS Assay kit (Thermo Fisher Scientific). Libraries were pooled and converted using the MGIEasy Universal Library Conversion Kit (MGI Americas) following the manufacturer's protocol"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "1. Raw sequencing data was processed using Cellranger (V3.1) mkfastq to generate fastq files. Fastq files were aligned to hg38 and quantified using CellRanger (V3.1) count applying standard settings. Libraries with poor sequencing quality (as determined by Cellranger metrics: e.g. base quality, percentage of valid barcodes, valid unique molecular identifiers (UMIs) and cluster density) were discarded.",
+          "2. Cells were filtered with less than 1000 UMIs, less than 500 covered genes or more than 15% mitochondrial reads.",
+          "3. Using Seurat (V4.0.1), data were log normalized to 10,000 counts and subsequently scaled. Considering the uniform treatment of the cohort and uniform processing of samples, batch effect correction was not applied to avoid overcorrection of patient-to-patient differences. The uwot implementation of Uniform Manifold Approximation and Projection (UMAP) (V0.1.1), was used to visualize scRNA-seq data after initialization using principal component analysis (PCA) and calculation of nearest neighbors (nn) by applying the annoy algorithm.",
+          "Assembly: HG38",
+          "Supplementary files format and content: Tab-separated values files and matrix files containing: unfiltered files that have not been processed after alignament using cellranger including genes, barcodes and matrix files with the raw counts and filtered files containing the matrices, genes and barcodes for filtered cells, having processed counts. Each sample also contains a metadata file for the processed cells containing, in order: cell and sample IDs, Quality statistics (counts, genes covered, mitochondiral reads) , cell classification including celltype identified using scPRED (see manuscript for details), cluster identified using Seurat and Malignancy status (see manuscript for details), and various patient information."
+        ],
+        "platform_id": [
+          "GPL28038"
+        ],
+        "contact_name": [
+          "Marco,,Marra"
+        ],
+        "contact_email": [
+          "mmarra@bcgsc.ca"
+        ],
+        "contact_phone": [
+          "+1 604-675-8162"
+        ],
+        "contact_laboratory": [
+          "Marra lab"
+        ],
+        "contact_department": [
+          "Genome Sciences Centre"
+        ],
+        "contact_institute": [
+          "BC Cancer Research Centre"
+        ],
+        "contact_address": [
+          "675 West 10th Avenue"
+        ],
+        "contact_city": [
+          "Vancouver"
+        ],
+        "contact_state": [
+          "BC"
+        ],
+        "contact_zip/postal_code": [
+          "V5Z 1L3"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "DNBSEQ-G400"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_processed_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_processed_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_processed_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_processed_metadata.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_raw_genes.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE235063"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_member_overrides": {
+        "genes_member": "GSM7494324_AML18_DX_raw_genes.tsv.gz",
+        "barcodes_member": "GSM7494324_AML18_DX_raw_barcodes.tsv.gz",
+        "matrix_member": "GSM7494324_AML18_DX_raw_matrix.mtx.gz"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "original_author_cell_metadata": {
+        "path": "references/datasets/GSE235063_original_author_cell_tables/GSM7494324_AML18_DX_processed_metadata.tsv.gz",
+        "sha256": "3c890d92fe6aeff69fead5b8477814622ec3decda112288f90c9b9f004aab5ef",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_processed_metadata.tsv.gz",
+        "original_download_path": "data/downloads/GSE235063_assets/GSM7494324_AML18_DX_processed_metadata.tsv.gz",
+        "source_author_cells": 7368
+      },
+      "metadata": {
+        "source_participant_code": "PAVGJG",
+        "source_visit_code": "Dx",
+        "source_capture_label": "primary",
+        "source_specimen": "Ficoll-enriched peripheral blood mononuclear-cell fraction; malignant cells may be present",
+        "source_cohort": "Pediatric AML clinical cohort; source AAML1031 context",
+        "condition": "Acute myeloid leukemia cohort; source visit label retained",
+        "source_visit_label": "Diagnosis",
+        "source_clinical_arm": "Arm B",
+        "source_gene_policy": "Original unfiltered raw RNA counts; source-native gene IDs/symbols retained; two-column RNA format explicitly reviewed",
+        "source_age_policy": "Original Age_Months retained literally; author table does not establish age-at-draw versus diagnosis epoch",
+        "source_time_policy": "Dx/Rem/Rel are clinical source visit labels. Disease_free_days is an author clinical outcome field, not a collection interval; no sample dates inferred.",
+        "source_metadata_policy": "Original author NA strings preserved. Malignant and scPRED cell-type fields remain in exact barcode-keyed author table; SCimilarity labels are independent and do not validate malignant classification.",
+        "source_QC_policy": "Use deposited raw matrices and project500RNA/200genes/20percentMT QC, not normalized processed matrices. Author processed-cell table uses stricter source filters and is retained separately.",
+        "split_assignment": "unassigned; keep all blood and future marrow visits from a participant together; cross-study identity unresolved",
+        "source_author_Patient_ID": "PAVGJG",
+        "source_author_Patient_Sample": "Diagnosis",
+        "source_author_Library_ID": "AML18_DX",
+        "source_author_GEO_ID": "PAVGJG_Dx_scRNA",
+        "source_author_Biopsy_Origin": "Blood",
+        "source_author_Age_Months": "13",
+        "source_author_Disease_free_days": "298",
+        "source_author_Clinical_Blast_Percent": "47",
+        "source_author_Expected_Driving_Aberration": "CBFB-MYH11",
+        "source_author_Subgroup": "CBFB",
+        "source_author_Known_CNVs": "CBL_del",
+        "source_author_Treatment_Outcome": "Relapsed"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_raw_genes.tsv.gz",
+          "filename": "GSM7494324_AML18_DX_raw_genes.tsv.gz",
+          "expected_bytes": 254821,
+          "sha256": "68213efda7ec44a4a0b02ee041d1eeca53ddf21189f167c722db4779618d8ac6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_raw_barcodes.tsv.gz",
+          "filename": "GSM7494324_AML18_DX_raw_barcodes.tsv.gz",
+          "expected_bytes": 19367602,
+          "sha256": "1f847b9feaec7807c59b430e07ea5a40d6658f788726156816cd3ce5bfd6ddd8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7494nnn/GSM7494324/suppl/GSM7494324_AML18_DX_raw_matrix.mtx.gz",
+          "filename": "GSM7494324_AML18_DX_raw_matrix.mtx.gz",
+          "expected_bytes": 89327411,
+          "sha256": "5bdb38a9918d489066eb6de1ec759da35cbbcf05bee65374959bb9a8218765ac"
+        }
+      ],
+      "genes_member": "GSM7494324_AML18_DX_raw_genes.tsv.gz",
+      "barcodes_member": "GSM7494324_AML18_DX_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM7494324_AML18_DX_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6794880,
+        "genes": 33538,
+        "nonzeros": 26416797,
+        "gene_coordinate_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "25e7f409a7b4b7da99c7368e5b357d353618791c5b2eaa1fc7074b2979af9f21",
+        "source_features": 33538,
+        "source_barcode_rows": 6794880,
+        "RNA_positive_barcode_rows": 1459531,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 87711194,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8154,
+          "source_positive_RNA_barcodes": 1459531,
+          "full_source_RNA_counts": 87711194,
+          "selected_RNA_counts": 82073320,
+          "metadata": {
+            "path": "references/datasets/GSE235063_original_RNA_QC/GSM7494324.csv.gz",
+            "sha256": "5f8076f06238a0f00d3535f309711d86ca27ec01e0c15f06d2ebb47e1a15f13d"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Original patient/clinical visit pairs; PAWWCW has three distinct blood draws. Source arm and Disease_free_days are not collection timestamps."
+}

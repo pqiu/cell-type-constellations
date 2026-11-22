@@ -1,0 +1,640 @@
+{
+  "dataset_id": "GSE280982_genes001",
+  "study_id": "GSE280982",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "FouroriginalbloodGEXrecords/threedonors:HyPR-HN02baseline/six-week visit, HyPR-HN04baseline, distinctnontrialP120. PrimaryFig5 verifies P120 separateuntreatedpatient. Other tissues andassaysnotblood replication; nominaltimes not exactdates.",
+  "source_metadata": {
+    "accession": "GSE280982",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/40593620/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280982",
+    "access": "Public original RNA count triplets",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+    "source_processing": [
+      "Bulk sequencing: DNA reads were cleaned using TrimGalore. Illumina short reads were mapped to the current reference genome, GRCh38, using BWA-mem.63 Somatic mutations including single nucleotide variants and indels were evaluated by Mutect2, SomaticSniper, and Varscan2 with comparison to patient-matched germline WES obtained from isolated peripheral blood mononuclear cells.  Single-cell sequencing: Raw sequencing reads were processed using CellRanger v8.0.1 to demultiplex reads, align to the GRCh38 reference genome, and quantify unique molecular identifiers (UMIs). Quality control was performed by filtering out cells with fewer than 200 or more than 5,000 features, and cells with >15% mitochondrial gene expression were excluded. The Seurat v5.1.0 toolkit was used to integrate datasets, perform canonical correlation analysis (CCA) to reduce batch effects, and identify variable features. Principal component analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP) were used for dimensionality reduction. Spatial: Raw reads were mapped to the human GRCh38 reference genome with Visium Probe_Set_v2.0 by Space Ranger. Fiducial detection, barcode/UMI counting, zero-count spot filtering, and normalization were also performed by Space Ranger. Visualization was performed with 10x Loupe Browser.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Gene expression matrix: .mtx.gz Barcodes and features: .tsv.gz Metadata and annotations: .csv Aligned reads: .bam Index files: .bam.bai Spatial images: .png, .jpg Spatial scaling factors: .json"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8608321",
+      "donor_id": "HyPR-HN02",
+      "source_metadata": {
+        "title": [
+          "HyPR-HN 02_1_PBMC, GEX"
+        ],
+        "geo_accession": [
+          "GSM8608321"
+        ],
+        "status": [
+          "Public on Apr 23 2025"
+        ],
+        "submission_date": [
+          "Nov 04 2024"
+        ],
+        "last_update_date": [
+          "Apr 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "treatment: Pre-Treatment"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Bulk RNAseq: Total RNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen RNeasy Mini Kit according to the manufacturer\u2019s protocol. RNA concentration and quality were assessed using NanoDrop.  Whole exome sequencing: Genomic DNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen DNeasy Blood & Tissue Kit following the manufacturer\u2019s instructions. DNA concentration and purity were assessed with NanoDrop. Extracted DNA was used for exome library preparation. Single-cell sequecing: Single-cell suspensions were prepared from tumor or PBMCs, and viable cells were loaded into the 10x Genomics Chromium platform for partitioning. RNA from individual cells was reverse-transcribed, and libraries were prepared according to the 10x Genomics protocol. Spatial: Slides were processed through the 10x Genomics Gene Expression workflow with pre-sequencing H&E imaging completed on the Keyence Microscope per 10x Genomics workflows. Next, transcripts were de-crosslinked, hybridized to a probe panel, ligation completed, and probes released for capture on the gridded, barcoded surface of the Visium slide (CytAssist, 10x Genomics, RRID:SCR_024570). After barcoding, the samples underwent library preparation, amplification, and clean-up with quality assessment ensuring that fragments were ~240bp.",
+          "Bulk RNAseq: RNA was extracted and used for mRNA library preparation with poly(A) enrichment, following Novogene's standard protocol. Library construction and sequencing were performed on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Whole exome sequencing: Genomic DNA was extracted and used for library preparation with the Agilent V6 kit, according to Novogene's standard workflow. Library quality was assessed, and sequencing was conducted on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Single-cell sequencing: Library preparation was completed at the MCW Mellowes Center (RRID:SCR_022926) with 10x Genomics Chromium Next GEM Single Cell 5\u2019 Reagent Kits (10X Genomics, sample dual indexes with cellular and molecular barcodes with VDJ amplification). Target capture of 10,000 cells per sample was used. Prior to sequencing, libraries were quantified and pooled by qPCR (Kapa Library Quantification Kit, Kapa Biosystems). Spatial: Libraries were sequenced at the Mellowes Center Facility on the Illumina NovaSeq6000 with paired end reads per the 10x Genomics protocol and generating 25 million read pairs per spot covered by tissue. The quality control of raw reads was processed by FastQC."
+        ],
+        "data_processing": [
+          "Bulk sequencing: DNA reads were cleaned using TrimGalore. Illumina short reads were mapped to the current reference genome, GRCh38, using BWA-mem.63 Somatic mutations including single nucleotide variants and indels were evaluated by Mutect2, SomaticSniper, and Varscan2 with comparison to patient-matched germline WES obtained from isolated peripheral blood mononuclear cells.  Single-cell sequencing: Raw sequencing reads were processed using CellRanger v8.0.1 to demultiplex reads, align to the GRCh38 reference genome, and quantify unique molecular identifiers (UMIs). Quality control was performed by filtering out cells with fewer than 200 or more than 5,000 features, and cells with >15% mitochondrial gene expression were excluded. The Seurat v5.1.0 toolkit was used to integrate datasets, perform canonical correlation analysis (CCA) to reduce batch effects, and identify variable features. Principal component analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP) were used for dimensionality reduction. Spatial: Raw reads were mapped to the human GRCh38 reference genome with Visium Probe_Set_v2.0 by Space Ranger. Fiducial detection, barcode/UMI counting, zero-count spot filtering, and normalization were also performed by Space Ranger. Visualization was performed with 10x Loupe Browser.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Gene expression matrix: .mtx.gz Barcodes and features: .tsv.gz Metadata and annotations: .csv Aligned reads: .bam Index files: .bam.bai Spatial images: .png, .jpg Spatial scaling factors: .json"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Joseph,,Zenga"
+        ],
+        "contact_email": [
+          "jyzenga@mcw.edu"
+        ],
+        "contact_institute": [
+          "MEDICAL COLLEGE OF WISCONSIN"
+        ],
+        "contact_address": [
+          "9200 W WISCONSIN AVE"
+        ],
+        "contact_city": [
+          "Milwaukee"
+        ],
+        "contact_state": [
+          "WI"
+        ],
+        "contact_zip/postal_code": [
+          "53226"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44570302",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26597532"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608321/suppl/GSM8608321_HyPR-HN_02_1_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608321/suppl/GSM8608321_HyPR-HN_02_1_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608321/suppl/GSM8608321_HyPR-HN_02_1_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280982"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "head and neck squamous cell carcinoma",
+        "source_nominal_visit": "Pre-Treatment",
+        "source_preparation": "PBMC-derived blood RNA; primary focuses on circulating T-cell analysis. Tumor, nodes, spatial and TCR/WES assays excluded.",
+        "source_demographics": "Individual age/sex/HPV status/exact draw dates not joined; no imputation",
+        "source_alias_review": "HyPR-HN02 has two blood visits; HyPR-HN04 one. Primary explicitly states P120 is a previously untreated HNSCC patient outside HyPR-HN, so third distinct donor, not a trial-label alias.",
+        "source_primary": "https://pubmed.ncbi.nlm.nih.gov/40593620/"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608321/suppl/GSM8608321_HyPR-HN_02_1_PBMC_features.tsv.gz",
+          "filename": "GSM8608321_HyPR-HN_02_1_PBMC_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608321/suppl/GSM8608321_HyPR-HN_02_1_PBMC_barcodes.tsv.gz",
+          "filename": "GSM8608321_HyPR-HN_02_1_PBMC_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608321/suppl/GSM8608321_HyPR-HN_02_1_PBMC_matrix.mtx.gz",
+          "filename": "GSM8608321_HyPR-HN_02_1_PBMC_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM8608321_HyPR-HN_02_1_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM8608321_HyPR-HN_02_1_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM8608321_HyPR-HN_02_1_PBMC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 4566,
+        "genes": 38606,
+        "nonzeros": 7939375,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "source_features": 38606,
+        "source_barcode_rows": 4566,
+        "RNA_positive_barcode_rows": 4566,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    },
+    {
+      "accession": "GSM8608335",
+      "donor_id": "HyPR-HN02",
+      "source_metadata": {
+        "title": [
+          "HyPR-HN 02_3_PBMC, GEX"
+        ],
+        "geo_accession": [
+          "GSM8608335"
+        ],
+        "status": [
+          "Public on Apr 23 2025"
+        ],
+        "submission_date": [
+          "Nov 04 2024"
+        ],
+        "last_update_date": [
+          "Apr 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "treatment: 6 Weeks Post-Radiation"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Bulk RNAseq: Total RNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen RNeasy Mini Kit according to the manufacturer\u2019s protocol. RNA concentration and quality were assessed using NanoDrop.  Whole exome sequencing: Genomic DNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen DNeasy Blood & Tissue Kit following the manufacturer\u2019s instructions. DNA concentration and purity were assessed with NanoDrop. Extracted DNA was used for exome library preparation. Single-cell sequecing: Single-cell suspensions were prepared from tumor or PBMCs, and viable cells were loaded into the 10x Genomics Chromium platform for partitioning. RNA from individual cells was reverse-transcribed, and libraries were prepared according to the 10x Genomics protocol. Spatial: Slides were processed through the 10x Genomics Gene Expression workflow with pre-sequencing H&E imaging completed on the Keyence Microscope per 10x Genomics workflows. Next, transcripts were de-crosslinked, hybridized to a probe panel, ligation completed, and probes released for capture on the gridded, barcoded surface of the Visium slide (CytAssist, 10x Genomics, RRID:SCR_024570). After barcoding, the samples underwent library preparation, amplification, and clean-up with quality assessment ensuring that fragments were ~240bp.",
+          "Bulk RNAseq: RNA was extracted and used for mRNA library preparation with poly(A) enrichment, following Novogene's standard protocol. Library construction and sequencing were performed on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Whole exome sequencing: Genomic DNA was extracted and used for library preparation with the Agilent V6 kit, according to Novogene's standard workflow. Library quality was assessed, and sequencing was conducted on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Single-cell sequencing: Library preparation was completed at the MCW Mellowes Center (RRID:SCR_022926) with 10x Genomics Chromium Next GEM Single Cell 5\u2019 Reagent Kits (10X Genomics, sample dual indexes with cellular and molecular barcodes with VDJ amplification). Target capture of 10,000 cells per sample was used. Prior to sequencing, libraries were quantified and pooled by qPCR (Kapa Library Quantification Kit, Kapa Biosystems). Spatial: Libraries were sequenced at the Mellowes Center Facility on the Illumina NovaSeq6000 with paired end reads per the 10x Genomics protocol and generating 25 million read pairs per spot covered by tissue. The quality control of raw reads was processed by FastQC."
+        ],
+        "data_processing": [
+          "Bulk sequencing: DNA reads were cleaned using TrimGalore. Illumina short reads were mapped to the current reference genome, GRCh38, using BWA-mem.63 Somatic mutations including single nucleotide variants and indels were evaluated by Mutect2, SomaticSniper, and Varscan2 with comparison to patient-matched germline WES obtained from isolated peripheral blood mononuclear cells.  Single-cell sequencing: Raw sequencing reads were processed using CellRanger v8.0.1 to demultiplex reads, align to the GRCh38 reference genome, and quantify unique molecular identifiers (UMIs). Quality control was performed by filtering out cells with fewer than 200 or more than 5,000 features, and cells with >15% mitochondrial gene expression were excluded. The Seurat v5.1.0 toolkit was used to integrate datasets, perform canonical correlation analysis (CCA) to reduce batch effects, and identify variable features. Principal component analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP) were used for dimensionality reduction. Spatial: Raw reads were mapped to the human GRCh38 reference genome with Visium Probe_Set_v2.0 by Space Ranger. Fiducial detection, barcode/UMI counting, zero-count spot filtering, and normalization were also performed by Space Ranger. Visualization was performed with 10x Loupe Browser.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Gene expression matrix: .mtx.gz Barcodes and features: .tsv.gz Metadata and annotations: .csv Aligned reads: .bam Index files: .bam.bai Spatial images: .png, .jpg Spatial scaling factors: .json"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Joseph,,Zenga"
+        ],
+        "contact_email": [
+          "jyzenga@mcw.edu"
+        ],
+        "contact_institute": [
+          "MEDICAL COLLEGE OF WISCONSIN"
+        ],
+        "contact_address": [
+          "9200 W WISCONSIN AVE"
+        ],
+        "contact_city": [
+          "Milwaukee"
+        ],
+        "contact_state": [
+          "WI"
+        ],
+        "contact_zip/postal_code": [
+          "53226"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44570288",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26597552"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608335/suppl/GSM8608335_HyPR-HN_02_3_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608335/suppl/GSM8608335_HyPR-HN_02_3_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608335/suppl/GSM8608335_HyPR-HN_02_3_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280982"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "head and neck squamous cell carcinoma",
+        "source_nominal_visit": "6 Weeks Post-Radiation",
+        "source_preparation": "PBMC-derived blood RNA; primary focuses on circulating T-cell analysis. Tumor, nodes, spatial and TCR/WES assays excluded.",
+        "source_demographics": "Individual age/sex/HPV status/exact draw dates not joined; no imputation",
+        "source_alias_review": "HyPR-HN02 has two blood visits; HyPR-HN04 one. Primary explicitly states P120 is a previously untreated HNSCC patient outside HyPR-HN, so third distinct donor, not a trial-label alias.",
+        "source_primary": "https://pubmed.ncbi.nlm.nih.gov/40593620/"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608335/suppl/GSM8608335_HyPR-HN_02_3_PBMC_features.tsv.gz",
+          "filename": "GSM8608335_HyPR-HN_02_3_PBMC_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608335/suppl/GSM8608335_HyPR-HN_02_3_PBMC_barcodes.tsv.gz",
+          "filename": "GSM8608335_HyPR-HN_02_3_PBMC_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608335/suppl/GSM8608335_HyPR-HN_02_3_PBMC_matrix.mtx.gz",
+          "filename": "GSM8608335_HyPR-HN_02_3_PBMC_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM8608335_HyPR-HN_02_3_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM8608335_HyPR-HN_02_3_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM8608335_HyPR-HN_02_3_PBMC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7439,
+        "genes": 38606,
+        "nonzeros": 11149144,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "source_features": 38606,
+        "source_barcode_rows": 7439,
+        "RNA_positive_barcode_rows": 7439,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    },
+    {
+      "accession": "GSM8608342",
+      "donor_id": "HyPR-HN04",
+      "source_metadata": {
+        "title": [
+          "HyPR-HN 04_1_PBMC, GEX"
+        ],
+        "geo_accession": [
+          "GSM8608342"
+        ],
+        "status": [
+          "Public on Apr 23 2025"
+        ],
+        "submission_date": [
+          "Nov 04 2024"
+        ],
+        "last_update_date": [
+          "Apr 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "treatment: Pre-Treatment"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Bulk RNAseq: Total RNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen RNeasy Mini Kit according to the manufacturer\u2019s protocol. RNA concentration and quality were assessed using NanoDrop.  Whole exome sequencing: Genomic DNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen DNeasy Blood & Tissue Kit following the manufacturer\u2019s instructions. DNA concentration and purity were assessed with NanoDrop. Extracted DNA was used for exome library preparation. Single-cell sequecing: Single-cell suspensions were prepared from tumor or PBMCs, and viable cells were loaded into the 10x Genomics Chromium platform for partitioning. RNA from individual cells was reverse-transcribed, and libraries were prepared according to the 10x Genomics protocol. Spatial: Slides were processed through the 10x Genomics Gene Expression workflow with pre-sequencing H&E imaging completed on the Keyence Microscope per 10x Genomics workflows. Next, transcripts were de-crosslinked, hybridized to a probe panel, ligation completed, and probes released for capture on the gridded, barcoded surface of the Visium slide (CytAssist, 10x Genomics, RRID:SCR_024570). After barcoding, the samples underwent library preparation, amplification, and clean-up with quality assessment ensuring that fragments were ~240bp.",
+          "Bulk RNAseq: RNA was extracted and used for mRNA library preparation with poly(A) enrichment, following Novogene's standard protocol. Library construction and sequencing were performed on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Whole exome sequencing: Genomic DNA was extracted and used for library preparation with the Agilent V6 kit, according to Novogene's standard workflow. Library quality was assessed, and sequencing was conducted on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Single-cell sequencing: Library preparation was completed at the MCW Mellowes Center (RRID:SCR_022926) with 10x Genomics Chromium Next GEM Single Cell 5\u2019 Reagent Kits (10X Genomics, sample dual indexes with cellular and molecular barcodes with VDJ amplification). Target capture of 10,000 cells per sample was used. Prior to sequencing, libraries were quantified and pooled by qPCR (Kapa Library Quantification Kit, Kapa Biosystems). Spatial: Libraries were sequenced at the Mellowes Center Facility on the Illumina NovaSeq6000 with paired end reads per the 10x Genomics protocol and generating 25 million read pairs per spot covered by tissue. The quality control of raw reads was processed by FastQC."
+        ],
+        "data_processing": [
+          "Bulk sequencing: DNA reads were cleaned using TrimGalore. Illumina short reads were mapped to the current reference genome, GRCh38, using BWA-mem.63 Somatic mutations including single nucleotide variants and indels were evaluated by Mutect2, SomaticSniper, and Varscan2 with comparison to patient-matched germline WES obtained from isolated peripheral blood mononuclear cells.  Single-cell sequencing: Raw sequencing reads were processed using CellRanger v8.0.1 to demultiplex reads, align to the GRCh38 reference genome, and quantify unique molecular identifiers (UMIs). Quality control was performed by filtering out cells with fewer than 200 or more than 5,000 features, and cells with >15% mitochondrial gene expression were excluded. The Seurat v5.1.0 toolkit was used to integrate datasets, perform canonical correlation analysis (CCA) to reduce batch effects, and identify variable features. Principal component analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP) were used for dimensionality reduction. Spatial: Raw reads were mapped to the human GRCh38 reference genome with Visium Probe_Set_v2.0 by Space Ranger. Fiducial detection, barcode/UMI counting, zero-count spot filtering, and normalization were also performed by Space Ranger. Visualization was performed with 10x Loupe Browser.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Gene expression matrix: .mtx.gz Barcodes and features: .tsv.gz Metadata and annotations: .csv Aligned reads: .bam Index files: .bam.bai Spatial images: .png, .jpg Spatial scaling factors: .json"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Joseph,,Zenga"
+        ],
+        "contact_email": [
+          "jyzenga@mcw.edu"
+        ],
+        "contact_institute": [
+          "MEDICAL COLLEGE OF WISCONSIN"
+        ],
+        "contact_address": [
+          "9200 W WISCONSIN AVE"
+        ],
+        "contact_city": [
+          "Milwaukee"
+        ],
+        "contact_state": [
+          "WI"
+        ],
+        "contact_zip/postal_code": [
+          "53226"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44570281",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26597522"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608342/suppl/GSM8608342_HyPR-HN_04_1_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608342/suppl/GSM8608342_HyPR-HN_04_1_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608342/suppl/GSM8608342_HyPR-HN_04_1_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280982"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "head and neck squamous cell carcinoma",
+        "source_nominal_visit": "Pre-Treatment",
+        "source_preparation": "PBMC-derived blood RNA; primary focuses on circulating T-cell analysis. Tumor, nodes, spatial and TCR/WES assays excluded.",
+        "source_demographics": "Individual age/sex/HPV status/exact draw dates not joined; no imputation",
+        "source_alias_review": "HyPR-HN02 has two blood visits; HyPR-HN04 one. Primary explicitly states P120 is a previously untreated HNSCC patient outside HyPR-HN, so third distinct donor, not a trial-label alias.",
+        "source_primary": "https://pubmed.ncbi.nlm.nih.gov/40593620/"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608342/suppl/GSM8608342_HyPR-HN_04_1_PBMC_features.tsv.gz",
+          "filename": "GSM8608342_HyPR-HN_04_1_PBMC_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608342/suppl/GSM8608342_HyPR-HN_04_1_PBMC_barcodes.tsv.gz",
+          "filename": "GSM8608342_HyPR-HN_04_1_PBMC_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608342/suppl/GSM8608342_HyPR-HN_04_1_PBMC_matrix.mtx.gz",
+          "filename": "GSM8608342_HyPR-HN_04_1_PBMC_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM8608342_HyPR-HN_04_1_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM8608342_HyPR-HN_04_1_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM8608342_HyPR-HN_04_1_PBMC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9075,
+        "genes": 38606,
+        "nonzeros": 17131517,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "source_features": 38606,
+        "source_barcode_rows": 9075,
+        "RNA_positive_barcode_rows": 9075,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    },
+    {
+      "accession": "GSM8608358",
+      "donor_id": "P120",
+      "source_metadata": {
+        "title": [
+          "P120PBMC, GEX"
+        ],
+        "geo_accession": [
+          "GSM8608358"
+        ],
+        "status": [
+          "Public on Apr 23 2025"
+        ],
+        "submission_date": [
+          "Nov 04 2024"
+        ],
+        "last_update_date": [
+          "Apr 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "treatment: Pre-Treatment"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Bulk RNAseq: Total RNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen RNeasy Mini Kit according to the manufacturer\u2019s protocol. RNA concentration and quality were assessed using NanoDrop.  Whole exome sequencing: Genomic DNA was extracted from tumor tissue, PBMCs, or cell lines using the Qiagen DNeasy Blood & Tissue Kit following the manufacturer\u2019s instructions. DNA concentration and purity were assessed with NanoDrop. Extracted DNA was used for exome library preparation. Single-cell sequecing: Single-cell suspensions were prepared from tumor or PBMCs, and viable cells were loaded into the 10x Genomics Chromium platform for partitioning. RNA from individual cells was reverse-transcribed, and libraries were prepared according to the 10x Genomics protocol. Spatial: Slides were processed through the 10x Genomics Gene Expression workflow with pre-sequencing H&E imaging completed on the Keyence Microscope per 10x Genomics workflows. Next, transcripts were de-crosslinked, hybridized to a probe panel, ligation completed, and probes released for capture on the gridded, barcoded surface of the Visium slide (CytAssist, 10x Genomics, RRID:SCR_024570). After barcoding, the samples underwent library preparation, amplification, and clean-up with quality assessment ensuring that fragments were ~240bp.",
+          "Bulk RNAseq: RNA was extracted and used for mRNA library preparation with poly(A) enrichment, following Novogene's standard protocol. Library construction and sequencing were performed on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Whole exome sequencing: Genomic DNA was extracted and used for library preparation with the Agilent V6 kit, according to Novogene's standard workflow. Library quality was assessed, and sequencing was conducted on the NovaSeq X Plus Series platform with paired-end 150 bp (PE150) reads. Single-cell sequencing: Library preparation was completed at the MCW Mellowes Center (RRID:SCR_022926) with 10x Genomics Chromium Next GEM Single Cell 5\u2019 Reagent Kits (10X Genomics, sample dual indexes with cellular and molecular barcodes with VDJ amplification). Target capture of 10,000 cells per sample was used. Prior to sequencing, libraries were quantified and pooled by qPCR (Kapa Library Quantification Kit, Kapa Biosystems). Spatial: Libraries were sequenced at the Mellowes Center Facility on the Illumina NovaSeq6000 with paired end reads per the 10x Genomics protocol and generating 25 million read pairs per spot covered by tissue. The quality control of raw reads was processed by FastQC."
+        ],
+        "data_processing": [
+          "Bulk sequencing: DNA reads were cleaned using TrimGalore. Illumina short reads were mapped to the current reference genome, GRCh38, using BWA-mem.63 Somatic mutations including single nucleotide variants and indels were evaluated by Mutect2, SomaticSniper, and Varscan2 with comparison to patient-matched germline WES obtained from isolated peripheral blood mononuclear cells.  Single-cell sequencing: Raw sequencing reads were processed using CellRanger v8.0.1 to demultiplex reads, align to the GRCh38 reference genome, and quantify unique molecular identifiers (UMIs). Quality control was performed by filtering out cells with fewer than 200 or more than 5,000 features, and cells with >15% mitochondrial gene expression were excluded. The Seurat v5.1.0 toolkit was used to integrate datasets, perform canonical correlation analysis (CCA) to reduce batch effects, and identify variable features. Principal component analysis (PCA) and Uniform Manifold Approximation and Projection (UMAP) were used for dimensionality reduction. Spatial: Raw reads were mapped to the human GRCh38 reference genome with Visium Probe_Set_v2.0 by Space Ranger. Fiducial detection, barcode/UMI counting, zero-count spot filtering, and normalization were also performed by Space Ranger. Visualization was performed with 10x Loupe Browser.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Gene expression matrix: .mtx.gz Barcodes and features: .tsv.gz Metadata and annotations: .csv Aligned reads: .bam Index files: .bam.bai Spatial images: .png, .jpg Spatial scaling factors: .json"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Joseph,,Zenga"
+        ],
+        "contact_email": [
+          "jyzenga@mcw.edu"
+        ],
+        "contact_institute": [
+          "MEDICAL COLLEGE OF WISCONSIN"
+        ],
+        "contact_address": [
+          "9200 W WISCONSIN AVE"
+        ],
+        "contact_city": [
+          "Milwaukee"
+        ],
+        "contact_state": [
+          "WI"
+        ],
+        "contact_zip/postal_code": [
+          "53226"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44570265",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26597558"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608358/suppl/GSM8608358_P120PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608358/suppl/GSM8608358_P120PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608358/suppl/GSM8608358_P120PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280982"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "head and neck squamous cell carcinoma",
+        "source_nominal_visit": "Pre-Treatment",
+        "source_preparation": "PBMC-derived blood RNA; primary focuses on circulating T-cell analysis. Tumor, nodes, spatial and TCR/WES assays excluded.",
+        "source_demographics": "Individual age/sex/HPV status/exact draw dates not joined; no imputation",
+        "source_alias_review": "HyPR-HN02 has two blood visits; HyPR-HN04 one. Primary explicitly states P120 is a previously untreated HNSCC patient outside HyPR-HN, so third distinct donor, not a trial-label alias.",
+        "source_primary": "https://pubmed.ncbi.nlm.nih.gov/40593620/"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608358/suppl/GSM8608358_P120PBMC_features.tsv.gz",
+          "filename": "GSM8608358_P120PBMC_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608358/suppl/GSM8608358_P120PBMC_barcodes.tsv.gz",
+          "filename": "GSM8608358_P120PBMC_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8608nnn/GSM8608358/suppl/GSM8608358_P120PBMC_matrix.mtx.gz",
+          "filename": "GSM8608358_P120PBMC_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM8608358_P120PBMC_features.tsv.gz",
+      "barcodes_member": "GSM8608358_P120PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM8608358_P120PBMC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13972,
+        "genes": 38606,
+        "nonzeros": 26048162,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "source_features": 38606,
+        "source_barcode_rows": 13972,
+        "RNA_positive_barcode_rows": 13972,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

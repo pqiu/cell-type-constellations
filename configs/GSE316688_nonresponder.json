@@ -1,0 +1,780 @@
+{
+  "dataset_id": "GSE316688_nonresponder",
+  "study_id": "GSE316688",
+  "input_format": "pinned_cell_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_biological_specimen"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Primary clinical collection and pinned author hash table identify donor/hash physical visits. Merge technical capture wells; retain repeated donors, unique late/relapse visits and missing baseline in the nonresponder.",
+  "source_metadata": {
+    "accession": "GSE316688",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE316688",
+    "publication": "https://doi.org/10.1093/brain/awag303",
+    "primary_public_copy": "https://push-zb.helmholtz-munich.de/deliver.php?id=46213",
+    "author_repository": "https://github.com/redwanfarooq/ocrelizumab_paper",
+    "author_revision": "b87fb2fb0f8a710880292b27ce184cff041f1b98",
+    "count_license": "not_specified_in_GEO",
+    "primary_paper_license": "CC-BY4.0",
+    "author_code_license": "MIT; not treated as a blanket data license",
+    "source_processing": [
+      "Raw data for each sequencing run was demultiplexed to FASTQ files for each library using bcl2fastq v2.20.0.422 (Illumina). For each sample, FASTQ files for each library type across different sequencing runs were aggregated.",
+      "To generate count matrices, STARsolo v2.7.11a was used to align RNA reads to a human (GRCh38) reference transcriptome (using option `--soloFeatures GeneFull_Ex50pAS`), and BarCounter v1.0.0 was used to align ADT and HTO reads to the oligonucleotide sequences for the antibody-conjugated tags used in the experiments.",
+      "For each sample, raw count matrices for all feature types were concatenated. The EmptyDrops algorithm (DropletUtils v1.22.0) was used to call cell-containing barcodes based on the RNA modality only (using the following parameters: minimum UMI count 500, maximum number of cell-containing droplets 20,000, library size-ranked droplet indices for ambient estimation 45,000\u201390,000). CellBender v0.3.2 was applied to model ambient contamination (for both RNA and ADT modalities, excluding isotype control antibodies) from empty droplet barcodes (using options `--learning rate 0.00005 --fpr 0`) and this was subtracted from the raw count matrix. Hashed samples were demultiplexed with demuxmix v1.4.0 (using default parameters); this step also allowed identification of inter-sample doublets as barcodes assigned to more than 1 HTO. Simulation-based prediction of additional heterotypic intra-sample doublets was performed with scDblFinder v1.16.0 (using default parameters and providing the list of the known intra-sample doublets from the previous step using the `knownDoublets` parameter). The union of cell barcodes identified as doublets using both approaches were excluded.",
+      "Cell-level quality control was performed separately for each sample using automated outlier-based (>= 3 median absolute deviations) thresholds as implemented in scater v1.30.1. For RNA data, cells were excluded for low library size (total UMI count), low library complexity (number of genes with non-zero UMI count) or high percentage mitochondrial gene counts. For ADT data, cells were excluded for high isotype control antibody count, likely reflecting droplets containing antibody aggregates.",
+      "Transcript Ensembl IDs from the RNA count matrices were used to extract canonical gene symbols and gene type annotations with ensembldb v2.26.0 (using Ensembl annotation database version 86 for *Homo sapiens*). Transcripts annotated as types other than 'protein_coding', 'lincRNA', 'IG_C_gene' and 'TR_C_gene' were removed. Isotype control antibody tags were removed from ADT count matrices.",
+      "Further processing was performed using Seurat v5.1.0. First, post-QC filtered count matrices from all samples in the experiment were concatenated to construct a combined Seurat object with a separate assay for each modality. RNA counts were library size normalised per cell, scaled to counts per 10,000 and log-transformed with `NormalizeData` (using `method = 'LogNormalize'`, `scale.factor = 1e4`). Cell cycle scores were computed using `CellCycleScoring` and built-in lists of cell cycle-related genes. The top 5,000 highly variable features across samples were selected with `FindVariableFeatures` (using `selection.method = 'vst'`). To limit the influence of uninteresting variation in highly expressed housekeeping genes on downstream clustering and integration steps, ribosomal and mitochondrial genes were removed from the list of highly variable features. ADT counts were separately normalised across cells from each sample using a centred log ratio (CLR) transformation with `NormalizeData` (using `method = 'CLR'` and `margin = 2`). To avoid problems with missing data from antibodies unique to each of the two panels used in the experiment, the intersection of antibody tags present in both panels were selected as the highly variable features. Normalised expression values for the highly variable features in both modalities were mean-centred and scaled to unit variance using `ScaleData`; for the RNA modality, this step also included regressing out percentage mitochondrial gene counts and cell cycle scores per cell (using the `vars.to.regress` parameter). The top 50 principal components for each modality were computed from the scaled expression values using `RunPCA`. Integration was performed with `IntegrateLayers` (using a custom wrapper function for the harmony algorithm (harmony v1.2.1) as the `method` parameter and specifying sample, i.e. the pool of hashed PBMC samples loaded in a single Chromium chip well, donor and assay version as covariates).",
+      "A semi-supervised consensus approach was used to derive robust cell type annotations. First, using the RNA modality, reference-based automated cell type annotations were obtained using three different methods and reference datasets: (a) Seurat mutual nearest neighbours-based reference mapping to the human PBMC reference atlas from Azimuth (doi: 10.1016/j.cell.2021.04.048), (b) CellTypist v1.7.1 logistic regression-based reference mapping to the Allen Institute for Immunology Human Immune Health Atlas (doi: 10.1038/s41586-025-09686-5), (c) SingleR v2.4.0 Spearman correlation-based reference mapping to bulk RNAseq reference derived from FACS-sorted immune cell populations (doi: 10.1016/j.celrep.2019.01.041). Second, unsupervised clusters were obtained separately for each modality (RNA and ADT) using Scanpy v1.10.3, by first computing a kNN graph based on the integrated embeddings with `scanpy.pp.neighbors` (using cosine distance and k = 30), then performing graph-based clustering with `scanpy.tl.leiden` (using `resolution` parameter values in the integer range [1, 9]). Next, scTriangulate v0.13.0 was used to derive automated consensus clusters (using default parameters and providing unsupervised cluster labels with resolutions 2, 5 and 8 from each modality and the highest granularity annotations from each reference mapping using the `query` parameter). Subsequently, the consensus cluster labels were manually harmonised into consistent cell type labels at 3 levels of granularity. Lastly, subclustering was performed for each cell type label to identify any remaining misclassified cells and artefactual clusters by manual inspection of marker genes and proteins. Subsequently, the main (level 1) cell type labels were used to exclude cells not annotated as B cells, dendritic cells, (non-NK) innate lymphoid cells, monocytes, NK cells or T cells.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Per sample STARSolo output files: matrix.mtx.gz, features.tsv.gz, barcodes.tsv.gz",
+      "Supplementary files format and content: Per sample BarCounter output files: Tag_Counts.csv.gz, tags_totalseq_a.csv, tags_totalseq_b.csv",
+      "Supplementary files format and content: Anonymised donor-level metadata: donor_metadata.tsv",
+      "Supplementary files format and content: Combined QC-filtered multimodal count matrices, integrated embeddings and cell-level metadata in two formats: SeuratObject (annotated_discovery.rds, annotated_nonresponder.rds), MuData (annotated_discovery.h5mu, annotated_nonresponder.h5mu)",
+      "Library strategy: CITE-seq"
+    ],
+    "native_RNA_genes": 36601,
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "clinical_metadata_sha256": "9d977f4a566acdc570b65c16f4c8efc4d5b02c51b16201b5f1e55357aaf02796",
+    "hash_visit_proof_sha256": "5f1a3546e4dca4e29a529ef74144fb8868f01f7af2fd811c8e6c252d0cbc0660",
+    "preparation_script_sha256": "fd75eee5cedc8351feb8ceda7c8773dac0025cda4cea120f0153dcac082290fc"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9458317",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM9458317_3530194-F_GEX_features.tsv.gz",
+      "barcodes_member": "GSM9458317_3530194-F_GEX_barcodes.tsv.gz",
+      "matrix_member": "GSM9458317_3530194-F_GEX_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_features.tsv.gz",
+          "filename": "GSM9458317_3530194-F_GEX_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_barcodes.tsv.gz",
+          "filename": "GSM9458317_3530194-F_GEX_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_matrix.mtx.gz",
+          "filename": "GSM9458317_3530194-F_GEX_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "3530194, hashed pool F, GEX"
+        ],
+        "geo_accession": [
+          "GSM9458317"
+        ],
+        "status": [
+          "Public on Sep 11 2026"
+        ],
+        "submission_date": [
+          "Jan 15 2026"
+        ],
+        "last_update_date": [
+          "Sep 11 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "donor: 3530194",
+          "cohort: Non-responder",
+          "library type: mRNA",
+          "assay: 10x Chromium GEM-X 3' v4"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were collected from all participants at baseline (prior to first dose of ocrelizumab) and immediately prior to each subsequent infusion. No pre-treatment sample was available for the treatment non-responder participant. The dosing schedule for ocrelizumab comprised an initiation phase consisting of two 300 mg infusions given 2 weeks apart, followed by extended interval 600 mg maintenance infusions with the timing of the next infusion determined on an individual basis by detectable B cell repopulation (>= 10 cells/\u00b5L) on monthly blood lymphocyte subset monitoring by flow cytometry."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated from fresh whole blood samples using density gradient centrifugation and cryopreserved in liquid nitrogen within 4 hours of collection.",
+          "PBMCs were thawed at 37\u00b0C, counted, assessed for viability and processed using Chromium Next GEM Single Cell 3' Reagent Kit v3.1 (discovery cohort) or Chromium GEM-X Single Cell 3' Reagent Kit v4 (treatment non-responder) (10x Genomics). Cells from each sample were first labelled with CITEseq antibodies from TotalSeq-A Human Universal Cocktail v1.0 (BioLegend) or TotalSeq-B Human Universal Cocktail v1.0 (BioLegend) and corresponding TotalSeq-A or TotalSeq-B anti-human hashtag antibodies (BioLegend). Longitudinal samples from each patient were then pooled and 16,000\u201332,000 cells were loaded per well of a Chromium microfluidic chip, using 2\u20133 wells per participant. Library preparation was performed according to the manufacturer instructions, with a modification in Step 2.2 for samples processed using the TotalSeq-A antibodies, as described previously (doi: 10.1016/j.medj.2021.01.006). cDNA library concentrations and sizes were measured by Qubit and Tapestation."
+        ],
+        "description": [
+          "Library name: 3530194-F_GEX"
+        ],
+        "data_processing": [
+          "Raw data for each sequencing run was demultiplexed to FASTQ files for each library using bcl2fastq v2.20.0.422 (Illumina). For each sample, FASTQ files for each library type across different sequencing runs were aggregated.",
+          "To generate count matrices, STARsolo v2.7.11a was used to align RNA reads to a human (GRCh38) reference transcriptome (using option `--soloFeatures GeneFull_Ex50pAS`), and BarCounter v1.0.0 was used to align ADT and HTO reads to the oligonucleotide sequences for the antibody-conjugated tags used in the experiments.",
+          "For each sample, raw count matrices for all feature types were concatenated. The EmptyDrops algorithm (DropletUtils v1.22.0) was used to call cell-containing barcodes based on the RNA modality only (using the following parameters: minimum UMI count 500, maximum number of cell-containing droplets 20,000, library size-ranked droplet indices for ambient estimation 45,000\u201390,000). CellBender v0.3.2 was applied to model ambient contamination (for both RNA and ADT modalities, excluding isotype control antibodies) from empty droplet barcodes (using options `--learning rate 0.00005 --fpr 0`) and this was subtracted from the raw count matrix. Hashed samples were demultiplexed with demuxmix v1.4.0 (using default parameters); this step also allowed identification of inter-sample doublets as barcodes assigned to more than 1 HTO. Simulation-based prediction of additional heterotypic intra-sample doublets was performed with scDblFinder v1.16.0 (using default parameters and providing the list of the known intra-sample doublets from the previous step using the `knownDoublets` parameter). The union of cell barcodes identified as doublets using both approaches were excluded.",
+          "Cell-level quality control was performed separately for each sample using automated outlier-based (>= 3 median absolute deviations) thresholds as implemented in scater v1.30.1. For RNA data, cells were excluded for low library size (total UMI count), low library complexity (number of genes with non-zero UMI count) or high percentage mitochondrial gene counts. For ADT data, cells were excluded for high isotype control antibody count, likely reflecting droplets containing antibody aggregates.",
+          "Transcript Ensembl IDs from the RNA count matrices were used to extract canonical gene symbols and gene type annotations with ensembldb v2.26.0 (using Ensembl annotation database version 86 for *Homo sapiens*). Transcripts annotated as types other than 'protein_coding', 'lincRNA', 'IG_C_gene' and 'TR_C_gene' were removed. Isotype control antibody tags were removed from ADT count matrices.",
+          "Further processing was performed using Seurat v5.1.0. First, post-QC filtered count matrices from all samples in the experiment were concatenated to construct a combined Seurat object with a separate assay for each modality. RNA counts were library size normalised per cell, scaled to counts per 10,000 and log-transformed with `NormalizeData` (using `method = 'LogNormalize'`, `scale.factor = 1e4`). Cell cycle scores were computed using `CellCycleScoring` and built-in lists of cell cycle-related genes. The top 5,000 highly variable features across samples were selected with `FindVariableFeatures` (using `selection.method = 'vst'`). To limit the influence of uninteresting variation in highly expressed housekeeping genes on downstream clustering and integration steps, ribosomal and mitochondrial genes were removed from the list of highly variable features. ADT counts were separately normalised across cells from each sample using a centred log ratio (CLR) transformation with `NormalizeData` (using `method = 'CLR'` and `margin = 2`). To avoid problems with missing data from antibodies unique to each of the two panels used in the experiment, the intersection of antibody tags present in both panels were selected as the highly variable features. Normalised expression values for the highly variable features in both modalities were mean-centred and scaled to unit variance using `ScaleData`; for the RNA modality, this step also included regressing out percentage mitochondrial gene counts and cell cycle scores per cell (using the `vars.to.regress` parameter). The top 50 principal components for each modality were computed from the scaled expression values using `RunPCA`. Integration was performed with `IntegrateLayers` (using a custom wrapper function for the harmony algorithm (harmony v1.2.1) as the `method` parameter and specifying sample, i.e. the pool of hashed PBMC samples loaded in a single Chromium chip well, donor and assay version as covariates).",
+          "A semi-supervised consensus approach was used to derive robust cell type annotations. First, using the RNA modality, reference-based automated cell type annotations were obtained using three different methods and reference datasets: (a) Seurat mutual nearest neighbours-based reference mapping to the human PBMC reference atlas from Azimuth (doi: 10.1016/j.cell.2021.04.048), (b) CellTypist v1.7.1 logistic regression-based reference mapping to the Allen Institute for Immunology Human Immune Health Atlas (doi: 10.1038/s41586-025-09686-5), (c) SingleR v2.4.0 Spearman correlation-based reference mapping to bulk RNAseq reference derived from FACS-sorted immune cell populations (doi: 10.1016/j.celrep.2019.01.041). Second, unsupervised clusters were obtained separately for each modality (RNA and ADT) using Scanpy v1.10.3, by first computing a kNN graph based on the integrated embeddings with `scanpy.pp.neighbors` (using cosine distance and k = 30), then performing graph-based clustering with `scanpy.tl.leiden` (using `resolution` parameter values in the integer range [1, 9]). Next, scTriangulate v0.13.0 was used to derive automated consensus clusters (using default parameters and providing unsupervised cluster labels with resolutions 2, 5 and 8 from each modality and the highest granularity annotations from each reference mapping using the `query` parameter). Subsequently, the consensus cluster labels were manually harmonised into consistent cell type labels at 3 levels of granularity. Lastly, subclustering was performed for each cell type label to identify any remaining misclassified cells and artefactual clusters by manual inspection of marker genes and proteins. Subsequently, the main (level 1) cell type labels were used to exclude cells not annotated as B cells, dendritic cells, (non-NK) innate lymphoid cells, monocytes, NK cells or T cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per sample STARSolo output files: matrix.mtx.gz, features.tsv.gz, barcodes.tsv.gz",
+          "Supplementary files format and content: Per sample BarCounter output files: Tag_Counts.csv.gz, tags_totalseq_a.csv, tags_totalseq_b.csv",
+          "Supplementary files format and content: Anonymised donor-level metadata: donor_metadata.tsv",
+          "Supplementary files format and content: Combined QC-filtered multimodal count matrices, integrated embeddings and cell-level metadata in two formats: SeuratObject (annotated_discovery.rds, annotated_nonresponder.rds), MuData (annotated_discovery.h5mu, annotated_nonresponder.h5mu)",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Kathrine,E,Attfield"
+        ],
+        "contact_email": [
+          "kate.attfield@ndcn.ox.ac.uk"
+        ],
+        "contact_phone": [
+          "01865 222351"
+        ],
+        "contact_laboratory": [
+          "Oxford Centre for Neuroinflammation"
+        ],
+        "contact_department": [
+          "Nuffield Department of Clinical Neurosciences"
+        ],
+        "contact_institute": [
+          "University of Oxford"
+        ],
+        "contact_address": [
+          "John Radcliffe Hospital"
+        ],
+        "contact_city": [
+          "Oxford"
+        ],
+        "contact_zip/postal_code": [
+          "OX3 9DU"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE316688"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 7372800,
+        "genes": 36601,
+        "nonzeros": 77772467,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7372800,
+        "RNA_positive_barcode_rows": 1993661,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM9458317",
+        "pool": "3530194-F",
+        "source_metadata": {
+          "title": [
+            "3530194, hashed pool F, GEX"
+          ],
+          "geo_accession": [
+            "GSM9458317"
+          ],
+          "status": [
+            "Public on Sep 11 2026"
+          ],
+          "submission_date": [
+            "Jan 15 2026"
+          ],
+          "last_update_date": [
+            "Sep 11 2026"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "Blood"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "tissue: Blood",
+            "cell type: PBMC",
+            "donor: 3530194",
+            "cohort: Non-responder",
+            "library type: mRNA",
+            "assay: 10x Chromium GEM-X 3' v4"
+          ],
+          "treatment_protocol_ch1": [
+            "Blood samples were collected from all participants at baseline (prior to first dose of ocrelizumab) and immediately prior to each subsequent infusion. No pre-treatment sample was available for the treatment non-responder participant. The dosing schedule for ocrelizumab comprised an initiation phase consisting of two 300 mg infusions given 2 weeks apart, followed by extended interval 600 mg maintenance infusions with the timing of the next infusion determined on an individual basis by detectable B cell repopulation (>= 10 cells/\u00b5L) on monthly blood lymphocyte subset monitoring by flow cytometry."
+          ],
+          "molecule_ch1": [
+            "polyA RNA"
+          ],
+          "extract_protocol_ch1": [
+            "PBMCs were isolated from fresh whole blood samples using density gradient centrifugation and cryopreserved in liquid nitrogen within 4 hours of collection.",
+            "PBMCs were thawed at 37\u00b0C, counted, assessed for viability and processed using Chromium Next GEM Single Cell 3' Reagent Kit v3.1 (discovery cohort) or Chromium GEM-X Single Cell 3' Reagent Kit v4 (treatment non-responder) (10x Genomics). Cells from each sample were first labelled with CITEseq antibodies from TotalSeq-A Human Universal Cocktail v1.0 (BioLegend) or TotalSeq-B Human Universal Cocktail v1.0 (BioLegend) and corresponding TotalSeq-A or TotalSeq-B anti-human hashtag antibodies (BioLegend). Longitudinal samples from each patient were then pooled and 16,000\u201332,000 cells were loaded per well of a Chromium microfluidic chip, using 2\u20133 wells per participant. Library preparation was performed according to the manufacturer instructions, with a modification in Step 2.2 for samples processed using the TotalSeq-A antibodies, as described previously (doi: 10.1016/j.medj.2021.01.006). cDNA library concentrations and sizes were measured by Qubit and Tapestation."
+          ],
+          "description": [
+            "Library name: 3530194-F_GEX"
+          ],
+          "data_processing": [
+            "Raw data for each sequencing run was demultiplexed to FASTQ files for each library using bcl2fastq v2.20.0.422 (Illumina). For each sample, FASTQ files for each library type across different sequencing runs were aggregated.",
+            "To generate count matrices, STARsolo v2.7.11a was used to align RNA reads to a human (GRCh38) reference transcriptome (using option `--soloFeatures GeneFull_Ex50pAS`), and BarCounter v1.0.0 was used to align ADT and HTO reads to the oligonucleotide sequences for the antibody-conjugated tags used in the experiments.",
+            "For each sample, raw count matrices for all feature types were concatenated. The EmptyDrops algorithm (DropletUtils v1.22.0) was used to call cell-containing barcodes based on the RNA modality only (using the following parameters: minimum UMI count 500, maximum number of cell-containing droplets 20,000, library size-ranked droplet indices for ambient estimation 45,000\u201390,000). CellBender v0.3.2 was applied to model ambient contamination (for both RNA and ADT modalities, excluding isotype control antibodies) from empty droplet barcodes (using options `--learning rate 0.00005 --fpr 0`) and this was subtracted from the raw count matrix. Hashed samples were demultiplexed with demuxmix v1.4.0 (using default parameters); this step also allowed identification of inter-sample doublets as barcodes assigned to more than 1 HTO. Simulation-based prediction of additional heterotypic intra-sample doublets was performed with scDblFinder v1.16.0 (using default parameters and providing the list of the known intra-sample doublets from the previous step using the `knownDoublets` parameter). The union of cell barcodes identified as doublets using both approaches were excluded.",
+            "Cell-level quality control was performed separately for each sample using automated outlier-based (>= 3 median absolute deviations) thresholds as implemented in scater v1.30.1. For RNA data, cells were excluded for low library size (total UMI count), low library complexity (number of genes with non-zero UMI count) or high percentage mitochondrial gene counts. For ADT data, cells were excluded for high isotype control antibody count, likely reflecting droplets containing antibody aggregates.",
+            "Transcript Ensembl IDs from the RNA count matrices were used to extract canonical gene symbols and gene type annotations with ensembldb v2.26.0 (using Ensembl annotation database version 86 for *Homo sapiens*). Transcripts annotated as types other than 'protein_coding', 'lincRNA', 'IG_C_gene' and 'TR_C_gene' were removed. Isotype control antibody tags were removed from ADT count matrices.",
+            "Further processing was performed using Seurat v5.1.0. First, post-QC filtered count matrices from all samples in the experiment were concatenated to construct a combined Seurat object with a separate assay for each modality. RNA counts were library size normalised per cell, scaled to counts per 10,000 and log-transformed with `NormalizeData` (using `method = 'LogNormalize'`, `scale.factor = 1e4`). Cell cycle scores were computed using `CellCycleScoring` and built-in lists of cell cycle-related genes. The top 5,000 highly variable features across samples were selected with `FindVariableFeatures` (using `selection.method = 'vst'`). To limit the influence of uninteresting variation in highly expressed housekeeping genes on downstream clustering and integration steps, ribosomal and mitochondrial genes were removed from the list of highly variable features. ADT counts were separately normalised across cells from each sample using a centred log ratio (CLR) transformation with `NormalizeData` (using `method = 'CLR'` and `margin = 2`). To avoid problems with missing data from antibodies unique to each of the two panels used in the experiment, the intersection of antibody tags present in both panels were selected as the highly variable features. Normalised expression values for the highly variable features in both modalities were mean-centred and scaled to unit variance using `ScaleData`; for the RNA modality, this step also included regressing out percentage mitochondrial gene counts and cell cycle scores per cell (using the `vars.to.regress` parameter). The top 50 principal components for each modality were computed from the scaled expression values using `RunPCA`. Integration was performed with `IntegrateLayers` (using a custom wrapper function for the harmony algorithm (harmony v1.2.1) as the `method` parameter and specifying sample, i.e. the pool of hashed PBMC samples loaded in a single Chromium chip well, donor and assay version as covariates).",
+            "A semi-supervised consensus approach was used to derive robust cell type annotations. First, using the RNA modality, reference-based automated cell type annotations were obtained using three different methods and reference datasets: (a) Seurat mutual nearest neighbours-based reference mapping to the human PBMC reference atlas from Azimuth (doi: 10.1016/j.cell.2021.04.048), (b) CellTypist v1.7.1 logistic regression-based reference mapping to the Allen Institute for Immunology Human Immune Health Atlas (doi: 10.1038/s41586-025-09686-5), (c) SingleR v2.4.0 Spearman correlation-based reference mapping to bulk RNAseq reference derived from FACS-sorted immune cell populations (doi: 10.1016/j.celrep.2019.01.041). Second, unsupervised clusters were obtained separately for each modality (RNA and ADT) using Scanpy v1.10.3, by first computing a kNN graph based on the integrated embeddings with `scanpy.pp.neighbors` (using cosine distance and k = 30), then performing graph-based clustering with `scanpy.tl.leiden` (using `resolution` parameter values in the integer range [1, 9]). Next, scTriangulate v0.13.0 was used to derive automated consensus clusters (using default parameters and providing unsupervised cluster labels with resolutions 2, 5 and 8 from each modality and the highest granularity annotations from each reference mapping using the `query` parameter). Subsequently, the consensus cluster labels were manually harmonised into consistent cell type labels at 3 levels of granularity. Lastly, subclustering was performed for each cell type label to identify any remaining misclassified cells and artefactual clusters by manual inspection of marker genes and proteins. Subsequently, the main (level 1) cell type labels were used to exclude cells not annotated as B cells, dendritic cells, (non-NK) innate lymphoid cells, monocytes, NK cells or T cells.",
+            "Assembly: GRCh38",
+            "Supplementary files format and content: Per sample STARSolo output files: matrix.mtx.gz, features.tsv.gz, barcodes.tsv.gz",
+            "Supplementary files format and content: Per sample BarCounter output files: Tag_Counts.csv.gz, tags_totalseq_a.csv, tags_totalseq_b.csv",
+            "Supplementary files format and content: Anonymised donor-level metadata: donor_metadata.tsv",
+            "Supplementary files format and content: Combined QC-filtered multimodal count matrices, integrated embeddings and cell-level metadata in two formats: SeuratObject (annotated_discovery.rds, annotated_nonresponder.rds), MuData (annotated_discovery.h5mu, annotated_nonresponder.h5mu)",
+            "Library strategy: CITE-seq"
+          ],
+          "platform_id": [
+            "GPL34281"
+          ],
+          "contact_name": [
+            "Kathrine,E,Attfield"
+          ],
+          "contact_email": [
+            "kate.attfield@ndcn.ox.ac.uk"
+          ],
+          "contact_phone": [
+            "01865 222351"
+          ],
+          "contact_laboratory": [
+            "Oxford Centre for Neuroinflammation"
+          ],
+          "contact_department": [
+            "Nuffield Department of Clinical Neurosciences"
+          ],
+          "contact_institute": [
+            "University of Oxford"
+          ],
+          "contact_address": [
+            "John Radcliffe Hospital"
+          ],
+          "contact_city": [
+            "Oxford"
+          ],
+          "contact_zip/postal_code": [
+            "OX3 9DU"
+          ],
+          "contact_country": [
+            "United Kingdom"
+          ],
+          "instrument_model": [
+            "Illumina NovaSeq X"
+          ],
+          "library_selection": [
+            "other"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "OTHER"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_features.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE316688"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_features.tsv.gz",
+            "filename": "GSM9458317_3530194-F_GEX_features.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_barcodes.tsv.gz",
+            "filename": "GSM9458317_3530194-F_GEX_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458317/suppl/GSM9458317_3530194-F_GEX_matrix.mtx.gz",
+            "filename": "GSM9458317_3530194-F_GEX_matrix.mtx.gz"
+          }
+        ],
+        "members": {
+          "genes_member": "GSM9458317_3530194-F_GEX_features.tsv.gz",
+          "barcodes_member": "GSM9458317_3530194-F_GEX_barcodes.tsv.gz",
+          "matrix_member": "GSM9458317_3530194-F_GEX_matrix.mtx.gz"
+        },
+        "source_asset_sha256": {
+          "genes_member": "fba878850750ed6ccffb1e1ec215254b33afcf2e83455bf211f5aff9d28b68dd",
+          "barcodes_member": "344504ca960db9407277f82b9a85d7739e018ec66c1e94a4d325fcfb62499367",
+          "matrix_member": "290663e49759793102f26bd4e44a131c78555dd7a90c3beecfb48c1b380fdfaa"
+        },
+        "published_selected_cells": 13963,
+        "native_barcode_membership_passed": true,
+        "assignment_path": "references/datasets/GSE316688_3530194-F_published_assignments.csv.gz",
+        "assignment_member": "GSE316688_3530194-F_published_assignments.csv.gz",
+        "assignment_sha256": "738ae6e52221f01dfd562971a2ee9e872e48cda2468f2889d481dffb7698ccd3",
+        "biological_donors": [
+          "3530194"
+        ],
+        "source_physical_visit_candidates": [
+          "3530194_hash2",
+          "3530194_hash3",
+          "3530194_hash5",
+          "3530194_hashRelapse"
+        ],
+        "source_barcode_scope": "Original STARsolo droplet whitelist, not called cells",
+        "author_processed_expression_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSE316688_3530194-F_clinical_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "3530194"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE316688_3530194-F_clinical_assignments.csv.gz",
+          "sha256": "9a1fc0ed9c71cd1e0b38d12ef74ebb2ddff3be32193407c1605c83d170db5cf4",
+          "kind": "Published source donor/hash visits plus public donor clinical metadata"
+        }
+      },
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_cohort": "nonresponder",
+        "source_assignment_evidence": "Pinned published donor/hash/capture calls agree with author sample-tag tables and all selected native barcodes. Primary confirms longitudinal visits pooled over technical wells.",
+        "source_assignment_uncertainty": "Published demuxmix calls; no calibrated per-cell assignment correctness supplied. Author final-QC selection precedes unchanged collection RNA QC.",
+        "source_gene_geometry": "All original measured RNA genes/counts; author CellBender-adjusted/filtered count slots, integrated coordinates and type labels do not supply geometry or SCimilarity annotation.",
+        "source_visit_policy": "Distinct donor/hash visits, including separate Late3/4/5. Technical capture pools merge before centroids. No infusion-to-blood-date conversion; nonresponder has no pretreatment baseline.",
+        "source_donor_metadata_policy": "Public reported donor demographics/clinical data retained as donor-level source fields, not asserted time-specific sample measurements. Infusion dates remain clinical context.",
+        "source_barcode_scope": "Original droplet whitelist is not a called-cell or biological sample count. Only published selected barcodes proceed to collection QC.",
+        "source_alias_review": "Discovery14donors/62visits andnonresponder1donor/4visits; sourcepoolcounts41+2are technical captures. Broaderauthorplanned/excluded observations not counted; global overlap unresolved."
+      }
+    },
+    {
+      "accession": "GSM9458318",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM9458318_3530194-G_GEX_features.tsv.gz",
+      "barcodes_member": "GSM9458318_3530194-G_GEX_barcodes.tsv.gz",
+      "matrix_member": "GSM9458318_3530194-G_GEX_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_features.tsv.gz",
+          "filename": "GSM9458318_3530194-G_GEX_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_barcodes.tsv.gz",
+          "filename": "GSM9458318_3530194-G_GEX_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_matrix.mtx.gz",
+          "filename": "GSM9458318_3530194-G_GEX_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "3530194, hashed pool G, GEX"
+        ],
+        "geo_accession": [
+          "GSM9458318"
+        ],
+        "status": [
+          "Public on Sep 11 2026"
+        ],
+        "submission_date": [
+          "Jan 15 2026"
+        ],
+        "last_update_date": [
+          "Sep 11 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "donor: 3530194",
+          "cohort: Non-responder",
+          "library type: mRNA",
+          "assay: 10x Chromium GEM-X 3' v4"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were collected from all participants at baseline (prior to first dose of ocrelizumab) and immediately prior to each subsequent infusion. No pre-treatment sample was available for the treatment non-responder participant. The dosing schedule for ocrelizumab comprised an initiation phase consisting of two 300 mg infusions given 2 weeks apart, followed by extended interval 600 mg maintenance infusions with the timing of the next infusion determined on an individual basis by detectable B cell repopulation (>= 10 cells/\u00b5L) on monthly blood lymphocyte subset monitoring by flow cytometry."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated from fresh whole blood samples using density gradient centrifugation and cryopreserved in liquid nitrogen within 4 hours of collection.",
+          "PBMCs were thawed at 37\u00b0C, counted, assessed for viability and processed using Chromium Next GEM Single Cell 3' Reagent Kit v3.1 (discovery cohort) or Chromium GEM-X Single Cell 3' Reagent Kit v4 (treatment non-responder) (10x Genomics). Cells from each sample were first labelled with CITEseq antibodies from TotalSeq-A Human Universal Cocktail v1.0 (BioLegend) or TotalSeq-B Human Universal Cocktail v1.0 (BioLegend) and corresponding TotalSeq-A or TotalSeq-B anti-human hashtag antibodies (BioLegend). Longitudinal samples from each patient were then pooled and 16,000\u201332,000 cells were loaded per well of a Chromium microfluidic chip, using 2\u20133 wells per participant. Library preparation was performed according to the manufacturer instructions, with a modification in Step 2.2 for samples processed using the TotalSeq-A antibodies, as described previously (doi: 10.1016/j.medj.2021.01.006). cDNA library concentrations and sizes were measured by Qubit and Tapestation."
+        ],
+        "description": [
+          "Library name: 3530194-G_GEX"
+        ],
+        "data_processing": [
+          "Raw data for each sequencing run was demultiplexed to FASTQ files for each library using bcl2fastq v2.20.0.422 (Illumina). For each sample, FASTQ files for each library type across different sequencing runs were aggregated.",
+          "To generate count matrices, STARsolo v2.7.11a was used to align RNA reads to a human (GRCh38) reference transcriptome (using option `--soloFeatures GeneFull_Ex50pAS`), and BarCounter v1.0.0 was used to align ADT and HTO reads to the oligonucleotide sequences for the antibody-conjugated tags used in the experiments.",
+          "For each sample, raw count matrices for all feature types were concatenated. The EmptyDrops algorithm (DropletUtils v1.22.0) was used to call cell-containing barcodes based on the RNA modality only (using the following parameters: minimum UMI count 500, maximum number of cell-containing droplets 20,000, library size-ranked droplet indices for ambient estimation 45,000\u201390,000). CellBender v0.3.2 was applied to model ambient contamination (for both RNA and ADT modalities, excluding isotype control antibodies) from empty droplet barcodes (using options `--learning rate 0.00005 --fpr 0`) and this was subtracted from the raw count matrix. Hashed samples were demultiplexed with demuxmix v1.4.0 (using default parameters); this step also allowed identification of inter-sample doublets as barcodes assigned to more than 1 HTO. Simulation-based prediction of additional heterotypic intra-sample doublets was performed with scDblFinder v1.16.0 (using default parameters and providing the list of the known intra-sample doublets from the previous step using the `knownDoublets` parameter). The union of cell barcodes identified as doublets using both approaches were excluded.",
+          "Cell-level quality control was performed separately for each sample using automated outlier-based (>= 3 median absolute deviations) thresholds as implemented in scater v1.30.1. For RNA data, cells were excluded for low library size (total UMI count), low library complexity (number of genes with non-zero UMI count) or high percentage mitochondrial gene counts. For ADT data, cells were excluded for high isotype control antibody count, likely reflecting droplets containing antibody aggregates.",
+          "Transcript Ensembl IDs from the RNA count matrices were used to extract canonical gene symbols and gene type annotations with ensembldb v2.26.0 (using Ensembl annotation database version 86 for *Homo sapiens*). Transcripts annotated as types other than 'protein_coding', 'lincRNA', 'IG_C_gene' and 'TR_C_gene' were removed. Isotype control antibody tags were removed from ADT count matrices.",
+          "Further processing was performed using Seurat v5.1.0. First, post-QC filtered count matrices from all samples in the experiment were concatenated to construct a combined Seurat object with a separate assay for each modality. RNA counts were library size normalised per cell, scaled to counts per 10,000 and log-transformed with `NormalizeData` (using `method = 'LogNormalize'`, `scale.factor = 1e4`). Cell cycle scores were computed using `CellCycleScoring` and built-in lists of cell cycle-related genes. The top 5,000 highly variable features across samples were selected with `FindVariableFeatures` (using `selection.method = 'vst'`). To limit the influence of uninteresting variation in highly expressed housekeeping genes on downstream clustering and integration steps, ribosomal and mitochondrial genes were removed from the list of highly variable features. ADT counts were separately normalised across cells from each sample using a centred log ratio (CLR) transformation with `NormalizeData` (using `method = 'CLR'` and `margin = 2`). To avoid problems with missing data from antibodies unique to each of the two panels used in the experiment, the intersection of antibody tags present in both panels were selected as the highly variable features. Normalised expression values for the highly variable features in both modalities were mean-centred and scaled to unit variance using `ScaleData`; for the RNA modality, this step also included regressing out percentage mitochondrial gene counts and cell cycle scores per cell (using the `vars.to.regress` parameter). The top 50 principal components for each modality were computed from the scaled expression values using `RunPCA`. Integration was performed with `IntegrateLayers` (using a custom wrapper function for the harmony algorithm (harmony v1.2.1) as the `method` parameter and specifying sample, i.e. the pool of hashed PBMC samples loaded in a single Chromium chip well, donor and assay version as covariates).",
+          "A semi-supervised consensus approach was used to derive robust cell type annotations. First, using the RNA modality, reference-based automated cell type annotations were obtained using three different methods and reference datasets: (a) Seurat mutual nearest neighbours-based reference mapping to the human PBMC reference atlas from Azimuth (doi: 10.1016/j.cell.2021.04.048), (b) CellTypist v1.7.1 logistic regression-based reference mapping to the Allen Institute for Immunology Human Immune Health Atlas (doi: 10.1038/s41586-025-09686-5), (c) SingleR v2.4.0 Spearman correlation-based reference mapping to bulk RNAseq reference derived from FACS-sorted immune cell populations (doi: 10.1016/j.celrep.2019.01.041). Second, unsupervised clusters were obtained separately for each modality (RNA and ADT) using Scanpy v1.10.3, by first computing a kNN graph based on the integrated embeddings with `scanpy.pp.neighbors` (using cosine distance and k = 30), then performing graph-based clustering with `scanpy.tl.leiden` (using `resolution` parameter values in the integer range [1, 9]). Next, scTriangulate v0.13.0 was used to derive automated consensus clusters (using default parameters and providing unsupervised cluster labels with resolutions 2, 5 and 8 from each modality and the highest granularity annotations from each reference mapping using the `query` parameter). Subsequently, the consensus cluster labels were manually harmonised into consistent cell type labels at 3 levels of granularity. Lastly, subclustering was performed for each cell type label to identify any remaining misclassified cells and artefactual clusters by manual inspection of marker genes and proteins. Subsequently, the main (level 1) cell type labels were used to exclude cells not annotated as B cells, dendritic cells, (non-NK) innate lymphoid cells, monocytes, NK cells or T cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per sample STARSolo output files: matrix.mtx.gz, features.tsv.gz, barcodes.tsv.gz",
+          "Supplementary files format and content: Per sample BarCounter output files: Tag_Counts.csv.gz, tags_totalseq_a.csv, tags_totalseq_b.csv",
+          "Supplementary files format and content: Anonymised donor-level metadata: donor_metadata.tsv",
+          "Supplementary files format and content: Combined QC-filtered multimodal count matrices, integrated embeddings and cell-level metadata in two formats: SeuratObject (annotated_discovery.rds, annotated_nonresponder.rds), MuData (annotated_discovery.h5mu, annotated_nonresponder.h5mu)",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Kathrine,E,Attfield"
+        ],
+        "contact_email": [
+          "kate.attfield@ndcn.ox.ac.uk"
+        ],
+        "contact_phone": [
+          "01865 222351"
+        ],
+        "contact_laboratory": [
+          "Oxford Centre for Neuroinflammation"
+        ],
+        "contact_department": [
+          "Nuffield Department of Clinical Neurosciences"
+        ],
+        "contact_institute": [
+          "University of Oxford"
+        ],
+        "contact_address": [
+          "John Radcliffe Hospital"
+        ],
+        "contact_city": [
+          "Oxford"
+        ],
+        "contact_zip/postal_code": [
+          "OX3 9DU"
+        ],
+        "contact_country": [
+          "United Kingdom"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE316688"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 7372800,
+        "genes": 36601,
+        "nonzeros": 67637914,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7372800,
+        "RNA_positive_barcode_rows": 1857829,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM9458318",
+        "pool": "3530194-G",
+        "source_metadata": {
+          "title": [
+            "3530194, hashed pool G, GEX"
+          ],
+          "geo_accession": [
+            "GSM9458318"
+          ],
+          "status": [
+            "Public on Sep 11 2026"
+          ],
+          "submission_date": [
+            "Jan 15 2026"
+          ],
+          "last_update_date": [
+            "Sep 11 2026"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "Blood"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "tissue: Blood",
+            "cell type: PBMC",
+            "donor: 3530194",
+            "cohort: Non-responder",
+            "library type: mRNA",
+            "assay: 10x Chromium GEM-X 3' v4"
+          ],
+          "treatment_protocol_ch1": [
+            "Blood samples were collected from all participants at baseline (prior to first dose of ocrelizumab) and immediately prior to each subsequent infusion. No pre-treatment sample was available for the treatment non-responder participant. The dosing schedule for ocrelizumab comprised an initiation phase consisting of two 300 mg infusions given 2 weeks apart, followed by extended interval 600 mg maintenance infusions with the timing of the next infusion determined on an individual basis by detectable B cell repopulation (>= 10 cells/\u00b5L) on monthly blood lymphocyte subset monitoring by flow cytometry."
+          ],
+          "molecule_ch1": [
+            "polyA RNA"
+          ],
+          "extract_protocol_ch1": [
+            "PBMCs were isolated from fresh whole blood samples using density gradient centrifugation and cryopreserved in liquid nitrogen within 4 hours of collection.",
+            "PBMCs were thawed at 37\u00b0C, counted, assessed for viability and processed using Chromium Next GEM Single Cell 3' Reagent Kit v3.1 (discovery cohort) or Chromium GEM-X Single Cell 3' Reagent Kit v4 (treatment non-responder) (10x Genomics). Cells from each sample were first labelled with CITEseq antibodies from TotalSeq-A Human Universal Cocktail v1.0 (BioLegend) or TotalSeq-B Human Universal Cocktail v1.0 (BioLegend) and corresponding TotalSeq-A or TotalSeq-B anti-human hashtag antibodies (BioLegend). Longitudinal samples from each patient were then pooled and 16,000\u201332,000 cells were loaded per well of a Chromium microfluidic chip, using 2\u20133 wells per participant. Library preparation was performed according to the manufacturer instructions, with a modification in Step 2.2 for samples processed using the TotalSeq-A antibodies, as described previously (doi: 10.1016/j.medj.2021.01.006). cDNA library concentrations and sizes were measured by Qubit and Tapestation."
+          ],
+          "description": [
+            "Library name: 3530194-G_GEX"
+          ],
+          "data_processing": [
+            "Raw data for each sequencing run was demultiplexed to FASTQ files for each library using bcl2fastq v2.20.0.422 (Illumina). For each sample, FASTQ files for each library type across different sequencing runs were aggregated.",
+            "To generate count matrices, STARsolo v2.7.11a was used to align RNA reads to a human (GRCh38) reference transcriptome (using option `--soloFeatures GeneFull_Ex50pAS`), and BarCounter v1.0.0 was used to align ADT and HTO reads to the oligonucleotide sequences for the antibody-conjugated tags used in the experiments.",
+            "For each sample, raw count matrices for all feature types were concatenated. The EmptyDrops algorithm (DropletUtils v1.22.0) was used to call cell-containing barcodes based on the RNA modality only (using the following parameters: minimum UMI count 500, maximum number of cell-containing droplets 20,000, library size-ranked droplet indices for ambient estimation 45,000\u201390,000). CellBender v0.3.2 was applied to model ambient contamination (for both RNA and ADT modalities, excluding isotype control antibodies) from empty droplet barcodes (using options `--learning rate 0.00005 --fpr 0`) and this was subtracted from the raw count matrix. Hashed samples were demultiplexed with demuxmix v1.4.0 (using default parameters); this step also allowed identification of inter-sample doublets as barcodes assigned to more than 1 HTO. Simulation-based prediction of additional heterotypic intra-sample doublets was performed with scDblFinder v1.16.0 (using default parameters and providing the list of the known intra-sample doublets from the previous step using the `knownDoublets` parameter). The union of cell barcodes identified as doublets using both approaches were excluded.",
+            "Cell-level quality control was performed separately for each sample using automated outlier-based (>= 3 median absolute deviations) thresholds as implemented in scater v1.30.1. For RNA data, cells were excluded for low library size (total UMI count), low library complexity (number of genes with non-zero UMI count) or high percentage mitochondrial gene counts. For ADT data, cells were excluded for high isotype control antibody count, likely reflecting droplets containing antibody aggregates.",
+            "Transcript Ensembl IDs from the RNA count matrices were used to extract canonical gene symbols and gene type annotations with ensembldb v2.26.0 (using Ensembl annotation database version 86 for *Homo sapiens*). Transcripts annotated as types other than 'protein_coding', 'lincRNA', 'IG_C_gene' and 'TR_C_gene' were removed. Isotype control antibody tags were removed from ADT count matrices.",
+            "Further processing was performed using Seurat v5.1.0. First, post-QC filtered count matrices from all samples in the experiment were concatenated to construct a combined Seurat object with a separate assay for each modality. RNA counts were library size normalised per cell, scaled to counts per 10,000 and log-transformed with `NormalizeData` (using `method = 'LogNormalize'`, `scale.factor = 1e4`). Cell cycle scores were computed using `CellCycleScoring` and built-in lists of cell cycle-related genes. The top 5,000 highly variable features across samples were selected with `FindVariableFeatures` (using `selection.method = 'vst'`). To limit the influence of uninteresting variation in highly expressed housekeeping genes on downstream clustering and integration steps, ribosomal and mitochondrial genes were removed from the list of highly variable features. ADT counts were separately normalised across cells from each sample using a centred log ratio (CLR) transformation with `NormalizeData` (using `method = 'CLR'` and `margin = 2`). To avoid problems with missing data from antibodies unique to each of the two panels used in the experiment, the intersection of antibody tags present in both panels were selected as the highly variable features. Normalised expression values for the highly variable features in both modalities were mean-centred and scaled to unit variance using `ScaleData`; for the RNA modality, this step also included regressing out percentage mitochondrial gene counts and cell cycle scores per cell (using the `vars.to.regress` parameter). The top 50 principal components for each modality were computed from the scaled expression values using `RunPCA`. Integration was performed with `IntegrateLayers` (using a custom wrapper function for the harmony algorithm (harmony v1.2.1) as the `method` parameter and specifying sample, i.e. the pool of hashed PBMC samples loaded in a single Chromium chip well, donor and assay version as covariates).",
+            "A semi-supervised consensus approach was used to derive robust cell type annotations. First, using the RNA modality, reference-based automated cell type annotations were obtained using three different methods and reference datasets: (a) Seurat mutual nearest neighbours-based reference mapping to the human PBMC reference atlas from Azimuth (doi: 10.1016/j.cell.2021.04.048), (b) CellTypist v1.7.1 logistic regression-based reference mapping to the Allen Institute for Immunology Human Immune Health Atlas (doi: 10.1038/s41586-025-09686-5), (c) SingleR v2.4.0 Spearman correlation-based reference mapping to bulk RNAseq reference derived from FACS-sorted immune cell populations (doi: 10.1016/j.celrep.2019.01.041). Second, unsupervised clusters were obtained separately for each modality (RNA and ADT) using Scanpy v1.10.3, by first computing a kNN graph based on the integrated embeddings with `scanpy.pp.neighbors` (using cosine distance and k = 30), then performing graph-based clustering with `scanpy.tl.leiden` (using `resolution` parameter values in the integer range [1, 9]). Next, scTriangulate v0.13.0 was used to derive automated consensus clusters (using default parameters and providing unsupervised cluster labels with resolutions 2, 5 and 8 from each modality and the highest granularity annotations from each reference mapping using the `query` parameter). Subsequently, the consensus cluster labels were manually harmonised into consistent cell type labels at 3 levels of granularity. Lastly, subclustering was performed for each cell type label to identify any remaining misclassified cells and artefactual clusters by manual inspection of marker genes and proteins. Subsequently, the main (level 1) cell type labels were used to exclude cells not annotated as B cells, dendritic cells, (non-NK) innate lymphoid cells, monocytes, NK cells or T cells.",
+            "Assembly: GRCh38",
+            "Supplementary files format and content: Per sample STARSolo output files: matrix.mtx.gz, features.tsv.gz, barcodes.tsv.gz",
+            "Supplementary files format and content: Per sample BarCounter output files: Tag_Counts.csv.gz, tags_totalseq_a.csv, tags_totalseq_b.csv",
+            "Supplementary files format and content: Anonymised donor-level metadata: donor_metadata.tsv",
+            "Supplementary files format and content: Combined QC-filtered multimodal count matrices, integrated embeddings and cell-level metadata in two formats: SeuratObject (annotated_discovery.rds, annotated_nonresponder.rds), MuData (annotated_discovery.h5mu, annotated_nonresponder.h5mu)",
+            "Library strategy: CITE-seq"
+          ],
+          "platform_id": [
+            "GPL34281"
+          ],
+          "contact_name": [
+            "Kathrine,E,Attfield"
+          ],
+          "contact_email": [
+            "kate.attfield@ndcn.ox.ac.uk"
+          ],
+          "contact_phone": [
+            "01865 222351"
+          ],
+          "contact_laboratory": [
+            "Oxford Centre for Neuroinflammation"
+          ],
+          "contact_department": [
+            "Nuffield Department of Clinical Neurosciences"
+          ],
+          "contact_institute": [
+            "University of Oxford"
+          ],
+          "contact_address": [
+            "John Radcliffe Hospital"
+          ],
+          "contact_city": [
+            "Oxford"
+          ],
+          "contact_zip/postal_code": [
+            "OX3 9DU"
+          ],
+          "contact_country": [
+            "United Kingdom"
+          ],
+          "instrument_model": [
+            "Illumina NovaSeq X"
+          ],
+          "library_selection": [
+            "other"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "OTHER"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_features.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE316688"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_features.tsv.gz",
+            "filename": "GSM9458318_3530194-G_GEX_features.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_barcodes.tsv.gz",
+            "filename": "GSM9458318_3530194-G_GEX_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9458nnn/GSM9458318/suppl/GSM9458318_3530194-G_GEX_matrix.mtx.gz",
+            "filename": "GSM9458318_3530194-G_GEX_matrix.mtx.gz"
+          }
+        ],
+        "members": {
+          "genes_member": "GSM9458318_3530194-G_GEX_features.tsv.gz",
+          "barcodes_member": "GSM9458318_3530194-G_GEX_barcodes.tsv.gz",
+          "matrix_member": "GSM9458318_3530194-G_GEX_matrix.mtx.gz"
+        },
+        "source_asset_sha256": {
+          "genes_member": "5c0176533b33a889772abe9f46a1f4f876562c9b23669c04621727cda5e2dd17",
+          "barcodes_member": "27f32e82f5957d42885d634e13805884b51aebb52fa44c69ab8f3e901aa8f32b",
+          "matrix_member": "4a14d20adfdaf0470cae72ecab0d1c9a6a2f95a04b24633e566340898ab0d80a"
+        },
+        "published_selected_cells": 10232,
+        "native_barcode_membership_passed": true,
+        "assignment_path": "references/datasets/GSE316688_3530194-G_published_assignments.csv.gz",
+        "assignment_member": "GSE316688_3530194-G_published_assignments.csv.gz",
+        "assignment_sha256": "48486842cd8b0d4fcb6f8f6b7351aa38f76b7bd8665da042a42d6172bb0a65a8",
+        "biological_donors": [
+          "3530194"
+        ],
+        "source_physical_visit_candidates": [
+          "3530194_hash2",
+          "3530194_hash3",
+          "3530194_hash5",
+          "3530194_hashRelapse"
+        ],
+        "source_barcode_scope": "Original STARsolo droplet whitelist, not called cells",
+        "author_processed_expression_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSE316688_3530194-G_clinical_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "3530194"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE316688_3530194-G_clinical_assignments.csv.gz",
+          "sha256": "5e564788a39a4ecba2fc01d70183c3d2a2e2423cedc9fef64de8296d8f0eab8c",
+          "kind": "Published source donor/hash visits plus public donor clinical metadata"
+        }
+      },
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_cohort": "nonresponder",
+        "source_assignment_evidence": "Pinned published donor/hash/capture calls agree with author sample-tag tables and all selected native barcodes. Primary confirms longitudinal visits pooled over technical wells.",
+        "source_assignment_uncertainty": "Published demuxmix calls; no calibrated per-cell assignment correctness supplied. Author final-QC selection precedes unchanged collection RNA QC.",
+        "source_gene_geometry": "All original measured RNA genes/counts; author CellBender-adjusted/filtered count slots, integrated coordinates and type labels do not supply geometry or SCimilarity annotation.",
+        "source_visit_policy": "Distinct donor/hash visits, including separate Late3/4/5. Technical capture pools merge before centroids. No infusion-to-blood-date conversion; nonresponder has no pretreatment baseline.",
+        "source_donor_metadata_policy": "Public reported donor demographics/clinical data retained as donor-level source fields, not asserted time-specific sample measurements. Infusion dates remain clinical context.",
+        "source_barcode_scope": "Original droplet whitelist is not a called-cell or biological sample count. Only published selected barcodes proceed to collection QC.",
+        "source_alias_review": "Discovery14donors/62visits andnonresponder1donor/4visits; sourcepoolcounts41+2are technical captures. Broaderauthorplanned/excluded observations not counted; global overlap unresolved."
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "metadata_mapping": {
+    "aliases": {
+      "source_condition": "source_cell_condition",
+      "source_hash_visit": "source_cell_hash_id",
+      "sex": "source_cell_reported_donor_sex",
+      "source_reported_donor_age": "source_cell_reported_donor_age",
+      "source_disease_type": "source_cell_reported_donor_disease_type"
+    }
+  }
+}

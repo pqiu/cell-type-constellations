@@ -1,0 +1,72 @@
+{
+  "dataset_id": "GSE235857",
+  "study_id": "GSE235857",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE235857_complete_original_RNA_audit.json",
+    "bytes": 9416,
+    "sha256": "e79fabbe4cf947d09b2d297f32006276a01758742c0fe0cd0f6b5fcf23bac73f"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE235857_source_identity_review.json",
+    "bytes": 6700,
+    "sha256": "cb0aa19eeeed340f3c4502ea7ea73e2327962c8018970ebf858a047e3c20a966"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_material_code"
+  ],
+  "sample_mapping_evidence": "GEO filelist explicitly links each count filename to its original GSM. Literal material code also matches original GEOtitle. Primary Results2.1 explicitly identifies AML3 andAML3B as one patient at different stages; donor_id=AML3 for both. Other original codes remain distinct within this study. No barcode suffix, demographic, expression or genotype identity inference.",
+  "physical_sample_mapping_evidence": "Twelve original RNA material files join exact original GEOtitle/GSM records. Primary publication Results2.1 explicitly links AML3 andAML3B to one patient at different chemotherapy stages; preserve12sample views from11reportedparticipants, not12independentpeople. Do not infer this link from suffixes or barcodes. Global study aliases and exact clinical clocks need review.",
+  "metadata_mapping": {
+    "value_maps": {
+      "condition": {
+        "source": "source_condition_as_reported",
+        "values": {
+          "healthy donor": "healthy",
+          "AML patient": "AML"
+        }
+      }
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE235857",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE235857",
+    "primary_PMID": "37615858",
+    "primary_DOI": "10.1007/s13402-023-00853-2",
+    "primary_URL": "https://link.springer.com/article/10.1007/s13402-023-00853-2",
+    "access": "Public original deposited expression-count archive. Unsubmitted sequencing reads are not requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "Article CC-BY4.0; no separate GEO dataset license specified",
+    "source_sample_review": {
+      "path": "references/datasets/GSE235857_source_identity_review.json",
+      "bytes": 6700,
+      "sha256": "cb0aa19eeeed340f3c4502ea7ea73e2327962c8018970ebf858a047e3c20a966"
+    },
+    "source_unit": "Twelve original RNA material files join exact original GEOtitle/GSM records. Primary publication Results2.1 explicitly links AML3 andAML3B to one patient at different chemotherapy stages; preserve12sample views from11reportedparticipants, not12independentpeople. Do not infer this link from suffixes or barcodes. Global study aliases and exact clinical clocks need review.",
+    "identity_policy": "GEO filelist explicitly links each count filename to its original GSM. Literal material code also matches original GEOtitle. Primary Results2.1 explicitly identifies AML3 andAML3B as one patient at different stages; donor_id=AML3 for both. Other original codes remain distinct within this study. No barcode suffix, demographic, expression or genotype identity inference.",
+    "clinical_policy": "Retain original healthy-donor/AML-patient fields and source-established repeated-patient relationship. Individual coded age, sex and detailed treatment dates unassigned because the clinical workbook link returned HTML rather than XLSX. No group age/sex imputation or inferred chronology from material names. Article group cell-total reversal is retained as a prose conflict; actual source files determine cell group membership.",
+    "reuse_policy": "Twelve RNA materials from six healthy donors and five AML patient codes; AML3/AML3B share a donor but remain separate observations/specimens. No original accession/primary DOI/PMID source reference found in completed outputs; exact cross-study identity union remains unproven. The GEO_RAW archive manifest lists the same twelve count filenames with matching sizes; no extra participants or verified alternate byte-identity claim.",
+    "selection_policy": "All91772deposited source cells selected before fixed RNAQC;91770pass counts>=500,detectedgenes>=200,MTfraction<=0.2,positive-library. No phenotype-based filtering. Keep both observations of AML3 together for donor-held-out evaluation; split assignment remains unassigned.",
+    "cell_calling_policy": "Original supplied gene counts follow author cell/doublet/gene filtering. Preserve all22032provided unique native RNA symbols; library denominators refer to this filtered gene universe. Do not reconstruct unsubmitted sequencing reads or omitted genes, round estimates or invert normalized expression. SCimilarity is a common annotation vocabulary, not independent biological validation.",
+    "gene_policy": "All supplied source RNA labels retained as native coordinates and symbols. Source filtering limits the provided gene universe; normalization denominators use the supplied genes, not an inferred full transcriptome. No invented Ensembl IDs, intersection or zero filling.",
+    "count_semantics": "Public deposited expression_counts CSV integer gene counts after source cell/QC filtering. Counts are not unsubmitted sequencing reads. Retain every provided gene label, original cell ID and measured zero; do not invert normalized data or infer omitted genes.",
+    "source_limitations": "Source-filtered gene universe;11source donors,12dependent sample views. Detailed coded clinical supplement not readable at linked URL. Global study aliases unresolved. No clinical efficacy, causal or constellation validation."
+  }
+}

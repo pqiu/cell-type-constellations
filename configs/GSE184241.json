@@ -1,0 +1,64 @@
+{
+  "dataset_id": "GSE184241",
+  "study_id": "GSE184241",
+  "input_format": "monocyte_plate_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE184241_complete_original_RNA_audit.json",
+    "sha256": "c27fa8fe72f1d392dd2b7f533b20c606f7a736f09b777f7a769481a3bd7bf770"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE184241_source_identity_review.json",
+    "sha256": "1ce00f4e7a50c19e617788a43ea62e24edf9d2e88cdb0834bd44ab04930ea473"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_GSM"
+  ],
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_as_reported"
+  ],
+  "sample_mapping_evidence": "Literal matrix cell IDs match the complete unique workbook sample-ID set; join by identifier, not row order. Explicit plate prefixes match original GEO descriptions. No donor inferred from plate number.",
+  "physical_sample_mapping_evidence": "Nine original donor/visit groups across three donors; eighteen paired ex vivo condition views remain separate dependent maps.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "qc_mito_unavailable": true,
+  "qc_mito_unavailable_reason": "No MT-prefixed RNA coordinates are supplied. Full count/metadata audit does not establish mitochondrial quality. Any export must explicitly record this unavailable QC gate.",
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE184241",
+    "primary_PMID": "34788625",
+    "publication": "https://pubmed.ncbi.nlm.nih.gov/34788625/",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE184241",
+    "access": "Public original RNA count table and original sample-ID workbook.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE184241_source_identity_review.json",
+      "sha256": "1ce00f4e7a50c19e617788a43ea62e24edf9d2e88cdb0834bd44ab04930ea473"
+    },
+    "source_unit": "Nine original donor/visit groups across three donors; eighteen paired ex vivo condition views remain separate dependent maps.",
+    "identity_policy": "Literal matrix cell IDs match the complete unique workbook sample-ID set; join by identifier, not row order. Explicit plate prefixes match original GEO descriptions. No donor inferred from plate number.",
+    "composition_policy": "Isolated CD14monocytes from PBMCs; paired ex vivo conditions remain dependent views of donor/visit, not new blood draws. No whole-PBMC composition claim.",
+    "mitochondrial_QC_policy": "No MT-prefixed RNA coordinates are supplied. Full count/metadata audit does not establish mitochondrial quality. Any export must explicitly record this unavailable QC gate.",
+    "gene_policy": "All23895provided native gene symbols retained unchanged; nativeRNAdenominator distinct from annotation-reference denominator. Genomehg19as reported. No inferred EnsemblIDs or silent symbol modernization.",
+    "count_semantics": "GEO reports raw gene counts from digital gene expression and custom transcript counting; do not assert UMI or read-count semantics beyond original evidence.",
+    "demographic_policy": "Three healthy donors per original series design. No individual age/sex imputed.",
+    "timing_policy": "Preserve exact source visit and ex vivo condition labels separately; views do not add independent donor replication."
+  }
+}

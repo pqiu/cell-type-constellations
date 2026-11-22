@@ -1,0 +1,60 @@
+{
+  "dataset_id": "GSE151531",
+  "study_id": "GSE151531",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE151531_complete_original_RNA_audit.json",
+    "sha256": "34f329133dbb65bc815aa429bccd5a27b81c8274e81edc9bffafbdff35d8dadd"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE151531_source_identity_review.json",
+    "sha256": "3d61225f152da6c44ac9cca1714ee270acef55e20439f5432792c507a205bfb3"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "donor_id",
+    "source_batch_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Original author unique_id literally joins all623count-cell IDs and original GEOtitles. Explicit patient_id and batch_id fields establish source identities; Cell_id independently equals batch_id plus unique_id. No identity inferred from code fragments.",
+  "physical_sample_mapping_evidence": "Seven conservative source participant/material groups and nine dependent batch views. Source batches do not establish extra blood draws or independent participants.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_from_primary_caption"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE151531",
+    "primary_PMID": "33691136",
+    "publication": "https://doi.org/10.1016/j.immuni.2021.02.014",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE151531",
+    "access": "Public original read counts and explicit original author cell/participant/batch metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE151531_source_identity_review.json",
+      "sha256": "3d61225f152da6c44ac9cca1714ee270acef55e20439f5432792c507a205bfb3"
+    },
+    "source_unit": "Seven conservative source participant/material groups and nine dependent batch views. Source batches do not establish extra blood draws or independent participants.",
+    "identity_policy": "Original author unique_id literally joins all623count-cell IDs and original GEOtitles. Explicit patient_id and batch_id fields establish source identities; Cell_id independently equals batch_id plus unique_id. No identity inferred from code fragments.",
+    "clinical_policy": "Only four source codes explicitly classified by primary Figure5caption; A11/He27/He55 individual clinical class remains unassigned. Do not infer class from naming; no individual age/sex imputed.",
+    "gene_policy": "All17004provided native gene-symbol coordinates retained unchanged; omitted genes remain unavailable rather than zero-imputed. Native normalization uses all provided RNA rows; all20MT-prefixed provided genes contribute to QC.",
+    "count_semantics": "Original HTSeq-count sequencing-read counts, not UMIs.",
+    "source_limitations": "Sorted PBMC-derived CD8tetramer-positive cells; not whole-PBMC composition. Seven participant/material groups across nine dependent batch views. Only four clinical classes explicitly mapped by primarycaption; A11/He27/He55 remain unassigned. Exact draws/aliquots unspecified; omitted genes unavailable."
+  }
+}

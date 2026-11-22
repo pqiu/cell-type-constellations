@@ -1,0 +1,2297 @@
+{
+  "dataset_id": "GSE237611_genes001",
+  "study_id": "GSE237611",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "12original T1DAL donor/visit RNA specimens,12people, allWeek104/visit5; sixsourceR/sixsourceNR. Parent and companion receptor/ATAC records not newRNA.",
+  "source_metadata": {
+    "accession": "GSE237611",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237611",
+      "https://pubmed.ncbi.nlm.nih.gov/38937521/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237611",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+    "source_processing": [
+      "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+      "Assembly: GRCh38.91",
+      "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+      "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE237611_source_identity_review.json",
+      "sha256": "03a0496f4d16b196dc4a750083e363b56a83fff1ba3ef11049a3acbee43d215a"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7634809",
+      "donor_id": "T1DAL_365106",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_365106, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634809"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_365106",
+          "response (r=responder,_nr=non-responder): R",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48853",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "1_1223_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535376",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075554"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634809/suppl/GSM7634809_lib48853_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634809",
+        "source_GEO_title": "donor T1DAL_365106, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq",
+        "source_participant_code": "T1DAL_365106",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "R",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48853\", \"maskeddonorid\": \"T1DAL_365106\", \"response (r=responder,_nr=non-responder)\": \"R\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535376",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48853\", \"maskeddonorid\": \"T1DAL_365106\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634809_lib48853_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 8633892,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3571,
+          "full_source_RNA_counts": 16142181,
+          "selected_RNA_counts": 9568472,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634809.csv.gz",
+            "sha256": "58f643db6ab43b08dcc06bc7383e9664454bd3277c5bbb61058ee25f982695e2"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634809/suppl/GSM7634809_lib48853_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634809_lib48853_raw_feature_bc_matrix.h5",
+          "expected_bytes": 20329609,
+          "sha256": "51289e16e3d88658e46fb24d6b864b2292b1c2993b9194d87a831a98e310b710"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634810",
+      "donor_id": "T1DAL_799347",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_799347, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634810"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_799347",
+          "response (r=responder,_nr=non-responder): R",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48854",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "2_4505_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535375",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075553"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634810/suppl/GSM7634810_lib48854_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634810",
+        "source_GEO_title": "donor T1DAL_799347, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq",
+        "source_participant_code": "T1DAL_799347",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "R",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48854\", \"maskeddonorid\": \"T1DAL_799347\", \"response (r=responder,_nr=non-responder)\": \"R\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535375",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48854\", \"maskeddonorid\": \"T1DAL_799347\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634810_lib48854_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 7875422,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4489,
+          "full_source_RNA_counts": 13697249,
+          "selected_RNA_counts": 7934829,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634810.csv.gz",
+            "sha256": "d417e3befa426b3e1086a95adfb99cf134e04ab145d55244016edd290df2c593"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634810/suppl/GSM7634810_lib48854_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634810_lib48854_raw_feature_bc_matrix.h5",
+          "expected_bytes": 18994088,
+          "sha256": "2733efea277fb6fb68dce11f9583a1a32d89297212f3239cca8704ada4b8fd8e"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634811",
+      "donor_id": "T1DAL_325261",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_325261, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634811"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_325261",
+          "response (r=responder,_nr=non-responder): NR",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48855",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "3_4509_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535374",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075572"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634811/suppl/GSM7634811_lib48855_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634811",
+        "source_GEO_title": "donor T1DAL_325261, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq",
+        "source_participant_code": "T1DAL_325261",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "NR",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48855\", \"maskeddonorid\": \"T1DAL_325261\", \"response (r=responder,_nr=non-responder)\": \"NR\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535374",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48855\", \"maskeddonorid\": \"T1DAL_325261\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634811_lib48855_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 10180581,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4698,
+          "full_source_RNA_counts": 17272874,
+          "selected_RNA_counts": 8620725,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634811.csv.gz",
+            "sha256": "e4c069b4cc58eb4072d716aab5b1fcbddf69758a1f390aa4cdba519bb48d799d"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634811/suppl/GSM7634811_lib48855_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634811_lib48855_raw_feature_bc_matrix.h5",
+          "expected_bytes": 23158098,
+          "sha256": "540d2df503f4a82b02bd75a4bfb9511c88e917a46efd86cb8cfc801feea27e2e"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634812",
+      "donor_id": "T1DAL_671942",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_671942, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634812"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_671942",
+          "response (r=responder,_nr=non-responder): NR",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48856",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "4_4611_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535373",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075566"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634812/suppl/GSM7634812_lib48856_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634812",
+        "source_GEO_title": "donor T1DAL_671942, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq",
+        "source_participant_code": "T1DAL_671942",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "NR",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48856\", \"maskeddonorid\": \"T1DAL_671942\", \"response (r=responder,_nr=non-responder)\": \"NR\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535373",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48856\", \"maskeddonorid\": \"T1DAL_671942\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634812_lib48856_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 10410197,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5139,
+          "full_source_RNA_counts": 17134852,
+          "selected_RNA_counts": 8692987,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634812.csv.gz",
+            "sha256": "301ae1eaa76e39e449755d12db2cedae5d9ce671e1eea434eaee021f57d2952b"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634812/suppl/GSM7634812_lib48856_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634812_lib48856_raw_feature_bc_matrix.h5",
+          "expected_bytes": 23549601,
+          "sha256": "7e4ecedc7ff10b613c8bb128665e9b988abfaf85d48af99fd1300298a99e27cd"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634813",
+      "donor_id": "T1DAL_616755",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_616755, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634813"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_616755",
+          "response (r=responder,_nr=non-responder): R",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48857",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "5_4546_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535372",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075557"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634813/suppl/GSM7634813_lib48857_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634813",
+        "source_GEO_title": "donor T1DAL_616755, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq",
+        "source_participant_code": "T1DAL_616755",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "R",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48857\", \"maskeddonorid\": \"T1DAL_616755\", \"response (r=responder,_nr=non-responder)\": \"R\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535372",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48857\", \"maskeddonorid\": \"T1DAL_616755\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634813_lib48857_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 10502886,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5022,
+          "full_source_RNA_counts": 19636698,
+          "selected_RNA_counts": 11674535,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634813.csv.gz",
+            "sha256": "116e309b892c9b917f7451555c9058bd693fc8818dd3bc6c1e364f213bfc5403"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634813/suppl/GSM7634813_lib48857_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634813_lib48857_raw_feature_bc_matrix.h5",
+          "expected_bytes": 23643261,
+          "sha256": "156f24491526a247bdfc87531354812dc3673a069a4f52e55eae9ec515b255bf"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634814",
+      "donor_id": "T1DAL_923889",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_923889, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634814"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_923889",
+          "response (r=responder,_nr=non-responder): NR",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48858",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "6_8083_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535371",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075556"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634814/suppl/GSM7634814_lib48858_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634814",
+        "source_GEO_title": "donor T1DAL_923889, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq",
+        "source_participant_code": "T1DAL_923889",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "NR",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48858\", \"maskeddonorid\": \"T1DAL_923889\", \"response (r=responder,_nr=non-responder)\": \"NR\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535371",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48858\", \"maskeddonorid\": \"T1DAL_923889\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634814_lib48858_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 12016416,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4735,
+          "full_source_RNA_counts": 20347078,
+          "selected_RNA_counts": 8095866,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634814.csv.gz",
+            "sha256": "176239637dcbbba864bf6636145787f10615d8dd5b98889743400b7b76a432e5"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634814/suppl/GSM7634814_lib48858_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634814_lib48858_raw_feature_bc_matrix.h5",
+          "expected_bytes": 26227060,
+          "sha256": "f91594312c5628c448d7a776e315972ca93a059e2712817ad1ba047bfefc02df"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634815",
+      "donor_id": "T1DAL_442289",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_442289, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634815"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_442289",
+          "response (r=responder,_nr=non-responder): NR",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48859",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "7_4512_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535370",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075555"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634815/suppl/GSM7634815_lib48859_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634815",
+        "source_GEO_title": "donor T1DAL_442289, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq",
+        "source_participant_code": "T1DAL_442289",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "NR",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48859\", \"maskeddonorid\": \"T1DAL_442289\", \"response (r=responder,_nr=non-responder)\": \"NR\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535370",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48859\", \"maskeddonorid\": \"T1DAL_442289\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634815_lib48859_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 4939042,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4029,
+          "full_source_RNA_counts": 15404488,
+          "selected_RNA_counts": 14699705,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634815.csv.gz",
+            "sha256": "3569700fd7067dac133cb473003471010f90d3545f3fb47a9f6e26453fd891b9"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634815/suppl/GSM7634815_lib48859_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634815_lib48859_raw_feature_bc_matrix.h5",
+          "expected_bytes": 12820402,
+          "sha256": "f5feda663d8398a062a9c467e565319687feebdc925c5428406fb6c0bc53a0e3"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634816",
+      "donor_id": "T1DAL_323347",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_323347, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634816"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_323347",
+          "response (r=responder,_nr=non-responder): R",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48860",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "8_4610_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535369",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075567"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634816/suppl/GSM7634816_lib48860_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634816",
+        "source_GEO_title": "donor T1DAL_323347, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq",
+        "source_participant_code": "T1DAL_323347",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "R",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48860\", \"maskeddonorid\": \"T1DAL_323347\", \"response (r=responder,_nr=non-responder)\": \"R\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535369",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48860\", \"maskeddonorid\": \"T1DAL_323347\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634816_lib48860_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 7073255,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4268,
+          "full_source_RNA_counts": 22480439,
+          "selected_RNA_counts": 21489958,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634816.csv.gz",
+            "sha256": "aab1d75868c7b507950a28cbf895b985c350b18a0deba6602bcefb0dddd97a28"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634816/suppl/GSM7634816_lib48860_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634816_lib48860_raw_feature_bc_matrix.h5",
+          "expected_bytes": 16420470,
+          "sha256": "e61562152c77bde5b61ca7313e69beaae688b9a41e8468caa167fea0a6c63841"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634817",
+      "donor_id": "T1DAL_947702",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_947702, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634817"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_947702",
+          "response (r=responder,_nr=non-responder): NR",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48861",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "9_4901_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535368",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075568"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634817/suppl/GSM7634817_lib48861_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634817",
+        "source_GEO_title": "donor T1DAL_947702, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq",
+        "source_participant_code": "T1DAL_947702",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "NR",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48861\", \"maskeddonorid\": \"T1DAL_947702\", \"response (r=responder,_nr=non-responder)\": \"NR\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535368",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48861\", \"maskeddonorid\": \"T1DAL_947702\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634817_lib48861_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 6486205,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4492,
+          "full_source_RNA_counts": 20194543,
+          "selected_RNA_counts": 19044216,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634817.csv.gz",
+            "sha256": "2f6453d3548f4c64e74fcf84e8ab9e7e18698209992fabff4e120c1441b7fc72"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634817/suppl/GSM7634817_lib48861_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634817_lib48861_raw_feature_bc_matrix.h5",
+          "expected_bytes": 15635371,
+          "sha256": "edb1fd8293d07de181ffcd4834ea1eaa42e05767a62839b03dabeb666d6e27fa"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634818",
+      "donor_id": "T1DAL_769151",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_769151, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634818"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_769151",
+          "response (r=responder,_nr=non-responder): R",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48862",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "10_5562_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535367",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075569"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634818/suppl/GSM7634818_lib48862_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634818",
+        "source_GEO_title": "donor T1DAL_769151, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq",
+        "source_participant_code": "T1DAL_769151",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "R",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48862\", \"maskeddonorid\": \"T1DAL_769151\", \"response (r=responder,_nr=non-responder)\": \"R\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535367",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48862\", \"maskeddonorid\": \"T1DAL_769151\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634818_lib48862_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 5061101,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3675,
+          "full_source_RNA_counts": 15703860,
+          "selected_RNA_counts": 15064693,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634818.csv.gz",
+            "sha256": "baaf20499b0e998ace384a89ea2e27a2ff6f447c0252cf5826d13ca2aa2c6381"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634818/suppl/GSM7634818_lib48862_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634818_lib48862_raw_feature_bc_matrix.h5",
+          "expected_bytes": 12893804,
+          "sha256": "95b0d202b47dbc26d3972695efe89fdc561d59e491bc5c5183e0015ec66b27ee"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634819",
+      "donor_id": "T1DAL_243767",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_243767, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634819"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_243767",
+          "response (r=responder,_nr=non-responder): R",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48863",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "11_6313_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535366",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075570"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634819/suppl/GSM7634819_lib48863_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634819",
+        "source_GEO_title": "donor T1DAL_243767, alefacept treated, 104 wk post-treatment, responder (R), single cell RNA-seq",
+        "source_participant_code": "T1DAL_243767",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "R",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48863\", \"maskeddonorid\": \"T1DAL_243767\", \"response (r=responder,_nr=non-responder)\": \"R\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535366",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48863\", \"maskeddonorid\": \"T1DAL_243767\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634819_lib48863_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 5760340,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3863,
+          "full_source_RNA_counts": 18733324,
+          "selected_RNA_counts": 17909573,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634819.csv.gz",
+            "sha256": "2ad183f56aa6268b21476e4f52dda61b6d1c696a3ffde6769636e5e8ca55e345"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634819/suppl/GSM7634819_lib48863_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634819_lib48863_raw_feature_bc_matrix.h5",
+          "expected_bytes": 14160964,
+          "sha256": "2f06a2a004827f489bebcec2c4d9742d8a468425e1620c9d2b7bdb6ab9d1b73a"
+        }
+      ]
+    },
+    {
+      "accession": "GSM7634820",
+      "donor_id": "T1DAL_576351",
+      "source_metadata": {
+        "title": [
+          "donor T1DAL_576351, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM7634820"
+        ],
+        "status": [
+          "Public on Jan 17 2024"
+        ],
+        "submission_date": [
+          "Jul 18 2023"
+        ],
+        "last_update_date": [
+          "Jan 17 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC",
+          "cell line: NA",
+          "cell type: non-naive CD8 T cells",
+          "maskeddonorid: T1DAL_576351",
+          "response (r=responder,_nr=non-responder): NR",
+          "cellnumber: 50000",
+          "treatment: alefacept",
+          "stimulation: None",
+          "timepoint: Week 104",
+          "lib id: lib48864",
+          "visit: 5",
+          "genotype: NA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were stained with a flow cytometry panel (Figure S12) and sorted into non-naive CD8+ T cells (singlet, live, CD14- CD19- CD56- CD3+ CD8+ CD4-, not CD45RA+ CCR7+) from 12 donors (6 alefacept responders, 6 non-responders, as defined by preservation of C-peptide levels11,58) with new onset T1D at 104 wk (Visit 30) post-treatment with alefacept (T1DAL Trial, ITN) using the FACS Aria Fusion (Becton Dickinson) cell sorter. Cell viability and purity were >90%. Samples were sorted into RPMI with 2% human serum prior to single cell RNA-seq. A single cell suspension was prepared from sorted cells and loaded onto the 10x Chromium Controller (10X Genomics) according to the manufacturer\u2019s protocol, with a target capture of 5,000 cells per channel.",
+          "Sequencing libraries were generated using the NextGEM Single Cell 5' v1.1 kit (10x Genomics). Three pools of gene expression and TCR libraries, each from two responders and two non-responders, were generated, with a ratio of 4:1 GEX:TCR. Each pool was run on a NextSeq P2 flowcell on a NextSeq 2000 sequencer (Illumina), with a target depth of 20,000 reads/cell for GEX and 5000 reads/cell for TCR libraries."
+        ],
+        "description": [
+          "10X Genomics",
+          "12_8085_GEX"
+        ],
+        "data_processing": [
+          "Sequence data were processed from raw reads to gene-barcode count matrices and assembled into TCR sequences using 10x Genomics Cell Ranger v4.0.059. Reads were demultiplexed by sample and library type using index sequence pools. Gene expression reads were aligned to the human genome (GRCh38.91), and reads were collapsed to molecule counts per gene using unique molecular identifiers (UMIs). TCR sequence reads were assembled into consensus contigs, assessed for in-frame and productive sequences, and aligned to the 10x V(D)J reference v. 4.0.0 to determine gene usage. Barcodes were called as cells or background using default settings in CellRanger (10X), which utilizes both the distribution of UMI counts by barcode and expression comparisons of low-UMI-count barcodes to assumed background. Data from all samples were aggregated without normalization prior to downstream analysis.",
+          "Assembly: GRCh38.91",
+          "Supplementary files format and content: For RNA-seq files: processed data is unfiltered 10X output of single cell RNA-seq in h5 format.",
+          "Supplementary files format and content: For TCR-seq files: processed output is in a csv file with information for the assembled TCR chains in each cell output from the 10X Genomics Cell Ranger program."
+        ],
+        "platform_id": [
+          "GPL30173"
+        ],
+        "contact_name": [
+          "Stephanie,,Osmond"
+        ],
+        "contact_email": [
+          "sosmond@benaroyaresearch.org"
+        ],
+        "contact_institute": [
+          "Benaroya Research Institute"
+        ],
+        "contact_address": [
+          "1201 9th Ave"
+        ],
+        "contact_city": [
+          "Seattle,"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98101"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN36535365",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21075571"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634820/suppl/GSM7634820_lib48864_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE237611",
+          "GSE237614"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7634820",
+        "source_GEO_title": "donor T1DAL_576351, alefacept treated, 104 wk post-treatment, non-responder (NR), single cell RNA-seq",
+        "source_participant_code": "T1DAL_576351",
+        "source_visit_code": "Week 104",
+        "source_visit_number_as_reported": "5",
+        "condition": "type 1 diabetes",
+        "source_treatment_as_reported": "alefacept",
+        "source_stimulation_as_reported": "None",
+        "source_response_as_reported": "NR",
+        "source_specimen": "PBMC-derived sorted non-naive CD8 T cells",
+        "source_trial": "T1DAL",
+        "source_characteristics_json": "{\"cell line\": \"NA\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"genotype\": \"NA\", \"lib id\": \"lib48864\", \"maskeddonorid\": \"T1DAL_576351\", \"response (r=responder,_nr=non-responder)\": \"NR\", \"stimulation\": \"None\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_BioSample": "SAMN36535365",
+        "source_BioSample_attributes_json": "{\"cell line\": \"not applicable\", \"cell type\": \"non-naive CD8 T cells\", \"cellnumber\": \"50000\", \"collection_date\": \"missing\", \"genotype\": \"not applicable\", \"geo_loc_name\": \"missing\", \"lib id\": \"lib48864\", \"maskeddonorid\": \"T1DAL_576351\", \"source_name\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"stimulation\": \"missing\", \"timepoint\": \"Week 104\", \"tissue\": \"CD3+ CD8+ CD45RA+/- CCR7+/- sorted from PBMC\", \"treatment\": \"alefacept\", \"visit\": \"5\"}",
+        "source_identity_policy": "Twelve original masked donor codes, one104week RNA specimen each. ParentGSE237614 exposes identical RNA records; twelve receptor and twenty-four parent ATAC records add no RNA specimen.",
+        "source_coverage_policy": "Sorted non-naive memory CD8 cells only. No whole-PBMC coverage, sorting-purity validation or exhausted-state identity inferred from SCimilarity.",
+        "source_phase_policy": "Preserve source Week104/visit5 and responder labels. Nominal study visit is not an exact collection date. Balanced6R/6NR selection is not representative trial enrollment.",
+        "source_missingness_policy": "Individual ages, sex, exact dates and response magnitude not joined from primary supplementary data. BioSample omits response and normalizes GEO cellline/genotypeNA to notapplicable and stimulationNone to missing. Preserve both original sources; response labels come from GEO. Missing cellline/genotype are not cultured-cell or germline annotations.",
+        "source_count_policy": "All original rawH5 integer values and native58302RNA genes/37mitochondrial genes audited before early minimum500RNAcount selection. NativeGRCh38.91 agrees with original sourceprocessing; all37MTgenes enter QC and nativeRNAdenominators, includingMT rRNA/tRNA. This differs from13MTgene reference coverage and remains an assay-coverage effect. Raw barcode rows are not called cells. No receptor sequences or ATAC features enter RNA geometry.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; global identity overlap unresolved"
+      },
+      "matrix_h5_member": "GSM7634820_lib48864_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          58302
+        ],
+        "nonzeros": 7080625,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 58302,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 58302
+        },
+        "source_genome_label": "GRCh38.91",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 28209,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE237611_original_RNA_QC/2afab9d7df0b15557120386f1ddf37d731497a25678f1eac06d4716b4688a748_genes.csv.gz",
+          "sha256": "e4099b26bc26a1a815c5f4123335b6f0f1a984761b15d4a01577d6eb31e8332f"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5950,
+          "full_source_RNA_counts": 22254524,
+          "selected_RNA_counts": 21536670,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE237611_original_RNA_QC/GSM7634820.csv.gz",
+            "sha256": "8e18bc32b10088622ec990d647f7a731bf2fe555c49d7fae51156f2290a24550"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7634nnn/GSM7634820/suppl/GSM7634820_lib48864_raw_feature_bc_matrix.h5",
+          "filename": "GSM7634820_lib48864_raw_feature_bc_matrix.h5",
+          "expected_bytes": 16476381,
+          "sha256": "5635c8a1d4c2d8e03778cf64a9889e0280bb20ce602b078ec2c26f02c27c1d44"
+        }
+      ]
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "12original T1DAL donor/visit RNA specimens,12people, allWeek104/visit5; sixsourceR/sixsourceNR. Parent and companion receptor/ATAC records not newRNA."
+}

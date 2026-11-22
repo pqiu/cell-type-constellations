@@ -1,0 +1,4565 @@
+{
+  "dataset_id": "GSE347634",
+  "study_id": "GSE347634",
+  "input_format": "pinned_cell_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_biological_specimen"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Primary public S3 table gives 42 unique physical SCRNA specimen IDs and 36 donors. All published frozen cell sample labels match donor/condition uniquely in that table. Merge 52 sample/pool combinations into their physical specimen IDs; sequencing pools and repeat captures do not add samples.",
+  "source_metadata": {
+    "accession": "GSE347634",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE347634",
+    "publication": "https://doi.org/10.1038/s41591-026-04665-3",
+    "assignment_source": "https://zenodo.org/records/22806570",
+    "author_repository": "https://github.com/TNRC-MGB/RRMS-Biomarkers",
+    "author_revision": "171d2172fee900d9a5542447374a90e416503351",
+    "count_license": "not_specified_in_GEO",
+    "assignment_archive_license": "CC-BY-4.0",
+    "frozen_cell_metadata_license": "not_explicitly_specified_for_repository_data",
+    "primary_supplement_license": "subject_to_publication_and_third_party_access_terms",
+    "author_code_license": "MIT; explicitly excludes data and third-party materials",
+    "access": "Public original human RNA counts, frozen public cell metadata and deidentified primary specimen metadata",
+    "retained_metadata_sha256": {
+      "GSE347634_published_cell_metadata.tsv.gz": "e48b6722b402e9916986eac106f0b5427071e1f52b26d6a10cf1dbeda73da83c",
+      "GSE347634_primary_sample_crosswalk.xlsx": "2e86c35a07c109cf44eb8decf67a29d0da36531a34add0bab43a881c8ad8f1a9",
+      "GSE347634_published_specimen_crosswalk.csv": "a3f96d1d4d8545e3881c7e622161ea2c0414eb55ba9c305d61ed2baf73bdf5fd",
+      "GSE347634_native_RNA_assignment_audits.json": "7995eba12133f26d44c158b4702a7ce791b5fc22f22027e6ff5903493db1cb1f",
+      "GSE347634_author_LICENSE.txt": "741796a6d21572f488904c261997fabf20ee39675fde10c7872cd091feee3c56"
+    },
+    "source_cell_selection": "Published final-QC frozen cell subset; subsequently apply unchanged collection RNA QC",
+    "geometry": "All 36601 original measured human RNA gene columns; no author integrated expression or UMAP coordinates",
+    "specimen_metadata": "Public age, sex, race, ethnicity, diagnosis, treatment and signed days relative to relapse retained as supplied. Missing values stay missing. No additional dates or private records inferred.",
+    "preparation_script_sha256": "073c2fb1de68076842eef7aeff3c0be96e99d5022684739e0b57ad77ee18b11e"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM10057803",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057803_BW1_features.tsv.gz",
+      "barcodes_member": "GSM10057803_BW1_barcodes.tsv.gz",
+      "matrix_member": "GSM10057803_BW1_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057803/suppl/GSM10057803_BW1_features.tsv.gz",
+          "filename": "GSM10057803_BW1_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057803/suppl/GSM10057803_BW1_barcodes.tsv.gz",
+          "filename": "GSM10057803_BW1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057803/suppl/GSM10057803_BW1_matrix.mtx.gz",
+          "filename": "GSM10057803_BW1_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW1 (AMS1, AHC1)"
+        ],
+        "geo_accession": [
+          "GSM10057803"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS1; AHC1",
+          "condition: Remission; Healthy",
+          "batch: B1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW1",
+          "PBMCs, pool BW1 (AMS1, AHC1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217554",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290038"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057803/suppl/GSM10057803_BW1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057803/suppl/GSM10057803_BW1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057803/suppl/GSM10057803_BW1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057803_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC004",
+          "MS012"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057803_published_cell_assignments.csv",
+          "sha256": "67e71003c45baf84752f5a68ea2382c6e961f87778b7735fad0e6cc10fc54715",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057804",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057804_BW2_features.tsv.gz",
+      "barcodes_member": "GSM10057804_BW2_barcodes.tsv.gz",
+      "matrix_member": "GSM10057804_BW2_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057804/suppl/GSM10057804_BW2_features.tsv.gz",
+          "filename": "GSM10057804_BW2_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057804/suppl/GSM10057804_BW2_barcodes.tsv.gz",
+          "filename": "GSM10057804_BW2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057804/suppl/GSM10057804_BW2_matrix.mtx.gz",
+          "filename": "GSM10057804_BW2_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW2 (AMS2, AHC2)"
+        ],
+        "geo_accession": [
+          "GSM10057804"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS2; AHC2",
+          "condition: Remission; Healthy",
+          "batch: B1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW2",
+          "PBMCs, pool BW2 (AMS2, AHC2)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217553",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290041"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057804/suppl/GSM10057804_BW2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057804/suppl/GSM10057804_BW2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057804/suppl/GSM10057804_BW2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057804_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC005",
+          "MS013"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057804_published_cell_assignments.csv",
+          "sha256": "f643f51b46a25a92cef78d065503d6f784ccef7ea2c5890405205144800a97a1",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057805",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057805_BW3_features.tsv.gz",
+      "barcodes_member": "GSM10057805_BW3_barcodes.tsv.gz",
+      "matrix_member": "GSM10057805_BW3_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057805/suppl/GSM10057805_BW3_features.tsv.gz",
+          "filename": "GSM10057805_BW3_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057805/suppl/GSM10057805_BW3_barcodes.tsv.gz",
+          "filename": "GSM10057805_BW3_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057805/suppl/GSM10057805_BW3_matrix.mtx.gz",
+          "filename": "GSM10057805_BW3_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW3 (AHC3)"
+        ],
+        "geo_accession": [
+          "GSM10057805"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC3",
+          "condition: Healthy",
+          "batch: B1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW3",
+          "PBMCs, pool BW3 (AHC3)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217552",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290040"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057805/suppl/GSM10057805_BW3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057805/suppl/GSM10057805_BW3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057805/suppl/GSM10057805_BW3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057805_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC006"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057805_published_cell_assignments.csv",
+          "sha256": "716e80eb7f831193012cfa2fbba5f595f6c745dfa80439b5f110006192446e5a",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057806",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057806_BW4_features.tsv.gz",
+      "barcodes_member": "GSM10057806_BW4_barcodes.tsv.gz",
+      "matrix_member": "GSM10057806_BW4_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057806/suppl/GSM10057806_BW4_features.tsv.gz",
+          "filename": "GSM10057806_BW4_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057806/suppl/GSM10057806_BW4_barcodes.tsv.gz",
+          "filename": "GSM10057806_BW4_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057806/suppl/GSM10057806_BW4_matrix.mtx.gz",
+          "filename": "GSM10057806_BW4_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW4 (AMS4, AHC4)"
+        ],
+        "geo_accession": [
+          "GSM10057806"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS4; AHC4",
+          "condition: Relapse; Healthy",
+          "batch: B2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW4",
+          "PBMCs, pool BW4 (AMS4, AHC4)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217551",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290039"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057806/suppl/GSM10057806_BW4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057806/suppl/GSM10057806_BW4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057806/suppl/GSM10057806_BW4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057806_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC007",
+          "MS007"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057806_published_cell_assignments.csv",
+          "sha256": "007f086b927ac88ac2842f76de6ce3d3ac13fdeac43bb71d22e093a5463a21f6",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057807",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057807_BW5_features.tsv.gz",
+      "barcodes_member": "GSM10057807_BW5_barcodes.tsv.gz",
+      "matrix_member": "GSM10057807_BW5_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057807/suppl/GSM10057807_BW5_features.tsv.gz",
+          "filename": "GSM10057807_BW5_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057807/suppl/GSM10057807_BW5_barcodes.tsv.gz",
+          "filename": "GSM10057807_BW5_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057807/suppl/GSM10057807_BW5_matrix.mtx.gz",
+          "filename": "GSM10057807_BW5_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW5 (AHC5)"
+        ],
+        "geo_accession": [
+          "GSM10057807"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC5",
+          "condition: Healthy",
+          "batch: B2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW5",
+          "PBMCs, pool BW5 (AHC5)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217550",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290043"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057807/suppl/GSM10057807_BW5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057807/suppl/GSM10057807_BW5_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057807/suppl/GSM10057807_BW5_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057807_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC008"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057807_published_cell_assignments.csv",
+          "sha256": "3325ec82f2a93eacc2d76cd18bd2f3b9195b7c2544170113fa37152af4cc08dd",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057808",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057808_BW6_features.tsv.gz",
+      "barcodes_member": "GSM10057808_BW6_barcodes.tsv.gz",
+      "matrix_member": "GSM10057808_BW6_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057808/suppl/GSM10057808_BW6_features.tsv.gz",
+          "filename": "GSM10057808_BW6_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057808/suppl/GSM10057808_BW6_barcodes.tsv.gz",
+          "filename": "GSM10057808_BW6_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057808/suppl/GSM10057808_BW6_matrix.mtx.gz",
+          "filename": "GSM10057808_BW6_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW6 (AHC6)"
+        ],
+        "geo_accession": [
+          "GSM10057808"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC6",
+          "condition: Healthy",
+          "batch: B2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW6",
+          "PBMCs, pool BW6 (AHC6)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217549",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290042"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057808/suppl/GSM10057808_BW6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057808/suppl/GSM10057808_BW6_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057808/suppl/GSM10057808_BW6_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057808_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC009"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057808_published_cell_assignments.csv",
+          "sha256": "2e0c0bcae3237dc9e680fee08a7befe30c167484a68f533714412f73092898e1",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057809",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057809_BW7_features.tsv.gz",
+      "barcodes_member": "GSM10057809_BW7_barcodes.tsv.gz",
+      "matrix_member": "GSM10057809_BW7_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057809/suppl/GSM10057809_BW7_features.tsv.gz",
+          "filename": "GSM10057809_BW7_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057809/suppl/GSM10057809_BW7_barcodes.tsv.gz",
+          "filename": "GSM10057809_BW7_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057809/suppl/GSM10057809_BW7_matrix.mtx.gz",
+          "filename": "GSM10057809_BW7_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW7 (AHC7)"
+        ],
+        "geo_accession": [
+          "GSM10057809"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC7",
+          "condition: Healthy",
+          "batch: B3"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW7",
+          "PBMCs, pool BW7 (AHC7)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217548",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290048"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057809/suppl/GSM10057809_BW7_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057809/suppl/GSM10057809_BW7_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057809/suppl/GSM10057809_BW7_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057809_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC010"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057809_published_cell_assignments.csv",
+          "sha256": "3641183873e2d89aabff291e39691e8613f4468a256e434941e45b49c3acd1f8",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057810",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057810_BW8_features.tsv.gz",
+      "barcodes_member": "GSM10057810_BW8_barcodes.tsv.gz",
+      "matrix_member": "GSM10057810_BW8_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057810/suppl/GSM10057810_BW8_features.tsv.gz",
+          "filename": "GSM10057810_BW8_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057810/suppl/GSM10057810_BW8_barcodes.tsv.gz",
+          "filename": "GSM10057810_BW8_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057810/suppl/GSM10057810_BW8_matrix.mtx.gz",
+          "filename": "GSM10057810_BW8_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW8 (AMS8, AHC8)"
+        ],
+        "geo_accession": [
+          "GSM10057810"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS8; AHC8",
+          "condition: Remission; Healthy",
+          "batch: B3"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW8",
+          "PBMCs, pool BW8 (AMS8, AHC8)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217547",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290044"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057810/suppl/GSM10057810_BW8_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057810/suppl/GSM10057810_BW8_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057810/suppl/GSM10057810_BW8_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057810_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC011",
+          "MS014"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057810_published_cell_assignments.csv",
+          "sha256": "9b500168689ddfcb7be516d93c0ca661028abad5abd8781f041cdcd5f41ebc5e",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057811",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057811_BW9_features.tsv.gz",
+      "barcodes_member": "GSM10057811_BW9_barcodes.tsv.gz",
+      "matrix_member": "GSM10057811_BW9_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057811/suppl/GSM10057811_BW9_features.tsv.gz",
+          "filename": "GSM10057811_BW9_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057811/suppl/GSM10057811_BW9_barcodes.tsv.gz",
+          "filename": "GSM10057811_BW9_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057811/suppl/GSM10057811_BW9_matrix.mtx.gz",
+          "filename": "GSM10057811_BW9_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW9 (AHC9)"
+        ],
+        "geo_accession": [
+          "GSM10057811"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC9",
+          "condition: Healthy",
+          "batch: B3"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW9",
+          "PBMCs, pool BW9 (AHC9)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217546",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290047"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057811/suppl/GSM10057811_BW9_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057811/suppl/GSM10057811_BW9_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057811/suppl/GSM10057811_BW9_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057811_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC012"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057811_published_cell_assignments.csv",
+          "sha256": "58fa90a599657a5b63903307bf0b1c1f64f03c131307603ca4fda4b60adf149c",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057812",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057812_BW10_features.tsv.gz",
+      "barcodes_member": "GSM10057812_BW10_barcodes.tsv.gz",
+      "matrix_member": "GSM10057812_BW10_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057812/suppl/GSM10057812_BW10_features.tsv.gz",
+          "filename": "GSM10057812_BW10_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057812/suppl/GSM10057812_BW10_barcodes.tsv.gz",
+          "filename": "GSM10057812_BW10_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057812/suppl/GSM10057812_BW10_matrix.mtx.gz",
+          "filename": "GSM10057812_BW10_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW10 (AMS10, AHC10)"
+        ],
+        "geo_accession": [
+          "GSM10057812"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS10; AHC10",
+          "condition: PreRelapse; Healthy",
+          "batch: B4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW10",
+          "PBMCs, pool BW10 (AMS10, AHC10)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217545",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290045"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057812/suppl/GSM10057812_BW10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057812/suppl/GSM10057812_BW10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057812/suppl/GSM10057812_BW10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057812_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC013",
+          "MS008"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057812_published_cell_assignments.csv",
+          "sha256": "e565d3c4841b3f3b4f67039fedf592bbb349b252e6894bb36177bef635547da9",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057813",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057813_BW11_features.tsv.gz",
+      "barcodes_member": "GSM10057813_BW11_barcodes.tsv.gz",
+      "matrix_member": "GSM10057813_BW11_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057813/suppl/GSM10057813_BW11_features.tsv.gz",
+          "filename": "GSM10057813_BW11_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057813/suppl/GSM10057813_BW11_barcodes.tsv.gz",
+          "filename": "GSM10057813_BW11_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057813/suppl/GSM10057813_BW11_matrix.mtx.gz",
+          "filename": "GSM10057813_BW11_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW11 (AMS11, AHC11)"
+        ],
+        "geo_accession": [
+          "GSM10057813"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS11; AHC11",
+          "condition: Remission; Healthy",
+          "batch: B4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW11",
+          "PBMCs, pool BW11 (AMS11, AHC11)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217544",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290046"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057813/suppl/GSM10057813_BW11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057813/suppl/GSM10057813_BW11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057813/suppl/GSM10057813_BW11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057813_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC014",
+          "MS015"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057813_published_cell_assignments.csv",
+          "sha256": "f316ca6e9a6c02de33ebf76ddafbaf2c64472d8eefdc544a4cad9ddd34b07ebc",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057814",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057814_BW12_features.tsv.gz",
+      "barcodes_member": "GSM10057814_BW12_barcodes.tsv.gz",
+      "matrix_member": "GSM10057814_BW12_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057814/suppl/GSM10057814_BW12_features.tsv.gz",
+          "filename": "GSM10057814_BW12_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057814/suppl/GSM10057814_BW12_barcodes.tsv.gz",
+          "filename": "GSM10057814_BW12_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057814/suppl/GSM10057814_BW12_matrix.mtx.gz",
+          "filename": "GSM10057814_BW12_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW12 (AHC12, AHC13)"
+        ],
+        "geo_accession": [
+          "GSM10057814"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC12; AHC13",
+          "condition: Healthy; Healthy",
+          "batch: B4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW12",
+          "PBMCs, pool BW12 (AHC12, AHC13)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217543",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290052"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057814/suppl/GSM10057814_BW12_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057814/suppl/GSM10057814_BW12_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057814/suppl/GSM10057814_BW12_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057814_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC015",
+          "HC016"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057814_published_cell_assignments.csv",
+          "sha256": "ae7f5dcd21a458074eaaa0eb4390cd5f172c1b13a567d46cee23c24a33d618a2",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057815",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057815_BW13_features.tsv.gz",
+      "barcodes_member": "GSM10057815_BW13_barcodes.tsv.gz",
+      "matrix_member": "GSM10057815_BW13_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057815/suppl/GSM10057815_BW13_features.tsv.gz",
+          "filename": "GSM10057815_BW13_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057815/suppl/GSM10057815_BW13_barcodes.tsv.gz",
+          "filename": "GSM10057815_BW13_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057815/suppl/GSM10057815_BW13_matrix.mtx.gz",
+          "filename": "GSM10057815_BW13_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW13 (AMS15, AHC14, AHC15)"
+        ],
+        "geo_accession": [
+          "GSM10057815"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS15; AHC14; AHC15",
+          "condition: PreRelapse; Healthy; Healthy",
+          "batch: B5"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW13",
+          "PBMCs, pool BW13 (AMS15, AHC14, AHC15)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217542",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290049"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057815/suppl/GSM10057815_BW13_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057815/suppl/GSM10057815_BW13_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057815/suppl/GSM10057815_BW13_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057815_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC017",
+          "HC018",
+          "MS010"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057815_published_cell_assignments.csv",
+          "sha256": "7bf830ca3b8af70de268062f6505efceb9454120a143763342d982dbe555df93",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057816",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057816_BW14_features.tsv.gz",
+      "barcodes_member": "GSM10057816_BW14_barcodes.tsv.gz",
+      "matrix_member": "GSM10057816_BW14_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057816/suppl/GSM10057816_BW14_features.tsv.gz",
+          "filename": "GSM10057816_BW14_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057816/suppl/GSM10057816_BW14_barcodes.tsv.gz",
+          "filename": "GSM10057816_BW14_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057816/suppl/GSM10057816_BW14_matrix.mtx.gz",
+          "filename": "GSM10057816_BW14_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW14 (AHC16, AHC17)"
+        ],
+        "geo_accession": [
+          "GSM10057816"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC16; AHC17",
+          "condition: Healthy; Healthy",
+          "batch: B5"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW14",
+          "PBMCs, pool BW14 (AHC16, AHC17)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217541",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290050"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057816/suppl/GSM10057816_BW14_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057816/suppl/GSM10057816_BW14_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057816/suppl/GSM10057816_BW14_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057816_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC019",
+          "HC020"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057816_published_cell_assignments.csv",
+          "sha256": "fcc0c0534ae7e9a98c9cacb6b433b497271fe31407069a424b9471b99e2685fc",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057817",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057817_BW15_features.tsv.gz",
+      "barcodes_member": "GSM10057817_BW15_barcodes.tsv.gz",
+      "matrix_member": "GSM10057817_BW15_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057817/suppl/GSM10057817_BW15_features.tsv.gz",
+          "filename": "GSM10057817_BW15_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057817/suppl/GSM10057817_BW15_barcodes.tsv.gz",
+          "filename": "GSM10057817_BW15_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057817/suppl/GSM10057817_BW15_matrix.mtx.gz",
+          "filename": "GSM10057817_BW15_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW15 (AHC18)"
+        ],
+        "geo_accession": [
+          "GSM10057817"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AHC18",
+          "condition: Healthy",
+          "batch: B5"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW15",
+          "PBMCs, pool BW15 (AHC18)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217540",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290051"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057817/suppl/GSM10057817_BW15_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057817/suppl/GSM10057817_BW15_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057817/suppl/GSM10057817_BW15_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057817_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC021"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057817_published_cell_assignments.csv",
+          "sha256": "4888ac3b586dfdd7a52e600e41430c4b0f2ec7c22530f85e63fd88ce9cd98783",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057818",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057818_BW16_features.tsv.gz",
+      "barcodes_member": "GSM10057818_BW16_barcodes.tsv.gz",
+      "matrix_member": "GSM10057818_BW16_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057818/suppl/GSM10057818_BW16_features.tsv.gz",
+          "filename": "GSM10057818_BW16_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057818/suppl/GSM10057818_BW16_barcodes.tsv.gz",
+          "filename": "GSM10057818_BW16_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057818/suppl/GSM10057818_BW16_matrix.mtx.gz",
+          "filename": "GSM10057818_BW16_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool BW16 (AMS24)"
+        ],
+        "geo_accession": [
+          "GSM10057818"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: AMS24",
+          "condition: PreRelapse",
+          "batch: B6"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: BW16",
+          "PBMCs, pool BW16 (AMS24)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217539",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290053"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057818/suppl/GSM10057818_BW16_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057818/suppl/GSM10057818_BW16_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057818/suppl/GSM10057818_BW16_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057818_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS011"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057818_published_cell_assignments.csv",
+          "sha256": "b46a96923b6eecd5436987b90d674dce72445ba13dbebeba3156d4eb9618b3cc",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057819",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057819_W01_features.tsv.gz",
+      "barcodes_member": "GSM10057819_W01_barcodes.tsv.gz",
+      "matrix_member": "GSM10057819_W01_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057819/suppl/GSM10057819_W01_features.tsv.gz",
+          "filename": "GSM10057819_W01_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057819/suppl/GSM10057819_W01_barcodes.tsv.gz",
+          "filename": "GSM10057819_W01_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057819/suppl/GSM10057819_W01_matrix.mtx.gz",
+          "filename": "GSM10057819_W01_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W01 (MS1PreR1, MS5RemR1, MS6RelR1)"
+        ],
+        "geo_accession": [
+          "GSM10057819"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS1PreR1; MS5RemR1; MS6RelR1",
+          "condition: PreRelapse; Remission; Relapse",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W01",
+          "PBMCs, pool W01 (MS1PreR1, MS5RemR1, MS6RelR1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217538",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290055"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057819/suppl/GSM10057819_W01_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057819/suppl/GSM10057819_W01_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057819/suppl/GSM10057819_W01_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057819_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS001",
+          "MS005",
+          "MS006"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057819_published_cell_assignments.csv",
+          "sha256": "cd1231511e21929709766ca0f9bed2ed617fcd5cafecb7d88252e57f42058233",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057820",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057820_W02_features.tsv.gz",
+      "barcodes_member": "GSM10057820_W02_barcodes.tsv.gz",
+      "matrix_member": "GSM10057820_W02_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057820/suppl/GSM10057820_W02_features.tsv.gz",
+          "filename": "GSM10057820_W02_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057820/suppl/GSM10057820_W02_barcodes.tsv.gz",
+          "filename": "GSM10057820_W02_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057820/suppl/GSM10057820_W02_matrix.mtx.gz",
+          "filename": "GSM10057820_W02_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W02 (MS1RemR1, MS6RelR2, MS9RemR1)"
+        ],
+        "geo_accession": [
+          "GSM10057820"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS1RemR1; MS6RelR2; MS9RemR1",
+          "condition: Remission; Relapse; Remission",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W02",
+          "PBMCs, pool W02 (MS1RemR1, MS6RelR2, MS9RemR1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217537",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290054"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057820/suppl/GSM10057820_W02_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057820/suppl/GSM10057820_W02_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057820/suppl/GSM10057820_W02_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057820_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS001",
+          "MS006",
+          "MS009"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057820_published_cell_assignments.csv",
+          "sha256": "1790b93a0da159a81b037b57c87e449f07e481fd7bee3f8df277584c0853840f",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057821",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057821_W03_features.tsv.gz",
+      "barcodes_member": "GSM10057821_W03_barcodes.tsv.gz",
+      "matrix_member": "GSM10057821_W03_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057821/suppl/GSM10057821_W03_features.tsv.gz",
+          "filename": "GSM10057821_W03_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057821/suppl/GSM10057821_W03_barcodes.tsv.gz",
+          "filename": "GSM10057821_W03_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057821/suppl/GSM10057821_W03_matrix.mtx.gz",
+          "filename": "GSM10057821_W03_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W03 (MS1PreR2, MS6RemR1, MS9RelR1)"
+        ],
+        "geo_accession": [
+          "GSM10057821"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS1PreR2; MS6RemR1; MS9RelR1",
+          "condition: PreRelapse; Remission; Relapse",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W03",
+          "PBMCs, pool W03 (MS1PreR2, MS6RemR1, MS9RelR1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217536",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290057"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057821/suppl/GSM10057821_W03_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057821/suppl/GSM10057821_W03_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057821/suppl/GSM10057821_W03_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057821_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS001",
+          "MS006",
+          "MS009"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057821_published_cell_assignments.csv",
+          "sha256": "6592cd37965717ad8241883fab259c068e2bd9cb61035c6fc0566a456b82b1de",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057822",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057822_W04_features.tsv.gz",
+      "barcodes_member": "GSM10057822_W04_barcodes.tsv.gz",
+      "matrix_member": "GSM10057822_W04_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057822/suppl/GSM10057822_W04_features.tsv.gz",
+          "filename": "GSM10057822_W04_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057822/suppl/GSM10057822_W04_barcodes.tsv.gz",
+          "filename": "GSM10057822_W04_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057822/suppl/GSM10057822_W04_matrix.mtx.gz",
+          "filename": "GSM10057822_W04_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W04 (MS1RemR2, MS5PreR1, MS6RemR2)"
+        ],
+        "geo_accession": [
+          "GSM10057822"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS1RemR2; MS5PreR1; MS6RemR2",
+          "condition: Remission; PreRelapse; Remission",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W04",
+          "PBMCs, pool W04 (MS1RemR2, MS5PreR1, MS6RemR2)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217535",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290058"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057822/suppl/GSM10057822_W04_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057822/suppl/GSM10057822_W04_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057822/suppl/GSM10057822_W04_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057822_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS001",
+          "MS005",
+          "MS006"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057822_published_cell_assignments.csv",
+          "sha256": "9dd0b11ce9ac51d8c43d0686138c712de53866decf65bfbb3adf174a79bbb1a2",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057823",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057823_W05_features.tsv.gz",
+      "barcodes_member": "GSM10057823_W05_barcodes.tsv.gz",
+      "matrix_member": "GSM10057823_W05_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057823/suppl/GSM10057823_W05_features.tsv.gz",
+          "filename": "GSM10057823_W05_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057823/suppl/GSM10057823_W05_barcodes.tsv.gz",
+          "filename": "GSM10057823_W05_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057823/suppl/GSM10057823_W05_matrix.mtx.gz",
+          "filename": "GSM10057823_W05_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W05 (MS5PreR2)"
+        ],
+        "geo_accession": [
+          "GSM10057823"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS5PreR2",
+          "condition: PreRelapse",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W05",
+          "PBMCs, pool W05 (MS5PreR2)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217534",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290059"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057823/suppl/GSM10057823_W05_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057823/suppl/GSM10057823_W05_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057823/suppl/GSM10057823_W05_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057823_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS005"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057823_published_cell_assignments.csv",
+          "sha256": "639f726e02c20c512a451367ed0c3ede80690099dddd212d7dcd00c19611587f",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057824",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057824_W06_features.tsv.gz",
+      "barcodes_member": "GSM10057824_W06_barcodes.tsv.gz",
+      "matrix_member": "GSM10057824_W06_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057824/suppl/GSM10057824_W06_features.tsv.gz",
+          "filename": "GSM10057824_W06_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057824/suppl/GSM10057824_W06_barcodes.tsv.gz",
+          "filename": "GSM10057824_W06_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057824/suppl/GSM10057824_W06_matrix.mtx.gz",
+          "filename": "GSM10057824_W06_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W06 (MS5RemR2)"
+        ],
+        "geo_accession": [
+          "GSM10057824"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS5RemR2",
+          "condition: Remission",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W06",
+          "PBMCs, pool W06 (MS5RemR2)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217533",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290056"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057824/suppl/GSM10057824_W06_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057824/suppl/GSM10057824_W06_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057824/suppl/GSM10057824_W06_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057824_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS005"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057824_published_cell_assignments.csv",
+          "sha256": "a0d6fd6e650e43157f2fc5a9f8e31fce35128ca3f20caeea0ff7c4c1b3b005e8",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057825",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057825_W07_features.tsv.gz",
+      "barcodes_member": "GSM10057825_W07_barcodes.tsv.gz",
+      "matrix_member": "GSM10057825_W07_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057825/suppl/GSM10057825_W07_features.tsv.gz",
+          "filename": "GSM10057825_W07_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057825/suppl/GSM10057825_W07_barcodes.tsv.gz",
+          "filename": "GSM10057825_W07_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057825/suppl/GSM10057825_W07_matrix.mtx.gz",
+          "filename": "GSM10057825_W07_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W07 (HC1R1, HC2R1, HC3R1)"
+        ],
+        "geo_accession": [
+          "GSM10057825"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: HC1R1; HC2R1; HC3R1",
+          "condition: Healthy; Healthy; Healthy",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W07",
+          "PBMCs, pool W07 (HC1R1, HC2R1, HC3R1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217532",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290062"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057825/suppl/GSM10057825_W07_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057825/suppl/GSM10057825_W07_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057825/suppl/GSM10057825_W07_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057825_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC001",
+          "HC002",
+          "HC003"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057825_published_cell_assignments.csv",
+          "sha256": "d2cb7e46926c66fc6b025da8ba641de95ae3684852d19055342c45c2e1112213",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057826",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057826_W08_features.tsv.gz",
+      "barcodes_member": "GSM10057826_W08_barcodes.tsv.gz",
+      "matrix_member": "GSM10057826_W08_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057826/suppl/GSM10057826_W08_features.tsv.gz",
+          "filename": "GSM10057826_W08_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057826/suppl/GSM10057826_W08_barcodes.tsv.gz",
+          "filename": "GSM10057826_W08_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057826/suppl/GSM10057826_W08_matrix.mtx.gz",
+          "filename": "GSM10057826_W08_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W08 (HC3R2)"
+        ],
+        "geo_accession": [
+          "GSM10057826"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: HC3R2",
+          "condition: Healthy",
+          "batch: A1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W08",
+          "PBMCs, pool W08 (HC3R2)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217531",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290060"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057826/suppl/GSM10057826_W08_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057826/suppl/GSM10057826_W08_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057826/suppl/GSM10057826_W08_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057826_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HC003"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057826_published_cell_assignments.csv",
+          "sha256": "26692a3f63d5c8947bb4e432b53df537451019b89664aae649f44a3f7a66eed1",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057827",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057827_W09_features.tsv.gz",
+      "barcodes_member": "GSM10057827_W09_barcodes.tsv.gz",
+      "matrix_member": "GSM10057827_W09_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057827/suppl/GSM10057827_W09_features.tsv.gz",
+          "filename": "GSM10057827_W09_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057827/suppl/GSM10057827_W09_barcodes.tsv.gz",
+          "filename": "GSM10057827_W09_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057827/suppl/GSM10057827_W09_matrix.mtx.gz",
+          "filename": "GSM10057827_W09_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W09 (MS2PreR1, MS3PreR1, MS4PreR1)"
+        ],
+        "geo_accession": [
+          "GSM10057827"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS2PreR1; MS3PreR1; MS4PreR1",
+          "condition: PreRelapse; PreRelapse; PreRelapse",
+          "batch: A2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W09",
+          "PBMCs, pool W09 (MS2PreR1, MS3PreR1, MS4PreR1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217530",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290061"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057827/suppl/GSM10057827_W09_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057827/suppl/GSM10057827_W09_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057827/suppl/GSM10057827_W09_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057827_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS002",
+          "MS003",
+          "MS004"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057827_published_cell_assignments.csv",
+          "sha256": "6ec77b581a38d8cd906d653b3978d970a26f0e52caf31add09c071d59ae9ceb6",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057828",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057828_W10_features.tsv.gz",
+      "barcodes_member": "GSM10057828_W10_barcodes.tsv.gz",
+      "matrix_member": "GSM10057828_W10_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057828/suppl/GSM10057828_W10_features.tsv.gz",
+          "filename": "GSM10057828_W10_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057828/suppl/GSM10057828_W10_barcodes.tsv.gz",
+          "filename": "GSM10057828_W10_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057828/suppl/GSM10057828_W10_matrix.mtx.gz",
+          "filename": "GSM10057828_W10_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W10 (MS3RemR1)"
+        ],
+        "geo_accession": [
+          "GSM10057828"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS3RemR1",
+          "condition: Remission",
+          "batch: A2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W10",
+          "PBMCs, pool W10 (MS3RemR1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217529",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290065"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057828/suppl/GSM10057828_W10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057828/suppl/GSM10057828_W10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057828/suppl/GSM10057828_W10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057828_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS003"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057828_published_cell_assignments.csv",
+          "sha256": "107a423b660ca59beb6d3ba5f7a3f3c8358202b87d472e82336de2f51630fb19",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057829",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057829_W11_features.tsv.gz",
+      "barcodes_member": "GSM10057829_W11_barcodes.tsv.gz",
+      "matrix_member": "GSM10057829_W11_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057829/suppl/GSM10057829_W11_features.tsv.gz",
+          "filename": "GSM10057829_W11_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057829/suppl/GSM10057829_W11_barcodes.tsv.gz",
+          "filename": "GSM10057829_W11_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057829/suppl/GSM10057829_W11_matrix.mtx.gz",
+          "filename": "GSM10057829_W11_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W11 (MS3PreR2)"
+        ],
+        "geo_accession": [
+          "GSM10057829"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS3PreR2",
+          "condition: PreRelapse",
+          "batch: A2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W11",
+          "PBMCs, pool W11 (MS3PreR2)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217528",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290063"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057829/suppl/GSM10057829_W11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057829/suppl/GSM10057829_W11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057829/suppl/GSM10057829_W11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057829_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS003"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057829_published_cell_assignments.csv",
+          "sha256": "1822427831c980d4d94e5fa009fdb8c4a65a1388e5e6ff0c45a4b106e56302c5",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    },
+    {
+      "accession": "GSM10057830",
+      "donor_id": "pooled_before_assignment",
+      "genes_member": "GSM10057830_W12_features.tsv.gz",
+      "barcodes_member": "GSM10057830_W12_barcodes.tsv.gz",
+      "matrix_member": "GSM10057830_W12_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057830/suppl/GSM10057830_W12_features.tsv.gz",
+          "filename": "GSM10057830_W12_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057830/suppl/GSM10057830_W12_barcodes.tsv.gz",
+          "filename": "GSM10057830_W12_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057830/suppl/GSM10057830_W12_matrix.mtx.gz",
+          "filename": "GSM10057830_W12_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "PBMCs, pool W12 (MS2PreR2, MS3RemR2, MS4RemR1)"
+        ],
+        "geo_accession": [
+          "GSM10057830"
+        ],
+        "status": [
+          "Public on Sep 17 2026"
+        ],
+        "submission_date": [
+          "Sep 17 2026"
+        ],
+        "last_update_date": [
+          "Sep 17 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC",
+          "pooled sample_ids: MS2PreR2; MS3RemR2; MS4RemR1",
+          "condition: PreRelapse; Remission; Remission",
+          "batch: A2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMC samples were thawed and prepared as single-cell suspensions; viability exceeded 85% for all samples used for scRNA-seq profiling. Suspensions were combined into pools containing samples from up to three donors. Approximately 10,000 viable cells were targeted per sample, and each pool was loaded into one well of a Chromium Next GEM Single Cell 3' v3.1 chip (10x Genomics).",
+          "After GEM recovery, libraries were constructed according to the manufacturer's protocol (10x Genomics Chromium Next GEM Single Cell 3' Reagent Kit v3.1)."
+        ],
+        "description": [
+          "Library name: W12",
+          "PBMCs, pool W12 (MS2PreR2, MS3RemR2, MS4RemR1)"
+        ],
+        "data_processing": [
+          "FASTQ files were aligned to the GRCh38-2020-A reference transcriptome and processed into count matrices with Cell Ranger (v7.2.0 for the 12 W pools; v8.0.1 for the 16 BW pools).",
+          "BAM files from each multiplexed pool were demultiplexed to donors with Vireo using cellSNP allele counts and donor genotypes (gVCFs) from whole-genome sequencing; single-donor pools were assigned directly.",
+          "Assembly: GRCh38 (GRCh38-2020-A)",
+          "Supplementary files format and content: <pool>_barcodes.tsv.gz, <pool>_features.tsv.gz, <pool>_matrix.mtx.gz: Cell Ranger filtered_feature_bc_matrix output (Feature Barcode Matrix Exchange (MEX) format) for each pool, containing cell-level UMI counts."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Devin,Aalpoel,King"
+        ],
+        "contact_email": [
+          "devin.king.bio@gmail.com"
+        ],
+        "contact_laboratory": [
+          "Chitnis Lab"
+        ],
+        "contact_department": [
+          "Neurology"
+        ],
+        "contact_institute": [
+          "Brigham and Women's Hospital"
+        ],
+        "contact_address": [
+          "60 Fenwood Rd"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63217527",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35290064"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057830/suppl/GSM10057830_W12_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057830/suppl/GSM10057830_W12_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10057nnn/GSM10057830/suppl/GSM10057830_W12_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE347634"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "cell_assignment": {
+        "member": "GSM10057830_published_cell_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "MS002",
+          "MS003",
+          "MS004"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSM10057830_published_cell_assignments.csv",
+          "sha256": "a14a9a5fab0b816af90507885c9386343dba1ec692d33957644cd53b794d7f5f",
+          "kind": "Published frozen author per-cell physical specimen assignments"
+        }
+      },
+      "metadata": {
+        "source_assignment_evidence": "Pinned published cell metadata joined to the primary public SCRNA specimen table. Source pool prefixes removed only after exact native barcode membership checks.",
+        "source_preparation": "Human PBMC RNA; published final-QC cell subset before collection QC",
+        "source_selection_limitation": "Author final-cell selection precedes collection QC and cannot be reversed by this notebook. Author type annotations and integrated coordinates are not used for expression geometry.",
+        "source_alias_review": "42 physical sample IDs across 52 sample/pool combinations and 28 capture pools. Multiple captures of a physical specimen merge before centroid calculation; 36 donors provide independent subjects."
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "metadata_mapping": {
+    "aliases": {
+      "disease": "source_cell_primary_Diagnosis",
+      "sex": "source_cell_primary_Sex",
+      "age": "source_cell_primary_Age_(yrs)",
+      "source_condition": "source_cell_primary_Condition",
+      "source_days_relative_to_relapse": "source_cell_primary_Time_to_relapse_(d)",
+      "source_treatment": "source_cell_primary_Treatment",
+      "source_race": "source_cell_primary_Race",
+      "source_ethnicity": "source_cell_primary_Ethnicity"
+    }
+  }
+}

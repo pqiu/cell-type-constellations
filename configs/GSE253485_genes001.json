@@ -1,0 +1,939 @@
+{
+  "dataset_id": "GSE253485_genes001",
+  "study_id": "GSE253485",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Primary38446574 and originalGEO link five explicit blood RNA donor IDsF/G/D/H/I. One canonical capture each selected. Paired ADT, alternative sorted fractions/repeats and marrow excluded; selected HSPC coverage recorded. Original series10xRNA triplets audited before export, source ages/dates not imputed.",
+  "source_metadata": {
+    "accession": "GSE253485",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/38446574/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE253485",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "Sequenced libraries were processed and de-multiplexed by Cell Ranger Single-Cell Software Suite (version 4.0.0, 10X Genomics) by \u201ccellranger mkfastq\u201d function. We generated a genes-barcode matrix of UMI counts for each of the samples separately and aligned the reads to the GRCh38 human reference genome using STAR v.2.5.1b. We used the \u201ccellranger count\u201d function to generate a UMI count matrix for both GEX and ADT libraries.",
+      "After importing UMI counts matrix, gene and cell barcode lists, we generated a Seurat object (Seurat R package v.3.0) including every sequenced cell. Cells with a percentage of mitochondrial reads higher than 20%, as well as those with <200 or >8,000 expressed genes, were removed from the dataset. The filtered UMI count matrix was then log-normalized with the \u201cNormalizeData\u201d function in Seurat, and the top 20% most variable genes were selected for downstream analysis through the \u201cFindVariableFeatures\u201d function in Seurat, which relies on the \u201cvst\u201d method. The cell cycle phase of each cell was inferred by the expression levels of specific cell cycle marker genes (Regev list) with the \u201cCellCycleScore\u201d function in Seurat. Following this we computed the difference between the S and G2M scores, which indicates if the cell is actively cycling (G2M/S) or rather in a quiescent state (G1). Each single-cell UMI count was regressed for the following covariates: cell cycle difference, total number of UMIs and percentage of mitochondrial UMI counts. Where the above scaling procedure was performed through the \u201cScaleData\u201d function in Seurat. Furthermore, between-donor variability was accounted for using the Harmony data integration procedure (harmony R package v.0.1), with the \u201cRunHarmony\u201d function in harmony.",
+      "UMAP dimensionality reduction and cell clustering were performed with default parameters using the first 80 Harmony components and setting the cluster\u2019s resolution parameter to 0.6, respectively using the \u201cRunUMAP\u201d and \u201cFindClusters\u201d functions in Seurat. Differentially expressed genes across clusters were identified with the \u201cFindAllMarkers\u201d function in Seurat. The above test was performed separately for each cluster, restricting the analysis to the subset of genes expressed by at least 10% of cells in either of the two groups being compared (min.pct = 0.1). Cluster-specific marker genes were identified as the most significant genes (Bonferroni\u2019s adjusted p < 0.05) whose expression was enriched in the cluster of interest (logFC > 0). Cell type annotation was inferred (SingleR R package v.1.8.1) based on the expression of specific lineage marker genes and published HSPC gene signatures. Each cluster was classified by inspecting the expression of curated marker genes and published gene signatures, respectively using the \u201cFeaturePlot\u201d and \u201cAddModuleScore\u201d functions in Seurat. A custom gating strategy was defined by first converting sequencing data into \u201c.fcs\u201d files to be explored manually with FlowJo software v.10.5.3 (BD Biosciences) through the flowcore R package v.2.8.0. Gates were manually set based on comparison with conventional flow cytometry analysis performed on the same sample prior to single-cell library preparation. For samples enriched for primitive CD38- HSPC fraction, the proportions of ADT-detected HSPC subsets were normalized according to FACS immunophenotyping performed prior to single-cell library preparation.",
+      "For each cluster under investigation, the \u201cFindMarkers\u201d function in Seurat was used to identify differentially expressed genes between PB and BM cells. Where the above function performs, gene-wise Wilcoxon signed-rank tests between cells isolated by PB and BM samples, separately for each cell cluster. Notably the above tests were performed setting the logFC threshold parameter (logfc.threshold) to 0, in order to obtain unfiltered gene lists for all tested conditions. Furthermore, only intra-cluster comparisons between groups with at least 5 cells were considered for differential gene expression analysis. We then performed Gene Set Enrichment Analysis using the \u201cGSEA\u201d function of ClusterProfiler R package v.3.16 17 aiming to identify enriched Gene Ontology (GO) sets, focusing mainly on the Biological Process (GO-BP) terms. This procedure results in a list of statistically significant (adjusted p < 0.05) GO-BP terms. These can be further divided into enriched and depleted terms based on their normalized enrichment score (NES) value, NES>0 (NESpos) and NES<0 (NESneg) respectively. Where positive NES values indicate gene sets with higher expression in the PB samples, conversely negative NES values indicate gene sets whose expression is enriched in the BM samples. To perform transcriptional analyses on lymphoid cells, we investigated the expression of TSP1 gene signature19 on lymphoid clusters (namely, clusters 4 and 15). Cells were first clustered into K=3 groups by K-means clustering algorithm based on the percentage of expressed (UMI > 0) TSP1-associated genes. Specifically, TSP-high cells express more than 75% of the TSP1 genes, while TSP-low genes express less than 45% of these genes. Similarly to the previous section, a putative set of genes regulating the TSP1 signature was identified performing gene-wise differential expression analyses through Wilcoxon signed-rank tests. This procedure was used to identify the genes which significantly (adjusted p < 0.05) drive the expression of the TSP1 signature (PB-TSPhigh vs PB-TSPlow, BM-TSPhigh vs BM-TSPlow), and the ones which differentially modulate its expression across RNA sources (BM-TSPhigh vs PB-TSPhigh).",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: 10x Genomics output files: {SampleID}_features.tsv.gz, {SampleID}_barcodes.tsv.gz, {SampleID}_matrix.mtx.gz",
+      "Supplementary files format and content: scRNA-Seq UMI count matrices (scRNA_CountMatrix.rds): matrix of counts quantifying the expression of each GRCh38 annotated gene (rows) across all single cells (columns)",
+      "Supplementary files format and content: ADT count matrix (ADT_CountMatrix.rds): matrix of counts quantifying the expression of each ADT under investigation (rows) across all single cells (columns)",
+      "Supplementary files format and content: Seurat metadata object (Metadata.rds): matrix storing the features (columns) associated to each single cell (rows)",
+      "Library strategy: CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by sequencing)"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8021541",
+      "donor_id": "F",
+      "source_metadata": {
+        "title": [
+          "P1, healthy donor, GEX, source: PB, donor: F, sorting: CD34p"
+        ],
+        "geo_accession": [
+          "GSM8021541"
+        ],
+        "status": [
+          "Public on Mar 26 2024"
+        ],
+        "submission_date": [
+          "Jan 17 2024"
+        ],
+        "last_update_date": [
+          "Mar 26 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "facs sorting: CD34+, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-",
+          "cell type: HSPCs",
+          "tissue: Peripheral Blood",
+          "donor: F",
+          "Sex: Male",
+          "library type: mRNA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PB and BM mononuclear cells (MNC) from healthy donors (HD) were isolated using Lympholyte human cell separation medium (Euroclone). PB CD34+ cells were purified from PBMC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). HD-derived BM CD34+ cells were purchased from Stem Cell Technologies or purified from BM MNC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). Both mononuclear cells and purified PB and BM CD34+ cell fractions were frozen in liquid nitrogen until use. Upon thawing, adult HD-derived BM or PB purified CD34+ or PBMC samples were labeled with a mix composed by both fluorescent antibodies against lineage markers (LIN, anti-CD3/CD14/ CD16/CD19/CD20/CD56), CD15, CD38, CD34 (Biolegend) for FACS immunophenotyping, and  TotalSeq-A antibodies against CD90, CD45RA, CD7, CD10, CD71, CD41 (Biolegend) for ADT barcoding through scRNAseq. Staining for ADT barcoding was applied only on the following HD-derived samples: BM C, BM D, BM E, PB D, PB H, PB I. Staining with TotalSeq-A antibodies and reagents was performed according to the manufacturer\u2019s specifications, and TotalSeq-A antibodies were used at concentrations defined by titration of corresponding fluorescent antibodies. After surface marking, cells were incubated with PI (Biolegend) to label dead cells. We applied three different FACS sorting strategies for sample preparation prior to scRNAseq processing: 1) isolation of both bulk HSPC (live LIN- CD34+) and primitive HSPC (live LIN- CD34+ CD38-) fractions starting from purified CD34+ cells (BM A, BM B, PB F, PB G); 2) isolation of both primitive (live LIN- CD34+ CD38-) and progenitor (live LIN- CD34+ CD38+) HSPC fractions starting from purified CD34+ cells (BM C, BM D, PB H) or PBMC (PB D); 3) isolation of bulk HSPC (live LIN- CD34+) starting from purified CD34+ cells (BME, PB I).  Sorted BM and PB samples were counted with trypan blue for vitality when FACS cell recovery was >10,000 cells.",
+          "3\u2019 gene expression (GEX) libraries and ADT libraries constructions were performed following Chromium 10x 3\u2019 Gene Expression protocol v2 or v3 chemistry and TotalSeq\u2122-A Antibodies and Cell Hashing with 10x Single Cell 3' Reagent Kit v3 Protocol. Chromium 10x 3\u2019 GEX libraries were sequenced on Illumina NovaSeq S1 platform, while ADT libraries were sequenced together with GEX libraries or independently on Illumina NextSeq platform following manufacturer\u2019s indications."
+        ],
+        "description": [
+          "polyA RNA",
+          "GEX (3' mRNA) library: index1 file contains library index; read1 file contains cell barcode and UMI; read2 file contains transcript",
+          "P1_mRNA"
+        ],
+        "data_processing": [
+          "Sequenced libraries were processed and de-multiplexed by Cell Ranger Single-Cell Software Suite (version 4.0.0, 10X Genomics) by \u201ccellranger mkfastq\u201d function. We generated a genes-barcode matrix of UMI counts for each of the samples separately and aligned the reads to the GRCh38 human reference genome using STAR v.2.5.1b. We used the \u201ccellranger count\u201d function to generate a UMI count matrix for both GEX and ADT libraries.",
+          "After importing UMI counts matrix, gene and cell barcode lists, we generated a Seurat object (Seurat R package v.3.0) including every sequenced cell. Cells with a percentage of mitochondrial reads higher than 20%, as well as those with <200 or >8,000 expressed genes, were removed from the dataset. The filtered UMI count matrix was then log-normalized with the \u201cNormalizeData\u201d function in Seurat, and the top 20% most variable genes were selected for downstream analysis through the \u201cFindVariableFeatures\u201d function in Seurat, which relies on the \u201cvst\u201d method. The cell cycle phase of each cell was inferred by the expression levels of specific cell cycle marker genes (Regev list) with the \u201cCellCycleScore\u201d function in Seurat. Following this we computed the difference between the S and G2M scores, which indicates if the cell is actively cycling (G2M/S) or rather in a quiescent state (G1). Each single-cell UMI count was regressed for the following covariates: cell cycle difference, total number of UMIs and percentage of mitochondrial UMI counts. Where the above scaling procedure was performed through the \u201cScaleData\u201d function in Seurat. Furthermore, between-donor variability was accounted for using the Harmony data integration procedure (harmony R package v.0.1), with the \u201cRunHarmony\u201d function in harmony.",
+          "UMAP dimensionality reduction and cell clustering were performed with default parameters using the first 80 Harmony components and setting the cluster\u2019s resolution parameter to 0.6, respectively using the \u201cRunUMAP\u201d and \u201cFindClusters\u201d functions in Seurat. Differentially expressed genes across clusters were identified with the \u201cFindAllMarkers\u201d function in Seurat. The above test was performed separately for each cluster, restricting the analysis to the subset of genes expressed by at least 10% of cells in either of the two groups being compared (min.pct = 0.1). Cluster-specific marker genes were identified as the most significant genes (Bonferroni\u2019s adjusted p < 0.05) whose expression was enriched in the cluster of interest (logFC > 0). Cell type annotation was inferred (SingleR R package v.1.8.1) based on the expression of specific lineage marker genes and published HSPC gene signatures. Each cluster was classified by inspecting the expression of curated marker genes and published gene signatures, respectively using the \u201cFeaturePlot\u201d and \u201cAddModuleScore\u201d functions in Seurat. A custom gating strategy was defined by first converting sequencing data into \u201c.fcs\u201d files to be explored manually with FlowJo software v.10.5.3 (BD Biosciences) through the flowcore R package v.2.8.0. Gates were manually set based on comparison with conventional flow cytometry analysis performed on the same sample prior to single-cell library preparation. For samples enriched for primitive CD38- HSPC fraction, the proportions of ADT-detected HSPC subsets were normalized according to FACS immunophenotyping performed prior to single-cell library preparation.",
+          "For each cluster under investigation, the \u201cFindMarkers\u201d function in Seurat was used to identify differentially expressed genes between PB and BM cells. Where the above function performs, gene-wise Wilcoxon signed-rank tests between cells isolated by PB and BM samples, separately for each cell cluster. Notably the above tests were performed setting the logFC threshold parameter (logfc.threshold) to 0, in order to obtain unfiltered gene lists for all tested conditions. Furthermore, only intra-cluster comparisons between groups with at least 5 cells were considered for differential gene expression analysis. We then performed Gene Set Enrichment Analysis using the \u201cGSEA\u201d function of ClusterProfiler R package v.3.16 17 aiming to identify enriched Gene Ontology (GO) sets, focusing mainly on the Biological Process (GO-BP) terms. This procedure results in a list of statistically significant (adjusted p < 0.05) GO-BP terms. These can be further divided into enriched and depleted terms based on their normalized enrichment score (NES) value, NES>0 (NESpos) and NES<0 (NESneg) respectively. Where positive NES values indicate gene sets with higher expression in the PB samples, conversely negative NES values indicate gene sets whose expression is enriched in the BM samples. To perform transcriptional analyses on lymphoid cells, we investigated the expression of TSP1 gene signature19 on lymphoid clusters (namely, clusters 4 and 15). Cells were first clustered into K=3 groups by K-means clustering algorithm based on the percentage of expressed (UMI > 0) TSP1-associated genes. Specifically, TSP-high cells express more than 75% of the TSP1 genes, while TSP-low genes express less than 45% of these genes. Similarly to the previous section, a putative set of genes regulating the TSP1 signature was identified performing gene-wise differential expression analyses through Wilcoxon signed-rank tests. This procedure was used to identify the genes which significantly (adjusted p < 0.05) drive the expression of the TSP1 signature (PB-TSPhigh vs PB-TSPlow, BM-TSPhigh vs BM-TSPlow), and the ones which differentially modulate its expression across RNA sources (BM-TSPhigh vs PB-TSPhigh).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: {SampleID}_features.tsv.gz, {SampleID}_barcodes.tsv.gz, {SampleID}_matrix.mtx.gz",
+          "Supplementary files format and content: scRNA-Seq UMI count matrices (scRNA_CountMatrix.rds): matrix of counts quantifying the expression of each GRCh38 annotated gene (rows) across all single cells (columns)",
+          "Supplementary files format and content: ADT count matrix (ADT_CountMatrix.rds): matrix of counts quantifying the expression of each ADT under investigation (rows) across all single cells (columns)",
+          "Supplementary files format and content: Seurat metadata object (Metadata.rds): matrix storing the features (columns) associated to each single cell (rows)",
+          "Library strategy: CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by sequencing)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Guido,,Pacini"
+        ],
+        "contact_email": [
+          "pacini.guido@hsr.it"
+        ],
+        "contact_department": [
+          "Pathogenesis and therapy of primary immunodeficiencies"
+        ],
+        "contact_institute": [
+          "San Raffaele Telethon Institute for Gene Therapy"
+        ],
+        "contact_address": [
+          "Via Olgettina 60"
+        ],
+        "contact_city": [
+          "Milano"
+        ],
+        "contact_zip/postal_code": [
+          "20132"
+        ],
+        "contact_country": [
+          "Italy"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39476005",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23265812"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE253485"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_P1_features.tsv.gz",
+          "filename": "GSE253485_P1_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_P1_barcodes.tsv.gz",
+          "filename": "GSE253485_P1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_P1_matrix.mtx.gz",
+          "filename": "GSE253485_P1_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "sex": "male",
+        "source_capture_id": "P1",
+        "source_preparation": "facs sorting: CD34+, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-; cell type: HSPCs",
+        "source_alias_review": "One canonical blood RNA capture per explicit donor F/G/D/H/I. Other sort fractions, repeat captures, paired ADT and bone marrow do not add blood specimens. No dates or chronological visits inferred.",
+        "source_coverage_limitation": "Blood-derived selected HSPC fraction; unobserved PBMC types remain missing. SCimilarity labels are computed independently of source cell-type labels.",
+        "source_demographics": "Individual collection ages and dates unreported in GEO; no imputation from primary cohort ages.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/38446574/",
+        "source_modality_review": "Original triplets may also contain eight explicitly reviewed ADT rows (S12 has a ninth CD38 tag). Only Gene Expression rows contribute to annotation, RNA library totals and gene geometry."
+      },
+      "genes_member": "GSE253485_P1_features.tsv.gz",
+      "barcodes_member": "GSE253485_P1_barcodes.tsv.gz",
+      "matrix_member": "GSE253485_P1_matrix.mtx.gz",
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "source_count_review": {
+        "cells": 472,
+        "genes": 36601,
+        "nonzeros": 921022,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 472,
+        "RNA_positive_barcode_rows": 472,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "excluded_ADT_features": [],
+        "mitochondrial_reference_features": 13
+      }
+    },
+    {
+      "accession": "GSM8021543",
+      "donor_id": "G",
+      "source_metadata": {
+        "title": [
+          "P3, healthy donor, GEX, source: PB, donor: G, sorting: CD34p"
+        ],
+        "geo_accession": [
+          "GSM8021543"
+        ],
+        "status": [
+          "Public on Mar 26 2024"
+        ],
+        "submission_date": [
+          "Jan 17 2024"
+        ],
+        "last_update_date": [
+          "Mar 26 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "facs sorting: CD34+, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-",
+          "cell type: HSPCs",
+          "tissue: Peripheral Blood",
+          "donor: G",
+          "Sex: Male",
+          "library type: mRNA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PB and BM mononuclear cells (MNC) from healthy donors (HD) were isolated using Lympholyte human cell separation medium (Euroclone). PB CD34+ cells were purified from PBMC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). HD-derived BM CD34+ cells were purchased from Stem Cell Technologies or purified from BM MNC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). Both mononuclear cells and purified PB and BM CD34+ cell fractions were frozen in liquid nitrogen until use. Upon thawing, adult HD-derived BM or PB purified CD34+ or PBMC samples were labeled with a mix composed by both fluorescent antibodies against lineage markers (LIN, anti-CD3/CD14/ CD16/CD19/CD20/CD56), CD15, CD38, CD34 (Biolegend) for FACS immunophenotyping, and  TotalSeq-A antibodies against CD90, CD45RA, CD7, CD10, CD71, CD41 (Biolegend) for ADT barcoding through scRNAseq. Staining for ADT barcoding was applied only on the following HD-derived samples: BM C, BM D, BM E, PB D, PB H, PB I. Staining with TotalSeq-A antibodies and reagents was performed according to the manufacturer\u2019s specifications, and TotalSeq-A antibodies were used at concentrations defined by titration of corresponding fluorescent antibodies. After surface marking, cells were incubated with PI (Biolegend) to label dead cells. We applied three different FACS sorting strategies for sample preparation prior to scRNAseq processing: 1) isolation of both bulk HSPC (live LIN- CD34+) and primitive HSPC (live LIN- CD34+ CD38-) fractions starting from purified CD34+ cells (BM A, BM B, PB F, PB G); 2) isolation of both primitive (live LIN- CD34+ CD38-) and progenitor (live LIN- CD34+ CD38+) HSPC fractions starting from purified CD34+ cells (BM C, BM D, PB H) or PBMC (PB D); 3) isolation of bulk HSPC (live LIN- CD34+) starting from purified CD34+ cells (BME, PB I).  Sorted BM and PB samples were counted with trypan blue for vitality when FACS cell recovery was >10,000 cells.",
+          "3\u2019 gene expression (GEX) libraries and ADT libraries constructions were performed following Chromium 10x 3\u2019 Gene Expression protocol v2 or v3 chemistry and TotalSeq\u2122-A Antibodies and Cell Hashing with 10x Single Cell 3' Reagent Kit v3 Protocol. Chromium 10x 3\u2019 GEX libraries were sequenced on Illumina NovaSeq S1 platform, while ADT libraries were sequenced together with GEX libraries or independently on Illumina NextSeq platform following manufacturer\u2019s indications."
+        ],
+        "description": [
+          "polyA RNA",
+          "GEX (3' mRNA) library: index1 file contains library index; read1 file contains cell barcode and UMI; read2 file contains transcript",
+          "P3_mRNA"
+        ],
+        "data_processing": [
+          "Sequenced libraries were processed and de-multiplexed by Cell Ranger Single-Cell Software Suite (version 4.0.0, 10X Genomics) by \u201ccellranger mkfastq\u201d function. We generated a genes-barcode matrix of UMI counts for each of the samples separately and aligned the reads to the GRCh38 human reference genome using STAR v.2.5.1b. We used the \u201ccellranger count\u201d function to generate a UMI count matrix for both GEX and ADT libraries.",
+          "After importing UMI counts matrix, gene and cell barcode lists, we generated a Seurat object (Seurat R package v.3.0) including every sequenced cell. Cells with a percentage of mitochondrial reads higher than 20%, as well as those with <200 or >8,000 expressed genes, were removed from the dataset. The filtered UMI count matrix was then log-normalized with the \u201cNormalizeData\u201d function in Seurat, and the top 20% most variable genes were selected for downstream analysis through the \u201cFindVariableFeatures\u201d function in Seurat, which relies on the \u201cvst\u201d method. The cell cycle phase of each cell was inferred by the expression levels of specific cell cycle marker genes (Regev list) with the \u201cCellCycleScore\u201d function in Seurat. Following this we computed the difference between the S and G2M scores, which indicates if the cell is actively cycling (G2M/S) or rather in a quiescent state (G1). Each single-cell UMI count was regressed for the following covariates: cell cycle difference, total number of UMIs and percentage of mitochondrial UMI counts. Where the above scaling procedure was performed through the \u201cScaleData\u201d function in Seurat. Furthermore, between-donor variability was accounted for using the Harmony data integration procedure (harmony R package v.0.1), with the \u201cRunHarmony\u201d function in harmony.",
+          "UMAP dimensionality reduction and cell clustering were performed with default parameters using the first 80 Harmony components and setting the cluster\u2019s resolution parameter to 0.6, respectively using the \u201cRunUMAP\u201d and \u201cFindClusters\u201d functions in Seurat. Differentially expressed genes across clusters were identified with the \u201cFindAllMarkers\u201d function in Seurat. The above test was performed separately for each cluster, restricting the analysis to the subset of genes expressed by at least 10% of cells in either of the two groups being compared (min.pct = 0.1). Cluster-specific marker genes were identified as the most significant genes (Bonferroni\u2019s adjusted p < 0.05) whose expression was enriched in the cluster of interest (logFC > 0). Cell type annotation was inferred (SingleR R package v.1.8.1) based on the expression of specific lineage marker genes and published HSPC gene signatures. Each cluster was classified by inspecting the expression of curated marker genes and published gene signatures, respectively using the \u201cFeaturePlot\u201d and \u201cAddModuleScore\u201d functions in Seurat. A custom gating strategy was defined by first converting sequencing data into \u201c.fcs\u201d files to be explored manually with FlowJo software v.10.5.3 (BD Biosciences) through the flowcore R package v.2.8.0. Gates were manually set based on comparison with conventional flow cytometry analysis performed on the same sample prior to single-cell library preparation. For samples enriched for primitive CD38- HSPC fraction, the proportions of ADT-detected HSPC subsets were normalized according to FACS immunophenotyping performed prior to single-cell library preparation.",
+          "For each cluster under investigation, the \u201cFindMarkers\u201d function in Seurat was used to identify differentially expressed genes between PB and BM cells. Where the above function performs, gene-wise Wilcoxon signed-rank tests between cells isolated by PB and BM samples, separately for each cell cluster. Notably the above tests were performed setting the logFC threshold parameter (logfc.threshold) to 0, in order to obtain unfiltered gene lists for all tested conditions. Furthermore, only intra-cluster comparisons between groups with at least 5 cells were considered for differential gene expression analysis. We then performed Gene Set Enrichment Analysis using the \u201cGSEA\u201d function of ClusterProfiler R package v.3.16 17 aiming to identify enriched Gene Ontology (GO) sets, focusing mainly on the Biological Process (GO-BP) terms. This procedure results in a list of statistically significant (adjusted p < 0.05) GO-BP terms. These can be further divided into enriched and depleted terms based on their normalized enrichment score (NES) value, NES>0 (NESpos) and NES<0 (NESneg) respectively. Where positive NES values indicate gene sets with higher expression in the PB samples, conversely negative NES values indicate gene sets whose expression is enriched in the BM samples. To perform transcriptional analyses on lymphoid cells, we investigated the expression of TSP1 gene signature19 on lymphoid clusters (namely, clusters 4 and 15). Cells were first clustered into K=3 groups by K-means clustering algorithm based on the percentage of expressed (UMI > 0) TSP1-associated genes. Specifically, TSP-high cells express more than 75% of the TSP1 genes, while TSP-low genes express less than 45% of these genes. Similarly to the previous section, a putative set of genes regulating the TSP1 signature was identified performing gene-wise differential expression analyses through Wilcoxon signed-rank tests. This procedure was used to identify the genes which significantly (adjusted p < 0.05) drive the expression of the TSP1 signature (PB-TSPhigh vs PB-TSPlow, BM-TSPhigh vs BM-TSPlow), and the ones which differentially modulate its expression across RNA sources (BM-TSPhigh vs PB-TSPhigh).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: {SampleID}_features.tsv.gz, {SampleID}_barcodes.tsv.gz, {SampleID}_matrix.mtx.gz",
+          "Supplementary files format and content: scRNA-Seq UMI count matrices (scRNA_CountMatrix.rds): matrix of counts quantifying the expression of each GRCh38 annotated gene (rows) across all single cells (columns)",
+          "Supplementary files format and content: ADT count matrix (ADT_CountMatrix.rds): matrix of counts quantifying the expression of each ADT under investigation (rows) across all single cells (columns)",
+          "Supplementary files format and content: Seurat metadata object (Metadata.rds): matrix storing the features (columns) associated to each single cell (rows)",
+          "Library strategy: CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by sequencing)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Guido,,Pacini"
+        ],
+        "contact_email": [
+          "pacini.guido@hsr.it"
+        ],
+        "contact_department": [
+          "Pathogenesis and therapy of primary immunodeficiencies"
+        ],
+        "contact_institute": [
+          "San Raffaele Telethon Institute for Gene Therapy"
+        ],
+        "contact_address": [
+          "Via Olgettina 60"
+        ],
+        "contact_city": [
+          "Milano"
+        ],
+        "contact_zip/postal_code": [
+          "20132"
+        ],
+        "contact_country": [
+          "Italy"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39476003",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23265816"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE253485"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_P3_features.tsv.gz",
+          "filename": "GSE253485_P3_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_P3_barcodes.tsv.gz",
+          "filename": "GSE253485_P3_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_P3_matrix.mtx.gz",
+          "filename": "GSE253485_P3_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "sex": "male",
+        "source_capture_id": "P3",
+        "source_preparation": "facs sorting: CD34+, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-; cell type: HSPCs",
+        "source_alias_review": "One canonical blood RNA capture per explicit donor F/G/D/H/I. Other sort fractions, repeat captures, paired ADT and bone marrow do not add blood specimens. No dates or chronological visits inferred.",
+        "source_coverage_limitation": "Blood-derived selected HSPC fraction; unobserved PBMC types remain missing. SCimilarity labels are computed independently of source cell-type labels.",
+        "source_demographics": "Individual collection ages and dates unreported in GEO; no imputation from primary cohort ages.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/38446574/",
+        "source_modality_review": "Original triplets may also contain eight explicitly reviewed ADT rows (S12 has a ninth CD38 tag). Only Gene Expression rows contribute to annotation, RNA library totals and gene geometry."
+      },
+      "genes_member": "GSE253485_P3_features.tsv.gz",
+      "barcodes_member": "GSE253485_P3_barcodes.tsv.gz",
+      "matrix_member": "GSE253485_P3_matrix.mtx.gz",
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "source_count_review": {
+        "cells": 1276,
+        "genes": 36601,
+        "nonzeros": 2626857,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 1276,
+        "RNA_positive_barcode_rows": 1276,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "excluded_ADT_features": [],
+        "mitochondrial_reference_features": 13
+      }
+    },
+    {
+      "accession": "GSM8021545",
+      "donor_id": "D",
+      "source_metadata": {
+        "title": [
+          "S1, healthy donor, GEX, source: PB, donor: D, sorting: CD34pCD38n"
+        ],
+        "geo_accession": [
+          "GSM8021545"
+        ],
+        "status": [
+          "Public on Mar 26 2024"
+        ],
+        "submission_date": [
+          "Jan 17 2024"
+        ],
+        "last_update_date": [
+          "Mar 26 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "facs sorting: CD34+, CD38-, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-",
+          "cell type: Primitive HSPCs",
+          "tissue: Peripheral Blood",
+          "donor: D",
+          "Sex: Male",
+          "library type: mRNA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PB and BM mononuclear cells (MNC) from healthy donors (HD) were isolated using Lympholyte human cell separation medium (Euroclone). PB CD34+ cells were purified from PBMC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). HD-derived BM CD34+ cells were purchased from Stem Cell Technologies or purified from BM MNC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). Both mononuclear cells and purified PB and BM CD34+ cell fractions were frozen in liquid nitrogen until use. Upon thawing, adult HD-derived BM or PB purified CD34+ or PBMC samples were labeled with a mix composed by both fluorescent antibodies against lineage markers (LIN, anti-CD3/CD14/ CD16/CD19/CD20/CD56), CD15, CD38, CD34 (Biolegend) for FACS immunophenotyping, and  TotalSeq-A antibodies against CD90, CD45RA, CD7, CD10, CD71, CD41 (Biolegend) for ADT barcoding through scRNAseq. Staining for ADT barcoding was applied only on the following HD-derived samples: BM C, BM D, BM E, PB D, PB H, PB I. Staining with TotalSeq-A antibodies and reagents was performed according to the manufacturer\u2019s specifications, and TotalSeq-A antibodies were used at concentrations defined by titration of corresponding fluorescent antibodies. After surface marking, cells were incubated with PI (Biolegend) to label dead cells. We applied three different FACS sorting strategies for sample preparation prior to scRNAseq processing: 1) isolation of both bulk HSPC (live LIN- CD34+) and primitive HSPC (live LIN- CD34+ CD38-) fractions starting from purified CD34+ cells (BM A, BM B, PB F, PB G); 2) isolation of both primitive (live LIN- CD34+ CD38-) and progenitor (live LIN- CD34+ CD38+) HSPC fractions starting from purified CD34+ cells (BM C, BM D, PB H) or PBMC (PB D); 3) isolation of bulk HSPC (live LIN- CD34+) starting from purified CD34+ cells (BME, PB I).  Sorted BM and PB samples were counted with trypan blue for vitality when FACS cell recovery was >10,000 cells.",
+          "3\u2019 gene expression (GEX) libraries and ADT libraries constructions were performed following Chromium 10x 3\u2019 Gene Expression protocol v2 or v3 chemistry and TotalSeq\u2122-A Antibodies and Cell Hashing with 10x Single Cell 3' Reagent Kit v3 Protocol. Chromium 10x 3\u2019 GEX libraries were sequenced on Illumina NovaSeq S1 platform, while ADT libraries were sequenced together with GEX libraries or independently on Illumina NextSeq platform following manufacturer\u2019s indications."
+        ],
+        "description": [
+          "polyA RNA",
+          "GEX (3' mRNA) library: index1 file contains library index; read1 file contains cell barcode and UMI; read2 file contains transcript",
+          "S1_mRNA"
+        ],
+        "data_processing": [
+          "Sequenced libraries were processed and de-multiplexed by Cell Ranger Single-Cell Software Suite (version 4.0.0, 10X Genomics) by \u201ccellranger mkfastq\u201d function. We generated a genes-barcode matrix of UMI counts for each of the samples separately and aligned the reads to the GRCh38 human reference genome using STAR v.2.5.1b. We used the \u201ccellranger count\u201d function to generate a UMI count matrix for both GEX and ADT libraries.",
+          "After importing UMI counts matrix, gene and cell barcode lists, we generated a Seurat object (Seurat R package v.3.0) including every sequenced cell. Cells with a percentage of mitochondrial reads higher than 20%, as well as those with <200 or >8,000 expressed genes, were removed from the dataset. The filtered UMI count matrix was then log-normalized with the \u201cNormalizeData\u201d function in Seurat, and the top 20% most variable genes were selected for downstream analysis through the \u201cFindVariableFeatures\u201d function in Seurat, which relies on the \u201cvst\u201d method. The cell cycle phase of each cell was inferred by the expression levels of specific cell cycle marker genes (Regev list) with the \u201cCellCycleScore\u201d function in Seurat. Following this we computed the difference between the S and G2M scores, which indicates if the cell is actively cycling (G2M/S) or rather in a quiescent state (G1). Each single-cell UMI count was regressed for the following covariates: cell cycle difference, total number of UMIs and percentage of mitochondrial UMI counts. Where the above scaling procedure was performed through the \u201cScaleData\u201d function in Seurat. Furthermore, between-donor variability was accounted for using the Harmony data integration procedure (harmony R package v.0.1), with the \u201cRunHarmony\u201d function in harmony.",
+          "UMAP dimensionality reduction and cell clustering were performed with default parameters using the first 80 Harmony components and setting the cluster\u2019s resolution parameter to 0.6, respectively using the \u201cRunUMAP\u201d and \u201cFindClusters\u201d functions in Seurat. Differentially expressed genes across clusters were identified with the \u201cFindAllMarkers\u201d function in Seurat. The above test was performed separately for each cluster, restricting the analysis to the subset of genes expressed by at least 10% of cells in either of the two groups being compared (min.pct = 0.1). Cluster-specific marker genes were identified as the most significant genes (Bonferroni\u2019s adjusted p < 0.05) whose expression was enriched in the cluster of interest (logFC > 0). Cell type annotation was inferred (SingleR R package v.1.8.1) based on the expression of specific lineage marker genes and published HSPC gene signatures. Each cluster was classified by inspecting the expression of curated marker genes and published gene signatures, respectively using the \u201cFeaturePlot\u201d and \u201cAddModuleScore\u201d functions in Seurat. A custom gating strategy was defined by first converting sequencing data into \u201c.fcs\u201d files to be explored manually with FlowJo software v.10.5.3 (BD Biosciences) through the flowcore R package v.2.8.0. Gates were manually set based on comparison with conventional flow cytometry analysis performed on the same sample prior to single-cell library preparation. For samples enriched for primitive CD38- HSPC fraction, the proportions of ADT-detected HSPC subsets were normalized according to FACS immunophenotyping performed prior to single-cell library preparation.",
+          "For each cluster under investigation, the \u201cFindMarkers\u201d function in Seurat was used to identify differentially expressed genes between PB and BM cells. Where the above function performs, gene-wise Wilcoxon signed-rank tests between cells isolated by PB and BM samples, separately for each cell cluster. Notably the above tests were performed setting the logFC threshold parameter (logfc.threshold) to 0, in order to obtain unfiltered gene lists for all tested conditions. Furthermore, only intra-cluster comparisons between groups with at least 5 cells were considered for differential gene expression analysis. We then performed Gene Set Enrichment Analysis using the \u201cGSEA\u201d function of ClusterProfiler R package v.3.16 17 aiming to identify enriched Gene Ontology (GO) sets, focusing mainly on the Biological Process (GO-BP) terms. This procedure results in a list of statistically significant (adjusted p < 0.05) GO-BP terms. These can be further divided into enriched and depleted terms based on their normalized enrichment score (NES) value, NES>0 (NESpos) and NES<0 (NESneg) respectively. Where positive NES values indicate gene sets with higher expression in the PB samples, conversely negative NES values indicate gene sets whose expression is enriched in the BM samples. To perform transcriptional analyses on lymphoid cells, we investigated the expression of TSP1 gene signature19 on lymphoid clusters (namely, clusters 4 and 15). Cells were first clustered into K=3 groups by K-means clustering algorithm based on the percentage of expressed (UMI > 0) TSP1-associated genes. Specifically, TSP-high cells express more than 75% of the TSP1 genes, while TSP-low genes express less than 45% of these genes. Similarly to the previous section, a putative set of genes regulating the TSP1 signature was identified performing gene-wise differential expression analyses through Wilcoxon signed-rank tests. This procedure was used to identify the genes which significantly (adjusted p < 0.05) drive the expression of the TSP1 signature (PB-TSPhigh vs PB-TSPlow, BM-TSPhigh vs BM-TSPlow), and the ones which differentially modulate its expression across RNA sources (BM-TSPhigh vs PB-TSPhigh).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: {SampleID}_features.tsv.gz, {SampleID}_barcodes.tsv.gz, {SampleID}_matrix.mtx.gz",
+          "Supplementary files format and content: scRNA-Seq UMI count matrices (scRNA_CountMatrix.rds): matrix of counts quantifying the expression of each GRCh38 annotated gene (rows) across all single cells (columns)",
+          "Supplementary files format and content: ADT count matrix (ADT_CountMatrix.rds): matrix of counts quantifying the expression of each ADT under investigation (rows) across all single cells (columns)",
+          "Supplementary files format and content: Seurat metadata object (Metadata.rds): matrix storing the features (columns) associated to each single cell (rows)",
+          "Library strategy: CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by sequencing)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Guido,,Pacini"
+        ],
+        "contact_email": [
+          "pacini.guido@hsr.it"
+        ],
+        "contact_department": [
+          "Pathogenesis and therapy of primary immunodeficiencies"
+        ],
+        "contact_institute": [
+          "San Raffaele Telethon Institute for Gene Therapy"
+        ],
+        "contact_address": [
+          "Via Olgettina 60"
+        ],
+        "contact_city": [
+          "Milano"
+        ],
+        "contact_zip/postal_code": [
+          "20132"
+        ],
+        "contact_country": [
+          "Italy"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39476001",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23265825"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE253485"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S1_features.tsv.gz",
+          "filename": "GSE253485_S1_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S1_barcodes.tsv.gz",
+          "filename": "GSE253485_S1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S1_matrix.mtx.gz",
+          "filename": "GSE253485_S1_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "sex": "male",
+        "source_capture_id": "S1",
+        "source_preparation": "facs sorting: CD34+, CD38-, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-; cell type: Primitive HSPCs",
+        "source_alias_review": "One canonical blood RNA capture per explicit donor F/G/D/H/I. Other sort fractions, repeat captures, paired ADT and bone marrow do not add blood specimens. No dates or chronological visits inferred.",
+        "source_coverage_limitation": "Blood-derived selected HSPC fraction; unobserved PBMC types remain missing. SCimilarity labels are computed independently of source cell-type labels.",
+        "source_demographics": "Individual collection ages and dates unreported in GEO; no imputation from primary cohort ages.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/38446574/",
+        "source_modality_review": "Original triplets may also contain eight explicitly reviewed ADT rows (S12 has a ninth CD38 tag). Only Gene Expression rows contribute to annotation, RNA library totals and gene geometry."
+      },
+      "genes_member": "GSE253485_S1_features.tsv.gz",
+      "barcodes_member": "GSE253485_S1_barcodes.tsv.gz",
+      "matrix_member": "GSE253485_S1_matrix.mtx.gz",
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "source_count_review": {
+        "cells": 172,
+        "genes": 36601,
+        "nonzeros": 521355,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "26c0443bed2f7bec485343c44750bfce400d9adbb02b51ab0062e1781567a62a",
+        "source_features": 36609,
+        "source_barcode_rows": 172,
+        "RNA_positive_barcode_rows": 172,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 8,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 8
+        },
+        "excluded_ADT_features": [
+          "adt_CD90",
+          "adt_CD45RA",
+          "adt_CD7",
+          "adt_CD71",
+          "adt_CD41",
+          "adt_CD10",
+          "adt_CD127",
+          "adt_CXCR4"
+        ],
+        "mitochondrial_reference_features": 13
+      }
+    },
+    {
+      "accession": "GSM8021561",
+      "donor_id": "H",
+      "source_metadata": {
+        "title": [
+          "S9, healthy donor, GEX, source: PB, donor: H, sorting: CD34pCD38n"
+        ],
+        "geo_accession": [
+          "GSM8021561"
+        ],
+        "status": [
+          "Public on Mar 26 2024"
+        ],
+        "submission_date": [
+          "Jan 17 2024"
+        ],
+        "last_update_date": [
+          "Mar 26 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "facs sorting: CD34+, CD38-, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-",
+          "cell type: Primitive HSPCs",
+          "tissue: Peripheral Blood",
+          "donor: H",
+          "Sex: Female",
+          "library type: mRNA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PB and BM mononuclear cells (MNC) from healthy donors (HD) were isolated using Lympholyte human cell separation medium (Euroclone). PB CD34+ cells were purified from PBMC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). HD-derived BM CD34+ cells were purchased from Stem Cell Technologies or purified from BM MNC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). Both mononuclear cells and purified PB and BM CD34+ cell fractions were frozen in liquid nitrogen until use. Upon thawing, adult HD-derived BM or PB purified CD34+ or PBMC samples were labeled with a mix composed by both fluorescent antibodies against lineage markers (LIN, anti-CD3/CD14/ CD16/CD19/CD20/CD56), CD15, CD38, CD34 (Biolegend) for FACS immunophenotyping, and  TotalSeq-A antibodies against CD90, CD45RA, CD7, CD10, CD71, CD41 (Biolegend) for ADT barcoding through scRNAseq. Staining for ADT barcoding was applied only on the following HD-derived samples: BM C, BM D, BM E, PB D, PB H, PB I. Staining with TotalSeq-A antibodies and reagents was performed according to the manufacturer\u2019s specifications, and TotalSeq-A antibodies were used at concentrations defined by titration of corresponding fluorescent antibodies. After surface marking, cells were incubated with PI (Biolegend) to label dead cells. We applied three different FACS sorting strategies for sample preparation prior to scRNAseq processing: 1) isolation of both bulk HSPC (live LIN- CD34+) and primitive HSPC (live LIN- CD34+ CD38-) fractions starting from purified CD34+ cells (BM A, BM B, PB F, PB G); 2) isolation of both primitive (live LIN- CD34+ CD38-) and progenitor (live LIN- CD34+ CD38+) HSPC fractions starting from purified CD34+ cells (BM C, BM D, PB H) or PBMC (PB D); 3) isolation of bulk HSPC (live LIN- CD34+) starting from purified CD34+ cells (BME, PB I).  Sorted BM and PB samples were counted with trypan blue for vitality when FACS cell recovery was >10,000 cells.",
+          "3\u2019 gene expression (GEX) libraries and ADT libraries constructions were performed following Chromium 10x 3\u2019 Gene Expression protocol v2 or v3 chemistry and TotalSeq\u2122-A Antibodies and Cell Hashing with 10x Single Cell 3' Reagent Kit v3 Protocol. Chromium 10x 3\u2019 GEX libraries were sequenced on Illumina NovaSeq S1 platform, while ADT libraries were sequenced together with GEX libraries or independently on Illumina NextSeq platform following manufacturer\u2019s indications."
+        ],
+        "description": [
+          "polyA RNA",
+          "GEX (3' mRNA) library: index1 file contains library index; read1 file contains cell barcode and UMI; read2 file contains transcript",
+          "S9_mRNA"
+        ],
+        "data_processing": [
+          "Sequenced libraries were processed and de-multiplexed by Cell Ranger Single-Cell Software Suite (version 4.0.0, 10X Genomics) by \u201ccellranger mkfastq\u201d function. We generated a genes-barcode matrix of UMI counts for each of the samples separately and aligned the reads to the GRCh38 human reference genome using STAR v.2.5.1b. We used the \u201ccellranger count\u201d function to generate a UMI count matrix for both GEX and ADT libraries.",
+          "After importing UMI counts matrix, gene and cell barcode lists, we generated a Seurat object (Seurat R package v.3.0) including every sequenced cell. Cells with a percentage of mitochondrial reads higher than 20%, as well as those with <200 or >8,000 expressed genes, were removed from the dataset. The filtered UMI count matrix was then log-normalized with the \u201cNormalizeData\u201d function in Seurat, and the top 20% most variable genes were selected for downstream analysis through the \u201cFindVariableFeatures\u201d function in Seurat, which relies on the \u201cvst\u201d method. The cell cycle phase of each cell was inferred by the expression levels of specific cell cycle marker genes (Regev list) with the \u201cCellCycleScore\u201d function in Seurat. Following this we computed the difference between the S and G2M scores, which indicates if the cell is actively cycling (G2M/S) or rather in a quiescent state (G1). Each single-cell UMI count was regressed for the following covariates: cell cycle difference, total number of UMIs and percentage of mitochondrial UMI counts. Where the above scaling procedure was performed through the \u201cScaleData\u201d function in Seurat. Furthermore, between-donor variability was accounted for using the Harmony data integration procedure (harmony R package v.0.1), with the \u201cRunHarmony\u201d function in harmony.",
+          "UMAP dimensionality reduction and cell clustering were performed with default parameters using the first 80 Harmony components and setting the cluster\u2019s resolution parameter to 0.6, respectively using the \u201cRunUMAP\u201d and \u201cFindClusters\u201d functions in Seurat. Differentially expressed genes across clusters were identified with the \u201cFindAllMarkers\u201d function in Seurat. The above test was performed separately for each cluster, restricting the analysis to the subset of genes expressed by at least 10% of cells in either of the two groups being compared (min.pct = 0.1). Cluster-specific marker genes were identified as the most significant genes (Bonferroni\u2019s adjusted p < 0.05) whose expression was enriched in the cluster of interest (logFC > 0). Cell type annotation was inferred (SingleR R package v.1.8.1) based on the expression of specific lineage marker genes and published HSPC gene signatures. Each cluster was classified by inspecting the expression of curated marker genes and published gene signatures, respectively using the \u201cFeaturePlot\u201d and \u201cAddModuleScore\u201d functions in Seurat. A custom gating strategy was defined by first converting sequencing data into \u201c.fcs\u201d files to be explored manually with FlowJo software v.10.5.3 (BD Biosciences) through the flowcore R package v.2.8.0. Gates were manually set based on comparison with conventional flow cytometry analysis performed on the same sample prior to single-cell library preparation. For samples enriched for primitive CD38- HSPC fraction, the proportions of ADT-detected HSPC subsets were normalized according to FACS immunophenotyping performed prior to single-cell library preparation.",
+          "For each cluster under investigation, the \u201cFindMarkers\u201d function in Seurat was used to identify differentially expressed genes between PB and BM cells. Where the above function performs, gene-wise Wilcoxon signed-rank tests between cells isolated by PB and BM samples, separately for each cell cluster. Notably the above tests were performed setting the logFC threshold parameter (logfc.threshold) to 0, in order to obtain unfiltered gene lists for all tested conditions. Furthermore, only intra-cluster comparisons between groups with at least 5 cells were considered for differential gene expression analysis. We then performed Gene Set Enrichment Analysis using the \u201cGSEA\u201d function of ClusterProfiler R package v.3.16 17 aiming to identify enriched Gene Ontology (GO) sets, focusing mainly on the Biological Process (GO-BP) terms. This procedure results in a list of statistically significant (adjusted p < 0.05) GO-BP terms. These can be further divided into enriched and depleted terms based on their normalized enrichment score (NES) value, NES>0 (NESpos) and NES<0 (NESneg) respectively. Where positive NES values indicate gene sets with higher expression in the PB samples, conversely negative NES values indicate gene sets whose expression is enriched in the BM samples. To perform transcriptional analyses on lymphoid cells, we investigated the expression of TSP1 gene signature19 on lymphoid clusters (namely, clusters 4 and 15). Cells were first clustered into K=3 groups by K-means clustering algorithm based on the percentage of expressed (UMI > 0) TSP1-associated genes. Specifically, TSP-high cells express more than 75% of the TSP1 genes, while TSP-low genes express less than 45% of these genes. Similarly to the previous section, a putative set of genes regulating the TSP1 signature was identified performing gene-wise differential expression analyses through Wilcoxon signed-rank tests. This procedure was used to identify the genes which significantly (adjusted p < 0.05) drive the expression of the TSP1 signature (PB-TSPhigh vs PB-TSPlow, BM-TSPhigh vs BM-TSPlow), and the ones which differentially modulate its expression across RNA sources (BM-TSPhigh vs PB-TSPhigh).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: {SampleID}_features.tsv.gz, {SampleID}_barcodes.tsv.gz, {SampleID}_matrix.mtx.gz",
+          "Supplementary files format and content: scRNA-Seq UMI count matrices (scRNA_CountMatrix.rds): matrix of counts quantifying the expression of each GRCh38 annotated gene (rows) across all single cells (columns)",
+          "Supplementary files format and content: ADT count matrix (ADT_CountMatrix.rds): matrix of counts quantifying the expression of each ADT under investigation (rows) across all single cells (columns)",
+          "Supplementary files format and content: Seurat metadata object (Metadata.rds): matrix storing the features (columns) associated to each single cell (rows)",
+          "Library strategy: CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by sequencing)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Guido,,Pacini"
+        ],
+        "contact_email": [
+          "pacini.guido@hsr.it"
+        ],
+        "contact_department": [
+          "Pathogenesis and therapy of primary immunodeficiencies"
+        ],
+        "contact_institute": [
+          "San Raffaele Telethon Institute for Gene Therapy"
+        ],
+        "contact_address": [
+          "Via Olgettina 60"
+        ],
+        "contact_city": [
+          "Milano"
+        ],
+        "contact_zip/postal_code": [
+          "20132"
+        ],
+        "contact_country": [
+          "Italy"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39475985",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23265840"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE253485"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S9_features.tsv.gz",
+          "filename": "GSE253485_S9_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S9_barcodes.tsv.gz",
+          "filename": "GSE253485_S9_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S9_matrix.mtx.gz",
+          "filename": "GSE253485_S9_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "sex": "female",
+        "source_capture_id": "S9",
+        "source_preparation": "facs sorting: CD34+, CD38-, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-; cell type: Primitive HSPCs",
+        "source_alias_review": "One canonical blood RNA capture per explicit donor F/G/D/H/I. Other sort fractions, repeat captures, paired ADT and bone marrow do not add blood specimens. No dates or chronological visits inferred.",
+        "source_coverage_limitation": "Blood-derived selected HSPC fraction; unobserved PBMC types remain missing. SCimilarity labels are computed independently of source cell-type labels.",
+        "source_demographics": "Individual collection ages and dates unreported in GEO; no imputation from primary cohort ages.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/38446574/",
+        "source_modality_review": "Original triplets may also contain eight explicitly reviewed ADT rows (S12 has a ninth CD38 tag). Only Gene Expression rows contribute to annotation, RNA library totals and gene geometry."
+      },
+      "genes_member": "GSE253485_S9_features.tsv.gz",
+      "barcodes_member": "GSE253485_S9_barcodes.tsv.gz",
+      "matrix_member": "GSE253485_S9_matrix.mtx.gz",
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "source_count_review": {
+        "cells": 133,
+        "genes": 36601,
+        "nonzeros": 138503,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "26c0443bed2f7bec485343c44750bfce400d9adbb02b51ab0062e1781567a62a",
+        "source_features": 36609,
+        "source_barcode_rows": 133,
+        "RNA_positive_barcode_rows": 133,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 8,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 8
+        },
+        "excluded_ADT_features": [
+          "adt_CD90",
+          "adt_CD45RA",
+          "adt_CD7",
+          "adt_CD71",
+          "adt_CD41",
+          "adt_CD10",
+          "adt_CD127",
+          "adt_CXCR4"
+        ],
+        "mitochondrial_reference_features": 13
+      }
+    },
+    {
+      "accession": "GSM8021567",
+      "donor_id": "I",
+      "source_metadata": {
+        "title": [
+          "S12, healthy donor, GEX, source: PB, donor: I, sorting: CD34p"
+        ],
+        "geo_accession": [
+          "GSM8021567"
+        ],
+        "status": [
+          "Public on Mar 26 2024"
+        ],
+        "submission_date": [
+          "Jan 17 2024"
+        ],
+        "last_update_date": [
+          "Mar 26 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "facs sorting: CD34+, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-",
+          "cell type: HSPCs",
+          "tissue: Peripheral Blood",
+          "donor: I",
+          "Sex: Male",
+          "library type: mRNA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PB and BM mononuclear cells (MNC) from healthy donors (HD) were isolated using Lympholyte human cell separation medium (Euroclone). PB CD34+ cells were purified from PBMC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). HD-derived BM CD34+ cells were purchased from Stem Cell Technologies or purified from BM MNC using positive selection with immunomagnetic beads according to the manufacturer\u2019s specifications (Miltenyi Biotec). Both mononuclear cells and purified PB and BM CD34+ cell fractions were frozen in liquid nitrogen until use. Upon thawing, adult HD-derived BM or PB purified CD34+ or PBMC samples were labeled with a mix composed by both fluorescent antibodies against lineage markers (LIN, anti-CD3/CD14/ CD16/CD19/CD20/CD56), CD15, CD38, CD34 (Biolegend) for FACS immunophenotyping, and  TotalSeq-A antibodies against CD90, CD45RA, CD7, CD10, CD71, CD41 (Biolegend) for ADT barcoding through scRNAseq. Staining for ADT barcoding was applied only on the following HD-derived samples: BM C, BM D, BM E, PB D, PB H, PB I. Staining with TotalSeq-A antibodies and reagents was performed according to the manufacturer\u2019s specifications, and TotalSeq-A antibodies were used at concentrations defined by titration of corresponding fluorescent antibodies. After surface marking, cells were incubated with PI (Biolegend) to label dead cells. We applied three different FACS sorting strategies for sample preparation prior to scRNAseq processing: 1) isolation of both bulk HSPC (live LIN- CD34+) and primitive HSPC (live LIN- CD34+ CD38-) fractions starting from purified CD34+ cells (BM A, BM B, PB F, PB G); 2) isolation of both primitive (live LIN- CD34+ CD38-) and progenitor (live LIN- CD34+ CD38+) HSPC fractions starting from purified CD34+ cells (BM C, BM D, PB H) or PBMC (PB D); 3) isolation of bulk HSPC (live LIN- CD34+) starting from purified CD34+ cells (BME, PB I).  Sorted BM and PB samples were counted with trypan blue for vitality when FACS cell recovery was >10,000 cells.",
+          "3\u2019 gene expression (GEX) libraries and ADT libraries constructions were performed following Chromium 10x 3\u2019 Gene Expression protocol v2 or v3 chemistry and TotalSeq\u2122-A Antibodies and Cell Hashing with 10x Single Cell 3' Reagent Kit v3 Protocol. Chromium 10x 3\u2019 GEX libraries were sequenced on Illumina NovaSeq S1 platform, while ADT libraries were sequenced together with GEX libraries or independently on Illumina NextSeq platform following manufacturer\u2019s indications."
+        ],
+        "description": [
+          "polyA RNA",
+          "GEX (3' mRNA) library: index1 file contains library index; read1 file contains cell barcode and UMI; read2 file contains transcript",
+          "S12_mRNA"
+        ],
+        "data_processing": [
+          "Sequenced libraries were processed and de-multiplexed by Cell Ranger Single-Cell Software Suite (version 4.0.0, 10X Genomics) by \u201ccellranger mkfastq\u201d function. We generated a genes-barcode matrix of UMI counts for each of the samples separately and aligned the reads to the GRCh38 human reference genome using STAR v.2.5.1b. We used the \u201ccellranger count\u201d function to generate a UMI count matrix for both GEX and ADT libraries.",
+          "After importing UMI counts matrix, gene and cell barcode lists, we generated a Seurat object (Seurat R package v.3.0) including every sequenced cell. Cells with a percentage of mitochondrial reads higher than 20%, as well as those with <200 or >8,000 expressed genes, were removed from the dataset. The filtered UMI count matrix was then log-normalized with the \u201cNormalizeData\u201d function in Seurat, and the top 20% most variable genes were selected for downstream analysis through the \u201cFindVariableFeatures\u201d function in Seurat, which relies on the \u201cvst\u201d method. The cell cycle phase of each cell was inferred by the expression levels of specific cell cycle marker genes (Regev list) with the \u201cCellCycleScore\u201d function in Seurat. Following this we computed the difference between the S and G2M scores, which indicates if the cell is actively cycling (G2M/S) or rather in a quiescent state (G1). Each single-cell UMI count was regressed for the following covariates: cell cycle difference, total number of UMIs and percentage of mitochondrial UMI counts. Where the above scaling procedure was performed through the \u201cScaleData\u201d function in Seurat. Furthermore, between-donor variability was accounted for using the Harmony data integration procedure (harmony R package v.0.1), with the \u201cRunHarmony\u201d function in harmony.",
+          "UMAP dimensionality reduction and cell clustering were performed with default parameters using the first 80 Harmony components and setting the cluster\u2019s resolution parameter to 0.6, respectively using the \u201cRunUMAP\u201d and \u201cFindClusters\u201d functions in Seurat. Differentially expressed genes across clusters were identified with the \u201cFindAllMarkers\u201d function in Seurat. The above test was performed separately for each cluster, restricting the analysis to the subset of genes expressed by at least 10% of cells in either of the two groups being compared (min.pct = 0.1). Cluster-specific marker genes were identified as the most significant genes (Bonferroni\u2019s adjusted p < 0.05) whose expression was enriched in the cluster of interest (logFC > 0). Cell type annotation was inferred (SingleR R package v.1.8.1) based on the expression of specific lineage marker genes and published HSPC gene signatures. Each cluster was classified by inspecting the expression of curated marker genes and published gene signatures, respectively using the \u201cFeaturePlot\u201d and \u201cAddModuleScore\u201d functions in Seurat. A custom gating strategy was defined by first converting sequencing data into \u201c.fcs\u201d files to be explored manually with FlowJo software v.10.5.3 (BD Biosciences) through the flowcore R package v.2.8.0. Gates were manually set based on comparison with conventional flow cytometry analysis performed on the same sample prior to single-cell library preparation. For samples enriched for primitive CD38- HSPC fraction, the proportions of ADT-detected HSPC subsets were normalized according to FACS immunophenotyping performed prior to single-cell library preparation.",
+          "For each cluster under investigation, the \u201cFindMarkers\u201d function in Seurat was used to identify differentially expressed genes between PB and BM cells. Where the above function performs, gene-wise Wilcoxon signed-rank tests between cells isolated by PB and BM samples, separately for each cell cluster. Notably the above tests were performed setting the logFC threshold parameter (logfc.threshold) to 0, in order to obtain unfiltered gene lists for all tested conditions. Furthermore, only intra-cluster comparisons between groups with at least 5 cells were considered for differential gene expression analysis. We then performed Gene Set Enrichment Analysis using the \u201cGSEA\u201d function of ClusterProfiler R package v.3.16 17 aiming to identify enriched Gene Ontology (GO) sets, focusing mainly on the Biological Process (GO-BP) terms. This procedure results in a list of statistically significant (adjusted p < 0.05) GO-BP terms. These can be further divided into enriched and depleted terms based on their normalized enrichment score (NES) value, NES>0 (NESpos) and NES<0 (NESneg) respectively. Where positive NES values indicate gene sets with higher expression in the PB samples, conversely negative NES values indicate gene sets whose expression is enriched in the BM samples. To perform transcriptional analyses on lymphoid cells, we investigated the expression of TSP1 gene signature19 on lymphoid clusters (namely, clusters 4 and 15). Cells were first clustered into K=3 groups by K-means clustering algorithm based on the percentage of expressed (UMI > 0) TSP1-associated genes. Specifically, TSP-high cells express more than 75% of the TSP1 genes, while TSP-low genes express less than 45% of these genes. Similarly to the previous section, a putative set of genes regulating the TSP1 signature was identified performing gene-wise differential expression analyses through Wilcoxon signed-rank tests. This procedure was used to identify the genes which significantly (adjusted p < 0.05) drive the expression of the TSP1 signature (PB-TSPhigh vs PB-TSPlow, BM-TSPhigh vs BM-TSPlow), and the ones which differentially modulate its expression across RNA sources (BM-TSPhigh vs PB-TSPhigh).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: {SampleID}_features.tsv.gz, {SampleID}_barcodes.tsv.gz, {SampleID}_matrix.mtx.gz",
+          "Supplementary files format and content: scRNA-Seq UMI count matrices (scRNA_CountMatrix.rds): matrix of counts quantifying the expression of each GRCh38 annotated gene (rows) across all single cells (columns)",
+          "Supplementary files format and content: ADT count matrix (ADT_CountMatrix.rds): matrix of counts quantifying the expression of each ADT under investigation (rows) across all single cells (columns)",
+          "Supplementary files format and content: Seurat metadata object (Metadata.rds): matrix storing the features (columns) associated to each single cell (rows)",
+          "Library strategy: CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by sequencing)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Guido,,Pacini"
+        ],
+        "contact_email": [
+          "pacini.guido@hsr.it"
+        ],
+        "contact_department": [
+          "Pathogenesis and therapy of primary immunodeficiencies"
+        ],
+        "contact_institute": [
+          "San Raffaele Telethon Institute for Gene Therapy"
+        ],
+        "contact_address": [
+          "Via Olgettina 60"
+        ],
+        "contact_city": [
+          "Milano"
+        ],
+        "contact_zip/postal_code": [
+          "20132"
+        ],
+        "contact_country": [
+          "Italy"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39475979",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23265822"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE253485"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S12_features.tsv.gz",
+          "filename": "GSE253485_S12_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S12_barcodes.tsv.gz",
+          "filename": "GSE253485_S12_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE253nnn/GSE253485/suppl/GSE253485_S12_matrix.mtx.gz",
+          "filename": "GSE253485_S12_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "sex": "male",
+        "source_capture_id": "S12",
+        "source_preparation": "facs sorting: CD34+, LIN- (anti-CD3/CD14/CD16/CD19/CD20/CD56), CD15-; cell type: HSPCs",
+        "source_alias_review": "One canonical blood RNA capture per explicit donor F/G/D/H/I. Other sort fractions, repeat captures, paired ADT and bone marrow do not add blood specimens. No dates or chronological visits inferred.",
+        "source_coverage_limitation": "Blood-derived selected HSPC fraction; unobserved PBMC types remain missing. SCimilarity labels are computed independently of source cell-type labels.",
+        "source_demographics": "Individual collection ages and dates unreported in GEO; no imputation from primary cohort ages.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/38446574/",
+        "source_modality_review": "Original triplets may also contain eight explicitly reviewed ADT rows (S12 has a ninth CD38 tag). Only Gene Expression rows contribute to annotation, RNA library totals and gene geometry."
+      },
+      "genes_member": "GSE253485_S12_features.tsv.gz",
+      "barcodes_member": "GSE253485_S12_barcodes.tsv.gz",
+      "matrix_member": "GSE253485_S12_matrix.mtx.gz",
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "source_count_review": {
+        "cells": 10453,
+        "genes": 36601,
+        "nonzeros": 24987581,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "6ce6db7692792bbf7d2714a1f6b33d2de28a28a70e66fed6a19fc91047821320",
+        "source_features": 36610,
+        "source_barcode_rows": 10453,
+        "RNA_positive_barcode_rows": 10453,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 9,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 9
+        },
+        "excluded_ADT_features": [
+          "adt_CD90",
+          "adt_CD45RA",
+          "adt_CD7",
+          "adt_CD71",
+          "adt_CD41",
+          "adt_CD10",
+          "adt_CD127",
+          "adt_CXCR4",
+          "adt_CD38"
+        ],
+        "mitochondrial_reference_features": 13
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

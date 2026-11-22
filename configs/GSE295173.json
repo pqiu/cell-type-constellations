@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE295173",
+  "study_id": "GSE295173",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE295173_complete_original_RNA_audit.json",
+    "bytes": 5978,
+    "sha256": "e654fe2f58bb2d0f1c7ddbb2ef790278b71499bff1aa21758f1f8d11481cf162"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE295173_source_identity_review.json",
+    "bytes": 4080,
+    "sha256": "fe3aadd1ef22c711746235cb7855462eaadb6bd33f4e1fd407c0d7182294fb87"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Author SampleID exactly joins original GEOtitle. Explicit per-cell SubjectID andTimePoint supply repeated donor andD3/D7relationships,checked against SampleID. No ordinal/barcode/genetic inference. Globalaliases unresolved.",
+  "physical_sample_mapping_evidence": "Eight original D3/D7PBMC-derived monocyte-enriched specimens from four explicit SubjectIDcodes. Author SampleID exactly matches original GEOtitle; SubjectID/TimePoint supplied per cell,not inferred from barcodes. Companion GSE295174andculture views remain related observations requiring overlap review before additional credit. Globalaliases unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_timepoint_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE295173",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295173",
+    "primary_PMID": "42398182",
+    "primary_PMCID": "PMC13351336",
+    "primary_DOI": "10.1016/j.ebiom.2026.106368",
+    "access": "Public original PBMC-derived monocyte RNASeuratobject.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE295173_source_identity_review.json",
+      "bytes": 4080,
+      "sha256": "fe3aadd1ef22c711746235cb7855462eaadb6bd33f4e1fd407c0d7182294fb87"
+    },
+    "source_unit": "Eight original D3/D7PBMC-derived monocyte-enriched specimens from four explicit SubjectIDcodes. Author SampleID exactly matches original GEOtitle; SubjectID/TimePoint supplied per cell,not inferred from barcodes. Companion GSE295174andculture views remain related observations requiring overlap review before additional credit. Globalaliases unresolved.",
+    "identity_policy": "Author SampleID exactly joins original GEOtitle. Explicit per-cell SubjectID andTimePoint supply repeated donor andD3/D7relationships,checked against SampleID. No ordinal/barcode/genetic inference. Globalaliases unresolved.",
+    "clinical_policy": "D3/D7relative to injury per original source design/publication. Age,sex,injuryseverity,recoverygroups,calendar dates andglobalaliases unassigned. Source cultured-case MM50xxlabels are not mapped to MM40xxcodes. Source author prediction/cluster/CellType fields retained,not independently validated.",
+    "reuse_policy": "Only eight original unmanipulated/thawed PBMC-derived RNA views included. Companion GSE295174is not yet processed; preserve same-subject/day overlap for future accounting. Culture-condition objects and larger trial counts do not add specimens.",
+    "selection_policy": "Source PBMCs enriched for monocytes by depleting CD3/CD19cells; supplied object restricted toCD14mono. Retain selected-compartment coverage andauthor filtering. Missing other lineages are absent,not zero.",
+    "cell_calling_policy": "Own fixed RNAQC recomputed from unchanged original RNAcounts. Author source cell labels,predictions,clustering andcachedpercent.mt preserved without independent biological validation. No normalized/integrated/embedding data used as counts.",
+    "gene_policy": "All28031original RNAcountslot gene symbols retained unchanged. No full unfiltered transcriptome claim; no symbol modernization,intersection orzero filling.13MTgenes/23458annotationreferenceoverlap.",
+    "count_semantics": "NativeR reads original Seurat RNAcounts slot/allmetadata without stored command execution. Every stored value finite nonnegative integer; source nCount_RNA/nFeature_RNA independently match allcells. Source normalized/integrated/prediction/embedding values not used as counts.",
+    "source_limitations": "Selected monocyte/CD14compartment. Primary publication verified; individual recovery group/clinical/demographic/globalalias mappings unassigned. No efficacy,causal,biologicalannotation orconstellationvalidation."
+  }
+}

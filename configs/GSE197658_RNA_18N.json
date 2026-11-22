@@ -1,0 +1,194 @@
+{
+  "dataset_id": "GSE197658_RNA_18N",
+  "study_id": "GSE197658",
+  "input_format": "molecule_info",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_columns": [
+    "source_capture_id"
+  ],
+  "physical_sample_columns": [
+    "source_participant_code"
+  ],
+  "sample_mapping_evidence": "One exact original RNA molecule file per author capture ID, explicitly joined to RNA GEO record and culture metadata.",
+  "physical_sample_mapping_evidence": "Ten original healthy participant/material codes each supply three dependent culture captures. Exact donor/activation/treatment pairing comes from original GEO and author aggregation metadata. Exact blood draw dates/aliquots unjoined; no extra independent specimen or donor per culture.",
+  "source_asset_subdirectory": "",
+  "molecule_source_mode": "cellranger6_count_exonic",
+  "source_asset": {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE197nnn/GSE197658/suppl/GSE197658_molecule_info_18N.h5",
+    "filename": "GSE197658_molecule_info_18N.h5",
+    "expected_bytes": 471602101,
+    "sha256": "c446c1b768c0090b37924079290e47c939c4e539ce012328763fd60ec7c1d989"
+  },
+  "metadata_mapping": {
+    "constants": {
+      "donor_id": "18",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_capture_id": "18N",
+      "source_participant_code": "18",
+      "source_RNA_GSM": "GSM5924548",
+      "source_RNA_title": "18N_geneexp",
+      "source_author_participant_alias": "HD18",
+      "source_treatment_as_reported": "control",
+      "source_activation_as_reported": "non-activated",
+      "source_participant_cohort_as_reported": "healthy donor",
+      "source_cell_population_as_reported": "Sorted T cells from frozen PBMCs",
+      "condition": "healthy donor",
+      "source_unit": "Ten original healthy participant/material codes each supply three dependent culture captures. Exact donor/activation/treatment pairing comes from original GEO and author aggregation metadata. Exact blood draw dates/aliquots unjoined; no extra independent specimen or donor per culture.",
+      "source_scope": "PBMC-derived sorted T cells, not whole-PBMC composition. Ex vivo treatment/activation are recorded separately from source healthy cohort.",
+      "source_clinical_policy": "Numeric source participant codes are not ages. Age/sex/exact dates unjoined; culture exposure is not patient medication.",
+      "source_count_policy": "Native RNA UMI molecules from reviewed Cell Ranger6.0.2 count-mode files with include_introns=False; RNA pass-filter cells only. Genes are not intersected/zero-filled across sources. Protein features excluded.",
+      "source_QC_policy": "Own500UMI/200genes/20percentMT gate over all provided RNA genes; does not reproduce subsequent author Seurat/doublet/culture viability exclusions.",
+      "source_split_policy": "Unassigned; all cultures/captures from one source participant and any later verified global alias must share a split."
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE197658",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE197658",
+    "publication": "https://doi.org/10.1182/blood.2022016926",
+    "original_record": {
+      "title": [
+        "18N_geneexp"
+      ],
+      "geo_accession": [
+        "GSM5924548"
+      ],
+      "status": [
+        "Public on Aug 22 2022"
+      ],
+      "submission_date": [
+        "Mar 01 2022"
+      ],
+      "last_update_date": [
+        "Aug 22 2022"
+      ],
+      "type": [
+        "SRA"
+      ],
+      "channel_count": [
+        "1"
+      ],
+      "source_name_ch1": [
+        "Healthy donor number 18 treated by Unstimulated"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "taxid_ch1": [
+        "9606"
+      ],
+      "characteristics_ch1": [
+        "cell type: Sorted T cells from frozen PBMCs",
+        "phenotype: healthy donor",
+        "sample identifier: 18",
+        "activation: non-activated",
+        "treatment: control",
+        "targeted sequence: Gene expression"
+      ],
+      "treatment_protocol_ch1": [
+        "Two days following activation, sample were retrieved from the incubator and kept on ice. Following 10X Genomics Feature Barcoding recommendations, cells were washed, labeled with antibody with high affinity to a known Cell Surface Protein coupled to a Feature Barcode oligonucleotide that identifies the antibody for 30 minutes at 4\u00b0C. Cell suspensions were subjected to in Gel Bead Emulsion using Chromium 10x Genomics controller according to manufacturer guidelines. Chromium\u2122 Next GEM Single Cell 3\u2019 Kit v3.1 (10X Genomics, cat. 1000268) and 3\u2019 Feature Barcorde Kit (10X Genomics, cat. 1000262) were used to prepare reagents."
+      ],
+      "growth_protocol_ch1": [
+        "CD3+ cells were isolated from frozen PBMC (Miltenyi, cat.130-050-101) and resuspended at 1 million cells per mL in antibiotic free medium with RPMI-1640 (Gibco, cat. 61870036) supplemented with 10% human AB serum (Biowest, cat. S4190-100). Treatments (azithromycin 10 mg/L, SIGMA cat. PZ0007, reconstituted in DMSO) or control (dimethylsulfoxide, equal volume of azithromycin) were added to the medium, then 200000 cells were plated in 96 flat-bottom plate. After one day of culture, activation withwas performed with a 1:1 cell:Dynadeads Human T-activated CD3/CD28 ratio following manufacturer instructions (Gibco, cat. 11131D)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "To perform single cell RNA sequencing after cDNA amplification, the concentration of each sample was measured using Tapestation 2200 (Agilent). To prepare the cDNA libraries for 10x Genomics Chromium controller, we used the single-cell 3\u2032 v3.1 kit (Dual Index) with Feature Barcode technology for Cell Surface Protein, following manufacturer guidelines. QC libraries were performed using Tapestation 2200 (Agilent). The input number of cells was estimated at 10,000 cells/samples. FASTQ files were obtained with bcl2fastq (Illumina).",
+        "Libraries were equimolar pooled to obtain at least 20,000 read pairs per cell and 5,000 read pairs for feature barcode part after sequencing on Illumina Novaseq 6000 (100 cycles cartridge)."
+      ],
+      "description": [
+        "10X Genomics Feature Barcode technology and Single Cell Targeted Gene Expression."
+      ],
+      "data_processing": [
+        "Alignment, filtering, barcode counting, UMI counting were performed with count function from 10x Genomics Cell Ranger (version 6.0) using GRCh38 genome assembly as reference data.",
+        "Cell surface proteins were identified with specific oligonucleotide sequence (Format TotalSeqB, Biolegend): CD3_TotalSeqB, CD45RA_TotalSeqB, CCR4_TotalSeqB, CD4_TotalSeqB, CD8_TotalSeqB, CD25_TotalSeqB, PD1_TotalSeqB, CXCR3_TotalSeqB, CCR6_TotalSeqB, CXCR5_TotalSeqB, CCR7_TotalSeqB, CD161_TotalSeqB, CTLA4_TotalSeqB, CD95_TotalSeqB, HLA-DR_TotalSeqB, ICOS_TotalSeqB, CD39_TotalSeqB, CD27_TotalSeq, KLRG1_TotalSeqB, CD28_TotalSeqB, CD38_TotalSeqB, CD127_TotalSeqB, CD73_TotalSeqB, TCRVa72_TotalSeqB. All sequences are available on https://www.biolegend.com/en-us/totalseq/barcode-lookup",
+        "Genome_build: refdata-cellranger-GRCh38-3.0.0",
+        "Supplementary_files_format_and_content: The cellranger pipeline outputs an HDF5 file containing per-molecule information for all molecules that contain a valid barcode, a valid UMI, and were assigned with high confidence to a gene or Feature Barcode. This HDF5 file contains data corresponding to the observed molecules, as well as data about the libraries and feature set(s) usedEach element of the matrix is the number of UMIs associated with a feature (row) and a barcode (column). This file can be input into third-party packages and allows users to wrangle the barcode-feature matrix (e.g. to filter outlier cells, run dimensionality reduction, normalize gene expression)."
+      ],
+      "platform_id": [
+        "GPL24676"
+      ],
+      "contact_name": [
+        "David,,Michonneau"
+      ],
+      "contact_email": [
+        "david.michonneau@aphp.fr"
+      ],
+      "contact_phone": [
+        "33171207590"
+      ],
+      "contact_laboratory": [
+        "INSERM UMR1342, Team Translational Immunology in Immunotherapy and Hematology (TIGITH)"
+      ],
+      "contact_department": [
+        "Hematology and transplantation"
+      ],
+      "contact_institute": [
+        "Assistance Publique des H\u00f4pitaux de Paris"
+      ],
+      "contact_address": [
+        "1 avenue Claude Vellefaux"
+      ],
+      "contact_city": [
+        "Paris"
+      ],
+      "contact_zip/postal_code": [
+        "75010"
+      ],
+      "contact_country": [
+        "France"
+      ],
+      "instrument_model": [
+        "Illumina NovaSeq 6000"
+      ],
+      "library_selection": [
+        "cDNA"
+      ],
+      "library_source": [
+        "transcriptomic"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26343507",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14331142"
+      ],
+      "supplementary_file_1": [
+        "NONE"
+      ],
+      "series_id": [
+        "GSE197658"
+      ],
+      "data_row_count": [
+        "0"
+      ]
+    },
+    "source_identity_review": {
+      "path": "references/datasets/GSE197658_source_identity_review.json",
+      "sha256": "b5e447cb0b0bcbb631232d7004759c32f1575d344a5e264ecd6201b44c43e28d"
+    },
+    "original_native_count_audit": {
+      "path": "references/datasets/GSE197658_original_RNA_audit/18N.json",
+      "sha256": "d4357d051bba385a250d9dbddb7da9164505675d215b12f1efbfd804e9385ab4"
+    },
+    "native_gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+    "access": "Public original Cell Ranger molecule-count HDF5, RNA library only.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO"
+  }
+}

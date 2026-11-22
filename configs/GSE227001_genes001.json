@@ -1,0 +1,2359 @@
+{
+  "dataset_id": "GSE227001_genes001",
+  "study_id": "GSE227001",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Exact source Patient1-6 and baseline/followup titles plus original PBMC/timepoint characteristics define six pairs. Followup AE-versus-infusion branch and individual timings remain unavailable.",
+  "source_metadata": {
+    "accession": "GSE227001",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE227001",
+      "https://pubmed.ncbi.nlm.nih.gov/39210005/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE227001",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "genes": 36601,
+        "excluded_non_RNA_features": 0,
+        "complete_primary_mitochondrial_gene_symbols": true,
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE227001_gene_coordinates/28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9.csv.gz",
+          "sha256": "84265b0e1c3887f9a867cd639d45f1bf5e245037990e9f3af737c6c792040545"
+        },
+        "identifier_policy": "Original gene IDs and original symbols retained. Only explicitly configured aliases/prefixes are used for annotation; no genome assembly or Ensembl IDs invented."
+      }
+    ],
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE227001_source_identity_review.json",
+      "sha256": "34256c3bb918c212fae4226fba1c4168782321777f71e4b0bd66a31093d300f4"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7089890",
+      "donor_id": "Patient1",
+      "source_metadata": {
+        "title": [
+          "Patient 1 baseline"
+        ],
+        "geo_accession": [
+          "GSM7089890"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: baseline",
+          "disease state: melanoma",
+          "age: 48"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient1",
+        "source_visit_code": "baseline",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "48",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_features.tsv.gz",
+          "filename": "GSM7089890_FL1_BL_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "17c91775d0a7f07139fd3b5835b748ea804f92233bf3406d68e2af8dff4ad9f3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_barcodes.tsv.gz",
+          "filename": "GSM7089890_FL1_BL_barcodes.tsv.gz",
+          "expected_bytes": 45379,
+          "sha256": "11f97fcb42d07c6294dafcfe33fa4058af074aff222dc5b48ade9ba7538ee700"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089890/suppl/GSM7089890_FL1_BL_matrix.mtx.gz",
+          "filename": "GSM7089890_FL1_BL_matrix.mtx.gz",
+          "expected_bytes": 67967430,
+          "sha256": "6c7c0c08579c40c71b3fd2d19b7abc0f84d84fe6822e45898bff86a0ef845736"
+        }
+      ],
+      "genes_member": "GSM7089890_FL1_BL_features.tsv.gz",
+      "barcodes_member": "GSM7089890_FL1_BL_barcodes.tsv.gz",
+      "matrix_member": "GSM7089890_FL1_BL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 11614,
+        "genes": 36601,
+        "nonzeros": 21478945,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 11614,
+        "RNA_positive_barcode_rows": 11614,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 56488017,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11614,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11614,
+          "source_positive_RNA_barcodes": 11614,
+          "full_source_RNA_counts": 56488017,
+          "selected_RNA_counts": 56488017,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089890.csv.gz",
+            "sha256": "df6886cd31e509ab95dd01db733a3a5117338084808d22963d2e69b932c84d4b"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089891",
+      "donor_id": "Patient1",
+      "source_metadata": {
+        "title": [
+          "Patient 1 followup"
+        ],
+        "geo_accession": [
+          "GSM7089891"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: followup",
+          "disease state: melanoma",
+          "age: 48"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient1",
+        "source_visit_code": "followup",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "48",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_features.tsv.gz",
+          "filename": "GSM7089891_FL1_FU_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "e5f5ec2d0ff0dadd5d17845a12b326885fbd57f7912e819efa679e75e6186cc6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_barcodes.tsv.gz",
+          "filename": "GSM7089891_FL1_FU_barcodes.tsv.gz",
+          "expected_bytes": 21288,
+          "sha256": "21a6eb8bdb963b9c33061faa7cded99c0048f7376f6158eeee36513cc2924988"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089891/suppl/GSM7089891_FL1_FU_matrix.mtx.gz",
+          "filename": "GSM7089891_FL1_FU_matrix.mtx.gz",
+          "expected_bytes": 28656631,
+          "sha256": "1832a01967b627e2b8446d83d5db1fdf9b3dcc2ccbd10de3fd085fb7069d4cd0"
+        }
+      ],
+      "genes_member": "GSM7089891_FL1_FU_features.tsv.gz",
+      "barcodes_member": "GSM7089891_FL1_FU_barcodes.tsv.gz",
+      "matrix_member": "GSM7089891_FL1_FU_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5116,
+        "genes": 36601,
+        "nonzeros": 9123570,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5116,
+        "RNA_positive_barcode_rows": 5116,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 22675072,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5116,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5116,
+          "source_positive_RNA_barcodes": 5116,
+          "full_source_RNA_counts": 22675072,
+          "selected_RNA_counts": 22675072,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089891.csv.gz",
+            "sha256": "c0dbe178034babf919a78f4885210b0e0dd1fbbce7f3ab4cd41b926de40e598d"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089892",
+      "donor_id": "Patient2",
+      "source_metadata": {
+        "title": [
+          "Patient 2 baseline"
+        ],
+        "geo_accession": [
+          "GSM7089892"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: baseline",
+          "disease state: melanoma",
+          "age: 51"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient2",
+        "source_visit_code": "baseline",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "51",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_features.tsv.gz",
+          "filename": "GSM7089892_FL2_BL_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "9313c3249989d9499757ee8874a523027f5f65e6e6530e4a5d9c83b69ce45cb4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_barcodes.tsv.gz",
+          "filename": "GSM7089892_FL2_BL_barcodes.tsv.gz",
+          "expected_bytes": 47726,
+          "sha256": "99e29f9265147fd4cce215f0799b81f50dbda659be74ba4c8a274dc2e1ba2cc8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089892/suppl/GSM7089892_FL2_BL_matrix.mtx.gz",
+          "filename": "GSM7089892_FL2_BL_matrix.mtx.gz",
+          "expected_bytes": 74364265,
+          "sha256": "37ed5a6a7cf72a80f7b8fcc1b0a65be87d51e0fcffb92cb3c501d836464ca262"
+        }
+      ],
+      "genes_member": "GSM7089892_FL2_BL_features.tsv.gz",
+      "barcodes_member": "GSM7089892_FL2_BL_barcodes.tsv.gz",
+      "matrix_member": "GSM7089892_FL2_BL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 12306,
+        "genes": 36601,
+        "nonzeros": 23567808,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 12306,
+        "RNA_positive_barcode_rows": 12306,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 58683893,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 12306,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 12306,
+          "source_positive_RNA_barcodes": 12306,
+          "full_source_RNA_counts": 58683893,
+          "selected_RNA_counts": 58683893,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089892.csv.gz",
+            "sha256": "b943c76a56ee5b89a80e6ec809939d14dce0e03f70435fc6ae347ca0c95776a6"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089893",
+      "donor_id": "Patient2",
+      "source_metadata": {
+        "title": [
+          "Patient 2 followup"
+        ],
+        "geo_accession": [
+          "GSM7089893"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: followup",
+          "disease state: melanoma",
+          "age: 51"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient2",
+        "source_visit_code": "followup",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "51",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_features.tsv.gz",
+          "filename": "GSM7089893_FL2_FU_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "c782cba603e7f2c65ea9d4083ed81488ccd211436ae14ebf4926846c5749476b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_barcodes.tsv.gz",
+          "filename": "GSM7089893_FL2_FU_barcodes.tsv.gz",
+          "expected_bytes": 81189,
+          "sha256": "95b2d0da29df8d58e87c5e62a74d37e495209bc3791e4f94f23a396b0692758b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089893/suppl/GSM7089893_FL2_FU_matrix.mtx.gz",
+          "filename": "GSM7089893_FL2_FU_matrix.mtx.gz",
+          "expected_bytes": 102569448,
+          "sha256": "6ca5231d7b144452dc90d5e05c7132f3ffd1636c5f02b385552b87fb4e687aa6"
+        }
+      ],
+      "genes_member": "GSM7089893_FL2_FU_features.tsv.gz",
+      "barcodes_member": "GSM7089893_FL2_FU_barcodes.tsv.gz",
+      "matrix_member": "GSM7089893_FL2_FU_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 21473,
+        "genes": 36601,
+        "nonzeros": 32438816,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 21473,
+        "RNA_positive_barcode_rows": 21473,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 76371514,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 21473,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 21473,
+          "source_positive_RNA_barcodes": 21473,
+          "full_source_RNA_counts": 76371514,
+          "selected_RNA_counts": 76371514,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089893.csv.gz",
+            "sha256": "9b7722117718c9372c40057dd88f44cfc113123ef75febd53b90d2becb066e1a"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089894",
+      "donor_id": "Patient3",
+      "source_metadata": {
+        "title": [
+          "Patient 3 baseline"
+        ],
+        "geo_accession": [
+          "GSM7089894"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: baseline",
+          "disease state: melanoma",
+          "age: 73"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient3",
+        "source_visit_code": "baseline",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "73",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_features.tsv.gz",
+          "filename": "GSM7089894_FL3_BL_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "fc0f329396e823660949fbc34f613649a93153349b0bad39a9991ea5c799f218"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_barcodes.tsv.gz",
+          "filename": "GSM7089894_FL3_BL_barcodes.tsv.gz",
+          "expected_bytes": 40187,
+          "sha256": "ae05876e5931ee67559c337bb332ba0c067cf7a86abed172510927e16ffbe88f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089894/suppl/GSM7089894_FL3_BL_matrix.mtx.gz",
+          "filename": "GSM7089894_FL3_BL_matrix.mtx.gz",
+          "expected_bytes": 63036786,
+          "sha256": "9268ceb877767ef66ba2adee51c771400685ea259179bd389747a87c6ee5a496"
+        }
+      ],
+      "genes_member": "GSM7089894_FL3_BL_features.tsv.gz",
+      "barcodes_member": "GSM7089894_FL3_BL_barcodes.tsv.gz",
+      "matrix_member": "GSM7089894_FL3_BL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10205,
+        "genes": 36601,
+        "nonzeros": 20009734,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 10205,
+        "RNA_positive_barcode_rows": 10205,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 49576814,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10205,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10205,
+          "source_positive_RNA_barcodes": 10205,
+          "full_source_RNA_counts": 49576814,
+          "selected_RNA_counts": 49576814,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089894.csv.gz",
+            "sha256": "97c3b712d42263122a5f2f63f0ac056ae71f25b3a456c14a0ee147cc442b26b2"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089895",
+      "donor_id": "Patient3",
+      "source_metadata": {
+        "title": [
+          "Patient 3 followup"
+        ],
+        "geo_accession": [
+          "GSM7089895"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: followup",
+          "disease state: melanoma",
+          "age: 73"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient3",
+        "source_visit_code": "followup",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "73",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_features.tsv.gz",
+          "filename": "GSM7089895_FL3_FU_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "cb470535b843ba24b9d0cf429e090a2914a91e6ecddb20ca765a8838e874a507"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_barcodes.tsv.gz",
+          "filename": "GSM7089895_FL3_FU_barcodes.tsv.gz",
+          "expected_bytes": 30584,
+          "sha256": "a6416e9aaf85ca688a83c02f886229524bc900ba865f3162054c69368b04e45f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089895/suppl/GSM7089895_FL3_FU_matrix.mtx.gz",
+          "filename": "GSM7089895_FL3_FU_matrix.mtx.gz",
+          "expected_bytes": 54773803,
+          "sha256": "77cc03066541a151eaab1ff960aa23c7ae54dd3f08e55f17f4b53ce5f6e41a63"
+        }
+      ],
+      "genes_member": "GSM7089895_FL3_FU_features.tsv.gz",
+      "barcodes_member": "GSM7089895_FL3_FU_barcodes.tsv.gz",
+      "matrix_member": "GSM7089895_FL3_FU_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7609,
+        "genes": 36601,
+        "nonzeros": 17401993,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7609,
+        "RNA_positive_barcode_rows": 7609,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 48395880,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7609,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7609,
+          "source_positive_RNA_barcodes": 7609,
+          "full_source_RNA_counts": 48395880,
+          "selected_RNA_counts": 48395880,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089895.csv.gz",
+            "sha256": "89675d00f0d34c02bcee5927056666917908b095187762cbee047e30159538d0"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089896",
+      "donor_id": "Patient4",
+      "source_metadata": {
+        "title": [
+          "Patient 4 baseline"
+        ],
+        "geo_accession": [
+          "GSM7089896"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: baseline",
+          "disease state: melanoma",
+          "age: 75"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient4",
+        "source_visit_code": "baseline",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "75",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_features.tsv.gz",
+          "filename": "GSM7089896_FL4_BL_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "1b89c45b65c791aa54c14e363fc9894a957de587ba652163ad58107390cdf766"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_barcodes.tsv.gz",
+          "filename": "GSM7089896_FL4_BL_barcodes.tsv.gz",
+          "expected_bytes": 52170,
+          "sha256": "8914451f724b66e9d0224e82c464a0bd2c582345ce781c89d85e5025289214ae"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089896/suppl/GSM7089896_FL4_BL_matrix.mtx.gz",
+          "filename": "GSM7089896_FL4_BL_matrix.mtx.gz",
+          "expected_bytes": 81924660,
+          "sha256": "dbff8dabc35cd8d4aed8e9771861f3ba067010cb32c09eeb3ddf5867aaf880d4"
+        }
+      ],
+      "genes_member": "GSM7089896_FL4_BL_features.tsv.gz",
+      "barcodes_member": "GSM7089896_FL4_BL_barcodes.tsv.gz",
+      "matrix_member": "GSM7089896_FL4_BL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13504,
+        "genes": 36601,
+        "nonzeros": 26014056,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 13504,
+        "RNA_positive_barcode_rows": 13504,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 64200325,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13504,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13504,
+          "source_positive_RNA_barcodes": 13504,
+          "full_source_RNA_counts": 64200325,
+          "selected_RNA_counts": 64200325,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089896.csv.gz",
+            "sha256": "0b6bb123c603418a1b277400267982c14b3cb51c3b9628a1e02aab0bff485ecc"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089897",
+      "donor_id": "Patient4",
+      "source_metadata": {
+        "title": [
+          "Patient 4 followup"
+        ],
+        "geo_accession": [
+          "GSM7089897"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: followup",
+          "disease state: melanoma",
+          "age: 75"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient4",
+        "source_visit_code": "followup",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "75",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_features.tsv.gz",
+          "filename": "GSM7089897_FL4_FU_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "3ce232b1765976ec3c2561adce1987c2613edc48d4d828dcb9841b698b73c00a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_barcodes.tsv.gz",
+          "filename": "GSM7089897_FL4_FU_barcodes.tsv.gz",
+          "expected_bytes": 26787,
+          "sha256": "b09a009a10f04dbcd287d42439e93efc513502f1113503c31e00aa0dd0896f40"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089897/suppl/GSM7089897_FL4_FU_matrix.mtx.gz",
+          "filename": "GSM7089897_FL4_FU_matrix.mtx.gz",
+          "expected_bytes": 37384767,
+          "sha256": "d0cf862fa3fe8d9ba0cec586dd400b07b7dc7f6860659a8da92ebb111d122224"
+        }
+      ],
+      "genes_member": "GSM7089897_FL4_FU_features.tsv.gz",
+      "barcodes_member": "GSM7089897_FL4_FU_barcodes.tsv.gz",
+      "matrix_member": "GSM7089897_FL4_FU_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6582,
+        "genes": 36601,
+        "nonzeros": 11845359,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 6582,
+        "RNA_positive_barcode_rows": 6582,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 27844028,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6582,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6582,
+          "source_positive_RNA_barcodes": 6582,
+          "full_source_RNA_counts": 27844028,
+          "selected_RNA_counts": 27844028,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089897.csv.gz",
+            "sha256": "1d5d6c75e11bce24ff303c470f01eaed3db2d9cd2774253fb169cfdf73f7ffe3"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089898",
+      "donor_id": "Patient5",
+      "source_metadata": {
+        "title": [
+          "Patient 5 baseline"
+        ],
+        "geo_accession": [
+          "GSM7089898"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: baseline",
+          "disease state: melanoma",
+          "age: 43"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient5",
+        "source_visit_code": "baseline",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "43",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_features.tsv.gz",
+          "filename": "GSM7089898_FL5_BL_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "ea9e1792fdabc5a729035c302fc96e9307488f507838ae71e8df729acce502a4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_barcodes.tsv.gz",
+          "filename": "GSM7089898_FL5_BL_barcodes.tsv.gz",
+          "expected_bytes": 37096,
+          "sha256": "c6c718d0671e012ffe3bceac684a6ec9f5a95f5104fabdd5bfb3415784a7cbad"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089898/suppl/GSM7089898_FL5_BL_matrix.mtx.gz",
+          "filename": "GSM7089898_FL5_BL_matrix.mtx.gz",
+          "expected_bytes": 56990178,
+          "sha256": "d9bb3b194131ed4e64a1d71caf74119e2cba45253135bb8cfa4cb6ba3442906c"
+        }
+      ],
+      "genes_member": "GSM7089898_FL5_BL_features.tsv.gz",
+      "barcodes_member": "GSM7089898_FL5_BL_barcodes.tsv.gz",
+      "matrix_member": "GSM7089898_FL5_BL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9374,
+        "genes": 36601,
+        "nonzeros": 18128663,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 9374,
+        "RNA_positive_barcode_rows": 9374,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 45453872,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9374,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9374,
+          "source_positive_RNA_barcodes": 9374,
+          "full_source_RNA_counts": 45453872,
+          "selected_RNA_counts": 45453872,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089898.csv.gz",
+            "sha256": "3a2174531e0c68c1c4cdf0aa7cc49f0ad42151976749af30c991abc8ca4278ff"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089899",
+      "donor_id": "Patient5",
+      "source_metadata": {
+        "title": [
+          "Patient 5 followup"
+        ],
+        "geo_accession": [
+          "GSM7089899"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: followup",
+          "disease state: melanoma",
+          "age: 43"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient5",
+        "source_visit_code": "followup",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "43",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_features.tsv.gz",
+          "filename": "GSM7089899_FL5_FU_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "231bcde740d8f5ccd8a0eec521527d2349e3b1790a4cc118c99aedb78edbd72b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_barcodes.tsv.gz",
+          "filename": "GSM7089899_FL5_FU_barcodes.tsv.gz",
+          "expected_bytes": 40782,
+          "sha256": "60a1b7055af398166c5c50448b09a95a0d04e8d57cb8db35903a375dcf9d13b8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089899/suppl/GSM7089899_FL5_FU_matrix.mtx.gz",
+          "filename": "GSM7089899_FL5_FU_matrix.mtx.gz",
+          "expected_bytes": 66677563,
+          "sha256": "b81ea8b71c1027e6aed25aa5cc813b99a3159f22e1f9c04a0dad5ecc13bea7e2"
+        }
+      ],
+      "genes_member": "GSM7089899_FL5_FU_features.tsv.gz",
+      "barcodes_member": "GSM7089899_FL5_FU_barcodes.tsv.gz",
+      "matrix_member": "GSM7089899_FL5_FU_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10383,
+        "genes": 36601,
+        "nonzeros": 21167136,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 10383,
+        "RNA_positive_barcode_rows": 10383,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 55291118,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10383,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10383,
+          "source_positive_RNA_barcodes": 10383,
+          "full_source_RNA_counts": 55291118,
+          "selected_RNA_counts": 55291118,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089899.csv.gz",
+            "sha256": "fba473f82c8da1422f933310931574ca2180d2f7efe9c966aa03654e421358ee"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089900",
+      "donor_id": "Patient6",
+      "source_metadata": {
+        "title": [
+          "Patient 6 baseline"
+        ],
+        "geo_accession": [
+          "GSM7089900"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: baseline",
+          "disease state: melanoma",
+          "age: 59"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient6",
+        "source_visit_code": "baseline",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "59",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_features.tsv.gz",
+          "filename": "GSM7089900_FL6_BL_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "cfa38542ce030a948054d2d7438ab2e29ac2b9b54f777527f2d8703d6b8ab5f6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_barcodes.tsv.gz",
+          "filename": "GSM7089900_FL6_BL_barcodes.tsv.gz",
+          "expected_bytes": 42094,
+          "sha256": "bfeb61142d618c3bf916aa7293c197e47e47367acf39134d9fc96ae376bbe284"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089900/suppl/GSM7089900_FL6_BL_matrix.mtx.gz",
+          "filename": "GSM7089900_FL6_BL_matrix.mtx.gz",
+          "expected_bytes": 71703311,
+          "sha256": "2cc367044795eecb4a29d8914a5ca749d7ac1456815cd948c442c1a3e05749a7"
+        }
+      ],
+      "genes_member": "GSM7089900_FL6_BL_features.tsv.gz",
+      "barcodes_member": "GSM7089900_FL6_BL_barcodes.tsv.gz",
+      "matrix_member": "GSM7089900_FL6_BL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10749,
+        "genes": 36601,
+        "nonzeros": 22801634,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 10749,
+        "RNA_positive_barcode_rows": 10749,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 61057512,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10749,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10749,
+          "source_positive_RNA_barcodes": 10749,
+          "full_source_RNA_counts": 61057512,
+          "selected_RNA_counts": 61057512,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089900.csv.gz",
+            "sha256": "ef0e017f08e590506ad5a0f7fe4b66654c8c5c4c9719de7933313f5304a449ac"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7089901",
+      "donor_id": "Patient6",
+      "source_metadata": {
+        "title": [
+          "Patient 6 followup"
+        ],
+        "geo_accession": [
+          "GSM7089901"
+        ],
+        "status": [
+          "Public on Dec 01 2023"
+        ],
+        "submission_date": [
+          "Mar 09 2023"
+        ],
+        "last_update_date": [
+          "Dec 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral blood mononuclear cells",
+          "time point: followup",
+          "disease state: melanoma",
+          "age: 59"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly thawed in a water bath set to 37\u00b0C, re-suspended in 10 mL of ice-cold RPMI (Sigma, cat. no. R0883) with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and incubated for 10 min on ice to allow DMSO to diffuse from the tissue. Samples were spun down at 300g for 5 min, resuspended in PBS with 0.04% BSA (Sigma-Aldrich, cat. no. A7906) and cell count and viability was assessed using Luna-FLTM cell counter (Dual Fluorescence Cell counter, Logos Biosystems Inc., cat. no. L1001) using acridine orange propidium iodide (AOPI, Logos Biosystems Inc., cat. no. F23001) live/dead staining. Cell concentration was set according to 10X Genomics recommendation to 700-1000 cells/\u03bcL and 10 000 cells were targeted per sample. Cell suspensions were loaded on Chip K (10X Genomics, PN- 1000286) and processed using the 10X Genomics Chromium platform with the 5P V(D)J immune profiling kit on 10X Genomics Chromium Single Cell Controller (10X Genomics, PN-120263).",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 5\u2019 v2 protocol, 10x Genomics). Briefly, GCs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics 5'"
+        ],
+        "data_processing": [
+          "The demultiplexing, barcoded processing, gene counting and aggregation were made using the Cell Ranger software v7.0.0 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/)",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz, filtered_feature_bc_matrix.h5"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Phil,Fang,Cheng"
+        ],
+        "contact_email": [
+          "phil.cheng@hug.ch"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Hopitaux universitaires de Geneve"
+        ],
+        "contact_address": [
+          "Rue Gabrielle-Perret-Gentil 4"
+        ],
+        "contact_city": [
+          "Geneva"
+        ],
+        "contact_zip/postal_code": [
+          "1205"
+        ],
+        "contact_country": [
+          "Switzerland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE227001"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "Patient6",
+        "source_visit_code": "followup",
+        "source_capture_label": "primary",
+        "condition": "melanoma",
+        "source_age_as_reported": "59",
+        "source_age_unit": "not_explicit_in_GEO_characteristic",
+        "sex": "not_reported_in_GEO",
+        "source_specimen": "Cryopreserved PBMC; original 10x5prime RNA count library",
+        "source_assay": "10x5prime; source CellRanger7.0.0; GRCh38",
+        "source_treatment_context": "Cohort receives combination anti-CTLA4 and anti-PD1; individual drug/dose details not joined",
+        "source_time_policy": "Literal baseline/followup only. Cohort followup is at AE onset or second infusion; individual branch, dates and intervals not supplied, so no per-person AE or timing label inferred.",
+        "source_metadata_policy": "Original age field retained literally, unit and measurement epoch not explicit. Sex, individual AE subtype/grade and clinical response not imputed.",
+        "source_count_policy": "Use original RNA triplets once; paired filteredH5 is another representation of the same library, not an additional specimen. No private FASTQ access requested.",
+        "split_assignment": "unassigned; keep both source visits from a participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_features.tsv.gz",
+          "filename": "GSM7089901_FL6_FU_features.tsv.gz",
+          "expected_bytes": 294503,
+          "sha256": "a5691d7856ded4ee860ce82e8c091a7b5ff7e8db566ef3ba2611a5dfb63374d6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_barcodes.tsv.gz",
+          "filename": "GSM7089901_FL6_FU_barcodes.tsv.gz",
+          "expected_bytes": 53692,
+          "sha256": "34448d6aacc04555fe856c92def98e60b3126f7016e7501716e96a66318ff902"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7089nnn/GSM7089901/suppl/GSM7089901_FL6_FU_matrix.mtx.gz",
+          "filename": "GSM7089901_FL6_FU_matrix.mtx.gz",
+          "expected_bytes": 91860987,
+          "sha256": "d48dec7493bf7e0fd60ccb8ce65f06c234f4786fac2e383fa0f347385e489a56"
+        }
+      ],
+      "genes_member": "GSM7089901_FL6_FU_features.tsv.gz",
+      "barcodes_member": "GSM7089901_FL6_FU_barcodes.tsv.gz",
+      "matrix_member": "GSM7089901_FL6_FU_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13891,
+        "genes": 36601,
+        "nonzeros": 29292180,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 13891,
+        "RNA_positive_barcode_rows": 13891,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 74568459,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13891,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13891,
+          "source_positive_RNA_barcodes": 13891,
+          "full_source_RNA_counts": 74568459,
+          "selected_RNA_counts": 74568459,
+          "metadata": {
+            "path": "references/datasets/GSE227001_original_RNA_QC/GSM7089901.csv.gz",
+            "sha256": "871cb0e0d584abff6f646768e3b3a0c91dac31fe72f4a6d83c66832175615b1b"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Original six Patient1-6 paired baseline/followup labels; one RNA view per source draw. Neither alternativeH5 representation nor per-person relative visit adds a new donor."
+}

@@ -1,0 +1,60 @@
+{
+  "dataset_id": "GSE274284",
+  "study_id": "GSE274284",
+  "input_format": "rag_pbmc_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE274284_complete_original_native_RNA_audit.json",
+    "sha256": "897a8350c2b869a4d3926123d90b9e3ce85ee0c56c4d312964bfca3ea94a309c"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE274284_source_identity_review.json",
+    "sha256": "db419945fac0ab0a1f7c3ff533e00bb0f89adb8c1404c90db75894375f1d2bb0"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_pool",
+    "donor_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Exact native barcode within author pool plus public SNG.BEST.GUESS calls; preserve each original capture/participant view.",
+  "physical_sample_mapping_evidence": "One conservative source participant/material code group per represented authorPcode. Twelve unsorted/enriched pool captures are dependent views; exact visits and aliquot relationships unspecified.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "sex": "source_gender_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE274284",
+    "publication": "https://doi.org/10.1126/sciimmunol.adq1697",
+    "primary_PMID": "39792639",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE274284",
+    "access": "Public native typed counts, author coded cell assignments and study metadata. No genotypes reconstructed or receptor sequencing requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE274284_source_identity_review.json",
+      "sha256": "db419945fac0ab0a1f7c3ff533e00bb0f89adb8c1404c90db75894375f1d2bb0"
+    },
+    "source_unit": "One conservative source participant/material code group per represented authorPcode. Twelve unsorted/enriched pool captures are dependent views; exact visits and aliquot relationships unspecified.",
+    "age_policy": "P01-P19GEOrecords are bulk-RNA participant annotations; source ages are retained without assuming scRNA draw age.",
+    "gene_policy": "All32738nativehg19RNAcoordinates retained;214or source-typed antibody features excluded from RNA. Native older symbols are not silently modernized; model-reference overlap recorded.",
+    "selection_policy": "Literal author SNG/BEST.LLKgate followed by independent commonRNAQC. LLK is not a calibrated posterior. Raw whitelist rows, caller rows, selected cells, captures and participants remain separate units.",
+    "composition_policy": "Pools09-12FACS-enriched for non-naiveB/dendritic cells; do not infer whole-PBMC composition or pool these views with unsorted01-08captures."
+  }
+}

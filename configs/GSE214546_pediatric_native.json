@@ -1,0 +1,1713 @@
+{
+  "dataset_id": "GSE214546_pediatric_native",
+  "study_id": "GSE214546",
+  "input_format": "pinned_h5_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "donor_id",
+    "source_material_id"
+  ],
+  "use_source_gene_availability": true,
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Eight new coded pediatric participants selected from full109-record source review. Exact GEO donor/material plus original embedded constant pbmc_sample_id agree. Keep only native RNA; metadata row alignment verified through all three original per-cell RNA statistics. Existing exact donor/material aliases, unresolved aliquot links, benchmark controls and pooled/stimulated records remain separately documented, not automatically new draws.",
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "source_cell_seurat_pbmc_type"
+    }
+  },
+  "exclude_source_values": {
+    "source_cell_hto_category": [
+      "doublet",
+      "negative",
+      "unassigned"
+    ]
+  },
+  "source_metadata": {
+    "accession": "GSE214546",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214546",
+    "publication": "https://doi.org/10.1038/s41590-023-01641-8",
+    "source_overlap_review": "references/datasets/GSE214546_existing_atlas_overlap_review.json",
+    "source_native_audits": "references/datasets/GSE214546_pediatric_native_RNA_audits.json",
+    "acquisition_scope": "Eight previously unrepresented coded pediatric native RNA materials; not complete independent-sample equivalence for all109GEOrecords.",
+    "access": "Public original processed RNA H5 matrices; controlled raw sequencing reads not acquired",
+    "license": "not_verified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6611371",
+      "donor_id": "UP1001",
+      "source_metadata": {
+        "title": [
+          "PB00124_TEA-seq_B076"
+        ],
+        "geo_accession": [
+          "GSM6611371"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: African American",
+          "subject_id: UP1001",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611371/suppl/GSM6611371_B076-P1_PB00124-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611371/suppl/GSM6611371_B076-P1_PB00124-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611371/suppl/GSM6611371_B076-P1_PB00124-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611371_B076-P1_PB00124-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611371/suppl/GSM6611371_B076-P1_PB00124-02.h5",
+          "filename": "GSM6611371_B076-P1_PB00124-02.h5",
+          "expected_bytes": 123541367,
+          "sha256": "c89b433136dbef28e6a4850a5f27367e3a26854fa16fd37640d88599f86f1586"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          32506,
+          36601
+        ],
+        "nonzeros": 60067841,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611371/suppl/GSM6611371_B076-P1_PB00124-02.h5",
+          "retrieved_at": "2026-10-17T17:03:20.279473+00:00",
+          "bytes": 123541367,
+          "sha256": "c89b433136dbef28e6a4850a5f27367e3a26854fa16fd37640d88599f86f1586",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:03:13 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:45 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "123541367",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:03:13 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00124-02",
+        "source_donor_id": "UP1001",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611371_embedded_RNA_metadata.csv.gz",
+          "sha256": "0209d18d2190f642942b9c6fcd0085b66e39eb7e88a5a8dd5d5fd051a8288918"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 32506
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611371_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1001"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611371_embedded_RNA_metadata.csv.gz",
+          "sha256": "0209d18d2190f642942b9c6fcd0085b66e39eb7e88a5a8dd5d5fd051a8288918",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00124-02",
+        "source_GEO_accession": "GSM6611371",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "African American",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611372",
+      "donor_id": "UP1002",
+      "source_metadata": {
+        "title": [
+          "PB00172_TEA-seq_B069"
+        ],
+        "geo_accession": [
+          "GSM6611372"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: African American",
+          "subject_id: UP1002",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611372/suppl/GSM6611372_B069-P1_PB00172-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611372/suppl/GSM6611372_B069-P1_PB00172-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611372/suppl/GSM6611372_B069-P1_PB00172-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611372_B069-P1_PB00172-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611372/suppl/GSM6611372_B069-P1_PB00172-02.h5",
+          "filename": "GSM6611372_B069-P1_PB00172-02.h5",
+          "expected_bytes": 38867392,
+          "sha256": "af23cca4a1bd96984aee28972dcbce4a66d401c348411f57f4a49e95f58a00ec"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          9885,
+          36601
+        ],
+        "nonzeros": 18175588,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611372/suppl/GSM6611372_B069-P1_PB00172-02.h5",
+          "retrieved_at": "2026-10-17T17:12:57.902821+00:00",
+          "bytes": 38867392,
+          "sha256": "af23cca4a1bd96984aee28972dcbce4a66d401c348411f57f4a49e95f58a00ec",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:12:57 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:47 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "38867392",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:12:57 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00172-02",
+        "source_donor_id": "UP1002",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611372_embedded_RNA_metadata.csv.gz",
+          "sha256": "54dc50970acf287e2be37b612951d5716cb92563bfc9d410111a8889acdc8a07"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 9885
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611372_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1002"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611372_embedded_RNA_metadata.csv.gz",
+          "sha256": "54dc50970acf287e2be37b612951d5716cb92563bfc9d410111a8889acdc8a07",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00172-02",
+        "source_GEO_accession": "GSM6611372",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "African American",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611373",
+      "donor_id": "UP1003",
+      "source_metadata": {
+        "title": [
+          "PB00182_TEA-seq_B069"
+        ],
+        "geo_accession": [
+          "GSM6611373"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: Caucasian",
+          "subject_id: UP1003",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611373/suppl/GSM6611373_B069-P1_PB00182-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611373/suppl/GSM6611373_B069-P1_PB00182-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611373/suppl/GSM6611373_B069-P1_PB00182-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611373_B069-P1_PB00182-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611373/suppl/GSM6611373_B069-P1_PB00182-02.h5",
+          "filename": "GSM6611373_B069-P1_PB00182-02.h5",
+          "expected_bytes": 52786352,
+          "sha256": "59966d32a1b74b2068a53fa2e03f2aa796ee4e2b4b59005dc78e20dba6314d5e"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          13729,
+          36601
+        ],
+        "nonzeros": 25033847,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611373/suppl/GSM6611373_B069-P1_PB00182-02.h5",
+          "retrieved_at": "2026-10-17T17:13:01.362510+00:00",
+          "bytes": 52786352,
+          "sha256": "59966d32a1b74b2068a53fa2e03f2aa796ee4e2b4b59005dc78e20dba6314d5e",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:13:00 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:49 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "52786352",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:13:00 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00182-02",
+        "source_donor_id": "UP1003",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611373_embedded_RNA_metadata.csv.gz",
+          "sha256": "8e0e01d03e72d8c44d8772c1f0fee8815eff9011104d9ba65af386b0543faae1"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 13729
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611373_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1003"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611373_embedded_RNA_metadata.csv.gz",
+          "sha256": "8e0e01d03e72d8c44d8772c1f0fee8815eff9011104d9ba65af386b0543faae1",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00182-02",
+        "source_GEO_accession": "GSM6611373",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "Caucasian",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611374",
+      "donor_id": "UP1004",
+      "source_metadata": {
+        "title": [
+          "PB00127_TEA-seq_B076"
+        ],
+        "geo_accession": [
+          "GSM6611374"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: Caucasian",
+          "subject_id: UP1004",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611374/suppl/GSM6611374_B076-P1_PB00127-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611374/suppl/GSM6611374_B076-P1_PB00127-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611374/suppl/GSM6611374_B076-P1_PB00127-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611374_B076-P1_PB00127-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611374/suppl/GSM6611374_B076-P1_PB00127-02.h5",
+          "filename": "GSM6611374_B076-P1_PB00127-02.h5",
+          "expected_bytes": 122814143,
+          "sha256": "355bc5fd261810914b458805df38f7435fda8b064e9c2d8d4b01f6895c3428a5"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          33629,
+          36601
+        ],
+        "nonzeros": 59569976,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611374/suppl/GSM6611374_B076-P1_PB00127-02.h5",
+          "retrieved_at": "2026-10-17T17:13:07.974379+00:00",
+          "bytes": 122814143,
+          "sha256": "355bc5fd261810914b458805df38f7435fda8b064e9c2d8d4b01f6895c3428a5",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:13:04 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:50 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "122814143",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:13:04 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00127-02",
+        "source_donor_id": "UP1004",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611374_embedded_RNA_metadata.csv.gz",
+          "sha256": "1dacbef7a4207b8643a4e6bc123f7c752188cb2f53df62093837cc9c813eebfb"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 33629
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611374_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1004"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611374_embedded_RNA_metadata.csv.gz",
+          "sha256": "1dacbef7a4207b8643a4e6bc123f7c752188cb2f53df62093837cc9c813eebfb",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00127-02",
+        "source_GEO_accession": "GSM6611374",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "Caucasian",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611375",
+      "donor_id": "UP1005",
+      "source_metadata": {
+        "title": [
+          "PB00807_TEA-seq_B069"
+        ],
+        "geo_accession": [
+          "GSM6611375"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: African American",
+          "subject_id: UP1005",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611375/suppl/GSM6611375_B069-P1_PB00807-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611375/suppl/GSM6611375_B069-P1_PB00807-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611375/suppl/GSM6611375_B069-P1_PB00807-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611375_B069-P1_PB00807-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611375/suppl/GSM6611375_B069-P1_PB00807-02.h5",
+          "filename": "GSM6611375_B069-P1_PB00807-02.h5",
+          "expected_bytes": 50165549,
+          "sha256": "29bc5219000a97c73163ca29095e84394dcadf4bd8734a1baf497d79c12e3fd2"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          13236,
+          36601
+        ],
+        "nonzeros": 23640360,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611375/suppl/GSM6611375_B069-P1_PB00807-02.h5",
+          "retrieved_at": "2026-10-17T17:13:14.287262+00:00",
+          "bytes": 50165549,
+          "sha256": "29bc5219000a97c73163ca29095e84394dcadf4bd8734a1baf497d79c12e3fd2",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:13:12 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:52 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "50165549",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:13:12 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00807-02",
+        "source_donor_id": "UP1005",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611375_embedded_RNA_metadata.csv.gz",
+          "sha256": "607ee0e09d7bd3ed3bec73c346596dab3e76ab7538b9a836a8806f1b4b76d8f1"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 13236
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611375_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1005"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611375_embedded_RNA_metadata.csv.gz",
+          "sha256": "607ee0e09d7bd3ed3bec73c346596dab3e76ab7538b9a836a8806f1b4b76d8f1",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00807-02",
+        "source_GEO_accession": "GSM6611375",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "African American",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611376",
+      "donor_id": "UP1006",
+      "source_metadata": {
+        "title": [
+          "PB00173_TEA-seq_B065"
+        ],
+        "geo_accession": [
+          "GSM6611376"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: Caucasian",
+          "subject_id: UP1006",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611376/suppl/GSM6611376_B065-P1_PB00173-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611376/suppl/GSM6611376_B065-P1_PB00173-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611376/suppl/GSM6611376_B065-P1_PB00173-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611376_B065-P1_PB00173-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611376/suppl/GSM6611376_B065-P1_PB00173-02.h5",
+          "filename": "GSM6611376_B065-P1_PB00173-02.h5",
+          "expected_bytes": 43157218,
+          "sha256": "5a0f0dfed6de1272e356ab824aa38f2225becf4f69a3edb613eb20bb4dd2222f"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          12795,
+          36601
+        ],
+        "nonzeros": 19880620,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611376/suppl/GSM6611376_B065-P1_PB00173-02.h5",
+          "retrieved_at": "2026-10-17T17:13:17.334049+00:00",
+          "bytes": 43157218,
+          "sha256": "5a0f0dfed6de1272e356ab824aa38f2225becf4f69a3edb613eb20bb4dd2222f",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:13:17 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:54 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "43157218",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:13:17 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00173-02",
+        "source_donor_id": "UP1006",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611376_embedded_RNA_metadata.csv.gz",
+          "sha256": "c722854c434b21ba33ecffbdd3842cdb409fea277b6f439ba484d2855b35313d"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 12795
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611376_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1006"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611376_embedded_RNA_metadata.csv.gz",
+          "sha256": "c722854c434b21ba33ecffbdd3842cdb409fea277b6f439ba484d2855b35313d",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00173-02",
+        "source_GEO_accession": "GSM6611376",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "Caucasian",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611377",
+      "donor_id": "UP1007",
+      "source_metadata": {
+        "title": [
+          "PB00192_TEA-seq_B065"
+        ],
+        "geo_accession": [
+          "GSM6611377"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: Caucasian",
+          "subject_id: UP1007",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611377/suppl/GSM6611377_B065-P1_PB00192-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611377/suppl/GSM6611377_B065-P1_PB00192-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611377/suppl/GSM6611377_B065-P1_PB00192-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611377_B065-P1_PB00192-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611377/suppl/GSM6611377_B065-P1_PB00192-02.h5",
+          "filename": "GSM6611377_B065-P1_PB00192-02.h5",
+          "expected_bytes": 46749343,
+          "sha256": "4cafed97407a21fda2420cae1b583fc399c25998c45ff5707823ad3724111e9c"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          13723,
+          36601
+        ],
+        "nonzeros": 21682303,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611377/suppl/GSM6611377_B065-P1_PB00192-02.h5",
+          "retrieved_at": "2026-10-17T17:13:20.612734+00:00",
+          "bytes": 46749343,
+          "sha256": "4cafed97407a21fda2420cae1b583fc399c25998c45ff5707823ad3724111e9c",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:13:20 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:55 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "46749343",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:13:20 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00192-02",
+        "source_donor_id": "UP1007",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611377_embedded_RNA_metadata.csv.gz",
+          "sha256": "9597527c6e1763436bf5733ea1afd4124d7c4003ae0925ce6c6f5bc5a1e9660f"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 13723
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611377_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1007"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611377_embedded_RNA_metadata.csv.gz",
+          "sha256": "9597527c6e1763436bf5733ea1afd4124d7c4003ae0925ce6c6f5bc5a1e9660f",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00192-02",
+        "source_GEO_accession": "GSM6611377",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "Caucasian",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    },
+    {
+      "accession": "GSM6611378",
+      "donor_id": "UP1010",
+      "source_metadata": {
+        "title": [
+          "PB00197_TEA-seq_B065"
+        ],
+        "geo_accession": [
+          "GSM6611378"
+        ],
+        "status": [
+          "Public on Aug 31 2023"
+        ],
+        "submission_date": [
+          "Sep 30 2022"
+        ],
+        "last_update_date": [
+          "Oct 27 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: peripheral blood mononuclear cells",
+          "birth year: 2009",
+          "Sex: Female",
+          "race: African American",
+          "subject_id: UP1010",
+          "age: 11"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "All samples were collected, processed to PBMCs using a Ficoll-based approach and frozen in FBS with 10% DMSO within 4 hours of blood draw. Cord and peripheral blood samples for follow-up studies were purchased from Bloodworks Northwest (Seattle, WA) through protocols approved by the Bloodworks Northwest and internal Allen Institute IRBs.\u00a0",
+          "TEA-seq library preparation was performed as described previously (Swanson et al. 2021), with the addition of Cell Hashing (Stoeckius et al. 2018) to allow for sample multiplexing and limit well-to-well batch effects. In brief, samples were thawed and processed across three batches, with each batch containing a common PBMC control. Antibody staining for Cell Hashing and cell sorting was performed simultaneously on 2 x 10^6 cells from each sample. Each sample was incubated with uniquely barcoded TotalSeq-A antibody, anti-CD45 antibody and anti-CD3 antibody, then pooled by T cell proportion previously determined, targeting 800,000 T cells for each donor sample and 200,000 T cells for the control, and sorted on a BD FACSAria Fusion. T cells were sorted as live, single CD45+CD3+ cells. 2 x 10^6 sorted T cells were then used for the library preparation. A panel of 55 barcoded oligo-conjugated antibodies (BioLegend TotalSeq-A) was used for these studies (Supp Table 4). Individual ATAC, RNA, and ADT libraries were prepared, sequenced and processed as described previously.(Swanson et al. 2021)\u00a0",
+          "Single cell RNA sequencing was performed on PBMCs was previously described. (Genge et al. 2021) In brief, scRNA-seq libraries were generated using a modified 10x genomics chromium 3\u2019 single cell gene expression assay with Cell Hashing. 8 donors were pooled per library, with the addition of a common batch control sample in each library. Libraries were sequenced on a Illuminia Novaseq platform. scRNA-seq Analysis. Count matrices from each sample were merged into age-specific Seurat objects, followed by normalization, feature selection, scaling, PCA, UMAP embedding, and clustering. Label transfer from the T cell subset Seurat reference was performed as previously described on each age specific Seurat Object. Following label transfer, all objects were merged into a single object. Cells identified CD4 Na\u00efve with a prediction score greater than 0.7 were taken into downstream analysis. We then averaged the expression on each cell in each age group (AverageExpression function, group.by = \u2018age\u2019) for the DEGs identified in our TEA-seq analysis.",
+          "single-cell RNA-seq, single-cell CITE-seq, single-cell ATAC-seq"
+        ],
+        "data_processing": [
+          "For TEA-seq, demultiplexing of raw base call files into FASTQ files was performed using bcl2fastq2 (Illumina v2.20.0.422, parameters: --create-fastq-for-index-reads, --minimum-trimmed-read-length=8, --mask-short-adapter-reads=8, --ignore-missing-positions, -ignore-missing-filter, --ignore-missing-bcls, -r 24 -w 24 -p 80). The --use-bases-mask option was used to adjust the read lengths for each library type as follows: Y28n*,I10,I10n*,Y90n* for RNA, Y50n*,I8n*,n8Y16,Y50n* for ATAC, and Y28n*,I8n*,n*,Y90n* for ADT and cell hashing (HTO).",
+          "For TEA-seq, the RNA and ATAC assays were run through cellranger-arc count to align to the genome.  For scRNA-seq, the fastq files were run through cellranger count.",
+          "ADT and HTO count matrices were generated using BarCounter v1.0 (Swanson et al. 2022). The RNA count matrix, and ADT count matrix were then combined into a single Seurat object. Cells were filtered based on the following cutoffs: > 250 genes/cell, > 500 RNA UMIs/cell, < 10,000 ADT UMIs/cell, < 35% mitochondrial reads, < 20,000 RNA UMIs/cell. Normalization, feature selection and scaling were performed on the RNA matrix (SCTransform function, default settings), followed by PCA (RunPCA function, default settings). A UMAP projection was generated (RunUMAP, dims = 1:30) and clustering was performed (FindNeighbors, dims = 1:30; FindClusters, resolution = 0.5). We used the Seurat Multimodal Reference Dataset for PBMCs (available from the Satija lab (Hao et al. 2021)) to perform label transfer on the dataset using the functions described in the Seurat V4 Vignettes (FindTransferAnchors; TransferData). Two clusters were identified to be non-T cells and were excluded. Sample specific transcripts, AC105402.3 and MTRNR2L8, were identified and removed prior to further downstream RNA analysis.\u00a0",
+          "Assembly: Ensembl GRCh38-3.0.0",
+          "Supplementary files format and content: scRNA-seq files have suffix _labeled.h5 and are hdf5 format.  TEA-seq data comes in a few formats: hdf5 for RNA and ADT data, and tsv.gz for ATAC fragment data and csv.gz for ATAC metadata.",
+          "Library strategy: TEA-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611378/suppl/GSM6611378_B065-P1_PB00197-02.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611378/suppl/GSM6611378_B065-P1_PB00197-02_filtered_metadata.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611378/suppl/GSM6611378_B065-P1_PB00197-02_fragments.tsv.gz"
+        ],
+        "series_id": [
+          "GSE214546"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6611378_B065-P1_PB00197-02.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611378/suppl/GSM6611378_B065-P1_PB00197-02.h5",
+          "filename": "GSM6611378_B065-P1_PB00197-02.h5",
+          "expected_bytes": 44647087,
+          "sha256": "47adfd58762a31ed508fd56981d064954b99f9752702c138ca267ef023590c31"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          13490,
+          36601
+        ],
+        "nonzeros": 20549545,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6611nnn/GSM6611378/suppl/GSM6611378_B065-P1_PB00197-02.h5",
+          "retrieved_at": "2026-10-17T17:13:24.048229+00:00",
+          "bytes": 44647087,
+          "sha256": "47adfd58762a31ed508fd56981d064954b99f9752702c138ca267ef023590c31",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 17:13:23 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 29 Sep 2022 00:24:57 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "44647087",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 17:13:23 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "source_material_id": "PB00197-02",
+        "source_donor_id": "UP1010",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_embedded_RNA_UUID_matches_coordinate_UUID": 0,
+        "source_metadata_alignment": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_metadata": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611378_embedded_RNA_metadata.csv.gz",
+          "sha256": "810cac8fc188cf81c2fa870b7b7e76850d110290a1905226b046d4d2d7613334"
+        },
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "3cce8d938d7077ce08187a670a642c48f2eff8e2c347a29a2d38148920e8ca0f"
+        },
+        "source_hash_calls": {
+          "singlet": 13490
+        },
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "cell_assignment": {
+        "member": "GSM6611378_embedded_RNA_metadata.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "UP1010"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE214546_pediatric_source_metadata/GSM6611378_embedded_RNA_metadata.csv.gz",
+          "sha256": "810cac8fc188cf81c2fa870b7b7e76850d110290a1905226b046d4d2d7613334",
+          "rule": "Exact original matrix/barcode row coordinates, embedded constant pbmc_sample_id and original GEO subject_id. Embedded row metadata independently verified against every native RNA count total/support/mito total."
+        }
+      },
+      "metadata": {
+        "source_material_id": "PB00197-02",
+        "source_GEO_accession": "GSM6611378",
+        "age": "11",
+        "sex": "Female",
+        "source_birth_year": "2009",
+        "source_race": "African American",
+        "source_specimen": "PBMC-derived RNA component of TEA-seq",
+        "source_identity_policy": "Eight original UP participant codes absent from the reviewed existing AIFI atlas. One source material per participant in this acquisition phase; all native wells remain technical metadata. Other GEO assay records, stimulation views, existing aliases and IMM19 benchmark controls are not additional independent draws.",
+        "source_condition_policy": "Original age/sex/race retained. Individual disease and treatment fields not supplied in GEO; no additional diagnoses or dates inferred from aging-study context.",
+        "source_time_policy": "Native filenames contain processing labels, not verified draw dates. No calendar collection date inferred.",
+        "source_selection_policy": "GEO labels input as PBMC; published analysis focuses on T cells. Keep the deposited RNA component and its actual available lineages; no author T-only label/embedding filter is applied. Source selection/author RNA filters remain a limitation.",
+        "source_geometry_policy": "Only native Gene Expression matrix counts used. Other H5 roots, protein counts, chromatin tables and author embeddings are not RNA normalization or geometry inputs.",
+        "source_QC_policy": "Keep original hash calls; explicit non-singlet/negative/unassigned source calls are excluded before common RNA QC. No new doublet classifier or ADT-count threshold.",
+        "source_UUID_policy": "Original H5 matrix/observations stored by row. Retain matrix/barcodes as coordinates and embedded rna_cell_uuid as a separate field. Every row independently agrees in RNA UMI total, detected genes and mitochondrial RNA total. No ATAC barcode join or UUID repair.",
+        "source_reference_policy": "GEO reports Ensembl GRCh38-3.0.0; deposited H5 only labels GRCh38. Preserve exact native RNA feature coordinates without inventing a more specific reference release.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

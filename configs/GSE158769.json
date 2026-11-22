@@ -1,0 +1,73 @@
+{
+  "dataset_id": "GSE158769",
+  "study_id": "GSE158769",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE158769_complete_original_RNA_audit.json",
+    "bytes": 122679,
+    "sha256": "1360902c4fbb347a21be11d47636e75dbaf0d11c530c5a6b577d25719892770f"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE158769_source_identity_review.json",
+    "bytes": 95919,
+    "sha256": "9082dd41773576489cb2f8d61d4befcbf4dc7aebb49e3cd12f7a9d70cba4aec0"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Exact original full count-cell IDs match every source metadata row in order. Use explicit donor fields, pooling technical captures within each of259donor/material maps. Preserve271donor-batch groups and12repeat flags. No identity inferred from barcode suffix, expression, genotype or demographics.",
+  "physical_sample_mapping_evidence": "One conservative sample/material group for each explicit source donor code;259groups. Twelve donors have dependent technical captures in two batches per source design,271donor-batch records total. All original fullcell IDs retained; no donor assignment or duplicate-cell claim from barcode suffixes, expression or genotypes. Exact blood-draw dates/global study aliases remain unknown.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_original_TB_status",
+      "age": "source_original_age",
+      "sex": "source_original_sex",
+      "author_cell_type": "source_original_cluster_name"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE158769",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE158769",
+    "primary_PMID": "34031617",
+    "primary_DOI": "10.1038/s41590-021-00933-1",
+    "primary_URL": "https://www.nature.com/articles/s41590-021-00933-1",
+    "reuse_PMIDs": [
+      "35005693",
+      "35545678"
+    ],
+    "access": "Public deposited raw expression and cell metadata. Controlled sequence/genotype inputs not requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE158769_source_identity_review.json",
+      "bytes": 95919,
+      "sha256": "9082dd41773576489cb2f8d61d4befcbf4dc7aebb49e3cd12f7a9d70cba4aec0"
+    },
+    "source_unit": "One conservative sample/material group for each explicit source donor code;259groups. Twelve donors have dependent technical captures in two batches per source design,271donor-batch records total. All original fullcell IDs retained; no donor assignment or duplicate-cell claim from barcode suffixes, expression or genotypes. Exact blood-draw dates/global study aliases remain unknown.",
+    "identity_policy": "Exact original full count-cell IDs match every source metadata row in order. Use explicit donor fields, pooling technical captures within each of259donor/material maps. Preserve271donor-batch groups and12repeat flags. No identity inferred from barcode suffix, expression, genotype or demographics.",
+    "clinical_policy": "CASE/CONTROL are original historical progression/nonprogression labels at immune steady state, not active disease at collection. Original age, sex, season and prop_NAT are reported source covariates, constant within donor. Preserve literal values; exact draw dates, treatment clocks and global aliases remain unknown. No independent ancestry or genotype inference.",
+    "reuse_policy": "The original memory-T-cell RNA/CITE cohort and later scPOST/eQTL reuse publications are one source, not new participants. No accession/primary PMID/DOI match in completed outputs. Exact donor-code overlap review does not prove global uniqueness; do not credit technical captures as people.",
+    "selection_policy": "All500089provided source cells before fixed RNA-only QC: counts>=500, detected genes>=200, MT fraction<=0.2 and positive library. No phenotype filtering. Donor split assignment is unassigned; keep technical captures of a donor together.",
+    "cell_calling_policy": "Source selected memory T cells from PBMC and performed author cell/doublet/QC filtering. This enrichment limits whole-PBMC cell-type coverage. SCimilarity supplies a shared annotation vocabulary, not independent biological validation. Protein features never enter RNA geometry or annotation library denominators.",
+    "gene_policy": "All33538supplied unique RNA gene labels retained asnative coordinates andsymbols, selected by explicit source modality suffix rather than position.31_protein antibody rows excluded from RNAgeometry and both native/reference library denominators. No gene-ID invention, feature selection or intersection.",
+    "count_semantics": "Complete original densefeaturecount audit includes every RNA/protein value. Original source labels and per-row densecount hashes match every sparseblock. RNA-only sum/detectedgenes/MTfraction reproduce every source nUMI/nGene/percent_mito; antibody counts retained only as metadata totals. No normalized/protein values used as RNAcounts.",
+    "source_limitations": "Selected memory T cells, not whole unselected PBMC. Technical replicates pooled by explicit donor. Historical status does not establish active disease at draw. No exact clinical clocks/global identity union, causal interpretation or constellation validation."
+  }
+}

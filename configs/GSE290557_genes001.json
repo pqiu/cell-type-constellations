@@ -1,0 +1,2374 @@
+{
+  "dataset_id": "GSE290557_genes001",
+  "study_id": "GSE290557",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original source WU participant plus PB specimen code defines fifteen candidate blood observations/six participants. Fourteen are enabled; GSM8816535 remains held because its deposited barcode file is zero bytes, with original matrix/features/provenance retained for source review. WU1135 All/Tcell are alternate fractions of one code; only All retained. Original full33538RNA reference and positive low-support genes retained in each matrix, rather than assuming analysis-stage15-cell gene filtering defines deposited inputs. Clinical dates/diagnosis/outcomes not inferred from identifiers.",
+  "source_metadata": {
+    "accession": "GSE290557",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE290557",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+    "source_processing": [
+      "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+      "Assembly: GRCh38/hg38",
+      "Supplementary files format and content: tab separated values files and matrix files"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8816507",
+      "donor_id": "WU1084",
+      "source_metadata": {
+        "title": [
+          "WU1084_RNA2"
+        ],
+        "geo_accession": [
+          "GSM8816507"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751084-1084PB012419-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106085",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811888"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816507/suppl/GSM8816507_1084PB012419_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816507/suppl/GSM8816507_1084PB012419_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816507/suppl/GSM8816507_1084PB012419_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816507/suppl/GSM8816507_1084PB012419_features.tsv.gz",
+          "filename": "GSM8816507_1084PB012419_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816507/suppl/GSM8816507_1084PB012419_barcodes.tsv.gz",
+          "filename": "GSM8816507_1084PB012419_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816507/suppl/GSM8816507_1084PB012419_matrix.mtx.gz",
+          "filename": "GSM8816507_1084PB012419_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1084:1084PB012419",
+        "source_library_id": "GSM8816507",
+        "source_specimen_code": "1084PB012419",
+        "source_nominal_RNA_label": "RNA2",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816507_1084PB012419_features.tsv.gz",
+      "barcodes_member": "GSM8816507_1084PB012419_barcodes.tsv.gz",
+      "matrix_member": "GSM8816507_1084PB012419_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9810,
+        "genes": 33538,
+        "nonzeros": 16657919,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 9810,
+        "RNA_positive_barcode_rows": 9810,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5859,
+        "source_cells_above_author_10000_UMI_cutoff": 200
+      }
+    },
+    {
+      "accession": "GSM8816509",
+      "donor_id": "WU1084",
+      "source_metadata": {
+        "title": [
+          "WU1084_RNA1"
+        ],
+        "geo_accession": [
+          "GSM8816509"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751084-1084PB101118-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106083",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811895"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816509/suppl/GSM8816509_1084PB101118_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816509/suppl/GSM8816509_1084PB101118_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816509/suppl/GSM8816509_1084PB101118_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816509/suppl/GSM8816509_1084PB101118_features.tsv.gz",
+          "filename": "GSM8816509_1084PB101118_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816509/suppl/GSM8816509_1084PB101118_barcodes.tsv.gz",
+          "filename": "GSM8816509_1084PB101118_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816509/suppl/GSM8816509_1084PB101118_matrix.mtx.gz",
+          "filename": "GSM8816509_1084PB101118_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1084:1084PB101118",
+        "source_library_id": "GSM8816509",
+        "source_specimen_code": "1084PB101118",
+        "source_nominal_RNA_label": "RNA1",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816509_1084PB101118_features.tsv.gz",
+      "barcodes_member": "GSM8816509_1084PB101118_barcodes.tsv.gz",
+      "matrix_member": "GSM8816509_1084PB101118_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 15094,
+        "genes": 33538,
+        "nonzeros": 20596699,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 15094,
+        "RNA_positive_barcode_rows": 15094,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5681,
+        "source_cells_above_author_10000_UMI_cutoff": 255
+      }
+    },
+    {
+      "accession": "GSM8816511",
+      "donor_id": "WU1084",
+      "source_metadata": {
+        "title": [
+          "WU1084_RNA3"
+        ],
+        "geo_accession": [
+          "GSM8816511"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751084-PB112918-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106081",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811897"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816511/suppl/GSM8816511_1084PB112918_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816511/suppl/GSM8816511_1084PB112918_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816511/suppl/GSM8816511_1084PB112918_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816511/suppl/GSM8816511_1084PB112918_features.tsv.gz",
+          "filename": "GSM8816511_1084PB112918_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816511/suppl/GSM8816511_1084PB112918_barcodes.tsv.gz",
+          "filename": "GSM8816511_1084PB112918_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816511/suppl/GSM8816511_1084PB112918_matrix.mtx.gz",
+          "filename": "GSM8816511_1084PB112918_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1084:PB112918",
+        "source_library_id": "GSM8816511",
+        "source_specimen_code": "PB112918",
+        "source_nominal_RNA_label": "RNA3",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816511_1084PB112918_features.tsv.gz",
+      "barcodes_member": "GSM8816511_1084PB112918_barcodes.tsv.gz",
+      "matrix_member": "GSM8816511_1084PB112918_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3159,
+        "genes": 33538,
+        "nonzeros": 5401928,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 3159,
+        "RNA_positive_barcode_rows": 3159,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5333,
+        "source_cells_above_author_10000_UMI_cutoff": 79
+      }
+    },
+    {
+      "accession": "GSM8816513",
+      "donor_id": "WU1126",
+      "source_metadata": {
+        "title": [
+          "WU1126_RNA4"
+        ],
+        "geo_accession": [
+          "GSM8816513"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751126-1126PB021419-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106079",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811899"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816513/suppl/GSM8816513_1126PB021419_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816513/suppl/GSM8816513_1126PB021419_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816513/suppl/GSM8816513_1126PB021419_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816513/suppl/GSM8816513_1126PB021419_features.tsv.gz",
+          "filename": "GSM8816513_1126PB021419_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816513/suppl/GSM8816513_1126PB021419_barcodes.tsv.gz",
+          "filename": "GSM8816513_1126PB021419_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816513/suppl/GSM8816513_1126PB021419_matrix.mtx.gz",
+          "filename": "GSM8816513_1126PB021419_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1126:1126PB021419",
+        "source_library_id": "GSM8816513",
+        "source_specimen_code": "1126PB021419",
+        "source_nominal_RNA_label": "RNA4",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816513_1126PB021419_features.tsv.gz",
+      "barcodes_member": "GSM8816513_1126PB021419_barcodes.tsv.gz",
+      "matrix_member": "GSM8816513_1126PB021419_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8610,
+        "genes": 33538,
+        "nonzeros": 15198649,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 8610,
+        "RNA_positive_barcode_rows": 8610,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5745,
+        "source_cells_above_author_10000_UMI_cutoff": 666
+      }
+    },
+    {
+      "accession": "GSM8816515",
+      "donor_id": "WU1126",
+      "source_metadata": {
+        "title": [
+          "WU1126_RNA2"
+        ],
+        "geo_accession": [
+          "GSM8816515"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751126-1126PB082318-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106077",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811901"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816515/suppl/GSM8816515_1126PB082318_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816515/suppl/GSM8816515_1126PB082318_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816515/suppl/GSM8816515_1126PB082318_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816515/suppl/GSM8816515_1126PB082318_features.tsv.gz",
+          "filename": "GSM8816515_1126PB082318_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816515/suppl/GSM8816515_1126PB082318_barcodes.tsv.gz",
+          "filename": "GSM8816515_1126PB082318_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816515/suppl/GSM8816515_1126PB082318_matrix.mtx.gz",
+          "filename": "GSM8816515_1126PB082318_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1126:1126PB082318",
+        "source_library_id": "GSM8816515",
+        "source_specimen_code": "1126PB082318",
+        "source_nominal_RNA_label": "RNA2",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816515_1126PB082318_features.tsv.gz",
+      "barcodes_member": "GSM8816515_1126PB082318_barcodes.tsv.gz",
+      "matrix_member": "GSM8816515_1126PB082318_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7932,
+        "genes": 33538,
+        "nonzeros": 11872982,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 7932,
+        "RNA_positive_barcode_rows": 7932,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5904,
+        "source_cells_above_author_10000_UMI_cutoff": 217
+      }
+    },
+    {
+      "accession": "GSM8816517",
+      "donor_id": "WU1126",
+      "source_metadata": {
+        "title": [
+          "WU1126_RNA1"
+        ],
+        "geo_accession": [
+          "GSM8816517"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751126-1126PB091417-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106075",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811903"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816517/suppl/GSM8816517_1126PB091417_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816517/suppl/GSM8816517_1126PB091417_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816517/suppl/GSM8816517_1126PB091417_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816517/suppl/GSM8816517_1126PB091417_features.tsv.gz",
+          "filename": "GSM8816517_1126PB091417_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816517/suppl/GSM8816517_1126PB091417_barcodes.tsv.gz",
+          "filename": "GSM8816517_1126PB091417_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816517/suppl/GSM8816517_1126PB091417_matrix.mtx.gz",
+          "filename": "GSM8816517_1126PB091417_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1126:1126PB091417",
+        "source_library_id": "GSM8816517",
+        "source_specimen_code": "1126PB091417",
+        "source_nominal_RNA_label": "RNA1",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816517_1126PB091417_features.tsv.gz",
+      "barcodes_member": "GSM8816517_1126PB091417_barcodes.tsv.gz",
+      "matrix_member": "GSM8816517_1126PB091417_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7335,
+        "genes": 33538,
+        "nonzeros": 9146408,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 7335,
+        "RNA_positive_barcode_rows": 7335,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5584,
+        "source_cells_above_author_10000_UMI_cutoff": 97
+      }
+    },
+    {
+      "accession": "GSM8816519",
+      "donor_id": "WU1126",
+      "source_metadata": {
+        "title": [
+          "WU1126_RNA3"
+        ],
+        "geo_accession": [
+          "GSM8816519"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751126-PB110718-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106073",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811905"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816519/suppl/GSM8816519_1126PB110718_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816519/suppl/GSM8816519_1126PB110718_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816519/suppl/GSM8816519_1126PB110718_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816519/suppl/GSM8816519_1126PB110718_features.tsv.gz",
+          "filename": "GSM8816519_1126PB110718_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816519/suppl/GSM8816519_1126PB110718_barcodes.tsv.gz",
+          "filename": "GSM8816519_1126PB110718_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816519/suppl/GSM8816519_1126PB110718_matrix.mtx.gz",
+          "filename": "GSM8816519_1126PB110718_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1126:PB110718",
+        "source_library_id": "GSM8816519",
+        "source_specimen_code": "PB110718",
+        "source_nominal_RNA_label": "RNA3",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816519_1126PB110718_features.tsv.gz",
+      "barcodes_member": "GSM8816519_1126PB110718_barcodes.tsv.gz",
+      "matrix_member": "GSM8816519_1126PB110718_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7692,
+        "genes": 33538,
+        "nonzeros": 16573870,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 7692,
+        "RNA_positive_barcode_rows": 7692,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5671,
+        "source_cells_above_author_10000_UMI_cutoff": 794
+      }
+    },
+    {
+      "accession": "GSM8816521",
+      "donor_id": "WU1135",
+      "source_metadata": {
+        "title": [
+          "WU1135_RNA1"
+        ],
+        "geo_accession": [
+          "GSM8816521"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751135-1135PB120916_All-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106071",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811907"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816521/suppl/GSM8816521_1135PB120916_All_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816521/suppl/GSM8816521_1135PB120916_All_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816521/suppl/GSM8816521_1135PB120916_All_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816521/suppl/GSM8816521_1135PB120916_All_features.tsv.gz",
+          "filename": "GSM8816521_1135PB120916_All_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816521/suppl/GSM8816521_1135PB120916_All_barcodes.tsv.gz",
+          "filename": "GSM8816521_1135PB120916_All_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816521/suppl/GSM8816521_1135PB120916_All_matrix.mtx.gz",
+          "filename": "GSM8816521_1135PB120916_All_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1135:1135PB120916",
+        "source_library_id": "GSM8816521",
+        "source_specimen_code": "1135PB120916_All",
+        "source_nominal_RNA_label": "RNA1",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816521_1135PB120916_All_features.tsv.gz",
+      "barcodes_member": "GSM8816521_1135PB120916_All_barcodes.tsv.gz",
+      "matrix_member": "GSM8816521_1135PB120916_All_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7232,
+        "genes": 33538,
+        "nonzeros": 6418413,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 7232,
+        "RNA_positive_barcode_rows": 7232,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 6257,
+        "source_cells_above_author_10000_UMI_cutoff": 101
+      }
+    },
+    {
+      "accession": "GSM8816525",
+      "donor_id": "WU1137",
+      "source_metadata": {
+        "title": [
+          "WU1137_RNA2"
+        ],
+        "geo_accession": [
+          "GSM8816525"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751137-PB011719-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106067",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811911"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816525/suppl/GSM8816525_1137PB011719_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816525/suppl/GSM8816525_1137PB011719_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816525/suppl/GSM8816525_1137PB011719_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816525/suppl/GSM8816525_1137PB011719_features.tsv.gz",
+          "filename": "GSM8816525_1137PB011719_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816525/suppl/GSM8816525_1137PB011719_barcodes.tsv.gz",
+          "filename": "GSM8816525_1137PB011719_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816525/suppl/GSM8816525_1137PB011719_matrix.mtx.gz",
+          "filename": "GSM8816525_1137PB011719_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1137:PB011719",
+        "source_library_id": "GSM8816525",
+        "source_specimen_code": "PB011719",
+        "source_nominal_RNA_label": "RNA2",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816525_1137PB011719_features.tsv.gz",
+      "barcodes_member": "GSM8816525_1137PB011719_barcodes.tsv.gz",
+      "matrix_member": "GSM8816525_1137PB011719_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3417,
+        "genes": 33538,
+        "nonzeros": 6506215,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 3417,
+        "RNA_positive_barcode_rows": 3417,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 6079,
+        "source_cells_above_author_10000_UMI_cutoff": 488
+      }
+    },
+    {
+      "accession": "GSM8816527",
+      "donor_id": "WU1137",
+      "source_metadata": {
+        "title": [
+          "WU1137_RNA1"
+        ],
+        "geo_accession": [
+          "GSM8816527"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751137-1137PB121416-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106065",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811913"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816527/suppl/GSM8816527_1137PB121416_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816527/suppl/GSM8816527_1137PB121416_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816527/suppl/GSM8816527_1137PB121416_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816527/suppl/GSM8816527_1137PB121416_features.tsv.gz",
+          "filename": "GSM8816527_1137PB121416_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816527/suppl/GSM8816527_1137PB121416_barcodes.tsv.gz",
+          "filename": "GSM8816527_1137PB121416_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816527/suppl/GSM8816527_1137PB121416_matrix.mtx.gz",
+          "filename": "GSM8816527_1137PB121416_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1137:1137PB121416",
+        "source_library_id": "GSM8816527",
+        "source_specimen_code": "1137PB121416",
+        "source_nominal_RNA_label": "RNA1",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816527_1137PB121416_features.tsv.gz",
+      "barcodes_member": "GSM8816527_1137PB121416_barcodes.tsv.gz",
+      "matrix_member": "GSM8816527_1137PB121416_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6515,
+        "genes": 33538,
+        "nonzeros": 9628192,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 6515,
+        "RNA_positive_barcode_rows": 6515,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5801,
+        "source_cells_above_author_10000_UMI_cutoff": 284
+      }
+    },
+    {
+      "accession": "GSM8816529",
+      "donor_id": "WU1181",
+      "source_metadata": {
+        "title": [
+          "WU1181_RNA3"
+        ],
+        "geo_accession": [
+          "GSM8816529"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751181-1181PB022119-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106063",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811915"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816529/suppl/GSM8816529_1181PB022119_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816529/suppl/GSM8816529_1181PB022119_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816529/suppl/GSM8816529_1181PB022119_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816529/suppl/GSM8816529_1181PB022119_features.tsv.gz",
+          "filename": "GSM8816529_1181PB022119_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816529/suppl/GSM8816529_1181PB022119_barcodes.tsv.gz",
+          "filename": "GSM8816529_1181PB022119_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816529/suppl/GSM8816529_1181PB022119_matrix.mtx.gz",
+          "filename": "GSM8816529_1181PB022119_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1181:1181PB022119",
+        "source_library_id": "GSM8816529",
+        "source_specimen_code": "1181PB022119",
+        "source_nominal_RNA_label": "RNA3",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816529_1181PB022119_features.tsv.gz",
+      "barcodes_member": "GSM8816529_1181PB022119_barcodes.tsv.gz",
+      "matrix_member": "GSM8816529_1181PB022119_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5797,
+        "genes": 33538,
+        "nonzeros": 10007553,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 5797,
+        "RNA_positive_barcode_rows": 5797,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 6170,
+        "source_cells_above_author_10000_UMI_cutoff": 531
+      }
+    },
+    {
+      "accession": "GSM8816531",
+      "donor_id": "WU1181",
+      "source_metadata": {
+        "title": [
+          "WU1181_RNA1"
+        ],
+        "geo_accession": [
+          "GSM8816531"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751181-1181PB022317-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106061",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811917"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816531/suppl/GSM8816531_1181PB022317_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816531/suppl/GSM8816531_1181PB022317_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816531/suppl/GSM8816531_1181PB022317_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816531/suppl/GSM8816531_1181PB022317_features.tsv.gz",
+          "filename": "GSM8816531_1181PB022317_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816531/suppl/GSM8816531_1181PB022317_barcodes.tsv.gz",
+          "filename": "GSM8816531_1181PB022317_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816531/suppl/GSM8816531_1181PB022317_matrix.mtx.gz",
+          "filename": "GSM8816531_1181PB022317_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1181:1181PB022317",
+        "source_library_id": "GSM8816531",
+        "source_specimen_code": "1181PB022317",
+        "source_nominal_RNA_label": "RNA1",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816531_1181PB022317_features.tsv.gz",
+      "barcodes_member": "GSM8816531_1181PB022317_barcodes.tsv.gz",
+      "matrix_member": "GSM8816531_1181PB022317_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7455,
+        "genes": 33538,
+        "nonzeros": 14922080,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 7455,
+        "RNA_positive_barcode_rows": 7455,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5811,
+        "source_cells_above_author_10000_UMI_cutoff": 1013
+      }
+    },
+    {
+      "accession": "GSM8816533",
+      "donor_id": "WU1181",
+      "source_metadata": {
+        "title": [
+          "WU1181_RNA2"
+        ],
+        "geo_accession": [
+          "GSM8816533"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-800751181-1181PB101918-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN47106059",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27811890"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816533/suppl/GSM8816533_1181PB101918_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816533/suppl/GSM8816533_1181PB101918_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816533/suppl/GSM8816533_1181PB101918_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816533/suppl/GSM8816533_1181PB101918_features.tsv.gz",
+          "filename": "GSM8816533_1181PB101918_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816533/suppl/GSM8816533_1181PB101918_barcodes.tsv.gz",
+          "filename": "GSM8816533_1181PB101918_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816533/suppl/GSM8816533_1181PB101918_matrix.mtx.gz",
+          "filename": "GSM8816533_1181PB101918_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU1181:1181PB101918",
+        "source_library_id": "GSM8816533",
+        "source_specimen_code": "1181PB101918",
+        "source_nominal_RNA_label": "RNA2",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816533_1181PB101918_features.tsv.gz",
+      "barcodes_member": "GSM8816533_1181PB101918_barcodes.tsv.gz",
+      "matrix_member": "GSM8816533_1181PB101918_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5245,
+        "genes": 33538,
+        "nonzeros": 9842482,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 5245,
+        "RNA_positive_barcode_rows": 5245,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5797,
+        "source_cells_above_author_10000_UMI_cutoff": 600
+      }
+    },
+    {
+      "accession": "GSM8816537",
+      "donor_id": "WU999",
+      "source_metadata": {
+        "title": [
+          "WU999_RNA1"
+        ],
+        "geo_accession": [
+          "GSM8816537"
+        ],
+        "status": [
+          "Public on Mar 03 2026"
+        ],
+        "submission_date": [
+          "Feb 26 2025"
+        ],
+        "last_update_date": [
+          "Mar 03 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells"
+        ],
+        "treatment_protocol_ch1": [
+          "Peripheral blood mononuclear cells were subjected to CD4+ enrichment (EasySep Human CD4 Positive Selection Kit or CD4+ staining and FACS) and/or monocyte depletion (RosetteSep Human Monocyte (CD36) Depletion Cocktail) and viable cells sorted using a 7-AAD viability stain on a Sony iCyt Synergy SY3200."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For each of the PBMC samples, 10,000 to 20,000 viable cells were submitted for processing using the 10x Genomics Chromium Controller and the Chromium Single Cell 5\u2032 Library & Gel Bead Kit v2 (PN-1000006) following the manufacturer\u2019s protocols. cDNA was prepared after the GEM generation and barcoding, followed by the GEM-RT reaction and bead cleanup steps. Purified cDNA was amplified for 10-14 cycles before being cleaned up using SPRIselect beads. Samples were then run on a Bioanalyzer to determine the cDNA concentration. TCR target enrichments were performed on the full-length cDNA. GEX and Enriched TCR libraries were prepared as recommended by the 10x Genomics Chromium Single Cell V(D)J Reagent Kits (v1.0 Chemistry) user guide with appropriate modifications to the PCR cycles based on the calculated cDNA concentration. For sample preparation on the 10x Genomics platform, the Chromium Single Cell 5\u2019 Library and Gel Bead Kit v2 (PN-1000006), Chromium Single Cell A Chip Kit (PN-1000152), Chromium Single Cell V(D)J Enrichment Kit, Human, Tcell (96rxns)(PN-1000005), and Chromium Single Index Kit T (PN-1000213) were used. The concentration of each library was accurately determined through qPCR utilizing the KAPA library Quantification Kit according to the manufacturer's protocol (KAPA Biosystems/Roche) to produce cluster counts appropriate for the Illumina NovaSeq6000 instrument. Normalized libraries were sequenced on a NovaSeq6000 S4 Flow Cell using the XP workflow and a 151x10x10x151 sequencing recipe according to manufacturer protocol. A median sequencing depth of 50,000 reads/cell was targeted for each sample."
+        ],
+        "description": [
+          "Library name: TWDS-80075999-999PB040716-lib1",
+          "10x Genomics Chromium 5' GEM"
+        ],
+        "data_processing": [
+          "Alignment and gene counting were performed using the Cell Ranger pipeline (10x Genomics, v3.0, Pleasanton, CA). Genes found in fewer than 15 cells in each sample were removed. For each patient, gene counts and cells were pooled into a single Seurat (v5.1.0)(Butler et al., 2018; Hao et al., 2024; Stuart et al., 2019) object, and cells containing fewer than 200 or more than 3000-3750 expressed genes, more than 8-10% mitochondrial reads, fewer than 300 or more than 10000UMIs, or classification as a doublet by the R package scDblFinder(Germain et al., 2022) with parameters dims = 30, clust.method = \u201cfast_greedy\u201d were removed. In total, 118,608 cells were sequenced, with 92,496 passing initial QC filters after removing dead cells, empty droplets, and suspected multiplets.",
+          "Assembly: GRCh38/hg38",
+          "Supplementary files format and content: tab separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jacqueline,,Payton"
+        ],
+        "contact_email": [
+          "jpayton@wustl.edu"
+        ],
+        "contact_department": [
+          "Pathology and Immunology"
+        ],
+        "contact_institute": [
+          "Washington University School of Medicine"
+        ],
+        "contact_address": [
+          "660 S. Euclid Ave"
+        ],
+        "contact_city": [
+          "St. Louis"
+        ],
+        "contact_state": [
+          "MO"
+        ],
+        "contact_zip/postal_code": [
+          "63110"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816537/suppl/GSM8816537_999PB040716_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816537/suppl/GSM8816537_999PB040716_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816537/suppl/GSM8816537_999PB040716_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE290557"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816537/suppl/GSM8816537_999PB040716_features.tsv.gz",
+          "filename": "GSM8816537_999PB040716_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816537/suppl/GSM8816537_999PB040716_barcodes.tsv.gz",
+          "filename": "GSM8816537_999PB040716_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8816nnn/GSM8816537/suppl/GSM8816537_999PB040716_matrix.mtx.gz",
+          "filename": "GSM8816537_999PB040716_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "source_sample_id": "WU999:999PB040716",
+        "source_library_id": "GSM8816537",
+        "source_specimen_code": "999PB040716",
+        "source_nominal_RNA_label": "RNA1",
+        "disease": "not_reported",
+        "source_study_clinical_context": "CTCL progression/therapy-resistance multiomics cohort",
+        "source_preparation": "Original blood PBMC RNA; WU1135 All fraction chosen over paired T-cell-enriched fraction",
+        "source_demographics": "Individual age/sex/diagnosis subtype/treatment/outcomes not joined; no study-title diagnosis or healthy-status imputation",
+        "source_date_semantics": "Original blood specimen code retained; date-like suffix not converted to clinical dates. RNA1..4 labels are not assumed chronological.",
+        "source_alias_review": "Fourteen processable source blood specimens/six participant codes; fifteenth GSM8816535 held because deposited barcode asset is empty. WU1135 same-code Tcell fraction, receptor/bulk/other-tissue assays and broader34-patient/99-sample paper not additional independent blood observations.",
+        "source_annotation_limitation": "SCimilarity expression labels do not classify malignant status.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/41662591/"
+      },
+      "genes_member": "GSM8816537_999PB040716_features.tsv.gz",
+      "barcodes_member": "GSM8816537_999PB040716_barcodes.tsv.gz",
+      "matrix_member": "GSM8816537_999PB040716_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9952,
+        "genes": 33538,
+        "nonzeros": 17114521,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 9952,
+        "RNA_positive_barcode_rows": 9952,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "genes_detected_1_to_14_cells": 5970,
+        "source_cells_above_author_10000_UMI_cutoff": 375
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

@@ -1,0 +1,779 @@
+{
+  "dataset_id": "GSE171811_38858e461760",
+  "study_id": "GSE171811",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original GEO specimen records identify eight PBMC specimens from eight distinct donors (healthy control, six SS patients and one leukemic MF patient). Blood and skin are separate records; select PBMC tissue and GEX assets only. Preserve donor labels, source disease and sex. Dense GEX tables are gene-by-cell and source gene names are symbols. Importer enforces nonnegative integer counts and unique gene/cell identities; group exact source gene lists without intersection or zero-fill.",
+  "geo_samples": [
+    {
+      "accession": "GSM5234578",
+      "donor_id": "SS1",
+      "rna_table_member": "GSM5234578_SS1_Blood_GEX.tsv.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_GEX.tsv.gz",
+          "filename": "GSM5234578_SS1_Blood_GEX.tsv.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "SS1 blood"
+        ],
+        "geo_accession": [
+          "GSM5234578"
+        ],
+        "status": [
+          "Public on Jul 30 2021"
+        ],
+        "submission_date": [
+          "Apr 09 2021"
+        ],
+        "last_update_date": [
+          "Jul 30 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "disease state: SS",
+          "Sex: F"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated from the blood of patients and healthy controls by gradient centrifugation using Ficoll-Paquetm PLUS (GE Healthcare) and Sepmate-50 tubes (Stemcell). Buffy coat PBMCs were collected and washed twice with PBS 2% FBS. Skin biopsies were digested in 0.25mg/ml of Liberase TL and 0.5 mg/ml DNase (Sigma) diluted in RPMI and incubated for 1.5 hours at 37\u00b0C. Skin dissociated cells were filtered through a 70-uM cell strainer. All cells from single cell suspensions were cryopreserved in freezing medium (40% RPMI 1640, 50% FBS and 10% DMSO). Cryopreserved PBMCs and skin dissociated cells were thawed for 1-2 minutes in a 37o C water bath, washed twice in warm PBS 2% FBS and re-suspended in complete media (RPMI 1640 supplemented with 10% FBS and 2mM L-Glut) on the day of the experiments.",
+          "All experiments were performed using the 10x genomics V(D)J solution which incorporates scRNA-seq with additional profiling of protein surface markers . Antibody oligo counts are listed in the ADT and HTO tables. Stained cells from each sample were pooled and loaded into the 10X Chromium Single Cell Immune Profiling workflow according to the manufacturer\u2019s instructions . Additional modifications included:   (1) Addition of 2 pmol of TotalSeq-C BioLegend protein-tag additive (CTCGTGGGCTCGGAGATGTGTATAAGAGACG) during cDNA amplification PCR for pools stained with TotalSeq-C antibodies.  (2)  N7NY_xx indexing primers, as described in Mimitou et al., 2019, were used along with SI-PCR primer to make libraries for TotalSeq-C antibodies.   Libraries were pooled and sequenced on Illumina NovaSeq 6000, MiSeq or HiSeq 2500."
+        ],
+        "description": [
+          "mRNA, ADT"
+        ],
+        "data_processing": [
+          "Library strategy: ECCITE-seq",
+          "FASTQ files generated from the 10X libraries were processed using the count module of Cell Ranger pipeline, v3.0.1 (10X Genomics). FASTQ files from the TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were processed using the vdj module of Cell Ranger pipeline, v3.0.1 (10X Genomics). For ADT libraries and HTO libraries, the tag quantification pipeline v.1.3.2, available at https://github.com/Hoohm/CITE-seq-Count, was used to tally up the counts from reads. A Hamming distance of 1 was used as criteria for read sequence matches to pre-assigned barcode sequences. All reads from the 5\u2019 mRNA, TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were aligned to the GRCh38 reference. For an ECCITE-seq experiment, raw UMI gene expression (GEX), TCR \u03b1/\u03b2, TCR \u03b3/\u03b4 clonotype, ADT and HTO count matrices were obtained. Samples were then demultiplexed by their HTO using Seurat HTODemux with positive quantile parameter set to 0.999.",
+          "Scrublet (v 0.2.1) was further used to identify and remove intra-sample cell duplicates. We parameterized the model using a 7% expected doublet rate, 30 principal components (default) and a minimum gene variability of the 85th percentile (default). We performed further manual thresholding by using a doublet score of 0.2.",
+          "Count matrices for all modalities were loaded into a Seurat v3 object (Seurat v3.0.2) and Seurat functions were used for normalization, visualization and downstream processing. For gene expression data, we normalized the count data using LogNormalize, and scaled the resulting normalized values using ScaleData. For all other modalities (ADT, HTO, TCR \u03b1/\u03b2, TCR \u03b3/\u03b4), we normalized the count data using CLR (margin = 2), and scaled the resulting normalized values using ScaleData.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: *clonotypeAB.tsv.gz: CDR3 sequence of the alpha and/or beta chain of the T-Cell Receptor (TCR)",
+          "*clonotypeGD.tsv.gz: CDR3 sequence of the gamma and/or delta chain of the TCR",
+          "*TCRb.tsv.gz: CDR3 sequence of the beta chain of the TCR",
+          "*TCRg.tsv.gz: CDR3 sequence of the gamma chain of the TCR",
+          "*ADT.tsv.gz: Antibody derived tag counts",
+          "*GEX.tsv.gz: gene expression counts",
+          "*HTO.tsv.gz: hashtag oligo counts"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Youzhi,,Cheng"
+        ],
+        "contact_department": [
+          "Genetics and Genome Sciences"
+        ],
+        "contact_institute": [
+          "University of Connecticut Health Center"
+        ],
+        "contact_address": [
+          "400 Farmington Avenue"
+        ],
+        "contact_city": [
+          "Farmington"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06032"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18687134"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_ADT.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_GEX.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_HTO.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_TCRb.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_TCRg.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_clonotypeAB.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234578/suppl/GSM5234578_SS1_Blood_clonotypeGD.tsv.gz"
+        ],
+        "series_id": [
+          "GSE171811"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "SS",
+        "sex": "female",
+        "age_years": "not_reported",
+        "assay": "ECCITE-seq RNA",
+        "author_cell_type": "not_reported"
+      }
+    },
+    {
+      "accession": "GSM5234580",
+      "donor_id": "SS2",
+      "rna_table_member": "GSM5234580_SS2_Blood_GEX.tsv.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_GEX.tsv.gz",
+          "filename": "GSM5234580_SS2_Blood_GEX.tsv.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "SS2 blood"
+        ],
+        "geo_accession": [
+          "GSM5234580"
+        ],
+        "status": [
+          "Public on Jul 30 2021"
+        ],
+        "submission_date": [
+          "Apr 09 2021"
+        ],
+        "last_update_date": [
+          "Jul 30 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "disease state: SS",
+          "Sex: M"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated from the blood of patients and healthy controls by gradient centrifugation using Ficoll-Paquetm PLUS (GE Healthcare) and Sepmate-50 tubes (Stemcell). Buffy coat PBMCs were collected and washed twice with PBS 2% FBS. Skin biopsies were digested in 0.25mg/ml of Liberase TL and 0.5 mg/ml DNase (Sigma) diluted in RPMI and incubated for 1.5 hours at 37\u00b0C. Skin dissociated cells were filtered through a 70-uM cell strainer. All cells from single cell suspensions were cryopreserved in freezing medium (40% RPMI 1640, 50% FBS and 10% DMSO). Cryopreserved PBMCs and skin dissociated cells were thawed for 1-2 minutes in a 37o C water bath, washed twice in warm PBS 2% FBS and re-suspended in complete media (RPMI 1640 supplemented with 10% FBS and 2mM L-Glut) on the day of the experiments.",
+          "All experiments were performed using the 10x genomics V(D)J solution which incorporates scRNA-seq with additional profiling of protein surface markers . Antibody oligo counts are listed in the ADT and HTO tables. Stained cells from each sample were pooled and loaded into the 10X Chromium Single Cell Immune Profiling workflow according to the manufacturer\u2019s instructions . Additional modifications included:   (1) Addition of 2 pmol of TotalSeq-C BioLegend protein-tag additive (CTCGTGGGCTCGGAGATGTGTATAAGAGACG) during cDNA amplification PCR for pools stained with TotalSeq-C antibodies.  (2)  N7NY_xx indexing primers, as described in Mimitou et al., 2019, were used along with SI-PCR primer to make libraries for TotalSeq-C antibodies.   Libraries were pooled and sequenced on Illumina NovaSeq 6000, MiSeq or HiSeq 2500."
+        ],
+        "description": [
+          "mRNA, ADT"
+        ],
+        "data_processing": [
+          "Library strategy: ECCITE-seq",
+          "FASTQ files generated from the 10X libraries were processed using the count module of Cell Ranger pipeline, v3.0.1 (10X Genomics). FASTQ files from the TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were processed using the vdj module of Cell Ranger pipeline, v3.0.1 (10X Genomics). For ADT libraries and HTO libraries, the tag quantification pipeline v.1.3.2, available at https://github.com/Hoohm/CITE-seq-Count, was used to tally up the counts from reads. A Hamming distance of 1 was used as criteria for read sequence matches to pre-assigned barcode sequences. All reads from the 5\u2019 mRNA, TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were aligned to the GRCh38 reference. For an ECCITE-seq experiment, raw UMI gene expression (GEX), TCR \u03b1/\u03b2, TCR \u03b3/\u03b4 clonotype, ADT and HTO count matrices were obtained. Samples were then demultiplexed by their HTO using Seurat HTODemux with positive quantile parameter set to 0.999.",
+          "Scrublet (v 0.2.1) was further used to identify and remove intra-sample cell duplicates. We parameterized the model using a 7% expected doublet rate, 30 principal components (default) and a minimum gene variability of the 85th percentile (default). We performed further manual thresholding by using a doublet score of 0.2.",
+          "Count matrices for all modalities were loaded into a Seurat v3 object (Seurat v3.0.2) and Seurat functions were used for normalization, visualization and downstream processing. For gene expression data, we normalized the count data using LogNormalize, and scaled the resulting normalized values using ScaleData. For all other modalities (ADT, HTO, TCR \u03b1/\u03b2, TCR \u03b3/\u03b4), we normalized the count data using CLR (margin = 2), and scaled the resulting normalized values using ScaleData.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: *clonotypeAB.tsv.gz: CDR3 sequence of the alpha and/or beta chain of the T-Cell Receptor (TCR)",
+          "*clonotypeGD.tsv.gz: CDR3 sequence of the gamma and/or delta chain of the TCR",
+          "*TCRb.tsv.gz: CDR3 sequence of the beta chain of the TCR",
+          "*TCRg.tsv.gz: CDR3 sequence of the gamma chain of the TCR",
+          "*ADT.tsv.gz: Antibody derived tag counts",
+          "*GEX.tsv.gz: gene expression counts",
+          "*HTO.tsv.gz: hashtag oligo counts"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Youzhi,,Cheng"
+        ],
+        "contact_department": [
+          "Genetics and Genome Sciences"
+        ],
+        "contact_institute": [
+          "University of Connecticut Health Center"
+        ],
+        "contact_address": [
+          "400 Farmington Avenue"
+        ],
+        "contact_city": [
+          "Farmington"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06032"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18687131"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_ADT.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_GEX.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_HTO.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_TCRb.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_TCRg.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_clonotypeAB.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234580/suppl/GSM5234580_SS2_Blood_clonotypeGD.tsv.gz"
+        ],
+        "series_id": [
+          "GSE171811"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "SS",
+        "sex": "male",
+        "age_years": "not_reported",
+        "assay": "ECCITE-seq RNA",
+        "author_cell_type": "not_reported"
+      }
+    },
+    {
+      "accession": "GSM5234586",
+      "donor_id": "MFIV1",
+      "rna_table_member": "GSM5234586_MFIV1_Blood_GEX.tsv.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_GEX.tsv.gz",
+          "filename": "GSM5234586_MFIV1_Blood_GEX.tsv.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "MFIV1 blood"
+        ],
+        "geo_accession": [
+          "GSM5234586"
+        ],
+        "status": [
+          "Public on Jul 30 2021"
+        ],
+        "submission_date": [
+          "Apr 09 2021"
+        ],
+        "last_update_date": [
+          "Jul 30 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "disease state: leukemic MF",
+          "Sex: F"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated from the blood of patients and healthy controls by gradient centrifugation using Ficoll-Paquetm PLUS (GE Healthcare) and Sepmate-50 tubes (Stemcell). Buffy coat PBMCs were collected and washed twice with PBS 2% FBS. Skin biopsies were digested in 0.25mg/ml of Liberase TL and 0.5 mg/ml DNase (Sigma) diluted in RPMI and incubated for 1.5 hours at 37\u00b0C. Skin dissociated cells were filtered through a 70-uM cell strainer. All cells from single cell suspensions were cryopreserved in freezing medium (40% RPMI 1640, 50% FBS and 10% DMSO). Cryopreserved PBMCs and skin dissociated cells were thawed for 1-2 minutes in a 37o C water bath, washed twice in warm PBS 2% FBS and re-suspended in complete media (RPMI 1640 supplemented with 10% FBS and 2mM L-Glut) on the day of the experiments.",
+          "All experiments were performed using the 10x genomics V(D)J solution which incorporates scRNA-seq with additional profiling of protein surface markers . Antibody oligo counts are listed in the ADT and HTO tables. Stained cells from each sample were pooled and loaded into the 10X Chromium Single Cell Immune Profiling workflow according to the manufacturer\u2019s instructions . Additional modifications included:   (1) Addition of 2 pmol of TotalSeq-C BioLegend protein-tag additive (CTCGTGGGCTCGGAGATGTGTATAAGAGACG) during cDNA amplification PCR for pools stained with TotalSeq-C antibodies.  (2)  N7NY_xx indexing primers, as described in Mimitou et al., 2019, were used along with SI-PCR primer to make libraries for TotalSeq-C antibodies.   Libraries were pooled and sequenced on Illumina NovaSeq 6000, MiSeq or HiSeq 2500."
+        ],
+        "description": [
+          "mRNA, ADT"
+        ],
+        "data_processing": [
+          "Library strategy: ECCITE-seq",
+          "FASTQ files generated from the 10X libraries were processed using the count module of Cell Ranger pipeline, v3.0.1 (10X Genomics). FASTQ files from the TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were processed using the vdj module of Cell Ranger pipeline, v3.0.1 (10X Genomics). For ADT libraries and HTO libraries, the tag quantification pipeline v.1.3.2, available at https://github.com/Hoohm/CITE-seq-Count, was used to tally up the counts from reads. A Hamming distance of 1 was used as criteria for read sequence matches to pre-assigned barcode sequences. All reads from the 5\u2019 mRNA, TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were aligned to the GRCh38 reference. For an ECCITE-seq experiment, raw UMI gene expression (GEX), TCR \u03b1/\u03b2, TCR \u03b3/\u03b4 clonotype, ADT and HTO count matrices were obtained. Samples were then demultiplexed by their HTO using Seurat HTODemux with positive quantile parameter set to 0.999.",
+          "Scrublet (v 0.2.1) was further used to identify and remove intra-sample cell duplicates. We parameterized the model using a 7% expected doublet rate, 30 principal components (default) and a minimum gene variability of the 85th percentile (default). We performed further manual thresholding by using a doublet score of 0.2.",
+          "Count matrices for all modalities were loaded into a Seurat v3 object (Seurat v3.0.2) and Seurat functions were used for normalization, visualization and downstream processing. For gene expression data, we normalized the count data using LogNormalize, and scaled the resulting normalized values using ScaleData. For all other modalities (ADT, HTO, TCR \u03b1/\u03b2, TCR \u03b3/\u03b4), we normalized the count data using CLR (margin = 2), and scaled the resulting normalized values using ScaleData.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: *clonotypeAB.tsv.gz: CDR3 sequence of the alpha and/or beta chain of the T-Cell Receptor (TCR)",
+          "*clonotypeGD.tsv.gz: CDR3 sequence of the gamma and/or delta chain of the TCR",
+          "*TCRb.tsv.gz: CDR3 sequence of the beta chain of the TCR",
+          "*TCRg.tsv.gz: CDR3 sequence of the gamma chain of the TCR",
+          "*ADT.tsv.gz: Antibody derived tag counts",
+          "*GEX.tsv.gz: gene expression counts",
+          "*HTO.tsv.gz: hashtag oligo counts"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Youzhi,,Cheng"
+        ],
+        "contact_department": [
+          "Genetics and Genome Sciences"
+        ],
+        "contact_institute": [
+          "University of Connecticut Health Center"
+        ],
+        "contact_address": [
+          "400 Farmington Avenue"
+        ],
+        "contact_city": [
+          "Farmington"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06032"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18687125"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_ADT.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_GEX.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_HTO.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_TCRb.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_TCRg.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_clonotypeAB.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234586/suppl/GSM5234586_MFIV1_Blood_clonotypeGD.tsv.gz"
+        ],
+        "series_id": [
+          "GSE171811"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "leukemic MF",
+        "sex": "female",
+        "age_years": "not_reported",
+        "assay": "ECCITE-seq RNA",
+        "author_cell_type": "not_reported"
+      }
+    },
+    {
+      "accession": "GSM5234588",
+      "donor_id": "SS5",
+      "rna_table_member": "GSM5234588_SS5_Blood_GEX.tsv.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_GEX.tsv.gz",
+          "filename": "GSM5234588_SS5_Blood_GEX.tsv.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "SS5 blood"
+        ],
+        "geo_accession": [
+          "GSM5234588"
+        ],
+        "status": [
+          "Public on Jul 30 2021"
+        ],
+        "submission_date": [
+          "Apr 09 2021"
+        ],
+        "last_update_date": [
+          "Jul 30 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "disease state: SS",
+          "Sex: F"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated from the blood of patients and healthy controls by gradient centrifugation using Ficoll-Paquetm PLUS (GE Healthcare) and Sepmate-50 tubes (Stemcell). Buffy coat PBMCs were collected and washed twice with PBS 2% FBS. Skin biopsies were digested in 0.25mg/ml of Liberase TL and 0.5 mg/ml DNase (Sigma) diluted in RPMI and incubated for 1.5 hours at 37\u00b0C. Skin dissociated cells were filtered through a 70-uM cell strainer. All cells from single cell suspensions were cryopreserved in freezing medium (40% RPMI 1640, 50% FBS and 10% DMSO). Cryopreserved PBMCs and skin dissociated cells were thawed for 1-2 minutes in a 37o C water bath, washed twice in warm PBS 2% FBS and re-suspended in complete media (RPMI 1640 supplemented with 10% FBS and 2mM L-Glut) on the day of the experiments.",
+          "All experiments were performed using the 10x genomics V(D)J solution which incorporates scRNA-seq with additional profiling of protein surface markers . Antibody oligo counts are listed in the ADT and HTO tables. Stained cells from each sample were pooled and loaded into the 10X Chromium Single Cell Immune Profiling workflow according to the manufacturer\u2019s instructions . Additional modifications included:   (1) Addition of 2 pmol of TotalSeq-C BioLegend protein-tag additive (CTCGTGGGCTCGGAGATGTGTATAAGAGACG) during cDNA amplification PCR for pools stained with TotalSeq-C antibodies.  (2)  N7NY_xx indexing primers, as described in Mimitou et al., 2019, were used along with SI-PCR primer to make libraries for TotalSeq-C antibodies.   Libraries were pooled and sequenced on Illumina NovaSeq 6000, MiSeq or HiSeq 2500."
+        ],
+        "description": [
+          "mRNA, ADT"
+        ],
+        "data_processing": [
+          "Library strategy: ECCITE-seq",
+          "FASTQ files generated from the 10X libraries were processed using the count module of Cell Ranger pipeline, v3.0.1 (10X Genomics). FASTQ files from the TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were processed using the vdj module of Cell Ranger pipeline, v3.0.1 (10X Genomics). For ADT libraries and HTO libraries, the tag quantification pipeline v.1.3.2, available at https://github.com/Hoohm/CITE-seq-Count, was used to tally up the counts from reads. A Hamming distance of 1 was used as criteria for read sequence matches to pre-assigned barcode sequences. All reads from the 5\u2019 mRNA, TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were aligned to the GRCh38 reference. For an ECCITE-seq experiment, raw UMI gene expression (GEX), TCR \u03b1/\u03b2, TCR \u03b3/\u03b4 clonotype, ADT and HTO count matrices were obtained. Samples were then demultiplexed by their HTO using Seurat HTODemux with positive quantile parameter set to 0.999.",
+          "Scrublet (v 0.2.1) was further used to identify and remove intra-sample cell duplicates. We parameterized the model using a 7% expected doublet rate, 30 principal components (default) and a minimum gene variability of the 85th percentile (default). We performed further manual thresholding by using a doublet score of 0.2.",
+          "Count matrices for all modalities were loaded into a Seurat v3 object (Seurat v3.0.2) and Seurat functions were used for normalization, visualization and downstream processing. For gene expression data, we normalized the count data using LogNormalize, and scaled the resulting normalized values using ScaleData. For all other modalities (ADT, HTO, TCR \u03b1/\u03b2, TCR \u03b3/\u03b4), we normalized the count data using CLR (margin = 2), and scaled the resulting normalized values using ScaleData.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: *clonotypeAB.tsv.gz: CDR3 sequence of the alpha and/or beta chain of the T-Cell Receptor (TCR)",
+          "*clonotypeGD.tsv.gz: CDR3 sequence of the gamma and/or delta chain of the TCR",
+          "*TCRb.tsv.gz: CDR3 sequence of the beta chain of the TCR",
+          "*TCRg.tsv.gz: CDR3 sequence of the gamma chain of the TCR",
+          "*ADT.tsv.gz: Antibody derived tag counts",
+          "*GEX.tsv.gz: gene expression counts",
+          "*HTO.tsv.gz: hashtag oligo counts"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Youzhi,,Cheng"
+        ],
+        "contact_department": [
+          "Genetics and Genome Sciences"
+        ],
+        "contact_institute": [
+          "University of Connecticut Health Center"
+        ],
+        "contact_address": [
+          "400 Farmington Avenue"
+        ],
+        "contact_city": [
+          "Farmington"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06032"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18687123"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_ADT.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_GEX.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_HTO.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_TCRb.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_TCRg.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_clonotypeAB.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234588/suppl/GSM5234588_SS5_Blood_clonotypeGD.tsv.gz"
+        ],
+        "series_id": [
+          "GSE171811"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "SS",
+        "sex": "female",
+        "age_years": "not_reported",
+        "assay": "ECCITE-seq RNA",
+        "author_cell_type": "not_reported"
+      }
+    },
+    {
+      "accession": "GSM5234589",
+      "donor_id": "SS6",
+      "rna_table_member": "GSM5234589_SS6_Blood_GEX.tsv.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_GEX.tsv.gz",
+          "filename": "GSM5234589_SS6_Blood_GEX.tsv.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "SS6 blood"
+        ],
+        "geo_accession": [
+          "GSM5234589"
+        ],
+        "status": [
+          "Public on Jul 30 2021"
+        ],
+        "submission_date": [
+          "Apr 09 2021"
+        ],
+        "last_update_date": [
+          "Jul 30 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "disease state: SS",
+          "Sex: M"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated from the blood of patients and healthy controls by gradient centrifugation using Ficoll-Paquetm PLUS (GE Healthcare) and Sepmate-50 tubes (Stemcell). Buffy coat PBMCs were collected and washed twice with PBS 2% FBS. Skin biopsies were digested in 0.25mg/ml of Liberase TL and 0.5 mg/ml DNase (Sigma) diluted in RPMI and incubated for 1.5 hours at 37\u00b0C. Skin dissociated cells were filtered through a 70-uM cell strainer. All cells from single cell suspensions were cryopreserved in freezing medium (40% RPMI 1640, 50% FBS and 10% DMSO). Cryopreserved PBMCs and skin dissociated cells were thawed for 1-2 minutes in a 37o C water bath, washed twice in warm PBS 2% FBS and re-suspended in complete media (RPMI 1640 supplemented with 10% FBS and 2mM L-Glut) on the day of the experiments.",
+          "All experiments were performed using the 10x genomics V(D)J solution which incorporates scRNA-seq with additional profiling of protein surface markers . Antibody oligo counts are listed in the ADT and HTO tables. Stained cells from each sample were pooled and loaded into the 10X Chromium Single Cell Immune Profiling workflow according to the manufacturer\u2019s instructions . Additional modifications included:   (1) Addition of 2 pmol of TotalSeq-C BioLegend protein-tag additive (CTCGTGGGCTCGGAGATGTGTATAAGAGACG) during cDNA amplification PCR for pools stained with TotalSeq-C antibodies.  (2)  N7NY_xx indexing primers, as described in Mimitou et al., 2019, were used along with SI-PCR primer to make libraries for TotalSeq-C antibodies.   Libraries were pooled and sequenced on Illumina NovaSeq 6000, MiSeq or HiSeq 2500."
+        ],
+        "description": [
+          "mRNA, ADT"
+        ],
+        "data_processing": [
+          "Library strategy: ECCITE-seq",
+          "FASTQ files generated from the 10X libraries were processed using the count module of Cell Ranger pipeline, v3.0.1 (10X Genomics). FASTQ files from the TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were processed using the vdj module of Cell Ranger pipeline, v3.0.1 (10X Genomics). For ADT libraries and HTO libraries, the tag quantification pipeline v.1.3.2, available at https://github.com/Hoohm/CITE-seq-Count, was used to tally up the counts from reads. A Hamming distance of 1 was used as criteria for read sequence matches to pre-assigned barcode sequences. All reads from the 5\u2019 mRNA, TCR \u03b1/\u03b2 and TCR \u03b3/\u03b4 libraries were aligned to the GRCh38 reference. For an ECCITE-seq experiment, raw UMI gene expression (GEX), TCR \u03b1/\u03b2, TCR \u03b3/\u03b4 clonotype, ADT and HTO count matrices were obtained. Samples were then demultiplexed by their HTO using Seurat HTODemux with positive quantile parameter set to 0.999.",
+          "Scrublet (v 0.2.1) was further used to identify and remove intra-sample cell duplicates. We parameterized the model using a 7% expected doublet rate, 30 principal components (default) and a minimum gene variability of the 85th percentile (default). We performed further manual thresholding by using a doublet score of 0.2.",
+          "Count matrices for all modalities were loaded into a Seurat v3 object (Seurat v3.0.2) and Seurat functions were used for normalization, visualization and downstream processing. For gene expression data, we normalized the count data using LogNormalize, and scaled the resulting normalized values using ScaleData. For all other modalities (ADT, HTO, TCR \u03b1/\u03b2, TCR \u03b3/\u03b4), we normalized the count data using CLR (margin = 2), and scaled the resulting normalized values using ScaleData.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: *clonotypeAB.tsv.gz: CDR3 sequence of the alpha and/or beta chain of the T-Cell Receptor (TCR)",
+          "*clonotypeGD.tsv.gz: CDR3 sequence of the gamma and/or delta chain of the TCR",
+          "*TCRb.tsv.gz: CDR3 sequence of the beta chain of the TCR",
+          "*TCRg.tsv.gz: CDR3 sequence of the gamma chain of the TCR",
+          "*ADT.tsv.gz: Antibody derived tag counts",
+          "*GEX.tsv.gz: gene expression counts",
+          "*HTO.tsv.gz: hashtag oligo counts"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Youzhi,,Cheng"
+        ],
+        "contact_department": [
+          "Genetics and Genome Sciences"
+        ],
+        "contact_institute": [
+          "University of Connecticut Health Center"
+        ],
+        "contact_address": [
+          "400 Farmington Avenue"
+        ],
+        "contact_city": [
+          "Farmington"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06032"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN18687122"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_ADT.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_GEX.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_HTO.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_TCRb.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_TCRg.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_clonotypeAB.tsv.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5234nnn/GSM5234589/suppl/GSM5234589_SS6_Blood_clonotypeGD.tsv.gz"
+        ],
+        "series_id": [
+          "GSE171811"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "SS",
+        "sex": "male",
+        "age_years": "not_reported",
+        "assay": "ECCITE-seq RNA",
+        "author_cell_type": "not_reported"
+      }
+    }
+  ],
+  "source_metadata": {
+    "accession": "GSE171811",
+    "doi": "10.1182/blood.2020009346",
+    "study_title": "Multimodal single cell analysis of paired tissues of cutaneous T cell lymphoma",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171811",
+    "access": "Public processed expression tables; raw sequencing subject to dbGaP privacy access.",
+    "license": "not_specified_in_record",
+    "excluded_modalities": [
+      "ADT",
+      "HTO",
+      "TCR"
+    ],
+    "overlap_note": "CTCL atlas reuses seven patient PBMCs, omitting healthy control; do not count those atlas entries again.",
+    "gene_universe_signature": "38858e461760"
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

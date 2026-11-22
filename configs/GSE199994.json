@@ -1,0 +1,66 @@
+{
+  "dataset_id": "GSE199994",
+  "study_id": "GSE199994",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE199994_complete_original_RNA_audit.json",
+    "bytes": 31427,
+    "sha256": "78b114ebaaeeaf4fee4eeaecccc932b47730f105b42611b685d686f5cb293bc0"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE199994_source_identity_review.json",
+    "bytes": 4461,
+    "sha256": "47f249e651f95b1661dd85193c4ac2fbea3cd21b8d1c3adf13785c0ee86034aa"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Original GEX GSM is the specimen key. Exact GEOtitle without _GEX matches original archive subject label HD1/HD2/P1..P8. These are study-scoped donor proxies; global aliases unresolved. Paired ATAC GSMrecords do not add people. No barcode suffix, expression, genotype or clinical-similarity identity inference.",
+  "physical_sample_mapping_evidence": "Ten original baseline PBMCmultiome donors,8melanoma patients selected bysourceIFN-Iresponsecapacity(4high/4low),plus2healthy. Archive subject labels match exact originalGEXtitles. Paired ATACrecords andfragment files are notextra people. Full originalGSM is specimen key; source subject codes are study-scoped donor proxies, globalaliases unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE199994",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199994",
+    "primary_PMID": "35835962",
+    "primary_DOI": "10.1038/s41590-022-01262-7",
+    "access": "Public original donor multiome count archives; RNA component only.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE199994_source_identity_review.json",
+      "bytes": 4461,
+      "sha256": "47f249e651f95b1661dd85193c4ac2fbea3cd21b8d1c3adf13785c0ee86034aa"
+    },
+    "source_unit": "Ten original baseline PBMCmultiome donors,8melanoma patients selected bysourceIFN-Iresponsecapacity(4high/4low),plus2healthy. Archive subject labels match exact originalGEXtitles. Paired ATACrecords andfragment files are notextra people. Full originalGSM is specimen key; source subject codes are study-scoped donor proxies, globalaliases unresolved.",
+    "identity_policy": "Original GEX GSM is the specimen key. Exact GEOtitle without _GEX matches original archive subject label HD1/HD2/P1..P8. These are study-scoped donor proxies; global aliases unresolved. Paired ATAC GSMrecords do not add people. No barcode suffix, expression, genotype or clinical-similarity identity inference.",
+    "clinical_policy": "Retain literal disease state and IFN-Iresponsecapacity. GEOseries specifies baseline before anti-PD1 for melanoma cases; healthy collection phase remains not reported. Individual age,sex,stage,clinical aliases,treatment dose/duration and exact dates unassigned.",
+    "reuse_policy": "Ten original RNA components only; no completed original GSM/accession/publication match found in reviewed completed configurations. Cross-study uniqueness remains unproven.",
+    "selection_policy": "Two healthy donors and eight melanoma patients selected by source IFN-Iresponsecapacity, four high and four low. Preserve ascertainment even when phenotype labels are excluded from discovery.",
+    "cell_calling_policy": "Use provided filtered multiome barcodes with independent RNA-only QC. Every mixed RNA/Peak count is verified; Peaks excluded from RNAgeometry, mitochondrial QC and all expression normalization. Source barcode filtering and biological annotation are not independently validated.",
+    "gene_policy": "All36601GeneExpressionfeature IDs/symbols retained unchanged; all6original feature columns preserved as RNA gene metadata. Exact RNA ID/symbol/coordinate axis agreement across ten donors; no intersection, symbol modernization, coordinate-base inference or zero filling.",
+    "count_semantics": "Provided original mixed GeneExpression/PeaksCellRanger-ARCcounttriplets; every original stored value audited. RNAgeometry,mitochondrialQC andlibrary-normalizationdenominators use onlyall36601GeneExpressionrows. Peakcounts recorded/excluded with per-cellfull=RNA+Peakequality. Originalrawarchives/selectedmembers intact untilfull independent source/statistic proof.",
+    "source_limitations": "Preserve multiome modality and source response-capacity selection. Citation verified; primary full text not available in reviewed sources. Demographic/clinical/global aliases unassigned. No clinical efficacy, causal, biological annotation or constellation validation."
+  }
+}

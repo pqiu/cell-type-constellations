@@ -1,0 +1,63 @@
+{
+  "dataset_id": "GSE304309",
+  "study_id": "GSE304309",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE304309_complete_original_RNA_audit.json",
+    "bytes": 21462,
+    "sha256": "2ec9d190c33e286afa5837d200b220014bf53b3e2009decdfb54da22160476e3"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE304309_source_identity_review.json",
+    "bytes": 4357,
+    "sha256": "279e52875a5e053d3e2bcccc33648bb3ef0e4aff35801a137796931a1d94784a"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Use literal GEOdonor field donor1-4 across two source CD4/CD8fractions, keeping eight separate original GSMviews. Physical specimen UID conservatively groups all views sharing a donor code; it does not establish one exact collection/tube/aliquot. No extra independent participant or specimen is credited per fraction.",
+  "physical_sample_mapping_evidence": "Four conservative source donor-code/material groups, each with two dependent CD4/CD8capture views. Exact collection/tube/aliquot pairing is unresolved, so eight captures are not counted as eight independent specimens or donors. Source donor fields are literal within-study codes; global identity/unrelatedness unproven.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE304309",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE304309",
+    "access": "Public original RNA count/barcode/gene triplets and coded GEOmetadata; no access grant assumed for other sources.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE304309_source_identity_review.json",
+      "bytes": 4357,
+      "sha256": "279e52875a5e053d3e2bcccc33648bb3ef0e4aff35801a137796931a1d94784a"
+    },
+    "source_unit": "Four conservative source donor-code/material groups, each with two dependent CD4/CD8capture views. Exact collection/tube/aliquot pairing is unresolved, so eight captures are not counted as eight independent specimens or donors. Source donor fields are literal within-study codes; global identity/unrelatedness unproven.",
+    "identity_policy": "Use literal GEOdonor field donor1-4 across two source CD4/CD8fractions, keeping eight separate original GSMviews. Physical specimen UID conservatively groups all views sharing a donor code; it does not establish one exact collection/tube/aliquot. No extra independent participant or specimen is credited per fraction.",
+    "clinical_policy": "Healthy human PBMC origin and memory-T-cell enrichment as stated by the source. Preserve original tissue, cell-type, cell-line-field and donor labels. The cell line field Tcell is retained as reported and not interpreted as a cultured/immortalized line. Exact age, sex, collection date, clinical/family/global aliases unassigned.",
+    "reuse_policy": "Only original RNA matrices acquired; no TCR assay records or related parent-series copies added. Two dependent fraction-specific maps remain separate; source sorting proportions are not used to reconstruct whole-PBMC composition or a disjoint cross-fraction T-cell parent centroid.",
+    "gene_policy": "All33694provided human Ensembl gene IDs and original symbols retained unchanged in supplied order. No symbol modernization, inferred reference-version mapping, feature selection, intersection or zero filling. Two-column source axis has no supplied feature-type column.",
+    "count_semantics": "Provided original CellRanger gene count matrices; all original raw-barcode stored values audited finite nonnegative integer. Native staging subsets source rows by documented QC without changing retained RNA values. No inverse normalization or rounding.",
+    "raw_barcode_policy": "All original raw whitelist rows and stored values audited. Stage only rows passing fixed project RNAQC (counts>=500,genes>=200,mitochondrial fraction<=0.2). Recompute the same QC in the main pipeline. Empty/low-support raw barcode slots are not cells; preserve complete ordered source QC arrays and selected original row positions. Original_cells denotes staged qualifying observations, not raw whitelist slots or an author final cell call.",
+    "cell_calling_policy": "Count-bearing raw barcode slots are not automatically cells. Fixed project RNAQC defines75147staged qualifying observations from5898240raw whitelist rows. Complete ordered source QC arrays, raw CSR hashes and selected original row positions retained. Author final cell calls/doublet calls not available or reproduced; no doublet-free or independently validated annotation claim.",
+    "source_limitations": "Four conservative donor-code/material groups and eight dependent enriched T-cell views. No exact draw pairing, whole-PBMC composition, global unique-person proof, biological annotation or constellation validation."
+  }
+}

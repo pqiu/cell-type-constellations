@@ -1,0 +1,89 @@
+{
+  "dataset_id": "CIMA_native_counts",
+  "study_id": "CIMA",
+  "input_format": "count_layer_h5ad",
+  "reviewed_pbmc": true,
+  "source_asset": {
+    "filename": "CIMA_RNA_original.h5ad",
+    "url": "https://ftp.cngb.org/pub/SciRAID/trueblood/cima/CIMA_Resource/Cell_Atlas/CIMA_RNA_6484974cells_36326genes_compressed.h5ad",
+    "expected_bytes": 47611600946
+  },
+  "source_count_audit": {
+    "path": "references/datasets/CIMA_full_native_counts_and_sample_audit.json",
+    "sha256": "230fa9251e14ee41b154c431b908c43a95565467effccf7fab1d76c28fa54d74"
+  },
+  "count_layer": "counts",
+  "raw_location": "X",
+  "annotation_gene_column": "__index__",
+  "sample_columns": [
+    "sample"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original CIMA sample identifiers exactly match421RNA-available entries of428-row public sample/omics tables. All6,484,974cell identifiers unique; every cell source sample/age/sex/isolation_date/RNA_experiment matches publicmetadata. Original sample identifier defines source specimen/donor;891RNA libraries are captures, not891draws. Global identity unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "sample",
+      "source_sample_id": "sample",
+      "author_cell_type": "cell_type_l4"
+    },
+    "constants": {
+      "tissue": "blood",
+      "source_specimen": "PBMC",
+      "is_primary_data": true,
+      "source_coverage": "Published post-QC CIMA circulating mononuclear immune-cell atlas. Original36,326gene-symbol coordinate universe andcountlayer; originalgene/cell filtering limitations retained.",
+      "source_identity_policy": "One deposited samplecode perRNAparticipant,421observed of428metadata rows. Keep source library/batch labels anddonor identity, not independentreplication perlibrary or additional428RNA donors.",
+      "source_time_policy": "Source isolation_date is an isolation label; RNA_experiment is laboratorybatch/date, not assumed biological collection date. Calendar draw dates not independently inferred.",
+      "source_geometry_policy": "Annotation uses SCimilarity; original cell_type_l4 used only for comparison. Geometry uses native RNA count-layer genes; source normalized X/embeddings/graphs not used. Missing types NaN.",
+      "source_count_policy": "All8,861,432,007nativevalues auditedfinite/nonnegative/integer andCSRcoordinates checked. Every cell countsum matches original n_counts. Original total_counts differs for57cells; no repair or alternative normalization.",
+      "source_condition_policy": "Original source demographic/lifestyle fields retained. No disease or vaccine status imputed from an atlas title or absent clinical fields.",
+      "source_assignment_uncertainty": "Published atlas sample/library assignments used asdeposited; no percell calibrated donor-assignment probability supplied.",
+      "source_alias_policy": "CIMA-specific source identifiers retained; crossatlas/source donor overlap unresolved. No428or10million biologicalsample claim."
+    }
+  },
+  "source_metadata": {
+    "accession": "CIMA",
+    "source_url": "https://db.cngb.org/trueblood/cima/",
+    "publication": "https://doi.org/10.1126/science.adt3130",
+    "PMID": "41505528",
+    "access": "Public original deposited atlas H5AD; counts layer independently audited",
+    "count_license": "not_verified_from_resource_page",
+    "source_file_manifest": {
+      "url": "https://ftp.cngb.org/pub/SciRAID/trueblood/cima/CIMA_Resource/Cell_Atlas/CIMA_RNA_6484974cells_36326genes_compressed.h5ad",
+      "bytes": 47611600946,
+      "sha256": "8871ce53d9142e22d197643c97b6500b75a913ff8ef9b276dbf472e8e4dd291c",
+      "retrieved_at": "2026-10-14T19:16:38.841823+00:00",
+      "response_headers": {
+        "ETag": "\"695f78f7-b15df6032\""
+      },
+      "resume_review": {
+        "url": "https://ftp.cngb.org/pub/SciRAID/trueblood/cima/CIMA_Resource/Cell_Atlas/CIMA_RNA_6484974cells_36326genes_compressed.h5ad",
+        "etag": "\"695f78f7-b15df6032\"",
+        "expected_bytes": 47611600946,
+        "resumed_from_bytes": 13438550016,
+        "prefix_and_tail_verified": true,
+        "recorded_at": "2026-10-13T19:13:01.769091+00:00"
+      }
+    },
+    "native_count_layer": "layers/counts",
+    "native_gene_coordinate_kind": "unique original gene symbols; no invented Ensembl IDs",
+    "gene_axis_sha256": "d9b8c3dbeb9b5eaba308793c33f6b9c0437cd4b5342776e2af1395b9b619acea",
+    "source_count_audit_sha256": "230fa9251e14ee41b154c431b908c43a95565467effccf7fab1d76c28fa54d74",
+    "public_sample_metadata_sha256": "c75fd0c01a11bbaebcdce8994f93f59bdce6964cb97e67c01c9367a2eb4302ac",
+    "public_omics_metadata_sha256": "dae4d0bafb477c4c91b4ab7bf5434dcdb4816b5a3c45ae200611955d8a5eb94d",
+    "preparation_script_sha256": "974acc8dd5865f5e35f766ae737169c79d9c5e4457c377957ec10ce29a88753f",
+    "source_samples": 421,
+    "public_metadata_rows": 428,
+    "RNA_libraries": 891,
+    "source_gene_coverage": "Fixed published native36,326-gene universe; omittedgenes unavailable, not zero-filled. Source genes already passed author filtering; no additional feature selection.",
+    "raw_count_evidence": "Counts layer is integer throughout; original n_counts matches all6,484,974cell sums. X fractional. Original source count/reference/coordinate bytes unchanged."
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

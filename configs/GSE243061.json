@@ -1,0 +1,65 @@
+{
+  "dataset_id": "GSE243061",
+  "study_id": "GSE243061",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE243061_complete_original_RNA_audit.json",
+    "bytes": 31675,
+    "sha256": "d4d01c323a0d055576f3e9da30e9486512d5fc91f931a62f205312fbe476e2c6"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE243061_source_identity_review.json",
+    "bytes": 4493,
+    "sha256": "0d8bfe4eecd39456780371499f8949ead626b2712dc4c18e261735d12d16e230"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "One original GSM and literal TSCtitle per source donor in the four-patient/four-control Finnish blood-Treg cohort. Titles are study-scoped donor proxies; no mapping to numbered clinical rows or later expanded-cell samples is inferred.",
+  "physical_sample_mapping_evidence": "Eight PBMC-derived sorted Treg RNA libraries from four Finnish APS1 patients and four controls. Literal GEO TSCtitles are donor proxies and original GSMs identify specimens. No additional sample from the separate expanded/targeted Treg cohorts is included; no ordinal clinical-table alias inferred.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE243061",
+    "primary_PMID": "38632993",
+    "publication": "https://doi.org/10.1016/j.isci.2024.109610",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243061",
+    "access": "Public original gene-cell count matrices and coded GEO metadata acquired. GEO says raw data are unavailable due to privacy; primary phrase raw transcriptomics is not taken as evidence that raw sequencing reads were downloaded. No EGA access grant assumed or requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE243061_source_identity_review.json",
+      "bytes": 4493,
+      "sha256": "0d8bfe4eecd39456780371499f8949ead626b2712dc4c18e261735d12d16e230"
+    },
+    "source_unit": "Eight PBMC-derived sorted Treg RNA libraries from four Finnish APS1 patients and four controls. Literal GEO TSCtitles are donor proxies and original GSMs identify specimens. No additional sample from the separate expanded/targeted Treg cohorts is included; no ordinal clinical-table alias inferred.",
+    "identity_policy": "One original GSM and literal TSCtitle per source donor in the four-patient/four-control Finnish blood-Treg cohort. Titles are study-scoped donor proxies; no mapping to numbered clinical rows or later expanded-cell samples is inferred.",
+    "clinical_policy": "Preserve original APS1 and Healthy cohort labels; GEO calls this field genotype, but these are cohort labels rather than per-person variant assignments. Exact individual age, sex, current medication, collection date, family and clinical display-code aliases remain unassigned.",
+    "reuse_policy": "Only non-expanded sorted blood-Treg libraries GSE243061 included. Separate Norwegian expanded/targeted Treg cohorts deposited in EGA and summary tables are not added. Whole-PBMC composition is unavailable after enrichment; no pooled cross-lineage centroid is reconstructed from sorted proportions. Global donor aliases unresolved.",
+    "gene_policy": "All36601original RNA feature IDs and symbols retained in exact supplied order. No highly variable gene selection, symbol modernization, intersection or zero filling.",
+    "count_semantics": "Original CellRanger RNA UMI count matrices recovered only through exact inverse CRLF expansion of gzip transport bytes. Full forward byte roundtrip, source gzip CRC32/ISIZE and complete expanded payload SHA256 verified for every file. Original downloads unchanged; no count edits, rounding or inverse expression normalization.",
+    "transport_policy": "All25downloaded original/probe gzip objects contain complete LF-to-CRLF expansion. Exact inverse transformation yields valid complete gzip CRC32/ISIZE; expanding recovered bytes forward exactly reproduces each download. Original downloads unchanged. Two ordinary official source URLs return byte-identical feature payloads. No ignored CRC errors or inferred RNA values.",
+    "cell_calling_policy": "Provided count-bearing barcodes are source observations. Retained rows use the common project RNA QC; author final cell-calling, sample-specific thresholds and doublet calls are not reproduced. The protocol input target is not treated as a verified final cell count. No author-filtered or doublet-free status is claimed.",
+    "source_limitations": "Sorted PBMC-derived Tregs, not whole-PBMC composition. Source clinical aliases and global uniqueness unresolved. No biological annotation or constellation validation claimed."
+  }
+}

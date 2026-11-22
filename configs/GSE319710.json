@@ -1,0 +1,88 @@
+{
+  "dataset_id": "GSE319710",
+  "study_id": "GSE319710",
+  "input_format": "reviewed_public_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE319710_complete_original_RNA_audit.json",
+    "bytes": 2792,
+    "sha256": "a6c39c4024816afea43d482c82466121b6120e5c6c10fa0fd724c10a711787c7"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE319710_source_identity_review.json",
+    "bytes": 2858,
+    "sha256": "f615c0f9f9163d08b18fb09cf19a8bd6028efec96ea62ebe1f362d6ce10f8630"
+  },
+  "native_replay_module": "scripts.prepare_PBMC_319710",
+  "native_replay_code": {
+    "path": "scripts/prepare_PBMC_319710.py",
+    "bytes": 9294,
+    "sha256": "84cb2d64cd074849f4894bb5df1dddca142805943c95566dfeb8913ec5b9f5ea"
+  },
+  "reviewed_source_assets": [
+    {
+      "path": "data/downloads/GSE319710_source_review/GSE319710_filtered__processed_and_clustered_data_with_metadata.rds",
+      "bytes": 7724944783,
+      "sha256": "528dd43d2f60913c5788ed8bea49e58e61ecae4d30d906ebd1a482ab32de5c0e",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE319nnn/GSE319710/suppl/GSE319710_filtered__processed_and_clustered_data_with_metadata.rds"
+    }
+  ],
+  "native_source_code_paths": [
+    "scripts/prepare_PBMC_319710.py",
+    "scripts/stage_PBMC_319710_native_counts.py",
+    "scripts/audit_PBMC_319710_original_RNA.py",
+    "scripts/review_PBMC_319710_original_coordinates.py",
+    "scripts/extract_PBMC_319710_original_RNA.R",
+    "scripts/review_PBMC_319710_source_materials.py"
+  ],
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_physical_sample_key"
+  ],
+  "sample_mapping_evidence": "Use deposited HTO_classification as the study-scoped participant code and literal hash.ID as material/view key. These are one-to-one in all original cells, each with one pool/condition. Original HTO assignments are copied, never recomputed. No barcode-ordinal, profile or genotype inference. ident is an author monocyte-state label, not identity or SCimilarity annotation. Primary32individual count corroborates source code count, not global uniqueness.",
+  "physical_sample_mapping_evidence": "32literal original author-coded circulating-monocyte materials,32source participant codes and32maps. 24GEX/24pairedHTOrecords and six pooled orig.ident keys are technical units, not extra people.",
+  "metadata_mapping": {
+    "value_maps": {
+      "condition": {
+        "source": "source_group",
+        "values": {
+          "HIV-AS-": "HIV-negative; atherosclerosis-negative",
+          "HIV+ASs-": "HIV-positive; atherosclerosis-negative",
+          "HIV-AS+": "HIV-negative; atherosclerosis-positive",
+          "HIV+AS+": "HIV-positive; atherosclerosis-positive"
+        }
+      }
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE319710",
+    "primary_PMID": "41823228",
+    "primary_DOI": "10.1161/JAHA.125.046482",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE319710",
+    "access": "Public processed original Seurat RNA counts and deposited author assignment labels; no controlled raw reads.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "GEO count-data license not specified",
+    "source_unit": "32literal original author-coded circulating-monocyte materials,32source participant codes and32maps. 24GEX/24pairedHTOrecords and six pooled orig.ident keys are technical units, not extra people.",
+    "identity_policy": "Use deposited HTO_classification as the study-scoped participant code and literal hash.ID as material/view key. These are one-to-one in all original cells, each with one pool/condition. Original HTO assignments are copied, never recomputed. No barcode-ordinal, profile or genotype inference. ident is an author monocyte-state label, not identity or SCimilarity annotation. Primary32individual count corroborates source code count, not global uniqueness.",
+    "clinical_policy": "Preserve source AS_HIV and group, including literal HIV+ASs- typo, and explicitly map four supplied condition labels. Age,sex,exact sampling time and participant-to-GEO-capture linkage are not available in reviewed metadata. Do not infer dates/visits/ages or technical-tag meaning from hash.ID suffixes. Original protocol permits PBMC or whole-blood material despite GEO PBMC labels; per-person starting material is unresolved.",
+    "gene_policy": "Keep all36601provided RNA feature LogMap labels unchanged. Exact original RNA feature/cell membership determines axes, not transformed assays or assumed order. No gene intersection, Ensembl imputation or missing-gene zero filling; per-capture measured-gene availability is not separately supplied. RNA geometry excludes HTO/SCT/integrated assays. SCimilarity reference alignment is annotation-only.",
+    "reuse_policy": "PrimaryPMID41823228 DOI10.1161/JAHA.125.046482. No existing completed accession/PMID/DOI output found. Keep all related captures/views/publication reuse of each literal participant together in future splits. Global aliases and unrelatedness remain unverified.",
+    "selection_policy": "All supplied original RNA cells before fixed500counts/200genes/0.2MT QC. Source already applies monocyte sorting and inherited QC; these are selected circulating-monocyte maps, not unselected whole PBMC coverage. No additional author state,condition,receptor or cluster filtering.",
+    "source_limitations": "Selected monocyte/inherited QC population. Source starting-material ambiguity, missing age/sex/time/capture links, literal suffixes and condition typo retained. No clinical,annotation-accuracy,causal or constellation validation."
+  }
+}

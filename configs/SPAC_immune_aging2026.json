@@ -1,0 +1,64 @@
+{
+  "dataset_id": "SPAC_immune_aging2026",
+  "study_id": "SPAC_immune_aging2026",
+  "input_format": "h5ad",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "__index__",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "url": "https://artyomovlab.wustl.edu/scn-m/var/datasets/curated/maksim/GZMB_GZMK/SPAC_new_annotation_clean/files/SPAC_filtered_donors_reannotated.h5ad",
+  "expected_bytes": 1896943745,
+  "sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "sample_mapping_evidence": "33nonmissing original donor codes, unique original cell IDs and exact cell suffix-to-donor assignments. Count one conservative material group per source donor. Candidate original-publication mapping remains an inference, not a transferred clinical table.",
+  "physical_sample_mapping_evidence": "One material group per deposited donor code; no unreported visit labels inferred.",
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "author_celltype"
+    },
+    "constants": {
+      "tissue": "blood",
+      "condition": "Aging atlas cohort context; individual diagnosis not reported",
+      "source_visit_code": "unspecified_source_material",
+      "source_specimen": "Human PBMC; source SPAC cohort",
+      "source_gene_policy": "22091 original symbol coordinates; outside-axis genes unavailable; no external mapping inferred",
+      "source_age_policy": "Original atlas age field retained literally. Candidate original table has93/95 for two atlas90 records; do not silently replace or treat all atlas90 as exact age90.",
+      "source_metadata_policy": "Original No_info strings and clinical/batch missingness preserved. Candidate primary dates and diagnoses not transferred.",
+      "source_identity_policy": "Study-scoped public atlas donor codes; global cross-study identity unresolved",
+      "split_assignment": "unassigned; donor grouping required, no learned preprocessing or split fitted"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "source_url": "https://artyomovlab.wustl.edu/human-immune-aging-trajectories/",
+    "primary_PMID": "42854692",
+    "primary_DOI": "10.1016/j.immuni.2026.09.012",
+    "access": "Official public per-cohort H5AD and file listing, no login",
+    "access_terms_url": "https://artyomovlab.wustl.edu/human-immune-aging-trajectories/",
+    "license": "not_specified_in_public_cohort_configuration",
+    "raw_count_review": {
+      "path": "references/datasets/SPAC_immune_aging_full_count_review.json",
+      "sha256": "1f529e619de1ba5608b101d366e6eff4b8b983223d4c17ff1da99cca13c246b7"
+    },
+    "source_identity_review": {
+      "path": "references/datasets/SPAC_immune_aging_source_identity_review.json",
+      "sha256": "ce8a5d2d82f3ae00b775de07353b326a6d3a9b3d02c218a607a11e4a63e6dae5"
+    },
+    "metadata_policy": "Source age/sex/BMI/CMV/ethnicity and author annotations retained. Date, diagnosis and independent repeated draw identities not imputed.",
+    "gene_availability_policy": "Geometry and TP10K denominators use22091 deposited RNA genes;13MT and20351reference symbols observed. No zero-fill outside native source axes.",
+    "source_filtering_history": "Post-deposition public raw/X verified as integer counts; prior source gene/cell filtering not reconstructed from matrix size. TransformedX excluded."
+  }
+}

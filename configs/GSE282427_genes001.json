@@ -1,0 +1,3572 @@
+{
+  "dataset_id": "GSE282427_genes001",
+  "study_id": "GSE282427",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "20 original subject-level PBMC materials/20source people;8healthy children+12pediatric transplant recipients;80other-assay records excluded",
+  "source_metadata": {
+    "accession": "GSE282427",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/41442217/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282427",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+    "source_processing": [
+      "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+      "Library strategy: CITE-seq"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE282427_source_identity_review.json",
+      "sha256": "fdd90dbde1c7dee346bf728eb34572e174432cf08aea25e48fe13b469c85ac51"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8642885",
+      "donor_id": "HC1",
+      "source_metadata": {
+        "title": [
+          "HC1_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642885"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642885/suppl/GSM8642885_GEX_HC1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642885/suppl/GSM8642885_GEX_HC1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642885/suppl/GSM8642885_GEX_HC1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642885",
+        "source_GEO_title": "HC1_GEX",
+        "source_participant_code": "HC1",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642885/suppl/GSM8642885_GEX_HC1_features.tsv.gz",
+          "filename": "GSM8642885_GEX_HC1_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642885/suppl/GSM8642885_GEX_HC1_barcodes.tsv.gz",
+          "filename": "GSM8642885_GEX_HC1_barcodes.tsv.gz",
+          "expected_bytes": 49698,
+          "sha256": "6614aa76fdf949f9ee60a6fea201247153852d00dd18d86d69fdb656a88d66a9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642885/suppl/GSM8642885_GEX_HC1_matrix.mtx.gz",
+          "filename": "GSM8642885_GEX_HC1_matrix.mtx.gz",
+          "expected_bytes": 42142481,
+          "sha256": "ff0e5af7cfad741bbadc97c4a04d7eabd280b77273d1d8bde05f34e8d036597c"
+        }
+      ],
+      "genes_member": "GSM8642885_GEX_HC1_features.tsv.gz",
+      "barcodes_member": "GSM8642885_GEX_HC1_barcodes.tsv.gz",
+      "matrix_member": "GSM8642885_GEX_HC1_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 8156,
+        "genes": 22844,
+        "source_barcode_rows": 8156,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8156,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8156,
+          "full_source_RNA_counts": 36573923,
+          "selected_RNA_counts": 36573923,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642885.csv.gz",
+            "sha256": "28eaf89186e7c49a9a80de86625183ecf1ccb1f9ed48c8d07e7655127c47f00f"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642890",
+      "donor_id": "HC2",
+      "source_metadata": {
+        "title": [
+          "HC2_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642890"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642890/suppl/GSM8642890_GEX_HC2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642890/suppl/GSM8642890_GEX_HC2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642890/suppl/GSM8642890_GEX_HC2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642890",
+        "source_GEO_title": "HC2_GEX",
+        "source_participant_code": "HC2",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642890/suppl/GSM8642890_GEX_HC2_features.tsv.gz",
+          "filename": "GSM8642890_GEX_HC2_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642890/suppl/GSM8642890_GEX_HC2_barcodes.tsv.gz",
+          "filename": "GSM8642890_GEX_HC2_barcodes.tsv.gz",
+          "expected_bytes": 59437,
+          "sha256": "df0fc381c81aeee3201c0b4c4396de28fc56a01ed8540332bf78a33baf19142e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642890/suppl/GSM8642890_GEX_HC2_matrix.mtx.gz",
+          "filename": "GSM8642890_GEX_HC2_matrix.mtx.gz",
+          "expected_bytes": 50362582,
+          "sha256": "077866f198697663f77c6afea7b426705bb6b2600e7d45623b412eef2a4461a8"
+        }
+      ],
+      "genes_member": "GSM8642890_GEX_HC2_features.tsv.gz",
+      "barcodes_member": "GSM8642890_GEX_HC2_barcodes.tsv.gz",
+      "matrix_member": "GSM8642890_GEX_HC2_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 9795,
+        "genes": 22844,
+        "source_barcode_rows": 9795,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9795,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9795,
+          "full_source_RNA_counts": 44975023,
+          "selected_RNA_counts": 44975023,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642890.csv.gz",
+            "sha256": "f693ae754dd1ecb56f2284c3f31c674c77dd62770314549034cccae858ca1933"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642895",
+      "donor_id": "HC3",
+      "source_metadata": {
+        "title": [
+          "HC3_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642895"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642895/suppl/GSM8642895_GEX_HC3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642895/suppl/GSM8642895_GEX_HC3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642895/suppl/GSM8642895_GEX_HC3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642895",
+        "source_GEO_title": "HC3_GEX",
+        "source_participant_code": "HC3",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642895/suppl/GSM8642895_GEX_HC3_features.tsv.gz",
+          "filename": "GSM8642895_GEX_HC3_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642895/suppl/GSM8642895_GEX_HC3_barcodes.tsv.gz",
+          "filename": "GSM8642895_GEX_HC3_barcodes.tsv.gz",
+          "expected_bytes": 39948,
+          "sha256": "01342231385401df1f65627cd84aed203d2eaf3d09521ebf3055c6e1925cf773"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642895/suppl/GSM8642895_GEX_HC3_matrix.mtx.gz",
+          "filename": "GSM8642895_GEX_HC3_matrix.mtx.gz",
+          "expected_bytes": 33766916,
+          "sha256": "4a4b59c808a2113098953bc4a6b4ad95496c61eb7fbff1b2ade45c05728c958c"
+        }
+      ],
+      "genes_member": "GSM8642895_GEX_HC3_features.tsv.gz",
+      "barcodes_member": "GSM8642895_GEX_HC3_barcodes.tsv.gz",
+      "matrix_member": "GSM8642895_GEX_HC3_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 6474,
+        "genes": 22844,
+        "source_barcode_rows": 6474,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6474,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6474,
+          "full_source_RNA_counts": 28151262,
+          "selected_RNA_counts": 28151262,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642895.csv.gz",
+            "sha256": "a259b78bcc61c92537fa5e9361528bf79d0ae964c47836f28d24d049e86d11ac"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642900",
+      "donor_id": "HC4",
+      "source_metadata": {
+        "title": [
+          "HC4_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642900"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642900/suppl/GSM8642900_GEX_HC4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642900/suppl/GSM8642900_GEX_HC4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642900/suppl/GSM8642900_GEX_HC4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642900",
+        "source_GEO_title": "HC4_GEX",
+        "source_participant_code": "HC4",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642900/suppl/GSM8642900_GEX_HC4_features.tsv.gz",
+          "filename": "GSM8642900_GEX_HC4_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642900/suppl/GSM8642900_GEX_HC4_barcodes.tsv.gz",
+          "filename": "GSM8642900_GEX_HC4_barcodes.tsv.gz",
+          "expected_bytes": 20916,
+          "sha256": "c30b901eed8b9464f346480a3ff3ad451f40527f88f01ea2aa07a4f65cdf55ab"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642900/suppl/GSM8642900_GEX_HC4_matrix.mtx.gz",
+          "filename": "GSM8642900_GEX_HC4_matrix.mtx.gz",
+          "expected_bytes": 16514087,
+          "sha256": "f04d9242c8341a19ee67672693259b0e3a63b24057b838852e99fb27e52e0635"
+        }
+      ],
+      "genes_member": "GSM8642900_GEX_HC4_features.tsv.gz",
+      "barcodes_member": "GSM8642900_GEX_HC4_barcodes.tsv.gz",
+      "matrix_member": "GSM8642900_GEX_HC4_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 3268,
+        "genes": 22844,
+        "source_barcode_rows": 3268,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3268,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3268,
+          "full_source_RNA_counts": 13785745,
+          "selected_RNA_counts": 13785745,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642900.csv.gz",
+            "sha256": "bcbe21d1a7a2976ec4b0256bf8ad22807e75c83cc8387492c57dffbaac882a09"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642905",
+      "donor_id": "HC5",
+      "source_metadata": {
+        "title": [
+          "HC5_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642905"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642905/suppl/GSM8642905_GEX_HC5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642905/suppl/GSM8642905_GEX_HC5_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642905/suppl/GSM8642905_GEX_HC5_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642905",
+        "source_GEO_title": "HC5_GEX",
+        "source_participant_code": "HC5",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642905/suppl/GSM8642905_GEX_HC5_features.tsv.gz",
+          "filename": "GSM8642905_GEX_HC5_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642905/suppl/GSM8642905_GEX_HC5_barcodes.tsv.gz",
+          "filename": "GSM8642905_GEX_HC5_barcodes.tsv.gz",
+          "expected_bytes": 22793,
+          "sha256": "d6bf830c0c1d044af038bcf0e9b24b8404144183c396399073fe6520220090b2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642905/suppl/GSM8642905_GEX_HC5_matrix.mtx.gz",
+          "filename": "GSM8642905_GEX_HC5_matrix.mtx.gz",
+          "expected_bytes": 21929059,
+          "sha256": "ffd9c0a3a7fc3a375808f7465405563f3091abe382efdbdfea42018debb14df6"
+        }
+      ],
+      "genes_member": "GSM8642905_GEX_HC5_features.tsv.gz",
+      "barcodes_member": "GSM8642905_GEX_HC5_barcodes.tsv.gz",
+      "matrix_member": "GSM8642905_GEX_HC5_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 3565,
+        "genes": 22844,
+        "source_barcode_rows": 3565,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3565,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3565,
+          "full_source_RNA_counts": 19698091,
+          "selected_RNA_counts": 19698091,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642905.csv.gz",
+            "sha256": "60b0e28856bcd53fb437ba189366b276239f662a4d249e725f8477a8ca7b52bd"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642910",
+      "donor_id": "HC6",
+      "source_metadata": {
+        "title": [
+          "HC6_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642910"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642910/suppl/GSM8642910_GEX_HC6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642910/suppl/GSM8642910_GEX_HC6_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642910/suppl/GSM8642910_GEX_HC6_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642910",
+        "source_GEO_title": "HC6_GEX",
+        "source_participant_code": "HC6",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642910/suppl/GSM8642910_GEX_HC6_features.tsv.gz",
+          "filename": "GSM8642910_GEX_HC6_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642910/suppl/GSM8642910_GEX_HC6_barcodes.tsv.gz",
+          "filename": "GSM8642910_GEX_HC6_barcodes.tsv.gz",
+          "expected_bytes": 43657,
+          "sha256": "77b18eedb7157bf65e836399c962ddcdf64b6fad9705276df1efcbd1a7e08d44"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642910/suppl/GSM8642910_GEX_HC6_matrix.mtx.gz",
+          "filename": "GSM8642910_GEX_HC6_matrix.mtx.gz",
+          "expected_bytes": 35464658,
+          "sha256": "78f471129659fa8f4bd4511a998685d912f966652a0b648c756d16a6089767cb"
+        }
+      ],
+      "genes_member": "GSM8642910_GEX_HC6_features.tsv.gz",
+      "barcodes_member": "GSM8642910_GEX_HC6_barcodes.tsv.gz",
+      "matrix_member": "GSM8642910_GEX_HC6_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 7102,
+        "genes": 22844,
+        "source_barcode_rows": 7102,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7102,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7102,
+          "full_source_RNA_counts": 29395459,
+          "selected_RNA_counts": 29395459,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642910.csv.gz",
+            "sha256": "4ea9863beb01d9021ca6c1a8b3358c732aadc221772be30370b4f1b08ae18db6"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642915",
+      "donor_id": "HC7",
+      "source_metadata": {
+        "title": [
+          "HC7_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642915"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642915/suppl/GSM8642915_GEX_HC7_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642915/suppl/GSM8642915_GEX_HC7_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642915/suppl/GSM8642915_GEX_HC7_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642915",
+        "source_GEO_title": "HC7_GEX",
+        "source_participant_code": "HC7",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642915/suppl/GSM8642915_GEX_HC7_features.tsv.gz",
+          "filename": "GSM8642915_GEX_HC7_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642915/suppl/GSM8642915_GEX_HC7_barcodes.tsv.gz",
+          "filename": "GSM8642915_GEX_HC7_barcodes.tsv.gz",
+          "expected_bytes": 23460,
+          "sha256": "3ba1e627fa0ae1eca1876c80c91e5b6bab47e267c7af8af29e75ce0ba5658642"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642915/suppl/GSM8642915_GEX_HC7_matrix.mtx.gz",
+          "filename": "GSM8642915_GEX_HC7_matrix.mtx.gz",
+          "expected_bytes": 20593352,
+          "sha256": "bbead612ea393ffd5376a1cefd870ece654c85a59a710e8ed0a5e800504db0eb"
+        }
+      ],
+      "genes_member": "GSM8642915_GEX_HC7_features.tsv.gz",
+      "barcodes_member": "GSM8642915_GEX_HC7_barcodes.tsv.gz",
+      "matrix_member": "GSM8642915_GEX_HC7_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 3667,
+        "genes": 22844,
+        "source_barcode_rows": 3667,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3667,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3667,
+          "full_source_RNA_counts": 17636334,
+          "selected_RNA_counts": 17636334,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642915.csv.gz",
+            "sha256": "af19bd8406cb00ca44e2e3c26fc0e1ad22cf827d75b7c7f73935e6b74b8f5261"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642920",
+      "donor_id": "HC8",
+      "source_metadata": {
+        "title": [
+          "HC8_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642920"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642920/suppl/GSM8642920_GEX_HC8_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642920/suppl/GSM8642920_GEX_HC8_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642920/suppl/GSM8642920_GEX_HC8_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642920",
+        "source_GEO_title": "HC8_GEX",
+        "source_participant_code": "HC8",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "healthy control",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642920/suppl/GSM8642920_GEX_HC8_features.tsv.gz",
+          "filename": "GSM8642920_GEX_HC8_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642920/suppl/GSM8642920_GEX_HC8_barcodes.tsv.gz",
+          "filename": "GSM8642920_GEX_HC8_barcodes.tsv.gz",
+          "expected_bytes": 10398,
+          "sha256": "6caac5efe1b1ff090c1bc629efd38f2e4025837155d67787c11fa7ace5f1e555"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642920/suppl/GSM8642920_GEX_HC8_matrix.mtx.gz",
+          "filename": "GSM8642920_GEX_HC8_matrix.mtx.gz",
+          "expected_bytes": 8226977,
+          "sha256": "d69d28e803c2b49aa114788a365c1a8fc8de2146ba50f347963d779e7844c516"
+        }
+      ],
+      "genes_member": "GSM8642920_GEX_HC8_features.tsv.gz",
+      "barcodes_member": "GSM8642920_GEX_HC8_barcodes.tsv.gz",
+      "matrix_member": "GSM8642920_GEX_HC8_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 1547,
+        "genes": 22844,
+        "source_barcode_rows": 1547,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1547,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1547,
+          "full_source_RNA_counts": 6823133,
+          "selected_RNA_counts": 6823133,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642920.csv.gz",
+            "sha256": "5a4c20967605727840054666734b1118b8a781a3860f5af43830d549ff17009d"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642925",
+      "donor_id": "SOTR1",
+      "source_metadata": {
+        "title": [
+          "SOTR1_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642925"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642925/suppl/GSM8642925_GEX_SOTR1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642925/suppl/GSM8642925_GEX_SOTR1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642925/suppl/GSM8642925_GEX_SOTR1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642925",
+        "source_GEO_title": "SOTR1_GEX",
+        "source_participant_code": "SOTR1",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642925/suppl/GSM8642925_GEX_SOTR1_features.tsv.gz",
+          "filename": "GSM8642925_GEX_SOTR1_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642925/suppl/GSM8642925_GEX_SOTR1_barcodes.tsv.gz",
+          "filename": "GSM8642925_GEX_SOTR1_barcodes.tsv.gz",
+          "expected_bytes": 37753,
+          "sha256": "181b0a2c6e34fdc44801f69aba572c62f1ca218ef28988edee45c97ba53cfc72"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642925/suppl/GSM8642925_GEX_SOTR1_matrix.mtx.gz",
+          "filename": "GSM8642925_GEX_SOTR1_matrix.mtx.gz",
+          "expected_bytes": 38346733,
+          "sha256": "94e0bc832b9d32a025e168bdb23304a74025293ea046b64b7ba3663362d637d5"
+        }
+      ],
+      "genes_member": "GSM8642925_GEX_SOTR1_features.tsv.gz",
+      "barcodes_member": "GSM8642925_GEX_SOTR1_barcodes.tsv.gz",
+      "matrix_member": "GSM8642925_GEX_SOTR1_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 6128,
+        "genes": 22844,
+        "source_barcode_rows": 6128,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6128,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6128,
+          "full_source_RNA_counts": 33436574,
+          "selected_RNA_counts": 33436574,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642925.csv.gz",
+            "sha256": "cc5eaaa1881d985030015838f62b7631aa1fced79ffbcf485d6fec904d621bd5"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642930",
+      "donor_id": "SOTR2",
+      "source_metadata": {
+        "title": [
+          "SOTR2_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642930"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642930/suppl/GSM8642930_GEX_SOTR2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642930/suppl/GSM8642930_GEX_SOTR2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642930/suppl/GSM8642930_GEX_SOTR2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642930",
+        "source_GEO_title": "SOTR2_GEX",
+        "source_participant_code": "SOTR2",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642930/suppl/GSM8642930_GEX_SOTR2_features.tsv.gz",
+          "filename": "GSM8642930_GEX_SOTR2_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642930/suppl/GSM8642930_GEX_SOTR2_barcodes.tsv.gz",
+          "filename": "GSM8642930_GEX_SOTR2_barcodes.tsv.gz",
+          "expected_bytes": 42933,
+          "sha256": "0bcfd2122f6699d3b9776b18eca0f9156cf90c09c238c71b7129912ef425b86c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642930/suppl/GSM8642930_GEX_SOTR2_matrix.mtx.gz",
+          "filename": "GSM8642930_GEX_SOTR2_matrix.mtx.gz",
+          "expected_bytes": 42458056,
+          "sha256": "67927e98baea7d75fc48b85a5ce077a217ce357ec8fd45b4e124f33da5244fac"
+        }
+      ],
+      "genes_member": "GSM8642930_GEX_SOTR2_features.tsv.gz",
+      "barcodes_member": "GSM8642930_GEX_SOTR2_barcodes.tsv.gz",
+      "matrix_member": "GSM8642930_GEX_SOTR2_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 7028,
+        "genes": 22844,
+        "source_barcode_rows": 7028,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7028,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7028,
+          "full_source_RNA_counts": 38921700,
+          "selected_RNA_counts": 38921700,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642930.csv.gz",
+            "sha256": "7a96de45dbdaf86d322d9cc0aeab7e3e8c7e1c8c8807e5e9933872e81ab709c8"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642935",
+      "donor_id": "SOTR3",
+      "source_metadata": {
+        "title": [
+          "SOTR3, GEX"
+        ],
+        "geo_accession": [
+          "GSM8642935"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642935/suppl/GSM8642935_GEX_SOTR3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642935/suppl/GSM8642935_GEX_SOTR3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642935/suppl/GSM8642935_GEX_SOTR3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642935",
+        "source_GEO_title": "SOTR3, GEX",
+        "source_participant_code": "SOTR3",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642935/suppl/GSM8642935_GEX_SOTR3_features.tsv.gz",
+          "filename": "GSM8642935_GEX_SOTR3_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642935/suppl/GSM8642935_GEX_SOTR3_barcodes.tsv.gz",
+          "filename": "GSM8642935_GEX_SOTR3_barcodes.tsv.gz",
+          "expected_bytes": 49937,
+          "sha256": "a5ec738562ef6ae8e87e2dd9bcdb8697a200352514bc8269eaca29d2aa8c55e8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642935/suppl/GSM8642935_GEX_SOTR3_matrix.mtx.gz",
+          "filename": "GSM8642935_GEX_SOTR3_matrix.mtx.gz",
+          "expected_bytes": 58831957,
+          "sha256": "9a928798bb64746cd163141e9f63e2c53d32c0dafd111acb1f2a4548ec7f30df"
+        }
+      ],
+      "genes_member": "GSM8642935_GEX_SOTR3_features.tsv.gz",
+      "barcodes_member": "GSM8642935_GEX_SOTR3_barcodes.tsv.gz",
+      "matrix_member": "GSM8642935_GEX_SOTR3_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 8332,
+        "genes": 22844,
+        "source_barcode_rows": 8332,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8332,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8332,
+          "full_source_RNA_counts": 56176636,
+          "selected_RNA_counts": 56176636,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642935.csv.gz",
+            "sha256": "3a7f75670c8fcaa6917508aacca81cc47cdea0534648d56ae23bd5e58c72daef"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642940",
+      "donor_id": "SOTR4",
+      "source_metadata": {
+        "title": [
+          "SOTR4_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642940"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642940/suppl/GSM8642940_GEX_SOTR4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642940/suppl/GSM8642940_GEX_SOTR4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642940/suppl/GSM8642940_GEX_SOTR4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642940",
+        "source_GEO_title": "SOTR4_GEX",
+        "source_participant_code": "SOTR4",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642940/suppl/GSM8642940_GEX_SOTR4_features.tsv.gz",
+          "filename": "GSM8642940_GEX_SOTR4_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642940/suppl/GSM8642940_GEX_SOTR4_barcodes.tsv.gz",
+          "filename": "GSM8642940_GEX_SOTR4_barcodes.tsv.gz",
+          "expected_bytes": 49098,
+          "sha256": "a34cea467935fb5df1c14ad2acc10a4ade3702cb41c68e4f844ffda0e12b9147"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642940/suppl/GSM8642940_GEX_SOTR4_matrix.mtx.gz",
+          "filename": "GSM8642940_GEX_SOTR4_matrix.mtx.gz",
+          "expected_bytes": 43596323,
+          "sha256": "7eab35bcfd9a552c95a8a2e40a69165619e13f31ba0bc2b270b5c055ba1bc0bc"
+        }
+      ],
+      "genes_member": "GSM8642940_GEX_SOTR4_features.tsv.gz",
+      "barcodes_member": "GSM8642940_GEX_SOTR4_barcodes.tsv.gz",
+      "matrix_member": "GSM8642940_GEX_SOTR4_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 8092,
+        "genes": 22844,
+        "source_barcode_rows": 8092,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8092,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8092,
+          "full_source_RNA_counts": 37266948,
+          "selected_RNA_counts": 37266948,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642940.csv.gz",
+            "sha256": "1c110cca11a175f542223918f029e9a8b12ea68300ee3ae3a7b33e89c67191e9"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642945",
+      "donor_id": "SOTR5",
+      "source_metadata": {
+        "title": [
+          "SOTR5_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642945"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642945/suppl/GSM8642945_GEX_SOTR5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642945/suppl/GSM8642945_GEX_SOTR5_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642945/suppl/GSM8642945_GEX_SOTR5_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642945",
+        "source_GEO_title": "SOTR5_GEX",
+        "source_participant_code": "SOTR5",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642945/suppl/GSM8642945_GEX_SOTR5_features.tsv.gz",
+          "filename": "GSM8642945_GEX_SOTR5_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642945/suppl/GSM8642945_GEX_SOTR5_barcodes.tsv.gz",
+          "filename": "GSM8642945_GEX_SOTR5_barcodes.tsv.gz",
+          "expected_bytes": 33465,
+          "sha256": "5ca713792f57a32a15f757d55c0f916b34040275caf456a81777834909b847fa"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642945/suppl/GSM8642945_GEX_SOTR5_matrix.mtx.gz",
+          "filename": "GSM8642945_GEX_SOTR5_matrix.mtx.gz",
+          "expected_bytes": 33508239,
+          "sha256": "ff73dccb2f29b90d4c095f5c7973354275ce32d0feee480df74ff8141418b0c0"
+        }
+      ],
+      "genes_member": "GSM8642945_GEX_SOTR5_features.tsv.gz",
+      "barcodes_member": "GSM8642945_GEX_SOTR5_barcodes.tsv.gz",
+      "matrix_member": "GSM8642945_GEX_SOTR5_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 5408,
+        "genes": 22844,
+        "source_barcode_rows": 5408,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5408,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5408,
+          "full_source_RNA_counts": 28031853,
+          "selected_RNA_counts": 28031853,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642945.csv.gz",
+            "sha256": "80bf17cf660a46db91f03b917bcc349a34984fc01e510ce2f69decd53a2d08b1"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642950",
+      "donor_id": "SOTR6",
+      "source_metadata": {
+        "title": [
+          "SOTR6_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642950"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642950/suppl/GSM8642950_GEX_SOTR6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642950/suppl/GSM8642950_GEX_SOTR6_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642950/suppl/GSM8642950_GEX_SOTR6_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642950",
+        "source_GEO_title": "SOTR6_GEX",
+        "source_participant_code": "SOTR6",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642950/suppl/GSM8642950_GEX_SOTR6_features.tsv.gz",
+          "filename": "GSM8642950_GEX_SOTR6_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642950/suppl/GSM8642950_GEX_SOTR6_barcodes.tsv.gz",
+          "filename": "GSM8642950_GEX_SOTR6_barcodes.tsv.gz",
+          "expected_bytes": 66983,
+          "sha256": "35987b3f0ef08c9e85ceafda42f0223c05d6a984fd640682cc69ab2ba627d0ab"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642950/suppl/GSM8642950_GEX_SOTR6_matrix.mtx.gz",
+          "filename": "GSM8642950_GEX_SOTR6_matrix.mtx.gz",
+          "expected_bytes": 50340871,
+          "sha256": "7d477e5f781820fbd3186caeeac04b30ed45a21a814cffd82d9a121b259f42ef"
+        }
+      ],
+      "genes_member": "GSM8642950_GEX_SOTR6_features.tsv.gz",
+      "barcodes_member": "GSM8642950_GEX_SOTR6_barcodes.tsv.gz",
+      "matrix_member": "GSM8642950_GEX_SOTR6_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 11500,
+        "genes": 22844,
+        "source_barcode_rows": 11500,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11500,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11500,
+          "full_source_RNA_counts": 46595443,
+          "selected_RNA_counts": 46595443,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642950.csv.gz",
+            "sha256": "4ae629b58a263f91e725ea9783d6235006b52b72fbf4437324bbaab61464808c"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642955",
+      "donor_id": "SOTR7",
+      "source_metadata": {
+        "title": [
+          "SOTR7_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642955"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642955/suppl/GSM8642955_GEX_SOTR7_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642955/suppl/GSM8642955_GEX_SOTR7_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642955/suppl/GSM8642955_GEX_SOTR7_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642955",
+        "source_GEO_title": "SOTR7_GEX",
+        "source_participant_code": "SOTR7",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642955/suppl/GSM8642955_GEX_SOTR7_features.tsv.gz",
+          "filename": "GSM8642955_GEX_SOTR7_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642955/suppl/GSM8642955_GEX_SOTR7_barcodes.tsv.gz",
+          "filename": "GSM8642955_GEX_SOTR7_barcodes.tsv.gz",
+          "expected_bytes": 67677,
+          "sha256": "8076604a6eaf5fecabcf648c764eb287a8b52fedbe1751bc00a5803c037b671f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642955/suppl/GSM8642955_GEX_SOTR7_matrix.mtx.gz",
+          "filename": "GSM8642955_GEX_SOTR7_matrix.mtx.gz",
+          "expected_bytes": 65057712,
+          "sha256": "56ebcaf4107592dbc051eedc00acee6ce04be8bbf1904708d065833375408a71"
+        }
+      ],
+      "genes_member": "GSM8642955_GEX_SOTR7_features.tsv.gz",
+      "barcodes_member": "GSM8642955_GEX_SOTR7_barcodes.tsv.gz",
+      "matrix_member": "GSM8642955_GEX_SOTR7_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 11311,
+        "genes": 22844,
+        "source_barcode_rows": 11311,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11311,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11311,
+          "full_source_RNA_counts": 55753334,
+          "selected_RNA_counts": 55753334,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642955.csv.gz",
+            "sha256": "e3cc8e40f1d6c556249e5dcb8a2f06590a5e232ee1328778b999ce946c8e1329"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642960",
+      "donor_id": "SOTR8",
+      "source_metadata": {
+        "title": [
+          "SOTR8_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642960"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642960/suppl/GSM8642960_GEX_SOTR8_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642960/suppl/GSM8642960_GEX_SOTR8_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642960/suppl/GSM8642960_GEX_SOTR8_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642960",
+        "source_GEO_title": "SOTR8_GEX",
+        "source_participant_code": "SOTR8",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642960/suppl/GSM8642960_GEX_SOTR8_features.tsv.gz",
+          "filename": "GSM8642960_GEX_SOTR8_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642960/suppl/GSM8642960_GEX_SOTR8_barcodes.tsv.gz",
+          "filename": "GSM8642960_GEX_SOTR8_barcodes.tsv.gz",
+          "expected_bytes": 97382,
+          "sha256": "0aaf89d2baa962f43cd62f5d469e5fb1f5e3e6aceba2ef1b105a8a10cdad5d3f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642960/suppl/GSM8642960_GEX_SOTR8_matrix.mtx.gz",
+          "filename": "GSM8642960_GEX_SOTR8_matrix.mtx.gz",
+          "expected_bytes": 100001965,
+          "sha256": "66a0144a4222ab9c94766f32f51d811f8d9d63b8f0cd5b64482fedffec075d1b"
+        }
+      ],
+      "genes_member": "GSM8642960_GEX_SOTR8_features.tsv.gz",
+      "barcodes_member": "GSM8642960_GEX_SOTR8_barcodes.tsv.gz",
+      "matrix_member": "GSM8642960_GEX_SOTR8_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 16176,
+        "genes": 22844,
+        "source_barcode_rows": 16176,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 16176,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 16176,
+          "full_source_RNA_counts": 91876412,
+          "selected_RNA_counts": 91876412,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642960.csv.gz",
+            "sha256": "a478ea54322263b130af98db4536874020c425f2e41d1036f87d7168e4129ae2"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642965",
+      "donor_id": "SOTR9",
+      "source_metadata": {
+        "title": [
+          "SOTR9_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642965"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642965/suppl/GSM8642965_GEX_SOTR9_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642965/suppl/GSM8642965_GEX_SOTR9_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642965/suppl/GSM8642965_GEX_SOTR9_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642965",
+        "source_GEO_title": "SOTR9_GEX",
+        "source_participant_code": "SOTR9",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642965/suppl/GSM8642965_GEX_SOTR9_features.tsv.gz",
+          "filename": "GSM8642965_GEX_SOTR9_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642965/suppl/GSM8642965_GEX_SOTR9_barcodes.tsv.gz",
+          "filename": "GSM8642965_GEX_SOTR9_barcodes.tsv.gz",
+          "expected_bytes": 55426,
+          "sha256": "d5254c40bfed8d5e5fad03c247f7c310f125ae4da1158755b306b8441a64a77f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642965/suppl/GSM8642965_GEX_SOTR9_matrix.mtx.gz",
+          "filename": "GSM8642965_GEX_SOTR9_matrix.mtx.gz",
+          "expected_bytes": 46406735,
+          "sha256": "2c6b4f6a304566d6dcdeb081304f6eb92f2ccb8c13c40d409a18a8fcd2127586"
+        }
+      ],
+      "genes_member": "GSM8642965_GEX_SOTR9_features.tsv.gz",
+      "barcodes_member": "GSM8642965_GEX_SOTR9_barcodes.tsv.gz",
+      "matrix_member": "GSM8642965_GEX_SOTR9_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 9158,
+        "genes": 22844,
+        "source_barcode_rows": 9158,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9158,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9158,
+          "full_source_RNA_counts": 38949023,
+          "selected_RNA_counts": 38949023,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642965.csv.gz",
+            "sha256": "732f5b90a421d8c46d5cdb527a4fef1ad9c73b6855e0ab4c5df88de2c695adfe"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642970",
+      "donor_id": "SOTR10",
+      "source_metadata": {
+        "title": [
+          "SOTR10_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642970"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642970/suppl/GSM8642970_GEX_SOTR10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642970/suppl/GSM8642970_GEX_SOTR10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642970/suppl/GSM8642970_GEX_SOTR10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642970",
+        "source_GEO_title": "SOTR10_GEX",
+        "source_participant_code": "SOTR10",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642970/suppl/GSM8642970_GEX_SOTR10_features.tsv.gz",
+          "filename": "GSM8642970_GEX_SOTR10_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642970/suppl/GSM8642970_GEX_SOTR10_barcodes.tsv.gz",
+          "filename": "GSM8642970_GEX_SOTR10_barcodes.tsv.gz",
+          "expected_bytes": 45721,
+          "sha256": "ef4559a1ca57b03eb9f566062cb5425cb7f19ebda5b2ab951c88bdc210edc79a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642970/suppl/GSM8642970_GEX_SOTR10_matrix.mtx.gz",
+          "filename": "GSM8642970_GEX_SOTR10_matrix.mtx.gz",
+          "expected_bytes": 50088566,
+          "sha256": "3bbe4bf34485a8d556efa62a411c8550cdc08fff2a6f91707f999c151f09ad64"
+        }
+      ],
+      "genes_member": "GSM8642970_GEX_SOTR10_features.tsv.gz",
+      "barcodes_member": "GSM8642970_GEX_SOTR10_barcodes.tsv.gz",
+      "matrix_member": "GSM8642970_GEX_SOTR10_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 7607,
+        "genes": 22844,
+        "source_barcode_rows": 7607,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7607,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7607,
+          "full_source_RNA_counts": 47548342,
+          "selected_RNA_counts": 47548342,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642970.csv.gz",
+            "sha256": "8721d61aea79d5d88751ee17aa9268340bf0f458aa821170ca96c3c43b6c3f24"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642975",
+      "donor_id": "SOTR11",
+      "source_metadata": {
+        "title": [
+          "SOTR11_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642975"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642975/suppl/GSM8642975_GEX_SOTR11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642975/suppl/GSM8642975_GEX_SOTR11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642975/suppl/GSM8642975_GEX_SOTR11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642975",
+        "source_GEO_title": "SOTR11_GEX",
+        "source_participant_code": "SOTR11",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642975/suppl/GSM8642975_GEX_SOTR11_features.tsv.gz",
+          "filename": "GSM8642975_GEX_SOTR11_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642975/suppl/GSM8642975_GEX_SOTR11_barcodes.tsv.gz",
+          "filename": "GSM8642975_GEX_SOTR11_barcodes.tsv.gz",
+          "expected_bytes": 41092,
+          "sha256": "debbacb369251c9fdf4684e3d192ce193bdfd55f7d58caa7a6006e0379800ee4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642975/suppl/GSM8642975_GEX_SOTR11_matrix.mtx.gz",
+          "filename": "GSM8642975_GEX_SOTR11_matrix.mtx.gz",
+          "expected_bytes": 41136790,
+          "sha256": "b3fffcc8721955ccb561c636460a968da6aa71038c1c4ce17de1a694cabbdb57"
+        }
+      ],
+      "genes_member": "GSM8642975_GEX_SOTR11_features.tsv.gz",
+      "barcodes_member": "GSM8642975_GEX_SOTR11_barcodes.tsv.gz",
+      "matrix_member": "GSM8642975_GEX_SOTR11_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 6740,
+        "genes": 22844,
+        "source_barcode_rows": 6740,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6740,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6740,
+          "full_source_RNA_counts": 35498181,
+          "selected_RNA_counts": 35498181,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642975.csv.gz",
+            "sha256": "a75869467473c8f3afef306bc9515d64dea51efb63028e4a7f786a6d38044d1c"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8642980",
+      "donor_id": "SOTR12",
+      "source_metadata": {
+        "title": [
+          "SOTR12_GEX"
+        ],
+        "geo_accession": [
+          "GSM8642980"
+        ],
+        "status": [
+          "Public on Dec 18 2025"
+        ],
+        "submission_date": [
+          "Nov 20 2024"
+        ],
+        "last_update_date": [
+          "Dec 18 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated by high density centrifugation.",
+          "Multiomic scRNAseq was performed in two independent library preparations. PBMC were stained with hashtag and CITE-antibodies, pooled and loaded onto Chromium Next GEM Single Cell 5' Kit v2 channels. Libraries for gene expression (GEX), hashtags (HTO), CITE-antibodies (ADT) and immune cell repertoire (TCR and BCR) were constructed and pooled prior to sequencing."
+        ],
+        "description": [
+          "mRNA",
+          "GEX ('5 mRNA) library: read1 file contains cell barcode and UMI; read2 file contains transcript"
+        ],
+        "data_processing": [
+          "Raw reads were aligned to the human GRCh38 genome using Cell Ranger pipeline (version 7.0.1) and cell barcodes were used as whitelist to quantify ADT/HTO counts and TCR/BCR sequences. Both independent libraries were imported into a Seurat project (R version 4.3.2, Seurat version 5.0.1). Low quality reads (nFeature_RNA < 400, nCount_RNA < 1250, percent.mt > 10, nCount_HTO < 4000) were excluded prior to demultiplexing using the HTODemux function (positive.quantile = 0.99).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Subject-level demultiplexed matrixes were exported from R in the 10x format.",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Johannes,,Wedel"
+        ],
+        "contact_email": [
+          "johannes.wedel@childrens.harvard.edu"
+        ],
+        "contact_institute": [
+          "Boston Children's Hospital"
+        ],
+        "contact_address": [
+          "300 Longwood Ave"
+        ],
+        "contact_city": [
+          "Boston"
+        ],
+        "contact_state": [
+          "MA"
+        ],
+        "contact_zip/postal_code": [
+          "02115"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642980/suppl/GSM8642980_GEX_SOTR12_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642980/suppl/GSM8642980_GEX_SOTR12_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642980/suppl/GSM8642980_GEX_SOTR12_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE282427"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8642980",
+        "source_GEO_title": "SOTR12_GEX",
+        "source_participant_code": "SOTR12",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "subject_demultiplexed_PBMC_GEX",
+        "condition": "solid organ transplant recipient",
+        "source_age_category": "pediatric",
+        "source_characteristics_json": "{\"cell type\": \"PBMC\", \"tissue\": \"Blood\"}",
+        "source_specimen": "Density-centrifugation PBMC; author subject-level demultiplexed GEX counts",
+        "source_identity_policy": "Original subject label and exact GEX filename agree. Twenty people each have five assay records; ADT/HTO/TCR/BCR are not new specimens. SOTR3 comma-space title retained without renaming source.",
+        "source_assignment_policy": "Published subject-level HTODemux assignments retained, not independently calibrated donor truth. Original two library preparations/run identity not individually mapped in GEO.",
+        "source_QC_as_reported": "Author excludes nFeature_RNA<400,nCount_RNA<1250,percent.mt>10,nCount_HTO<4000 before HTODemux positive.quantile0.99. Deposited counts are already selected; earlier excluded cells cannot be restored.",
+        "source_count_policy": "Native subject-level exported integer RNA matrices; no Seurat integrated values, ADT/HTO counts or receptor sequences used for expression geometry.",
+        "source_demographic_policy": "Cohort pediatric category from original source summary. Individual numerical age, sex, organ, medication, vaccine timing/response and calendar date not inferred from subject number or study title.",
+        "source_missingness_policy": "Missing demographic/clinical fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; original subject code retained; cross-study identity unresolved",
+        "source_gene_coverage_policy": "Only deposited native gene symbols are available. RNA library normalization uses these deposited axes; omitted genes and pre-selection transcriptome totals are unavailable. Native symbols retained literally without Ensembl inference or suffix stripping."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642980/suppl/GSM8642980_GEX_SOTR12_features.tsv.gz",
+          "filename": "GSM8642980_GEX_SOTR12_features.tsv.gz",
+          "expected_bytes": 84577,
+          "sha256": "c0143cd6d5fb26b08f23a6a4d8457e226195dd4bc2cef112e039134ffaf8083b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642980/suppl/GSM8642980_GEX_SOTR12_barcodes.tsv.gz",
+          "filename": "GSM8642980_GEX_SOTR12_barcodes.tsv.gz",
+          "expected_bytes": 132231,
+          "sha256": "8bab928591c39c87041fa4443142bb7b2b4c18ad444c4ca7f2c3ddf8b2044eaf"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8642nnn/GSM8642980/suppl/GSM8642980_GEX_SOTR12_matrix.mtx.gz",
+          "filename": "GSM8642980_GEX_SOTR12_matrix.mtx.gz",
+          "expected_bytes": 126856732,
+          "sha256": "1f4850e93e2eea65376d7eedcb2531b5e78af9d595b07ae8a4f7624c811f4955"
+        }
+      ],
+      "genes_member": "GSM8642980_GEX_SOTR12_features.tsv.gz",
+      "barcodes_member": "GSM8642980_GEX_SOTR12_barcodes.tsv.gz",
+      "matrix_member": "GSM8642980_GEX_SOTR12_matrix.mtx.gz",
+      "gene_identifier_format": "single_column_gene_symbols",
+      "source_count_review": {
+        "cells": 22094,
+        "genes": 22844,
+        "source_barcode_rows": 22094,
+        "gene_coordinate_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "source_feature_table_sha256": "dd58beb27b3b5a147cdb2136a0dff622c8e22a614f173c34e02c3755b5a96f05",
+        "integer_nonnegative_counts": true,
+        "native_gene_symbols_preserved": true,
+        "source_gene_id_mode": "native_symbols_without_Ensembl_mapping",
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 22094,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 22094,
+          "full_source_RNA_counts": 113247947,
+          "selected_RNA_counts": 113247947,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE282427_original_RNA_QC/GSM8642980.csv.gz",
+            "sha256": "443e9cc1252dc3e9f843a27719d8f15c73c91207f8c37f4c6fcb4b5f492fe039"
+          }
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "20 original subject-level PBMC materials/20source people;8healthy children+12pediatric transplant recipients;80other-assay records excluded"
+}

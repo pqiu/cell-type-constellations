@@ -1,0 +1,91 @@
+{
+  "dataset_id": "GSE206265_participants",
+  "study_id": "GSE206265",
+  "input_format": "reviewed_public_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE206265_participants_complete_original_RNA_audit.json",
+    "bytes": 4241,
+    "sha256": "1ecc7cfd3a049210f2218ce305d66707fc820d85ac6b39acda52fdf4e24fb609"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE206265_participants_source_identity_review.json",
+    "bytes": 2739,
+    "sha256": "0407a268e5391b309719c2979b62213d406e18eb560d9c27626e3ff6b21c256f"
+  },
+  "native_replay_module": "scripts.prepare_PBMC_206265_participants",
+  "native_replay_code": {
+    "path": "scripts/prepare_PBMC_206265_participants.py",
+    "bytes": 175,
+    "sha256": "ac015d2fa60b23f97ba02331d07fd7a01c4499e467ba4c5242d993754d067736"
+  },
+  "reviewed_source_assets": [
+    {
+      "path": "data/downloads/GSE206265_source_review/GSE206265_covid_flu.CITEseq.Seurat.obj.RDS.gz",
+      "bytes": 29339618579,
+      "sha256": "d75ee33b6dbf4a734c85cebaf07636f4d6169db9edc4c7037ccfc4b2df9ee501",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE206nnn/GSE206265/suppl/GSE206265_covid_flu.CITEseq.Seurat.obj.RDS.gz"
+    }
+  ],
+  "native_source_code_paths": [
+    "scripts/prepare_PBMC_206265.py",
+    "scripts/stage_PBMC_206265_native_counts.py",
+    "scripts/audit_PBMC_206265_original_RNA.py",
+    "scripts/review_PBMC_206265_source_identity.py",
+    "scripts/extract_PBMC_206265_original_RNA.R"
+  ],
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_physical_sample_key"
+  ],
+  "sample_mapping_evidence": "Depositedalt.subject.id/visitgiveparticipantsandvisits. Originalauthoranalysis explicitly forms sample.id fromparticipantplusvisit. PreserveBatchinobservationviews;fourparticipantvisits spanBatch1/Batch2andcountonceperauthorvisitkey. ExactfullcellIDsjoinonlycountcoordinates;cellprefix-to43GEOlibraryjoinsaretechnical,neverdonorassignment. No new SNP/hashtag/profile/demographic demultiplexing.",
+  "physical_sample_mapping_evidence": "40explicit originalparticipantcodes/120author-definedparticipantvisitgroups,with124dependentparticipant/visit/batchviews. ThreeadditionaltechnicalControlbatchmapsareheldoutsideeligible specimen/donor totals;Controlisnotanextra person.",
+  "metadata_mapping": {
+    "aliases": {
+      "age": "source_cell_age_numeric",
+      "sex": "source_sex",
+      "timepoint": "source_visit"
+    },
+    "value_maps": {
+      "condition": {
+        "source": "source_group",
+        "values": {
+          "HC": "Healthy control",
+          "COVR": "Prior mild COVID-19",
+          "NA": ""
+        }
+      }
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE206265",
+    "primary_PMID": "36599369",
+    "primary_DOI": "10.1038/s41586-022-05670-5",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE206265",
+    "access": "Public original Seurat RNAcountcarrier andauthorclinicalmetadata. No controlledrawreads/genotypes.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "GEO data license not specified; originalauthorresearch-onlysoftwaretermsrecorded",
+    "source_unit": "40explicit originalparticipantcodes/120author-definedparticipantvisitgroups,with124dependentparticipant/visit/batchviews. ThreeadditionaltechnicalControlbatchmapsareheldoutsideeligible specimen/donor totals;Controlisnotanextra person.",
+    "identity_policy": "Depositedalt.subject.id/visitgiveparticipantsandvisits. Originalauthoranalysis explicitly forms sample.id fromparticipantplusvisit. PreserveBatchinobservationviews;fourparticipantvisits spanBatch1/Batch2andcountonceperauthorvisitkey. ExactfullcellIDsjoinonlycountcoordinates;cellprefix-to43GEOlibraryjoinsaretechnical,neverdonorassignment. No new SNP/hashtag/profile/demographic demultiplexing.",
+    "clinical_policy": "Sourcecellage,sex,group,visitanddiagnosis-to-drawintervalretainoriginalvalues/missingness. KeepseparateauthorclinicalageandfullclinicalrowJSON;agedifferencesnotconvertedintodates. HC/COVRsourcegroupsmappedtoHealthycontrol/PriormildCOVID-19. Day0/1/28areoriginalnominalvisitlabels,notinventedcollectiontimestamps. Vaccineformulationnotextractedfromtheoriginalvaccinecolumn;notimputedfromage.",
+    "gene_policy": "All28402originalRNA-slotrowlabelsretainedononecommonprovidedaxis. NoEnsemblimputation,referencegeneintersectionorzero-fillingomittedgenes. SeparateRNAfromHTO/CITE/SCT;annotationreferencealignmentonlyforSCimilarity,geometryusesallnativeRNAgenes.",
+    "reuse_policy": "PrimaryPMID36599369 DOI10.1038/s41586-022-05670-5. ParentGSE222128andbulkRNA GSE194378donotaddparticipants. Original73-rowclinicalcohortisnot73single-cellpeople. Noexistingcompletedaccession/PMID/DOI/parentreferencefound. Keepallvisits/batches/capturesofeachsourceparticipanttogether;globalaliasesunproven.",
+    "selection_policy": "AlloriginalRNAcellsbeforefixed500counts/200genes/0.2MTQC. SourcepublicobjectalreadycontainsauthorQC-passingcells;originalgenes/cellavailabilityisretainedwithoutadditionalauthorcelltype,cluster,receptororphenotypefilter. TechnicalControlpartitionretainedforsource/batchaudit,notindependentdonorevaluation.",
+    "source_limitations": "124participantbatchviewsare120nominalvisitsfrom40sourcecodes,not124people. ThreeunknowntechnicalControlmapsheld. Differentagefields/vaccineformulationlimitsremainexplicit. Nativeaxisprovidedasmergedsource;per-capturegeneavailabilitynotseparatelysupplied. Noannotationaccuracy,clinical,causalorconstellationvalidation."
+  }
+}

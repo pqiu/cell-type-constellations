@@ -1,0 +1,3845 @@
+{
+  "dataset_id": "GSE220699_genes001",
+  "study_id": "GSE220699",
+  "input_format": "pinned_cell_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_biological_specimen"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "21 source blood observations/nine people: three healthy controls, three inhalation-injury and three traumatic-injury patients at acute/progressive/convalescent visits. Explicit M/N hash calls map two fractions to one source specimen; Negative, Doublet and missing calls never receive a donor.",
+  "source_metadata": {
+    "accession": "GSE220699",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE220699",
+    "access": "Public original RNA triplets and deposited categorical hash calls",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+    "source_processing": [
+      "Basecalls performed using CASAVA version 1.8",
+      "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+      "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+      "\uf0d8 MT% < 30%;",
+      "\uf0d8 Cell Gene Number < 10000;",
+      "\uf0d8 Cell Gene Number > 200.",
+      "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+      "Supplementary files format and content: GRCh38Ensembl100",
+      "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+    ],
+    "assay_scope": "Mixed PBMC/myeloid and lymphocyte fractions; compare expression within supported cell types, audit mixture effects on proportions and coarse centroids"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6809920",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "II-A-1, Human, inhalation injury, acute stage, day 1 post hospital admission, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809920"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: inhalation injury",
+          "time: acute stage, day 1 post hospital admission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-A-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175136",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658210"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1-features.tsv.gz",
+          "filename": "GSM6809920_II-A-1-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1-barcodes.tsv.gz",
+          "filename": "GSM6809920_II-A-1-barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809920/suppl/GSM6809920_II-A-1-matrix.mtx.gz",
+          "filename": "GSM6809920_II-A-1-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "acute stage, day 1 post hospital admission",
+        "source_title": "II-A-1, Human, inhalation injury, acute stage, day 1 post hospital admission, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809920_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809920_source_assignments.csv",
+          "sha256": "c0b68514454411a856447202185cfedb9278ac5b5b7e8311bcb8594b98f96ab0"
+        }
+      },
+      "genes_member": "GSM6809920_II-A-1-features.tsv.gz",
+      "barcodes_member": "GSM6809920_II-A-1-barcodes.tsv.gz",
+      "matrix_member": "GSM6809920_II-A-1-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 10356,
+        "selected_cells": 8918,
+        "negative_calls": 925,
+        "doublet_calls": 513,
+        "source_fraction_support": {
+          "myeloid": 4648,
+          "lymphocyte": 4270
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 10431,
+        "unassigned_RNA_cells": 75,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809920_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "06190c6fe2133cdff3e99b77f6ba659d85efff57e36c059c8f2df4ff41f40d61",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809921",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Healthy-1, Human, healthy, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809921"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: healthy",
+          "time: healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: Healthy-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175135",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658211"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1-features.tsv.gz",
+          "filename": "GSM6809921_Healthy-1-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1-barcodes.tsv.gz",
+          "filename": "GSM6809921_Healthy-1-barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809921/suppl/GSM6809921_Healthy-1-matrix.mtx.gz",
+          "filename": "GSM6809921_Healthy-1-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "source_visit": "healthy",
+        "source_title": "Healthy-1, Human, healthy, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809921_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "Healthy_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809921_source_assignments.csv",
+          "sha256": "5be88c1626146d221ca893c7a36d27a3431243cebf13f5cbe722acde0601dbbc"
+        }
+      },
+      "genes_member": "GSM6809921_Healthy-1-features.tsv.gz",
+      "barcodes_member": "GSM6809921_Healthy-1-barcodes.tsv.gz",
+      "matrix_member": "GSM6809921_Healthy-1-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 6555,
+        "selected_cells": 4352,
+        "negative_calls": 1657,
+        "doublet_calls": 546,
+        "source_fraction_support": {
+          "lymphocyte": 2318,
+          "myeloid": 2034
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 7189,
+        "unassigned_RNA_cells": 634,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809921_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "93f5e928df8cb7136ad3da6ace4ead33c45192cc885157d465526b2fd49ebb7d",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809922",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "TLI-A-1, Human, traumatic lung injury, acute stage, day 1 post hospital admission, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809922"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: traumatic lung injury",
+          "time: acute stage, day 1 post hospital admission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-A-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175134",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658212"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1-features.tsv.gz",
+          "filename": "GSM6809922_TLI-A-1-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1-barcodes.tsv.gz",
+          "filename": "GSM6809922_TLI-A-1-barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809922/suppl/GSM6809922_TLI-A-1-matrix.mtx.gz",
+          "filename": "GSM6809922_TLI-A-1-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "acute stage, day 1 post hospital admission",
+        "source_title": "TLI-A-1, Human, traumatic lung injury, acute stage, day 1 post hospital admission, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809922_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809922_source_assignments.csv",
+          "sha256": "ed5ba918d8cc46fc6eff751dbacf3d633db88e579bbbf2a894a80ac873276cfe"
+        }
+      },
+      "genes_member": "GSM6809922_TLI-A-1-features.tsv.gz",
+      "barcodes_member": "GSM6809922_TLI-A-1-barcodes.tsv.gz",
+      "matrix_member": "GSM6809922_TLI-A-1-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 9567,
+        "selected_cells": 7235,
+        "negative_calls": 1824,
+        "doublet_calls": 508,
+        "source_fraction_support": {
+          "myeloid": 4217,
+          "lymphocyte": 3018
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 9654,
+        "unassigned_RNA_cells": 87,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809922_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "26da48f81d8e176b0024122364ab18e48aa4af089c286246aedb93972a5f33d3",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809923",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "TLI-A-2\uff0cHuman, traumatic lung injury, acute stage, day 1 post hospital admission, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809923"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: traumatic lung injury",
+          "time: acute stage, day 1 post hospital admission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-A-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175133",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658214"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2-features.tsv.gz",
+          "filename": "GSM6809923_TLI-A-2-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2-barcodes.tsv.gz",
+          "filename": "GSM6809923_TLI-A-2-barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809923/suppl/GSM6809923_TLI-A-2-matrix.mtx.gz",
+          "filename": "GSM6809923_TLI-A-2-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "acute stage, day 1 post hospital admission",
+        "source_title": "TLI-A-2\uff0cHuman, traumatic lung injury, acute stage, day 1 post hospital admission, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809923_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809923_source_assignments.csv",
+          "sha256": "a5103727f3dad81e163021cccfe7afa2b167adb7c057c313b12e6cc72fcf8864"
+        }
+      },
+      "genes_member": "GSM6809923_TLI-A-2-features.tsv.gz",
+      "barcodes_member": "GSM6809923_TLI-A-2-barcodes.tsv.gz",
+      "matrix_member": "GSM6809923_TLI-A-2-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 10758,
+        "selected_cells": 9459,
+        "negative_calls": 621,
+        "doublet_calls": 678,
+        "source_fraction_support": {
+          "lymphocyte": 5037,
+          "myeloid": 4422
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 10771,
+        "unassigned_RNA_cells": 13,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809923_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "e21170f35a4e68d26cc8d1c3afca0b044fa536396b2e9fe492b4ca27a4c36a2a",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809924",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Healthy-2, Human, healthy, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809924"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: healthy",
+          "time: healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: Healthy-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175132",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658213"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2-features.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2-h-M-N_barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2-features.tsv.gz",
+          "filename": "GSM6809924_Healthy-2-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2-h-M-N_barcodes.tsv.gz",
+          "filename": "GSM6809924_Healthy-2-h-M-N_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809924/suppl/GSM6809924_Healthy-2-matrix.mtx.gz",
+          "filename": "GSM6809924_Healthy-2-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "source_visit": "healthy",
+        "source_title": "Healthy-2, Human, healthy, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809924_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "Healthy_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809924_source_assignments.csv",
+          "sha256": "8da96a90b3e9b2f3ff8355a72acab87d2378134143d9f6499f8b6e1b6de92eb9"
+        }
+      },
+      "genes_member": "GSM6809924_Healthy-2-features.tsv.gz",
+      "barcodes_member": "GSM6809924_Healthy-2-h-M-N_barcodes.tsv.gz",
+      "matrix_member": "GSM6809924_Healthy-2-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 6270,
+        "selected_cells": 5334,
+        "negative_calls": 677,
+        "doublet_calls": 259,
+        "source_fraction_support": {
+          "lymphocyte": 2791,
+          "myeloid": 2543
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 6772,
+        "unassigned_RNA_cells": 502,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809924_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "adba8632f15187ea87174fd7590912ec6e2ea5d72f67f82a9da3961ada861513",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809925",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Healthy-3, Human, healthy, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809925"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: healthy",
+          "time: healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: Healthy-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175131",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658215"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3-features.tsv.gz",
+          "filename": "GSM6809925_Healthy-3-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3-barcodes.tsv.gz",
+          "filename": "GSM6809925_Healthy-3-barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809925/suppl/GSM6809925_Healthy-3-matrix.mtx.gz",
+          "filename": "GSM6809925_Healthy-3-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "source_visit": "healthy",
+        "source_title": "Healthy-3, Human, healthy, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809925_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "Healthy_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809925_source_assignments.csv",
+          "sha256": "8299a2a108ca4e377d98ec616429043008a30e7c2bca842fd10324cdc1c53e7f"
+        }
+      },
+      "genes_member": "GSM6809925_Healthy-3-features.tsv.gz",
+      "barcodes_member": "GSM6809925_Healthy-3-barcodes.tsv.gz",
+      "matrix_member": "GSM6809925_Healthy-3-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 7327,
+        "selected_cells": 4848,
+        "negative_calls": 2174,
+        "doublet_calls": 305,
+        "source_fraction_support": {
+          "lymphocyte": 2816,
+          "myeloid": 2032
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 8805,
+        "unassigned_RNA_cells": 1478,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809925_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "a859803076236857dca12aeb0f8afae7a4c7d10091a8761a01d7bad9ddcbd645",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809926",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, progressive stage, day 3 post hospital, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809926"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: traumatic lung injury",
+          "time: progressive stage, day 3 post hospital"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-P-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175130",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658219"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2-matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2.AllHashID.txt.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2-features.tsv.gz",
+          "filename": "GSM6809926_TLI-P-2-features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2-barcodes.tsv.gz",
+          "filename": "GSM6809926_TLI-P-2-barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809926/suppl/GSM6809926_TLI-P-2-matrix.mtx.gz",
+          "filename": "GSM6809926_TLI-P-2-matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "progressive stage, day 3 post hospital",
+        "source_title": "Human, traumatic lung injury, progressive stage, day 3 post hospital, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809926_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809926_source_assignments.csv",
+          "sha256": "b0d7be12b7b4d4ae1c1b57edee5bfb137ed465d2c6ff0544728977005f806f1f"
+        }
+      },
+      "genes_member": "GSM6809926_TLI-P-2-features.tsv.gz",
+      "barcodes_member": "GSM6809926_TLI-P-2-barcodes.tsv.gz",
+      "matrix_member": "GSM6809926_TLI-P-2-matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 9365,
+        "selected_cells": 7507,
+        "negative_calls": 1579,
+        "doublet_calls": 279,
+        "source_fraction_support": {
+          "lymphocyte": 4563,
+          "myeloid": 2944
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 9463,
+        "unassigned_RNA_cells": 98,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809926_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "e4051d8287ca50bbcfc7a1700f6b9fad9289d925bbe8dbe2806e46e7d636dc96",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809927",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, progressive stage, day 3 post hospital, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809927"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: inhalation injury",
+          "time: progressive stage, day 3 post hospital"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-P-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175129",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658216"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.features.tsv.gz",
+          "filename": "GSM6809927_II-P-1.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.barcodes.tsv.gz",
+          "filename": "GSM6809927_II-P-1.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809927/suppl/GSM6809927_II-P-1.matrix.mtx.gz",
+          "filename": "GSM6809927_II-P-1.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "progressive stage, day 3 post hospital",
+        "source_title": "Human, inhalation injury, progressive stage, day 3 post hospital, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809927_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809927_source_assignments.csv",
+          "sha256": "0f2b7d49aa22e44d69da845a81993a3be2cae7c30a3525955a425f80a0374161"
+        }
+      },
+      "genes_member": "GSM6809927_II-P-1.features.tsv.gz",
+      "barcodes_member": "GSM6809927_II-P-1.barcodes.tsv.gz",
+      "matrix_member": "GSM6809927_II-P-1.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 10307,
+        "selected_cells": 8031,
+        "negative_calls": 1799,
+        "doublet_calls": 477,
+        "source_fraction_support": {
+          "lymphocyte": 4800,
+          "myeloid": 3231
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 10446,
+        "unassigned_RNA_cells": 139,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809927_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "f7d3c5dc1b8799cde970f9422ebec57715441b9d6d7a70f9aa13a7d99503983e",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809928",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, progressive stage, day 3 post hospital, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809928"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: traumatic lung injury",
+          "time: progressive stage, day 3 post hospital"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-P-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175128",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658217"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.features.tsv.gz",
+          "filename": "GSM6809928_TLI-P-1.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.barcodes.tsv.gz",
+          "filename": "GSM6809928_TLI-P-1.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809928/suppl/GSM6809928_TLI-P-1.matrix.mtx.gz",
+          "filename": "GSM6809928_TLI-P-1.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "progressive stage, day 3 post hospital",
+        "source_title": "Human, traumatic lung injury, progressive stage, day 3 post hospital, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809928_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809928_source_assignments.csv",
+          "sha256": "46596fac33b6f12b1f0698c524a94982278d02619be89d0387b532993eb84891"
+        }
+      },
+      "genes_member": "GSM6809928_TLI-P-1.features.tsv.gz",
+      "barcodes_member": "GSM6809928_TLI-P-1.barcodes.tsv.gz",
+      "matrix_member": "GSM6809928_TLI-P-1.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 10854,
+        "selected_cells": 9201,
+        "negative_calls": 1077,
+        "doublet_calls": 576,
+        "source_fraction_support": {
+          "lymphocyte": 4947,
+          "myeloid": 4254
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 11811,
+        "unassigned_RNA_cells": 957,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809928_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "b0138ada98aa94fe757a411cc2ab7aa3e3a39b63243174a709ff42cd62eb68af",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809929",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, convalescence, the day before discharged, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809929"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: inhalation injury",
+          "time: convalescence, the day before discharged"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-C-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175127",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658218"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.features.tsv.gz",
+          "filename": "GSM6809929_II-C-1.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.barcodes.tsv.gz",
+          "filename": "GSM6809929_II-C-1.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809929/suppl/GSM6809929_II-C-1.matrix.mtx.gz",
+          "filename": "GSM6809929_II-C-1.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "convalescence, the day before discharged",
+        "source_title": "Human, inhalation injury, convalescence, the day before discharged, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809929_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809929_source_assignments.csv",
+          "sha256": "c04dcb9174617edf368615331159a741409931e6d2287869d74943f5a75c01db"
+        }
+      },
+      "genes_member": "GSM6809929_II-C-1.features.tsv.gz",
+      "barcodes_member": "GSM6809929_II-C-1.barcodes.tsv.gz",
+      "matrix_member": "GSM6809929_II-C-1.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 8606,
+        "selected_cells": 5710,
+        "negative_calls": 2531,
+        "doublet_calls": 365,
+        "source_fraction_support": {
+          "lymphocyte": 2960,
+          "myeloid": 2750
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 9406,
+        "unassigned_RNA_cells": 800,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809929_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "d54e44e9d7ce62601ee4f0f2e36c03ce2f8939a3648d3298b460c5e142f3b4d4",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809930",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, convalescence, the day before discharged, M1 and N1"
+        ],
+        "geo_accession": [
+          "GSM6809930"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication1 and lymphocyte replication1",
+          "condition: traumatic lung injury",
+          "time: convalescence, the day before discharged"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-C-1"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175126",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658220"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.features.tsv.gz",
+          "filename": "GSM6809930_TLI-C-1.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.barcodes.tsv.gz",
+          "filename": "GSM6809930_TLI-C-1.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809930/suppl/GSM6809930_TLI-C-1.matrix.mtx.gz",
+          "filename": "GSM6809930_TLI-C-1.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "convalescence, the day before discharged",
+        "source_title": "Human, traumatic lung injury, convalescence, the day before discharged, M1 and N1",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809930_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_1"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809930_source_assignments.csv",
+          "sha256": "db9c90f9467e08fbb8f96c84f207ed4ab8ad07314b4f7e6e26e7997065fb04ff"
+        }
+      },
+      "genes_member": "GSM6809930_TLI-C-1.features.tsv.gz",
+      "barcodes_member": "GSM6809930_TLI-C-1.barcodes.tsv.gz",
+      "matrix_member": "GSM6809930_TLI-C-1.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 9116,
+        "selected_cells": 6503,
+        "negative_calls": 2139,
+        "doublet_calls": 474,
+        "source_fraction_support": {
+          "myeloid": 3434,
+          "lymphocyte": 3069
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 10185,
+        "unassigned_RNA_cells": 1069,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809930_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "7c5304d63ba11d08fbad4e398152895f2cc9b3c8a8994b049f31c2be1bef5abc",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809931",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, acute stage, day 1 post hospital admission, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809931"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: inhalation injury",
+          "time: acute stage, day 1 post hospital admission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-A-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175125",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658221"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.features.tsv.gz",
+          "filename": "GSM6809931_II-A-2.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.barcodes.tsv.gz",
+          "filename": "GSM6809931_II-A-2.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809931/suppl/GSM6809931_II-A-2.matrix.mtx.gz",
+          "filename": "GSM6809931_II-A-2.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "acute stage, day 1 post hospital admission",
+        "source_title": "Human, inhalation injury, acute stage, day 1 post hospital admission, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809931_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809931_source_assignments.csv",
+          "sha256": "5740fe86058270cc3b2d7e40aa382edd18a16dfb11ed1a7cbfe083e4b54c97c6"
+        }
+      },
+      "genes_member": "GSM6809931_II-A-2.features.tsv.gz",
+      "barcodes_member": "GSM6809931_II-A-2.barcodes.tsv.gz",
+      "matrix_member": "GSM6809931_II-A-2.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 10029,
+        "selected_cells": 6703,
+        "negative_calls": 2983,
+        "doublet_calls": 343,
+        "source_fraction_support": {
+          "lymphocyte": 3977,
+          "myeloid": 2726
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 10608,
+        "unassigned_RNA_cells": 579,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809931_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "a6f29c739d5cbc41242e0bf43d84120c115cc301e639c2bf77364875c242b3d8",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809932",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, progressive stage, day 3 post hospital, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809932"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: inhalation injury",
+          "time: progressive stage, day 3 post hospital"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-P-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175124",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658222"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.features.tsv.gz",
+          "filename": "GSM6809932_II-P-2.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.barcodes.tsv.gz",
+          "filename": "GSM6809932_II-P-2.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809932/suppl/GSM6809932_II-P-2.matrix.mtx.gz",
+          "filename": "GSM6809932_II-P-2.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "progressive stage, day 3 post hospital",
+        "source_title": "Human, inhalation injury, progressive stage, day 3 post hospital, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809932_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809932_source_assignments.csv",
+          "sha256": "d285220f3d85ce489752d004304f62c96ecfb62bf625596a5308af3c8fab1a1a"
+        }
+      },
+      "genes_member": "GSM6809932_II-P-2.features.tsv.gz",
+      "barcodes_member": "GSM6809932_II-P-2.barcodes.tsv.gz",
+      "matrix_member": "GSM6809932_II-P-2.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 8136,
+        "selected_cells": 4783,
+        "negative_calls": 3134,
+        "doublet_calls": 219,
+        "source_fraction_support": {
+          "lymphocyte": 2393,
+          "myeloid": 2390
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 13835,
+        "unassigned_RNA_cells": 5699,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809932_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "d3d1ff05ad97a5e57467bd376542c089c730e545333ab99d83d0e6ce715aa789",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809933",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, convalescence, the day before discharged, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809933"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: traumatic lung injury",
+          "time: convalescence, the day before discharged"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-C-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175123",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658223"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.features.tsv.gz",
+          "filename": "GSM6809933_TLI-C-2.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.barcodes.tsv.gz",
+          "filename": "GSM6809933_TLI-C-2.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809933/suppl/GSM6809933_TLI-C-2.matrix.mtx.gz",
+          "filename": "GSM6809933_TLI-C-2.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "convalescence, the day before discharged",
+        "source_title": "Human, traumatic lung injury, convalescence, the day before discharged, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809933_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809933_source_assignments.csv",
+          "sha256": "ba5ab4989cebb51d24ccaaccd9c539982ed5372d6c7e48bece2f5e0164c9ea15"
+        }
+      },
+      "genes_member": "GSM6809933_TLI-C-2.features.tsv.gz",
+      "barcodes_member": "GSM6809933_TLI-C-2.barcodes.tsv.gz",
+      "matrix_member": "GSM6809933_TLI-C-2.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 4697,
+        "selected_cells": 2129,
+        "negative_calls": 1663,
+        "doublet_calls": 905,
+        "source_fraction_support": {
+          "lymphocyte": 1073,
+          "myeloid": 1056
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 5162,
+        "unassigned_RNA_cells": 465,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809933_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "d305695a8a6115b0dc1d6f6b443f61ac959aa22a46a47ef164d6e3401edf9556",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809934",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, convalescence, the day before discharged, M2 and N2"
+        ],
+        "geo_accession": [
+          "GSM6809934"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication2 and lymphocyte replication2",
+          "condition: inhalation injury",
+          "time: convalescence, the day before discharged"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-C-2"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175122",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658224"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.features.tsv.gz",
+          "filename": "GSM6809934_II-C-2.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.barcodes.tsv.gz",
+          "filename": "GSM6809934_II-C-2.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809934/suppl/GSM6809934_II-C-2.matrix.mtx.gz",
+          "filename": "GSM6809934_II-C-2.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "convalescence, the day before discharged",
+        "source_title": "Human, inhalation injury, convalescence, the day before discharged, M2 and N2",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809934_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809934_source_assignments.csv",
+          "sha256": "fe6142ae247629907ef4c15c8da3d6f8718e4e993c1abee59376d9782e1a1f3a"
+        }
+      },
+      "genes_member": "GSM6809934_II-C-2.features.tsv.gz",
+      "barcodes_member": "GSM6809934_II-C-2.barcodes.tsv.gz",
+      "matrix_member": "GSM6809934_II-C-2.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 8492,
+        "selected_cells": 5332,
+        "negative_calls": 2787,
+        "doublet_calls": 373,
+        "source_fraction_support": {
+          "myeloid": 3052,
+          "lymphocyte": 2280
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 9876,
+        "unassigned_RNA_cells": 1384,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809934_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "f24f3eda507c6e6296196a725c3bc3da16b9eea2277506b9a0f29ae27d5722e9",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809935",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, acute stage, day 1 post hospital admission, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809935"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: traumatic lung injury",
+          "time: acute stage, day 1 post hospital admission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-A-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175121",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658227"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.features.tsv.gz",
+          "filename": "GSM6809935_TLI-A-3.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.barcodes.tsv.gz",
+          "filename": "GSM6809935_TLI-A-3.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809935/suppl/GSM6809935_TLI-A-3.matrix.mtx.gz",
+          "filename": "GSM6809935_TLI-A-3.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "acute stage, day 1 post hospital admission",
+        "source_title": "Human, traumatic lung injury, acute stage, day 1 post hospital admission, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809935_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809935_source_assignments.csv",
+          "sha256": "ef1587bd4e4410464244a544aa07136d92bc52f2a7c71ff0492c16a83ce5c797"
+        }
+      },
+      "genes_member": "GSM6809935_TLI-A-3.features.tsv.gz",
+      "barcodes_member": "GSM6809935_TLI-A-3.barcodes.tsv.gz",
+      "matrix_member": "GSM6809935_TLI-A-3.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 8107,
+        "selected_cells": 5559,
+        "negative_calls": 2227,
+        "doublet_calls": 321,
+        "source_fraction_support": {
+          "myeloid": 3072,
+          "lymphocyte": 2487
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 8688,
+        "unassigned_RNA_cells": 581,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809935_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "705b5d905582d64e48246bc534bd4957665d7dc78b5c0118ab681fb49c8ff52f",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809936",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, progressive stage, day 3 post hospital, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809936"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: traumatic lung injury",
+          "time: progressive stage, day 3 post hospital"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-P-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175120",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658225"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.features.tsv.gz",
+          "filename": "GSM6809936_TLI-P-3.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.barcodes.tsv.gz",
+          "filename": "GSM6809936_TLI-P-3.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809936/suppl/GSM6809936_TLI-P-3.matrix.mtx.gz",
+          "filename": "GSM6809936_TLI-P-3.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "progressive stage, day 3 post hospital",
+        "source_title": "Human, traumatic lung injury, progressive stage, day 3 post hospital, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809936_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809936_source_assignments.csv",
+          "sha256": "257d52907c08416da023750de8acdc1d3f4df90faff92c1161097412156694b5"
+        }
+      },
+      "genes_member": "GSM6809936_TLI-P-3.features.tsv.gz",
+      "barcodes_member": "GSM6809936_TLI-P-3.barcodes.tsv.gz",
+      "matrix_member": "GSM6809936_TLI-P-3.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 9629,
+        "selected_cells": 7836,
+        "negative_calls": 1273,
+        "doublet_calls": 520,
+        "source_fraction_support": {
+          "lymphocyte": 4542,
+          "myeloid": 3294
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 9864,
+        "unassigned_RNA_cells": 235,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809936_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "283d7a03ca40c7c0925815d23355c2ee2ae85c40e9eb9880c8b7d86b5dc0bb87",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809937",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, traumatic lung injury, convalescence, the day before discharged, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809937"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: traumatic lung injury",
+          "time: convalescence, the day before discharged"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: TLI-C-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175119",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658226"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.features.tsv.gz",
+          "filename": "GSM6809937_TLI-C-3.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.barcodes.tsv.gz",
+          "filename": "GSM6809937_TLI-C-3.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809937/suppl/GSM6809937_TLI-C-3.matrix.mtx.gz",
+          "filename": "GSM6809937_TLI-C-3.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "traumatic lung injury",
+        "source_visit": "convalescence, the day before discharged",
+        "source_title": "Human, traumatic lung injury, convalescence, the day before discharged, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809937_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "TLI_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809937_source_assignments.csv",
+          "sha256": "6e8cacd1a0b047ffa41543406ed38e9b823b1b9557d52112cdbda4e60797ca94"
+        }
+      },
+      "genes_member": "GSM6809937_TLI-C-3.features.tsv.gz",
+      "barcodes_member": "GSM6809937_TLI-C-3.barcodes.tsv.gz",
+      "matrix_member": "GSM6809937_TLI-C-3.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 7410,
+        "selected_cells": 5015,
+        "negative_calls": 2209,
+        "doublet_calls": 186,
+        "source_fraction_support": {
+          "lymphocyte": 2696,
+          "myeloid": 2319
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 10224,
+        "unassigned_RNA_cells": 2814,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809937_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "b4024c68a6168aa0a4e16c2d30a78b826adfeb54e1b6e8930bb62425b68f2c97",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809938",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, acute stage, day 1 post hospital admission, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809938"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: inhalation injury",
+          "time: acute stage, day 1 post hospital admission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-A-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175118",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658228"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.features.tsv.gz",
+          "filename": "GSM6809938_II-A-3.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.barcodes.tsv.gz",
+          "filename": "GSM6809938_II-A-3.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809938/suppl/GSM6809938_II-A-3.matrix.mtx.gz",
+          "filename": "GSM6809938_II-A-3.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "acute stage, day 1 post hospital admission",
+        "source_title": "Human, inhalation injury, acute stage, day 1 post hospital admission, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809938_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809938_source_assignments.csv",
+          "sha256": "04d9d2a93762f572a44dbddcf8f3c4499720ec49ecc921c7f254072e9aeedec0"
+        }
+      },
+      "genes_member": "GSM6809938_II-A-3.features.tsv.gz",
+      "barcodes_member": "GSM6809938_II-A-3.barcodes.tsv.gz",
+      "matrix_member": "GSM6809938_II-A-3.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 7203,
+        "selected_cells": 4287,
+        "negative_calls": 2398,
+        "doublet_calls": 518,
+        "source_fraction_support": {
+          "lymphocyte": 2514,
+          "myeloid": 1773
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 7771,
+        "unassigned_RNA_cells": 568,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809938_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "68284cd6f1b6c38de2dcaddfe6f540dd4c41b3d17fcaa3c0d89af5de0d9c7a8d",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809939",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, progressive stage, day 3 post hospital, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809939"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: inhalation injury",
+          "time: progressive stage, day 3 post hospital"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-P-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175117",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658229"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.features.tsv.gz",
+          "filename": "GSM6809939_II-P-3.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.barcodes.tsv.gz",
+          "filename": "GSM6809939_II-P-3.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809939/suppl/GSM6809939_II-P-3.matrix.mtx.gz",
+          "filename": "GSM6809939_II-P-3.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "progressive stage, day 3 post hospital",
+        "source_title": "Human, inhalation injury, progressive stage, day 3 post hospital, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809939_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809939_source_assignments.csv",
+          "sha256": "f1d0444d90e8698f10f93ba85df01e2f77b981a0d3ccab394cf48da823904654"
+        }
+      },
+      "genes_member": "GSM6809939_II-P-3.features.tsv.gz",
+      "barcodes_member": "GSM6809939_II-P-3.barcodes.tsv.gz",
+      "matrix_member": "GSM6809939_II-P-3.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 8173,
+        "selected_cells": 4084,
+        "negative_calls": 3151,
+        "doublet_calls": 938,
+        "source_fraction_support": {
+          "lymphocyte": 2135,
+          "myeloid": 1949
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 8658,
+        "unassigned_RNA_cells": 485,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809939_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "a0007b5bd4b14a12080ab3ff7ba0b37a64a6803e196c40ea96207f6cf58c0803",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM6809940",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "Human, inhalation injury, convalescence, the day before discharged, M3 and N3"
+        ],
+        "geo_accession": [
+          "GSM6809940"
+        ],
+        "status": [
+          "Public on Nov 11 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Nov 11 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "circulating blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: circulating blood",
+          "cell line: myeloid and lymphocyte cell",
+          "cell type: PBMCs;neutrophil;T cell; B cell",
+          "m or n: myeloid replication3 and lymphocyte replication3",
+          "condition: inhalation injury",
+          "time: convalescence, the day before discharged"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cells from each sample were used for single-cell isolation using BD Rhapsody Single-Cell Analysis System (BD Biosciences). Before single-cell isolation, all cells were labeled and annotated by sample tag using a BD Single-Cell Multiplexing Kit. Finally, multiple samples were mixed together.",
+          "Sequencing libraries were conducted using the BD Rhapsody Single-Cell Analysis System (BD Biosciences), following the manufacture's protocol."
+        ],
+        "description": [
+          "Sample name: II-C-3"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "Cellranger was utilized to calculate the raw counts and cell whitelist by default parameter",
+          "1. We applied the Seurat [https://satijalab.org/seurat/] package for cell normalization and cell filtering considering the MT percentage, minimum and maximum gene numbers under following criteria:",
+          "\uf0d8 MT% < 30%;",
+          "\uf0d8 Cell Gene Number < 10000;",
+          "\uf0d8 Cell Gene Number > 200.",
+          "PCA and tSNE analysis was used for the single cell to cell relation description. The fastMNN function  (k = 5, d = 50, approximate = TRUE, auto.order = TRUE) from R package scran (v1.10.2) was used to apply mutual nearest neighbor method to correct for batch effect among samples.  Graphcluster was utilized for cell clustering and based on the marker gene achieved some cluster was combined. Wilcox rank sum test was then used for marker gene analysis.",
+          "Supplementary files format and content: GRCh38Ensembl100",
+          "Supplementary files format and content: MTX file and TSV file contain counts for each barcodes and genes"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Chenru,,Wei"
+        ],
+        "contact_email": [
+          "weichr15@lzu.edu.cn"
+        ],
+        "contact_phone": [
+          "15902139770"
+        ],
+        "contact_institute": [
+          "the first  Affiliated Hospital of Naval Medical University"
+        ],
+        "contact_address": [
+          "NO.168,Changhai Road,Yangpu District ,Shanghai,China"
+        ],
+        "contact_city": [
+          "ShangHai"
+        ],
+        "contact_zip/postal_code": [
+          "200433"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175116",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18658230"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.AllHashID.txt.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE220699"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.features.tsv.gz",
+          "filename": "GSM6809940_II-C-3.features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.barcodes.tsv.gz",
+          "filename": "GSM6809940_II-C-3.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6809nnn/GSM6809940/suppl/GSM6809940_II-C-3.matrix.mtx.gz",
+          "filename": "GSM6809940_II-C-3.matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "inhalation injury",
+        "source_visit": "convalescence, the day before discharged",
+        "source_title": "Human, inhalation injury, convalescence, the day before discharged, M3 and N3",
+        "source_preparation": "Source PBMC plus neutrophil/myeloid and lymphocyte fractions; two positively hashed fractions per blood specimen",
+        "source_composition_limitation": "Experimental fraction mixture is not an unbiased PBMC proportion estimate; coarse centroid positions depend on capture mixture",
+        "source_demographics": "Individual ages/sex and exact draw dates not provided; no imputation"
+      },
+      "cell_assignment": {
+        "member": "GSM6809940_retained_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "II_3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE220699_GSM6809940_source_assignments.csv",
+          "sha256": "169455f9e4e424263bba43b9d84e85edc5649e6ea31061ebd87dc430c15de159"
+        }
+      },
+      "genes_member": "GSM6809940_II-C-3.features.tsv.gz",
+      "barcodes_member": "GSM6809940_II-C-3.barcodes.tsv.gz",
+      "matrix_member": "GSM6809940_II-C-3.matrix.mtx.gz",
+      "source_count_review": {
+        "source_calls": 6234,
+        "selected_cells": 2852,
+        "negative_calls": 2851,
+        "doublet_calls": 531,
+        "source_fraction_support": {
+          "lymphocyte": 1579,
+          "myeloid": 1273
+        },
+        "confidence": "Categorical source calls; no probability scores deposited or inferred",
+        "matrix_cells": 7642,
+        "unassigned_RNA_cells": 1408,
+        "retained_original_hash_metadata": "references/datasets/GSE220699_GSM6809940_source_hash_calls.tsv.gz",
+        "hash_metadata_sha256": "53a2e6ea23866a71751f01af20e322bb371f8ee1c35e5b6abe7deaceb5c4b321",
+        "source_genes": 20615,
+        "source_gene_sha256": "c0ecbda85d504226b4ba6c6aef9ea3ad5851fb975848e34ac1d4312dab493d40",
+        "integer_nonnegative_counts": true
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

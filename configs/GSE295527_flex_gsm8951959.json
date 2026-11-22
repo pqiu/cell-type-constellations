@@ -1,0 +1,229 @@
+{
+  "dataset_id": "GSE295527_flex_gsm8951959",
+  "study_id": "GSE295527",
+  "input_format": "reviewed_panel_h5",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Four conservative study-scoped F1/F2/F4/F5 donor/material groups. Sixteen10x whole-transcriptome RNA views are dependent across aliquots, platform and sorted fractions; zero extra samples from A/B or repeated captures.",
+  "source_metadata": {
+    "accession": "GSE295527",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/41503158/",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295527"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295527",
+    "access": "Public original probe-based RNA counts; source-approved panel retained",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "9d0f44ecafa1bc680ed75a874ef8773e5860d172c54155392373dee72cfcd430",
+    "source_processing": [
+      "Sequencing Depth and Downsampling: Sample sequencing was conducted to achieve a depth exceeding 25,000 reads per cell for WT libraries except for FLEX which targeted 10,000 reads per cell.  TCR libraries all targeted for 5000 reads per cell. When sequencing surpassed the targets, FASTQs were downsampled to 25,000 reads per cell for the WT libraries and 5000 reads per cells for TCR libraries using seqtk version 1.3 with random seed 100 (Li, 2012).",
+      "Generating count matrices: The software provided by each kit vendor was utilized to generate UMI count matrices from the downsampled FASTQs. Pipelines were run with default parameters unless otherwise specified. For the 10x kits, CellRanger version 8.0.0 with the multi subcommand was employed with the reference version refdata-gex-GRCh38-2024-A. Parse data was processed with splitpipe v1.2.1 using parse\u2019s hg38_V1.1.3 reference. Fluent data was processed with PIPseeker version 3.3.0 with reference gex-reference-GRCh38-2022.04. For each sample, PIPseeker generates 5 outputs of varying sensitivity for calling cells from background. We selected the sensitivity levels on a per-sample basis informed by the knee plots and vendor guidelines. Scale data was processed through scaleRNA version 1.5 with default parameters, library structure version 1.1 and the prebuilt GRCH38 reference genome provided by Scale. FASTQs were generated at the library level by passing raw BCL folders into the first scaleRNA run. We then ran Scale\u2019s bc_parser (distributed with the nextflow pipeline) with the `--demux` flag and options to output 2 read files and 2 index files for each sample. These were downsampled and ran with default parameters to produce the filtered expression matrix.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: The first set of processed files are pipeline outputs from downsampled data. For WT/GEX libraries, processed files include files needed to construct the counts matrix. Either h5 files, or matrix + barcode + feature files. For VDJ/TCR libraries, the processed data files have the final clone assemblies.",
+      "Supplementary files format and content: The second set of processed files are the Seurat RDS files for each kit, with all samples for that kit merged. The datasets were processed to remove low quality cells and low-abundance genes. Data was clustered at the kit level and annotated manually using reference mapping and key gene expression. See the manuscript for full details."
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE295527_source_identity_review.json",
+      "sha256": "e14bc7be294083b7873741de129a5317c117f824ab331ef8229b7ba6b3387c96"
+    },
+    "original_count_review": {
+      "original_RNA_features": 18082,
+      "target_set_features": 18082,
+      "original_barcode_rows": 10397,
+      "target_set_500RNA_barcodes": 10394,
+      "original_all_feature_UMI": 64924026,
+      "original_RNA_UMI": 64924026,
+      "target_set_UMI": 64924026,
+      "excluded_if_target_filtered_UMI": 0,
+      "target_set_provisional_project_QC_cells": 10393,
+      "target_set_gene_coordinate_sha256": "9d0f44ecafa1bc680ed75a874ef8773e5860d172c54155392373dee72cfcd430",
+      "target_set_name": "Chromium Human Transcriptome Probe Set v1.0.1",
+      "source_internal_library": "B2-FL-F5A_BC03"
+    },
+    "original_source_record": {
+      "title": [
+        "PBMC, Flex, sample F5A"
+      ],
+      "geo_accession": [
+        "GSM8951959"
+      ],
+      "status": [
+        "Public on May 27 2025"
+      ],
+      "submission_date": [
+        "Apr 24 2025"
+      ],
+      "last_update_date": [
+        "May 27 2025"
+      ],
+      "type": [
+        "SRA"
+      ],
+      "channel_count": [
+        "1"
+      ],
+      "source_name_ch1": [
+        "PBMC"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "taxid_ch1": [
+        "9606"
+      ],
+      "characteristics_ch1": [
+        "tissue: PBMC",
+        "treatment: 10x Genomics' Fixed RNA Profiling"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Benchmark I:  3\u2019 Whole transcriptome comparison Multiple donor leukopak frozen aliquots were purchased from Bloodworks Northwest.  PBMCs from two healthy donors F1 and F5, stored in liquid nitrogen were thawed at 37 degrees C., transferred into 10ml prewarmed thawing media (Gibco RPMI 1640 + 10% FBS) and centrifuged at 500 x g for 5 minutes at 4 degrees. Cells were washed in 10ml cold 1XPBS -MgCl and -CaCl (Gibco), followed by subsequent centrifugation at 500 x g for 5 minutes and the pellet resuspended in 10ml 1X PBS.  The CellacaMX (Revvity) live-dead assay was used to count AOPI stained cells. Viability was 83% and 88% respectively.  Each cell suspension was aliquoted for use in the 10X Genomics GEM-X and NextGEM assays in which the cell suspensions were loaded in replicate, with a targeted recovery of 20,000 and 10,000 cells, respectively.  The remaining cell suspensions were aliquoted out in technical replicates of 1 million cells and fixed using Parse\u2019s Cell Fixation v3 User Manual (UM0027 v1.1), Fluent\u2019s Demonstrated Protocol DSP-Methanol Fixation for Cells (FB0004708), and 10x Demonstrated Protocol Fixation of Cells and Nuclei for Chromium Fixed RNA Profiling (FLEX) (CG000478 Rev C). Separate aliquots of F1 and F5 donors were processed as above except with PBS 1% BSA for the final resuspension.  One set was fixed in technical replicates of 1 million cells following the Scale\u2019s standard fixation kit protocol Rev. B.  The second set of aliquots was processed as above with PBS + 0.04% BSA and Promega RNase Inhibitor resuspension and no fixation for Fluent\u2019s PIPseq V.  Benchmark II:  5\u2019 WT, TCR single cell comparison Frozen PBMCs from four healthy donors (F1, F2, F4, and F5) of mixed sex (3 males, 1 female) and ethnicity (3 persons of Caucasian descent and 1 person of Asian descent) supplied by Bloodworks Northwest were processed in two batches one week apart (F1, F2 followed by F4, F5). Cells were thawed in a 37\u00b0C water bath before transfer to thawing media (Gibco RPMI 1640 + 10% FBS). Samples were then centrifuged at 400 x g for 10 minutes at 4\u00b0C. The supernatant was decanted, and the pellet resuspended in 10 mL of sorting media (cold Gibco 1X PBS + 1% BSA), followed by an additional centrifugation at 400 x g for 10 minutes. Each sample was next resuspended in 200 \u00b5L of stain media. Cells were stained to enrich for T-cells and to remove as many B-cells as possible. We stained the samples with human CD3, CD45, and CD19 (citation for antibodies). 7AAD was used to assess the in-flight viability of the cells during the sort. We sorted T cells using the Becton-Dickenson Symphony S6 cytometer. The final population was CD3+, CD45+, and CD19-. An aliquot of the sorted T-cells was stained with AOPI and assessed for viability and cell counts using the Nexcelom CellacaMX (Revvity).  Viabilities ranged from 88-90 % (F1 and F2) and 83-87% (F4 and F5).  An aliquot of the of each donor T-cells was utilized for 10x Genomics GEM-X 5\u2032 v3 (CG000733 RevA) and NextGEM 5\u2032 v2 (CG000331 RevE) assays, in which 20,000 and 10,000 cells were targeted for recovery, respectively. The remaining cell suspension, ~1.5 million cells, was fixed following Parse Evercode Cell Fixation v2 (UM0039 v2.3). Cells were frozen and later processed as directed by Evercode TCR Human WT + TCR v1 (UM0018).",
+        "Benchmark I:  3\u2019 Whole transcriptome comparison 10x Genomics FLEX Fixed RNA profiling Per the 10x Genomics CG000527 Rev E protocol, fixed cells were incubated overnight with mRNA transcript probes targeting ~18K genes, with the left handle containing a sample specific barcode. Following probe hybridization, samples were counted and pooled equally before a series of washes to remove unbound probes.  After counting the pool, a volume targeting a recovery of 40,000 cells was combined with a master mix that contains enzymes that ligate and extend the probes during GEM incubation. This mixture was then loaded into the NEXT GEM Chip Q with gel beads and partitioning oil. Following microfluidic GEM generation on the ChromiumX, the GEMs were recovered and amplified to generate product to put into library preparation.  A portion of the amplified material was re-amplified with library specific P5 and P7 indices. 10x Genomics GEM-X 3\u2019v4 and NextGEM v3.1 Following the 10X Genomics GEM-X 3\u2019v4 (CG000731) and NextGEM v3.1 (CG000315) protocols, PBMCs from donor F1 and donor F5 were combined with a reverse transcript mastermix and loaded on to a microfluidic chip (Chromium GEM-X 3\u2019 chip and NextGEM Chip G) along with partitioning oil and barcoded gel beads. Cells were partitioned into droplets containing gel beads using the ChromiumX instrument and subsequently underwent reverse transcription. The cDNA was recovered, cleaned, and amplified to create enough material for library preparation. To generate gene expression libraries, a portion of cDNA was fragmented, adapter ligated, and an additional index with P5 and P7 handles added during a final amplification. Fluent Biosciences PIPseq v.4 Fixed cells were partitioned, and libraries generated using the PIPseq T20 3\u2019 Single Cell RNA Kit v4.0PLUS User Guide (FB0002130 Rev 8.3). To target a recovery of 20,000 cells per sample, 8uls of a cell suspension at a concentration of approximately 5000 cells/ul were captured in emulsion with Particle-templated Instant Partitions (PIPs), followed by cell lysis and barcoding unique to each PIP. The emulsions were then broken, and the mRNA reverse transcribed to generate cDNA. cDNA was then amplified, isolated from the PIPs, fragmented, end repaired and A-tailed, adapter ligated, and indexed with unique P7 and P5 indices.  Fluent Biosciences PIPseq V Sample replicates of live cells (40,000 each) were loaded into PIPs for capture and barcoding as described in PIPseq V T20 3\u2019 Single Cell RNA kit User Guide (FB0005261). To target a recovery of 20,000 cells per sample, 8ul of 5000 cells/ul were captured in emulsion with Particle-templated Instant Partitions (PIPs), followed by cell lysis and barcoding unique to each PIP. The emulsions were then broken, and the mRNA reverse transcribed to generate cDNA. cDNA was then amplified, isolated from the PIPs, fragmented, end repaired and A-tailed, adapter ligated, and indexed with unique P7 and P5 indices. Parse Evercode v3 Following the Parse protocol UMWT3300, fixed and permeabilized PBMCs were thawed, and counted using trypan blue and a hemocytometer, diluted and added to 12 wells per replicate of Plate 1 as directed by the sample loading table (48 wells total across all replicates). Following reverse transcription, cells were pooled and split an additional two times, the last of which added a barcode containing R2 and Biotin for magnetic bead enrichment Cells were pooled again, counted, and distributed into eight sublibraries each targeting under 12,500 cells where they were lysed and the biotin labelled cDNA recovered with binder beads. cDNA bound to the binder beads was washed and incubated with a template switch oligo to add a 5\u2019 adapter to the cDNA. The cDNA was amplified and bead cleaned. A portion of this cleaned product was fragmented, adapter ligated and had p5 and p7 indices added in a final PCR. Scale Biosciences Following the Scale 1020796 Rev A protocol, fixed cells at a concentration of approximately 2000 cells/ul were added to 96 wells of barcode plate 1 and well IDs documented to map back cells to their sample of origin. The cells underwent reverse transcription and were then pooled by centrifugation into a funnel. Cells were washed and then split across a 384 well ligation plate where cells were barcoded. Cells were again pooled by centrifugation, washed, and counted to assess for recovery. The cell stock was diluted to approximately 460 cells/ul and 4uls loaded into each well of the final distribution plate, with the remainder saved at -80 degrees. In the final distribution plate, the cell membrane is broken down, cDNA is tagmented with a transposase, and the library specific P5 and P7 indexes added.  Benchmark II:  5\u2019 WT, TCR single cell comparison 10X Genomics GEM-X 5\u2019v3 and Next GEM 5\u2019v2 Following the 10X Genomics GEM-X 5\u2019v3 (CG000733) and NextGEM 5\u2019v2 (CG000331) protocols, sorted T cells were added to a reverse transcription mastermix and loaded on to a microfluidic chip (Chromium GEM-X 5\u2019 chip and NextGEM Chip K respectively) with partitioning oil and barcoded gel beads. Cells were partitioned into droplets containing gel beads (GEMS) and subsequently underwent reverse transcription.  The cDNA was recovered and cleaned before being amplified to create enough material for library preparation for gene expression and TCR. To generate TCR libraries, a small amount of cDNA underwent 2 rounds of PCR with a set of TCR specific primers. A portion of the PCR product was fragmented, adapter ligated, and an additional index with P5 and P7 handles added during a final PCR. To generate gene expression libraries, a portion of cDNA was fragmented, adapter ligated, and an additional index with P5 and P7 handles added during a final PCR.  Parse Evercode TCR Fixed and permeabilized T cells were thawed, counted using trpyan blue and a hemocytometer, following Parse protocol UMIT2300.  Each sample was diluted according to the sample loading table and recounted before dispensing into 12 wells per sample of Plate 1 (48 wells total). Following reverse transcription, cells were pooled and split an additional two times to add barcodes, the last pool and split also adding the R2 and biotin. Cells were pooled, counted, and distributed into eight sublibraries each targeting 12,500 cells. Cells were lysed and biotin labelled cDNA recovered with binder beads.  cDNA bound to the binder beads was washed and incubated with a template switch oligo to add a 5\u2019 adapter to the cDNA. The cDNA was amplified and bead cleaned to be usable in TCR and whole transcriptome library preparation. Whole transcription libraries undergo library preparation as described in Evercode TCR Human WT + TCR v1 (UM0018), which utilized the Parse v2 WT chemistry. The TCR library is generated from a subset of the WT cDNA in a PCR reaction targeting the V(D)J segments of the CDR3 region of the T cell."
+      ],
+      "description": [
+        "Library name: flex_F5A",
+        "Flex files are processed all together through cellranger to split samples. All files listed for Flex samples should be processed together"
+      ],
+      "data_processing": [
+        "Sequencing Depth and Downsampling: Sample sequencing was conducted to achieve a depth exceeding 25,000 reads per cell for WT libraries except for FLEX which targeted 10,000 reads per cell.  TCR libraries all targeted for 5000 reads per cell. When sequencing surpassed the targets, FASTQs were downsampled to 25,000 reads per cell for the WT libraries and 5000 reads per cells for TCR libraries using seqtk version 1.3 with random seed 100 (Li, 2012).",
+        "Generating count matrices: The software provided by each kit vendor was utilized to generate UMI count matrices from the downsampled FASTQs. Pipelines were run with default parameters unless otherwise specified. For the 10x kits, CellRanger version 8.0.0 with the multi subcommand was employed with the reference version refdata-gex-GRCh38-2024-A. Parse data was processed with splitpipe v1.2.1 using parse\u2019s hg38_V1.1.3 reference. Fluent data was processed with PIPseeker version 3.3.0 with reference gex-reference-GRCh38-2022.04. For each sample, PIPseeker generates 5 outputs of varying sensitivity for calling cells from background. We selected the sensitivity levels on a per-sample basis informed by the knee plots and vendor guidelines. Scale data was processed through scaleRNA version 1.5 with default parameters, library structure version 1.1 and the prebuilt GRCH38 reference genome provided by Scale. FASTQs were generated at the library level by passing raw BCL folders into the first scaleRNA run. We then ran Scale\u2019s bc_parser (distributed with the nextflow pipeline) with the `--demux` flag and options to output 2 read files and 2 index files for each sample. These were downsampled and ran with default parameters to produce the filtered expression matrix.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: The first set of processed files are pipeline outputs from downsampled data. For WT/GEX libraries, processed files include files needed to construct the counts matrix. Either h5 files, or matrix + barcode + feature files. For VDJ/TCR libraries, the processed data files have the final clone assemblies.",
+        "Supplementary files format and content: The second set of processed files are the Seurat RDS files for each kit, with all samples for that kit merged. The datasets were processed to remove low quality cells and low-abundance genes. Data was clustered at the kit level and annotated manually using reference mapping and key gene expression. See the manuscript for full details."
+      ],
+      "platform_id": [
+        "GPL34281"
+      ],
+      "contact_name": [
+        "Anna,,Elz"
+      ],
+      "contact_email": [
+        "aelz@fredhutch.org"
+      ],
+      "contact_laboratory": [
+        "Innovation Lab"
+      ],
+      "contact_institute": [
+        "Fred Hutchinson Cancer Center"
+      ],
+      "contact_address": [
+        "1201 Eastlake Ave E"
+      ],
+      "contact_city": [
+        "Seattle"
+      ],
+      "contact_state": [
+        "WA"
+      ],
+      "contact_zip/postal_code": [
+        "98109"
+      ],
+      "contact_country": [
+        "USA"
+      ],
+      "instrument_model": [
+        "Illumina NovaSeq X"
+      ],
+      "library_selection": [
+        "cDNA"
+      ],
+      "library_source": [
+        "transcriptomic single cell"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN48137316",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX28550153"
+      ],
+      "supplementary_file_1": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8951nnn/GSM8951959/suppl/GSM8951959_Flex_F5A_sample_filtered_feature_bc_matrix.h5"
+      ],
+      "series_id": [
+        "GSE295527"
+      ],
+      "data_row_count": [
+        "0"
+      ]
+    },
+    "original_panel_review": {
+      "source_gene_policy": "source_approved_probe_target_set",
+      "source_target_set": "Chromium Human Transcriptome Probe Set v1.0.1",
+      "original_features": 18082,
+      "original_RNA_features": 18082,
+      "geometry_genes": 18082,
+      "excluded_non_RNA_features": 0,
+      "excluded_RNA_features": 0,
+      "original_barcode_rows": 10397,
+      "stage_RNA_barcodes": 10394,
+      "original_all_feature_UMI": 64924026,
+      "original_RNA_UMI": 64924026,
+      "geometry_RNA_UMI": 64924026,
+      "excluded_RNA_UMI": 0,
+      "geometry_mito_genes": 11,
+      "gene_coordinate_sha256": "9d0f44ecafa1bc680ed75a874ef8773e5860d172c54155392373dee72cfcd430",
+      "provisional_project_QC_cells": 10393,
+      "source_library_ids": [
+        "B2-FL-F5A_BC03"
+      ],
+      "source_chemistry": "Fixed RNA Profiling",
+      "source_software": "2024.0422.2"
+    },
+    "annotation_symbol_overlap": 17116
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_mapping_evidence": "Four conservative study-scoped F1/F2/F4/F5 donor/material groups. Sixteen10x whole-transcriptome RNA views are dependent across aliquots, platform and sorted fractions; zero extra samples from A/B or repeated captures.",
+  "source_asset": {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8951nnn/GSM8951959/suppl/GSM8951959_Flex_F5A_sample_filtered_feature_bc_matrix.h5",
+    "filename": "GSM8951959_Flex_F5A_sample_filtered_feature_bc_matrix.h5",
+    "expected_bytes": 36983885,
+    "sha256": "550f634c7f3ad0de661f7255f438491a7bc8b37658be525fa15512f40ecdc284"
+  },
+  "metadata_mapping": {
+    "constants": {
+      "source_sample_id": "GSM8951959",
+      "donor_id": "F5",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_GEO_accession": "GSM8951959",
+      "source_GEO_title": "PBMC, Flex, sample F5A",
+      "source_person_code": "F5",
+      "source_aliquot_code": "F5A",
+      "source_specimen": "whole PBMC",
+      "condition": "healthy",
+      "source_platform": "10x Flex probe-based RNA",
+      "source_platform_as_GEO_treatment": "10x Genomics' Fixed RNA Profiling",
+      "source_benchmark": "BM1",
+      "source_preparation": "Commercial cryopreserved healthy-donor leukopak aliquots",
+      "source_identity_policy": "Conservative donor/material UID by F1/F2/F4/F5 only. BM1 A/B are technical aliquots; BM2 sorted-T and BM1 wholePBMC share donor codes. No extra biological draws inferred from separate thawing, aliquots or platforms.",
+      "source_processing_policy": "Source-approved18082gene RNA probe panel; all original values audited, no excluded RNA features or inferred unmeasured zeros.",
+      "source_publication_conflict": "Methods and original GEO BM1 name F1/F5; one Results sentence says F1/F2. Preserve discrepancy; original source codes canonical, no invented remapping.",
+      "source_quality_caveat": "Primary reports a workflow error and excludes two NextGEM5 samples; exact exclusions not inferred. All deposited native H5 views use common project RNA QC; author final cell set is not reproduced.",
+      "source_missingness_policy": "Individual age/sex/ancestry and collection dates not joined. Primary reports only grouped sex/ethnicity for four donors; no individual assignment from F-prefixed codes.",
+      "source_characteristics_json": "[\"tissue: PBMC\", \"treatment: 10x Genomics' Fixed RNA Profiling\"]",
+      "split_assignment": "unassigned; all aliquot/platform/fraction views and any other visits from a donor must remain together; global overlap unresolved",
+      "source_coordinate_policy": "Probe-based18082gene axis with11measured mitochondrial genes. Denominator is measured panel RNA, not a full-transcriptome measurement; do not equate gene/pctMT coverage across assays."
+    }
+  }
+}

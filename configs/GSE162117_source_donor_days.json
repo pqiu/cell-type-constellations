@@ -1,0 +1,3959 @@
+{
+  "dataset_id": "GSE162117_source_donor_days",
+  "study_id": "GSE162117",
+  "input_format": "pinned_cell_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_patient",
+    "source_cell_treatment_day"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "OriginalGEO source explicitlydescribes longitudinal patient samples in pooled replicate captures and points to deposited cell_metadata.tsv for patient metadata. Exact published channel/barcode/patient/treatment-day assignments match every native capture; onepatient/day perpool,51observedsource donor/day groups across10replicate reactions. Group samepatient/day conservatively acrosscaptures;57reportedcollected samples are not57obtained maps.",
+  "source_metadata": {
+    "accession": "GSE162117",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE162117",
+    "primary_publication": "https://aacrjournals.org/bloodcancerdiscov/article/2/5/434/665843/Inhibition-of-MET-Signaling-with-Ficlatuzumab-in",
+    "primary_access": "AACRHTTP403 andPMCchallenge; originalGEO design anddeposited originalmetadata/counts used. No unavailableprimaryclinical details imputed.",
+    "count_license": "not_specified_in_GEO",
+    "native_RNA_genes": 32738,
+    "source_gene_reference": "hg19 as explicitly deposited",
+    "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+    "source_assignment_sha256": "fe748bcc95887d114595703f215b8491531318713168ede230ef9241afc38ffb",
+    "native_assignment_audits_sha256": "5559a572edb9b262581b018278465fe4ae0e72c1828401b7784c70b629b198dd",
+    "preparation_script_sha256": "690f591a212a942864d5024f2c38363fca3d5e68426792f8aa6a9b5515d9550e",
+    "reported_collected_samples": 57,
+    "source_observed_donor_day_groups": 51,
+    "source_donor_codes": 12,
+    "observation_count_limitation": "Reported57collectedsamples versus51observedpatient/daykeys unresolved; six additional physical samples not asserted missing for any specific reason. Samepatient/day grouping may collapse distinct same-day collections. No global uniqueness claim."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM4933441",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933441_blue1_genes.tsv.gz",
+      "barcodes_member": "GSM4933441_blue1_barcodes.tsv.gz",
+      "matrix_member": "GSM4933441_blue1_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_genes.tsv.gz",
+          "filename": "GSM4933441_blue1_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_barcodes.tsv.gz",
+          "filename": "GSM4933441_blue1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_matrix.mtx.gz",
+          "filename": "GSM4933441_blue1_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool blue1"
+        ],
+        "geo_accession": [
+          "GSM4933441"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Blue\" is a pool of cells from individuals with known genotype.  \"Blue1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891315",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571436"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 16592,
+        "genes": 32738,
+        "nonzeros": 17223211,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 16592,
+        "RNA_positive_barcode_rows": 16592,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933441",
+        "channel": "blue1",
+        "members": {
+          "genes_member": "GSM4933441_blue1_genes.tsv.gz",
+          "barcodes_member": "GSM4933441_blue1_barcodes.tsv.gz",
+          "matrix_member": "GSM4933441_blue1_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_genes.tsv.gz",
+            "filename": "GSM4933441_blue1_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_barcodes.tsv.gz",
+            "filename": "GSM4933441_blue1_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_matrix.mtx.gz",
+            "filename": "GSM4933441_blue1_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool blue1"
+          ],
+          "geo_accession": [
+            "GSM4933441"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Blue\" is a pool of cells from individuals with known genotype.  \"Blue1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891315",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571436"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933441/suppl/GSM4933441_blue1_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 11318,
+        "unassigned_source_rows": 5274,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E04",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E09",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "42"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933441_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933441_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E09",
+          "E10",
+          "E11",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933441_selected_assignments.csv.gz",
+          "sha256": "b1c16e65100678b02a1d529e9c0d0e2889277caa1af2678896b88eafe7979580",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933442",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933442_blue2_genes.tsv.gz",
+      "barcodes_member": "GSM4933442_blue2_barcodes.tsv.gz",
+      "matrix_member": "GSM4933442_blue2_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_genes.tsv.gz",
+          "filename": "GSM4933442_blue2_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_barcodes.tsv.gz",
+          "filename": "GSM4933442_blue2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_matrix.mtx.gz",
+          "filename": "GSM4933442_blue2_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool blue2"
+        ],
+        "geo_accession": [
+          "GSM4933442"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Blue\" is a pool of cells from individuals with known genotype.  \"Blue2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891295",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571437"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 14392,
+        "genes": 32738,
+        "nonzeros": 16249552,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 14392,
+        "RNA_positive_barcode_rows": 14392,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933442",
+        "channel": "blue2",
+        "members": {
+          "genes_member": "GSM4933442_blue2_genes.tsv.gz",
+          "barcodes_member": "GSM4933442_blue2_barcodes.tsv.gz",
+          "matrix_member": "GSM4933442_blue2_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_genes.tsv.gz",
+            "filename": "GSM4933442_blue2_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_barcodes.tsv.gz",
+            "filename": "GSM4933442_blue2_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_matrix.mtx.gz",
+            "filename": "GSM4933442_blue2_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool blue2"
+          ],
+          "geo_accession": [
+            "GSM4933442"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Blue\" is a pool of cells from individuals with known genotype.  \"Blue2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891295",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571437"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933442/suppl/GSM4933442_blue2_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 10252,
+        "unassigned_source_rows": 4140,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E01",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E09",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "3"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933442_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933442_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E09",
+          "E10",
+          "E11",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933442_selected_assignments.csv.gz",
+          "sha256": "0f0faf1ca3730ab9ed27be7742aa89e19febb260318da0a0e258f6c934b863f0",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933443",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933443_cyan1_genes.tsv.gz",
+      "barcodes_member": "GSM4933443_cyan1_barcodes.tsv.gz",
+      "matrix_member": "GSM4933443_cyan1_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_genes.tsv.gz",
+          "filename": "GSM4933443_cyan1_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_barcodes.tsv.gz",
+          "filename": "GSM4933443_cyan1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_matrix.mtx.gz",
+          "filename": "GSM4933443_cyan1_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool cyan1"
+        ],
+        "geo_accession": [
+          "GSM4933443"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Cyan\" is a pool of cells from individuals with known genotype.  \"Cyan1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891262",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571438"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 16829,
+        "genes": 32738,
+        "nonzeros": 18935491,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 16829,
+        "RNA_positive_barcode_rows": 16829,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933443",
+        "channel": "cyan1",
+        "members": {
+          "genes_member": "GSM4933443_cyan1_genes.tsv.gz",
+          "barcodes_member": "GSM4933443_cyan1_barcodes.tsv.gz",
+          "matrix_member": "GSM4933443_cyan1_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_genes.tsv.gz",
+            "filename": "GSM4933443_cyan1_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_barcodes.tsv.gz",
+            "filename": "GSM4933443_cyan1_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_matrix.mtx.gz",
+            "filename": "GSM4933443_cyan1_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool cyan1"
+          ],
+          "geo_accession": [
+            "GSM4933443"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Cyan\" is a pool of cells from individuals with known genotype.  \"Cyan1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891262",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571438"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933443/suppl/GSM4933443_cyan1_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 12169,
+        "unassigned_source_rows": 4660,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E06",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "44"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "3"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933443_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933443_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E06",
+          "E07",
+          "E10",
+          "E11",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933443_selected_assignments.csv.gz",
+          "sha256": "3186f837aa0279df2f08891f9040108fb3229b54b52c0dd09deb13ce8c8a8e8c",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933444",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933444_cyan2_genes.tsv.gz",
+      "barcodes_member": "GSM4933444_cyan2_barcodes.tsv.gz",
+      "matrix_member": "GSM4933444_cyan2_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_genes.tsv.gz",
+          "filename": "GSM4933444_cyan2_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_barcodes.tsv.gz",
+          "filename": "GSM4933444_cyan2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_matrix.mtx.gz",
+          "filename": "GSM4933444_cyan2_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool cyan2"
+        ],
+        "geo_accession": [
+          "GSM4933444"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Cyan\" is a pool of cells from individuals with known genotype.  \"Cyan2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891248",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571439"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 15122,
+        "genes": 32738,
+        "nonzeros": 18334834,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 15122,
+        "RNA_positive_barcode_rows": 15122,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933444",
+        "channel": "cyan2",
+        "members": {
+          "genes_member": "GSM4933444_cyan2_genes.tsv.gz",
+          "barcodes_member": "GSM4933444_cyan2_barcodes.tsv.gz",
+          "matrix_member": "GSM4933444_cyan2_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_genes.tsv.gz",
+            "filename": "GSM4933444_cyan2_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_barcodes.tsv.gz",
+            "filename": "GSM4933444_cyan2_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_matrix.mtx.gz",
+            "filename": "GSM4933444_cyan2_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool cyan2"
+          ],
+          "geo_accession": [
+            "GSM4933444"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Cyan\" is a pool of cells from individuals with known genotype.  \"Cyan2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891248",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571439"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933444/suppl/GSM4933444_cyan2_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 11660,
+        "unassigned_source_rows": 3462,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E01",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "44"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "3"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933444_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933444_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E06",
+          "E07",
+          "E10",
+          "E11",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933444_selected_assignments.csv.gz",
+          "sha256": "b71911130aea0507cf40ba09ca5b27426a542c696362af573a13e3b52070df02",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933445",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933445_green1_genes.tsv.gz",
+      "barcodes_member": "GSM4933445_green1_barcodes.tsv.gz",
+      "matrix_member": "GSM4933445_green1_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_genes.tsv.gz",
+          "filename": "GSM4933445_green1_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_barcodes.tsv.gz",
+          "filename": "GSM4933445_green1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_matrix.mtx.gz",
+          "filename": "GSM4933445_green1_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool green1"
+        ],
+        "geo_accession": [
+          "GSM4933445"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Green\" is a pool of cells from individuals with known genotype.  \"Green1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891230",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571440"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 13419,
+        "genes": 32738,
+        "nonzeros": 18115731,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 13419,
+        "RNA_positive_barcode_rows": 13419,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933445",
+        "channel": "green1",
+        "members": {
+          "genes_member": "GSM4933445_green1_genes.tsv.gz",
+          "barcodes_member": "GSM4933445_green1_barcodes.tsv.gz",
+          "matrix_member": "GSM4933445_green1_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_genes.tsv.gz",
+            "filename": "GSM4933445_green1_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_barcodes.tsv.gz",
+            "filename": "GSM4933445_green1_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_matrix.mtx.gz",
+            "filename": "GSM4933445_green1_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool green1"
+          ],
+          "geo_accession": [
+            "GSM4933445"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Green\" is a pool of cells from individuals with known genotype.  \"Green1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891230",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571440"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933445/suppl/GSM4933445_green1_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 9134,
+        "unassigned_source_rows": 4285,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E09",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E12",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "3"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933445_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933445_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E09",
+          "E10",
+          "E11",
+          "E12",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933445_selected_assignments.csv.gz",
+          "sha256": "dbda4a54a8698c587f88915681776a2085ea27da36110c7a8053526097c4a74f",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933446",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933446_green2_genes.tsv.gz",
+      "barcodes_member": "GSM4933446_green2_barcodes.tsv.gz",
+      "matrix_member": "GSM4933446_green2_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_genes.tsv.gz",
+          "filename": "GSM4933446_green2_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_barcodes.tsv.gz",
+          "filename": "GSM4933446_green2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_matrix.mtx.gz",
+          "filename": "GSM4933446_green2_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool green2"
+        ],
+        "geo_accession": [
+          "GSM4933446"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Green\" is a pool of cells from individuals with known genotype.  \"Green2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891209",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571441"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 11515,
+        "genes": 32738,
+        "nonzeros": 16746407,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 11515,
+        "RNA_positive_barcode_rows": 11515,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933446",
+        "channel": "green2",
+        "members": {
+          "genes_member": "GSM4933446_green2_genes.tsv.gz",
+          "barcodes_member": "GSM4933446_green2_barcodes.tsv.gz",
+          "matrix_member": "GSM4933446_green2_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_genes.tsv.gz",
+            "filename": "GSM4933446_green2_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_barcodes.tsv.gz",
+            "filename": "GSM4933446_green2_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_matrix.mtx.gz",
+            "filename": "GSM4933446_green2_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool green2"
+          ],
+          "geo_accession": [
+            "GSM4933446"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Green\" is a pool of cells from individuals with known genotype.  \"Green2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891209",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571441"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933446/suppl/GSM4933446_green2_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 7973,
+        "unassigned_source_rows": 3542,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E01",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E09",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E12",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933446_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933446_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E09",
+          "E10",
+          "E11",
+          "E12",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933446_selected_assignments.csv.gz",
+          "sha256": "1f7b20c2027ebf4f845e819f6483e4c53e5ad351acd241222ce75213f6bf81a4",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933447",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933447_red1_genes.tsv.gz",
+      "barcodes_member": "GSM4933447_red1_barcodes.tsv.gz",
+      "matrix_member": "GSM4933447_red1_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_genes.tsv.gz",
+          "filename": "GSM4933447_red1_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_barcodes.tsv.gz",
+          "filename": "GSM4933447_red1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_matrix.mtx.gz",
+          "filename": "GSM4933447_red1_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool red1"
+        ],
+        "geo_accession": [
+          "GSM4933447"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Red\" is a pool of cells from individuals with known genotype.  \"Red1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891195",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571442"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 23040,
+        "genes": 32738,
+        "nonzeros": 25106955,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 23040,
+        "RNA_positive_barcode_rows": 23040,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933447",
+        "channel": "red1",
+        "members": {
+          "genes_member": "GSM4933447_red1_genes.tsv.gz",
+          "barcodes_member": "GSM4933447_red1_barcodes.tsv.gz",
+          "matrix_member": "GSM4933447_red1_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_genes.tsv.gz",
+            "filename": "GSM4933447_red1_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_barcodes.tsv.gz",
+            "filename": "GSM4933447_red1_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_matrix.mtx.gz",
+            "filename": "GSM4933447_red1_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool red1"
+          ],
+          "geo_accession": [
+            "GSM4933447"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Red\" is a pool of cells from individuals with known genotype.  \"Red1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891195",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571442"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933447/suppl/GSM4933447_red1_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 13882,
+        "unassigned_source_rows": 9158,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E13",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E09",
+            "treatment_day": "44"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E12",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "2"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933447_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933447_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E09",
+          "E10",
+          "E11",
+          "E12",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933447_selected_assignments.csv.gz",
+          "sha256": "b388147cfd015cbb1831f7e1c7a4ee7f6de6b5d4842371fcd4fdebe352efefc9",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933448",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933448_red2_genes.tsv.gz",
+      "barcodes_member": "GSM4933448_red2_barcodes.tsv.gz",
+      "matrix_member": "GSM4933448_red2_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_genes.tsv.gz",
+          "filename": "GSM4933448_red2_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_barcodes.tsv.gz",
+          "filename": "GSM4933448_red2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_matrix.mtx.gz",
+          "filename": "GSM4933448_red2_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool red2"
+        ],
+        "geo_accession": [
+          "GSM4933448"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Red\" is a pool of cells from individuals with known genotype.  \"Red2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891182",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571443"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 20764,
+        "genes": 32738,
+        "nonzeros": 21360352,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 20764,
+        "RNA_positive_barcode_rows": 20764,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933448",
+        "channel": "red2",
+        "members": {
+          "genes_member": "GSM4933448_red2_genes.tsv.gz",
+          "barcodes_member": "GSM4933448_red2_barcodes.tsv.gz",
+          "matrix_member": "GSM4933448_red2_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_genes.tsv.gz",
+            "filename": "GSM4933448_red2_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_barcodes.tsv.gz",
+            "filename": "GSM4933448_red2_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_matrix.mtx.gz",
+            "filename": "GSM4933448_red2_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool red2"
+          ],
+          "geo_accession": [
+            "GSM4933448"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Red\" is a pool of cells from individuals with known genotype.  \"Red2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891182",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571443"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933448/suppl/GSM4933448_red2_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 12817,
+        "unassigned_source_rows": 7947,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E09",
+            "treatment_day": "44"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E12",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933448_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933448_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E09",
+          "E10",
+          "E11",
+          "E12",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933448_selected_assignments.csv.gz",
+          "sha256": "bda52e7eeac57e60a0fad3858cd35c8382eda2c2080ecee8c7f6edca9497bef1",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933449",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933449_yellow1_genes.tsv.gz",
+      "barcodes_member": "GSM4933449_yellow1_barcodes.tsv.gz",
+      "matrix_member": "GSM4933449_yellow1_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_genes.tsv.gz",
+          "filename": "GSM4933449_yellow1_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_barcodes.tsv.gz",
+          "filename": "GSM4933449_yellow1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_matrix.mtx.gz",
+          "filename": "GSM4933449_yellow1_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool yellow1"
+        ],
+        "geo_accession": [
+          "GSM4933449"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Yellow\" is a pool of cells from individuals with known genotype.  \"Yellow1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891168",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571444"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 21574,
+        "genes": 32738,
+        "nonzeros": 21148840,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 21574,
+        "RNA_positive_barcode_rows": 21574,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933449",
+        "channel": "yellow1",
+        "members": {
+          "genes_member": "GSM4933449_yellow1_genes.tsv.gz",
+          "barcodes_member": "GSM4933449_yellow1_barcodes.tsv.gz",
+          "matrix_member": "GSM4933449_yellow1_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_genes.tsv.gz",
+            "filename": "GSM4933449_yellow1_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_barcodes.tsv.gz",
+            "filename": "GSM4933449_yellow1_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_matrix.mtx.gz",
+            "filename": "GSM4933449_yellow1_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool yellow1"
+          ],
+          "geo_accession": [
+            "GSM4933449"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Yellow\" is a pool of cells from individuals with known genotype.  \"Yellow1\" indicates it was the first of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891168",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571444"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933449/suppl/GSM4933449_yellow1_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 12571,
+        "unassigned_source_rows": 9003,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E12",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E03",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "44"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E09",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "1"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933449_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933449_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E09",
+          "E10",
+          "E11",
+          "E12",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933449_selected_assignments.csv.gz",
+          "sha256": "5780ec8216123471d96aea94df8f880120181662d0f15842131ef7229936c301",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    },
+    {
+      "accession": "GSM4933450",
+      "donor_id": "pooled_before_published_assignment",
+      "genes_member": "GSM4933450_yellow2_genes.tsv.gz",
+      "barcodes_member": "GSM4933450_yellow2_barcodes.tsv.gz",
+      "matrix_member": "GSM4933450_yellow2_matrix.mtx.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_genes.tsv.gz",
+          "filename": "GSM4933450_yellow2_genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_barcodes.tsv.gz",
+          "filename": "GSM4933450_yellow2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_matrix.mtx.gz",
+          "filename": "GSM4933450_yellow2_matrix.mtx.gz"
+        }
+      ],
+      "source_metadata": {
+        "title": [
+          "sample pool yellow2"
+        ],
+        "geo_accession": [
+          "GSM4933450"
+        ],
+        "status": [
+          "Public on Sep 03 2021"
+        ],
+        "submission_date": [
+          "Nov 24 2020"
+        ],
+        "last_update_date": [
+          "Sep 03 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc"
+        ],
+        "treatment_protocol_ch1": [
+          "cells were thawed, washed, counted and immediately used for the experiment"
+        ],
+        "growth_protocol_ch1": [
+          "none"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+          "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+        ],
+        "description": [
+          "single cell RNA",
+          "total RNA",
+          "Explanation of multiplexing strategy: \"Yellow\" is a pool of cells from individuals with known genotype.  \"Yellow2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+        ],
+        "data_processing": [
+          "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+          "10X pipestances made using cellranger v2.0.1 count",
+          "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+          "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Bradley,Wayne,Blaser"
+        ],
+        "contact_email": [
+          "bradley.blaser@osumc.edu"
+        ],
+        "contact_laboratory": [
+          "Blaser Lab"
+        ],
+        "contact_department": [
+          "Comprehensive Cancer Center"
+        ],
+        "contact_institute": [
+          "Ohio State University"
+        ],
+        "contact_address": [
+          "400 W 12th Ave"
+        ],
+        "contact_city": [
+          "Columbus"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "43210"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891151",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571445"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE162117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "cells": 22420,
+        "genes": 32738,
+        "nonzeros": 23553276,
+        "gene_coordinate_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "8778dd78085086be6dcafa8334f95f7cf76b25526e8ef2b63186db5127a1492c",
+        "source_features": 32738,
+        "source_barcode_rows": 22420,
+        "RNA_positive_barcode_rows": 22420,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "accession": "GSM4933450",
+        "channel": "yellow2",
+        "members": {
+          "genes_member": "GSM4933450_yellow2_genes.tsv.gz",
+          "barcodes_member": "GSM4933450_yellow2_barcodes.tsv.gz",
+          "matrix_member": "GSM4933450_yellow2_matrix.mtx.gz"
+        },
+        "assets": [
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_genes.tsv.gz",
+            "filename": "GSM4933450_yellow2_genes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_barcodes.tsv.gz",
+            "filename": "GSM4933450_yellow2_barcodes.tsv.gz"
+          },
+          {
+            "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_matrix.mtx.gz",
+            "filename": "GSM4933450_yellow2_matrix.mtx.gz"
+          }
+        ],
+        "original_source": {
+          "title": [
+            "sample pool yellow2"
+          ],
+          "geo_accession": [
+            "GSM4933450"
+          ],
+          "status": [
+            "Public on Sep 03 2021"
+          ],
+          "submission_date": [
+            "Nov 24 2020"
+          ],
+          "last_update_date": [
+            "Sep 03 2021"
+          ],
+          "type": [
+            "SRA"
+          ],
+          "channel_count": [
+            "1"
+          ],
+          "source_name_ch1": [
+            "pbmc"
+          ],
+          "organism_ch1": [
+            "Homo sapiens"
+          ],
+          "taxid_ch1": [
+            "9606"
+          ],
+          "characteristics_ch1": [
+            "cell type: pbmc"
+          ],
+          "treatment_protocol_ch1": [
+            "cells were thawed, washed, counted and immediately used for the experiment"
+          ],
+          "growth_protocol_ch1": [
+            "none"
+          ],
+          "molecule_ch1": [
+            "total RNA"
+          ],
+          "extract_protocol_ch1": [
+            "cells were resuspended, pooled and loaded at 40,000-50,000 cells per well on 10X chromium 3' gene expression chips.",
+            "single cell gene expression libraries were constructed according to the 10X 3' gene expression user guide."
+          ],
+          "description": [
+            "single cell RNA",
+            "total RNA",
+            "Explanation of multiplexing strategy: \"Yellow\" is a pool of cells from individuals with known genotype.  \"Yellow2\" indicates it was the second of two replicates from this pool run on the 10X Chromium chip.  Cells have been demultiplexed based on snv data using freemuxlet.  The key for demultiplexing the mixed single cells and attaching patient metadata from this project can be found in cell_metadata.tsv."
+          ],
+          "data_processing": [
+            "BCL files converted to fastq using cellranger v2.0.1 mkfastq",
+            "10X pipestances made using cellranger v2.0.1 count",
+            "genetic demultiplexing using freemuxlet:  https://github.com/yelabucsf/popscle",
+            "custom analysis using Monocle3 and other tools:  https://github.com/blaserlab/ficlatuzumab_aml",
+            "Genome_build: hg19",
+            "Supplementary_files_format_and_content: *_barcodes.tsv contains 10X cell barcode data per sample pool.  *_genes.tsv contains gene short names and ensembl ids.  *_matrix.mtx contains cell gene matrices in Matrix Market sparse matrix format."
+          ],
+          "platform_id": [
+            "GPL20301"
+          ],
+          "contact_name": [
+            "Bradley,Wayne,Blaser"
+          ],
+          "contact_email": [
+            "bradley.blaser@osumc.edu"
+          ],
+          "contact_laboratory": [
+            "Blaser Lab"
+          ],
+          "contact_department": [
+            "Comprehensive Cancer Center"
+          ],
+          "contact_institute": [
+            "Ohio State University"
+          ],
+          "contact_address": [
+            "400 W 12th Ave"
+          ],
+          "contact_city": [
+            "Columbus"
+          ],
+          "contact_state": [
+            "OH"
+          ],
+          "contact_zip/postal_code": [
+            "43210"
+          ],
+          "contact_country": [
+            "USA"
+          ],
+          "instrument_model": [
+            "Illumina HiSeq 4000"
+          ],
+          "library_selection": [
+            "cDNA"
+          ],
+          "library_source": [
+            "transcriptomic"
+          ],
+          "library_strategy": [
+            "RNA-Seq"
+          ],
+          "relation": [
+            "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16891151",
+            "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9571445"
+          ],
+          "supplementary_file_1": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_barcodes.tsv.gz"
+          ],
+          "supplementary_file_2": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_genes.tsv.gz"
+          ],
+          "supplementary_file_3": [
+            "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4933nnn/GSM4933450/suppl/GSM4933450_yellow2_matrix.mtx.gz"
+          ],
+          "series_id": [
+            "GSE162117"
+          ],
+          "data_row_count": [
+            "0"
+          ]
+        },
+        "exact_published_barcode_membership": true,
+        "published_assigned_rows": 12729,
+        "unassigned_source_rows": 9691,
+        "source_patient_day_pairs": [
+          {
+            "patient": "E03",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E12",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E09",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E06",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E04",
+            "treatment_day": "3"
+          },
+          {
+            "patient": "E01",
+            "treatment_day": "44"
+          },
+          {
+            "patient": "E05",
+            "treatment_day": "2"
+          },
+          {
+            "patient": "E02",
+            "treatment_day": "42"
+          },
+          {
+            "patient": "E13",
+            "treatment_day": "1"
+          },
+          {
+            "patient": "E11",
+            "treatment_day": "0"
+          },
+          {
+            "patient": "E10",
+            "treatment_day": "Control"
+          },
+          {
+            "patient": "E07",
+            "treatment_day": "1"
+          }
+        ],
+        "assignment_path": "references/datasets/GSE162117_GSM4933450_selected_assignments.csv.gz",
+        "physical_identity_status": "Patient/day pairs are candidate observations; reported57samples versus51observedpairs and control reuse require primary identity reconciliation before export/count increment."
+      },
+      "cell_assignment": {
+        "member": "GSE162117_GSM4933450_selected_assignments.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "patient",
+        "expected_donors": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E09",
+          "E10",
+          "E11",
+          "E12",
+          "E13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE162117_GSM4933450_selected_assignments.csv.gz",
+          "sha256": "a3f178f0933c04094e17109cb28ac78c3d3dd1a06d4e2633893526a964ffa6a4",
+          "kind": "Unchanged published nonmissing channel/barcode/patient/treatment-day assignments"
+        }
+      },
+      "metadata": {
+        "source_coverage": "Public PBMC RNA counts from original hg19 CellRanger pools; cell-level source assignments select114505of175667sourcebarcodes. Missing assignment rows excluded, no inferred donor/day.",
+        "source_identity_policy": "Group exactly by published patient plus treatment_day across technical capture channels. These are51source-coded donor/day observations from12donor codes, not10pool reactions or57obtained samples. Conservative same-code grouping; additional same-day collections cannot be distinguished.",
+        "source_capture_policy": "Original description explicitly identifies capture1/2 as replicates of the same pool. Merge assigned distinct cells into their published patient/day group; full native barcode/count profile audit rejects exact cell reuse across captures.",
+        "source_time_policy": "Preserve nominal source treatment_day strings including0/1/2/3/42/44/Control. Source field is not a calendar date or independently verified elapsed time from a particular therapy dose. No time assigned to Control.",
+        "source_assignment_uncertainty": "Published freemuxlet assignments used as deposited; per-cell calibrated assignment confidence unavailable. No genotype data requested or inferred.",
+        "source_response_policy": "Original cell-level response strings CR/NR/Normal/missing retained; not a clinical state or prospective predictor for each draw. Missing responses not imputed.",
+        "source_demographic_policy": "Individual age/sex unavailable in original assignment table, not imputed.",
+        "source_alias_policy": "E10Control source code grouped once across captures; no independent healthy specimen increment per pool. Global cross-study identity unresolved."
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "metadata_mapping": {
+    "aliases": {
+      "source_participant_code": "source_cell_patient",
+      "source_visit_label": "source_cell_treatment_day",
+      "source_reported_response": "source_cell_response"
+    }
+  }
+}

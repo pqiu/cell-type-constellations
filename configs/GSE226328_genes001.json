@@ -1,0 +1,337 @@
+{
+  "dataset_id": "GSE226328_genes001",
+  "study_id": "GSE226328",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "SourceGEO/primaryparticipantdesign explicitly identifiesonepersonwithtwo distinctclinical bloodcollections. RepeateddonorIDs retainedacrossvisits; sourceRNAcounts andavailablegeneaxes audited. No extra independentreplication, temporalinterpolation orglobalidentityclaim.",
+  "source_metadata": {
+    "accession": "GSE226328",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226328"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE226328",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+    "source_processing": [
+      "Raw reads from scRNA-seq were processed to generate gene expression matrixes using CeleScope (https://github.com/singleron-RD/CeleScope) v1.9.0 pipeline.",
+      "Raw reads were first processed with CeleScope to remove low quality reads with Cutadapt v1.17 to trim poly-A tail and adapter sequences.",
+      "Cell barcode and UMI were extracted. After that, we used STAR v2.6.1a to map reads to the reference genome GRCh38.UMI counts and gene counts of each cell were acquired with featureCounts v2.0.1 software, and used to generate expression matrix files for subsequent analysis.",
+      "After visualizing the expression level of XXX cell Marker genes using FeaturePlot in the Seurat package v3.1.2, the result indicated substantial ambient RNA contamination. To solve this situation, ambient RNA removal was then performed using the decontX algorithm in the celda package v.1.3.8 . The decontX algorithm assumes that there are K cell populations and uses Bayesian variational inference to infer the ambient RNA contamination as a weighted combination of the XXX cell population distributions. This algorithm required the raw UMI counts and several cell populations calculated using FindClusters by Seurat package v3.1.2 as input, and the therefore derive a decontaminated count matrix from the raw data. A default random seed was used for reproducibility throughout the entire analysis.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: matrix files"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7073188",
+      "donor_id": "source_single_recipient",
+      "source_metadata": {
+        "title": [
+          "ZZH20220826-0, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7073188"
+        ],
+        "status": [
+          "Public on Mar 01 2023"
+        ],
+        "submission_date": [
+          "Feb 28 2023"
+        ],
+        "last_update_date": [
+          "Mar 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "time: preoperative",
+          "treatment: untreated control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The PBMCs were isolated by density gradient centrifugation using Ficoll-Paque Plus medium (GE Healthcare) and washed with Ca/Mg-free PBS. To remove the red blood cells, 2 mL GEXSCOPE\u00ae red blood cell lysis bu\ufb00er (RCLB, Singleron) was added at 25\u00b0C for 10 minutes. The solution was then centrifuged at 500 \u00d7 g for 5 min and suspended in PBS. The blood samples were centrifuged at 400g for 5 min at 4\u00b0C, and the supernatant was discarded. After removed red blood cells, PBMCs were isolated by centrifuged at 400g for 10min at 4\u00b0C. The supernatant was discarded and the PBMCs were resuspended by phosphate buffered saline to obtain a single-cell suspension",
+          "Single-cell suspensions (2\u00d7105 cells/mL) with PBS (HyClone) were loaded onto microwell chip using the Singleron Matrix\u00ae Single Cell Processing System. Barcoding Beads are subsequently collected from the microwell chip, followed by reverse transcription of the mRNA captured by the Barcoding Beads and to obtain cDNA, and PCR amplification. The amplified cDNA is then fragmented and ligated with sequencing adapters. The scRNA-seq libraries were constructed according to the protocol of the GEXSCOPE\u00ae Single Cell RNA Library Kits (Singleron) (Ref). Individual libraries were diluted to 4 nM, pooled, and sequenced on Illumina novaseq 6000 with 150 bp paired end reads."
+        ],
+        "description": [
+          "Singleron Matrix"
+        ],
+        "data_processing": [
+          "Raw reads from scRNA-seq were processed to generate gene expression matrixes using CeleScope (https://github.com/singleron-RD/CeleScope) v1.9.0 pipeline.",
+          "Raw reads were first processed with CeleScope to remove low quality reads with Cutadapt v1.17 to trim poly-A tail and adapter sequences.",
+          "Cell barcode and UMI were extracted. After that, we used STAR v2.6.1a to map reads to the reference genome GRCh38.UMI counts and gene counts of each cell were acquired with featureCounts v2.0.1 software, and used to generate expression matrix files for subsequent analysis.",
+          "After visualizing the expression level of XXX cell Marker genes using FeaturePlot in the Seurat package v3.1.2, the result indicated substantial ambient RNA contamination. To solve this situation, ambient RNA removal was then performed using the decontX algorithm in the celda package v.1.3.8 . The decontX algorithm assumes that there are K cell populations and uses Bayesian variational inference to infer the ambient RNA contamination as a weighted combination of the XXX cell population distributions. This algorithm required the raw UMI counts and several cell populations calculated using FindClusters by Seurat package v3.1.2 as input, and the therefore derive a decontaminated count matrix from the raw data. A default random seed was used for reproducibility throughout the entire analysis.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kuanhong,,Xu"
+        ],
+        "contact_institute": [
+          "Wuhan Institute of Biological Products"
+        ],
+        "contact_address": [
+          "1 Zhengdian Gold Industrial Park Road, Jiangxia District, Wuhan, China."
+        ],
+        "contact_city": [
+          "Wuhan"
+        ],
+        "contact_zip/postal_code": [
+          "430000"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN33515346",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX19530495"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7073nnn/GSM7073188/suppl/GSM7073188_ZZH20220826-0_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE226328"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "nested_archive_member": "GSM7073188_ZZH20220826-0_matrix.tar.gz",
+      "genes_member": "./genes.tsv",
+      "barcodes_member": "./barcodes.tsv",
+      "matrix_member": "./matrix.mtx",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7073nnn/GSM7073188/suppl/GSM7073188_ZZH20220826-0_matrix.tar.gz",
+          "filename": "GSM7073188_ZZH20220826-0_matrix.tar.gz",
+          "expected_bytes": 14848456
+        }
+      ],
+      "source_count_review": {
+        "cells": 8254,
+        "genes": 58336,
+        "nonzeros": 4943637,
+        "integer_nonnegative_counts": true,
+        "source_barcode_rows": 8254,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "member_sha256": {
+          "genes_member": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+          "barcodes_member": "78bf2aea7a3a03524b7322033a83870c393c46c91cd3738cf6589536ebfa7992",
+          "matrix_member": "9311d21c3a46bf83771d3f0c32197e182e0988dc7c027f43ca28b76a6866d43b"
+        },
+        "source_mitochondrial_features": 37,
+        "source_archive_sha256": "e2122c3ef78bbf7e87f4baa95c9e3e4cabc17d040e2626d8eadbd5b51587c165"
+      },
+      "metadata": {
+        "disease": "kidney transplant recipient",
+        "source_visit_label": "preoperative",
+        "source_treatment": "untreated control",
+        "source_identity_evidence": "GEO overall design explicitly states PBMCs obtained from one recipient preoperatively and on POD7; retain one donor across both physical collections.",
+        "source_timing_scope": "Preserve declared preoperative/POD7 label. Date-like source specimen names not parsed into verified dates or elapsed baseline days.",
+        "source_disease_context": "Clinical kidney transplantation; preoperative untreated-control label does not imply a healthy participant.",
+        "source_participant_code": "source_single_recipient",
+        "source_demographics": "Individual ages, reported sex, detailed medication history and exact collection dates not joined; no cohort or expression-based imputation.",
+        "source_preparation": "Public native clinical PBMC UMI archive; CeleScope/GRCh38 processing as documented in original GEO record",
+        "source_gene_processing": "All available native human RNA coordinates preserved. No author integrated/normalized expression, UMAP or non-human assays used as geometry.",
+        "source_repetition_scope": "Two observations from one source-confirmed participant; additional cells increase conditional centroid precision, not independent donor replication."
+      }
+    },
+    {
+      "accession": "GSM7073189",
+      "donor_id": "source_single_recipient",
+      "source_metadata": {
+        "title": [
+          "ZZH20220901-7, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7073189"
+        ],
+        "status": [
+          "Public on Mar 01 2023"
+        ],
+        "submission_date": [
+          "Feb 28 2023"
+        ],
+        "last_update_date": [
+          "Mar 01 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "time: POD7",
+          "treatment: treated with Porcine anti-human lymphocyte immunoglobulin"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The PBMCs were isolated by density gradient centrifugation using Ficoll-Paque Plus medium (GE Healthcare) and washed with Ca/Mg-free PBS. To remove the red blood cells, 2 mL GEXSCOPE\u00ae red blood cell lysis bu\ufb00er (RCLB, Singleron) was added at 25\u00b0C for 10 minutes. The solution was then centrifuged at 500 \u00d7 g for 5 min and suspended in PBS. The blood samples were centrifuged at 400g for 5 min at 4\u00b0C, and the supernatant was discarded. After removed red blood cells, PBMCs were isolated by centrifuged at 400g for 10min at 4\u00b0C. The supernatant was discarded and the PBMCs were resuspended by phosphate buffered saline to obtain a single-cell suspension",
+          "Single-cell suspensions (2\u00d7105 cells/mL) with PBS (HyClone) were loaded onto microwell chip using the Singleron Matrix\u00ae Single Cell Processing System. Barcoding Beads are subsequently collected from the microwell chip, followed by reverse transcription of the mRNA captured by the Barcoding Beads and to obtain cDNA, and PCR amplification. The amplified cDNA is then fragmented and ligated with sequencing adapters. The scRNA-seq libraries were constructed according to the protocol of the GEXSCOPE\u00ae Single Cell RNA Library Kits (Singleron) (Ref). Individual libraries were diluted to 4 nM, pooled, and sequenced on Illumina novaseq 6000 with 150 bp paired end reads."
+        ],
+        "description": [
+          "Singleron Matrix"
+        ],
+        "data_processing": [
+          "Raw reads from scRNA-seq were processed to generate gene expression matrixes using CeleScope (https://github.com/singleron-RD/CeleScope) v1.9.0 pipeline.",
+          "Raw reads were first processed with CeleScope to remove low quality reads with Cutadapt v1.17 to trim poly-A tail and adapter sequences.",
+          "Cell barcode and UMI were extracted. After that, we used STAR v2.6.1a to map reads to the reference genome GRCh38.UMI counts and gene counts of each cell were acquired with featureCounts v2.0.1 software, and used to generate expression matrix files for subsequent analysis.",
+          "After visualizing the expression level of XXX cell Marker genes using FeaturePlot in the Seurat package v3.1.2, the result indicated substantial ambient RNA contamination. To solve this situation, ambient RNA removal was then performed using the decontX algorithm in the celda package v.1.3.8 . The decontX algorithm assumes that there are K cell populations and uses Bayesian variational inference to infer the ambient RNA contamination as a weighted combination of the XXX cell population distributions. This algorithm required the raw UMI counts and several cell populations calculated using FindClusters by Seurat package v3.1.2 as input, and the therefore derive a decontaminated count matrix from the raw data. A default random seed was used for reproducibility throughout the entire analysis.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kuanhong,,Xu"
+        ],
+        "contact_institute": [
+          "Wuhan Institute of Biological Products"
+        ],
+        "contact_address": [
+          "1 Zhengdian Gold Industrial Park Road, Jiangxia District, Wuhan, China."
+        ],
+        "contact_city": [
+          "Wuhan"
+        ],
+        "contact_zip/postal_code": [
+          "430000"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN33515344",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX19530496"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7073nnn/GSM7073189/suppl/GSM7073189_ZZH20220901-7_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE226328"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "nested_archive_member": "GSM7073189_ZZH20220901-7_matrix.tar.gz",
+      "genes_member": "./genes.tsv",
+      "barcodes_member": "./barcodes.tsv",
+      "matrix_member": "./matrix.mtx",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7073nnn/GSM7073189/suppl/GSM7073189_ZZH20220901-7_matrix.tar.gz",
+          "filename": "GSM7073189_ZZH20220901-7_matrix.tar.gz",
+          "expected_bytes": 16507414
+        }
+      ],
+      "source_count_review": {
+        "cells": 8399,
+        "genes": 58336,
+        "nonzeros": 5551681,
+        "integer_nonnegative_counts": true,
+        "source_barcode_rows": 8399,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "member_sha256": {
+          "genes_member": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+          "barcodes_member": "d4115ea76d031ba09b9319fc26d463bbeea3982d1f85a7518bb68138b285a93b",
+          "matrix_member": "c779fac1fadb31c937356c50c419301c017aa5ada523dca8d4dd05c16197c11d"
+        },
+        "source_mitochondrial_features": 37,
+        "source_archive_sha256": "32940a76361acc4bb7907b3f1c41f1e4ab20f601d605e76d8fc0cdbf125cbd51"
+      },
+      "metadata": {
+        "disease": "kidney transplant recipient",
+        "source_visit_label": "POD7",
+        "source_treatment": "treated with Porcine anti-human lymphocyte immunoglobulin",
+        "source_identity_evidence": "GEO overall design explicitly states PBMCs obtained from one recipient preoperatively and on POD7; retain one donor across both physical collections.",
+        "source_timing_scope": "Preserve declared preoperative/POD7 label. Date-like source specimen names not parsed into verified dates or elapsed baseline days.",
+        "source_disease_context": "Clinical kidney transplantation; preoperative untreated-control label does not imply a healthy participant.",
+        "source_participant_code": "source_single_recipient",
+        "source_demographics": "Individual ages, reported sex, detailed medication history and exact collection dates not joined; no cohort or expression-based imputation.",
+        "source_preparation": "Public native clinical PBMC UMI archive; CeleScope/GRCh38 processing as documented in original GEO record",
+        "source_gene_processing": "All available native human RNA coordinates preserved. No author integrated/normalized expression, UMAP or non-human assays used as geometry.",
+        "source_repetition_scope": "Two observations from one source-confirmed participant; additional cells increase conditional centroid precision, not independent donor replication."
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

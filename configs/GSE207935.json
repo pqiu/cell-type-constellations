@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE207935",
+  "study_id": "GSE207935",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE207935_complete_original_RNA_audit.json",
+    "bytes": 9358,
+    "sha256": "be3272e5ea56f042d9487b971cd367057c3de6a715a347f49c460a35db992f6a"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE207935_source_identity_review.json",
+    "bytes": 5367,
+    "sha256": "54bb6e64643834a7333a8d22e2d8838642520c6d7fcdb5b5326223135aed6e8d"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Exact original full cellID joins author metadata. Literal per-cell Sample keys join H5library_ids and their explicit Subject/Group arrays. Six supplied Subjectcodes each have two dependent ex vivo views. No barcode-suffix ordinal, gene-profile, genotype or demographic mapping.",
+  "physical_sample_mapping_evidence": "Six explicit original H5Subject participant/material groups, with12dependent ex vivo Sample/library views. Author per-cell Sample joins literal H5library_ids and their explicit Subject/Group attributes.6429originalrows lackauthor metadata and addno identities; no barcodeordinal/profile/genotype mapping. C/Pdisplayaliases and demographics unassigned; global uniqueness unproven.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase",
+      "author_cell_type": "source_original_predicted.celltype.l2"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE207935",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE207935",
+    "primary_PMID": "36136607",
+    "primary_DOI": "10.1172/jci.insight.162695",
+    "access": "Public original H5RNAcounts, prediction table and nested-gzip authorRDS; original per-cell assignments verified.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE207935_source_identity_review.json",
+      "bytes": 5367,
+      "sha256": "54bb6e64643834a7333a8d22e2d8838642520c6d7fcdb5b5326223135aed6e8d"
+    },
+    "source_unit": "Six explicit original H5Subject participant/material groups, with12dependent ex vivo Sample/library views. Author per-cell Sample joins literal H5library_ids and their explicit Subject/Group attributes.6429originalrows lackauthor metadata and addno identities; no barcodeordinal/profile/genotype mapping. C/Pdisplayaliases and demographics unassigned; global uniqueness unproven.",
+    "identity_policy": "Exact original full cellID joins author metadata. Literal per-cell Sample keys join H5library_ids and their explicit Subject/Group arrays. Six supplied Subjectcodes each have two dependent ex vivo views. No barcode-suffix ordinal, gene-profile, genotype or demographic mapping.",
+    "clinical_policy": "Retain author Affstat Control/STAT3_GOF and Stim No Stim/Stim. Protocol describes16h ex vivo treatment; exact blood collection dates/visits unassigned. Individual sex/age/variant and GEO C/Pdisplay aliases remain unassigned without explicit crosswalk.",
+    "reuse_policy": "Six conservative participant/material groups from twelve source RNA libraries. Media and stimulated views do not add donors. No completed source accession/PMID36136607/DOI/H5Subject matches found in reviewed run records; global aliases and uniqueness remain unresolved.",
+    "selection_policy": "140931explicit author-metadata rows eligible from147360original source count rows.6429unassigned count rows remain in original count/row-selection proofs without invented identities. No additional author predicted-T-cell gate: retain every assigned source row before projectQC, including nonT predictions.",
+    "cell_calling_policy": "Source is purified PBMC-derived CD3Tcells, not whole-PBMC composition. Author predictions/clusters/cachedQC retained, not independently biologicallyvalidated. CachedQC uses25152gene reduced source space; ownQC/centroids retain all36601provided nativegenes. No SCT/integrated/embedding quantities used as counts.",
+    "gene_policy": "All36601 supplied native unique geneIDs/symbols/featuretypes/genome retained, including duplicatedsymbols. Annotation alone aggregates exact matching symbols; full-gene geometry is unchanged. Source cachedQC uses25152genes after147052source rows with>=200detected genes and genes detected in>=3ofthose rows; allcached RNA QCvalues reproduced, but this reduced axis is not used for projectQC or centroids.",
+    "count_semantics": "Original finite nonnegative integer CellRanger H5 counts. All252655645original entries audited before explicit metadata eligibility. Source RDS RNA cachedQC uses a reduced feature space; SCT/integrated/embedding quantities are not counts. Project geometry/QC uses fullnative RNA; no inversion,rounding or count reconstruction.",
+    "source_limitations": "Six study-scoped subject/material groups, not twelve independent donors. Purified/culturedTcells and author metadata eligibility limit composition/coverage interpretation. Clinical/global aliases unresolved. No causal, efficacy, biological annotation or constellation validation."
+  }
+}

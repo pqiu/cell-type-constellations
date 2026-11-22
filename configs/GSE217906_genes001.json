@@ -1,0 +1,1346 @@
+{
+  "dataset_id": "GSE217906_genes001",
+  "study_id": "GSE217906",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Nine original source records match primary design:4PICS,2acuteSepsis,3HC. Original distinct labels retained. Seven later-added records held pending alias/replication review; no patient-day inference.",
+  "source_metadata": {
+    "accession": "GSE217906",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/39824181/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE217906",
+    "access": "Public original RNA count triplets",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "gene_coordinate_sha256": "9b30529a933b1359a73462e8fb74a9311caf7d07cb400b538930f6c72e088ce6",
+    "source_processing": [
+      "Basecalls performed using CASAVA version 1.8",
+      "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6729707",
+      "donor_id": "PD-01",
+      "source_metadata": {
+        "accession": "GSM6729707",
+        "title": [
+          "PD-01"
+        ],
+        "geo_accession": [
+          "GSM6729707"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: PICS-death"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712742",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251345"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729707/suppl/GSM6729707_PD-01.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729707/suppl/GSM6729707_PD-01.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729707/suppl/GSM6729707_PD-01.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "PICS-death",
+        "source_patient_id": "PD-01"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729707/suppl/GSM6729707_PD-01.genes.tsv.gz",
+          "filename": "GSM6729707_PD-01.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729707/suppl/GSM6729707_PD-01.barcodes.tsv.gz",
+          "filename": "GSM6729707_PD-01.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729707/suppl/GSM6729707_PD-01.matrix.mtx.gz",
+          "filename": "GSM6729707_PD-01.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729707_PD-01.genes.tsv.gz",
+      "barcodes_member": "GSM6729707_PD-01.barcodes.tsv.gz",
+      "matrix_member": "GSM6729707_PD-01.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          5728
+        ],
+        "nonzeros": 9626402,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729708",
+      "donor_id": "PD-02",
+      "source_metadata": {
+        "accession": "GSM6729708",
+        "title": [
+          "PD-02"
+        ],
+        "geo_accession": [
+          "GSM6729708"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: PICS-death"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712741",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251343"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729708/suppl/GSM6729708_PD-02.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729708/suppl/GSM6729708_PD-02.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729708/suppl/GSM6729708_PD-02.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "PICS-death",
+        "source_patient_id": "PD-02"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729708/suppl/GSM6729708_PD-02.genes.tsv.gz",
+          "filename": "GSM6729708_PD-02.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729708/suppl/GSM6729708_PD-02.barcodes.tsv.gz",
+          "filename": "GSM6729708_PD-02.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729708/suppl/GSM6729708_PD-02.matrix.mtx.gz",
+          "filename": "GSM6729708_PD-02.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729708_PD-02.genes.tsv.gz",
+      "barcodes_member": "GSM6729708_PD-02.barcodes.tsv.gz",
+      "matrix_member": "GSM6729708_PD-02.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          2630
+        ],
+        "nonzeros": 4298902,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729709",
+      "donor_id": "PA-01",
+      "source_metadata": {
+        "accession": "GSM6729709",
+        "title": [
+          "PA-01"
+        ],
+        "geo_accession": [
+          "GSM6729709"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: PICS-alive"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712740",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251344"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729709/suppl/GSM6729709_PA-01.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729709/suppl/GSM6729709_PA-01.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729709/suppl/GSM6729709_PA-01.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "PICS-alive",
+        "source_patient_id": "PA-01"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729709/suppl/GSM6729709_PA-01.genes.tsv.gz",
+          "filename": "GSM6729709_PA-01.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729709/suppl/GSM6729709_PA-01.barcodes.tsv.gz",
+          "filename": "GSM6729709_PA-01.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729709/suppl/GSM6729709_PA-01.matrix.mtx.gz",
+          "filename": "GSM6729709_PA-01.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729709_PA-01.genes.tsv.gz",
+      "barcodes_member": "GSM6729709_PA-01.barcodes.tsv.gz",
+      "matrix_member": "GSM6729709_PA-01.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          4173
+        ],
+        "nonzeros": 7826533,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729710",
+      "donor_id": "PA-02",
+      "source_metadata": {
+        "accession": "GSM6729710",
+        "title": [
+          "PA-02"
+        ],
+        "geo_accession": [
+          "GSM6729710"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: PICS-alive"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712739",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251346"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729710/suppl/GSM6729710_PA-02.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729710/suppl/GSM6729710_PA-02.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729710/suppl/GSM6729710_PA-02.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "PICS-alive",
+        "source_patient_id": "PA-02"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729710/suppl/GSM6729710_PA-02.genes.tsv.gz",
+          "filename": "GSM6729710_PA-02.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729710/suppl/GSM6729710_PA-02.barcodes.tsv.gz",
+          "filename": "GSM6729710_PA-02.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729710/suppl/GSM6729710_PA-02.matrix.mtx.gz",
+          "filename": "GSM6729710_PA-02.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729710_PA-02.genes.tsv.gz",
+      "barcodes_member": "GSM6729710_PA-02.barcodes.tsv.gz",
+      "matrix_member": "GSM6729710_PA-02.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          5695
+        ],
+        "nonzeros": 5652262,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729711",
+      "donor_id": "AS-01",
+      "source_metadata": {
+        "accession": "GSM6729711",
+        "title": [
+          "AS-01"
+        ],
+        "geo_accession": [
+          "GSM6729711"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: Sepsis"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712738",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251347"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729711/suppl/GSM6729711_AS-01.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729711/suppl/GSM6729711_AS-01.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729711/suppl/GSM6729711_AS-01.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "Sepsis",
+        "source_patient_id": "AS-01"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729711/suppl/GSM6729711_AS-01.genes.tsv.gz",
+          "filename": "GSM6729711_AS-01.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729711/suppl/GSM6729711_AS-01.barcodes.tsv.gz",
+          "filename": "GSM6729711_AS-01.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729711/suppl/GSM6729711_AS-01.matrix.mtx.gz",
+          "filename": "GSM6729711_AS-01.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729711_AS-01.genes.tsv.gz",
+      "barcodes_member": "GSM6729711_AS-01.barcodes.tsv.gz",
+      "matrix_member": "GSM6729711_AS-01.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          5623
+        ],
+        "nonzeros": 10538398,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729712",
+      "donor_id": "AS-02",
+      "source_metadata": {
+        "accession": "GSM6729712",
+        "title": [
+          "AS-02"
+        ],
+        "geo_accession": [
+          "GSM6729712"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: Sepsis"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712737",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251348"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729712/suppl/GSM6729712_AS-02.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729712/suppl/GSM6729712_AS-02.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729712/suppl/GSM6729712_AS-02.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "Sepsis",
+        "source_patient_id": "AS-02"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729712/suppl/GSM6729712_AS-02.genes.tsv.gz",
+          "filename": "GSM6729712_AS-02.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729712/suppl/GSM6729712_AS-02.barcodes.tsv.gz",
+          "filename": "GSM6729712_AS-02.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729712/suppl/GSM6729712_AS-02.matrix.mtx.gz",
+          "filename": "GSM6729712_AS-02.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729712_AS-02.genes.tsv.gz",
+      "barcodes_member": "GSM6729712_AS-02.barcodes.tsv.gz",
+      "matrix_member": "GSM6729712_AS-02.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          4499
+        ],
+        "nonzeros": 6906406,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729713",
+      "donor_id": "HC-01",
+      "source_metadata": {
+        "accession": "GSM6729713",
+        "title": [
+          "HC-01"
+        ],
+        "geo_accession": [
+          "GSM6729713"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: HC"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712736",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251350"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729713/suppl/GSM6729713_HC-01.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729713/suppl/GSM6729713_HC-01.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729713/suppl/GSM6729713_HC-01.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "HC",
+        "source_patient_id": "HC-01"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729713/suppl/GSM6729713_HC-01.genes.tsv.gz",
+          "filename": "GSM6729713_HC-01.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729713/suppl/GSM6729713_HC-01.barcodes.tsv.gz",
+          "filename": "GSM6729713_HC-01.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729713/suppl/GSM6729713_HC-01.matrix.mtx.gz",
+          "filename": "GSM6729713_HC-01.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729713_HC-01.genes.tsv.gz",
+      "barcodes_member": "GSM6729713_HC-01.barcodes.tsv.gz",
+      "matrix_member": "GSM6729713_HC-01.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          5001
+        ],
+        "nonzeros": 7747282,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729714",
+      "donor_id": "HC-02",
+      "source_metadata": {
+        "accession": "GSM6729714",
+        "title": [
+          "HC-02"
+        ],
+        "geo_accession": [
+          "GSM6729714"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: HC"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712735",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251349"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729714/suppl/GSM6729714_HC-02.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729714/suppl/GSM6729714_HC-02.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729714/suppl/GSM6729714_HC-02.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "HC",
+        "source_patient_id": "HC-02"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729714/suppl/GSM6729714_HC-02.genes.tsv.gz",
+          "filename": "GSM6729714_HC-02.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729714/suppl/GSM6729714_HC-02.barcodes.tsv.gz",
+          "filename": "GSM6729714_HC-02.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729714/suppl/GSM6729714_HC-02.matrix.mtx.gz",
+          "filename": "GSM6729714_HC-02.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729714_HC-02.genes.tsv.gz",
+      "barcodes_member": "GSM6729714_HC-02.barcodes.tsv.gz",
+      "matrix_member": "GSM6729714_HC-02.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          10616
+        ],
+        "nonzeros": 16824669,
+        "finite_integer_nonnegative": true
+      }
+    },
+    {
+      "accession": "GSM6729715",
+      "donor_id": "HC-03",
+      "source_metadata": {
+        "accession": "GSM6729715",
+        "title": [
+          "HC-03"
+        ],
+        "geo_accession": [
+          "GSM6729715"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Nov 14 2022"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: peripheral blood mononuclear cells",
+          "disease state: HC"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood samples were processed as follows. Anticoagulant was mixed upside down prior to use. The anticoagulant blood volume was accurately measured and equal volume of PBS was added. The centrifugal tube was placed flat and slowly rotated to evenly mix the PBS and blood. A lymphocyte separator equal to the volume of the mixture was added to another centrifuge tube. The centrifuge tube of the lymphocyte separator was tilted to an angle of 30-45 degrees on the horizontal plane. Liquid from the mixture tube was slowly poured into the lymphocyte separation tube along the wall. When the anticoagulant blood covered the liquid surface of the separation solution, the dumping was slightly accelerated, and the separation tube was slowly returned to a vertical position. After the blood was completely poured into the separation tube, the separation solution and the blood were stratified. Using a centrifugal tube to minimize vibration, samples were centrifuged at 800 g for 20 min. A pipette was directly inserted into the middle layer and the lymphocytes along the tube wall were slowly extracted and transferred into a new 1.5 mL centrifuge tube. The samples were centrifuged at 2000 rpm for 10 min. Finally, the liquid was slowly collected from the centrifuge tube with 200 \u00b5L pipette while avoiding the cell precipitate.The pelleted cells were resuspended in red blood cell lysis buffer (Miltenyi Biotec) to lyse red blood cells. After washing with PBS containing 0.04% bovine serum albumin (BSA), the cell pellets were resuspended in PBS containing 0.04% BSA and re-filtered through a 35-\u03bcm cell strainer. Single cells were stained with acridine orange (AO)/ propidium iodide (PI) for viability assessment using a Countstar fluorescence cell analyzer."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was diluted with 1\u00d7 PBS (1:1), layered on top of Ficoll-Paque Plus (Cytiva, USA), and centrifuged at 400 g for 30 min. The PBMC layer was isolated and washed twice with Dulbecco's phosphate buffered saline (DPBS) at 300 g for 10 min, followed by the removal of erythrocytes with red blood cell lysate on ice. After centrifugation, the cells were resuspended in RPMI1640 containing 10% fetal bovine serum (FBS). Cell viability was verified using trypan blue and approached 90% for each sample. Cells with high viability were subjected to library preparation.",
+          "RNA libraries were generated by 10xGenomics Single Cell 3\u2019 V3.1 Library Gel Bead Kit and prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Basecalls performed using CASAVA version 1.8",
+          "cellranger (v3.1.0) was utilized to calculate the feature-barcode matrices. Cells contained over 200 expressed genes and mitochondria UMI rate below 20%  passed the cell quality filtering and mitochondria genes were removed in the expression table.   Seurat package (version: 3.1.4 , https://satijalab.org/seurat/) was used for cell normalization and regression based on the expression table according to the UMI counts of each sample and percent of mitochondria rate to obtain the scaled data.   PCA was constructed based on the scaled data with top 2000 high variable genes and top 10 principals  were used for tSNE construction and UMAP construction. Utilizing graph-based cluster method, we acquired the unsupervised cell cluster result based the PCA top 10  principal and we calculated the marker genes by FindAllMarkers function with wilcox rank sum test algorithm under following criteria:1. lnFC > 0.25; 2. pvalue<0.05; 3. min.pct>0.1.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Cell Ranger output files (barcodes.tsv, genes.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xingfeng,,Sun"
+        ],
+        "contact_email": [
+          "xfsunok@126.com, sunxingfeng1679@fckyy.org.cn"
+        ],
+        "contact_phone": [
+          "18221350590"
+        ],
+        "contact_institute": [
+          "Obstetrics and Gynecology Hospital of Fudan University"
+        ],
+        "contact_address": [
+          "Shenyang Road 128#, Yangpu District"
+        ],
+        "contact_city": [
+          "Shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31712734",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18251351"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729715/suppl/GSM6729715_HC-03.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729715/suppl/GSM6729715_HC-03.genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729715/suppl/GSM6729715_HC-03.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE217906"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "HC",
+        "source_patient_id": "HC-03"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729715/suppl/GSM6729715_HC-03.genes.tsv.gz",
+          "filename": "GSM6729715_HC-03.genes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729715/suppl/GSM6729715_HC-03.barcodes.tsv.gz",
+          "filename": "GSM6729715_HC-03.barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6729nnn/GSM6729715/suppl/GSM6729715_HC-03.matrix.mtx.gz",
+          "filename": "GSM6729715_HC-03.matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6729715_HC-03.genes.tsv.gz",
+      "barcodes_member": "GSM6729715_HC-03.barcodes.tsv.gz",
+      "matrix_member": "GSM6729715_HC-03.matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          27984,
+          3973
+        ],
+        "nonzeros": 6434207,
+        "finite_integer_nonnegative": true
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

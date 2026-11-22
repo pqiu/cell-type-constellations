@@ -1,0 +1,1290 @@
+{
+  "dataset_id": "GSE248695",
+  "study_id": "GSE248695",
+  "input_format": "atlas_geo_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "32distinctbaselineauthorIDs match4original8donorpools throughpublishedgenotype/CMOtables. AllretainedcellbarcodesmustmatchoriginalRNA matricesexactly. No pooledlibrarycounting. AtlasSCGT02samecohortmustnotbeimportedagain.",
+  "source_metadata": {
+    "accession": "GSE248695",
+    "publication": "https://doi.org/10.1038/s41591-025-04126-3",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE248695",
+    "access": "Public original counts and published atlas cell assignments",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO_record",
+    "source_processing": "Original36601GeneExpressionfeatures;12CMOs inCOPDlibrariesexcludedbeforelibrarynormalization. AuthorafterQC cellswithpublished donorassignments; SCimilarityrecomputed.",
+    "library_crosswalk": [
+      {
+        "gsm": "GSM7918844",
+        "atlas_library": "SCGT02_L003",
+        "specimens": 8,
+        "assigned_cells": 55929,
+        "exact_barcode_match": true
+      },
+      {
+        "gsm": "GSM7918845",
+        "atlas_library": "SCGT02_L001",
+        "specimens": 8,
+        "assigned_cells": 52300,
+        "exact_barcode_match": true
+      },
+      {
+        "gsm": "GSM7918846",
+        "atlas_library": "SCGT02_L002",
+        "specimens": 8,
+        "assigned_cells": 49288,
+        "exact_barcode_match": true
+      },
+      {
+        "gsm": "GSM7918847",
+        "atlas_library": "SCGT02_L000",
+        "specimens": 8,
+        "assigned_cells": 51872,
+        "exact_barcode_match": true
+      }
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7918844",
+      "donor_id": "assigned_per_cell",
+      "metadata": {
+        "visit": "baseline"
+      },
+      "source_metadata": {
+        "title": [
+          "ASTHMA_P1_Genotype_x8pool"
+        ],
+        "geo_accession": [
+          "GSM7918844"
+        ],
+        "status": [
+          "Public on Oct 13 2025"
+        ],
+        "submission_date": [
+          "Nov 27 2023"
+        ],
+        "last_update_date": [
+          "Oct 13 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed in a water bath at 37\u00baC and transferred to a 15 ml Falcon tube containing 10 ml of pre-warmed RPMI media supplemented with 10% FBS. Samples were centrifuged at 350 x g for 8 min at room temperature (RT), supernatant was removed and pellets resuspended with 1 ml of cold 1X PBS supplemented with 0.05% BSA. Samples were incubated during 10 min at RT with 0.1 mg/ml of DNAse I in order to eliminate ambient DNA and favor the resuspension of the pellet. Cells were filtered with a 40 \u00b5m strainer to remove eventual clumps and washed by adding 10 ml of cold PBS+0.05% BSA. Samples were centrifuged at 350 x g for 8 min at 4\u00baC and resuspended in an adequate volume of PBS+0.05% BSA in order to reach the desired concentration.",
+          "For ASTHMA + HC, PBMCs samples were evenly mixed in pools of 8 donors per library following a multiplexing approach based on donor\u2019s genotype. For COPD + HC, PBMCs samples were multiplexed with 10X Genomics Cell Plex kit following the Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocol (10x Genomics). Briefly, 0.2-1 million cells were centrifuged at 350x g at RT with a swinging-bucket rotor, resuspended in 100 \u00b5l of Cell Multiplexing Oligo and incubated at RT for 5 mins. Cells were washed 3 times with cold 1X PBS supplemented with 1% BSA, all centrifugations being performed at 350x g at 4C. Cells were finally resuspended in an appropriate volume of 1X PBS-1% BSA in order to obtain a final cell concentration. Multiplexed samples were encapsulated using the high throughput Chromium Next GEM Single Cell 3' HT Reagent Kit v3.1 in combination with the Chromium X instrument. Libraries were prepared following manufacturer\u2019s instructions of protocols CG000419.  Sequencing was carried out on a NovaSeq6000 system (Illumina) and NextSeq500 using the following sequencing conditions: 28 bp (Read 1) + 10 bp (i7 index) + 10 bp (i5 index) + 90 bp (Read 2), to obtain approximately 40.000 read pairs per cell for the Gene Expression (GEX) library and 2000-4000 read pairs per cell for the CellPlex library.",
+          "3\u2019 scRNA-seq: with and without CellPlex"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The barcoded processing, gene counting and aggregation were made using the Cell Ranger software v6.1.1 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)",
+          "Assembly: GRCh38-2020-A; v32; Ensembl98",
+          "Supplementary files format and content: barcodes.tsv: cell barcodes",
+          "Supplementary files format and content: features.tsv: gene names (including CMOs for CellPlex_x8pool libraries)",
+          "Supplementary files format and content: matrix.mtx: count matrix"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Laura,,Jim\u00e9nez-Gracia"
+        ],
+        "contact_email": [
+          "laura.jimenez@cnag.eu"
+        ],
+        "contact_laboratory": [
+          "Single-cell Genomics Team"
+        ],
+        "contact_institute": [
+          "Centre Nacional d'An\u00e0lisi Gen\u00f2mic (CNAG)"
+        ],
+        "contact_address": [
+          "c/ Baldiri Reixac, 4  Barcelona Science Park - Tower I"
+        ],
+        "contact_city": [
+          "Barcelona"
+        ],
+        "contact_zip/postal_code": [
+          "08028"
+        ],
+        "contact_country": [
+          "Spain"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38468677",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22662018"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918844/suppl/GSM7918844_ydel7jem_7vfzbxy2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918844/suppl/GSM7918844_ydel7jem_7vfzbxy2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918844/suppl/GSM7918844_ydel7jem_7vfzbxy2_geno.csv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918844/suppl/GSM7918844_ydel7jem_7vfzbxy2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE248688",
+          "GSE248695"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "atlas_selection": {
+        "library": "SCGT02_L003",
+        "samples": [
+          "SCGT02_ARMS024_T0",
+          "SCGT02_ARMS033_T0",
+          "SCGT02_ARMS043_T0",
+          "SCGT02_ARMS048_T0",
+          "SCGT02_ARMS072_T0",
+          "SCGT02_ARMS076_T0",
+          "SCGT02_ARMS097_T0",
+          "SCGT02_ARMS102_T0"
+        ],
+        "expected_cells": 55929
+      },
+      "genes_member": "GSM7918844_ydel7jem_7vfzbxy2_features.tsv.gz",
+      "barcodes_member": "GSM7918844_ydel7jem_7vfzbxy2_barcodes.tsv.gz",
+      "matrix_member": "GSM7918844_ydel7jem_7vfzbxy2_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM7918845",
+      "donor_id": "assigned_per_cell",
+      "metadata": {
+        "visit": "baseline"
+      },
+      "source_metadata": {
+        "title": [
+          "ASTHMA_P2_Genotype_x8pool"
+        ],
+        "geo_accession": [
+          "GSM7918845"
+        ],
+        "status": [
+          "Public on Oct 13 2025"
+        ],
+        "submission_date": [
+          "Nov 27 2023"
+        ],
+        "last_update_date": [
+          "Oct 13 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed in a water bath at 37\u00baC and transferred to a 15 ml Falcon tube containing 10 ml of pre-warmed RPMI media supplemented with 10% FBS. Samples were centrifuged at 350 x g for 8 min at room temperature (RT), supernatant was removed and pellets resuspended with 1 ml of cold 1X PBS supplemented with 0.05% BSA. Samples were incubated during 10 min at RT with 0.1 mg/ml of DNAse I in order to eliminate ambient DNA and favor the resuspension of the pellet. Cells were filtered with a 40 \u00b5m strainer to remove eventual clumps and washed by adding 10 ml of cold PBS+0.05% BSA. Samples were centrifuged at 350 x g for 8 min at 4\u00baC and resuspended in an adequate volume of PBS+0.05% BSA in order to reach the desired concentration.",
+          "For ASTHMA + HC, PBMCs samples were evenly mixed in pools of 8 donors per library following a multiplexing approach based on donor\u2019s genotype. For COPD + HC, PBMCs samples were multiplexed with 10X Genomics Cell Plex kit following the Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocol (10x Genomics). Briefly, 0.2-1 million cells were centrifuged at 350x g at RT with a swinging-bucket rotor, resuspended in 100 \u00b5l of Cell Multiplexing Oligo and incubated at RT for 5 mins. Cells were washed 3 times with cold 1X PBS supplemented with 1% BSA, all centrifugations being performed at 350x g at 4C. Cells were finally resuspended in an appropriate volume of 1X PBS-1% BSA in order to obtain a final cell concentration. Multiplexed samples were encapsulated using the high throughput Chromium Next GEM Single Cell 3' HT Reagent Kit v3.1 in combination with the Chromium X instrument. Libraries were prepared following manufacturer\u2019s instructions of protocols CG000419.  Sequencing was carried out on a NovaSeq6000 system (Illumina) and NextSeq500 using the following sequencing conditions: 28 bp (Read 1) + 10 bp (i7 index) + 10 bp (i5 index) + 90 bp (Read 2), to obtain approximately 40.000 read pairs per cell for the Gene Expression (GEX) library and 2000-4000 read pairs per cell for the CellPlex library.",
+          "3\u2019 scRNA-seq: with and without CellPlex"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The barcoded processing, gene counting and aggregation were made using the Cell Ranger software v6.1.1 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)",
+          "Assembly: GRCh38-2020-A; v32; Ensembl98",
+          "Supplementary files format and content: barcodes.tsv: cell barcodes",
+          "Supplementary files format and content: features.tsv: gene names (including CMOs for CellPlex_x8pool libraries)",
+          "Supplementary files format and content: matrix.mtx: count matrix"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Laura,,Jim\u00e9nez-Gracia"
+        ],
+        "contact_email": [
+          "laura.jimenez@cnag.eu"
+        ],
+        "contact_laboratory": [
+          "Single-cell Genomics Team"
+        ],
+        "contact_institute": [
+          "Centre Nacional d'An\u00e0lisi Gen\u00f2mic (CNAG)"
+        ],
+        "contact_address": [
+          "c/ Baldiri Reixac, 4  Barcelona Science Park - Tower I"
+        ],
+        "contact_city": [
+          "Barcelona"
+        ],
+        "contact_zip/postal_code": [
+          "08028"
+        ],
+        "contact_country": [
+          "Spain"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38468676",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22662020"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918845/suppl/GSM7918845_kccuxr4e_pitw68dw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918845/suppl/GSM7918845_kccuxr4e_pitw68dw_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918845/suppl/GSM7918845_kccuxr4e_pitw68dw_geno.csv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918845/suppl/GSM7918845_kccuxr4e_pitw68dw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE248688",
+          "GSE248695"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "atlas_selection": {
+        "library": "SCGT02_L001",
+        "samples": [
+          "SCGT02_ARMS050_T0",
+          "SCGT02_ARMS068_T0",
+          "SCGT02_ARMS090_T0",
+          "SCGT02_ARMS093_T0",
+          "SCGT02_ARMS094_T0",
+          "SCGT02_ARMS103_T0",
+          "SCGT02_ARMS125_T0",
+          "SCGT02_ARMS139_T0"
+        ],
+        "expected_cells": 52300
+      },
+      "genes_member": "GSM7918845_kccuxr4e_pitw68dw_features.tsv.gz",
+      "barcodes_member": "GSM7918845_kccuxr4e_pitw68dw_barcodes.tsv.gz",
+      "matrix_member": "GSM7918845_kccuxr4e_pitw68dw_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM7918846",
+      "donor_id": "assigned_per_cell",
+      "metadata": {
+        "visit": "baseline"
+      },
+      "source_metadata": {
+        "title": [
+          "COPD_P1_CellPlex_x8pool"
+        ],
+        "geo_accession": [
+          "GSM7918846"
+        ],
+        "status": [
+          "Public on Oct 13 2025"
+        ],
+        "submission_date": [
+          "Nov 27 2023"
+        ],
+        "last_update_date": [
+          "Oct 13 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed in a water bath at 37\u00baC and transferred to a 15 ml Falcon tube containing 10 ml of pre-warmed RPMI media supplemented with 10% FBS. Samples were centrifuged at 350 x g for 8 min at room temperature (RT), supernatant was removed and pellets resuspended with 1 ml of cold 1X PBS supplemented with 0.05% BSA. Samples were incubated during 10 min at RT with 0.1 mg/ml of DNAse I in order to eliminate ambient DNA and favor the resuspension of the pellet. Cells were filtered with a 40 \u00b5m strainer to remove eventual clumps and washed by adding 10 ml of cold PBS+0.05% BSA. Samples were centrifuged at 350 x g for 8 min at 4\u00baC and resuspended in an adequate volume of PBS+0.05% BSA in order to reach the desired concentration.",
+          "For ASTHMA + HC, PBMCs samples were evenly mixed in pools of 8 donors per library following a multiplexing approach based on donor\u2019s genotype. For COPD + HC, PBMCs samples were multiplexed with 10X Genomics Cell Plex kit following the Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocol (10x Genomics). Briefly, 0.2-1 million cells were centrifuged at 350x g at RT with a swinging-bucket rotor, resuspended in 100 \u00b5l of Cell Multiplexing Oligo and incubated at RT for 5 mins. Cells were washed 3 times with cold 1X PBS supplemented with 1% BSA, all centrifugations being performed at 350x g at 4C. Cells were finally resuspended in an appropriate volume of 1X PBS-1% BSA in order to obtain a final cell concentration. Multiplexed samples were encapsulated using the high throughput Chromium Next GEM Single Cell 3' HT Reagent Kit v3.1 in combination with the Chromium X instrument. Libraries were prepared following manufacturer\u2019s instructions of protocols CG000419.  Sequencing was carried out on a NovaSeq6000 system (Illumina) and NextSeq500 using the following sequencing conditions: 28 bp (Read 1) + 10 bp (i7 index) + 10 bp (i5 index) + 90 bp (Read 2), to obtain approximately 40.000 read pairs per cell for the Gene Expression (GEX) library and 2000-4000 read pairs per cell for the CellPlex library.",
+          "3\u2019 scRNA-seq: with and without CellPlex"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The barcoded processing, gene counting and aggregation were made using the Cell Ranger software v6.1.1 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)",
+          "Assembly: GRCh38-2020-A; v32; Ensembl98",
+          "Supplementary files format and content: barcodes.tsv: cell barcodes",
+          "Supplementary files format and content: features.tsv: gene names (including CMOs for CellPlex_x8pool libraries)",
+          "Supplementary files format and content: matrix.mtx: count matrix"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Laura,,Jim\u00e9nez-Gracia"
+        ],
+        "contact_email": [
+          "laura.jimenez@cnag.eu"
+        ],
+        "contact_laboratory": [
+          "Single-cell Genomics Team"
+        ],
+        "contact_institute": [
+          "Centre Nacional d'An\u00e0lisi Gen\u00f2mic (CNAG)"
+        ],
+        "contact_address": [
+          "c/ Baldiri Reixac, 4  Barcelona Science Park - Tower I"
+        ],
+        "contact_city": [
+          "Barcelona"
+        ],
+        "contact_zip/postal_code": [
+          "08028"
+        ],
+        "contact_country": [
+          "Spain"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38468675",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22662019"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918846/suppl/GSM7918846_mf25ll5r_cj55ewzz_CMO.csv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918846/suppl/GSM7918846_mf25ll5r_cj55ewzz_barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918846/suppl/GSM7918846_mf25ll5r_cj55ewzz_features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918846/suppl/GSM7918846_mf25ll5r_cj55ewzz_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE248688",
+          "GSE248695"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "atlas_selection": {
+        "library": "SCGT02_L002",
+        "samples": [
+          "SCGT02_SEO112_T0",
+          "SCGT02_SEO123_T0",
+          "SCGT02_SEO162_T0",
+          "SCGT02_SEO165_T0",
+          "SCGT02_SEO167_T0",
+          "SCGT02_SEO177_T0",
+          "SCGT02_SEO181_T0",
+          "SCGT02_SEO182_T0"
+        ],
+        "expected_cells": 49288
+      },
+      "genes_member": "GSM7918846_mf25ll5r_cj55ewzz_features.tsv.gz",
+      "barcodes_member": "GSM7918846_mf25ll5r_cj55ewzz_barcodes.tsv.gz",
+      "matrix_member": "GSM7918846_mf25ll5r_cj55ewzz_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM7918847",
+      "donor_id": "assigned_per_cell",
+      "metadata": {
+        "visit": "baseline"
+      },
+      "source_metadata": {
+        "title": [
+          "COPD_P2_CellPlex_x8pool"
+        ],
+        "geo_accession": [
+          "GSM7918847"
+        ],
+        "status": [
+          "Public on Oct 13 2025"
+        ],
+        "submission_date": [
+          "Nov 27 2023"
+        ],
+        "last_update_date": [
+          "Oct 13 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed in a water bath at 37\u00baC and transferred to a 15 ml Falcon tube containing 10 ml of pre-warmed RPMI media supplemented with 10% FBS. Samples were centrifuged at 350 x g for 8 min at room temperature (RT), supernatant was removed and pellets resuspended with 1 ml of cold 1X PBS supplemented with 0.05% BSA. Samples were incubated during 10 min at RT with 0.1 mg/ml of DNAse I in order to eliminate ambient DNA and favor the resuspension of the pellet. Cells were filtered with a 40 \u00b5m strainer to remove eventual clumps and washed by adding 10 ml of cold PBS+0.05% BSA. Samples were centrifuged at 350 x g for 8 min at 4\u00baC and resuspended in an adequate volume of PBS+0.05% BSA in order to reach the desired concentration.",
+          "For ASTHMA + HC, PBMCs samples were evenly mixed in pools of 8 donors per library following a multiplexing approach based on donor\u2019s genotype. For COPD + HC, PBMCs samples were multiplexed with 10X Genomics Cell Plex kit following the Cell Multiplexing Oligo Labeling for Single Cell RNA Sequencing Protocol (10x Genomics). Briefly, 0.2-1 million cells were centrifuged at 350x g at RT with a swinging-bucket rotor, resuspended in 100 \u00b5l of Cell Multiplexing Oligo and incubated at RT for 5 mins. Cells were washed 3 times with cold 1X PBS supplemented with 1% BSA, all centrifugations being performed at 350x g at 4C. Cells were finally resuspended in an appropriate volume of 1X PBS-1% BSA in order to obtain a final cell concentration. Multiplexed samples were encapsulated using the high throughput Chromium Next GEM Single Cell 3' HT Reagent Kit v3.1 in combination with the Chromium X instrument. Libraries were prepared following manufacturer\u2019s instructions of protocols CG000419.  Sequencing was carried out on a NovaSeq6000 system (Illumina) and NextSeq500 using the following sequencing conditions: 28 bp (Read 1) + 10 bp (i7 index) + 10 bp (i5 index) + 90 bp (Read 2), to obtain approximately 40.000 read pairs per cell for the Gene Expression (GEX) library and 2000-4000 read pairs per cell for the CellPlex library.",
+          "3\u2019 scRNA-seq: with and without CellPlex"
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The barcoded processing, gene counting and aggregation were made using the Cell Ranger software v6.1.1 (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)",
+          "Assembly: GRCh38-2020-A; v32; Ensembl98",
+          "Supplementary files format and content: barcodes.tsv: cell barcodes",
+          "Supplementary files format and content: features.tsv: gene names (including CMOs for CellPlex_x8pool libraries)",
+          "Supplementary files format and content: matrix.mtx: count matrix"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Laura,,Jim\u00e9nez-Gracia"
+        ],
+        "contact_email": [
+          "laura.jimenez@cnag.eu"
+        ],
+        "contact_laboratory": [
+          "Single-cell Genomics Team"
+        ],
+        "contact_institute": [
+          "Centre Nacional d'An\u00e0lisi Gen\u00f2mic (CNAG)"
+        ],
+        "contact_address": [
+          "c/ Baldiri Reixac, 4  Barcelona Science Park - Tower I"
+        ],
+        "contact_city": [
+          "Barcelona"
+        ],
+        "contact_zip/postal_code": [
+          "08028"
+        ],
+        "contact_country": [
+          "Spain"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38468674",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22662021"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918847/suppl/GSM7918847_bq82lbgc_ocghqebd_CMO.csv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918847/suppl/GSM7918847_bq82lbgc_ocghqebd_barcodes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918847/suppl/GSM7918847_bq82lbgc_ocghqebd_features.tsv.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7918nnn/GSM7918847/suppl/GSM7918847_bq82lbgc_ocghqebd_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE248688",
+          "GSE248695"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "atlas_selection": {
+        "library": "SCGT02_L000",
+        "samples": [
+          "SCGT02_SEO129_T0",
+          "SCGT02_SEO132_T0",
+          "SCGT02_SEO184_T0",
+          "SCGT02_SEO190_T0",
+          "SCGT02_SEO199_T0",
+          "SCGT02_SEO220_T0",
+          "SCGT02_SEO223_T0",
+          "SCGT02_SEO228_T0"
+        ],
+        "expected_cells": 51872
+      },
+      "genes_member": "GSM7918847_bq82lbgc_ocghqebd_features.tsv.gz",
+      "barcodes_member": "GSM7918847_bq82lbgc_ocghqebd_barcodes.tsv.gz",
+      "matrix_member": "GSM7918847_bq82lbgc_ocghqebd_matrix.mtx.gz"
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "metadata_mapping": {
+    "aliases": {
+      "age": "source_cell_age",
+      "sex": "source_cell_sex",
+      "disease_status": "source_cell_diseaseStatus",
+      "disease": "source_cell_disease",
+      "smoking_status": "source_cell_smokingStatus",
+      "BMI": "source_cell_BMI"
+    }
+  },
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE248nnn/GSE248695/suppl/GSE248695_RAW.tar",
+  "expected_bytes": 1813882880,
+  "specimen_metadata": {
+    "SCGT02_ARMS033_T0": {
+      "Unnamed: 0": "164",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS033",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "51.0",
+      "BMI": "23.01",
+      "binned_age": "51-60",
+      "diseaseStatus": "GINA_4",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS072_T0": {
+      "Unnamed: 0": "165",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS072",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "63.0",
+      "BMI": "28.29",
+      "binned_age": "61-70",
+      "diseaseStatus": "GINA_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS097_T0": {
+      "Unnamed: 0": "166",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS097",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "49.0",
+      "BMI": "27.55",
+      "binned_age": "41-50",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_ARMS024_T0": {
+      "Unnamed: 0": "167",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS024",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "51.0",
+      "BMI": "33.14",
+      "binned_age": "51-60",
+      "diseaseStatus": "GINA_4",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS043_T0": {
+      "Unnamed: 0": "168",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS043",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "53.0",
+      "BMI": "29.19",
+      "binned_age": "51-60",
+      "diseaseStatus": "GINA_3",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS102_T0": {
+      "Unnamed: 0": "169",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS102",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "47.0",
+      "BMI": "32.1",
+      "binned_age": "41-50",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_ARMS048_T0": {
+      "Unnamed: 0": "170",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS048",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "64.0",
+      "BMI": "20.83",
+      "binned_age": "61-70",
+      "diseaseStatus": "GINA_2",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS076_T0": {
+      "Unnamed: 0": "171",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS076",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "42.0",
+      "BMI": "32.63",
+      "binned_age": "41-50",
+      "diseaseStatus": "GINA_4",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS094_T0": {
+      "Unnamed: 0": "172",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS094",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "54.0",
+      "BMI": "36.36",
+      "binned_age": "51-60",
+      "diseaseStatus": "GINA_1",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS139_T0": {
+      "Unnamed: 0": "173",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS139",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "47.0",
+      "BMI": "22.14",
+      "binned_age": "41-50",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_ARMS090_T0": {
+      "Unnamed: 0": "174",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS090",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "51.0",
+      "BMI": "24.63",
+      "binned_age": "51-60",
+      "diseaseStatus": "GINA_1",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS050_T0": {
+      "Unnamed: 0": "175",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS050",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "65.0",
+      "BMI": "25.22",
+      "binned_age": "61-70",
+      "diseaseStatus": "GINA_3",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS125_T0": {
+      "Unnamed: 0": "176",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS125",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "55.0",
+      "BMI": "31.5",
+      "binned_age": "51-60",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_ARMS103_T0": {
+      "Unnamed: 0": "177",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS103",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "49.0",
+      "BMI": "26.15",
+      "binned_age": "41-50",
+      "diseaseStatus": "GINA_2",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS068_T0": {
+      "Unnamed: 0": "178",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS068",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "65.0",
+      "BMI": "23.82",
+      "binned_age": "61-70",
+      "diseaseStatus": "GINA_2",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_ARMS093_T0": {
+      "Unnamed: 0": "179",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_ARMS093",
+      "disease": "asthma",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "naive",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "58.0",
+      "BMI": "30.78",
+      "binned_age": "51-60",
+      "diseaseStatus": "GINA_2",
+      "smokingStatus": "never-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO182_T0": {
+      "Unnamed: 0": "180",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO182",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "60.0",
+      "BMI": "26.61",
+      "binned_age": "51-60",
+      "diseaseStatus": "GOLD_3",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO167_T0": {
+      "Unnamed: 0": "181",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO167",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "76.0",
+      "BMI": "21.3",
+      "binned_age": "71-80",
+      "diseaseStatus": "GOLD_3",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO162_T0": {
+      "Unnamed: 0": "182",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO162",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "63.0",
+      "BMI": "24.34",
+      "binned_age": "61-70",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO165_T0": {
+      "Unnamed: 0": "183",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO165",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "65.0",
+      "BMI": "25.64",
+      "binned_age": "61-70",
+      "diseaseStatus": "GOLD_3",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO112_T0": {
+      "Unnamed: 0": "184",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO112",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "57.0",
+      "BMI": "23.85",
+      "binned_age": "51-60",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_SEO123_T0": {
+      "Unnamed: 0": "185",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO123",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "67.0",
+      "BMI": "23.33",
+      "binned_age": "61-70",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_SEO177_T0": {
+      "Unnamed: 0": "186",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO177",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "62.0",
+      "BMI": "24.86",
+      "binned_age": "61-70",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO181_T0": {
+      "Unnamed: 0": "187",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO181",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "74.0",
+      "BMI": "22.05",
+      "binned_age": "71-80",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO184_T0": {
+      "Unnamed: 0": "188",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO184",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "54.0",
+      "BMI": "19.74",
+      "binned_age": "51-60",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO190_T0": {
+      "Unnamed: 0": "189",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO190",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "71.0",
+      "BMI": "20.93",
+      "binned_age": "71-80",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO220_T0": {
+      "Unnamed: 0": "190",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO220",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "73.0",
+      "BMI": "25.36",
+      "binned_age": "71-80",
+      "diseaseStatus": "GOLD_3",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO199_T0": {
+      "Unnamed: 0": "191",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO199",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "79.0",
+      "BMI": "22.28",
+      "binned_age": "71-80",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO132_T0": {
+      "Unnamed: 0": "192",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO132",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "63.0",
+      "BMI": "22.51",
+      "binned_age": "61-70",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_SEO129_T0": {
+      "Unnamed: 0": "193",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO129",
+      "disease": "healthy",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "71.0",
+      "BMI": "27.76",
+      "binned_age": "71-80",
+      "diseaseStatus": "healthy",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "healthy"
+    },
+    "SCGT02_SEO228_T0": {
+      "Unnamed: 0": "194",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO228",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "male",
+      "age": "72.0",
+      "BMI": "25.73",
+      "binned_age": "71-80",
+      "diseaseStatus": "GOLD_4",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    },
+    "SCGT02_SEO223_T0": {
+      "Unnamed: 0": "195",
+      "studyID": "SCGT02",
+      "chemistry": "3_GEX_V3",
+      "technology": "3HT_GEX_V3_GenoHashed",
+      "patientID": "SCGT02_SEO223",
+      "disease": "COPD",
+      "timepoint_replicate": "0.0",
+      "treatmentStatus": "na",
+      "therapyResponse": "na",
+      "sex": "female",
+      "age": "57.0",
+      "BMI": "25.47",
+      "binned_age": "51-60",
+      "diseaseStatus": "GOLD_3",
+      "smokingStatus": "former-smoker",
+      "ethnicity": "na",
+      "institute": "na",
+      "diseaseGroup": "chronic_inflammation"
+    }
+  },
+  "assignment_metadata": {
+    "path": "references/datasets/GSE248695_atlas_cell_assignments.csv.gz",
+    "sha256": "b725e1c7af5dfcbaf00692c780984fc74460973f184bfb5eda126819a61f88ef",
+    "source_url": "https://zenodo.org/api/records/14851902/files/INFLAMMATION_ATLAS_main_afterQC.h5ad/content",
+    "source_bytes": 17229436935,
+    "selection": "obs sampleID starts SCGT02_; preservecellindex/sampleID/libraryID; verifiedHTTP ranges",
+    "retrieval_date": "2026-10-12"
+  },
+  "atlas_study_prefix": "SCGT02_",
+  "atlas_clinical_columns": [
+    "age",
+    "sex",
+    "diseaseStatus",
+    "disease",
+    "smokingStatus",
+    "BMI"
+  ]
+}

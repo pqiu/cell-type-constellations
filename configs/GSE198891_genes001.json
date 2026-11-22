@@ -1,0 +1,1191 @@
+{
+  "dataset_id": "GSE198891_genes001",
+  "study_id": "GSE198891",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Six original unpooled PBMC specimens from3GCApatients before treatment and3healthycontrols, one original RNA capture per named source code. Global donor overlap unresolved.",
+  "source_metadata": {
+    "accession": "GSE198891",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/35460236/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE198891",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+    "source_processing": [
+      "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+      "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+      "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+      "Assembly: Human: Hg38",
+      "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+      "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+      "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+      "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+      "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE198891_source_identity_review.json",
+      "sha256": "725567a4d1d991f07bba23ca806158496acfdc8ec53773b919ee772592249834"
+    },
+    "normalization_coverage": "Each deposited native RNA universe supplies its own denominator; absent source genes unavailable, not zero-filled."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM5959100",
+      "donor_id": "HC-F-71",
+      "source_metadata": {
+        "title": [
+          "HC-F-71"
+        ],
+        "geo_accession": [
+          "GSM5959100"
+        ],
+        "status": [
+          "Public on Mar 22 2022"
+        ],
+        "submission_date": [
+          "Mar 17 2022"
+        ],
+        "last_update_date": [
+          "Mar 25 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Healthy controls",
+          "gender: F",
+          "age: 71"
+        ],
+        "treatment_protocol_ch1": [
+          "Not applicable to this study."
+        ],
+        "growth_protocol_ch1": [
+          "Human PBMCs were isolated from whole heparin blood by density gradient centrifugation using Lymphoprep. PBMCs were cultured at 1 x 107/mL in RPMI 1640 containing 10% heat-inactivated fetal calf serum and 10% DMSO. Samples were stored in liquid nitrogen prior to use."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed by adding 10 mL warm RPMI containing 10% FCS. Next, samples were washed twice with warm RPMI+10% FCS to remove DMSO.",
+          "Single-cell mRNA sequencing was performed at Single Cell Discoveries according to standard 10x Genomics 3\u2019 V3.1 chemistry protocol. Cryopreserved cells were thawed and counted to assess cell integrity and concentration prior to loading on the 10X Genomics controller. The resulting sequencing libraries were prepared following a standard 10x Genomics protocol."
+        ],
+        "description": [
+          "filtered_counts_barcodes.tsv.gz",
+          "filtered_counts_data.mtx.gz",
+          "filtered_counts_genes.tsv.gz",
+          "metadata_percell.csv"
+        ],
+        "data_processing": [
+          "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+          "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+          "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+          "Assembly: Human: Hg38",
+          "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+          "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+          "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Rosanne,,Reitsema"
+        ],
+        "contact_email": [
+          "r.d.reitsema@umcg.nl"
+        ],
+        "contact_institute": [
+          "University Medical Center Groningen"
+        ],
+        "contact_address": [
+          "Hanzeplein 1"
+        ],
+        "contact_city": [
+          "Groningen"
+        ],
+        "contact_zip/postal_code": [
+          "9713 GZ"
+        ],
+        "contact_country": [
+          "Netherlands"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26752603",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14495284"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959100/suppl/GSM5959100_g001_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959100/suppl/GSM5959100_g001_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959100/suppl/GSM5959100_g001_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE198891"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM5959100",
+        "source_GEO_title": "HC-F-71",
+        "source_characteristics_json": "[\"disease state: Healthy controls\", \"gender: F\", \"age: 71\"]",
+        "source_specimen": "PBMC",
+        "source_disease_state_as_reported": "Healthy controls",
+        "source_sex_as_reported": "F",
+        "source_age_as_reported": "71",
+        "source_age_years": 71,
+        "source_treatment_context": "GCA specimens obtained before treatment; healthy controls per original series and primary study.",
+        "source_identity_policy": "Six named unpooled original captures. Primary study explicitly reports3GCA/3healthy scRNAparticipants; broader flow-cytometry/tissue cohorts do not add RNA specimens.",
+        "source_missingness_policy": "Exact dates, unjoined clinical tables and global participant overlap unavailable. No clinical table joins inferred from age and sex.",
+        "source_processing_policy": "Original deposited native gene RNA counts; standard500RNA/200genes/20percentMT QC; no author final-cell or label replication claim.",
+        "split_assignment": "unassigned; later-linked records of one donor must share split; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959100/suppl/GSM5959100_g001_features.tsv.gz",
+          "filename": "GSM5959100_g001_features.tsv.gz",
+          "expected_bytes": 270596,
+          "sha256": "2d33cf77ab5c5a4bf47107990d1e520124b6206ed8dd478fdffd739482fa3ff2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959100/suppl/GSM5959100_g001_barcodes.tsv.gz",
+          "filename": "GSM5959100_g001_barcodes.tsv.gz",
+          "expected_bytes": 29401,
+          "sha256": "71035bb79c8eb0c3b0f829d66f9e0243113112405af2c4ce943b15cc2b6484b8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959100/suppl/GSM5959100_g001_matrix.mtx.gz",
+          "filename": "GSM5959100_g001_matrix.mtx.gz",
+          "expected_bytes": 37418665,
+          "sha256": "bb36a9d5e326ceb677fd9cdcdbe1106ff1270e8c0d9e7720df90b2353bbf1bfd"
+        }
+      ],
+      "genes_member": "GSM5959100_g001_features.tsv.gz",
+      "barcodes_member": "GSM5959100_g001_barcodes.tsv.gz",
+      "matrix_member": "GSM5959100_g001_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6702,
+        "genes": 33538,
+        "nonzeros": 11676938,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 6702,
+        "RNA_positive_barcode_rows": 6702,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 41946690,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM5959101",
+      "donor_id": "HC-F-63",
+      "source_metadata": {
+        "title": [
+          "HC-F-63"
+        ],
+        "geo_accession": [
+          "GSM5959101"
+        ],
+        "status": [
+          "Public on Mar 22 2022"
+        ],
+        "submission_date": [
+          "Mar 17 2022"
+        ],
+        "last_update_date": [
+          "Mar 25 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Healthy controls",
+          "gender: F",
+          "age: 63"
+        ],
+        "treatment_protocol_ch1": [
+          "Not applicable to this study."
+        ],
+        "growth_protocol_ch1": [
+          "Human PBMCs were isolated from whole heparin blood by density gradient centrifugation using Lymphoprep. PBMCs were cultured at 1 x 107/mL in RPMI 1640 containing 10% heat-inactivated fetal calf serum and 10% DMSO. Samples were stored in liquid nitrogen prior to use."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed by adding 10 mL warm RPMI containing 10% FCS. Next, samples were washed twice with warm RPMI+10% FCS to remove DMSO.",
+          "Single-cell mRNA sequencing was performed at Single Cell Discoveries according to standard 10x Genomics 3\u2019 V3.1 chemistry protocol. Cryopreserved cells were thawed and counted to assess cell integrity and concentration prior to loading on the 10X Genomics controller. The resulting sequencing libraries were prepared following a standard 10x Genomics protocol."
+        ],
+        "description": [
+          "filtered_counts_barcodes.tsv.gz",
+          "filtered_counts_data.mtx.gz",
+          "filtered_counts_genes.tsv.gz",
+          "metadata_percell.csv"
+        ],
+        "data_processing": [
+          "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+          "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+          "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+          "Assembly: Human: Hg38",
+          "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+          "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+          "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Rosanne,,Reitsema"
+        ],
+        "contact_email": [
+          "r.d.reitsema@umcg.nl"
+        ],
+        "contact_institute": [
+          "University Medical Center Groningen"
+        ],
+        "contact_address": [
+          "Hanzeplein 1"
+        ],
+        "contact_city": [
+          "Groningen"
+        ],
+        "contact_zip/postal_code": [
+          "9713 GZ"
+        ],
+        "contact_country": [
+          "Netherlands"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26752602",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14495283"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959101/suppl/GSM5959101_g002_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959101/suppl/GSM5959101_g002_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959101/suppl/GSM5959101_g002_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE198891"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM5959101",
+        "source_GEO_title": "HC-F-63",
+        "source_characteristics_json": "[\"disease state: Healthy controls\", \"gender: F\", \"age: 63\"]",
+        "source_specimen": "PBMC",
+        "source_disease_state_as_reported": "Healthy controls",
+        "source_sex_as_reported": "F",
+        "source_age_as_reported": "63",
+        "source_age_years": 63,
+        "source_treatment_context": "GCA specimens obtained before treatment; healthy controls per original series and primary study.",
+        "source_identity_policy": "Six named unpooled original captures. Primary study explicitly reports3GCA/3healthy scRNAparticipants; broader flow-cytometry/tissue cohorts do not add RNA specimens.",
+        "source_missingness_policy": "Exact dates, unjoined clinical tables and global participant overlap unavailable. No clinical table joins inferred from age and sex.",
+        "source_processing_policy": "Original deposited native gene RNA counts; standard500RNA/200genes/20percentMT QC; no author final-cell or label replication claim.",
+        "split_assignment": "unassigned; later-linked records of one donor must share split; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959101/suppl/GSM5959101_g002_features.tsv.gz",
+          "filename": "GSM5959101_g002_features.tsv.gz",
+          "expected_bytes": 270596,
+          "sha256": "1a99c4f184d837354082916892d1bedb38afef7e63c0d6fb2d0b8ab94b4dfc40"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959101/suppl/GSM5959101_g002_barcodes.tsv.gz",
+          "filename": "GSM5959101_g002_barcodes.tsv.gz",
+          "expected_bytes": 26279,
+          "sha256": "f4aa0d50b51b2c48f12366242ae897bcfc1c262e522119e5b86e32c0a38d265a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959101/suppl/GSM5959101_g002_matrix.mtx.gz",
+          "filename": "GSM5959101_g002_matrix.mtx.gz",
+          "expected_bytes": 34996956,
+          "sha256": "5150ee69fbefcaae6e30fb7a5eb6df44975b1f5590bd25af18c5a4b941e1eda0"
+        }
+      ],
+      "genes_member": "GSM5959101_g002_features.tsv.gz",
+      "barcodes_member": "GSM5959101_g002_barcodes.tsv.gz",
+      "matrix_member": "GSM5959101_g002_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5931,
+        "genes": 33538,
+        "nonzeros": 10974206,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 5931,
+        "RNA_positive_barcode_rows": 5931,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 39423996,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM5959102",
+      "donor_id": "HC-F-67",
+      "source_metadata": {
+        "title": [
+          "HC-F-67"
+        ],
+        "geo_accession": [
+          "GSM5959102"
+        ],
+        "status": [
+          "Public on Mar 22 2022"
+        ],
+        "submission_date": [
+          "Mar 17 2022"
+        ],
+        "last_update_date": [
+          "Mar 25 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Healthy controls",
+          "gender: F",
+          "age: 67"
+        ],
+        "treatment_protocol_ch1": [
+          "Not applicable to this study."
+        ],
+        "growth_protocol_ch1": [
+          "Human PBMCs were isolated from whole heparin blood by density gradient centrifugation using Lymphoprep. PBMCs were cultured at 1 x 107/mL in RPMI 1640 containing 10% heat-inactivated fetal calf serum and 10% DMSO. Samples were stored in liquid nitrogen prior to use."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed by adding 10 mL warm RPMI containing 10% FCS. Next, samples were washed twice with warm RPMI+10% FCS to remove DMSO.",
+          "Single-cell mRNA sequencing was performed at Single Cell Discoveries according to standard 10x Genomics 3\u2019 V3.1 chemistry protocol. Cryopreserved cells were thawed and counted to assess cell integrity and concentration prior to loading on the 10X Genomics controller. The resulting sequencing libraries were prepared following a standard 10x Genomics protocol."
+        ],
+        "description": [
+          "filtered_counts_barcodes.tsv.gz",
+          "filtered_counts_data.mtx.gz",
+          "filtered_counts_genes.tsv.gz",
+          "metadata_percell.csv"
+        ],
+        "data_processing": [
+          "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+          "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+          "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+          "Assembly: Human: Hg38",
+          "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+          "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+          "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Rosanne,,Reitsema"
+        ],
+        "contact_email": [
+          "r.d.reitsema@umcg.nl"
+        ],
+        "contact_institute": [
+          "University Medical Center Groningen"
+        ],
+        "contact_address": [
+          "Hanzeplein 1"
+        ],
+        "contact_city": [
+          "Groningen"
+        ],
+        "contact_zip/postal_code": [
+          "9713 GZ"
+        ],
+        "contact_country": [
+          "Netherlands"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26752601",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14495282"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959102/suppl/GSM5959102_g003_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959102/suppl/GSM5959102_g003_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959102/suppl/GSM5959102_g003_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE198891"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM5959102",
+        "source_GEO_title": "HC-F-67",
+        "source_characteristics_json": "[\"disease state: Healthy controls\", \"gender: F\", \"age: 67\"]",
+        "source_specimen": "PBMC",
+        "source_disease_state_as_reported": "Healthy controls",
+        "source_sex_as_reported": "F",
+        "source_age_as_reported": "67",
+        "source_age_years": 67,
+        "source_treatment_context": "GCA specimens obtained before treatment; healthy controls per original series and primary study.",
+        "source_identity_policy": "Six named unpooled original captures. Primary study explicitly reports3GCA/3healthy scRNAparticipants; broader flow-cytometry/tissue cohorts do not add RNA specimens.",
+        "source_missingness_policy": "Exact dates, unjoined clinical tables and global participant overlap unavailable. No clinical table joins inferred from age and sex.",
+        "source_processing_policy": "Original deposited native gene RNA counts; standard500RNA/200genes/20percentMT QC; no author final-cell or label replication claim.",
+        "split_assignment": "unassigned; later-linked records of one donor must share split; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959102/suppl/GSM5959102_g003_features.tsv.gz",
+          "filename": "GSM5959102_g003_features.tsv.gz",
+          "expected_bytes": 270596,
+          "sha256": "28c361755f5cf808affae7c27ba4448e7261c0b66c63c2fbb7e06d66c9805a70"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959102/suppl/GSM5959102_g003_barcodes.tsv.gz",
+          "filename": "GSM5959102_g003_barcodes.tsv.gz",
+          "expected_bytes": 25834,
+          "sha256": "854a1965f031a4c93534274bb359aea00e3cbb043530844ee419e43338790732"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959102/suppl/GSM5959102_g003_matrix.mtx.gz",
+          "filename": "GSM5959102_g003_matrix.mtx.gz",
+          "expected_bytes": 33460221,
+          "sha256": "a5fb3aaef4a8a6a52741a1853137faf7a8f99f6d09d89f49413cd2358f7ca6eb"
+        }
+      ],
+      "genes_member": "GSM5959102_g003_features.tsv.gz",
+      "barcodes_member": "GSM5959102_g003_barcodes.tsv.gz",
+      "matrix_member": "GSM5959102_g003_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5809,
+        "genes": 33538,
+        "nonzeros": 10462694,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 5809,
+        "RNA_positive_barcode_rows": 5809,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 38357280,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM5959103",
+      "donor_id": "GCA-F-72",
+      "source_metadata": {
+        "title": [
+          "GCA-F-72"
+        ],
+        "geo_accession": [
+          "GSM5959103"
+        ],
+        "status": [
+          "Public on Mar 22 2022"
+        ],
+        "submission_date": [
+          "Mar 17 2022"
+        ],
+        "last_update_date": [
+          "Mar 25 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Giant cell arteritis",
+          "gender: F",
+          "age: 72"
+        ],
+        "treatment_protocol_ch1": [
+          "Not applicable to this study."
+        ],
+        "growth_protocol_ch1": [
+          "Human PBMCs were isolated from whole heparin blood by density gradient centrifugation using Lymphoprep. PBMCs were cultured at 1 x 107/mL in RPMI 1640 containing 10% heat-inactivated fetal calf serum and 10% DMSO. Samples were stored in liquid nitrogen prior to use."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed by adding 10 mL warm RPMI containing 10% FCS. Next, samples were washed twice with warm RPMI+10% FCS to remove DMSO.",
+          "Single-cell mRNA sequencing was performed at Single Cell Discoveries according to standard 10x Genomics 3\u2019 V3.1 chemistry protocol. Cryopreserved cells were thawed and counted to assess cell integrity and concentration prior to loading on the 10X Genomics controller. The resulting sequencing libraries were prepared following a standard 10x Genomics protocol."
+        ],
+        "description": [
+          "filtered_counts_barcodes.tsv.gz",
+          "filtered_counts_data.mtx.gz",
+          "filtered_counts_genes.tsv.gz",
+          "metadata_percell.csv"
+        ],
+        "data_processing": [
+          "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+          "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+          "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+          "Assembly: Human: Hg38",
+          "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+          "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+          "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Rosanne,,Reitsema"
+        ],
+        "contact_email": [
+          "r.d.reitsema@umcg.nl"
+        ],
+        "contact_institute": [
+          "University Medical Center Groningen"
+        ],
+        "contact_address": [
+          "Hanzeplein 1"
+        ],
+        "contact_city": [
+          "Groningen"
+        ],
+        "contact_zip/postal_code": [
+          "9713 GZ"
+        ],
+        "contact_country": [
+          "Netherlands"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26752600",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14495281"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959103/suppl/GSM5959103_g004_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959103/suppl/GSM5959103_g004_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959103/suppl/GSM5959103_g004_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE198891"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM5959103",
+        "source_GEO_title": "GCA-F-72",
+        "source_characteristics_json": "[\"disease state: Giant cell arteritis\", \"gender: F\", \"age: 72\"]",
+        "source_specimen": "PBMC",
+        "source_disease_state_as_reported": "Giant cell arteritis",
+        "source_sex_as_reported": "F",
+        "source_age_as_reported": "72",
+        "source_age_years": 72,
+        "source_treatment_context": "GCA specimens obtained before treatment; healthy controls per original series and primary study.",
+        "source_identity_policy": "Six named unpooled original captures. Primary study explicitly reports3GCA/3healthy scRNAparticipants; broader flow-cytometry/tissue cohorts do not add RNA specimens.",
+        "source_missingness_policy": "Exact dates, unjoined clinical tables and global participant overlap unavailable. No clinical table joins inferred from age and sex.",
+        "source_processing_policy": "Original deposited native gene RNA counts; standard500RNA/200genes/20percentMT QC; no author final-cell or label replication claim.",
+        "split_assignment": "unassigned; later-linked records of one donor must share split; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959103/suppl/GSM5959103_g004_features.tsv.gz",
+          "filename": "GSM5959103_g004_features.tsv.gz",
+          "expected_bytes": 270596,
+          "sha256": "873c502c8f66d84e219f5add748fd3fa8586aab708adabc4ae59d55d371bb633"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959103/suppl/GSM5959103_g004_barcodes.tsv.gz",
+          "filename": "GSM5959103_g004_barcodes.tsv.gz",
+          "expected_bytes": 21451,
+          "sha256": "7504ad8dc8706d4a143c9203b891492df502f4f0fa22c8ab871e7cd8df2a0912"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959103/suppl/GSM5959103_g004_matrix.mtx.gz",
+          "filename": "GSM5959103_g004_matrix.mtx.gz",
+          "expected_bytes": 29273951,
+          "sha256": "c1ab066724892a6cc2d30a0c7a5bb5d94286dc335ba310985ff424c49abcde99"
+        }
+      ],
+      "genes_member": "GSM5959103_g004_features.tsv.gz",
+      "barcodes_member": "GSM5959103_g004_barcodes.tsv.gz",
+      "matrix_member": "GSM5959103_g004_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 4727,
+        "genes": 33538,
+        "nonzeros": 9204964,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 4727,
+        "RNA_positive_barcode_rows": 4727,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 31896878,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM5959104",
+      "donor_id": "GCA-F-61",
+      "source_metadata": {
+        "title": [
+          "GCA-F-61"
+        ],
+        "geo_accession": [
+          "GSM5959104"
+        ],
+        "status": [
+          "Public on Mar 22 2022"
+        ],
+        "submission_date": [
+          "Mar 17 2022"
+        ],
+        "last_update_date": [
+          "Mar 25 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Giant cell arteritis",
+          "gender: F",
+          "age: 61"
+        ],
+        "treatment_protocol_ch1": [
+          "Not applicable to this study."
+        ],
+        "growth_protocol_ch1": [
+          "Human PBMCs were isolated from whole heparin blood by density gradient centrifugation using Lymphoprep. PBMCs were cultured at 1 x 107/mL in RPMI 1640 containing 10% heat-inactivated fetal calf serum and 10% DMSO. Samples were stored in liquid nitrogen prior to use."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed by adding 10 mL warm RPMI containing 10% FCS. Next, samples were washed twice with warm RPMI+10% FCS to remove DMSO.",
+          "Single-cell mRNA sequencing was performed at Single Cell Discoveries according to standard 10x Genomics 3\u2019 V3.1 chemistry protocol. Cryopreserved cells were thawed and counted to assess cell integrity and concentration prior to loading on the 10X Genomics controller. The resulting sequencing libraries were prepared following a standard 10x Genomics protocol."
+        ],
+        "description": [
+          "filtered_counts_barcodes.tsv.gz",
+          "filtered_counts_data.mtx.gz",
+          "filtered_counts_genes.tsv.gz",
+          "metadata_percell.csv"
+        ],
+        "data_processing": [
+          "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+          "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+          "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+          "Assembly: Human: Hg38",
+          "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+          "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+          "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Rosanne,,Reitsema"
+        ],
+        "contact_email": [
+          "r.d.reitsema@umcg.nl"
+        ],
+        "contact_institute": [
+          "University Medical Center Groningen"
+        ],
+        "contact_address": [
+          "Hanzeplein 1"
+        ],
+        "contact_city": [
+          "Groningen"
+        ],
+        "contact_zip/postal_code": [
+          "9713 GZ"
+        ],
+        "contact_country": [
+          "Netherlands"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26752599",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14495280"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959104/suppl/GSM5959104_g005_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959104/suppl/GSM5959104_g005_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959104/suppl/GSM5959104_g005_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE198891"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM5959104",
+        "source_GEO_title": "GCA-F-61",
+        "source_characteristics_json": "[\"disease state: Giant cell arteritis\", \"gender: F\", \"age: 61\"]",
+        "source_specimen": "PBMC",
+        "source_disease_state_as_reported": "Giant cell arteritis",
+        "source_sex_as_reported": "F",
+        "source_age_as_reported": "61",
+        "source_age_years": 61,
+        "source_treatment_context": "GCA specimens obtained before treatment; healthy controls per original series and primary study.",
+        "source_identity_policy": "Six named unpooled original captures. Primary study explicitly reports3GCA/3healthy scRNAparticipants; broader flow-cytometry/tissue cohorts do not add RNA specimens.",
+        "source_missingness_policy": "Exact dates, unjoined clinical tables and global participant overlap unavailable. No clinical table joins inferred from age and sex.",
+        "source_processing_policy": "Original deposited native gene RNA counts; standard500RNA/200genes/20percentMT QC; no author final-cell or label replication claim.",
+        "split_assignment": "unassigned; later-linked records of one donor must share split; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959104/suppl/GSM5959104_g005_features.tsv.gz",
+          "filename": "GSM5959104_g005_features.tsv.gz",
+          "expected_bytes": 270596,
+          "sha256": "91194f9d5ec8fcc79e47a32c337517262163dadc68421299b29ef580f98f1279"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959104/suppl/GSM5959104_g005_barcodes.tsv.gz",
+          "filename": "GSM5959104_g005_barcodes.tsv.gz",
+          "expected_bytes": 23474,
+          "sha256": "e8c05c7c7c6f602ad26f38820d86b69d8c1457bb864c40ac8a96ba30913c3b52"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959104/suppl/GSM5959104_g005_matrix.mtx.gz",
+          "filename": "GSM5959104_g005_matrix.mtx.gz",
+          "expected_bytes": 26634027,
+          "sha256": "ff2cca6974a9ca9e5ae90314f3903d7870f3f0019b60275d1b159e9172e6ce0f"
+        }
+      ],
+      "genes_member": "GSM5959104_g005_features.tsv.gz",
+      "barcodes_member": "GSM5959104_g005_barcodes.tsv.gz",
+      "matrix_member": "GSM5959104_g005_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5259,
+        "genes": 33538,
+        "nonzeros": 8271814,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 5259,
+        "RNA_positive_barcode_rows": 5259,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 31365929,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM5959105",
+      "donor_id": "GCA-F-59",
+      "source_metadata": {
+        "title": [
+          "GCA-F-59"
+        ],
+        "geo_accession": [
+          "GSM5959105"
+        ],
+        "status": [
+          "Public on Mar 22 2022"
+        ],
+        "submission_date": [
+          "Mar 17 2022"
+        ],
+        "last_update_date": [
+          "Mar 25 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Giant cell arteritis",
+          "gender: F",
+          "age: 59"
+        ],
+        "treatment_protocol_ch1": [
+          "Not applicable to this study."
+        ],
+        "growth_protocol_ch1": [
+          "Human PBMCs were isolated from whole heparin blood by density gradient centrifugation using Lymphoprep. PBMCs were cultured at 1 x 107/mL in RPMI 1640 containing 10% heat-inactivated fetal calf serum and 10% DMSO. Samples were stored in liquid nitrogen prior to use."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs were thawed by adding 10 mL warm RPMI containing 10% FCS. Next, samples were washed twice with warm RPMI+10% FCS to remove DMSO.",
+          "Single-cell mRNA sequencing was performed at Single Cell Discoveries according to standard 10x Genomics 3\u2019 V3.1 chemistry protocol. Cryopreserved cells were thawed and counted to assess cell integrity and concentration prior to loading on the 10X Genomics controller. The resulting sequencing libraries were prepared following a standard 10x Genomics protocol."
+        ],
+        "description": [
+          "filtered_counts_barcodes.tsv.gz",
+          "filtered_counts_data.mtx.gz",
+          "filtered_counts_genes.tsv.gz",
+          "metadata_percell.csv"
+        ],
+        "data_processing": [
+          "BCL files resulting from sequencing were transformed to FASTQ files with 10x Genomics Cell Ranger mkfastq.\u00a0",
+          "FASTQ files were mapped with Cell Ranger count. During sequencing, 28 bp read 1 were used for identification of the Illumina library barcode, cell barcode and UMI. Read 2 was used to map to the reference transcriptome GRCh38. Filtering of empty barcodes was done in Cell Ranger.",
+          "The data from all samples were loaded in R (R version 3.6.2) and processed using the Seurat package (version 3.2.0)3. Cells with at least 2000 UMI\u2019s per cell and less than 20% mitochondrial gene content were retained for analysis. The data of all 10X libraries was merged and processed together. The merged dataset was normalized for sequencing depth per cell and log-transformed using a scaling factor of 10,000. The patient-effect was corrected using the integration function of Seurat. The most variable genes in the dataset were identified and the top 2000 was used for dimensionality reduction and clustering. Principal component analysis was performed on the 2000 variable genes to identify the dimensionality in the dataset and the first 10 principal components were selected for downstream analysis. Cells were clustered using graph-based clustering as implemented in Seurat. The original Louvain algorithm was utilized for modularity optimization. The top differentially expressed genes per cluster were used to identify cell types. The B cell population was selected and clustered separately to identify cell types. To evaluate the differences between samples and clusters, differential expression analysis was performed using the Wilcoxon rank sum test.",
+          "Assembly: Human: Hg38",
+          "Supplementary files format and content: filtered_counts_data.mtx.gz; final dataset containing the expression counts for all genes across filtered cells",
+          "Supplementary files format and content: filtered_counts_barcodes.tsv.gz; cell-associated barcodes corresponding to the column indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: filtered_counts_genes.tsv.gz; feature names corresponding to the row indices of filtered_counts_data.mtx",
+          "Supplementary files format and content: metadata_percell.csv; file containing metadata per single cell",
+          "Supplementary files format and content: matrix.mtx.gz; barcodes.tsv.gz, features.tsv.gz; cell ranger output for each 10X library"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Rosanne,,Reitsema"
+        ],
+        "contact_email": [
+          "r.d.reitsema@umcg.nl"
+        ],
+        "contact_institute": [
+          "University Medical Center Groningen"
+        ],
+        "contact_address": [
+          "Hanzeplein 1"
+        ],
+        "contact_city": [
+          "Groningen"
+        ],
+        "contact_zip/postal_code": [
+          "9713 GZ"
+        ],
+        "contact_country": [
+          "Netherlands"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN26752598",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14495285"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959105/suppl/GSM5959105_g006_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959105/suppl/GSM5959105_g006_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959105/suppl/GSM5959105_g006_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE198891"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM5959105",
+        "source_GEO_title": "GCA-F-59",
+        "source_characteristics_json": "[\"disease state: Giant cell arteritis\", \"gender: F\", \"age: 59\"]",
+        "source_specimen": "PBMC",
+        "source_disease_state_as_reported": "Giant cell arteritis",
+        "source_sex_as_reported": "F",
+        "source_age_as_reported": "59",
+        "source_age_years": 59,
+        "source_treatment_context": "GCA specimens obtained before treatment; healthy controls per original series and primary study.",
+        "source_identity_policy": "Six named unpooled original captures. Primary study explicitly reports3GCA/3healthy scRNAparticipants; broader flow-cytometry/tissue cohorts do not add RNA specimens.",
+        "source_missingness_policy": "Exact dates, unjoined clinical tables and global participant overlap unavailable. No clinical table joins inferred from age and sex.",
+        "source_processing_policy": "Original deposited native gene RNA counts; standard500RNA/200genes/20percentMT QC; no author final-cell or label replication claim.",
+        "split_assignment": "unassigned; later-linked records of one donor must share split; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959105/suppl/GSM5959105_g006_features.tsv.gz",
+          "filename": "GSM5959105_g006_features.tsv.gz",
+          "expected_bytes": 270596,
+          "sha256": "50243d761d3d190ba308378faa09cf899780ce07d432ac8cddb2bf5b63100a9d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959105/suppl/GSM5959105_g006_barcodes.tsv.gz",
+          "filename": "GSM5959105_g006_barcodes.tsv.gz",
+          "expected_bytes": 22653,
+          "sha256": "aaf35530a28923cfac30cb814df7e7928fcee921f6fab8d1adec5ef6f3f17cee"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5959nnn/GSM5959105/suppl/GSM5959105_g006_matrix.mtx.gz",
+          "filename": "GSM5959105_g006_matrix.mtx.gz",
+          "expected_bytes": 33538656,
+          "sha256": "4310ec0e528d9c949cfd03f61778de88a5c1feb44276505e3562ff1bda011229"
+        }
+      ],
+      "genes_member": "GSM5959105_g006_features.tsv.gz",
+      "barcodes_member": "GSM5959105_g006_barcodes.tsv.gz",
+      "matrix_member": "GSM5959105_g006_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5026,
+        "genes": 33538,
+        "nonzeros": 10549146,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 5026,
+        "RNA_positive_barcode_rows": 5026,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 40113211,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_mapping_evidence": "Six original unpooled PBMC specimens from3GCApatients before treatment and3healthycontrols, one original RNA capture per named source code. Global donor overlap unresolved."
+}

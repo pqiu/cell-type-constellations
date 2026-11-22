@@ -1,0 +1,68 @@
+{
+  "dataset_id": "GSE189125",
+  "study_id": "GSE189125",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE189125_complete_original_RNA_audit.json",
+    "bytes": 7593,
+    "sha256": "b7796ea3224a694dc2d7263fa6450ca47e68b048fdca818bc18265e70e2c89b0"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE189125_source_identity_review.json",
+    "bytes": 5465,
+    "sha256": "c94117bd043a4d6f927d9a3d670d1975f065178a02c1366373f023b96adf7e3d"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exact author per-cell patient ID fields, not barcode suffixes, map both count tables to16literal original GEOparticipant codes. Original GSM is the specimen key. Preserve source codes; cross-study/global aliases unresolved.",
+  "physical_sample_mapping_evidence": "Sixteen original pretreatment PBMC specimens, one per literal GEO participant code,13discovery and3selected severe-toxicity participants. Explicit author per-cell metadata maps both count tables to participants; no barcode-suffix identity inference. Bulk/receptor/paired later samples and larger paper cohorts are not extra scRNA specimens.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase",
+      "age": "source_age_as_reported",
+      "sex": "source_sex_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE189125",
+    "primary_PMID": "35027754",
+    "publication": "https://doi.org/10.1038/s41591-021-01623-z",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189125",
+    "access": "Public provided PBMC RNA count tables and coded source metadata. Original raw reads are unavailable under the reviewed GEO record; do not imply a grant or acquisition.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE189125_source_identity_review.json",
+      "bytes": 5465,
+      "sha256": "c94117bd043a4d6f927d9a3d670d1975f065178a02c1366373f023b96adf7e3d"
+    },
+    "source_unit": "Sixteen original pretreatment PBMC specimens, one per literal GEO participant code,13discovery and3selected severe-toxicity participants. Explicit author per-cell metadata maps both count tables to participants; no barcode-suffix identity inference. Bulk/receptor/paired later samples and larger paper cohorts are not extra scRNA specimens.",
+    "identity_policy": "Exact author per-cell patient ID fields, not barcode suffixes, map both count tables to16literal original GEOparticipant codes. Original GSM is the specimen key. Preserve source codes; cross-study/global aliases unresolved.",
+    "clinical_policy": "Source pretreatment PBMCs from melanoma patients. Preserve original age, Sex, immunotherapy type, highest irAEgrade, cohort and sequencing batch literally, including cohort NA. Immunotherapy type is a clinical regimen descriptor; highest irAEgrade is a subsequent clinical outcome, not an exposure at specimen collection or a model prediction. Exact collection dates and elapsed treatment intervals unassigned.",
+    "reuse_policy": "Only16original RNA specimens included. Bulk RNA, mass cytometry, receptor sequencing, paired later blood draws and larger paper cohorts are not additional scRNA specimens. Public processed digital count tables are usable; unavailable original raw sequencing reads are not reconstructed or claimed acquired.",
+    "selection_policy": "Author cell QC has already selected the deposited observations. BatchAcontains13discovery participants; batchBcontains3severe-toxicity participants selected for follow-up analysis. Preserve this ascertainment even without phenotype labels in discovery; no representative population or causal/clinical predictive inference.",
+    "cell_calling_policy": "Own fixed RNAQC is applied to all provided observations; no reproduction of author full cell/doublet selection. Original unsupervised clusters remain metadata and do not determine unrestricted SCimilarity labels. No biological annotation or constellation validation claimed.",
+    "gene_policy": "All33538literal supplied RNA gene symbols retained unchanged and in original order in both batches. Source gene IDs are these symbols; no Ensembl IDs supplied or inferred, no symbol modernization, intersection or zero filling.",
+    "count_semantics": "Provided original digital RNA count tables from source CellRanger output after author cell selection; no inverse normalization, rounding or reconstruction of unavailable raw reads. Native axis includes all supplied genes.",
+    "source_limitations": "Author-selected cells; selected severe-toxicity subgroup. Source gene IDs are literal symbols. Global aliases and exact dates unassigned. No biological annotation, clinical predictive, causal or constellation validation."
+  }
+}

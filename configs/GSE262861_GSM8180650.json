@@ -1,0 +1,357 @@
+{
+  "dataset_id": "GSE262861_GSM8180650",
+  "study_id": "GSE262861",
+  "input_format": "rds_seurat",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id",
+    "donor_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Use original MajoritySinglet_DropletType=singlet with an exact published clinical donor ID. Some source singlets explicitly have unassigned donor; exclude those cells without guessing a donor. Preserve all original demuxlet/vireo/scds/final-call fields; no new genotype inference, donor reassignment, confidence threshold or phenotype-based filtering. Original RDS metadata agrees exactly with published calls for every available barcode. Author carrier has source cell/gene filtering: omitted published cells and genes remain unavailable, not reconstructed. Replicate captures share original donor/visit physical identity.",
+  "source_metadata": {
+    "accession": "GSE262861",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE262861",
+    "publication": "https://www.nature.com/articles/s41467-024-47720-8",
+    "primary_PMID": "38632311",
+    "primary_DOI": "10.1038/s41467-024-47720-8",
+    "access": "Public original Seurat RNA counts and author-assigned metadata; no protected SNP data requested",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "original_source": {
+      "title": [
+        "Pool 1, 24 months replicate 1"
+      ],
+      "geo_accession": [
+        "GSM8180650"
+      ],
+      "status": [
+        "Public on Apr 04 2024"
+      ],
+      "submission_date": [
+        "Mar 30 2024"
+      ],
+      "last_update_date": [
+        "Apr 04 2024"
+      ],
+      "type": [
+        "SRA"
+      ],
+      "channel_count": [
+        "1"
+      ],
+      "source_name_ch1": [
+        "PBMC"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "taxid_ch1": [
+        "9606"
+      ],
+      "characteristics_ch1": [
+        "tissue: PBMC",
+        "time: 24 months"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "PBMC from 20 individuals from ADAPT cohort (10 LC and 10 MC) were genotyped and had PBMCs sequenced using the 10x genomics platform. For each individual, 1 vial (\u223c1mL) of biobanked (frozen) PBMCs was retrieved and thawed. Cell density per vial was roughly 7x106 cells/mL. To this end \u223c30uL was used for single-cell RNA-sequencing, and another fraction (106) for genotyping.",
+        "For each batch, single-cell RNA capture and barcoding with the Single Cell 5\u2019 v2.0 NextGEM single cell RNA seq (GEX + VDJ (TCR+BCR) from 10x Genomics, with a target capture of 20,000 cells was performed.",
+        "scRNA-seq 5' 10x genomics"
+      ],
+      "description": [
+        "10x Genomics",
+        "ES004_1_1"
+      ],
+      "data_processing": [
+        "The demultiplexing, barcode processing, and gene counting were done with the Cell Ranger software (version 7.0.0). Each pool was processed individually. cellranger mkfastq was run to demultiplex the dual indexed libraries. Config files were setup with expect-cells 20000, and include-introns as TRUE. Mapping and alignment were done to GRCh38 (GEX: refdata-cellranger-GRCh38-2020-A) using STAR within the Cell Ranger suite. The pipeline was executed on a high-performance cluster with a 3.10.0-1160.42.2.el7.x86_64 operating system.",
+        "Each sample was SNP genotyped (data not provided as it is protected) and demuxlet was used to demultiplex the pools and assign cells to individuals. The final output from this proccess is provided in the processed files.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Gene expression: tab separated features and barcodes files, and counts in matrix market file format (.mtx).",
+        "Supplementary files format and content: Barcode to sample assignment files: tab separated files (combined_results_w_combined_assignments.tsv)"
+      ],
+      "platform_id": [
+        "GPL24676"
+      ],
+      "contact_name": [
+        "Sara,,Ballouz"
+      ],
+      "contact_email": [
+        "s.ballouz@unsw.edu.au"
+      ],
+      "contact_phone": [
+        "0435959108"
+      ],
+      "contact_institute": [
+        "UNSW"
+      ],
+      "contact_address": [
+        "High St"
+      ],
+      "contact_city": [
+        "Kensington"
+      ],
+      "contact_state": [
+        "NSW"
+      ],
+      "contact_zip/postal_code": [
+        "2052"
+      ],
+      "contact_country": [
+        "Australia"
+      ],
+      "instrument_model": [
+        "Illumina NovaSeq 6000"
+      ],
+      "library_selection": [
+        "cDNA"
+      ],
+      "library_source": [
+        "transcriptomic single cell"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40621407",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24067265"
+      ],
+      "supplementary_file_1": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1.rds.gz"
+      ],
+      "supplementary_file_2": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1_barcodes.tsv.gz"
+      ],
+      "supplementary_file_3": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1_combined_results_w_combined_assignments.tsv.gz"
+      ],
+      "supplementary_file_4": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1_features.tsv.gz"
+      ],
+      "supplementary_file_5": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1_matrix.mtx.gz"
+      ],
+      "series_id": [
+        "GSE262861"
+      ],
+      "data_row_count": [
+        "0"
+      ]
+    },
+    "original_clinical_metadata": {
+      "path": "references/datasets/GSE262861_author_assignments/GSE262861_individuals_ID_long.COVID_Sex_Age.txt.gz",
+      "sha256": "53058e5d96ab2c2882a0ee1fa60194afa2c5a020fb70f2f92c37d892200988cb",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262861/suppl/GSE262861_individuals_ID_long.COVID_Sex_Age.txt.gz"
+    },
+    "original_assignment": {
+      "path": "references/datasets/GSE262861_author_assignments/GSM8180650_ES004_1_1_combined_results_w_combined_assignments.tsv.gz",
+      "sha256": "774589cfd73a894b48dacac99e176c9d06690d20bb66db23bb971d35b802ed5f",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1_combined_results_w_combined_assignments.tsv.gz"
+    },
+    "assignment_pin": {
+      "path": "references/datasets/GSE262861_author_assignments/GSM8180650_published_singlets.csv.gz",
+      "sha256": "c9f436b7b77063ddf06d52e1a80fa221f7667a77b08ba0736aebe508b4488b8c"
+    },
+    "reviewed_count_source": {
+      "source_GSM": "GSM8180650",
+      "asset": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1.rds.gz",
+        "filename": "GSM8180650_ES004_1_1.rds.gz",
+        "bytes": 173468572,
+        "sha256": "31c09c996d9c41bb3510163b9fe2ada35f0dc32cc6028904c3f7854f0d9bc60b"
+      },
+      "native_RDS_cells": 19968,
+      "native_RDS_genes": 24097,
+      "native_count_nonzeros": 37670762,
+      "exact_source_RNA_count_and_feature_metadata": true,
+      "all_available_source_assignments_exact": true,
+      "all_published_assigned_singlets_present": true,
+      "original_published_assigned_singlets": 14601,
+      "published_assigned_singlets": 14601,
+      "selected_QC_cells": 14593,
+      "unavailable_published_singlets": 0,
+      "unavailable_published_singlets_by_donor": {},
+      "absent_original_assignment_rows": 42,
+      "absent_source_final_calls": {
+        "doublet": 42
+      },
+      "original_gene_labels_preserved": true,
+      "native_gene_coordinate_sha256": "9ba52d62d8d66caf76bc84804e72f0ad8df1a14480f23eda2fe5016bf14639a9",
+      "RNA_QC": {
+        "path": "references/datasets/GSE262861_RDS_native_review/GSM8180650_QC.csv.gz",
+        "sha256": "3cadbb9a8b07b12ec850e062300ebb37578585e7dd73bc6b2adb456580de9451"
+      },
+      "native_gene_coordinates": {
+        "path": "references/datasets/GSE262861_RDS_native_review/GSM8180650_genes.csv.gz",
+        "sha256": "6d30773190490a60035c5b3127a2013bb24503fe8bdc6e3a60292771d694e6b7"
+      },
+      "original_RDS_metadata": {
+        "path": "references/datasets/GSE262861_RDS_native_review/GSM8180650_metadata.csv.gz",
+        "sha256": "adc964a1216a0c8c3ec2b8f4a862d3b1628fb9da08870e14b0d158785bb73774"
+      },
+      "final_call_values": {
+        "singlet": 14697,
+        "doublet": 5271
+      },
+      "donor_call_values": {
+        "doublet": 5271,
+        "AD021": 3718,
+        "AD062": 2352,
+        "AD007": 1963,
+        "AD323": 1338,
+        "AD018": 1119,
+        "AD320": 992,
+        "AD313": 862,
+        "AD317": 847,
+        "AD020": 732,
+        "AD303": 678,
+        "unassigned": 96
+      }
+    },
+    "original_native_RDS_review": {
+      "path": "references/datasets/GSE262861_RDS_native_count_review.json",
+      "sha256": "a6fc4d5da65850390ddcce8824a351a3303a0c1d44066af2c56b1e861dc08916"
+    },
+    "original_assignment_review": {
+      "path": "references/datasets/GSE262861_published_assignment_review.json",
+      "sha256": "766535cc1fabee1987db9f27c2dfac816e0484f4895db39bd0f30c86dcedeae7"
+    },
+    "gene_coordinate_policy": "Native original RDS RNA count labels and order; per-capture source feature universe. No suffix stripping, gene-alias inference, union zero-fill or silent replacement of malformed MTX.",
+    "cleanup_policy": "Notebook validates original RDS/QC/assignment/clinical/geometry statistics before exact checksummed cleanup."
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_asset": {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8180nnn/GSM8180650/suppl/GSM8180650_ES004_1_1.rds.gz",
+    "filename": "GSM8180650_ES004_1_1.rds.gz",
+    "expected_bytes": 173468572,
+    "sha256": "31c09c996d9c41bb3510163b9fe2ada35f0dc32cc6028904c3f7854f0d9bc60b"
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "MajoritySinglet_Individual_Assignment"
+    },
+    "value_maps": {
+      "source_clinical_LC_group": {
+        "source": "MajoritySinglet_Individual_Assignment",
+        "values": {
+          "AD007": "Yes",
+          "AD018": "No",
+          "AD020": "No",
+          "AD021": "No",
+          "AD062": "No",
+          "AD303": "Yes",
+          "AD313": "Yes",
+          "AD317": "No",
+          "AD320": "Yes",
+          "AD323": "Yes",
+          "AD011": "Yes",
+          "AD016": "Yes",
+          "AD022": "Yes",
+          "AD048": "No",
+          "AD050": "No",
+          "AD074": "No",
+          "AD080": "No",
+          "AD301": "No",
+          "AD315": "Yes",
+          "AD322": "Yes"
+        }
+      },
+      "source_clinical_Sex": {
+        "source": "MajoritySinglet_Individual_Assignment",
+        "values": {
+          "AD007": "Male",
+          "AD018": "Male",
+          "AD020": "Male",
+          "AD021": "Female",
+          "AD062": "Male",
+          "AD303": "Female",
+          "AD313": "Female",
+          "AD317": "Female",
+          "AD320": "Male",
+          "AD323": "Male",
+          "AD011": "Male",
+          "AD016": "Male",
+          "AD022": "Female",
+          "AD048": "Male",
+          "AD050": "Female",
+          "AD074": "Male",
+          "AD080": "Female",
+          "AD301": "Female",
+          "AD315": "Female",
+          "AD322": "Female"
+        }
+      },
+      "source_clinical_Age": {
+        "source": "MajoritySinglet_Individual_Assignment",
+        "values": {
+          "AD007": "63",
+          "AD018": "43",
+          "AD020": "63",
+          "AD021": "47",
+          "AD062": "37",
+          "AD303": "48",
+          "AD313": "57",
+          "AD317": "58",
+          "AD320": "36",
+          "AD323": "40",
+          "AD011": "59",
+          "AD016": "57",
+          "AD022": "57",
+          "AD048": "59",
+          "AD050": "24",
+          "AD074": "55",
+          "AD080": "39",
+          "AD301": "55",
+          "AD315": "39",
+          "AD322": "40"
+        }
+      }
+    },
+    "constants": {
+      "source_sample_id": "GSM8180650",
+      "source_accession": "GSE262861",
+      "source_visit_code": "24_months",
+      "source_nominal_month": "24",
+      "source_pool": "1",
+      "source_replicate": "1",
+      "tissue": "blood",
+      "is_primary_data": true,
+      "source_specimen": "PBMC",
+      "source_clinical_policy": "Original donor-level LC Yes/No, Sex and Age joined by exact source ID. Age epoch unspecified: not per-visit age or incremented across follow-up. LC is source cohort history/group, not inferred contemporaneous symptoms or recovery status at each visit. Controls also had original infection.",
+      "source_gene_policy": "Native observed RNA genes per capture. Genes absent from deposited RDS are unavailable, not zero; gene-label suffixes remain literal and are not guessed back to Ensembl IDs or aliases.",
+      "source_count_carrier_policy": "Original malformed MTX retained unchanged. RDS is a separately reviewed author-filtered count source, never an inferred repair or silently equivalent full-reference matrix. Published singlets absent from this carrier remain unavailable; selection uses only present cells with exact original calls. Every original source donor must remain represented.",
+      "source_age_epoch": "unspecified donor-level source age; not incremented or assigned as age at each visit",
+      "source_LC_epoch": "original cohort/history grouping; not inferred current recovery or symptoms",
+      "split_assignment": "unassigned; all visits and captures of the same AD donor code stay together"
+    }
+  },
+  "selective_rds_slots": true,
+  "source_assay": "RNA",
+  "rds_compression_layers": 2,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Twenty source AD-prefixed participants, three nominal visits each. Replicate captures share donor/visit identity; source pool titles and literal deposited file stems retained separately. Missing Pool1 four-month replicate2 is not an obtained extra capture.",
+  "source_cell_exclusions": {
+    "MajoritySinglet_DropletType": [
+      "doublet"
+    ],
+    "MajoritySinglet_Individual_Assignment": [
+      "doublet",
+      "unassigned"
+    ]
+  }
+}

@@ -1,0 +1,1559 @@
+{
+  "dataset_id": "GSE253633_genes001",
+  "study_id": "GSE253633",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original Blood characteristics and B-suffixed source titles identify eleven unmixed blood materials. Leucosep/FACS CD3 protocol retained; PBMC purification not explicitly named. Eleven kidney and six mixed compartment records excluded. E/T aliases, clinical demographics and draw dates unresolved; no extra donor independence inferred.",
+  "source_metadata": {
+    "accession": "GSE253633",
+    "publications": [
+      "https://doi.org/10.1038/s41467-024-52525-w",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE253633"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE253633",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+      "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+      "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+      "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+      "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+      "Library strategy: CITE-seq"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_feature_table_sha256": "6da05c803381bcc5cabcbab35f7ba60a9c674265df9de1cc9d2f338e11ecd4ea",
+        "genes": 36601,
+        "excluded_non_RNA_features": 206,
+        "complete_primary_mitochondrial_gene_symbols": true,
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE253633_gene_coordinates/28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9.csv.gz",
+          "sha256": "01ff5b3440c8c02c3e0eae7d2d0a73fd904d27c7a698d3165eaf7bb3e1d1ad2f"
+        },
+        "identifier_policy": "Original gene IDs and original symbols retained. Only explicitly configured aliases/prefixes are used for annotation; no genome assembly or Ensembl IDs invented."
+      }
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8024407",
+      "donor_id": "E006",
+      "source_metadata": {
+        "title": [
+          "E006B, exploratory, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024407"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: None",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 5.0.1",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_2.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488884",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306854"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024407/suppl/GSM8024407_E006B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024407/suppl/GSM8024407_E006B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024407/suppl/GSM8024407_E006B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "E006",
+        "source_blood_material_code": "E006B",
+        "source_cohort": "exploratory",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "None",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "5.0.1",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 206
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024407/suppl/GSM8024407_E006B_features.tsv.gz",
+          "filename": "GSM8024407_E006B_features.tsv.gz",
+          "expected_bytes": 335134,
+          "sha256": "4fa32fb6b2e8ace5f995efe5e126629a85c6357ae63a69f61a06bf87a08b25c6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024407/suppl/GSM8024407_E006B_barcodes.tsv.gz",
+          "filename": "GSM8024407_E006B_barcodes.tsv.gz",
+          "expected_bytes": 42882,
+          "sha256": "12f37cdbd096a928156a36171dbc3a67d5cd86bdc3a4a74d2bc250b41cf53ce5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024407/suppl/GSM8024407_E006B_matrix.mtx.gz",
+          "filename": "GSM8024407_E006B_matrix.mtx.gz",
+          "expected_bytes": 51281881,
+          "sha256": "926c3af15dac3d445f345fd8b3847da2af744255ac77605d7b3b59c706d26ae0"
+        }
+      ],
+      "genes_member": "GSM8024407_E006B_features.tsv.gz",
+      "barcodes_member": "GSM8024407_E006B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024407_E006B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8709,
+        "genes": 36601,
+        "nonzeros": 12669685,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "6da05c803381bcc5cabcbab35f7ba60a9c674265df9de1cc9d2f338e11ecd4ea",
+        "source_features": 36807,
+        "source_barcode_rows": 8709,
+        "RNA_positive_barcode_rows": 8709,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 35989954,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 206,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8709,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8709,
+          "source_positive_RNA_barcodes": 8709,
+          "full_source_RNA_counts": 35989954,
+          "selected_RNA_counts": 35989954,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024407.csv.gz",
+            "sha256": "7c46d3dd23ba9cf15cf128443ad868aed829e64ac54cc1eb12566327c9cac892"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM8024410",
+      "donor_id": "E009",
+      "source_metadata": {
+        "title": [
+          "E009B, exploratory, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024410"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: None",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 5.0.1",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_0.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488881",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306856"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024410/suppl/GSM8024410_E009B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024410/suppl/GSM8024410_E009B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024410/suppl/GSM8024410_E009B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "E009",
+        "source_blood_material_code": "E009B",
+        "source_cohort": "exploratory",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "None",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "5.0.1",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 206
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024410/suppl/GSM8024410_E009B_features.tsv.gz",
+          "filename": "GSM8024410_E009B_features.tsv.gz",
+          "expected_bytes": 335134,
+          "sha256": "87b80749b90ae1ab94e36d1b50f2d0589170f49e784edd72e5235c6aee6fa5fb"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024410/suppl/GSM8024410_E009B_barcodes.tsv.gz",
+          "filename": "GSM8024410_E009B_barcodes.tsv.gz",
+          "expected_bytes": 11011,
+          "sha256": "e2f57ad49a96cb527f41c428f8b74f718d4a15c565aa2e660fdb1ce8683aabbc"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024410/suppl/GSM8024410_E009B_matrix.mtx.gz",
+          "filename": "GSM8024410_E009B_matrix.mtx.gz",
+          "expected_bytes": 14206271,
+          "sha256": "e5631f14f02ab63cc038ddc4b8601142fc893e24ca8acea034ba8bb1d0ab8777"
+        }
+      ],
+      "genes_member": "GSM8024410_E009B_features.tsv.gz",
+      "barcodes_member": "GSM8024410_E009B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024410_E009B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 2037,
+        "genes": 36601,
+        "nonzeros": 3545099,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "d402bf085ec32edcda441c60f7145cf10cdfc48a2e86190f94025e12ecffe938",
+        "source_features": 36807,
+        "source_barcode_rows": 2037,
+        "RNA_positive_barcode_rows": 2037,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 9853018,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 206,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2037,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2037,
+          "source_positive_RNA_barcodes": 2037,
+          "full_source_RNA_counts": 9853018,
+          "selected_RNA_counts": 9853018,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024410.csv.gz",
+            "sha256": "04447e7454dbdfd4b99e0796180d8e61508a0b9040e3d17b4468d8912e118194"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM8024413",
+      "donor_id": "E015",
+      "source_metadata": {
+        "title": [
+          "E015B, exploratory, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024413"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: None",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 5.0.1",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_0.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488878",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306860"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024413/suppl/GSM8024413_E015B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024413/suppl/GSM8024413_E015B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024413/suppl/GSM8024413_E015B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "E015",
+        "source_blood_material_code": "E015B",
+        "source_cohort": "exploratory",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "None",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "5.0.1",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 206
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024413/suppl/GSM8024413_E015B_features.tsv.gz",
+          "filename": "GSM8024413_E015B_features.tsv.gz",
+          "expected_bytes": 335134,
+          "sha256": "83697982668257de7991203c18a109102a658309e78bb4479022c9de93d07362"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024413/suppl/GSM8024413_E015B_barcodes.tsv.gz",
+          "filename": "GSM8024413_E015B_barcodes.tsv.gz",
+          "expected_bytes": 57337,
+          "sha256": "ddc7aeb0910d09cb23cc207749cc96e39a1f26243d9c5911e3b5b9e90359ba9f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024413/suppl/GSM8024413_E015B_matrix.mtx.gz",
+          "filename": "GSM8024413_E015B_matrix.mtx.gz",
+          "expected_bytes": 59404455,
+          "sha256": "c18aca3b82e3d8f8448bbff67d254e926828c5900711c3b3077a885b682f0eb2"
+        }
+      ],
+      "genes_member": "GSM8024413_E015B_features.tsv.gz",
+      "barcodes_member": "GSM8024413_E015B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024413_E015B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 11899,
+        "genes": 36601,
+        "nonzeros": 14417772,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "d402bf085ec32edcda441c60f7145cf10cdfc48a2e86190f94025e12ecffe938",
+        "source_features": 36807,
+        "source_barcode_rows": 11899,
+        "RNA_positive_barcode_rows": 11899,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 37017019,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 206,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11899,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11899,
+          "source_positive_RNA_barcodes": 11899,
+          "full_source_RNA_counts": 37017019,
+          "selected_RNA_counts": 37017019,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024413.csv.gz",
+            "sha256": "4f75932efbcba8806d0129cf4673ad07af4e24fb37ea143d0ca0ea4b0955ea59"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM8024421",
+      "donor_id": "E023",
+      "source_metadata": {
+        "title": [
+          "E023B, exploratory, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024421"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: None",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 5.0.1",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_2.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488870",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306868"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024421/suppl/GSM8024421_E023B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024421/suppl/GSM8024421_E023B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024421/suppl/GSM8024421_E023B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "E023",
+        "source_blood_material_code": "E023B",
+        "source_cohort": "exploratory",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "None",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "5.0.1",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 206
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024421/suppl/GSM8024421_E023B_features.tsv.gz",
+          "filename": "GSM8024421_E023B_features.tsv.gz",
+          "expected_bytes": 335134,
+          "sha256": "83c837e2d10cfe7ad008ae3c51c48644d5ca0969c0adf15f375ddcbcfd3cc142"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024421/suppl/GSM8024421_E023B_barcodes.tsv.gz",
+          "filename": "GSM8024421_E023B_barcodes.tsv.gz",
+          "expected_bytes": 5669,
+          "sha256": "60b31d50245e5d8a7c0e7c8a4931550ef84b6ac0539856789d64afa8c2fb85f1"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024421/suppl/GSM8024421_E023B_matrix.mtx.gz",
+          "filename": "GSM8024421_E023B_matrix.mtx.gz",
+          "expected_bytes": 3787547,
+          "sha256": "962a7132b1eb1e5212e0e943eb862efd0745b7a1faa9cde55abda2a327dd5398"
+        }
+      ],
+      "genes_member": "GSM8024421_E023B_features.tsv.gz",
+      "barcodes_member": "GSM8024421_E023B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024421_E023B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 1002,
+        "genes": 36601,
+        "nonzeros": 881961,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "6da05c803381bcc5cabcbab35f7ba60a9c674265df9de1cc9d2f338e11ecd4ea",
+        "source_features": 36807,
+        "source_barcode_rows": 1002,
+        "RNA_positive_barcode_rows": 1002,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 2869658,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 206,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1002,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1002,
+          "source_positive_RNA_barcodes": 1002,
+          "full_source_RNA_counts": 2869658,
+          "selected_RNA_counts": 2869658,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024421.csv.gz",
+            "sha256": "64acec2c684712f3aa35a37db0119a47d82926d1af251f6f74784a0acd8a675c"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM8024423",
+      "donor_id": "E027",
+      "source_metadata": {
+        "title": [
+          "E027B, exploratory, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024423"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: None",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 5.0.1",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_0.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488868",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306870"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024423/suppl/GSM8024423_E027B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024423/suppl/GSM8024423_E027B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024423/suppl/GSM8024423_E027B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "E027",
+        "source_blood_material_code": "E027B",
+        "source_cohort": "exploratory",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "None",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "5.0.1",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 206
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024423/suppl/GSM8024423_E027B_features.tsv.gz",
+          "filename": "GSM8024423_E027B_features.tsv.gz",
+          "expected_bytes": 335134,
+          "sha256": "a734e95d470bd83f9309c8b8dd52abbedd1e7278835a0096ee76c672d35be828"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024423/suppl/GSM8024423_E027B_barcodes.tsv.gz",
+          "filename": "GSM8024423_E027B_barcodes.tsv.gz",
+          "expected_bytes": 18640,
+          "sha256": "4d14bfa415a3e59907b0cdbf6370a50e00ded483bacd768b1d0c4148e9008cbc"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024423/suppl/GSM8024423_E027B_matrix.mtx.gz",
+          "filename": "GSM8024423_E027B_matrix.mtx.gz",
+          "expected_bytes": 15201177,
+          "sha256": "df732c246c68000c6930320f11d75ed3057bae9e1e41bb4c50d36771a32eff7a"
+        }
+      ],
+      "genes_member": "GSM8024423_E027B_features.tsv.gz",
+      "barcodes_member": "GSM8024423_E027B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024423_E027B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3560,
+        "genes": 36601,
+        "nonzeros": 3524833,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "d402bf085ec32edcda441c60f7145cf10cdfc48a2e86190f94025e12ecffe938",
+        "source_features": 36807,
+        "source_barcode_rows": 3560,
+        "RNA_positive_barcode_rows": 3560,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 8851297,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 206,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3560,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3560,
+          "source_positive_RNA_barcodes": 3560,
+          "full_source_RNA_counts": 8851297,
+          "selected_RNA_counts": 8851297,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024423.csv.gz",
+            "sha256": "0fada3815f0d78018fe909e3a229cfde128f29d5124c8fc0df1d0d39b1f35c9b"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM8024425",
+      "donor_id": "T001",
+      "source_metadata": {
+        "title": [
+          "T001B, treatment, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024425"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 7.1.0",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_1.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488866",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306872"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024425/suppl/GSM8024425_T001B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024425/suppl/GSM8024425_T001B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024425/suppl/GSM8024425_T001B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "T001",
+        "source_blood_material_code": "T001B",
+        "source_cohort": "treatment",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "7.1.0",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 298
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024425/suppl/GSM8024425_T001B_features.tsv.gz",
+          "filename": "GSM8024425_T001B_features.tsv.gz",
+          "expected_bytes": 335754,
+          "sha256": "e3421b7a9c420e3f66c27be3a071a48b8dda9cf26cc78cb7506e6013ab155d10"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024425/suppl/GSM8024425_T001B_barcodes.tsv.gz",
+          "filename": "GSM8024425_T001B_barcodes.tsv.gz",
+          "expected_bytes": 5458,
+          "sha256": "f5dfb1938052bf9899ac395d8893d84b1b7a57c00aec1d2bec219105c6e5a71e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024425/suppl/GSM8024425_T001B_matrix.mtx.gz",
+          "filename": "GSM8024425_T001B_matrix.mtx.gz",
+          "expected_bytes": 5909169,
+          "sha256": "c1bb70e27980172b40ff38afafa22db7d6b4b0e90ec39040c7438ba706996577"
+        }
+      ],
+      "genes_member": "GSM8024425_T001B_features.tsv.gz",
+      "barcodes_member": "GSM8024425_T001B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024425_T001B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 956,
+        "genes": 36601,
+        "nonzeros": 1486446,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f79872640d162e5754bf5b94351735342f9d31285692c3f3ca228aa72c0be8d6",
+        "source_features": 36899,
+        "source_barcode_rows": 956,
+        "RNA_positive_barcode_rows": 956,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 4108218,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 298,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 956,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 956,
+          "source_positive_RNA_barcodes": 956,
+          "full_source_RNA_counts": 4108218,
+          "selected_RNA_counts": 4108218,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024425.csv.gz",
+            "sha256": "8557c29b5e9269dee0fb2592c17e1a2dd3a5c54bf48b015083de3069d5f777ab"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM8024428",
+      "donor_id": "T004",
+      "source_metadata": {
+        "title": [
+          "T004B, treatment, CD3+ cells, blood, GEX, ADT, HTO"
+        ],
+        "geo_accession": [
+          "GSM8024428"
+        ],
+        "status": [
+          "Public on Jul 01 2024"
+        ],
+        "submission_date": [
+          "Jan 18 2024"
+        ],
+        "last_update_date": [
+          "Jul 01 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: FACS-sorted CD3+ cells",
+          "treatment: Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach",
+          "library type: mRNA+ADT+HTO",
+          "cellranger version: 7.1.0",
+          "reference genome: refdata-gex-GRCh38-2020-A",
+          "feature reference: feature_reference_1.csv"
+        ],
+        "treatment_protocol_ch1": [
+          "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach"
+        ],
+        "molecule_ch1": [
+          "other"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspensions were obtained from human kidney biopsies by enzymatic digestion in RPMI 1640 medium with collagenase D at 0.4 mg/ml (Roche, 11088858001) and deoxyribonuclease I (DNase I; 10 \u03bcg/ml; Sigma-Aldrich, 10104159001) at 37\u00b0C for 30 min followed by dissociation with gentle MACS (Miltenyi Biotec). Leukocytes from blood samples were separated using Leucosep tubes (Greiner Bio-One, 10349081). Cells were stained with fluorochrome-conjugated antibodies from BioLegend and BD Biosciences, CD45 BV510 (HI30), CD3 BV785 (OKT3), CD4 BV650 (RPA-T4), CD8 APC-R700 (RPA-T8), CXCR3 Pe/Dazzle (G025H7), CCR6 PerCP-Cy5-5 (G034E3). Cells were also stained with a dead cell stain (Molecular Probes, L10119) to exclude dead cells from analysis. FACS was performed on a FACSAria Fusion cell sorter (BD Biosciences). ScRNA-seq of human samples from the kidney and peripheral blood was performed from FACS-sorted CD3 positive T cells using the Chromium Next GEM Single Cell 5' Kit v2 (10x Genomics) according to manufacturer's instructions. Libraries were sequenced aiming at 50,000 reads per cell on an Illumina NovaSeq\u2122 (P150).",
+          "libaries were constructed according to manufacturer specifications"
+        ],
+        "description": [
+          "polyA RNA, Antibody-derived oligonucleotide (ADT), Hashtag-derived oligonucleotide (HTO)"
+        ],
+        "data_processing": [
+          "The Cell Ranger software (v5.0.1 and v7.1.0, 10x Genomics) was used to demultiplex cellular barcodes and map reads to the reference genome GRCh38-3.0.0 and GRCh38-2020-A. All quality control and preprocessing steps were performed in Seurat (v4.0.4) and R (v4.1.1). The Seurat demultiplexing function HTODemux was used to demultiplex the hash-tag samples.",
+          "Assembly: refdata-cellranger-GRCh38-3.0.0 and refdata-gex-GRCh38-2020-A",
+          "Supplementary files format and content: barcodes.tsv.gz:  list of cell barcodes",
+          "Supplementary files format and content: features.tsv.gz:  list of gene IDs",
+          "Supplementary files format and content: matrix.mtx.gz:  gene expression count data (and protein count data) in Matrix Market Exchange Format",
+          "Library strategy: CITE-seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Darius,,Schaub"
+        ],
+        "contact_email": [
+          "schaub.darius@gmail.com"
+        ],
+        "contact_phone": [
+          "+4915901970346"
+        ],
+        "contact_department": [
+          "Center for Biomedical AI"
+        ],
+        "contact_institute": [
+          "University Medical Center Hamburg"
+        ],
+        "contact_address": [
+          "Billhorner Kanalstra\u00dfe 22"
+        ],
+        "contact_city": [
+          "Hamburg"
+        ],
+        "contact_state": [
+          "Hamburg"
+        ],
+        "contact_zip/postal_code": [
+          "20539"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "other"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN39488863",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX23306875"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024428/suppl/GSM8024428_T004B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024428/suppl/GSM8024428_T004B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024428/suppl/GSM8024428_T004B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE253633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "T004",
+        "source_blood_material_code": "T004B",
+        "source_cohort": "treatment",
+        "condition": "ANCA-associated glomerulonephritis, per original study design",
+        "source_reported_treatment": "Ustekinumab (90 mg) in in combination with low-dose cyclophosphamide and steroids, following the RITUXVAS trial approach",
+        "source_library_type": "mRNA+ADT+HTO",
+        "source_cellranger_version": "7.1.0",
+        "source_reference_genome": "refdata-gex-GRCh38-2020-A",
+        "source_specimen": "Separately deposited blood: Leucosep-separated leukocytes, FACS-sorted CD3-positive T cells",
+        "source_scope_policy": "Blood source compartment explicit. PBMC purification not explicitly named in GEO; Leucosep separation retained verbatim as evidence. Narrow selected peripheral T-cell scope; do not infer whole-PBMC composition.",
+        "source_identity_policy": "One separately deposited blood material per original E/T coded participant. E/T cohort aliases and exact physical draw dates unresolved; code namespaces do not prove eleven globally distinct people. Kidney counterparts and mixed blood/kidney captures are not extra blood samples.",
+        "source_treatment_policy": "Preserve original per-sample treatment characteristics. Generic treatment_protocol also appears on exploratory sources whose sample treatment is None; do not overwrite per-sample fields or equate None with lifetime absence of immunosuppression. Exact timing relative to treatment unknown.",
+        "source_demographic_policy": "No individual age, sex or clinical severity joined without a verified published code crosswalk. No cohort-level imputation.",
+        "source_modality_policy": "Only typed human Gene Expression features enter RNA QC, annotation and centroid normalization. Explicitly reviewed antibody/hashtag features excluded; all original matrix values audited before selection.",
+        "split_assignment": "unassigned; donor and E/T cohort alias resolution required before independent evaluation",
+        "source_excluded_non_RNA_features": 298
+      },
+      "allowed_non_rna_feature_types": [
+        "Antibody Capture"
+      ],
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024428/suppl/GSM8024428_T004B_features.tsv.gz",
+          "filename": "GSM8024428_T004B_features.tsv.gz",
+          "expected_bytes": 335754,
+          "sha256": "5b8a4e04f21fcf4b6a49d1c55d661925d8e0feec380d40d50904544243fa9d34"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024428/suppl/GSM8024428_T004B_barcodes.tsv.gz",
+          "filename": "GSM8024428_T004B_barcodes.tsv.gz",
+          "expected_bytes": 73519,
+          "sha256": "77a1a9316d43bda4ce3274e4187e8c6760334b81e6842dd61e83dca21788b0c3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8024nnn/GSM8024428/suppl/GSM8024428_T004B_matrix.mtx.gz",
+          "filename": "GSM8024428_T004B_matrix.mtx.gz",
+          "expected_bytes": 124517372,
+          "sha256": "08fa2a44d6aafa59a9ce425a5fa11f11305c797f7c783973b1cb368d8c4a8e9e"
+        }
+      ],
+      "genes_member": "GSM8024428_T004B_features.tsv.gz",
+      "barcodes_member": "GSM8024428_T004B_barcodes.tsv.gz",
+      "matrix_member": "GSM8024428_T004B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 15546,
+        "genes": 36601,
+        "nonzeros": 31321701,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f79872640d162e5754bf5b94351735342f9d31285692c3f3ca228aa72c0be8d6",
+        "source_features": 36899,
+        "source_barcode_rows": 15546,
+        "RNA_positive_barcode_rows": 15546,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 90443342,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 298,
+        "reviewed_non_rna_types": [
+          "Antibody Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 15546,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 15546,
+          "source_positive_RNA_barcodes": 15546,
+          "full_source_RNA_counts": 90443342,
+          "selected_RNA_counts": 90443342,
+          "metadata": {
+            "path": "references/datasets/GSE253633_original_RNA_QC/GSM8024428.csv.gz",
+            "sha256": "da39266f0acb6efe05736cb004e535c46932f2fa7665ad7d77526c3d8cb0e9cf"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "preconversion_min_rna_counts": 500
+}

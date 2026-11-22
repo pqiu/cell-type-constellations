@@ -1,0 +1,3133 @@
+{
+  "dataset_id": "GSE284677_peripheral_genes001",
+  "study_id": "GSE284677",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original participant/visit fields reviewed against primary sampling design. Longitudinal visits remain dependent within donors. Only explicitly reviewed human blood RNA sources acquired; no extra count from receptor assays, tissue biopsies or unresolved collection/graft relationships. Native source values/coordinates fully audited before annotation.",
+  "source_metadata": {
+    "accession": "GSE284677",
+    "publications": [
+      "https://doi.org/10.1136/gutjnl-2024-333558",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE284677"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE284677",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: tab-separated value files and matrix files"
+    ],
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "genes": 36601,
+        "excluded_non_RNA_features": 0,
+        "complete_primary_mitochondrial_gene_symbols": true,
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE284677_peripheral_gene_coordinates/28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9.csv.gz",
+          "sha256": "b4d9d147c600d9330e7cff94cb1eb5ba60ae065f277b856ce33aed663d91f6dd"
+        },
+        "identifier_policy": "Original gene IDs and original symbols retained. Only explicitly configured aliases/prefixes are used for annotation; no genome assembly or Ensembl IDs invented."
+      }
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8690427",
+      "donor_id": "PT17",
+      "source_metadata": {
+        "title": [
+          "PT17 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690427"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896336",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129493"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690427/suppl/GSM8690427_CL1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690427/suppl/GSM8690427_CL1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690427/suppl/GSM8690427_CL1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT17",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690427/suppl/GSM8690427_CL1_features.tsv.gz",
+          "filename": "GSM8690427_CL1_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "ab6fd6c6c0ec283c7daa3b8a2922f0155f839abb9c92dccf36682113dd665fc3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690427/suppl/GSM8690427_CL1_barcodes.tsv.gz",
+          "filename": "GSM8690427_CL1_barcodes.tsv.gz",
+          "expected_bytes": 98559,
+          "sha256": "85851a33611e5bb99bb2b6d1d4e7471bda9518197c5a6cf86c24c27ba572e058"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690427/suppl/GSM8690427_CL1_matrix.mtx.gz",
+          "filename": "GSM8690427_CL1_matrix.mtx.gz",
+          "expected_bytes": 72836284,
+          "sha256": "b90dff99e84b25adcb88803b7200aa6e8c83ffce45ff6ec3ce384d0bd6755959"
+        }
+      ],
+      "genes_member": "GSM8690427_CL1_features.tsv.gz",
+      "barcodes_member": "GSM8690427_CL1_barcodes.tsv.gz",
+      "matrix_member": "GSM8690427_CL1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 20371,
+        "genes": 36601,
+        "nonzeros": 18332108,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 20371,
+        "RNA_positive_barcode_rows": 20371,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 52132276,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690428",
+      "donor_id": "PT13",
+      "source_metadata": {
+        "title": [
+          "PT13 blood 3 months post-SCT"
+        ],
+        "geo_accession": [
+          "GSM8690428"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL12",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896335",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129494"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690428/suppl/GSM8690428_CL12_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690428/suppl/GSM8690428_CL12_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690428/suppl/GSM8690428_CL12_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT13",
+        "source_visit_label": "3 months post-SCT",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690428/suppl/GSM8690428_CL12_features.tsv.gz",
+          "filename": "GSM8690428_CL12_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "5888b4813bb5043f98713429008b6b718e8f50564bc403b69321b823d89a7e5a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690428/suppl/GSM8690428_CL12_barcodes.tsv.gz",
+          "filename": "GSM8690428_CL12_barcodes.tsv.gz",
+          "expected_bytes": 55885,
+          "sha256": "2f8cf5e6bbe6f4acb6efa81356624602b9e75e9dc551261b473233ba0513b7f6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690428/suppl/GSM8690428_CL12_matrix.mtx.gz",
+          "filename": "GSM8690428_CL12_matrix.mtx.gz",
+          "expected_bytes": 25591057,
+          "sha256": "702b8448741286532df7225ddf7485c3b758325cbbaf9596e80308f4ece12431"
+        }
+      ],
+      "genes_member": "GSM8690428_CL12_features.tsv.gz",
+      "barcodes_member": "GSM8690428_CL12_barcodes.tsv.gz",
+      "matrix_member": "GSM8690428_CL12_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 11066,
+        "genes": 36601,
+        "nonzeros": 6511888,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 11066,
+        "RNA_positive_barcode_rows": 11066,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 22820505,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690429",
+      "donor_id": "PT15",
+      "source_metadata": {
+        "title": [
+          "PT15 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690429"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL14",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896334",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129495"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690429/suppl/GSM8690429_CL14_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690429/suppl/GSM8690429_CL14_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690429/suppl/GSM8690429_CL14_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT15",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690429/suppl/GSM8690429_CL14_features.tsv.gz",
+          "filename": "GSM8690429_CL14_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "e64daece77723242a4c7347c6c3d2cd2fe42b96094d761051f2508047cd02f63"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690429/suppl/GSM8690429_CL14_barcodes.tsv.gz",
+          "filename": "GSM8690429_CL14_barcodes.tsv.gz",
+          "expected_bytes": 30886,
+          "sha256": "3bf9c3112420cfca4bbe9baae6f88de27f28d64272142127a3e9ba8c65d9cae3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690429/suppl/GSM8690429_CL14_matrix.mtx.gz",
+          "filename": "GSM8690429_CL14_matrix.mtx.gz",
+          "expected_bytes": 29778650,
+          "sha256": "cb1347103dbfd2e3fa4ebe0c6d4dc652b1ea6131a91480a98edd90545205e0c0"
+        }
+      ],
+      "genes_member": "GSM8690429_CL14_features.tsv.gz",
+      "barcodes_member": "GSM8690429_CL14_barcodes.tsv.gz",
+      "matrix_member": "GSM8690429_CL14_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5872,
+        "genes": 36601,
+        "nonzeros": 7660696,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5872,
+        "RNA_positive_barcode_rows": 5872,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 25352322,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690431",
+      "donor_id": "PT13",
+      "source_metadata": {
+        "title": [
+          "PT13 blood engraftment"
+        ],
+        "geo_accession": [
+          "GSM8690431"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL2",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896332",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129497"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690431/suppl/GSM8690431_CL2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690431/suppl/GSM8690431_CL2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690431/suppl/GSM8690431_CL2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT13",
+        "source_visit_label": "engraftment",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690431/suppl/GSM8690431_CL2_features.tsv.gz",
+          "filename": "GSM8690431_CL2_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "71531c084a814ccba3563d9dd46e5db6dbb4603e3853fc93a9603f01f2739c99"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690431/suppl/GSM8690431_CL2_barcodes.tsv.gz",
+          "filename": "GSM8690431_CL2_barcodes.tsv.gz",
+          "expected_bytes": 150394,
+          "sha256": "a979e131b38a8e3160e88a92a9052290a4e0ed9e176710d94ac67593e24e4ae0"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690431/suppl/GSM8690431_CL2_matrix.mtx.gz",
+          "filename": "GSM8690431_CL2_matrix.mtx.gz",
+          "expected_bytes": 77873396,
+          "sha256": "2a8de3b078106818f3f613a3f93d040dc863709f978ac211035ecfbf9c210b23"
+        }
+      ],
+      "genes_member": "GSM8690431_CL2_features.tsv.gz",
+      "barcodes_member": "GSM8690431_CL2_barcodes.tsv.gz",
+      "matrix_member": "GSM8690431_CL2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 32060,
+        "genes": 36601,
+        "nonzeros": 19748935,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 32060,
+        "RNA_positive_barcode_rows": 32060,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 47203042,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690434",
+      "donor_id": "PT11",
+      "source_metadata": {
+        "title": [
+          "PT11 blood 12 months post-SCT"
+        ],
+        "geo_accession": [
+          "GSM8690434"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL22",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896329",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129482"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690434/suppl/GSM8690434_CL22_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690434/suppl/GSM8690434_CL22_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690434/suppl/GSM8690434_CL22_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT11",
+        "source_visit_label": "12 months post-SCT",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690434/suppl/GSM8690434_CL22_features.tsv.gz",
+          "filename": "GSM8690434_CL22_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "b49ccc3eeff4fcd74179912b16e48aa1401712f6439014bbf8780cda4aa9e521"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690434/suppl/GSM8690434_CL22_barcodes.tsv.gz",
+          "filename": "GSM8690434_CL22_barcodes.tsv.gz",
+          "expected_bytes": 30916,
+          "sha256": "80426e4b9cb2e6aaf769266d498cd2d08c72e7d6271e6098a104e94804a0bff4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690434/suppl/GSM8690434_CL22_matrix.mtx.gz",
+          "filename": "GSM8690434_CL22_matrix.mtx.gz",
+          "expected_bytes": 39021829,
+          "sha256": "7641f634b4deed0a11b273d1f1a7f1cfa52cfcaf9f9c838f68295b9395749c61"
+        }
+      ],
+      "genes_member": "GSM8690434_CL22_features.tsv.gz",
+      "barcodes_member": "GSM8690434_CL22_barcodes.tsv.gz",
+      "matrix_member": "GSM8690434_CL22_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5891,
+        "genes": 36601,
+        "nonzeros": 10213956,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5891,
+        "RNA_positive_barcode_rows": 5891,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 30388643,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690435",
+      "donor_id": "PT18",
+      "source_metadata": {
+        "title": [
+          "PT18 blood engraftment"
+        ],
+        "geo_accession": [
+          "GSM8690435"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL23",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896328",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129483"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690435/suppl/GSM8690435_CL23_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690435/suppl/GSM8690435_CL23_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690435/suppl/GSM8690435_CL23_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT18",
+        "source_visit_label": "engraftment",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690435/suppl/GSM8690435_CL23_features.tsv.gz",
+          "filename": "GSM8690435_CL23_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "ca48b66fa00d741d76f2840c9638bf2531a6a253ae0d815bf88236d2cebbf210"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690435/suppl/GSM8690435_CL23_barcodes.tsv.gz",
+          "filename": "GSM8690435_CL23_barcodes.tsv.gz",
+          "expected_bytes": 41610,
+          "sha256": "3bbb6d04d52a58edd489cc500021cc2d6c93ae4f9343bb2a51ee34665149a9f8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690435/suppl/GSM8690435_CL23_matrix.mtx.gz",
+          "filename": "GSM8690435_CL23_matrix.mtx.gz",
+          "expected_bytes": 51319209,
+          "sha256": "918e26176489191b16209d857487a3916a100ab181dfe7d15ee89dea82e59067"
+        }
+      ],
+      "genes_member": "GSM8690435_CL23_features.tsv.gz",
+      "barcodes_member": "GSM8690435_CL23_barcodes.tsv.gz",
+      "matrix_member": "GSM8690435_CL23_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8101,
+        "genes": 36601,
+        "nonzeros": 13449018,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 8101,
+        "RNA_positive_barcode_rows": 8101,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 51468753,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690436",
+      "donor_id": "PT13",
+      "source_metadata": {
+        "title": [
+          "PT13 blood 6 months post-SCT"
+        ],
+        "geo_accession": [
+          "GSM8690436"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL24",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896327",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129484"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690436/suppl/GSM8690436_CL24_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690436/suppl/GSM8690436_CL24_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690436/suppl/GSM8690436_CL24_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT13",
+        "source_visit_label": "6 months post-SCT",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690436/suppl/GSM8690436_CL24_features.tsv.gz",
+          "filename": "GSM8690436_CL24_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "3db0b149ae8dd575bc7fd3ee648c168baba6dc09f9919abaf9759c4009d899a5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690436/suppl/GSM8690436_CL24_barcodes.tsv.gz",
+          "filename": "GSM8690436_CL24_barcodes.tsv.gz",
+          "expected_bytes": 36167,
+          "sha256": "61588388c6513bc7b80ed9dbdeb31c19e448c944e5971ddcd073b3627923f619"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690436/suppl/GSM8690436_CL24_matrix.mtx.gz",
+          "filename": "GSM8690436_CL24_matrix.mtx.gz",
+          "expected_bytes": 23583311,
+          "sha256": "5d6e565efe98c38dfad381b3de48adf78a6d8af4940a042d7fb9c48e0ba35cda"
+        }
+      ],
+      "genes_member": "GSM8690436_CL24_features.tsv.gz",
+      "barcodes_member": "GSM8690436_CL24_barcodes.tsv.gz",
+      "matrix_member": "GSM8690436_CL24_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6973,
+        "genes": 36601,
+        "nonzeros": 6059114,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 6973,
+        "RNA_positive_barcode_rows": 6973,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 13941672,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690437",
+      "donor_id": "PT12",
+      "source_metadata": {
+        "title": [
+          "PT12 blood 6 months post-SCT"
+        ],
+        "geo_accession": [
+          "GSM8690437"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL25",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896326",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129485"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690437/suppl/GSM8690437_CL25_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690437/suppl/GSM8690437_CL25_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690437/suppl/GSM8690437_CL25_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT12",
+        "source_visit_label": "6 months post-SCT",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690437/suppl/GSM8690437_CL25_features.tsv.gz",
+          "filename": "GSM8690437_CL25_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "07d6a18949424a43241c8ae11cd573826dafdcd26e467a20ec55ac113cf5589d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690437/suppl/GSM8690437_CL25_barcodes.tsv.gz",
+          "filename": "GSM8690437_CL25_barcodes.tsv.gz",
+          "expected_bytes": 20772,
+          "sha256": "eca988370aed8d544b3596a8068468e967ab78b97580374a8f0eccd78de84ff9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690437/suppl/GSM8690437_CL25_matrix.mtx.gz",
+          "filename": "GSM8690437_CL25_matrix.mtx.gz",
+          "expected_bytes": 28091867,
+          "sha256": "cb6a2e1691421589b45334720c6772c3c6843ee9c83a2cede2a4725f44b4c59c"
+        }
+      ],
+      "genes_member": "GSM8690437_CL25_features.tsv.gz",
+      "barcodes_member": "GSM8690437_CL25_barcodes.tsv.gz",
+      "matrix_member": "GSM8690437_CL25_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3856,
+        "genes": 36601,
+        "nonzeros": 7348599,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 3856,
+        "RNA_positive_barcode_rows": 3856,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 27209775,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690439",
+      "donor_id": "PT14",
+      "source_metadata": {
+        "title": [
+          "PT14 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690439"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL30",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896324",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129472"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690439/suppl/GSM8690439_CL30_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690439/suppl/GSM8690439_CL30_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690439/suppl/GSM8690439_CL30_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT14",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690439/suppl/GSM8690439_CL30_features.tsv.gz",
+          "filename": "GSM8690439_CL30_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "54ea7ca5fc8bd93e9c8016c20902ddf0845130e45d06835af4f45410b29e7fcf"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690439/suppl/GSM8690439_CL30_barcodes.tsv.gz",
+          "filename": "GSM8690439_CL30_barcodes.tsv.gz",
+          "expected_bytes": 36810,
+          "sha256": "9e1a0e18e4dc9dcf61693684eb0ff1edf6706a727f270f33265f605936747573"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690439/suppl/GSM8690439_CL30_matrix.mtx.gz",
+          "filename": "GSM8690439_CL30_matrix.mtx.gz",
+          "expected_bytes": 15495105,
+          "sha256": "882c5827b4fe693ee97d4769875b19921ade035864501645974bd8aaaefc9745"
+        }
+      ],
+      "genes_member": "GSM8690439_CL30_features.tsv.gz",
+      "barcodes_member": "GSM8690439_CL30_barcodes.tsv.gz",
+      "matrix_member": "GSM8690439_CL30_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7083,
+        "genes": 36601,
+        "nonzeros": 3962930,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7083,
+        "RNA_positive_barcode_rows": 7083,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 8503399,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690440",
+      "donor_id": "PT12",
+      "source_metadata": {
+        "title": [
+          "PT12 blood engraftment"
+        ],
+        "geo_accession": [
+          "GSM8690440"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL4",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896323",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129473"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690440/suppl/GSM8690440_CL4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690440/suppl/GSM8690440_CL4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690440/suppl/GSM8690440_CL4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT12",
+        "source_visit_label": "engraftment",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690440/suppl/GSM8690440_CL4_features.tsv.gz",
+          "filename": "GSM8690440_CL4_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "86586fe56b38b67f324ff80c3ae5675cae06b1830f8d2397fcb64f808579ecf4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690440/suppl/GSM8690440_CL4_barcodes.tsv.gz",
+          "filename": "GSM8690440_CL4_barcodes.tsv.gz",
+          "expected_bytes": 29476,
+          "sha256": "4767d0c3d00c8e00301c50a1de70f7e292ff129b7f8a140752c83c79c2411b74"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690440/suppl/GSM8690440_CL4_matrix.mtx.gz",
+          "filename": "GSM8690440_CL4_matrix.mtx.gz",
+          "expected_bytes": 45320620,
+          "sha256": "7eae158d307dbf8cdd4ab6ec0c18ffea004567c205e8bbeafeb42803139b3455"
+        }
+      ],
+      "genes_member": "GSM8690440_CL4_features.tsv.gz",
+      "barcodes_member": "GSM8690440_CL4_barcodes.tsv.gz",
+      "matrix_member": "GSM8690440_CL4_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5608,
+        "genes": 36601,
+        "nonzeros": 12016285,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5608,
+        "RNA_positive_barcode_rows": 5608,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 37438468,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690441",
+      "donor_id": "PT16",
+      "source_metadata": {
+        "title": [
+          "PT16 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690441"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL5",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896322",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129474"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690441/suppl/GSM8690441_CL5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690441/suppl/GSM8690441_CL5_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690441/suppl/GSM8690441_CL5_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT16",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690441/suppl/GSM8690441_CL5_features.tsv.gz",
+          "filename": "GSM8690441_CL5_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "5797142bd7787200d4f2ab25930c0f98c17cae1036361861cf76ed18917c7ed4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690441/suppl/GSM8690441_CL5_barcodes.tsv.gz",
+          "filename": "GSM8690441_CL5_barcodes.tsv.gz",
+          "expected_bytes": 19552,
+          "sha256": "9f5535e576848391e7d4b73b9b4e841cd5f173030fb79a4a2d03038624804365"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690441/suppl/GSM8690441_CL5_matrix.mtx.gz",
+          "filename": "GSM8690441_CL5_matrix.mtx.gz",
+          "expected_bytes": 18761800,
+          "sha256": "5e262e150e840c0fe81227d57c97d211080392b54dfa10832ac86345394b0979"
+        }
+      ],
+      "genes_member": "GSM8690441_CL5_features.tsv.gz",
+      "barcodes_member": "GSM8690441_CL5_barcodes.tsv.gz",
+      "matrix_member": "GSM8690441_CL5_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3608,
+        "genes": 36601,
+        "nonzeros": 4815407,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 3608,
+        "RNA_positive_barcode_rows": 3608,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 16676366,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690442",
+      "donor_id": "PT18",
+      "source_metadata": {
+        "title": [
+          "PT18 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690442"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: CL9",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896321",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129475"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690442/suppl/GSM8690442_CL9_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690442/suppl/GSM8690442_CL9_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690442/suppl/GSM8690442_CL9_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT18",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690442/suppl/GSM8690442_CL9_features.tsv.gz",
+          "filename": "GSM8690442_CL9_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "3d5ed3aca941a51f6d59578b6dc5fed343db795745b5d1d228c1a1c5cca7435f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690442/suppl/GSM8690442_CL9_barcodes.tsv.gz",
+          "filename": "GSM8690442_CL9_barcodes.tsv.gz",
+          "expected_bytes": 38409,
+          "sha256": "3f49e408d3b5e54d8355f7fc7275e00cfa5fa02f309474b961b1444a76a73120"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690442/suppl/GSM8690442_CL9_matrix.mtx.gz",
+          "filename": "GSM8690442_CL9_matrix.mtx.gz",
+          "expected_bytes": 37570305,
+          "sha256": "5903ceb4c1756561b16ab29294205bda6d873db5087450dd7dd74cf1cb26bc84"
+        }
+      ],
+      "genes_member": "GSM8690442_CL9_features.tsv.gz",
+      "barcodes_member": "GSM8690442_CL9_barcodes.tsv.gz",
+      "matrix_member": "GSM8690442_CL9_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7427,
+        "genes": 36601,
+        "nonzeros": 9664010,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7427,
+        "RNA_positive_barcode_rows": 7427,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 28677954,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690443",
+      "donor_id": "PT12",
+      "source_metadata": {
+        "title": [
+          "PT12 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690443"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: PL16",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896320",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129499"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690443/suppl/GSM8690443_PL16_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690443/suppl/GSM8690443_PL16_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690443/suppl/GSM8690443_PL16_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT12",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690443/suppl/GSM8690443_PL16_features.tsv.gz",
+          "filename": "GSM8690443_PL16_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "0acff52994acf1ab6fb6d98da2e11e72c952434d6e74e12643cacb6ce36d287e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690443/suppl/GSM8690443_PL16_barcodes.tsv.gz",
+          "filename": "GSM8690443_PL16_barcodes.tsv.gz",
+          "expected_bytes": 29007,
+          "sha256": "f2d5f808a819da7faa12bf83cda86e07f3fb3bdb7d5a1d26438309a8870b48f5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690443/suppl/GSM8690443_PL16_matrix.mtx.gz",
+          "filename": "GSM8690443_PL16_matrix.mtx.gz",
+          "expected_bytes": 29592492,
+          "sha256": "d17afe14d2abfab047ebc4ca98c36d14e7472e3ae8c825bd34a70e57c183e124"
+        }
+      ],
+      "genes_member": "GSM8690443_PL16_features.tsv.gz",
+      "barcodes_member": "GSM8690443_PL16_barcodes.tsv.gz",
+      "matrix_member": "GSM8690443_PL16_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5495,
+        "genes": 36601,
+        "nonzeros": 7662707,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5495,
+        "RNA_positive_barcode_rows": 5495,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 23944189,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690444",
+      "donor_id": "PT11",
+      "source_metadata": {
+        "title": [
+          "PT11 blood 6 months post-SCT"
+        ],
+        "geo_accession": [
+          "GSM8690444"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: PL21",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896319",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129500"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690444/suppl/GSM8690444_PL21_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690444/suppl/GSM8690444_PL21_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690444/suppl/GSM8690444_PL21_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT11",
+        "source_visit_label": "6 months post-SCT",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690444/suppl/GSM8690444_PL21_features.tsv.gz",
+          "filename": "GSM8690444_PL21_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "416448ad4c4673149502339309d6969ce46820086f09801fb2661f810d948e42"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690444/suppl/GSM8690444_PL21_barcodes.tsv.gz",
+          "filename": "GSM8690444_PL21_barcodes.tsv.gz",
+          "expected_bytes": 30054,
+          "sha256": "cbb651bcac4be03b22444b5b7d5fe115d6a45a6f51ba3584de6995de24fe53d7"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690444/suppl/GSM8690444_PL21_matrix.mtx.gz",
+          "filename": "GSM8690444_PL21_matrix.mtx.gz",
+          "expected_bytes": 22229762,
+          "sha256": "66e0fa7eb8caf3b81f25776c146b58b72239c23643cae58ed006d6e06b74c066"
+        }
+      ],
+      "genes_member": "GSM8690444_PL21_features.tsv.gz",
+      "barcodes_member": "GSM8690444_PL21_barcodes.tsv.gz",
+      "matrix_member": "GSM8690444_PL21_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5721,
+        "genes": 36601,
+        "nonzeros": 5705369,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5721,
+        "RNA_positive_barcode_rows": 5721,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 21722164,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690449",
+      "donor_id": "PT11",
+      "source_metadata": {
+        "title": [
+          "PT11 blood engraftment"
+        ],
+        "geo_accession": [
+          "GSM8690449"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: PL5",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896314",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129491"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690449/suppl/GSM8690449_PL5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690449/suppl/GSM8690449_PL5_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690449/suppl/GSM8690449_PL5_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT11",
+        "source_visit_label": "engraftment",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690449/suppl/GSM8690449_PL5_features.tsv.gz",
+          "filename": "GSM8690449_PL5_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "69c597d95dd73c48398447aab2a22a67daa091d31ac08ba747bb0afb234a691f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690449/suppl/GSM8690449_PL5_barcodes.tsv.gz",
+          "filename": "GSM8690449_PL5_barcodes.tsv.gz",
+          "expected_bytes": 42651,
+          "sha256": "b15b7949b4152fe0b608f8a3cc10fb195c95a6bc157d82458185b7a841f0ba2c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690449/suppl/GSM8690449_PL5_matrix.mtx.gz",
+          "filename": "GSM8690449_PL5_matrix.mtx.gz",
+          "expected_bytes": 31675861,
+          "sha256": "1a5140bcec2452b20576b16b121018e934eec54f2e00ca91485e2fc3a69fb5e6"
+        }
+      ],
+      "genes_member": "GSM8690449_PL5_features.tsv.gz",
+      "barcodes_member": "GSM8690449_PL5_barcodes.tsv.gz",
+      "matrix_member": "GSM8690449_PL5_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8305,
+        "genes": 36601,
+        "nonzeros": 8083063,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 8305,
+        "RNA_positive_barcode_rows": 8305,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 22676810,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690450",
+      "donor_id": "PT11",
+      "source_metadata": {
+        "title": [
+          "PT11 blood 3 months post-SCT"
+        ],
+        "geo_accession": [
+          "GSM8690450"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: PL6",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896313",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129492"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690450/suppl/GSM8690450_PL6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690450/suppl/GSM8690450_PL6_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690450/suppl/GSM8690450_PL6_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT11",
+        "source_visit_label": "3 months post-SCT",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690450/suppl/GSM8690450_PL6_features.tsv.gz",
+          "filename": "GSM8690450_PL6_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "dec83c1d509571e2ac73c244d9e816ed370758a2804cce30736022289107782c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690450/suppl/GSM8690450_PL6_barcodes.tsv.gz",
+          "filename": "GSM8690450_PL6_barcodes.tsv.gz",
+          "expected_bytes": 27554,
+          "sha256": "b76863bf4d334a30088e8095a7b0f202ddfff4749975baa5eea3e54b180843d3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690450/suppl/GSM8690450_PL6_matrix.mtx.gz",
+          "filename": "GSM8690450_PL6_matrix.mtx.gz",
+          "expected_bytes": 35153275,
+          "sha256": "e09ea52dabef3cbe7428d48cf59b2395b19872aa894fbae943252e2fbed287c2"
+        }
+      ],
+      "genes_member": "GSM8690450_PL6_features.tsv.gz",
+      "barcodes_member": "GSM8690450_PL6_barcodes.tsv.gz",
+      "matrix_member": "GSM8690450_PL6_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5208,
+        "genes": 36601,
+        "nonzeros": 9171583,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5208,
+        "RNA_positive_barcode_rows": 5208,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 28964460,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM8690451",
+      "donor_id": "PT13",
+      "source_metadata": {
+        "title": [
+          "PT13 blood baseline"
+        ],
+        "geo_accession": [
+          "GSM8690451"
+        ],
+        "status": [
+          "Public on Jan 23 2025"
+        ],
+        "submission_date": [
+          "Dec 18 2024"
+        ],
+        "last_update_date": [
+          "Jan 23 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: blood",
+          "cell type: PBMC",
+          "batch: blood"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Tissue - Tissue biopsies were taken endoscopically with biopsy forceps and collected in ice cold complete RPMI 1640 supplemented with glutamine, 1x pen/strep, 10mM HEPES and 10% FBS and processed within 1 hour of collection. The biopsy samples were pooled together, 10-20 biopsies per sample. Epithelial cells were dissociated by transfer into dissociation medium (HBSS w/o Ca2+ Mg2+, with HEPES 10mM, EDTA 5mM) and agitated for 30 minutes at 37\u00b0C at 100rpm, and then vortexed for 30 seconds and then filtered through 70mm strainer. The biopsies were then washed with complete RMPI 1640 at room temperature and then transferred to digestion media (HBSS with Ca2+ Mg2+, FCS 2%, DNase I 0.5mg/ml,Collagenase IV 0.5mg/ml) and agitated for 40 minutes at 37\u00b0C at 100rpm. After digestion the suspension was filtered through a 70mm strainer and washed with complete RPMI, spun down 5 minutes at 2500rpm and resuspended in 1ml red blood cell lysis buffer and incubated for 10 minutes at room temperature, spun again for 5 minutes at 2500 rpm and then resuspended in RPMI and viability and cell count were determined using AO/PI dye and Nexcelcom automated cell counter prior to further processing for downstream analyses. For samples with viability 70% or less, dead cells were depleted using a dead cell removal kit (Miltenyi Biotec) following the protocol from the manufacturer. After dead cell removal, viability was routinely >85%.",
+          "Blood - peripheral blood was collected into CPT tubes (BD Vacutainer) and cells were isolated within 2 hours of blood draw. The tubes were centrifuged for 20 min at 1800G at room temperature without break and then the buffy coat layer of PBMCs was collected and then washed with PBS, centrifuged for 15 minutes at 300G. For stem cell graft processing, peripheral mobilized mononuclear cells were obtained from the cellular therapeutic laboratory and were thawed and washed with PBS and centrifuged for 15 min at 300G. CD34+ grafts - Thawed mobilized mononuclear cells were CD34+ selected using an EasySep Human CD34 Selection Kit II (StemCell Technologies) per manufacturers protocol.",
+          "Single cell isolations were processed using the 10x Genomics Chromium Single Cell 3\u2019 v3.1 kit per manufacturers protocol and run on the 10x Genomics Chromium iX instrument. Libraries were prepared using 10x Genomics Library Construction Kit and consisted of single cell isolations resuspended in master mix and loaded into chip with partitioning oil and gel beads to generate gel bead-in-emulsion (GEM), the poly-A RNA in each GEM was reverse transcripted to cDNA containing an ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and 10x barcode. The pooled barcoded cDNA was cleaned with Silane DynaBeads, amplified by PCR and appropriate sized fragments were selected with SPRIselect reagent. Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and sample index were added during library construction. Final libraries were sequenced on the Illumina NovaSeq 6000 at the Duke Center for Genomic Computational Biology at Duke University"
+        ],
+        "description": [
+          "Library name: PL9",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "FASTQ files underwent processing through the Cellranger Count v6.1.1 pipeline for quality control, alignment, and matrix generation and were then employed in the Seurat wrapper, coreSC for data cleaning and regularization and a Seurat object was created.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: tab-separated value files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Louis,,Cohen"
+        ],
+        "contact_email": [
+          "louis.cohen@mssm.edu"
+        ],
+        "contact_laboratory": [
+          "Louis Cohen Lab"
+        ],
+        "contact_department": [
+          "Gastroenterology"
+        ],
+        "contact_institute": [
+          "Icahn School of Medicine at Mount Sinai"
+        ],
+        "contact_address": [
+          "1470 Madison Avenue, 8th Fl."
+        ],
+        "contact_city": [
+          "New York"
+        ],
+        "contact_state": [
+          "NY"
+        ],
+        "contact_zip/postal_code": [
+          "10029"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45896312",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27129504"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690451/suppl/GSM8690451_PL9_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690451/suppl/GSM8690451_PL9_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690451/suppl/GSM8690451_PL9_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE284677"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_participant_code": "PT13",
+        "source_visit_label": "baseline",
+        "condition": "Crohn's disease",
+        "source_specimen": "Peripheral blood mononuclear cells",
+        "source_timing_policy": "Original baseline/engraftment/month-labelled visits retained; no exact dates, engraftment day or undocumented per-person disease activity imputed.",
+        "source_selection_policy": "Peripheral blood PBMC sources only in this phase. Intestinal biopsies, mobilized stem-cell collections and graft/selected-graft views retained as separate leads; not counted as additional peripheral draws.",
+        "source_demographic_policy": "Trial enrolled adults; individual age, sex and response not joined to GEO codes. Trial enrollment19 is not19 available RNA donors.",
+        "source_identity_policy": "Exact original participant and visit labels identify longitudinal draws. Donor is the repeated-measures unit; technical or alternate assays are not independent people.",
+        "split_assignment": "unassigned; no discovery model or donor split fitted"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690451/suppl/GSM8690451_PL9_features.tsv.gz",
+          "filename": "GSM8690451_PL9_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "d4943e95a3452cfe7798ff58d39dfd20b880fba6f6293833d8c23884d377cca2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690451/suppl/GSM8690451_PL9_barcodes.tsv.gz",
+          "filename": "GSM8690451_PL9_barcodes.tsv.gz",
+          "expected_bytes": 39746,
+          "sha256": "caeb3c9f68eb729c01b4b7799cb06cdd6fe0c1e744034c2c04cae69d61822fbd"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8690nnn/GSM8690451/suppl/GSM8690451_PL9_matrix.mtx.gz",
+          "filename": "GSM8690451_PL9_matrix.mtx.gz",
+          "expected_bytes": 23432252,
+          "sha256": "c4d5b7a44bd95f5cfce20f8b28adbc63cecf3fd92576dc415ac5acd21d5025e0"
+        }
+      ],
+      "genes_member": "GSM8690451_PL9_features.tsv.gz",
+      "barcodes_member": "GSM8690451_PL9_barcodes.tsv.gz",
+      "matrix_member": "GSM8690451_PL9_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7702,
+        "genes": 36601,
+        "nonzeros": 5955868,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7702,
+        "RNA_positive_barcode_rows": 7702,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 22510391,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

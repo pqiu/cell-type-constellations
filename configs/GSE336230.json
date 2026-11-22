@@ -1,0 +1,72 @@
+{
+  "dataset_id": "GSE336230",
+  "study_id": "GSE336230",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE336230_complete_original_RNA_audit.json",
+    "bytes": 7608,
+    "sha256": "d885fb39d04e02b74858270b341c20855334e03b6c8f945a665ee52cc02d890d"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE336230_source_identity_review.json",
+    "bytes": 4799,
+    "sha256": "a3a303d13a5c9442db48541b7f9b84ca489b8b36526e1552f49b86675168d511"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Original workbook Admera Health ID exactly joins RDS Pat and GEOtitle. Explicit Patient ID supplies6donors; explicit Timepoint supplies BL/Week2. Three paired donors and three singleton donors remain dependent by donor UID. No sample-number/ordinal pairing or phenotype/expression inference; global aliases unresolved.",
+  "physical_sample_mapping_evidence": "Nine original PBMC specimens from six explicit author Patient IDs. Exact workbook Admera Health ID joins RDS Pat and GEOtitle. Patient ID supplies three repeated BL/Week2pairs and three single BLsamples; no ordinal pairing. High/lowCRPcohorts and repeated-donor dependence preserved.",
+  "metadata_mapping": {
+    "aliases": {
+      "timepoint": "source_workbook_timepoint_as_reported",
+      "sex": "source_sex_as_reported",
+      "age": "source_age_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE336230",
+    "primary_PMID": "35655933",
+    "publication": "https://doi.org/10.1016/j.ynstr.2022.100462",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE336230",
+    "access": "Public original Seurat object and author specimen/donor/visit metadata workbook; original workbook retained unchanged.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE336230_source_identity_review.json",
+      "bytes": 4799,
+      "sha256": "a3a303d13a5c9442db48541b7f9b84ca489b8b36526e1552f49b86675168d511"
+    },
+    "source_unit": "Nine original PBMC specimens from six explicit author Patient IDs. Exact workbook Admera Health ID joins RDS Pat and GEOtitle. Patient ID supplies three repeated BL/Week2pairs and three single BLsamples; no ordinal pairing. High/lowCRPcohorts and repeated-donor dependence preserved.",
+    "identity_policy": "Original workbook Admera Health ID exactly joins RDS Pat and GEOtitle. Explicit Patient ID supplies6donors; explicit Timepoint supplies BL/Week2. Three paired donors and three singleton donors remain dependent by donor UID. No sample-number/ordinal pairing or phenotype/expression inference; global aliases unresolved.",
+    "clinical_policy": "All specimens come from source major-depression cohort, not healthy controls. Preserve High CRP-Baseline/High CRP-Infliximab/Low CRPconditions and explicit workbook age/Sex/Race/Ethicity_Hispanic/timepoint values. Original workbook condition trailing whitespace is retained; source consistency comparison uses explicit rstrip. Missing clinical fields remain missing. No inference of treatment benefit, diagnosis or causality.",
+    "reuse_policy": "Nine original PBMC draws from six patient codes, not nine independent people. No completed original/publication match found; global cross-study identities remain unresolved.",
+    "selection_policy": "Source selected medically stable unmedicated depressed outpatients,3highCRPparticipants at BL/Week2after an infusion and3lowCRPparticipants at BL. Preserve cohort ascertainment and repeated-donor dependence; no representative-population or efficacy inference.",
+    "cell_calling_policy": "Use provided native RNA counts and recompute own fixed QC. Cached percent.mt differs from native-derived mitochondrial percentage for33342of33833cells and is preserved verbatim, with cause unassigned. Library totals and detected genes match source metadata. No authorQC/doublet-free/biological annotation validation claim.",
+    "gene_policy": "All14222provided native RNAcount-slot symbols retained unchanged and in original order. No Harmony/SCT/embedding values used, no gene intersection or symbol modernization. Reference overlap13752;13MT-prefix features supplied.",
+    "count_semantics": "Original Seurat RNA counts slot only; all stored values finite nonnegative integer and every native library total/detected-gene count matches source metadata. Cached mitochondrial percent differs and is preserved; own mitochondrial QC is recomputed from supplied RNA counts. Counts are provided after source preprocessing; no pristine unfiltered-reference claim. SCT data, residuals, Harmony and embeddings excluded.",
+    "cached_mito_percentage_discrepancy": {
+      "cells_differing": 33342,
+      "max_absolute_percentage_point_difference": 3.3775680717672145,
+      "policy": "Preserve original percent.mt unchanged; project mitochondrial QC recomputed from every supplied RNAcount and13MT-prefix features. Cause of cached/native discrepancy unassigned; no authorQC reproduction claimed."
+    },
+    "source_limitations": "Six independent source donor codes with repeated visits. Cached/native mitochondrial percentage mismatch retained; cause unassigned. Provided RNA count slot only; no pristine unfiltered-reference, clinical efficacy, causal, biological annotation or constellation validation."
+  }
+}

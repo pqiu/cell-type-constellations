@@ -1,0 +1,401 @@
+{
+  "dataset_id": "GSE271543_genes001",
+  "study_id": "GSE271543",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "GEO explicitly identifies P023 baseline and 12-month blood observations. Primary PMID40543509 confirms longitudinal total-blood-T analysis. Two visits share one donor; sorted/pool libraries and larger clinical cohorts not independent RNA observations.",
+  "source_metadata": {
+    "accession": "GSE271543",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/40543509/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE271543",
+    "access": "Public original RNA count triplets",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "The raw data files were demultiplexed into FASTQ file by cellranger mkfastq. v.7.1.0. Then reads were aligned against GRCh38 human reference genome 2020-A provided by 10x Genomics based on GENCODE v32/Ensembl98",
+      "Using the Read10X function of the Seurat v.4.9.9 package of R v.4.2.2, we loaded expression data from the cellranger count pipeline into R and then created Seurat Object by CreateSeuratObject, with the selection criterion being cells expressing at least 200 genes expressed in more than 3 cells.",
+      "Cells with 300-5000 unique genses and < 20% mitochondrial reads were retained for downstream analyses. Doublets were removed by DoubletFinder v.2.0.4. Count matrices were merged to a single Seurat object.",
+      "Log normalized counts were used to identify 2000 most variably expressed genes using the FindVariableFeatures function with the variance stabilizing transformation.",
+      "Integration was performed using respectively SelectIntegrationFeatures, PrepSCTIntegration and FindIntegrationAnchors of Seurat. Principal component (PC) analysis was performed, and the first 10 PCs were selected for UMAP dimensionality reduction.",
+      "To cluster cells, we first used Seurat's FindNeighbors method to determine the biologically closest cells, before grouping them together using Seurat's FindClusters function with a resolution of 0.3.",
+      "Assembly: GRCh38-2020-A",
+      "Supplementary files format and content: Tab-separate values files and matrix files"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8978585",
+      "donor_id": "P023",
+      "source_metadata": {
+        "title": [
+          "P023, PBMC, Baseline, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM8978585"
+        ],
+        "status": [
+          "Public on May 13 2025"
+        ],
+        "submission_date": [
+          "May 12 2025"
+        ],
+        "last_update_date": [
+          "May 14 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: PBMC",
+          "age: 68"
+        ],
+        "treatment_protocol_ch1": [
+          "PBMC from selected patients were thawed and in vitro stimulated during 6 days with vaccinated-derived peptides"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC isolated from blood patient were stored in cryostore in liquid nitrogen, then defrozed in water bath at 37C, the cells were resuspended in RMPI 20% human serum, centrifuged at low speed for 7 min. The cells were counted and washed 2 times in PBS 0,04% BSA and resuspended in PBS 0,04% BSA for the experiment at 1200cells/uL"
+        ],
+        "description": [
+          "Library name: P023_PBMC_Baseline",
+          "10x Genomics Chromium Single Cell 3'"
+        ],
+        "data_processing": [
+          "The raw data files were demultiplexed into FASTQ file by cellranger mkfastq. v.7.1.0. Then reads were aligned against GRCh38 human reference genome 2020-A provided by 10x Genomics based on GENCODE v32/Ensembl98",
+          "Using the Read10X function of the Seurat v.4.9.9 package of R v.4.2.2, we loaded expression data from the cellranger count pipeline into R and then created Seurat Object by CreateSeuratObject, with the selection criterion being cells expressing at least 200 genes expressed in more than 3 cells.",
+          "Cells with 300-5000 unique genses and < 20% mitochondrial reads were retained for downstream analyses. Doublets were removed by DoubletFinder v.2.0.4. Count matrices were merged to a single Seurat object.",
+          "Log normalized counts were used to identify 2000 most variably expressed genes using the FindVariableFeatures function with the variance stabilizing transformation.",
+          "Integration was performed using respectively SelectIntegrationFeatures, PrepSCTIntegration and FindIntegrationAnchors of Seurat. Principal component (PC) analysis was performed, and the first 10 PCs were selected for UMAP dimensionality reduction.",
+          "To cluster cells, we first used Seurat's FindNeighbors method to determine the biologically closest cells, before grouping them together using Seurat's FindClusters function with a resolution of 0.3.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: Tab-separate values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Olivier,,Adot\u00e9vi"
+        ],
+        "contact_email": [
+          "olivier.adotevi@univ-fcomte.fr"
+        ],
+        "contact_laboratory": [
+          "UMR1098 RIGHT"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Universit\u00e9 de Franche-Comt\u00e9"
+        ],
+        "contact_address": [
+          "8 rue du Dr JFX Girod"
+        ],
+        "contact_city": [
+          "Besan\u00e7on"
+        ],
+        "contact_state": [
+          "Franche-Comt\u00e9"
+        ],
+        "contact_zip/postal_code": [
+          "25000"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_raw_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271543"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_raw_features.tsv.gz",
+          "filename": "GSM8978585_P023_PBMC_BSL_raw_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_raw_barcodes.tsv.gz",
+          "filename": "GSM8978585_P023_PBMC_BSL_raw_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978585/suppl/GSM8978585_P023_PBMC_BSL_raw_matrix.mtx.gz",
+          "filename": "GSM8978585_P023_PBMC_BSL_raw_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "advanced lung cancer",
+        "source_age_years": 68,
+        "source_nominal_month": 0,
+        "source_clinical_context": "UCPVax cancer-vaccine clinical cohort; baseline versus after 12 months",
+        "source_preparation": "GEO PBMC source; primary describes analysis of total blood T cells. Do not assume unrestricted lineage composition.",
+        "source_demographics": "Individual sex/exact collection dates/outcomes not joined; no imputation",
+        "source_alias_review": "Two blood observations from one patient. Additional IFN-positive sorted fractions and a two-person pooled capture are not additional independent blood specimens.",
+        "source_count_scope": "Explicit original raw droplet count triplets chosen instead of the alternative filtered triplets. Barcode rows are not called cells. Fixed pipeline RNA QC determines retained cells.",
+        "source_access_limitation": "GEO reports lost raw sequencing files for these records; supplementary raw count matrices are a separate available source. Reprocessing from FASTQ cannot be promised.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/40543509/"
+      },
+      "genes_member": "GSM8978585_P023_PBMC_BSL_raw_features.tsv.gz",
+      "barcodes_member": "GSM8978585_P023_PBMC_BSL_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM8978585_P023_PBMC_BSL_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 1691950,
+        "genes": 36601,
+        "nonzeros": 46337820,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 1691950,
+        "RNA_positive_barcode_rows": 1295860,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    },
+    {
+      "accession": "GSM8978586",
+      "donor_id": "P023",
+      "source_metadata": {
+        "title": [
+          "P023, PBMC, After 12 months of treatment, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM8978586"
+        ],
+        "status": [
+          "Public on May 13 2025"
+        ],
+        "submission_date": [
+          "May 12 2025"
+        ],
+        "last_update_date": [
+          "May 14 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: PBMC",
+          "age: 68"
+        ],
+        "treatment_protocol_ch1": [
+          "PBMC from selected patients were thawed and in vitro stimulated during 6 days with vaccinated-derived peptides"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC isolated from blood patient were stored in cryostore in liquid nitrogen, then defrozed in water bath at 37C, the cells were resuspended in RMPI 20% human serum, centrifuged at low speed for 7 min. The cells were counted and washed 2 times in PBS 0,04% BSA and resuspended in PBS 0,04% BSA for the experiment at 1200cells/uL"
+        ],
+        "description": [
+          "Library name: P023_PBMC_FT",
+          "10x Genomics Chromium Single Cell 3'"
+        ],
+        "data_processing": [
+          "The raw data files were demultiplexed into FASTQ file by cellranger mkfastq. v.7.1.0. Then reads were aligned against GRCh38 human reference genome 2020-A provided by 10x Genomics based on GENCODE v32/Ensembl98",
+          "Using the Read10X function of the Seurat v.4.9.9 package of R v.4.2.2, we loaded expression data from the cellranger count pipeline into R and then created Seurat Object by CreateSeuratObject, with the selection criterion being cells expressing at least 200 genes expressed in more than 3 cells.",
+          "Cells with 300-5000 unique genses and < 20% mitochondrial reads were retained for downstream analyses. Doublets were removed by DoubletFinder v.2.0.4. Count matrices were merged to a single Seurat object.",
+          "Log normalized counts were used to identify 2000 most variably expressed genes using the FindVariableFeatures function with the variance stabilizing transformation.",
+          "Integration was performed using respectively SelectIntegrationFeatures, PrepSCTIntegration and FindIntegrationAnchors of Seurat. Principal component (PC) analysis was performed, and the first 10 PCs were selected for UMAP dimensionality reduction.",
+          "To cluster cells, we first used Seurat's FindNeighbors method to determine the biologically closest cells, before grouping them together using Seurat's FindClusters function with a resolution of 0.3.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: Tab-separate values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Olivier,,Adot\u00e9vi"
+        ],
+        "contact_email": [
+          "olivier.adotevi@univ-fcomte.fr"
+        ],
+        "contact_laboratory": [
+          "UMR1098 RIGHT"
+        ],
+        "contact_department": [
+          "Oncology"
+        ],
+        "contact_institute": [
+          "Universit\u00e9 de Franche-Comt\u00e9"
+        ],
+        "contact_address": [
+          "8 rue du Dr JFX Girod"
+        ],
+        "contact_city": [
+          "Besan\u00e7on"
+        ],
+        "contact_state": [
+          "Franche-Comt\u00e9"
+        ],
+        "contact_zip/postal_code": [
+          "25000"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_raw_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_raw_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_raw_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271543"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_raw_features.tsv.gz",
+          "filename": "GSM8978586_P023_PBMC_FT_raw_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_raw_barcodes.tsv.gz",
+          "filename": "GSM8978586_P023_PBMC_FT_raw_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8978nnn/GSM8978586/suppl/GSM8978586_P023_PBMC_FT_raw_matrix.mtx.gz",
+          "filename": "GSM8978586_P023_PBMC_FT_raw_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "advanced lung cancer",
+        "source_age_years": 68,
+        "source_nominal_month": 12,
+        "source_clinical_context": "UCPVax cancer-vaccine clinical cohort; baseline versus after 12 months",
+        "source_preparation": "GEO PBMC source; primary describes analysis of total blood T cells. Do not assume unrestricted lineage composition.",
+        "source_demographics": "Individual sex/exact collection dates/outcomes not joined; no imputation",
+        "source_alias_review": "Two blood observations from one patient. Additional IFN-positive sorted fractions and a two-person pooled capture are not additional independent blood specimens.",
+        "source_count_scope": "Explicit original raw droplet count triplets chosen instead of the alternative filtered triplets. Barcode rows are not called cells. Fixed pipeline RNA QC determines retained cells.",
+        "source_access_limitation": "GEO reports lost raw sequencing files for these records; supplementary raw count matrices are a separate available source. Reprocessing from FASTQ cannot be promised.",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/40543509/"
+      },
+      "genes_member": "GSM8978586_P023_PBMC_FT_raw_features.tsv.gz",
+      "barcodes_member": "GSM8978586_P023_PBMC_FT_raw_barcodes.tsv.gz",
+      "matrix_member": "GSM8978586_P023_PBMC_FT_raw_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 1507268,
+        "genes": 36601,
+        "nonzeros": 40020555,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 1507268,
+        "RNA_positive_barcode_rows": 1170938,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "preconversion_min_rna_counts": 500
+}

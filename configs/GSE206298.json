@@ -1,0 +1,62 @@
+{
+  "dataset_id": "GSE206298",
+  "study_id": "GSE206298",
+  "input_format": "ircolitis_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_columns": [
+    "sample",
+    "batch"
+  ],
+  "physical_sample_columns": [
+    "sample"
+  ],
+  "sample_mapping_evidence": "Exact original author sample/batch capture fields on unique source cell IDs.88dependent views; no capture pooling.",
+  "physical_sample_mapping_evidence": "21initial original sample codes join21GEOinitial patient/timepoint records. Two absent followup records do not add samples.",
+  "native_count_audit": {
+    "path": "references/datasets/GSE206298_original_RNA_partitions_and_identity_audit.json",
+    "sha256": "c4f39d721e5bb97289045699e3596bead11536825a18341619ee670b098381f0"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE206298_exact_cell_union_and_initial_sample_review.json",
+    "sha256": "586e06cc0dd9c0f6df2ed30e701b7c7f3c529600761fc478fa9bc2131ff6b348"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "class",
+      "sex": "gender"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE206298",
+    "publication": "https://doi.org/10.1038/s41591-024-02895-x",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE206298",
+    "access": "Public original processed integer RNA counts, selected coded clinical metadata and pinned author gene mapping; controlled sequencing reads not requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE206298_exact_cell_union_and_initial_sample_review.json",
+      "sha256": "586e06cc0dd9c0f6df2ed30e701b7c7f3c529600761fc478fa9bc2131ff6b348"
+    },
+    "existing_cohort_review": {
+      "path": "references/datasets/GSE206298_existing_completed_cohort_review.json",
+      "sha256": "61e2fc726611ef9f7dc441c208c0ef00d039b5becd49fef21fa91226346f6a7e"
+    },
+    "gene_policy": "All33538original composite Ensembl|symbol coordinates, with symbols verified exactly against pinned author mapping. No expression transformation or gene intersection.",
+    "capture_policy": "88dependent sample/batch views across21initial source specimens. Capture labels and source selection remain explicit; do not infer whole-PBMC composition or independent donor replication from capture counts.",
+    "clinical_policy": "Case/class/drug/gender and selected original coded fields retained. Source day is not a therapy clock. Original GEO tissue fields conflict with PBMC/blood scope and stay separate. No individual age imputation.",
+    "duplicate_policy": "One exact source cell appears in B/myeloid objects with identical RNA and selected clinical fields; count once and preserve both author cluster calls."
+  }
+}

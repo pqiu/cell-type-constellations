@@ -1,0 +1,191 @@
+{
+  "dataset_id": "GSE201425_genes001",
+  "study_id": "GSE201425",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "One explicit PBMC RNA specimen from patient230093; tumor, lymph node and TCR records excluded. Human hg19 processing versus mm10 Assembly conflict retained and original feature IDs must be human ENSG.",
+  "source_metadata": {
+    "accession": "GSE201425",
+    "publication": "https://doi.org/10.1038/s41698-022-00300-9",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE201425",
+    "access": "Public original CellRanger RNA triplets; sequencing access not required",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_processing": [
+      "Cell Ranger software (Version 2.0) was applied to convert Illumina base call files to FASTQ files with the \u2018cellranger mkfastq\u2019 command, which were subsequently aligned to the hg19 human genome. Meanwhile, Cell Ranger carried out default quality control, and generate files containing raw unique molecular identifier (UMI) counts matrix. Downstream analyses were performed using the \u201cSeurat\u201d package (3.1.1) form R software (4.0.3). Cells with lower than 200 identified genes were removed during quality control process. Of note, quality-control parameters also included UMI counts, proportion of UMIs derived from mitochondrial and dissociation or sorting associated genes. After exclusion of low-quality cells, UMI counts were normalized by the function \u2018NormalizeData\u2019, in which normalization method was set as \u2018logNormalize\u2019 with the scale factor of 10000 total UMIs per cell. Thereafter, \u2018FindVariableGenes\u2019 function was performed with default parameters to detect 2000 highly variable genes, in which ribosome as well as heat shock response related genes were regressed out due to potential confounding effect. Principal component analysis (PCA) was subsequently conducted based on the processed expression matrix containing highly variable genes, followed by secondary UMAP visualization on selected PCA using the \u2018RunUMAP\u2019 function at a perplexity value of 30. Differentially expressed genes across clusters were calculated and identified using function \u201cFindAllMarkers\u201d.",
+      "Assembly: mm10",
+      "Supplementary files format and content: RNA-seq: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz",
+      "Supplementary files format and content: TCR-seq: contig_annotations.csv"
+    ],
+    "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6063508",
+      "donor_id": "patient_230093",
+      "source_metadata": {
+        "title": [
+          "230093, PBMC, RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM6063508"
+        ],
+        "status": [
+          "Public on Aug 26 2022"
+        ],
+        "submission_date": [
+          "Apr 25 2022"
+        ],
+        "last_update_date": [
+          "Aug 26 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "individual: patient 230093",
+          "disease state: iCCA",
+          "tissue: PBMC",
+          "cell type: immune cell",
+          "genotype: RNA",
+          "treatment: surgery"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Fresh surgical resected samples were rinsed with Hank\u2019s balanced salt solution (HBSS), which were subsequently minced and digested with digestive buffer, followed by incubation for 60 min at 37 \u00b0C with gentle shaking. The digestive buffer was conFigured by dissolving digestive enzyme into RPMI with 10% serum, including deoxyribonuclease type I, collagenase IV, and hyaluronidase type V. After digestion, the mixture was filtered using 300-mesh filter screen, and was then collected in the centrifuge tubes. Thereafter, leukocytes were isolated form tissues via density gradient centrifugation in line with manufacturer\u2019s instructions. Filtered cell suspensions were centrifuged with 450 g for 8 min, and the re-suspended precipitates were subsequently centrifuged with 50 g for 1 min. Washed cell suspensions were carefully layered on the surface of lymphoprep liquid, followed by centrifugation of 450 g for 25 min at room temperature. Tissue derived leukocytes were obtained by collecting the middle layer of the mixture.",
+          "CountessII Automated Cell Counter (Thermo Fisher Scientific, USA) was applied to determine viability and density of mononuclear cells from tumor, lymph node and peripheral blood. Single cell suspensions were then processed for single-cell gene expression (scRNA-seq) as well as single cell T cell receptor (TCR) clonotypes (scTCR-seq) using Chromium Controller. Single cells were adjusted to an ideal concentration of 5\u00d710^5 to 1\u00d710^6 cells/mL with a viability higher than 70%. Single-cell library was prepared in line with the protocol of 10X Genomics for Single Cell V(D)J and 5\u2032 Gene Expression (10X Genomics, Pleasanton, CA, USA). In brief, single-cell suspensions were then loaded onto the Chromium Controller combined with the reverse transcription (RT) master mix and Gel beads containing barcode information. Following single-cell gel bead-in-emulsions reverse transcription, PCR amplification was carried out to generate adequate cDNAs for the construction of scRNA-seq as well as TCR V(D)J libraries. Thereafter, the libraries were sequenced on HiSeq4000 (Illumina) following the manufacturer\u2019s specification."
+        ],
+        "description": [
+          "10x genomics",
+          "paired tissues from patient with iCCA"
+        ],
+        "data_processing": [
+          "Cell Ranger software (Version 2.0) was applied to convert Illumina base call files to FASTQ files with the \u2018cellranger mkfastq\u2019 command, which were subsequently aligned to the hg19 human genome. Meanwhile, Cell Ranger carried out default quality control, and generate files containing raw unique molecular identifier (UMI) counts matrix. Downstream analyses were performed using the \u201cSeurat\u201d package (3.1.1) form R software (4.0.3). Cells with lower than 200 identified genes were removed during quality control process. Of note, quality-control parameters also included UMI counts, proportion of UMIs derived from mitochondrial and dissociation or sorting associated genes. After exclusion of low-quality cells, UMI counts were normalized by the function \u2018NormalizeData\u2019, in which normalization method was set as \u2018logNormalize\u2019 with the scale factor of 10000 total UMIs per cell. Thereafter, \u2018FindVariableGenes\u2019 function was performed with default parameters to detect 2000 highly variable genes, in which ribosome as well as heat shock response related genes were regressed out due to potential confounding effect. Principal component analysis (PCA) was subsequently conducted based on the processed expression matrix containing highly variable genes, followed by secondary UMAP visualization on selected PCA using the \u2018RunUMAP\u2019 function at a perplexity value of 30. Differentially expressed genes across clusters were calculated and identified using function \u201cFindAllMarkers\u201d.",
+          "Assembly: mm10",
+          "Supplementary files format and content: RNA-seq: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz",
+          "Supplementary files format and content: TCR-seq: contig_annotations.csv"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "xuebing,,Shi"
+        ],
+        "contact_email": [
+          "378983187@qq.com, S13901475322@gmail.com"
+        ],
+        "contact_phone": [
+          "13901475322"
+        ],
+        "contact_institute": [
+          "Eastern Hepatobiliary Surgery Institute, Second Military Medical University"
+        ],
+        "contact_address": [
+          "225 Changhai Road"
+        ],
+        "contact_city": [
+          "shanghai"
+        ],
+        "contact_zip/postal_code": [
+          "200438"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN27761715",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX14989028"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6063nnn/GSM6063508/suppl/GSM6063508_230093_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6063nnn/GSM6063508/suppl/GSM6063508_230093_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6063nnn/GSM6063508/suppl/GSM6063508_230093_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE201425"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "intrahepatic cholangiocarcinoma",
+        "source_title": "230093, PBMC, RNA-seq",
+        "source_treatment": "surgery",
+        "source_assembly_conflict": "Human source and processing describe hg19; GEO Assembly field says mm10. Require original feature IDs to be human ENSG before processing.",
+        "source_scope": "One PBMC RNA library; tumor, lymph node and TCR libraries excluded",
+        "source_demographics": "Exact age and sex not mapped; no imputation"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6063nnn/GSM6063508/suppl/GSM6063508_230093_PBMC_features.tsv.gz",
+          "filename": "GSM6063508_230093_PBMC_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6063nnn/GSM6063508/suppl/GSM6063508_230093_PBMC_barcodes.tsv.gz",
+          "filename": "GSM6063508_230093_PBMC_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6063nnn/GSM6063508/suppl/GSM6063508_230093_PBMC_matrix.mtx.gz",
+          "filename": "GSM6063508_230093_PBMC_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6063508_230093_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM6063508_230093_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM6063508_230093_PBMC_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          33538,
+          5813
+        ],
+        "nonzeros": 8096245,
+        "integer_nonnegative_counts": true
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

@@ -1,0 +1,63 @@
+{
+  "dataset_id": "KCL_immune_aging2026",
+  "study_id": "KCL_immune_aging2026",
+  "input_format": "h5ad",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbol",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "url": "https://artyomovlab.wustl.edu/scn-m/var/datasets/curated/maksim/GZMB_GZMK/KCL_annotation/files/KCL_reannotated.h5ad",
+  "expected_bytes": 7938064652,
+  "sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "sample_mapping_evidence": "Public KCL raw matrix has188 nonmissing donor codes, each with one Pool and one source souporcell code;188 one-to-one material groups. Exact completed donor-code matches absent, but global identity remains unresolved.",
+  "physical_sample_mapping_evidence": "One conservative material group per original donor. Dates/visits unavailable; pool is a capture batch, not an invented collection time.",
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "author_celltype"
+    },
+    "constants": {
+      "tissue": "blood",
+      "condition": "Ostensibly healthy aging cohort context; individual diagnosis not reported",
+      "source_visit_code": "unspecified_source_material",
+      "source_specimen": "Human PBMC; source KCL cohort",
+      "source_gene_policy": "36601 original unique gene-symbol IDs; no Ensembl mapping inferred",
+      "source_time_policy": "No source dates or repeated blood draws inferred from Pool or souporcell labels",
+      "source_identity_policy": "Study-scoped source donor codes; cross-study overlap unresolved",
+      "split_assignment": "unassigned; donor identity must remain grouped; no training/held-out split fitted"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "source_url": "https://artyomovlab.wustl.edu/human-immune-aging-trajectories/",
+    "primary_PMID": "42854692",
+    "primary_DOI": "10.1016/j.immuni.2026.09.012",
+    "access": "Public official per-cohort file listing and H5AD; no login",
+    "license": "not_specified_in_public_cohort_configuration",
+    "access_terms_url": "https://artyomovlab.wustl.edu/human-immune-aging-trajectories/",
+    "raw_count_review": {
+      "path": "references/datasets/KCL_immune_aging_full_count_review.json",
+      "sha256": "53172ec054e0a49fd5565666f098998cecc640e0d88c2ad1838a40d473820e5e"
+    },
+    "source_identity_review": {
+      "path": "references/datasets/KCL_immune_aging_source_identity_overlap_review.json",
+      "sha256": "57360d00b49272f67531a2f110e121010df0a5e828d25a00dc13fec08f5d5cc3"
+    },
+    "original_gene_policy": "All36601 original unique symbol IDs equal source gene_symbol; preserve native order and symbols. No Ensembl mapping inferred.",
+    "measurement_scope": "Deposited759060 cells/36601 native RNA coordinates. Source filtering history retained as unspecified; raw/X counts verified, transformed X excluded.",
+    "metadata_policy": "Source age/sex/BMI/CMV/ethnicity/Pool/souporcell/author annotation retained; missing values remain source literal values. No individual clinical status inferred."
+  }
+}

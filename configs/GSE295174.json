@@ -1,0 +1,72 @@
+{
+  "dataset_id": "GSE295174",
+  "study_id": "GSE295174",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE295174_complete_original_RNA_audit.json",
+    "bytes": 13755,
+    "sha256": "c9f847d5652b8a7210e032633e1aa3685e4e1b83d0613f82f7fdcb07ff25d090"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE295174_source_identity_review.json",
+    "bytes": 9390,
+    "sha256": "9719d4239bd92e2c3a0d24693c7fd134cc3319b7735ab5841928279b10ad7787"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exact author PoolID/hash.ID assignments match original hash/sample table. SampleIDis author donor/specimen code. P1multiplehashtags andP3a/P3bcaptures remain within donor. Exclude exactrelatedMM4026/MM4027D3material fromnewcredit; alloriginalrows preserved. No barcodeordinal/genetic inference; globalaliases unresolved.",
+  "physical_sample_mapping_evidence": "20original author SampleIDcodes;18new source specimen/donor groups after conservatively excludingMM4026/MM4027asrelated previously acquiredGSE295173D3material. All3408original count rows/metadata preserved,3120selected observations. Four pooled RNAcaptureGSMs,P1multiplehashtags,P3a/P3brepeated technicalcaptures do notaddpeople. Globalaliases unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_timepoint_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "exclude_source_values": {
+    "source_previously_acquired_D3_specimen": [
+      "True"
+    ]
+  },
+  "source_metadata": {
+    "accession": "GSE295174",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE295174",
+    "primary_PMID": "42398182",
+    "primary_PMCID": "PMC13351336",
+    "primary_DOI": "10.1016/j.ebiom.2026.106368",
+    "access": "Public original PBMC DOGMA-seq RNASeuratobject andauthorhashassignment tables.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE295174_source_identity_review.json",
+      "bytes": 9390,
+      "sha256": "9719d4239bd92e2c3a0d24693c7fd134cc3319b7735ab5841928279b10ad7787"
+    },
+    "source_unit": "20original author SampleIDcodes;18new source specimen/donor groups after conservatively excludingMM4026/MM4027asrelated previously acquiredGSE295173D3material. All3408original count rows/metadata preserved,3120selected observations. Four pooled RNAcaptureGSMs,P1multiplehashtags,P3a/P3brepeated technicalcaptures do notaddpeople. Globalaliases unresolved.",
+    "identity_policy": "Exact author PoolID/hash.ID assignments match original hash/sample table. SampleIDis author donor/specimen code. P1multiplehashtags andP3a/P3bcaptures remain within donor. Exclude exactrelatedMM4026/MM4027D3material fromnewcredit; alloriginalrows preserved. No barcodeordinal/genetic inference; globalaliases unresolved.",
+    "clinical_policy": "Individual age,sex,severity,recoverygroup,case/control code mapping andcalendar dates unassigned. Source case-cohort collection day3 afterinjury; healthy timing unreported. Exact relatedMM4026/MM4027codes excluded conservatively; absentMM4029/MM4035notmapped toother codes.",
+    "reuse_policy": "Twenty original source codes includeMM4026/MM4027alreadyacquiredD3material inGSE295173. Exclude both fromnew specimen/donor export andcredit; retainalloriginal counts/metadata. Eighteen new sourcecodes,not four RNApools or32hashassignments. Otheraliases unresolved.",
+    "selection_policy": "Supplied multiome object restricted toCD14mono. Exclude previously acquired sourcecodes only,withoutphenotype-informedselection. Retain ownRNAQC and limitedcompartment/lowcellsupport; missingstar means remainNaN.",
+    "cell_calling_policy": "Own fixed RNAQC recomputed from unchanged original RNAcounts. Author source cell labels,predictions,clustering andcachedpercent.mt preserved without independent biological validation. No normalized/integrated/embedding data used as counts.",
+    "gene_policy": "All36601original native RNAcountslot gene symbols retained unchanged for all3408original cells,including excluded related-source observations.13MTgenes/27574referenceoverlap. No symbol modernization,intersection orzero filling.",
+    "count_semantics": "NativeR reads only original Seurat RNAcounts slot/allmetadata without executing stored commands. Every count finite nonnegative integer; source nCount_RNA/nFeature_RNA match. ATAC/ADT/HTO/normalized/integrated/embedding values are excluded from RNAgeometry/QC/normalization. Authorhash/Singlet/clusterlabels retained,not independently biologically validated.",
+    "source_limitations": "Selected monocyte/CD14compartment. Primary publication verified; individual recovery group/clinical/demographic/globalalias mappings unassigned. No efficacy,causal,biologicalannotation orconstellationvalidation."
+  }
+}

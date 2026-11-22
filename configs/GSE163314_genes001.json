@@ -1,0 +1,1613 @@
+{
+  "dataset_id": "GSE163314_genes001",
+  "study_id": "GSE163314",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "8 original CD45-selected PBMC draws/8 source people; two each HC, CD, axSpA, CD-axSpA",
+  "source_metadata": {
+    "accession": "GSE163314",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/34022940/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE163314",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+    "source_processing": [
+      "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+      "Created Seurat object for each sample with Seurat Read10X",
+      "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+      "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+      "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE163314_source_identity_review.json",
+      "sha256": "9f98f09176df9961f92bf7e2d48adda3ab12666f14a56281a2d7ac2143421238"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM4976993",
+      "donor_id": "2",
+      "source_metadata": {
+        "title": [
+          "Patient 2 Blood"
+        ],
+        "geo_accession": [
+          "GSM4976993"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Co-morbid Crohn's and Spondyloarthritis"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089961",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690243"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976993/suppl/GSM4976993_2P_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976993/suppl/GSM4976993_2P_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976993/suppl/GSM4976993_2P_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4976993",
+        "source_GEO_title": "Patient 2 Blood",
+        "source_participant_code": "2",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Co-morbid Crohn's and Spondyloarthritis",
+        "source_characteristics_json": "{\"disease state\": \"Co-morbid Crohn's and Spondyloarthritis\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976993/suppl/GSM4976993_2P_genes.tsv.gz",
+          "filename": "GSM4976993_2P_genes.tsv.gz",
+          "expected_bytes": 513831,
+          "sha256": "5a7923ac10ea9e2922a5e24b547ee56bc02a1890b71a5942360933e4a66c9795"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976993/suppl/GSM4976993_2P_barcodes.tsv.gz",
+          "filename": "GSM4976993_2P_barcodes.tsv.gz",
+          "expected_bytes": 20783,
+          "sha256": "77bd9c1f002bc7bbd06423e58a50b492db83c2ded87b7d221b5288ebf3b2100f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976993/suppl/GSM4976993_2P_matrix.mtx.gz",
+          "filename": "GSM4976993_2P_matrix.mtx.gz",
+          "expected_bytes": 21015675,
+          "sha256": "5443e1a60ed22687ae3642e122b10ab4fb35ded389322885f9afc0091bd5c4f3"
+        }
+      ],
+      "genes_member": "GSM4976993_2P_genes.tsv.gz",
+      "barcodes_member": "GSM4976993_2P_barcodes.tsv.gz",
+      "matrix_member": "GSM4976993_2P_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5001,
+        "genes": 65988,
+        "nonzeros": 6379018,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 5001,
+        "RNA_positive_barcode_rows": 5001,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 18231320,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5001,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5001,
+          "source_positive_RNA_barcodes": 5001,
+          "full_source_RNA_counts": 18231320,
+          "selected_RNA_counts": 18231320,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4976993.csv.gz",
+            "sha256": "c86984817084244939364b46fad7995a54ca9ac508135c679a768757b4fbe37f"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4976995",
+      "donor_id": "3",
+      "source_metadata": {
+        "title": [
+          "Patient 3 Blood"
+        ],
+        "geo_accession": [
+          "GSM4976995"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Spondyloarhtritis"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089959",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690245"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976995/suppl/GSM4976995_3P_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976995/suppl/GSM4976995_3P_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976995/suppl/GSM4976995_3P_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4976995",
+        "source_GEO_title": "Patient 3 Blood",
+        "source_participant_code": "3",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Spondyloarhtritis",
+        "source_characteristics_json": "{\"disease state\": \"Spondyloarhtritis\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976995/suppl/GSM4976995_3P_genes.tsv.gz",
+          "filename": "GSM4976995_3P_genes.tsv.gz",
+          "expected_bytes": 513831,
+          "sha256": "4152ef1c7a8ad4dbd1a6f566ef23d25c5c141f0f6b943d93c319e305815ac452"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976995/suppl/GSM4976995_3P_barcodes.tsv.gz",
+          "filename": "GSM4976995_3P_barcodes.tsv.gz",
+          "expected_bytes": 24942,
+          "sha256": "c540f9d453eed99e4759409930fe4e211329f652059c15c467fe6124f43202db"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976995/suppl/GSM4976995_3P_matrix.mtx.gz",
+          "filename": "GSM4976995_3P_matrix.mtx.gz",
+          "expected_bytes": 23268844,
+          "sha256": "b8301d11324a381694a51f87acd1b3f977bddfc09cf6eaa96896c9048f92bce9"
+        }
+      ],
+      "genes_member": "GSM4976995_3P_genes.tsv.gz",
+      "barcodes_member": "GSM4976995_3P_barcodes.tsv.gz",
+      "matrix_member": "GSM4976995_3P_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6112,
+        "genes": 65988,
+        "nonzeros": 7026039,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 6112,
+        "RNA_positive_barcode_rows": 6112,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 20040221,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6112,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6112,
+          "source_positive_RNA_barcodes": 6112,
+          "full_source_RNA_counts": 20040221,
+          "selected_RNA_counts": 20040221,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4976995.csv.gz",
+            "sha256": "9046151a15c68bd536a89044e5e055828e820384c8b38fe5442712eba41dc2a2"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4976997",
+      "donor_id": "5",
+      "source_metadata": {
+        "title": [
+          "Patient 5 Blood"
+        ],
+        "geo_accession": [
+          "GSM4976997"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Healthy Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089956",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690247"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976997/suppl/GSM4976997_5P_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976997/suppl/GSM4976997_5P_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976997/suppl/GSM4976997_5P_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4976997",
+        "source_GEO_title": "Patient 5 Blood",
+        "source_participant_code": "5",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Healthy Control",
+        "source_characteristics_json": "{\"disease state\": \"Healthy Control\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976997/suppl/GSM4976997_5P_genes.tsv.gz",
+          "filename": "GSM4976997_5P_genes.tsv.gz",
+          "expected_bytes": 513831,
+          "sha256": "d4b2e03fd5d1c1a733016b5746c90d40209f73176413087fed2a4f70f53fe2c3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976997/suppl/GSM4976997_5P_barcodes.tsv.gz",
+          "filename": "GSM4976997_5P_barcodes.tsv.gz",
+          "expected_bytes": 29619,
+          "sha256": "b3ff5179730a47423394dbf434be37f8462b9bcf4abfec942b49a8ef9f702b83"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976997/suppl/GSM4976997_5P_matrix.mtx.gz",
+          "filename": "GSM4976997_5P_matrix.mtx.gz",
+          "expected_bytes": 28980414,
+          "sha256": "d148eadb9da086d7f4f0252471965273ac6c897a65011df8a28586881deef04d"
+        }
+      ],
+      "genes_member": "GSM4976997_5P_genes.tsv.gz",
+      "barcodes_member": "GSM4976997_5P_barcodes.tsv.gz",
+      "matrix_member": "GSM4976997_5P_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7399,
+        "genes": 65988,
+        "nonzeros": 8768205,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 7399,
+        "RNA_positive_barcode_rows": 7399,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 24581874,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7399,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7399,
+          "source_positive_RNA_barcodes": 7399,
+          "full_source_RNA_counts": 24581874,
+          "selected_RNA_counts": 24581874,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4976997.csv.gz",
+            "sha256": "2fb85f8b02a5d8328d4a92e1ef2841a79deafe3de6441815012b8799028d7a34"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4976999",
+      "donor_id": "7",
+      "source_metadata": {
+        "title": [
+          "Patient 7 Blood"
+        ],
+        "geo_accession": [
+          "GSM4976999"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Crohn's Disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089954",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690249"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976999/suppl/GSM4976999_7P_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976999/suppl/GSM4976999_7P_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976999/suppl/GSM4976999_7P_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4976999",
+        "source_GEO_title": "Patient 7 Blood",
+        "source_participant_code": "7",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Crohn's Disease",
+        "source_characteristics_json": "{\"disease state\": \"Crohn's Disease\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976999/suppl/GSM4976999_7P_genes.tsv.gz",
+          "filename": "GSM4976999_7P_genes.tsv.gz",
+          "expected_bytes": 513831,
+          "sha256": "6d9b3ba802a8348ef52fbd79eaf9f65f3c4ccfc0d0a5e23f1f90325cf9328505"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976999/suppl/GSM4976999_7P_barcodes.tsv.gz",
+          "filename": "GSM4976999_7P_barcodes.tsv.gz",
+          "expected_bytes": 27017,
+          "sha256": "156b962b8c5b720011f433eb1144ff13120a3e010067082ded17909cbcb371ba"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4976nnn/GSM4976999/suppl/GSM4976999_7P_matrix.mtx.gz",
+          "filename": "GSM4976999_7P_matrix.mtx.gz",
+          "expected_bytes": 27276314,
+          "sha256": "f55edb214157fc10cce029dd5d4c46cf2e49f91b7752df38092c2f2c6af7e7f5"
+        }
+      ],
+      "genes_member": "GSM4976999_7P_genes.tsv.gz",
+      "barcodes_member": "GSM4976999_7P_barcodes.tsv.gz",
+      "matrix_member": "GSM4976999_7P_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6659,
+        "genes": 65988,
+        "nonzeros": 8252351,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 6659,
+        "RNA_positive_barcode_rows": 6659,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 23133409,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6659,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6659,
+          "source_positive_RNA_barcodes": 6659,
+          "full_source_RNA_counts": 23133409,
+          "selected_RNA_counts": 23133409,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4976999.csv.gz",
+            "sha256": "b6dca8f0468aa50752ddc6238a0433fa394fa8cafbd06fdef19e2d49bb15ec77"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4977001",
+      "donor_id": "21",
+      "source_metadata": {
+        "title": [
+          "Patient 21 Blood"
+        ],
+        "geo_accession": [
+          "GSM4977001"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Healthy Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089952",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690251"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977001/suppl/GSM4977001_3_21B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977001/suppl/GSM4977001_3_21B_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977001/suppl/GSM4977001_3_21B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4977001",
+        "source_GEO_title": "Patient 21 Blood",
+        "source_participant_code": "21",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Healthy Control",
+        "source_characteristics_json": "{\"disease state\": \"Healthy Control\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977001/suppl/GSM4977001_3_21B_genes.tsv.gz",
+          "filename": "GSM4977001_3_21B_genes.tsv.gz",
+          "expected_bytes": 513834,
+          "sha256": "6a41d2848657704659049f4fabad0c4618db87c3e0cb3285cae38e58b7acc93b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977001/suppl/GSM4977001_3_21B_barcodes.tsv.gz",
+          "filename": "GSM4977001_3_21B_barcodes.tsv.gz",
+          "expected_bytes": 15932,
+          "sha256": "a1b77ca2e056a872a958e27ef70c13e094a3328a1323bed4c05e79936d0d9e3e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977001/suppl/GSM4977001_3_21B_matrix.mtx.gz",
+          "filename": "GSM4977001_3_21B_matrix.mtx.gz",
+          "expected_bytes": 17342930,
+          "sha256": "de9467c524d5a67a068f1ee8800b9e72871a381b68021479e7288943d88ef9a5"
+        }
+      ],
+      "genes_member": "GSM4977001_3_21B_genes.tsv.gz",
+      "barcodes_member": "GSM4977001_3_21B_barcodes.tsv.gz",
+      "matrix_member": "GSM4977001_3_21B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3737,
+        "genes": 65988,
+        "nonzeros": 5265646,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 3737,
+        "RNA_positive_barcode_rows": 3737,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 14733415,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3737,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3737,
+          "source_positive_RNA_barcodes": 3737,
+          "full_source_RNA_counts": 14733415,
+          "selected_RNA_counts": 14733415,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4977001.csv.gz",
+            "sha256": "9e924c4bbf46592efabb76d1a9446ae0c27905cd6dedefdac8abfc08dcefcd39"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4977003",
+      "donor_id": "23",
+      "source_metadata": {
+        "title": [
+          "Patient 23 Blood"
+        ],
+        "geo_accession": [
+          "GSM4977003"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Crohn's Disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089950",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690253"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977003/suppl/GSM4977003_5_23B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977003/suppl/GSM4977003_5_23B_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977003/suppl/GSM4977003_5_23B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4977003",
+        "source_GEO_title": "Patient 23 Blood",
+        "source_participant_code": "23",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Crohn's Disease",
+        "source_characteristics_json": "{\"disease state\": \"Crohn's Disease\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977003/suppl/GSM4977003_5_23B_genes.tsv.gz",
+          "filename": "GSM4977003_5_23B_genes.tsv.gz",
+          "expected_bytes": 513834,
+          "sha256": "86dc4eb8d2af8fc828c2ff8d42486a1be8cb898f4d8df9fb39476a0a7afd1819"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977003/suppl/GSM4977003_5_23B_barcodes.tsv.gz",
+          "filename": "GSM4977003_5_23B_barcodes.tsv.gz",
+          "expected_bytes": 45517,
+          "sha256": "fe642842acdafc0a427066452eb2584f9bdfcbedc14b1d676e362f0b9165e801"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977003/suppl/GSM4977003_5_23B_matrix.mtx.gz",
+          "filename": "GSM4977003_5_23B_matrix.mtx.gz",
+          "expected_bytes": 47836669,
+          "sha256": "04542dccc75e66127d93de64b09901091a911e1c28e8d2d093cd190c8794bad0"
+        }
+      ],
+      "genes_member": "GSM4977003_5_23B_genes.tsv.gz",
+      "barcodes_member": "GSM4977003_5_23B_barcodes.tsv.gz",
+      "matrix_member": "GSM4977003_5_23B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 11655,
+        "genes": 65988,
+        "nonzeros": 14474449,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 11655,
+        "RNA_positive_barcode_rows": 11655,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 38157561,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11655,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11655,
+          "source_positive_RNA_barcodes": 11655,
+          "full_source_RNA_counts": 38157561,
+          "selected_RNA_counts": 38157561,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4977003.csv.gz",
+            "sha256": "bf7735ce54dc612740a5e1561aca2907b2b487200f36dafb3718dcd47160cf13"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4977005",
+      "donor_id": "27",
+      "source_metadata": {
+        "title": [
+          "Patient 27 Blood"
+        ],
+        "geo_accession": [
+          "GSM4977005"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Spondyloarhtritis"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089948",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690255"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977005/suppl/GSM4977005_7_27B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977005/suppl/GSM4977005_7_27B_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977005/suppl/GSM4977005_7_27B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4977005",
+        "source_GEO_title": "Patient 27 Blood",
+        "source_participant_code": "27",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Spondyloarhtritis",
+        "source_characteristics_json": "{\"disease state\": \"Spondyloarhtritis\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977005/suppl/GSM4977005_7_27B_genes.tsv.gz",
+          "filename": "GSM4977005_7_27B_genes.tsv.gz",
+          "expected_bytes": 513834,
+          "sha256": "be4473de9fde3da5ea58a91a8c00e83757a8da5781e0107153591886d21f3ae9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977005/suppl/GSM4977005_7_27B_barcodes.tsv.gz",
+          "filename": "GSM4977005_7_27B_barcodes.tsv.gz",
+          "expected_bytes": 24579,
+          "sha256": "241dd82f1facc67993649e6a9fa5c81fcf6347b5d733b6f9e846e4e914d98a63"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977005/suppl/GSM4977005_7_27B_matrix.mtx.gz",
+          "filename": "GSM4977005_7_27B_matrix.mtx.gz",
+          "expected_bytes": 29016349,
+          "sha256": "1e39153988dfddfab1e276589753a626ae161d47f42a5586b656fd057562de0f"
+        }
+      ],
+      "genes_member": "GSM4977005_7_27B_genes.tsv.gz",
+      "barcodes_member": "GSM4977005_7_27B_barcodes.tsv.gz",
+      "matrix_member": "GSM4977005_7_27B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6041,
+        "genes": 65988,
+        "nonzeros": 8821057,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 6041,
+        "RNA_positive_barcode_rows": 6041,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 24195448,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6041,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6041,
+          "source_positive_RNA_barcodes": 6041,
+          "full_source_RNA_counts": 24195448,
+          "selected_RNA_counts": 24195448,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4977005.csv.gz",
+            "sha256": "5adb9204faf27cf705a7be9a097943b00d5be9433c4411c3d2101dad3d430c80"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM4977007",
+      "donor_id": "33",
+      "source_metadata": {
+        "title": [
+          "Patient 33 Blood"
+        ],
+        "geo_accession": [
+          "GSM4977007"
+        ],
+        "status": [
+          "Public on May 25 2021"
+        ],
+        "submission_date": [
+          "Dec 16 2020"
+        ],
+        "last_update_date": [
+          "May 25 2021"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Periperhal Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "disease state: Co-morbid Crohn's and Spondyloarthritis"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For colon tissue: 30 pinch biopsies were tkaen from the rectoSignoid colon of each patient. Tissue was frozen in liquid nitrogen until use. Thawed tissue was treated with type 4 collagenase for 30 minutes and strained through a 100 micron filter. Cells were stained for Viability and CD45 and sorted for live CD45+ on an Astrios EQ",
+          "For Peripheral blood: Whole blood was collewcted in a Potassium EDTA tube, blood was layered on ficolla and centrifuged at 1200RPM for 20 minutes. Buffy Coat layer was collected and stained for CD45 and viability. CD45+ live cells were collected on an Astrios EQ."
+        ],
+        "description": [
+          "All.combined.metadata.csv"
+        ],
+        "data_processing": [
+          "10X Genomics library sequence fastq files aligned and cell gene expression matrices generated with Cellranger v2.0.0 cellranger count with default settings",
+          "Created Seurat object for each sample with Seurat Read10X",
+          "Subset each seurat object to keep nFeature_RNA >200 and <4000, percent.mt<10 & nCount_RNA<20000",
+          "Removed batch effects with FindIntegrationAnchors, dims=1:20 and IntegrateData, dims=1:20",
+          "Clusters defined with FindNeighbors, reduction=\u201cpca\u201d, dims=1:20 and FindClusters, resolution=0.25"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Kristine,A,Kuhn"
+        ],
+        "contact_phone": [
+          "3033862724"
+        ],
+        "contact_department": [
+          "Medicine"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "1775 Aurora Ct. Mail Stop B115"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "Colorado"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN17089946",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9690257"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977007/suppl/GSM4977007_1_33B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977007/suppl/GSM4977007_1_33B_genes.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977007/suppl/GSM4977007_1_33B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE163314"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4977007",
+        "source_GEO_title": "Patient 33 Blood",
+        "source_participant_code": "33",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "CD45_selected_PBMC_RNA",
+        "condition": "Co-morbid Crohn's and Spondyloarthritis",
+        "source_characteristics_json": "{\"disease state\": \"Co-morbid Crohn's and Spondyloarthritis\"}",
+        "source_specimen": "Ficoll-separated peripheral blood; live CD45-positive cells sorted before scRNA-seq",
+        "source_coverage_policy": "CD45 selection and source viability sorting may change composition; not an unbiased unsorted PBMC measurement.",
+        "source_identity_policy": "Eight explicit Patient title codes each have one blood RNA record; paired colon records excluded. Source filename prefixes are library codes, not extra donors.",
+        "source_count_policy": "Original deposited CellRanger2.0.0 triplets; native gene IDs/symbols and integer counts retained. Source Seurat integration is not used for geometry.",
+        "source_demographic_policy": "No numerical age, sex, medication or calendar-date join inferred from participant numbers alone.",
+        "source_missingness_policy": "Missing demographic fields, genes and cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; donor code retained, cross-study identity unresolved"
+      },
+      "allow_implicit_RNA_two_columns": true,
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977007/suppl/GSM4977007_1_33B_genes.tsv.gz",
+          "filename": "GSM4977007_1_33B_genes.tsv.gz",
+          "expected_bytes": 513834,
+          "sha256": "91f6227d27829283110ce93f27f1a22edb70c51f3305dfeb718be13ca1b3c45c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977007/suppl/GSM4977007_1_33B_barcodes.tsv.gz",
+          "filename": "GSM4977007_1_33B_barcodes.tsv.gz",
+          "expected_bytes": 16838,
+          "sha256": "b696000565a527f39783680a6f68ff46036b1fa955335e134308be9be83d2c8a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4977nnn/GSM4977007/suppl/GSM4977007_1_33B_matrix.mtx.gz",
+          "filename": "GSM4977007_1_33B_matrix.mtx.gz",
+          "expected_bytes": 16798783,
+          "sha256": "71fd11f1b3d5ad3e55a5edc07c975c04c16b19eb2c1bd7fed6b2db0f64662dd8"
+        }
+      ],
+      "genes_member": "GSM4977007_1_33B_genes.tsv.gz",
+      "barcodes_member": "GSM4977007_1_33B_barcodes.tsv.gz",
+      "matrix_member": "GSM4977007_1_33B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3976,
+        "genes": 65988,
+        "nonzeros": 5101040,
+        "gene_coordinate_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "58f9f4a1d7d32487142649afca8454cea6e490cd5c40fefd0b97de1ac8c00c1f",
+        "source_features": 65988,
+        "source_barcode_rows": 3976,
+        "RNA_positive_barcode_rows": 3976,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 13458073,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3976,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3976,
+          "source_positive_RNA_barcodes": 3976,
+          "full_source_RNA_counts": 13458073,
+          "selected_RNA_counts": 13458073,
+          "metadata": {
+            "path": "references/datasets/GSE163314_original_RNA_QC/GSM4977007.csv.gz",
+            "sha256": "b52e771dee997de6069dc3cef28581b72f0fe7192a76bcff0cf75890cfcba00b"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "8 original CD45-selected PBMC draws/8 source people; two each HC, CD, axSpA, CD-axSpA"
+}

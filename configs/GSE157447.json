@@ -1,0 +1,63 @@
+{
+  "dataset_id": "GSE157447",
+  "study_id": "GSE157447",
+  "input_format": "memory_b_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE157447_complete_original_RNA_audit.json",
+    "sha256": "bf087651795f3621c1fa28d739c24d14597e7f9b56e1ecb78187239b3fefc8ad"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE157447_source_identity_review.json",
+    "sha256": "4eb7af35a6732df8285a8739893dff1c2808217f24000cc36b6b6a6767ecb9ea"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "donor_id",
+    "source_plate_id",
+    "source_title_time_token"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "Every native matrix cell ID literally matches exactly one original GEOtitle. Source donor/plate/outcome copied from that exact record. No donor or visit inferred from matrix order.",
+  "physical_sample_mapping_evidence": "Twelve conservative original donor/material groups. Twenty donor/plate/time-token views remain dependent; exact draw/aliquot relationships and clinical time clocks not inferred from titles.",
+  "metadata_mapping": {
+    "aliases": {
+      "disease_course": "source_outcome_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE157447",
+    "primary_PMID": "33463551",
+    "publication": "https://www.jci.org/articles/view/140590",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157447",
+    "access": "Public original STAR read counts and exact coded source donor/plate/outcome metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE157447_source_identity_review.json",
+      "sha256": "4eb7af35a6732df8285a8739893dff1c2808217f24000cc36b6b6a6767ecb9ea"
+    },
+    "source_unit": "Twelve conservative original donor/material groups. Twenty donor/plate/time-token views remain dependent; exact draw/aliquot relationships and clinical time clocks not inferred from titles.",
+    "identity_policy": "Every native matrix cell ID literally matches exactly one original GEOtitle. Source donor/plate/outcome copied from that exact record. No donor or visit inferred from matrix order.",
+    "composition_policy": "Sorted antigen-specific memory B cells from peripheral blood; not whole-PBMC composition. All825source RNAcells retained before ownQC; original smaller publication analysis selection remains a separate metadata flag.",
+    "time_policy": "Preserve literal title tokens FU/LA as opaque source labels until explicit visit metadata are verified. Do not infer days or clinical follow-up timing from code spelling.",
+    "author_selection_policy": "Source processing says the publication restricted analysis to P1S1/P3S2/P6S3 because of potential batch effects and removed Ig genes. Do not impose its six-donor/180cell analysis total on all825provided original RNAcells; retain batch/selection flags for downstream sensitivity analysis. The exact-source plate-label flag has132cells; it is only literal equality to named plate labels, not reproduction of the stated180cell publication analysis. Source plate-label aliases remain unverified.",
+    "gene_policy": "All58051provided native symbols retained unchanged, including all37MT-prefixed RNArows. No silent modernization, gene intersection or immunoglobulin deletion.",
+    "count_semantics": "Original STAR GeneCounts sequencing-read counts; not relabelled as UMIs.",
+    "demographic_policy": "Individual age/sex unavailable in GEOfields; no imputation. Outcome remains disease course rather than inferred current clinical condition."
+  }
+}

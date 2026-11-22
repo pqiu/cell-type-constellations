@@ -1,0 +1,65 @@
+{
+  "dataset_id": "GSE291111",
+  "study_id": "GSE291111",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE291111_complete_original_RNA_audit.json",
+    "bytes": 11063,
+    "sha256": "16004b3a4eefc53e1c2eb9011efbab9391edacfee05535665f37455374b9b5bf"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE291111_source_identity_review.json",
+    "bytes": 3854,
+    "sha256": "44854ff565408f6e0fa268d63cc817925b4ce4f406fe3c47af5e94d60642baa1"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Original four RNA GSMs and full cohort-qualified titles identify two source mTNBC patients and two healthy donors. Case1 and Control1 remain distinct despite ordinal reuse. Original GSM is the specimen key; no donor inference from RNA, barcode, genotype or clinical similarity.",
+  "physical_sample_mapping_evidence": "Four original PBMC RNAcarriers from two author-labelled mTNBC patients and two healthy donors. Original GSM is the specimen key and full original cohort-qualified title is the donor proxy. Case1 and Control1 are not equated by ordinal. Four FBrecords and reused public external datasets are not additional original participants; antibody feature rows are not specimens.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "treatment": "source_treatment_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE291111",
+    "primary_PMID": "41126263",
+    "publication": "https://doi.org/10.1186/s12935-025-04011-6",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291111",
+    "access": "Public original RNA/antibody count carriers and coded GEOmetadata; only count matrices used, no receptor sequence analysis.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE291111_source_identity_review.json",
+      "bytes": 3854,
+      "sha256": "44854ff565408f6e0fa268d63cc817925b4ce4f406fe3c47af5e94d60642baa1"
+    },
+    "source_unit": "Four original PBMC RNAcarriers from two author-labelled mTNBC patients and two healthy donors. Original GSM is the specimen key and full original cohort-qualified title is the donor proxy. Case1 and Control1 are not equated by ordinal. Four FBrecords and reused public external datasets are not additional original participants; antibody feature rows are not specimens.",
+    "identity_policy": "Original four RNA GSMs and full cohort-qualified titles identify two source mTNBC patients and two healthy donors. Case1 and Control1 remain distinct despite ordinal reuse. Original GSM is the specimen key; no donor inference from RNA, barcode, genotype or clinical similarity.",
+    "clinical_policy": "Preserve source mTNBCpatient/healthy-donor cohort and source chemo/radiation labels; missing control treatment stays not reported. Exact per-person age, sex, collection date, clinical display aliases, drug regimen and treatment timing remain unassigned. Do not transfer the four-week chemotherapy timing of the external reused cohort onto these original cases.",
+    "reuse_policy": "Acquire only four original GSE291111RNAcarriers. Four companion FBrecords withNONEsupplements are not additional RNAparticipants. The primary integrated atlas additionally reuses GSE169246/GSE174609/GSE134355; those external nine cases/eight healthy donors and112597integrated cells are not added by this route. Original counts here contain4337barcode observations, not the integrated atlas. No clinical treatment-effect or biomarker validation claimed.",
+    "gene_policy": "Preserve all36601explicit GeneExpression features unchanged in original supplied order. All36740original source features documented;139AntibodyCapture rows excluded from RNAannotation, geometry, mitochondrial QC and TP10K denominators. No gene modernization, feature selection, intersection or zero filling.",
+    "count_semantics": "Original CellRanger RNA/antibody gene-cell carrier counts; every source stored value audited finite nonnegative integer. Native RNA projection is an exact feature-type subset, without count edits, rounding or inverse normalization.",
+    "cell_calling_policy": "Provided original PBMC barcode observations retain all rows until common RNAQC; model labels are unrestricted. Author sample-specific cluster/doublet filtering is not reproduced. No author-final, doublet-free or biologically validated annotation claim.",
+    "source_limitations": "Four original PBMC specimens only, two cases/two controls. Clinical/global aliases and source-specific cell calling unresolved; antibody features excluded from RNAdenominators. No treatment-effect, annotation-biological or constellation validation claim."
+  }
+}

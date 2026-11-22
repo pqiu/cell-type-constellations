@@ -1,0 +1,65 @@
+{
+  "dataset_id": "GSE215219",
+  "study_id": "GSE215219",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE215219_complete_original_RNA_audit.json",
+    "bytes": 19025,
+    "sha256": "6d966169e7c67d477486fefda0508a9280f33a865d460e368719cf19ed6feb47"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE215219_source_identity_review.json",
+    "bytes": 4170,
+    "sha256": "877535439576b2b6d6f617c7d0f437e5e1eb2991165f927468c7bf7848ddddaf"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Original source P1-P4prefixes and explicit pre/post-operative PBMC titles establish four participant codes and eight participant/phase specimens. Original GSM is the specimen key; donor UID keeps repeat phases dependent. No donor inference from barcodes, expression or phenotype similarity.",
+  "physical_sample_mapping_evidence": "Eight explicit source PBMC participant/operation-phase specimens from four source P1-P4participants, each with pre- and post-operative RNA. Keep repeated samples dependent by donor UID. Exclude tissue, ADTassay records and receptor sequencing; modality rows in an RNAcarrier are not additional specimens.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_operation_phase_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE215219",
+    "primary_PMID": "37476074",
+    "publication": "https://doi.org/10.1158/2767-9764.CRC-23-0167",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE215219",
+    "access": "Public original RNA/antibody count carriers and coded GEOmetadata; only count matrices used, no receptor sequence analysis.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE215219_source_identity_review.json",
+      "bytes": 4170,
+      "sha256": "877535439576b2b6d6f617c7d0f437e5e1eb2991165f927468c7bf7848ddddaf"
+    },
+    "source_unit": "Eight explicit source PBMC participant/operation-phase specimens from four source P1-P4participants, each with pre- and post-operative RNA. Keep repeated samples dependent by donor UID. Exclude tissue, ADTassay records and receptor sequencing; modality rows in an RNAcarrier are not additional specimens.",
+    "identity_policy": "Original source P1-P4prefixes and explicit pre/post-operative PBMC titles establish four participant codes and eight participant/phase specimens. Original GSM is the specimen key; donor UID keeps repeat phases dependent. No donor inference from barcodes, expression or phenotype similarity.",
+    "clinical_policy": "Preserve source Lungcancer and pre/post-operative labels. Primary four-person transcriptome/tissue cohort is distinct from its50person clinical-analysis cohort; the latter is not credited as sequenced subjects. Exact individual age/sex, cancer stage/histology, medication, sampling day, collection date and clinical demographic-table aliases remain unassigned.",
+    "reuse_policy": "Acquire only eight source PBMC CD3T-cell RNAcarriers. Tumour-infiltrating tissue, separate ADTassay records and receptor-sequencing records do not create additional PBMC specimens. Repeated operation phases are not independent donors. No whole-PBMC composition or clinical biomarker validation claimed.",
+    "gene_policy": "Preserve all36601explicit GeneExpression features unchanged in original supplied order. All36864original source features documented;263AntibodyCapture rows excluded from RNAannotation, geometry, mitochondrial QC and TP10K denominators. No gene modernization, feature selection, intersection or zero filling.",
+    "count_semantics": "Original CellRanger RNA/antibody gene-cell carrier counts; every source stored value audited finite nonnegative integer. Native RNA projection is an exact feature-type subset, without count edits, rounding or inverse normalization.",
+    "cell_calling_policy": "Provided source barcode observations retain all original rows until common project RNAQC. Source sorted CD3T-cell designation does not force model labels. Author final doublet/cluster selection is not reproduced; no doublet-free or biologically validated annotation claim.",
+    "source_limitations": "PBMC-derived CD3T-cell subset with repeated participants, not whole-PBMC composition. Antibody counts excluded from RNAdenominators. Clinical/global aliases and biological annotation/constellation validation unresolved."
+  }
+}

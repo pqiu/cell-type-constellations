@@ -1,0 +1,3198 @@
+{
+  "dataset_id": "GSE317309_d63_genes001",
+  "study_id": "GSE317309",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id",
+    "source_visit_code"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Each original source patient/day count triplet is an explicitly deposited CellPlex partition. Preserve patient-level GEO accession plus visit; repeated donor identity shared across all visits. Global original-count and within-pool barcode exclusivity audits passed.",
+  "source_metadata": {
+    "accession": "GSE317309",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE317309"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE317309",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+    "source_processing": [
+      "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+      "The feature_README.txt provides information for demultiplexing samples",
+      "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+      "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+      "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "genes": 38606,
+        "excluded_non_RNA_features": 12,
+        "complete_primary_mitochondrial_gene_symbols": true,
+        "annotation_symbol_overlap": 20647,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE317309_gene_coordinates/447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681.csv.gz",
+          "sha256": "b7c5a32b224ce73d3b9f47c5d74914df25e4a0f0f8016f440c60b15d2221cc98"
+        },
+        "identifier_policy": "Original gene IDs and original symbols retained. Only explicitly configured aliases/prefixes are used for annotation; no genome assembly or Ensembl IDs invented."
+      }
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9469055",
+      "donor_id": "DCP01",
+      "source_metadata": {
+        "title": [
+          "Patient DCP01, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469055"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP01",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP01_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941111",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843931"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 5565,
+        "genes": 38606,
+        "nonzeros": 9734502,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 5565,
+        "RNA_positive_barcode_rows": 5565,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 29542309,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5565,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5565,
+          "source_positive_RNA_barcodes": 5565,
+          "full_source_RNA_counts": 29542309,
+          "selected_RNA_counts": 29542309,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469055__D63.csv.gz",
+            "sha256": "818ddf6c3b4bad34ee96bea3dfd26873a961cc78d087a7610a78a9d7a64958a7"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469055_DCP01_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "4ac6c7cc40c0c1e1d641e28a947868cee46aa4dfd499410d9d0798f055acab20"
+        },
+        {
+          "filename": "GSM9469055_DCP01_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 29320,
+          "sha256": "6f7cb9002fdf04b45fd6b8a8514700f937bcd90b3fb49489b18d9560dfa10acd"
+        },
+        {
+          "filename": "GSM9469055_DCP01_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469055/suppl/GSM9469055_DCP01_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 37636018,
+          "sha256": "e48a58c574a98cd1fcbb88f9a4245a18acccd028ba795054f187313f2a78b9a6"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469055_DCP01_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469055_DCP01_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469055_DCP01_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP01",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "male",
+        "source_original_sample_label": "DCP01_PBMC_D63",
+        "source_CellPlex_tag": "CMO305",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469055_DCP01_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469055_DCP01_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469055_DCP01_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469056",
+      "donor_id": "DCP02",
+      "source_metadata": {
+        "title": [
+          "Patient DCP02, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469056"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP02",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP02_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941112",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843932"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 3135,
+        "genes": 38606,
+        "nonzeros": 6308988,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 3135,
+        "RNA_positive_barcode_rows": 3135,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 20635029,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3135,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3135,
+          "source_positive_RNA_barcodes": 3135,
+          "full_source_RNA_counts": 20635029,
+          "selected_RNA_counts": 20635029,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469056__D63.csv.gz",
+            "sha256": "d4e46a8e2d70a786e15f4e81fffc6149ced041fda2f9eba3f1b3f7e1ce584575"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469056_DCP02_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "d34a69a110352c1458ab26d948c8c40b4a00f6322c7b608bb41b99cf86d96f25"
+        },
+        {
+          "filename": "GSM9469056_DCP02_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 17092,
+          "sha256": "6d82c9344187dbd03ee8c22f4da3055d17ab09648f187c63ff56f158678e5234"
+        },
+        {
+          "filename": "GSM9469056_DCP02_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469056/suppl/GSM9469056_DCP02_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 24221244,
+          "sha256": "cc94cda108a719e081f7e98b0b63afc5376e823e1036d65cd15db20bbf555176"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469056_DCP02_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469056_DCP02_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469056_DCP02_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP02",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP02_PBMC_D63",
+        "source_CellPlex_tag": "CMO310",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469056_DCP02_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469056_DCP02_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469056_DCP02_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469057",
+      "donor_id": "DCP03",
+      "source_metadata": {
+        "title": [
+          "Patient DCP03, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469057"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP03",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP03_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941113",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843946"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 881,
+        "genes": 38606,
+        "nonzeros": 1417407,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 881,
+        "RNA_positive_barcode_rows": 881,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 4826142,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 881,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 881,
+          "source_positive_RNA_barcodes": 881,
+          "full_source_RNA_counts": 4826142,
+          "selected_RNA_counts": 4826142,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469057__D63.csv.gz",
+            "sha256": "3bfad1b1aec891f8475236841f40d0c74ecdd452b3f62e543677239e4dca7354"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469057_DCP03_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "e9bda7a503537446c1a63daa132e6c7ab5fcf95c5fe933223a91cf4aa88c086b"
+        },
+        {
+          "filename": "GSM9469057_DCP03_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 5146,
+          "sha256": "637b341c9c3df34a0589588d4e4fa9aff6a02f36c5ec7e6eda14b05c2fc88161"
+        },
+        {
+          "filename": "GSM9469057_DCP03_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469057/suppl/GSM9469057_DCP03_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 5371336,
+          "sha256": "c433828eeb39f9d51452720a1793599e8e70afecea6a2b3c21a4ad0e6160ec98"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469057_DCP03_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469057_DCP03_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469057_DCP03_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP03",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP03_PBMC_D63",
+        "source_CellPlex_tag": "CMO305",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469057_DCP03_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469057_DCP03_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469057_DCP03_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469058",
+      "donor_id": "DCP06",
+      "source_metadata": {
+        "title": [
+          "Patient DCP06, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469058"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP06",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP06_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941114",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843969"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 3127,
+        "genes": 38606,
+        "nonzeros": 5734633,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 3127,
+        "RNA_positive_barcode_rows": 3127,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 18433811,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3127,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3127,
+          "source_positive_RNA_barcodes": 3127,
+          "full_source_RNA_counts": 18433811,
+          "selected_RNA_counts": 18433811,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469058__D63.csv.gz",
+            "sha256": "6c3066c2429da0124e103099ce413f89ba06739d47b63567f63741ffbfa98461"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469058_DCP06_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "896c961e2bd72ffb384d58e34549f37cd510577ac16eba425df8bfbebbb9c2ca"
+        },
+        {
+          "filename": "GSM9469058_DCP06_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 17000,
+          "sha256": "11383a4b2b0926185fa3ac00937dc15e8009c4cdd359d304c828f94205eb45db"
+        },
+        {
+          "filename": "GSM9469058_DCP06_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469058/suppl/GSM9469058_DCP06_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 22154728,
+          "sha256": "dc98f95eb19b96279be9befb6b03ee048be44559b27e00badef8fce0fd11dbe9"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469058_DCP06_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469058_DCP06_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469058_DCP06_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP06",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "male",
+        "source_original_sample_label": "DCP06_PBMC_D63",
+        "source_CellPlex_tag": "CMO305",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469058_DCP06_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469058_DCP06_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469058_DCP06_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469059",
+      "donor_id": "DCP07",
+      "source_metadata": {
+        "title": [
+          "Patient DCP07, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469059"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP07",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP07_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941115",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843977"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 5318,
+        "genes": 38606,
+        "nonzeros": 6480959,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 5318,
+        "RNA_positive_barcode_rows": 5318,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 28294672,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5318,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5318,
+          "source_positive_RNA_barcodes": 5318,
+          "full_source_RNA_counts": 28294672,
+          "selected_RNA_counts": 28294672,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469059__D63.csv.gz",
+            "sha256": "0126ddcd2730241eae088d96c82205383c6576769ddad0f27d0dafbde2401d69"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469059_DCP07_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "acca102f6a0b752f75cd05745ec5f7f7ec08389d97dc29c32d8748d38717628d"
+        },
+        {
+          "filename": "GSM9469059_DCP07_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 28106,
+          "sha256": "0c5250e4e325cee623abf808ef81f060511bc1731ad20cdaf8d303fc99e8c373"
+        },
+        {
+          "filename": "GSM9469059_DCP07_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469059/suppl/GSM9469059_DCP07_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 25404833,
+          "sha256": "22a4be14f228ab071ea3152ce9795db013f15ee30b92cb653ac709ef758158c2"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469059_DCP07_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469059_DCP07_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469059_DCP07_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP07",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "male",
+        "source_original_sample_label": "DCP07_PBMC_D63",
+        "source_CellPlex_tag": "CMO305",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469059_DCP07_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469059_DCP07_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469059_DCP07_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469061",
+      "donor_id": "DCP10",
+      "source_metadata": {
+        "title": [
+          "Patient DCP10, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469061"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP10",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP10_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941117",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843955"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 1791,
+        "genes": 38606,
+        "nonzeros": 2540880,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 1791,
+        "RNA_positive_barcode_rows": 1791,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 8576795,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1791,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1791,
+          "source_positive_RNA_barcodes": 1791,
+          "full_source_RNA_counts": 8576795,
+          "selected_RNA_counts": 8576795,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469061__D63.csv.gz",
+            "sha256": "3e915e76dead1e137ae8a493c9ba1191fc03d4210bd64d48271531c709846486"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469061_DCP10_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "9b6262f5b4d70de3ab6184641b139a3163ff6209c374dcac37a62b8311fa340a"
+        },
+        {
+          "filename": "GSM9469061_DCP10_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 10115,
+          "sha256": "13704858737e7c348b6788111970e593fc1792d018811da324c32bf6c766880b"
+        },
+        {
+          "filename": "GSM9469061_DCP10_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469061/suppl/GSM9469061_DCP10_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 9880635,
+          "sha256": "c29954cd2e250771f4334f0de37d028b8a227a1f686789aaf0957a376dc9dd0b"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469061_DCP10_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469061_DCP10_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469061_DCP10_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP10",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "male",
+        "source_original_sample_label": "DCP10_PBMC_D63",
+        "source_CellPlex_tag": "CMO305",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469061_DCP10_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469061_DCP10_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469061_DCP10_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469062",
+      "donor_id": "DCP14",
+      "source_metadata": {
+        "title": [
+          "Patient DCP14, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469062"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP14",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP14_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941118",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843960"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 2256,
+        "genes": 38606,
+        "nonzeros": 4170717,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 2256,
+        "RNA_positive_barcode_rows": 2256,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 14033695,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2256,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2256,
+          "source_positive_RNA_barcodes": 2256,
+          "full_source_RNA_counts": 14033695,
+          "selected_RNA_counts": 14033695,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469062__D63.csv.gz",
+            "sha256": "8414edd86e3e2693ce278b01205060800741cd551c9621f4822f8377f33c5b3a"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469062_DCP14_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "69bfa47594dd5614d89e9e6e7205a46f368e6e06bca6eef2ac7695d9efa56eb6"
+        },
+        {
+          "filename": "GSM9469062_DCP14_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 12567,
+          "sha256": "04a930460226f38f586f129a986f4067e925d7a9848cea09c556ce20b3bf5660"
+        },
+        {
+          "filename": "GSM9469062_DCP14_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469062/suppl/GSM9469062_DCP14_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 16084216,
+          "sha256": "b86729ab6f5cafda86709f01b747bde254511fb93fe8fcc125c4f73a2da6e4c1"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469062_DCP14_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469062_DCP14_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469062_DCP14_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP14",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP14_PBMC_D63",
+        "source_CellPlex_tag": "CMO310",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469062_DCP14_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469062_DCP14_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469062_DCP14_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469063",
+      "donor_id": "DCP17",
+      "source_metadata": {
+        "title": [
+          "Patient DCP17, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469063"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP17",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP17_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941119",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843961"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 3444,
+        "genes": 38606,
+        "nonzeros": 6569837,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 3444,
+        "RNA_positive_barcode_rows": 3444,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 23180696,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3444,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3444,
+          "source_positive_RNA_barcodes": 3444,
+          "full_source_RNA_counts": 23180696,
+          "selected_RNA_counts": 23180696,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469063__D63.csv.gz",
+            "sha256": "b7dd71888b4a3028fe56c7f08b22a02ee0f4cc9ced878a18e1610d1b523f89a9"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469063_DCP17_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "1ef04307b7e449a751fa0a33cc91221d49a4d46a06565b1d90f46014be46c947"
+        },
+        {
+          "filename": "GSM9469063_DCP17_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 18697,
+          "sha256": "8ee03e6ac780157f485bcb32c8b3b40c53c95142e51074c1c36b70a4f46f7610"
+        },
+        {
+          "filename": "GSM9469063_DCP17_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469063/suppl/GSM9469063_DCP17_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 25371945,
+          "sha256": "7fec32946eef8977767daa35072e2ab2dffef670a0c0b8d2ecf9fe3abdae5036"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469063_DCP17_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469063_DCP17_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469063_DCP17_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP17",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "male",
+        "source_original_sample_label": "DCP17_PBMC_D63",
+        "source_CellPlex_tag": "CMO305",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469063_DCP17_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469063_DCP17_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469063_DCP17_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469065",
+      "donor_id": "DCP19",
+      "source_metadata": {
+        "title": [
+          "Patient DCP19, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469065"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP19",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP19_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941121",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843933"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 1772,
+        "genes": 38606,
+        "nonzeros": 4237127,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 1772,
+        "RNA_positive_barcode_rows": 1772,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 14004551,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1772,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1772,
+          "source_positive_RNA_barcodes": 1772,
+          "full_source_RNA_counts": 14004551,
+          "selected_RNA_counts": 14004551,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469065__D63.csv.gz",
+            "sha256": "e08e3122c724ff4e8c6b947006ec649512f30b06a58b9c48ba82044eac61d38a"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469065_DCP19_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "ba0dce8226c16d73aaf098a3bc220562cb8dfb043f3dc81190ae7685b2773cd0"
+        },
+        {
+          "filename": "GSM9469065_DCP19_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 10021,
+          "sha256": "be08ea5c7805b668a91854609007e4ea72d768aea09833e673be9640359b2ad3"
+        },
+        {
+          "filename": "GSM9469065_DCP19_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469065/suppl/GSM9469065_DCP19_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 16036048,
+          "sha256": "bad50722ee9d185ad9279701e6736528f26600194bf6abd976184b920a2e5d80"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469065_DCP19_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469065_DCP19_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469065_DCP19_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP19",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP19_PBMC_D63",
+        "source_CellPlex_tag": "CMO309",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469065_DCP19_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469065_DCP19_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469065_DCP19_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469066",
+      "donor_id": "DCP22",
+      "source_metadata": {
+        "title": [
+          "Patient DCP22, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469066"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP22",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP22_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941122",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843934"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 4512,
+        "genes": 38606,
+        "nonzeros": 6238825,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 4512,
+        "RNA_positive_barcode_rows": 4512,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 18341198,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 4512,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4512,
+          "source_positive_RNA_barcodes": 4512,
+          "full_source_RNA_counts": 18341198,
+          "selected_RNA_counts": 18341198,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469066__D63.csv.gz",
+            "sha256": "ae10d130a517cb5d4d4d556a57861dde9634283eda37f22c7f237761d2a7b726"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469066_DCP22_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "c20a52be48e76060f957f02f468a6106d97f20d99634c827571fb65d22f0808f"
+        },
+        {
+          "filename": "GSM9469066_DCP22_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 24114,
+          "sha256": "22f98144135a750fb89b9b62e757fefbfbdc53a395b5df32b5175eb098fc8a9a"
+        },
+        {
+          "filename": "GSM9469066_DCP22_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469066/suppl/GSM9469066_DCP22_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 24459952,
+          "sha256": "acaa19616dfe4d39a109e674eeddc7b53ea4ca7fdee6531ddc0ff4ea59e18e69"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469066_DCP22_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469066_DCP22_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469066_DCP22_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP22",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP22_PBMC_D63",
+        "source_CellPlex_tag": "CMO312",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469066_DCP22_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469066_DCP22_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469066_DCP22_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469068",
+      "donor_id": "DCP25",
+      "source_metadata": {
+        "title": [
+          "Patient DCP25, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469068"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP25",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP25_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941124",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843937"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 4246,
+        "genes": 38606,
+        "nonzeros": 6041386,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 4246,
+        "RNA_positive_barcode_rows": 4246,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 17305299,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 4246,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4246,
+          "source_positive_RNA_barcodes": 4246,
+          "full_source_RNA_counts": 17305299,
+          "selected_RNA_counts": 17305299,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469068__D63.csv.gz",
+            "sha256": "e150a15f4fc5a7f96ec9f956943cf0fe86d35332c43c7bd86c505e2176298cc2"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469068_DCP25_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "3005d8e55517fa3c2967343309dc42b7ceaeab411b785c973753ab32f2543616"
+        },
+        {
+          "filename": "GSM9469068_DCP25_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 22795,
+          "sha256": "e5f06b54c72b8065958ce301bad876deb3f9c4b373b7217d6907dc9d75837184"
+        },
+        {
+          "filename": "GSM9469068_DCP25_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469068/suppl/GSM9469068_DCP25_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 23585666,
+          "sha256": "2e0725772dc707a3732c614da8d5aafd0e3464bf1fbd299097f6ee9721c9a759"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469068_DCP25_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469068_DCP25_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469068_DCP25_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP25",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "male",
+        "source_original_sample_label": "DCP25_PBMC_D63",
+        "source_CellPlex_tag": "CMO312",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469068_DCP25_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469068_DCP25_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469068_DCP25_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469070",
+      "donor_id": "DCP29",
+      "source_metadata": {
+        "title": [
+          "Patient DCP29, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469070"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP29",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP29_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941126",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843940"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 2916,
+        "genes": 38606,
+        "nonzeros": 4158037,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 2916,
+        "RNA_positive_barcode_rows": 2916,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 13141906,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2916,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2916,
+          "source_positive_RNA_barcodes": 2916,
+          "full_source_RNA_counts": 13141906,
+          "selected_RNA_counts": 13141906,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469070__D63.csv.gz",
+            "sha256": "82e77c81e5794e4cfc52f7f31b508747ac30304b7859b3c9ee41436f7b9e8b6c"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469070_DCP29_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "745efb8f21782c2981406eca55cd28c32c35e7a1cc3e1f02ff50638d995d082c"
+        },
+        {
+          "filename": "GSM9469070_DCP29_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 15994,
+          "sha256": "6301721f1b7c1d2cd5468d1a80418e193138f707ed07fdd960ed1b9c1a53757e"
+        },
+        {
+          "filename": "GSM9469070_DCP29_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469070/suppl/GSM9469070_DCP29_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 16188075,
+          "sha256": "56957c96fd425ec49a614dbd87102bd82a3c1bb0baa565261c9236c926cc9d68"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469070_DCP29_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469070_DCP29_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469070_DCP29_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP29",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP29_PBMC_D63",
+        "source_CellPlex_tag": "CMO309",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469070_DCP29_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469070_DCP29_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469070_DCP29_D63_PBMC_matrix.mtx.gz"
+    },
+    {
+      "accession": "GSM9469071",
+      "donor_id": "DCP30",
+      "source_metadata": {
+        "title": [
+          "Patient DCP30, 10x 3' expression multiflex library from PBMCs collected on Day 0, 21, 42, 63"
+        ],
+        "geo_accession": [
+          "GSM9469071"
+        ],
+        "status": [
+          "Public on May 01 2026"
+        ],
+        "submission_date": [
+          "Jan 22 2026"
+        ],
+        "last_update_date": [
+          "May 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "subject id: DCP30",
+          "Sex: female"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "For scRNA/TCR-seq of tumor biopsies, single cell dissociated tumor samples were thawed and stained using the Zombie NIR Fixable Viability Kit (Biolegend). The KPL mouse cell line was simultaneously stained with Zombie NIR and mixed with tumor samples at a 2:1 ratio to act as carrier cells. Viable cells were sorted using a FACSAria III flow cytometer (BD Biosciences), centrifuged at 400 x g for 5 minutes, and resuspended in PBS + 5% fetal bovine serum (FBS) at a concentration of ~1500 cells/uL prior to library construction. For scRNA-seq of PBMCs, samples from days 0, 21, 42, and 63 for each patient were tagged using the 10X Genomics CellPlex Kit per manufacturer\u2019s protocols. The cells were pooled and then stained with Zombie NIR prior to flow sorting for viability on a FACSAria III flow cytometer.",
+          "For scRNA/TCR-seq, library construction was performed according to the manufacturer\u2019s instructions (10x Genomics) to capture the maximum target cells."
+        ],
+        "description": [
+          "Library name: DCP30_PBMC_RNA",
+          "10X Genomics Chromium Next GEM Single Cell 3' v3.1 Dual Index + 3' CellPlex"
+        ],
+        "data_processing": [
+          "For tumor scRNA/TCR-seq, CellRanger 9.0 (10X Genomics) was used to align raw reads to the GRCh38 human and GRCm39 mouse combined reference genome provided by 10X Genomics. For PBMC scRNA-seq, CellRanger 9.0 was used to align raw reads to the GRCh38 human reference genome.",
+          "The feature_README.txt provides information for demultiplexing samples",
+          "Assembly: Raw reads were aligned and annotated using the 10X reference data, version 2024-A. In brief, raw reads were aligned to the reference human genome GRCh38 (PBMC samples) or combination of GRCh38 and GRCm39 genome (tumor biopsy samples). Transcripts were annotated using GENCODE v44/Ensembl110 for human and GENCODE vM33/Ensembl110 for mouse.",
+          "Supplementary files format and content: tab-delimited text files (tsv) and tatrix files (mt) provide raw counts of transcripts for filtered barcodes.",
+          "Supplementary files format and content: cvs-delimited text file provide counts associated with specified contig and cell barcode."
+        ],
+        "platform_id": [
+          "GPL34284"
+        ],
+        "contact_name": [
+          "Linh,My,Tran"
+        ],
+        "contact_email": [
+          "linhtran@ucla.edu"
+        ],
+        "contact_laboratory": [
+          "Dubinett Lab"
+        ],
+        "contact_department": [
+          "Medicine - Pulmonary & Critical Care"
+        ],
+        "contact_institute": [
+          "University of Los Angeles"
+        ],
+        "contact_address": [
+          "Box 951690, 52-257 CHS"
+        ],
+        "contact_city": [
+          "Los Angeles"
+        ],
+        "contact_state": [
+          "California"
+        ],
+        "contact_zip/postal_code": [
+          "90095-1690"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X Plus"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN52941127",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31843941"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D0_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D0_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D0_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_4": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D21_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_5": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D21_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_6": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D21_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_7": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D42_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_8": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D42_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_9": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D42_PBMC_matrix.mtx.gz"
+        ],
+        "supplementary_file_10": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D63_PBMC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_11": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D63_PBMC_features.tsv.gz"
+        ],
+        "supplementary_file_12": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D63_PBMC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE317309"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_partition": "D63",
+      "source_count_review": {
+        "cells": 5263,
+        "genes": 38606,
+        "nonzeros": 7893515,
+        "gene_coordinate_sha256": "447849e4e7672eb17179ab613465881eb673c465dd65f8f08612f3f7ccee7681",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "9ada5a2097716827f4f05531ec41d25e216d05b5c68b505a3f71c93b6edc7558",
+        "source_features": 38618,
+        "source_barcode_rows": 5263,
+        "RNA_positive_barcode_rows": 5263,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 22932855,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 12,
+        "reviewed_non_rna_types": [
+          "Multiplexing Capture"
+        ],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5263,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5263,
+          "source_positive_RNA_barcodes": 5263,
+          "full_source_RNA_counts": 22932855,
+          "selected_RNA_counts": 22932855,
+          "metadata": {
+            "path": "references/datasets/GSE317309_original_RNA_QC/GSM9469071__D63.csv.gz",
+            "sha256": "c56dc50b9c6e2b0bce91b87cabb310515a0158d26d13fb6c2669d3f24ecbd2f2"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      },
+      "allowed_non_rna_feature_types": [
+        "Multiplexing Capture"
+      ],
+      "assets": [
+        {
+          "filename": "GSM9469071_DCP30_D63_PBMC_features.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D63_PBMC_features.tsv.gz",
+          "expected_bytes": 342091,
+          "sha256": "8605c5a2c37a3bf0c7f64750d839f86a83ee31b0e02af9ede0de3187b7cfb66f"
+        },
+        {
+          "filename": "GSM9469071_DCP30_D63_PBMC_barcodes.tsv.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D63_PBMC_barcodes.tsv.gz",
+          "expected_bytes": 27785,
+          "sha256": "a8960aad1073a67b189376cfbe0ec7b66dd13aaf0a4a1fa80a797e8e123823af"
+        },
+        {
+          "filename": "GSM9469071_DCP30_D63_PBMC_matrix.mtx.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9469nnn/GSM9469071/suppl/GSM9469071_DCP30_D63_PBMC_matrix.mtx.gz",
+          "expected_bytes": 30817433,
+          "sha256": "b717748fe4a6c620b581c5a9f1eae2ec05bc56bf81dbb4095c3e9a9074176826"
+        }
+      ],
+      "source_member_overrides": {
+        "genes_member": "GSM9469071_DCP30_D63_PBMC_features.tsv.gz",
+        "barcodes_member": "GSM9469071_DCP30_D63_PBMC_barcodes.tsv.gz",
+        "matrix_member": "GSM9469071_DCP30_D63_PBMC_matrix.mtx.gz"
+      },
+      "metadata": {
+        "source_participant_code": "DCP30",
+        "source_visit_code": "D63",
+        "source_capture_label": "primary",
+        "source_treatment": "D63",
+        "source_sex": "female",
+        "source_original_sample_label": "DCP30_PBMC_D63",
+        "source_CellPlex_tag": "CMO312",
+        "condition": "Source non-small-cell lung cancer clinical trial cohort",
+        "source_specimen": "Viability-sorted PBMC; original author CellPlex visit partition",
+        "source_identity_policy": "Eighteen patient-level GEO accessions each contain three or four distinct day-specific RNA triplets. Exact donor/day filenames, source patient field, original CellPlex README and BioSample agree. GEO accession is a pooled-library identifier, not the visit identifier.",
+        "source_assignment_policy": "Use original deposited per-visit barcode partitions. Full native audit verified all within-library visit barcode sets are disjoint, including subthreshold cells. No new tag-threshold assignment or expression-based visit inference.",
+        "source_time_policy": "Original trial D0/D21/D42/D63 labels retained as nominal visits. Calendar draw dates and patient-specific drug exposure intervals not independently joined; source_treatment stores visit label, not a measured drug administration event.",
+        "source_modality_policy": "All original values audited before typed CellPlex Multiplexing Capture exclusion. Only native Gene Expression features enter RNA totals, QC, annotation and expression geometry. Other repertoire, bulk and human/mouse tumor inputs excluded.",
+        "source_handling_policy": "Source describes CellPlex labeling, pooling and viability sorting of PBMC. Original per-patient visit partitions are used; composition and selection effects remain study-level audit targets.",
+        "source_demographic_policy": "Individual sex retained literally from the original patient-level GEO record. Age, smoking, tumor genotype, response and exact clinical timing not independently joined or imputed.",
+        "source_processing_policy": "Source CellRanger9.0 GRCh38/2024-A GENCODEv44 Ensembl110 native RNA genes retained. Four storage partitions by visit do not change per-sample centroids, estimate learned preprocessing, or imply independent donors.",
+        "split_assignment": "unassigned; keep all visits from each participant together"
+      },
+      "genes_member": "GSM9469071_DCP30_D63_PBMC_features.tsv.gz",
+      "barcodes_member": "GSM9469071_DCP30_D63_PBMC_barcodes.tsv.gz",
+      "matrix_member": "GSM9469071_DCP30_D63_PBMC_matrix.mtx.gz"
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Exact day-specific source triplets and original CellPlex README establish67participant/visit groups. GEO patient-level accession repeats across visits; visit is required in both observation and physical specimen identity. All patient visits share donor UID."
+}

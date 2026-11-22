@@ -1,0 +1,59 @@
+{
+  "dataset_id": "AIFI_human_immune_health_atlas_full",
+  "study_id": "77f9d7e9-5675-49c3-abed-ce02f39eef1b",
+  "url": "https://allenimmunology.org/public/publication/download/84792154-cdfb-42d0-8e42-39e210e980b4/filesets/568ad40c-516a-4646-9426-bdcd7029c1f5/human_immune_health_atlas_full.h5ad",
+  "expected_bytes": 42828229795,
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "__index__",
+  "sample_columns": [
+    "sample.sampleKitGuid"
+  ],
+  "sample_mapping_evidence": "Source object has exactly 108 sample.sampleKitGuid, 108 specimen.specimenGuid and 108 subject.subjectGuid values; one draw/aliquot per donor. Official Allen atlas documents PBMCs from 108 healthy donors. Preserve specimen aliquot, pooling, batch, visit and original subject fields.",
+  "source_metadata": {
+    "catalog_page": "https://apps.allenimmunology.org/aifi/resources/imm-health-atlas/downloads/scrna/",
+    "portal_link": "https://explore.allenimmunology.org/publication/workspace/download?redirectURI=https://allenimmunology.org/public/publication/download/84792154-cdfb-42d0-8e42-39e210e980b4/filesets/568ad40c-516a-4646-9426-bdcd7029c1f5/human_immune_health_atlas_full.h5ad&assetId=0cc188d1-6d07-44b9-881a-a059c21c3fa5&assetType=FileSet&assetTitle=Human Immune Health Atlas .h5ad Files&releaseId=9f661dfc-1a24-4ce2-b205-f9c3fcb1ec3c&releaseTitle=AIFI Immune Health Atlas&releaseType=DataApp",
+    "access": "Official public Allen Institute PBMC download; retain source citation and terms",
+    "source_headers": {
+      "content-disposition": "attachment; filename=\"human_immune_health_atlas_full.h5ad\"",
+      "content-encoding": "",
+      "Content-Length": "42828229795",
+      "content-type": "application/octet-stream",
+      "date": "Mon, 12 Oct 2026 06:51:16 GMT",
+      "via": "1.1 google",
+      "Alt-Svc": "h3=\":443\"; ma=2592000",
+      "Connection": "close"
+    },
+    "range_inspection_blocker": "Public download server returns HTTP 200 to byte ranges; inspect after full budgeted retrieval.",
+    "doi": "10.1038/s41586-025-09686-5",
+    "primary_atlas_url": "https://apps.allenimmunology.org/aifi/resources/imm-health-atlas/",
+    "gene_mapping_evidence": "Raw var.index consists of source gene symbols; preserve as gene coordinate IDs. No symbol translation or expression correction.",
+    "mirror_dataset_ids": [
+      "e522d2cd-7927-4e59-a4ed-064009569279"
+    ],
+    "reviewed_samples": 108,
+    "reviewed_donors": 108,
+    "access_terms_url": "https://alleninstitute.org/terms-of-use/"
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "subject.subjectGuid",
+      "sex": "subject.biologicalSex",
+      "age": "sample.subjectAgeAtDraw"
+    },
+    "constants": {
+      "tissue": "blood",
+      "disease": "normal"
+    }
+  }
+}

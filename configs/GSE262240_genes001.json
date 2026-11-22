@@ -1,0 +1,3150 @@
+{
+  "dataset_id": "GSE262240_genes001",
+  "study_id": "GSE262240",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "17originalPBMCderived Bcell draws/17source people;10PAPS+7healthy;8per-recordNONE entries resolved through original series-level H5s",
+  "source_metadata": {
+    "accession": "GSE262240",
+    "publications": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11568317/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE262240",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+    "source_processing": [
+      "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+      "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+      "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+      "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+      "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+      "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+      "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+      "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE262240_source_identity_review.json",
+      "sha256": "d10906182f1f1eea5ad8324999a3c0cfdc3b0bc77d8b4d220d7b023d9e6f78a2"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8160945",
+      "donor_id": "JT1",
+      "source_metadata": {
+        "title": [
+          "JT1, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160945"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582150",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026136"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160945",
+        "source_GEO_title": "JT1, GEX",
+        "source_participant_code": "JT1",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_JT1_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_JT1_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_JT1_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_JT1_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 12033851,
+          "sha256": "3a4fd4b4f274781ba60f6151cbb677680d3a002b353c2e50d9776cdcf8803650"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          8627,
+          36601
+        ],
+        "nonzeros": 7640112,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 8627,
+        "cells": 8627,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8627,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8627,
+          "full_source_RNA_counts": 24378829,
+          "selected_RNA_counts": 24378829,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160945.csv.gz",
+            "sha256": "f010f814a7c75fb1c5e6eb2afb456adf6838a344f3c521788188b597015bb704"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160947",
+      "donor_id": "VP2",
+      "source_metadata": {
+        "title": [
+          "VP2, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160947"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582148",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026138"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160947",
+        "source_GEO_title": "VP2, GEX",
+        "source_participant_code": "VP2",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_VP2_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_VP2_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_VP2_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_VP2_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 12514107,
+          "sha256": "f1dee30f9e77392b80848dbee42b548282be9c1a9b054529f6b86c78911fc030"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6767,
+          36601
+        ],
+        "nonzeros": 8095888,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6767,
+        "cells": 6767,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6767,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6767,
+          "full_source_RNA_counts": 29440675,
+          "selected_RNA_counts": 29440675,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160947.csv.gz",
+            "sha256": "35504478ad5c201819edfeb3c9a49ba85480b62a9776ce5c50412355d983f238"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160949",
+      "donor_id": "CR3",
+      "source_metadata": {
+        "title": [
+          "CR3, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160949"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient",
+          "age: 50",
+          "gender: M"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582146",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026140"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160949",
+        "source_GEO_title": "CR3, GEX",
+        "source_participant_code": "CR3",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"age\": \"50\", \"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"gender\": \"M\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_CR3_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "50",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "M",
+        "sex": "male",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_CR3_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_CR3_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_CR3_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 12697619,
+          "sha256": "ee4c36dc77fc16ce8d1b2f62354594f8856497d26d6f6ddce4d5e6f3a411672a"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          7776,
+          36601
+        ],
+        "nonzeros": 8169023,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 7776,
+        "cells": 7776,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7776,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7776,
+          "full_source_RNA_counts": 26716981,
+          "selected_RNA_counts": 26716981,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160949.csv.gz",
+            "sha256": "e616ea5dbf10fe23172c27ce060c9b1d9cc0c24fdf138dcc714bfcbff213d023"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160951",
+      "donor_id": "VG4",
+      "source_metadata": {
+        "title": [
+          "VG4, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160951"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient",
+          "age: 35",
+          "gender: M"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582144",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026142"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160951",
+        "source_GEO_title": "VG4, GEX",
+        "source_participant_code": "VG4",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"age\": \"35\", \"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"gender\": \"M\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_VG4_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "35",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "M",
+        "sex": "male",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_VG4_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_VG4_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_VG4_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 11341220,
+          "sha256": "b90ca6102a709b31e6fe81701d5c892d996f3567f52354caab7251567a74dcfe"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          5123,
+          36601
+        ],
+        "nonzeros": 7357815,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5123,
+        "cells": 5123,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5123,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5123,
+          "full_source_RNA_counts": 30699138,
+          "selected_RNA_counts": 30699138,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160951.csv.gz",
+            "sha256": "2f1e6d70bb693c0a104ef174dd2528f45bfa29bc6a06b8d27d80bab02f13ef4b"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160953",
+      "donor_id": "CH5",
+      "source_metadata": {
+        "title": [
+          "CH5, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160953"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient",
+          "age: 31",
+          "gender: F"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582142",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026152"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160953",
+        "source_GEO_title": "CH5, GEX",
+        "source_participant_code": "CH5",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"age\": \"31\", \"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"gender\": \"F\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_CH5_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "31",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "F",
+        "sex": "female",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_CH5_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_CH5_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_CH5_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 3371253,
+          "sha256": "12989e94760239448a6dc25e43eb2511c29f009f4d7a1a8278f6b9a6ac3b8eb5"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          1530,
+          36601
+        ],
+        "nonzeros": 2013706,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 1530,
+        "cells": 1530,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1530,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1530,
+          "full_source_RNA_counts": 7279272,
+          "selected_RNA_counts": 7279272,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160953.csv.gz",
+            "sha256": "ca1bb9410c3b33beb8f41245301b7dbbbb1ad42dfe3734a436d0c9d0ffcacf33"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160955",
+      "donor_id": "SS6",
+      "source_metadata": {
+        "title": [
+          "SS6, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160955"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient",
+          "age: 54",
+          "gender: M"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582140",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026154"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160955",
+        "source_GEO_title": "SS6, GEX",
+        "source_participant_code": "SS6",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"age\": \"54\", \"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"gender\": \"M\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_SS6_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "54",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "M",
+        "sex": "male",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_SS6_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_SS6_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_SS6_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 2595679,
+          "sha256": "2bcf5dd8ab09ff6293c014ad0ea94d48bd3b6f2a220e35d75e3b69b684fe7b20"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          1171,
+          36601
+        ],
+        "nonzeros": 1499480,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 1171,
+        "cells": 1171,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1171,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1171,
+          "full_source_RNA_counts": 4926525,
+          "selected_RNA_counts": 4926525,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160955.csv.gz",
+            "sha256": "5afdb99da082b5ce2b20b3e2fbab34909a2882af69ecc30d2c8c3607c18c03e8"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160957",
+      "donor_id": "MS7",
+      "source_metadata": {
+        "title": [
+          "MS7, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160957"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient",
+          "age: 29",
+          "gender: F"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582138",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026156"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160957",
+        "source_GEO_title": "MS7, GEX",
+        "source_participant_code": "MS7",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"age\": \"29\", \"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"gender\": \"F\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_MS7_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "29",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "F",
+        "sex": "female",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_MS7_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_MS7_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_MS7_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 2513632,
+          "sha256": "2eca8fef8046da0294590154cc2d5f82f3a30fa916ffdc3b7b15df7dfb202cda"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          1084,
+          36601
+        ],
+        "nonzeros": 1447290,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 1084,
+        "cells": 1084,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1084,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1084,
+          "full_source_RNA_counts": 5294684,
+          "selected_RNA_counts": 5294684,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160957.csv.gz",
+            "sha256": "18364c06ae5f46c590de54866ca639857918dc685084e82d002de6f5aaa4ff0b"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8160959",
+      "donor_id": "ED8",
+      "source_metadata": {
+        "title": [
+          "ED8, GEX"
+        ],
+        "geo_accession": [
+          "GSM8160959"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Mar 22 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina).",
+          "CITE-Seq + VDJ-Seq"
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v5",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v5.0.1)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN40582136",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX24026158"
+        ],
+        "supplementary_file_1": [
+          "NONE"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8160959",
+        "source_GEO_title": "ED8, GEX",
+        "source_participant_code": "ED8",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "series",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_ED8_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSE262240_ED8_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE262nnn/GSE262240/suppl/GSE262240_ED8_filtered_feature_bc_matrix.h5",
+          "filename": "GSE262240_ED8_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 1609168,
+          "sha256": "0461abad0382f294b32d0319b43ba8dc071738eb5ca68f5b17d5202395ba6ea5"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          633,
+          36601
+        ],
+        "nonzeros": 829081,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 633,
+        "cells": 633,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601,
+          "Antibody Capture": 11
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 11,
+        "reviewed_non_RNA_types": [
+          "Antibody Capture"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 633,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 633,
+          "full_source_RNA_counts": 3469022,
+          "selected_RNA_counts": 3469022,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8160959.csv.gz",
+            "sha256": "0f9a329a432d53790ef490df713268093daddfc26e710043acb4ff672bf47063"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444373",
+      "donor_id": "BL18",
+      "source_metadata": {
+        "title": [
+          "BL18, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444373"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070849",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633748"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444373/suppl/GSM8444373_BL18_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444373",
+        "source_GEO_title": "BL18, GEX",
+        "source_participant_code": "BL18",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444373/suppl/GSM8444373_BL18_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444373_BL18_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444373/suppl/GSM8444373_BL18_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444373_BL18_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 18891670,
+          "sha256": "f35d882d072862200b6df66ada877a42e21a2dfcaab7286305750e285dafc974"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6277,
+          36601
+        ],
+        "nonzeros": 13113522,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6277,
+        "cells": 6277,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6277,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6277,
+          "full_source_RNA_counts": 36944486,
+          "selected_RNA_counts": 36944486,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444373.csv.gz",
+            "sha256": "489104b9c722df8bbf3189b86582ad338abfd4b86c6adffd8c73e8ed8de054a1"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444374",
+      "donor_id": "ER16",
+      "source_metadata": {
+        "title": [
+          "ER16, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444374"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070848",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633749"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444374/suppl/GSM8444374_ER16_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444374",
+        "source_GEO_title": "ER16, GEX",
+        "source_participant_code": "ER16",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444374/suppl/GSM8444374_ER16_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444374_ER16_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444374/suppl/GSM8444374_ER16_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444374_ER16_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 15831961,
+          "sha256": "8ae8c94a0a34054547d06215fa087e65f5637b6208d26b8165b9fec435e62d1c"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          4891,
+          36601
+        ],
+        "nonzeros": 11008660,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 4891,
+        "cells": 4891,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 4891,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4891,
+          "full_source_RNA_counts": 29915540,
+          "selected_RNA_counts": 29915540,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444374.csv.gz",
+            "sha256": "6dd7d1e3144bef9944652c74d43ff5858c9cce0357ba1f1e779fe8acd440533d"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444375",
+      "donor_id": "LO17",
+      "source_metadata": {
+        "title": [
+          "LO17, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444375"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070847",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633750"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444375/suppl/GSM8444375_LO17_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444375",
+        "source_GEO_title": "LO17, GEX",
+        "source_participant_code": "LO17",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444375/suppl/GSM8444375_LO17_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444375_LO17_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444375/suppl/GSM8444375_LO17_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444375_LO17_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 17444606,
+          "sha256": "1039b75d18ba28aedb9246c78f1d471ef3bdc703bf20672c50a393f8e727739a"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6087,
+          36601
+        ],
+        "nonzeros": 12009429,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6087,
+        "cells": 6087,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6087,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6087,
+          "full_source_RNA_counts": 31571394,
+          "selected_RNA_counts": 31571394,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444375.csv.gz",
+            "sha256": "01a055f696e235153ef14238f26254f375d99e5f44913c2645559cf24b56503c"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444376",
+      "donor_id": "S14",
+      "source_metadata": {
+        "title": [
+          "S14, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444376"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070846",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633751"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444376/suppl/GSM8444376_S14_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444376",
+        "source_GEO_title": "S14, GEX",
+        "source_participant_code": "S14",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444376/suppl/GSM8444376_S14_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444376_S14_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444376/suppl/GSM8444376_S14_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444376_S14_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 17919843,
+          "sha256": "6f3ce5f5576f9604d33010663fa7945de3ca97491246fba5bac2c10a9192cf3b"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6020,
+          36601
+        ],
+        "nonzeros": 12414646,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6020,
+        "cells": 6020,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6020,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6020,
+          "full_source_RNA_counts": 34938192,
+          "selected_RNA_counts": 34938192,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444376.csv.gz",
+            "sha256": "aa6d643d8d12b2dbcf7d0913245a8fb8e0a0987b65fd82af805d8c0f0456cefc"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444377",
+      "donor_id": "SE12",
+      "source_metadata": {
+        "title": [
+          "SE12, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444377"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070845",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633752"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444377/suppl/GSM8444377_SE12_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444377",
+        "source_GEO_title": "SE12, GEX",
+        "source_participant_code": "SE12",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444377/suppl/GSM8444377_SE12_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444377_SE12_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444377/suppl/GSM8444377_SE12_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444377_SE12_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 18259730,
+          "sha256": "77f9a9393371cfe9e531b43ab1c492897880cb83a1ad74cbbfd54e30821014a7"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6882,
+          36601
+        ],
+        "nonzeros": 12517664,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6882,
+        "cells": 6882,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6882,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6882,
+          "full_source_RNA_counts": 36165320,
+          "selected_RNA_counts": 36165320,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444377.csv.gz",
+            "sha256": "219ab4a0d8472ff0b7e6d415cb9cff6ee43a9f4f609ca6f1b7298746d967aff1"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444378",
+      "donor_id": "SI19",
+      "source_metadata": {
+        "title": [
+          "SI19, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444378"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: patient"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070844",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633753"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444378/suppl/GSM8444378_SI19_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444378",
+        "source_GEO_title": "SI19, GEX",
+        "source_participant_code": "SI19",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "primary antiphospholipid syndrome",
+        "source_group_as_reported": "patient",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"patient\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444378/suppl/GSM8444378_SI19_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444378_SI19_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444378/suppl/GSM8444378_SI19_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444378_SI19_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 22282627,
+          "sha256": "b4ee665470fa7b8a93c4d05c27cdc24e2022f20c5c2078436082d99c78a4ec16"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6640,
+          36601
+        ],
+        "nonzeros": 15609249,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6640,
+        "cells": 6640,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6640,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6640,
+          "full_source_RNA_counts": 44224107,
+          "selected_RNA_counts": 44224107,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444378.csv.gz",
+            "sha256": "8138c87ca99625cb394df351a03f15c582a08523cf2ac74bfa5ea124c67eee79"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444379",
+      "donor_id": "ST13",
+      "source_metadata": {
+        "title": [
+          "ST13, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444379"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070843",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633754"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444379/suppl/GSM8444379_ST13_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444379",
+        "source_GEO_title": "ST13, GEX",
+        "source_participant_code": "ST13",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444379/suppl/GSM8444379_ST13_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444379_ST13_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444379/suppl/GSM8444379_ST13_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444379_ST13_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 16776918,
+          "sha256": "e678702a5d4a554679fefe63f0fcf9ae2c424fb9203325d392bd75fcf9c3a5b1"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6409,
+          36601
+        ],
+        "nonzeros": 11433931,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6409,
+        "cells": 6409,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6409,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6409,
+          "full_source_RNA_counts": 33292618,
+          "selected_RNA_counts": 33292618,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444379.csv.gz",
+            "sha256": "93db64d653f7d78d732dacebe0e3e9c1f71bbac61a273aa2d51642b05d75df89"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444380",
+      "donor_id": "TI11",
+      "source_metadata": {
+        "title": [
+          "TI11, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444380"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070842",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633755"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444380/suppl/GSM8444380_TI11_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444380",
+        "source_GEO_title": "TI11, GEX",
+        "source_participant_code": "TI11",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444380/suppl/GSM8444380_TI11_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444380_TI11_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444380/suppl/GSM8444380_TI11_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444380_TI11_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 21000025,
+          "sha256": "c24f23c34845b09b2dd3bbec19567230fff89fb85833873aac1bce626bfca34d"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          7928,
+          36601
+        ],
+        "nonzeros": 14416121,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 7928,
+        "cells": 7928,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7928,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7928,
+          "full_source_RNA_counts": 44071827,
+          "selected_RNA_counts": 44071827,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444380.csv.gz",
+            "sha256": "b9482d9c5358754a851406d0ad753dcb5006f1585614d3759827caa60e308709"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM8444381",
+      "donor_id": "Y15",
+      "source_metadata": {
+        "title": [
+          "Y15, GEX"
+        ],
+        "geo_accession": [
+          "GSM8444381"
+        ],
+        "status": [
+          "Public on Oct 08 2024"
+        ],
+        "submission_date": [
+          "Aug 07 2024"
+        ],
+        "last_update_date": [
+          "Oct 08 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "cell line: Primary cells",
+          "cell type: B cells",
+          "group: control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated blood from five PAPS patients and two HD. Total B cells were isolated with the EasySep\u2122 Human B-cell Isolation Kit (Stemcell Technologies). B cells were resuspended at 10x106/mL and incubated with Human TruStain FcX Fc Blocking reagent for 10min at 4\u00b0C. Cells were then incubated with the 10 following antibodies conjugated to an antibody-derived tag for 30 min at 4\u00b0C : CD19 (HIB19,TotalSeq, BioLegend) CD27 (0323), CD24 (ML5), CD38 (HIT2), CD5 (UCHT2), HLA-DR (L243), CD86 (IT2.2), IgM (MHM-88), IgD (IA6-2), CD21 (Bu32).",
+          "The scRNA-seq libraries were generated using Chromium Next GEM Single Cell 5\u2019 V(D)J Reagent Kit v.1.1 with Feature Barcoding (10X Genomics) according to the manufacturer\u2019s protocol. Gene expression (mRNA), ADT and VDJ BCR libraries were constructed. Briefly, cells were counted and up to 10 000 cells were loaded in the 10X Genomics Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR. The purified libraries were sequenced on a Novaseq S2 flowcell (Illumina)."
+        ],
+        "description": [
+          "10x Genomics 3\u2019"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome using the CellRanger Pipeline v8",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.1 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "To evaluate the expression of the 11 surface protein, the antibody-derived tags (ADT) counts for the cells retained after filtering were loaded in the integrated seurat object and normalised using the CLR normalisation method.",
+          "BCR reads were aligned to the GRCh38 reference genome (vdj_GRCh38_alts_ensembl-5.0.0) and consensus BCR annotation was performed using the cellranger vdj program (v8.0.0)",
+          "Assembly: GRCh38-2020-A and vdj_GRCh38_alts_ensembl-5.0.0",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples",
+          "Library strategy: CITE-Seq"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "other"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "OTHER"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN43070841",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25633756"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444381/suppl/GSM8444381_Y15_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE262240"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8444381",
+        "source_GEO_title": "Y15, GEX",
+        "source_participant_code": "Y15",
+        "source_visit_code": "unspecified_source_draw",
+        "source_capture_label": "PBMC_derived_selected_B_cells",
+        "condition": "healthy donor",
+        "source_group_as_reported": "control",
+        "source_characteristics_json": "{\"cell line\": \"Primary cells\", \"cell type\": \"B cells\", \"group\": \"control\", \"tissue\": \"Peripheral blood\"}",
+        "source_count_carrier_level": "sample",
+        "source_count_carrier_URL": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444381/suppl/GSM8444381_Y15_filtered_feature_bc_matrix.h5",
+        "source_age_as_reported": "unavailable",
+        "source_age_unit": "not_explicit_in_GEO_field",
+        "source_sex_as_reported": "unavailable",
+        "sex": "unavailable",
+        "source_specimen": "PBMC-derived magnetically selected total B-cell fraction",
+        "source_identity_policy": "Primary scRNA methods specify10PAPS patients/7healthy donors, matching17originalGEXcodes. Nine per-GSM H5carriers plus eight exact participant-named series-level H5carriers cover all17. Original per-GSM NONE strings preserved; no invented per-GSM URL or renamed source file.",
+        "source_protocol_version_policy": "GEO extraction string says5patients/2HD; primary final scRNA methods specify10patients/7HD. Preserve original source strings and final primary cohort statement; do not rewrite deposited protocol.",
+        "source_coverage_policy": "B-cell enrichment restricts lineage coverage. Missing other PBMC types are unavailable, not zero; enrichment does not override SCimilarity labels.",
+        "source_processing_policy": "Original typed RNA integer counts/native genes retained. ADT excluded from RNA denominators; no SCT/integrated expression, BCR-linked filtering, receptor repertoire or functional experiments reproduced.",
+        "source_demographic_policy": "Retain individual age/gender only where explicitly supplied in the original record; unavailable elsewhere. No borrowing from other records or numerical code suffix inference.",
+        "split_assignment": "unassigned; preserve source participant code; global cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM8444381_Y15_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8444nnn/GSM8444381/suppl/GSM8444381_Y15_filtered_feature_bc_matrix.h5",
+          "filename": "GSM8444381_Y15_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 16415807,
+          "sha256": "4c23c66b2ab1b84f3f0fbd1f7ce0aab47868bde339650daff9a5b4e1578721b6"
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          5381,
+          36601
+        ],
+        "nonzeros": 11374401,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5381,
+        "cells": 5381,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE262240_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "edc484f662a20b355de3c7cf02b05a62b7f9ab80b4ecada4c5754f07b4394ffc"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5381,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5381,
+          "full_source_RNA_counts": 31996144,
+          "selected_RNA_counts": 31996144,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE262240_original_RNA_QC/GSM8444381.csv.gz",
+            "sha256": "e74bda3315ed2c291ecfe8b378c9a78badea10d3411c6d39a3c666790ad8492f"
+          }
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "17originalPBMCderived Bcell draws/17source people;10PAPS+7healthy;8per-recordNONE entries resolved through original series-level H5s"
+}

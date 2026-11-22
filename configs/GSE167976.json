@@ -1,0 +1,68 @@
+{
+  "dataset_id": "GSE167976",
+  "study_id": "GSE167976",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE167976_complete_original_RNA_audit.json",
+    "bytes": 15482,
+    "sha256": "ee77cad367df217e47ff46144800d7cd109ca656afcc2f4918a7b970938e2323"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE167976_source_identity_review.json",
+    "bytes": 11239,
+    "sha256": "dfad65e49d931c11d4ff100a02fa568bc88e3fe3973f27a5d8db32cde71482b6"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_physical_specimen_key"
+  ],
+  "sample_mapping_evidence": "Exact deposited cell_ID join to count barcodes; author sample_name joins exact original GEOtitle. Donor comes from author donor field and is checked against GEO. B5.a/B5.b share donor and literal blood date and receive one conservative physical key. No ordinal, barcode suffix, genetic-field or expression inference. Repeated source donors remain linked; globalaliases unresolved.",
+  "physical_sample_mapping_evidence": "29explicit original sample_name/GEOtitle views,24author donor codes. B5.a/B5.b share donor B5 and literal blood_sampling_date11/6/17 across V2/V3; conservatively one specimen group, two dependent assay views. Other dated repeated donor samples have distinct source dates. Blank healthy donor dates stay source-record qualified.28conservative specimen/material groups; exact intraday aliquot relationship and global aliases unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_original_blood_sampling_date",
+      "age": "source_original_age_at_blood_sampling_years",
+      "sex": "source_original_sex"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE167976",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE167976",
+    "primary_PMID": "33833438",
+    "primary_PMCID": "PMC8173714",
+    "access": "Public original human CD4 RNA count matrix with author per-cell coded sample metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE167976_source_identity_review.json",
+      "bytes": 11239,
+      "sha256": "dfad65e49d931c11d4ff100a02fa568bc88e3fe3973f27a5d8db32cde71482b6"
+    },
+    "source_unit": "29explicit original sample_name/GEOtitle views,24author donor codes. B5.a/B5.b share donor B5 and literal blood_sampling_date11/6/17 across V2/V3; conservatively one specimen group, two dependent assay views. Other dated repeated donor samples have distinct source dates. Blank healthy donor dates stay source-record qualified.28conservative specimen/material groups; exact intraday aliquot relationship and global aliases unresolved.",
+    "identity_policy": "Exact deposited cell_ID join to count barcodes; author sample_name joins exact original GEOtitle. Donor comes from author donor field and is checked against GEO. B5.a/B5.b share donor and literal blood date and receive one conservative physical key. No ordinal, barcode suffix, genetic-field or expression inference. Repeated source donors remain linked; globalaliases unresolved.",
+    "clinical_policy": "All93original author per-cell fields retained literally, including source genotype labels IPEX/HD/Het, age,sex,reported blood date,treatment,clinical,technical and author cluster fields. Dates not reformatted; no family relationships inferred from numbering or genetic fields. Author clinical/cluster/doublet fields not independently validated. Collection phase uses original clinical-visit description without inferred treatment timeline.",
+    "reuse_policy": "29original human CD4 RNAviews only; mouse cohorts, bulk population RNA and broader flow cohorts do not add scRNA specimens. No completed original/publication match found; cross-study uniqueness unproven.",
+    "selection_policy": "CD4 T cells flow-sorted from frozen PBMCs; V2 separate donor channels versus hashtag-pooled V3. Use explicit provided per-cell assignments, not author hashtag sequences alone. Cell type coverage is selected; missing non-CD4 lineages remain absent.",
+    "cell_calling_policy": "Provided author cell set, with own fixed RNAQC recomputed. Source cached nCount_RNA/nFeature_RNA match all native cells. Source doublet scores, cluster labels and genetic/clinical fields remain literal author metadata, not independently validated calls. Unrestricted SCimilarity annotation independent of author clusters.",
+    "gene_policy": "All33660literal source RNA symbols are unique and retained unchanged. No Ensembl IDs inferred; no gene intersection, symbol modernization, zero filling or selected-marker geometry.",
+    "count_semantics": "Original deposited integer gene-by-cell RNA matrix with33660symbols and55656author-labelled cells. Every stored count independently checked; own RNAQC/normalization uses all supplied native RNA genes. Source cached RNAQC discrepancies recorded; counts not changed to match cached values.",
+    "source_limitations": "Selected CD4 compartment; V2/V3 and pooled/separate capture differences retained. B5pairedviews same reported collection date conservatively grouped; exact aliquot relation unresolved. Dates literal/unparsed. No family/genetic identity inference, clinical efficacy,causal,biological annotation orconstellation validation."
+  }
+}

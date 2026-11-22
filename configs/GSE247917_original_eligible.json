@@ -1,0 +1,85 @@
+{
+  "dataset_id": "GSE247917_original_eligible",
+  "study_id": "GSE247917",
+  "input_format": "ivanova_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_columns": [
+    "sampleName",
+    "source_capture_prefix"
+  ],
+  "physical_sample_columns": [
+    "sampleName"
+  ],
+  "sample_mapping_evidence": "Exact original sampleName plus literal capture prefix; preserve technical captures as separate dependent centroid views.",
+  "physical_sample_mapping_evidence": "Original sampleName labels,52non-LBsource material groups across14source donor codes. Technical capture prefixes are dependent views, not draws. Repeated visits share donor identity. Two LB labels are material-only holds; no assumption that they are independent draws or duplicates.",
+  "eligible_for_sample_checkpoint": true,
+  "exclude_source_values": {
+    "source_material_review_status": [
+      "unresolved_LB"
+    ]
+  },
+  "source_asset": {
+    "filename": "GSE247917_cv19_combined_obj.rds.gz",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE247nnn/GSE247917/suppl/GSE247917_cv19_combined_obj.rds.gz",
+    "expected_bytes": 13508063949,
+    "sha256": "a7624eb59e44a037d8e7e3c077d04ba96adc0da7bbe6aaa4f141fd607a02e04a"
+  },
+  "native_export_receipt": {
+    "path": "references/datasets/Ivanova2023_original_native_RNA_export.json",
+    "sha256": "f576a3b6c633e63373c8b00a10248b5894fd34b4d44529f64a773cc1599b8239"
+  },
+  "independent_native_validation": {
+    "path": "references/datasets/Ivanova2023_original_native_RNA_python_validation.json",
+    "sha256": "be43316fc273a940e3f4d6455ef8c44c30e70b2cdb1f11500c2187e5208127f6"
+  },
+  "exact_repeat_review": {
+    "path": "references/datasets/Ivanova2023_exact_repeated_original_RNA_review.json",
+    "sha256": "6cca720c2e4e7734cb84942dc2842e946900f892a8adbc09a62e9ed37e87070a"
+  },
+  "retention_plan": {
+    "path": "references/datasets/Ivanova2023_original_RNA_python_proof/original_cell_retention_plan.csv.gz",
+    "sha256": "064e2650f2e9765046dd1bfaae0f4d98091f678776caad8d7f6d877d1e2c83f6"
+  },
+  "metadata_assignments": {
+    "path": "references/datasets/Ivanova2023_original_RNA_python_proof/processing_metadata_assignments.csv.gz",
+    "sha256": "91b44a905903eaad250695445edeaed0339cafe1d39c1c39b5c1aeb8cf791475"
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "group",
+      "sex": "source_table_sex"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE247917",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE247917",
+    "publication": "https://doi.org/10.1016/j.isci.2023.108572",
+    "access": "Public original Seurat native RNA count slot; derived compact bundle is explicitly pinned to the upstream source.",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE247917_source_identity_review.json",
+      "sha256": "d2444b816a110aad4985a2ed663be57f2adf0ced4c63c86aa1e511782138c3ce"
+    },
+    "phase": "eligible",
+    "expected": {
+      "source_material_labels": 52,
+      "source_donors": 14,
+      "observation_views": 56,
+      "selected_source_rows": 183057,
+      "retained_cells": 180934
+    }
+  }
+}

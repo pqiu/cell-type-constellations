@@ -1,0 +1,4020 @@
+{
+  "dataset_id": "GSE285335_genes001",
+  "study_id": "GSE285335",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "26 distinct GEO subject labels:11 Early/6 Late IgAN/9 Healthy. One blood observation each; author stage partly uses clinical follow-up, not purely baseline eGFR. Full titles/GSM identify participants. Batch8v1.1/18v2.0 recorded.",
+  "source_metadata": {
+    "accession": "GSE285335",
+    "publication": "https://pubmed.ncbi.nlm.nih.gov/41466033/",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285335",
+    "access": "PublicoriginalCellRangerRNAtriplets",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_processing": [
+      "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+      "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+      "Assembly: Human hg38",
+      "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+    ],
+    "gene_coordinate_sha256": "6bacbd038808fc3ccc6d340d24c48b1db76aa0b57a8fb9033e607fe1774a4a97",
+    "demographics": "Age/sex unavailable inGEOspecimenrecords; no imputation",
+    "source_enrichment": "FicollPBMC,live-cellFACS",
+    "primary_doi": "10.1038/s41598-025-31213-9"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8700986",
+      "donor_id": "Patients-Late_group#1",
+      "source_metadata": {
+        "title": [
+          "Patients-Late_group#1"
+        ],
+        "geo_accession": [
+          "GSM8700986"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Late",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_L1",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965481",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186565"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700986/suppl/GSM8700986_L1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700986/suppl/GSM8700986_L1_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700986/suppl/GSM8700986_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700986/suppl/GSM8700986_features.tsv.gz",
+          "filename": "GSM8700986_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700986/suppl/GSM8700986_L1_barcodes.tsv.gz",
+          "filename": "GSM8700986_L1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700986/suppl/GSM8700986_L1_matrix.mtx.gz",
+          "filename": "GSM8700986_L1_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Late",
+        "source_patient_label": "Patients-Late_group#1",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700986_features.tsv.gz",
+      "barcodes_member": "GSM8700986_L1_barcodes.tsv.gz",
+      "matrix_member": "GSM8700986_L1_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10750
+        ],
+        "nonzeros": 16016549,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700987",
+      "donor_id": "Patients-Late_group#2",
+      "source_metadata": {
+        "title": [
+          "Patients-Late_group#2"
+        ],
+        "geo_accession": [
+          "GSM8700987"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Late",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_L2",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965480",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186567"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700987/suppl/GSM8700987_L2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700987/suppl/GSM8700987_L2_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700987/suppl/GSM8700987_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700987/suppl/GSM8700987_features.tsv.gz",
+          "filename": "GSM8700987_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700987/suppl/GSM8700987_L2_barcodes.tsv.gz",
+          "filename": "GSM8700987_L2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700987/suppl/GSM8700987_L2_matrix.mtx.gz",
+          "filename": "GSM8700987_L2_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Late",
+        "source_patient_label": "Patients-Late_group#2",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700987_features.tsv.gz",
+      "barcodes_member": "GSM8700987_L2_barcodes.tsv.gz",
+      "matrix_member": "GSM8700987_L2_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          12070
+        ],
+        "nonzeros": 15511593,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700988",
+      "donor_id": "Patients-Late_group#3",
+      "source_metadata": {
+        "title": [
+          "Patients-Late_group#3"
+        ],
+        "geo_accession": [
+          "GSM8700988"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Late",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_L3",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965479",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186568"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700988/suppl/GSM8700988_L3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700988/suppl/GSM8700988_L3_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700988/suppl/GSM8700988_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700988/suppl/GSM8700988_features.tsv.gz",
+          "filename": "GSM8700988_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700988/suppl/GSM8700988_L3_barcodes.tsv.gz",
+          "filename": "GSM8700988_L3_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700988/suppl/GSM8700988_L3_matrix.mtx.gz",
+          "filename": "GSM8700988_L3_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Late",
+        "source_patient_label": "Patients-Late_group#3",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700988_features.tsv.gz",
+      "barcodes_member": "GSM8700988_L3_barcodes.tsv.gz",
+      "matrix_member": "GSM8700988_L3_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10931
+        ],
+        "nonzeros": 21025972,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700989",
+      "donor_id": "Patients-Late_group#4",
+      "source_metadata": {
+        "title": [
+          "Patients-Late_group#4"
+        ],
+        "geo_accession": [
+          "GSM8700989"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Late",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_L4",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965478",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186569"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700989/suppl/GSM8700989_L4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700989/suppl/GSM8700989_L4_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700989/suppl/GSM8700989_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700989/suppl/GSM8700989_features.tsv.gz",
+          "filename": "GSM8700989_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700989/suppl/GSM8700989_L4_barcodes.tsv.gz",
+          "filename": "GSM8700989_L4_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700989/suppl/GSM8700989_L4_matrix.mtx.gz",
+          "filename": "GSM8700989_L4_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Late",
+        "source_patient_label": "Patients-Late_group#4",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700989_features.tsv.gz",
+      "barcodes_member": "GSM8700989_L4_barcodes.tsv.gz",
+      "matrix_member": "GSM8700989_L4_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11044
+        ],
+        "nonzeros": 20882647,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700990",
+      "donor_id": "Patients-Late_group#5",
+      "source_metadata": {
+        "title": [
+          "Patients-Late_group#5"
+        ],
+        "geo_accession": [
+          "GSM8700990"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Late",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_L5",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965477",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186570"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700990/suppl/GSM8700990_L5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700990/suppl/GSM8700990_L5_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700990/suppl/GSM8700990_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700990/suppl/GSM8700990_features.tsv.gz",
+          "filename": "GSM8700990_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700990/suppl/GSM8700990_L5_barcodes.tsv.gz",
+          "filename": "GSM8700990_L5_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700990/suppl/GSM8700990_L5_matrix.mtx.gz",
+          "filename": "GSM8700990_L5_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Late",
+        "source_patient_label": "Patients-Late_group#5",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700990_features.tsv.gz",
+      "barcodes_member": "GSM8700990_L5_barcodes.tsv.gz",
+      "matrix_member": "GSM8700990_L5_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          16589
+        ],
+        "nonzeros": 27079410,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700991",
+      "donor_id": "Patients-Late_group#6",
+      "source_metadata": {
+        "title": [
+          "Patients-Late_group#6"
+        ],
+        "geo_accession": [
+          "GSM8700991"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Late",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_L6",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965476",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186571"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700991/suppl/GSM8700991_L6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700991/suppl/GSM8700991_L6_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700991/suppl/GSM8700991_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700991/suppl/GSM8700991_features.tsv.gz",
+          "filename": "GSM8700991_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700991/suppl/GSM8700991_L6_barcodes.tsv.gz",
+          "filename": "GSM8700991_L6_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700991/suppl/GSM8700991_L6_matrix.mtx.gz",
+          "filename": "GSM8700991_L6_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Late",
+        "source_patient_label": "Patients-Late_group#6",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700991_features.tsv.gz",
+      "barcodes_member": "GSM8700991_L6_barcodes.tsv.gz",
+      "matrix_member": "GSM8700991_L6_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          8770
+        ],
+        "nonzeros": 18122108,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700992",
+      "donor_id": "Patients-Early_group#1",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#1"
+        ],
+        "geo_accession": [
+          "GSM8700992"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_E1",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965475",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186572"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700992/suppl/GSM8700992_E1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700992/suppl/GSM8700992_E1_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700992/suppl/GSM8700992_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700992/suppl/GSM8700992_features.tsv.gz",
+          "filename": "GSM8700992_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700992/suppl/GSM8700992_E1_barcodes.tsv.gz",
+          "filename": "GSM8700992_E1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700992/suppl/GSM8700992_E1_matrix.mtx.gz",
+          "filename": "GSM8700992_E1_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#1",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700992_features.tsv.gz",
+      "barcodes_member": "GSM8700992_E1_barcodes.tsv.gz",
+      "matrix_member": "GSM8700992_E1_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11793
+        ],
+        "nonzeros": 17477235,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700993",
+      "donor_id": "Patients-Early_group#2",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#2"
+        ],
+        "geo_accession": [
+          "GSM8700993"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_E2",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965474",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186573"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700993/suppl/GSM8700993_E2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700993/suppl/GSM8700993_E2_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700993/suppl/GSM8700993_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700993/suppl/GSM8700993_features.tsv.gz",
+          "filename": "GSM8700993_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700993/suppl/GSM8700993_E2_barcodes.tsv.gz",
+          "filename": "GSM8700993_E2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700993/suppl/GSM8700993_E2_matrix.mtx.gz",
+          "filename": "GSM8700993_E2_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#2",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700993_features.tsv.gz",
+      "barcodes_member": "GSM8700993_E2_barcodes.tsv.gz",
+      "matrix_member": "GSM8700993_E2_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11695
+        ],
+        "nonzeros": 17146438,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700994",
+      "donor_id": "Patients-Early_group#3",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#3"
+        ],
+        "geo_accession": [
+          "GSM8700994"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E3",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965473",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186574"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700994/suppl/GSM8700994_E3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700994/suppl/GSM8700994_E3_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700994/suppl/GSM8700994_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700994/suppl/GSM8700994_features.tsv.gz",
+          "filename": "GSM8700994_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700994/suppl/GSM8700994_E3_barcodes.tsv.gz",
+          "filename": "GSM8700994_E3_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700994/suppl/GSM8700994_E3_matrix.mtx.gz",
+          "filename": "GSM8700994_E3_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#3",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700994_features.tsv.gz",
+      "barcodes_member": "GSM8700994_E3_barcodes.tsv.gz",
+      "matrix_member": "GSM8700994_E3_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          7194
+        ],
+        "nonzeros": 13667942,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700995",
+      "donor_id": "Patients-Early_group#4",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#4"
+        ],
+        "geo_accession": [
+          "GSM8700995"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E4",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965472",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186575"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700995/suppl/GSM8700995_E4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700995/suppl/GSM8700995_E4_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700995/suppl/GSM8700995_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700995/suppl/GSM8700995_features.tsv.gz",
+          "filename": "GSM8700995_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700995/suppl/GSM8700995_E4_barcodes.tsv.gz",
+          "filename": "GSM8700995_E4_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700995/suppl/GSM8700995_E4_matrix.mtx.gz",
+          "filename": "GSM8700995_E4_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#4",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700995_features.tsv.gz",
+      "barcodes_member": "GSM8700995_E4_barcodes.tsv.gz",
+      "matrix_member": "GSM8700995_E4_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10866
+        ],
+        "nonzeros": 19012460,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700996",
+      "donor_id": "Patients-Early_group#5",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#5"
+        ],
+        "geo_accession": [
+          "GSM8700996"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E5",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965471",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186576"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700996/suppl/GSM8700996_E5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700996/suppl/GSM8700996_E5_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700996/suppl/GSM8700996_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700996/suppl/GSM8700996_features.tsv.gz",
+          "filename": "GSM8700996_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700996/suppl/GSM8700996_E5_barcodes.tsv.gz",
+          "filename": "GSM8700996_E5_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700996/suppl/GSM8700996_E5_matrix.mtx.gz",
+          "filename": "GSM8700996_E5_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#5",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700996_features.tsv.gz",
+      "barcodes_member": "GSM8700996_E5_barcodes.tsv.gz",
+      "matrix_member": "GSM8700996_E5_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11646
+        ],
+        "nonzeros": 23058908,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700997",
+      "donor_id": "Patients-Early_group#6",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#6"
+        ],
+        "geo_accession": [
+          "GSM8700997"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E6",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965470",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186577"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700997/suppl/GSM8700997_E6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700997/suppl/GSM8700997_E6_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700997/suppl/GSM8700997_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700997/suppl/GSM8700997_features.tsv.gz",
+          "filename": "GSM8700997_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700997/suppl/GSM8700997_E6_barcodes.tsv.gz",
+          "filename": "GSM8700997_E6_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700997/suppl/GSM8700997_E6_matrix.mtx.gz",
+          "filename": "GSM8700997_E6_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#6",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700997_features.tsv.gz",
+      "barcodes_member": "GSM8700997_E6_barcodes.tsv.gz",
+      "matrix_member": "GSM8700997_E6_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10648
+        ],
+        "nonzeros": 20604062,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700998",
+      "donor_id": "Patients-Early_group#7",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#7"
+        ],
+        "geo_accession": [
+          "GSM8700998"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E7",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965469",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186578"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700998/suppl/GSM8700998_E7_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700998/suppl/GSM8700998_E7_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700998/suppl/GSM8700998_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700998/suppl/GSM8700998_features.tsv.gz",
+          "filename": "GSM8700998_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700998/suppl/GSM8700998_E7_barcodes.tsv.gz",
+          "filename": "GSM8700998_E7_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700998/suppl/GSM8700998_E7_matrix.mtx.gz",
+          "filename": "GSM8700998_E7_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#7",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700998_features.tsv.gz",
+      "barcodes_member": "GSM8700998_E7_barcodes.tsv.gz",
+      "matrix_member": "GSM8700998_E7_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11064
+        ],
+        "nonzeros": 21352157,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8700999",
+      "donor_id": "Patients-Early_group#8",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#8"
+        ],
+        "geo_accession": [
+          "GSM8700999"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E8",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965468",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186579"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700999/suppl/GSM8700999_E8_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700999/suppl/GSM8700999_E8_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700999/suppl/GSM8700999_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700999/suppl/GSM8700999_features.tsv.gz",
+          "filename": "GSM8700999_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700999/suppl/GSM8700999_E8_barcodes.tsv.gz",
+          "filename": "GSM8700999_E8_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8700nnn/GSM8700999/suppl/GSM8700999_E8_matrix.mtx.gz",
+          "filename": "GSM8700999_E8_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#8",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8700999_features.tsv.gz",
+      "barcodes_member": "GSM8700999_E8_barcodes.tsv.gz",
+      "matrix_member": "GSM8700999_E8_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11890
+        ],
+        "nonzeros": 24643882,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701000",
+      "donor_id": "Patients-Early_group#9",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#9"
+        ],
+        "geo_accession": [
+          "GSM8701000"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E9",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965467",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186580"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701000/suppl/GSM8701000_E9_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701000/suppl/GSM8701000_E9_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701000/suppl/GSM8701000_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701000/suppl/GSM8701000_features.tsv.gz",
+          "filename": "GSM8701000_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701000/suppl/GSM8701000_E9_barcodes.tsv.gz",
+          "filename": "GSM8701000_E9_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701000/suppl/GSM8701000_E9_matrix.mtx.gz",
+          "filename": "GSM8701000_E9_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#9",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701000_features.tsv.gz",
+      "barcodes_member": "GSM8701000_E9_barcodes.tsv.gz",
+      "matrix_member": "GSM8701000_E9_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          9499
+        ],
+        "nonzeros": 20467797,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701001",
+      "donor_id": "Patients-Early_group#10",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#10"
+        ],
+        "geo_accession": [
+          "GSM8701001"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E10",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965466",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186581"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701001/suppl/GSM8701001_E10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701001/suppl/GSM8701001_E10_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701001/suppl/GSM8701001_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701001/suppl/GSM8701001_features.tsv.gz",
+          "filename": "GSM8701001_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701001/suppl/GSM8701001_E10_barcodes.tsv.gz",
+          "filename": "GSM8701001_E10_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701001/suppl/GSM8701001_E10_matrix.mtx.gz",
+          "filename": "GSM8701001_E10_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#10",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701001_features.tsv.gz",
+      "barcodes_member": "GSM8701001_E10_barcodes.tsv.gz",
+      "matrix_member": "GSM8701001_E10_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          12356
+        ],
+        "nonzeros": 26805801,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701002",
+      "donor_id": "Patients-Early_group#11",
+      "source_metadata": {
+        "title": [
+          "Patients-Early_group#11"
+        ],
+        "geo_accession": [
+          "GSM8701002"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Early",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_E11",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965465",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186582"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701002/suppl/GSM8701002_E11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701002/suppl/GSM8701002_E11_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701002/suppl/GSM8701002_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701002/suppl/GSM8701002_features.tsv.gz",
+          "filename": "GSM8701002_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701002/suppl/GSM8701002_E11_barcodes.tsv.gz",
+          "filename": "GSM8701002_E11_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701002/suppl/GSM8701002_E11_matrix.mtx.gz",
+          "filename": "GSM8701002_E11_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "IgA nephropathy",
+        "source_stage": "Early",
+        "source_patient_label": "Patients-Early_group#11",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": true,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701002_features.tsv.gz",
+      "barcodes_member": "GSM8701002_E11_barcodes.tsv.gz",
+      "matrix_member": "GSM8701002_E11_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11254
+        ],
+        "nonzeros": 21341378,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701003",
+      "donor_id": "Healthy_group#1",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#1"
+        ],
+        "geo_accession": [
+          "GSM8701003"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_H1",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965464",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186583"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701003/suppl/GSM8701003_H1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701003/suppl/GSM8701003_H1_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701003/suppl/GSM8701003_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701003/suppl/GSM8701003_features.tsv.gz",
+          "filename": "GSM8701003_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701003/suppl/GSM8701003_H1_barcodes.tsv.gz",
+          "filename": "GSM8701003_H1_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701003/suppl/GSM8701003_H1_matrix.mtx.gz",
+          "filename": "GSM8701003_H1_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#1",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701003_features.tsv.gz",
+      "barcodes_member": "GSM8701003_H1_barcodes.tsv.gz",
+      "matrix_member": "GSM8701003_H1_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10289
+        ],
+        "nonzeros": 14305408,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701004",
+      "donor_id": "Healthy_group#2",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#2"
+        ],
+        "geo_accession": [
+          "GSM8701004"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_H2",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965463",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186584"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701004/suppl/GSM8701004_H2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701004/suppl/GSM8701004_H2_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701004/suppl/GSM8701004_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701004/suppl/GSM8701004_features.tsv.gz",
+          "filename": "GSM8701004_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701004/suppl/GSM8701004_H2_barcodes.tsv.gz",
+          "filename": "GSM8701004_H2_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701004/suppl/GSM8701004_H2_matrix.mtx.gz",
+          "filename": "GSM8701004_H2_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#2",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701004_features.tsv.gz",
+      "barcodes_member": "GSM8701004_H2_barcodes.tsv.gz",
+      "matrix_member": "GSM8701004_H2_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          8405
+        ],
+        "nonzeros": 11428762,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701005",
+      "donor_id": "Healthy_group#3",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#3"
+        ],
+        "geo_accession": [
+          "GSM8701005"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_H3",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965462",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186585"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701005/suppl/GSM8701005_H3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701005/suppl/GSM8701005_H3_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701005/suppl/GSM8701005_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701005/suppl/GSM8701005_features.tsv.gz",
+          "filename": "GSM8701005_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701005/suppl/GSM8701005_H3_barcodes.tsv.gz",
+          "filename": "GSM8701005_H3_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701005/suppl/GSM8701005_H3_matrix.mtx.gz",
+          "filename": "GSM8701005_H3_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#3",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701005_features.tsv.gz",
+      "barcodes_member": "GSM8701005_H3_barcodes.tsv.gz",
+      "matrix_member": "GSM8701005_H3_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10520
+        ],
+        "nonzeros": 14729476,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701006",
+      "donor_id": "Healthy_group#4",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#4"
+        ],
+        "geo_accession": [
+          "GSM8701006"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: First"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: First_H4",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965461",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186586"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701006/suppl/GSM8701006_H4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701006/suppl/GSM8701006_H4_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701006/suppl/GSM8701006_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701006/suppl/GSM8701006_features.tsv.gz",
+          "filename": "GSM8701006_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701006/suppl/GSM8701006_H4_barcodes.tsv.gz",
+          "filename": "GSM8701006_H4_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701006/suppl/GSM8701006_H4_matrix.mtx.gz",
+          "filename": "GSM8701006_H4_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#4",
+        "source_capture_batch": "First",
+        "source_capture_chemistry": "10x5primev1.1",
+        "source_author_QC": "nFeature500-3000;nCount1000-7500",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701006_features.tsv.gz",
+      "barcodes_member": "GSM8701006_H4_barcodes.tsv.gz",
+      "matrix_member": "GSM8701006_H4_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          12459
+        ],
+        "nonzeros": 16526884,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701007",
+      "donor_id": "Healthy_group#5",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#5"
+        ],
+        "geo_accession": [
+          "GSM8701007"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_H5",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965460",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186587"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701007/suppl/GSM8701007_H5_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701007/suppl/GSM8701007_H5_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701007/suppl/GSM8701007_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701007/suppl/GSM8701007_features.tsv.gz",
+          "filename": "GSM8701007_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701007/suppl/GSM8701007_H5_barcodes.tsv.gz",
+          "filename": "GSM8701007_H5_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701007/suppl/GSM8701007_H5_matrix.mtx.gz",
+          "filename": "GSM8701007_H5_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#5",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701007_features.tsv.gz",
+      "barcodes_member": "GSM8701007_H5_barcodes.tsv.gz",
+      "matrix_member": "GSM8701007_H5_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          10241
+        ],
+        "nonzeros": 20278182,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701008",
+      "donor_id": "Healthy_group#6",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#6"
+        ],
+        "geo_accession": [
+          "GSM8701008"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_H6",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965459",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186588"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701008/suppl/GSM8701008_H6_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701008/suppl/GSM8701008_H6_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701008/suppl/GSM8701008_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701008/suppl/GSM8701008_features.tsv.gz",
+          "filename": "GSM8701008_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701008/suppl/GSM8701008_H6_barcodes.tsv.gz",
+          "filename": "GSM8701008_H6_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701008/suppl/GSM8701008_H6_matrix.mtx.gz",
+          "filename": "GSM8701008_H6_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#6",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701008_features.tsv.gz",
+      "barcodes_member": "GSM8701008_H6_barcodes.tsv.gz",
+      "matrix_member": "GSM8701008_H6_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          9561
+        ],
+        "nonzeros": 16924724,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701009",
+      "donor_id": "Healthy_group#7",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#7"
+        ],
+        "geo_accession": [
+          "GSM8701009"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_H7",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965458",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186589"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701009/suppl/GSM8701009_H7_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701009/suppl/GSM8701009_H7_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701009/suppl/GSM8701009_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701009/suppl/GSM8701009_features.tsv.gz",
+          "filename": "GSM8701009_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701009/suppl/GSM8701009_H7_barcodes.tsv.gz",
+          "filename": "GSM8701009_H7_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701009/suppl/GSM8701009_H7_matrix.mtx.gz",
+          "filename": "GSM8701009_H7_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#7",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701009_features.tsv.gz",
+      "barcodes_member": "GSM8701009_H7_barcodes.tsv.gz",
+      "matrix_member": "GSM8701009_H7_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          7874
+        ],
+        "nonzeros": 16644299,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701010",
+      "donor_id": "Healthy_group#8",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#8"
+        ],
+        "geo_accession": [
+          "GSM8701010"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_H8",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965457",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186590"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701010/suppl/GSM8701010_H8_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701010/suppl/GSM8701010_H8_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701010/suppl/GSM8701010_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701010/suppl/GSM8701010_features.tsv.gz",
+          "filename": "GSM8701010_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701010/suppl/GSM8701010_H8_barcodes.tsv.gz",
+          "filename": "GSM8701010_H8_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701010/suppl/GSM8701010_H8_matrix.mtx.gz",
+          "filename": "GSM8701010_H8_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#8",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701010_features.tsv.gz",
+      "barcodes_member": "GSM8701010_H8_barcodes.tsv.gz",
+      "matrix_member": "GSM8701010_H8_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11227
+        ],
+        "nonzeros": 21654992,
+        "integer_nonnegative_counts": true
+      }
+    },
+    {
+      "accession": "GSM8701011",
+      "donor_id": "Healthy_group#9",
+      "source_metadata": {
+        "title": [
+          "Healthy_group#9"
+        ],
+        "geo_accession": [
+          "GSM8701011"
+        ],
+        "status": [
+          "Public on Jan 21 2026"
+        ],
+        "submission_date": [
+          "Dec 25 2024"
+        ],
+        "last_update_date": [
+          "Jan 21 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral blood",
+          "disease state: Healthy",
+          "batch: Second"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The biopsy proven IgAN patients older than 20 years who donated kidney tissue, blood and urine samples to the SNUH human biobank from 2006 to 2019 were included. Healthy subjects with eGFR \u2265 60 mL/min/1.73 m2 were selected as healthy controls. For the analysis of scRNA-seq, 17 patients were selected and the patients were divided into late- and early-stage according to the eGFR value, measured at the time of sample of peripheral blood. Blood samples were collected from a cohort of 26 donors consisting of 17 IgAN patients and 9 volunteer healthy donors and peripheral blood mononuclear cells (PBMCs) were purified using a Ficoll\u2013Histopaque gradient (1.077 g/mL; GE Healthcare Life Sciences, Piscataway, NJ, USA). The samples were stored in liquid nitrogen until analysis, preserved in a freezing medium containing 50% fetal bovine serum. Live PBMCs were subsequently isolated using BD FACSAria\u2122 III (BD Biosciences, Franklin Lakes, NJ, USA).",
+          "Among the 26 subjects, 8 scRNA-Seq libraries were prepared using Chromium Next GEM Single Cell 5' Reagent Kits v1.1 (10x Genomics, Pleasanton, CA, USA) (refer to first batch), while the remaining 18 were processed using Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2.0 (10x Genomics, Pleasanton, CA, USA) (refer to second batch)."
+        ],
+        "description": [
+          "Library name: Second_H9",
+          "10x genomics"
+        ],
+        "data_processing": [
+          "All cell barcodes and gene expression levels were compiled in a table format using Cell Ranger-6.1.1 (10x Genomics, Pleasanton, CA, USA).",
+          "Before analyzing the data, we ensured quality control of the cells across donors, sorting them by batch. For the first batch, we chosen cells with nFeature_RNA counts between 500 and 3,000, and nCount_RNA counts between 1,000 and 7,500. For the second batch, cells were selected based on criteria included nFeature_RNA counts ranging from 1,000 to 3,000, and nCount_RNA counts from 2,500 to 10,000. We normalized the gene expression data for each batch using the scTransform method and integrated the batches through reciprocal principal component analysis (rPCA) using 3,000 variable protein-coding genes, except immunoglobulin and T cell receptor genes. Following this, we performed PCA and Uniform Manifold Approximation and Projection (UMAP) to reduce the high-dimensional data and calculate cell distances using options \u2018dims= 1:20\u2019 through the RunPCA, RunUMAP, and FindNeighbors functions in Seurat R-package. Clusters were identified using the Louvain method with the FindClusters in Seurat R-package. For PBMC subset analysis, cells were reprocessed using the subset functions, followed by a sequential application of RunPCA, RunUMAP, FindNeighbors, and FindClusters functions in Seurat R-package.",
+          "Assembly: Human hg38",
+          "Supplementary files format and content: Cell Ranger software output files including Tab-Separated values files and matrix files(barcodes.tsv, features.tsv, matrix.mtx)"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hang-Rae,,Kim"
+        ],
+        "contact_email": [
+          "hangrae2@snu.ac.kr"
+        ],
+        "contact_department": [
+          "Samsung Precision Genome Mediciine Institute"
+        ],
+        "contact_institute": [
+          "Samsung Medical Center"
+        ],
+        "contact_address": [
+          "81, Irowon-ro, Gangnam-gu"
+        ],
+        "contact_city": [
+          "Seoul"
+        ],
+        "contact_zip/postal_code": [
+          "06351"
+        ],
+        "contact_country": [
+          "South Korea"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45965456",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27186566"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701011/suppl/GSM8701011_H9_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701011/suppl/GSM8701011_H9_matrix.mtx.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701011/suppl/GSM8701011_features.tsv.gz"
+        ],
+        "series_id": [
+          "GSE285335"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701011/suppl/GSM8701011_features.tsv.gz",
+          "filename": "GSM8701011_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701011/suppl/GSM8701011_H9_barcodes.tsv.gz",
+          "filename": "GSM8701011_H9_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8701nnn/GSM8701011/suppl/GSM8701011_H9_matrix.mtx.gz",
+          "filename": "GSM8701011_H9_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_stage": "Healthy",
+        "source_patient_label": "Healthy_group#9",
+        "source_capture_batch": "Second",
+        "source_capture_chemistry": "10x5primev2.0",
+        "source_author_QC": "nFeature1000-3000;nCount2500-10000",
+        "source_design": "One blood observation per participant; author stage partly informed by clinical follow-up",
+        "source_stage_followup_dependent": false,
+        "source_stage_definition": "Early: sampling eGFR>=60 OR mean follow-up eGFR>=30 OR UPCR<3g/g; otherwise Late; final follow-up eGFR<=15 overrides to Late",
+        "source_primary_doi": "10.1038/s41598-025-31213-9"
+      },
+      "genes_member": "GSM8701011_features.tsv.gz",
+      "barcodes_member": "GSM8701011_H9_barcodes.tsv.gz",
+      "matrix_member": "GSM8701011_H9_matrix.mtx.gz",
+      "source_count_review": {
+        "shape": [
+          36601,
+          11828
+        ],
+        "nonzeros": 21707877,
+        "integer_nonnegative_counts": true
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

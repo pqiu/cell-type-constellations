@@ -1,0 +1,374 @@
+{
+  "dataset_id": "GSE212038_genes001",
+  "study_id": "GSE212038",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original GEO explicitly labels unpooled UPN23/UPN29 blood RNA and source individual age/sex. Primary compares unpooled versus pooled assays for the same patients. Canonical unpooled matrices only; no tag-derived donor guesses or extra multiplexed-copy observations.",
+  "source_metadata": {
+    "accession": "GSE212038",
+    "publications": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10366847/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212038",
+    "access": "Public original RNA count triplets",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "The preparation of libraries for sequencing is performed using the NextSeq 500/550 high Output v2 kit protocol (75 cycles, Illumina) . Libraries are denatured in NaOH and mixed in the HT1 buffer (Illumina) to be loaded on the flow cell at 1.8 pM. The libraries are sequenced on a NextSeq 500 with the following parameters: 28 cycles for Read 1, 8 cycles for Index i7 and 55 cycles for Read 2.",
+      "Data processing, alignment, gene quantification and QA/QC: The sequencing data was analyzed using the Cell Ranger Pipeline (version 6.0.2) to perform quality control, the mkfastq to sample demultiplexing, barcode processing, alignment and single cell 3\u2019 gene counting was performed using the cellranger count. Samples were demultiplexed with bcl2fastq based on the 8-bq sample index, 10-bp UMI tags, and the 16-bp GemCode barcode. The 55-bp-long read 2 containing cDNA sequence was aligned using cell Ranger version 3.0.0 and 3.1.0.",
+      "Normalization and correlation of gene expression levels : Each sample was normalized separately using \"log-normalization\" of the Seurat object. To analyze the correlation between the different samples, a first Seurat filter was applied to keep the genes detected in at least 3 cells and to keep the cells that have at least 200 UMI",
+      "PCA and tSNE analysis for cell clustering and classification, and data visualization:  The Cell Ranger count and aggr pipelines were used to run secondary analysis. Before clustering the cells, Principal Component Analysis (PCA) was run on the normalized, log-transformed, centered, and scaled gene-barcodes matrix to reduce the number of feature (gene) dimensions. After running PCA, t-distributed Stochastic Neighbor Embedding (t-SNE) was run to visualize cells in 2-D space. Clustering is then run to group cells together that have similar expression profiles, based on their projection into PCA space. Two clustering methods were performed: graph-based and k-means.  For multiplexed samples, HTO data are processed using the \u201ccite-seq count, v1.4.3\u201d tool ( https://hoohm.github.io/CITE-seq-Count/ & https://zenodo.org/record/2590196). The results are read using the Seurat \"Read10X\" tool (https://satijalab.org/seurat/articles/hashing_vignette.html ). Only common cell barcodes from the HTO (from cite-seq count) and mRNA (from cellranger) data are retained. These barcodes represent the cells detected by cellranger and for which an HTO was assigned. Finally, the HTO arrays are normalized using the Log-Ratio Centered (CLR) method.",
+      "Assembly: GRCh38-2020-A",
+      "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz",
+      "Supplementary files format and content: 10x Genomics normalized tables: *normalized_table.tsv,"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6507608",
+      "donor_id": "UPN23",
+      "source_metadata": {
+        "title": [
+          "UPN23 SC, scRNAseq [FLT3_R252]"
+        ],
+        "geo_accession": [
+          "GSM6507608"
+        ],
+        "status": [
+          "Public on Aug 28 2022"
+        ],
+        "submission_date": [
+          "Aug 25 2022"
+        ],
+        "last_update_date": [
+          "Aug 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral Blood Mononuclear Cells",
+          "tissue: peripheral blood",
+          "Sex: female",
+          "age: 62",
+          "library type: mRNA",
+          "antibodies/tags: none"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Human Peripheral Blood Mononuclear Cells (PBMCs) used in this study are obtained after consent from AML patients. PBMCs were isolated from peripheral blood after centrifugation to separate them from plasma and other peripheral blood components using ficoll-Hystopaque density gradient centrifugation. After the separation of PBMCs from whole blood, the cells were preserved using Cryopreservation that consists of freezing the cells at -80\u00b0C or in liquid nitrogen at -195.79\u00b0C for a long period. For this purpose, PBMCs were stored in a freezing medium (90% FBS and 10% DMSO). Cryopreserved cells in liquid nitrogen were thawed at 37\u00b0C. Cells were rinsed with RPMI 1640 medium to remove the DMSO-containing freezing medium. To enrich the samples with live cells, dead cells were removed using the Dead Cell Removal Kit. Before starting cell labeling, a 50-\u03bcL aliquot containing 1,000,000 cells suspended in a Cell Staining Buffer (CSB) with >95% viability was prepared for each sample. The antibodies used for labeling were TotalSeq -A0251(HTO1) and -A0252 (HTO2) antibody-oligo (Biolegend). Next, we proceeded to the labeling step. For this, 1\u03bcg HTO is added to each cell suspension. The two labeled samples are then incubated for 30 minutes at 4\u00b0C. The cells then undergo 3 successive washes with 3.5 mL of CSB and centrifugation at 400 g for 5 minutes at 5\u00b0C. Finally, the cells are resuspended at a concentration of 1.106 cells/mL in PBS.",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 3\u2019 v2 protocol, 10x Genomics). Briefly, PBMCs labeled with/without HTOs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The preparation of libraries for sequencing is performed using the NextSeq 500/550 high Output v2 kit protocol (75 cycles, Illumina) . Libraries are denatured in NaOH and mixed in the HT1 buffer (Illumina) to be loaded on the flow cell at 1.8 pM. The libraries are sequenced on a NextSeq 500 with the following parameters: 28 cycles for Read 1, 8 cycles for Index i7 and 55 cycles for Read 2.",
+          "Data processing, alignment, gene quantification and QA/QC: The sequencing data was analyzed using the Cell Ranger Pipeline (version 6.0.2) to perform quality control, the mkfastq to sample demultiplexing, barcode processing, alignment and single cell 3\u2019 gene counting was performed using the cellranger count. Samples were demultiplexed with bcl2fastq based on the 8-bq sample index, 10-bp UMI tags, and the 16-bp GemCode barcode. The 55-bp-long read 2 containing cDNA sequence was aligned using cell Ranger version 3.0.0 and 3.1.0.",
+          "Normalization and correlation of gene expression levels : Each sample was normalized separately using \"log-normalization\" of the Seurat object. To analyze the correlation between the different samples, a first Seurat filter was applied to keep the genes detected in at least 3 cells and to keep the cells that have at least 200 UMI",
+          "PCA and tSNE analysis for cell clustering and classification, and data visualization:  The Cell Ranger count and aggr pipelines were used to run secondary analysis. Before clustering the cells, Principal Component Analysis (PCA) was run on the normalized, log-transformed, centered, and scaled gene-barcodes matrix to reduce the number of feature (gene) dimensions. After running PCA, t-distributed Stochastic Neighbor Embedding (t-SNE) was run to visualize cells in 2-D space. Clustering is then run to group cells together that have similar expression profiles, based on their projection into PCA space. Two clustering methods were performed: graph-based and k-means.  For multiplexed samples, HTO data are processed using the \u201ccite-seq count, v1.4.3\u201d tool ( https://hoohm.github.io/CITE-seq-Count/ & https://zenodo.org/record/2590196). The results are read using the Seurat \"Read10X\" tool (https://satijalab.org/seurat/articles/hashing_vignette.html ). Only common cell barcodes from the HTO (from cite-seq count) and mRNA (from cellranger) data are retained. These barcodes represent the cells detected by cellranger and for which an HTO was assigned. Finally, the HTO arrays are normalized using the Log-Ratio Centered (CLR) method.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz",
+          "Supplementary files format and content: 10x Genomics normalized tables: *normalized_table.tsv,"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "MADACI,,LAMIA"
+        ],
+        "contact_email": [
+          "lamia.madaci@inserm.fr"
+        ],
+        "contact_laboratory": [
+          "TAGC/U1090"
+        ],
+        "contact_institute": [
+          "INSERM/TAGC"
+        ],
+        "contact_address": [
+          "Parc Scientifique de Luminy case 928 163, avenue de Luminy"
+        ],
+        "contact_city": [
+          "MARSEILLE"
+        ],
+        "contact_zip/postal_code": [
+          "13009"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN30497962",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17212143"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507608/suppl/GSM6507608_FLT3_R252_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507608/suppl/GSM6507608_FLT3_R252_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507608/suppl/GSM6507608_FLT3_R252_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE212038"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "acute myeloid leukemia",
+        "source_age_years": 62,
+        "source_sex": "female",
+        "source_preparation": "Unpooled peripheral-blood mononuclear-cell RNA capture",
+        "source_count_scope": "Original matrix includes raw droplet-whitelist rows; barcode rows are not called cells. Existing fixed RNA QC applied before AnnData construction.",
+        "source_demographics": "Exact draw dates/disease stage/treatment history not joined; no imputation",
+        "source_alias_review": "Two patients, canonical unpooled RNA captures. The paired UPN23/29 pooled mRNA and HTO captures are alternate assays of these patients, not extra independent specimens.",
+        "source_annotation_limitation": "SCimilarity labels do not establish malignant status or assign genotype to individual cells.",
+        "source_publication": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10366847/"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507608/suppl/GSM6507608_FLT3_R252_features.tsv.gz",
+          "filename": "GSM6507608_FLT3_R252_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507608/suppl/GSM6507608_FLT3_R252_barcodes.tsv.gz",
+          "filename": "GSM6507608_FLT3_R252_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507608/suppl/GSM6507608_FLT3_R252_matrix.mtx.gz",
+          "filename": "GSM6507608_FLT3_R252_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6507608_FLT3_R252_features.tsv.gz",
+      "barcodes_member": "GSM6507608_FLT3_R252_barcodes.tsv.gz",
+      "matrix_member": "GSM6507608_FLT3_R252_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 1101895,
+        "genes": 36601,
+        "nonzeros": 11644251,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 1101895,
+        "RNA_positive_barcode_rows": 558970,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    },
+    {
+      "accession": "GSM6507609",
+      "donor_id": "UPN29",
+      "source_metadata": {
+        "title": [
+          "UPN29 SC, scRNAseq [CBF_R252-255]"
+        ],
+        "geo_accession": [
+          "GSM6507609"
+        ],
+        "status": [
+          "Public on Aug 28 2022"
+        ],
+        "submission_date": [
+          "Aug 25 2022"
+        ],
+        "last_update_date": [
+          "Aug 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Peripheral Blood Mononuclear Cells",
+          "tissue: peripheral blood",
+          "Sex: male",
+          "age: 47",
+          "library type: mRNA",
+          "antibodies/tags: none"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Human Peripheral Blood Mononuclear Cells (PBMCs) used in this study are obtained after consent from AML patients. PBMCs were isolated from peripheral blood after centrifugation to separate them from plasma and other peripheral blood components using ficoll-Hystopaque density gradient centrifugation. After the separation of PBMCs from whole blood, the cells were preserved using Cryopreservation that consists of freezing the cells at -80\u00b0C or in liquid nitrogen at -195.79\u00b0C for a long period. For this purpose, PBMCs were stored in a freezing medium (90% FBS and 10% DMSO). Cryopreserved cells in liquid nitrogen were thawed at 37\u00b0C. Cells were rinsed with RPMI 1640 medium to remove the DMSO-containing freezing medium. To enrich the samples with live cells, dead cells were removed using the Dead Cell Removal Kit. Before starting cell labeling, a 50-\u03bcL aliquot containing 1,000,000 cells suspended in a Cell Staining Buffer (CSB) with >95% viability was prepared for each sample. The antibodies used for labeling were TotalSeq -A0251(HTO1) and -A0252 (HTO2) antibody-oligo (Biolegend). Next, we proceeded to the labeling step. For this, 1\u03bcg HTO is added to each cell suspension. The two labeled samples are then incubated for 30 minutes at 4\u00b0C. The cells then undergo 3 successive washes with 3.5 mL of CSB and centrifugation at 400 g for 5 minutes at 5\u00b0C. Finally, the cells are resuspended at a concentration of 1.106 cells/mL in PBS.",
+          "Library was performed according to the manufacter\u2019s instructions (single cell 3\u2019 v2 protocol, 10x Genomics). Briefly, PBMCs labeled with/without HTOs were resuspended in the master mix and loaded together with partitioning oil and gel beads into the chip to generate the gel bead-in-emulsion (GEM). The poly-A RNA from the cell lysate contained in every single GEM was retrotranscripted to cDNA, which contains an Ilumina R1 primer sequence, Unique Molecular Identifier (UMI) and the 10x Barcode. The pooled barcoded cDNA was then cleaned up with Silane DynaBeads, amplified by PCR and the apropiated sized fragments were selected with SPRIselect reagent for subsequent library construction. During the library construction Ilumina R2 primer sequence, paired-end constructs with P5 and P7 sequences and a sample index were added."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The preparation of libraries for sequencing is performed using the NextSeq 500/550 high Output v2 kit protocol (75 cycles, Illumina) . Libraries are denatured in NaOH and mixed in the HT1 buffer (Illumina) to be loaded on the flow cell at 1.8 pM. The libraries are sequenced on a NextSeq 500 with the following parameters: 28 cycles for Read 1, 8 cycles for Index i7 and 55 cycles for Read 2.",
+          "Data processing, alignment, gene quantification and QA/QC: The sequencing data was analyzed using the Cell Ranger Pipeline (version 6.0.2) to perform quality control, the mkfastq to sample demultiplexing, barcode processing, alignment and single cell 3\u2019 gene counting was performed using the cellranger count. Samples were demultiplexed with bcl2fastq based on the 8-bq sample index, 10-bp UMI tags, and the 16-bp GemCode barcode. The 55-bp-long read 2 containing cDNA sequence was aligned using cell Ranger version 3.0.0 and 3.1.0.",
+          "Normalization and correlation of gene expression levels : Each sample was normalized separately using \"log-normalization\" of the Seurat object. To analyze the correlation between the different samples, a first Seurat filter was applied to keep the genes detected in at least 3 cells and to keep the cells that have at least 200 UMI",
+          "PCA and tSNE analysis for cell clustering and classification, and data visualization:  The Cell Ranger count and aggr pipelines were used to run secondary analysis. Before clustering the cells, Principal Component Analysis (PCA) was run on the normalized, log-transformed, centered, and scaled gene-barcodes matrix to reduce the number of feature (gene) dimensions. After running PCA, t-distributed Stochastic Neighbor Embedding (t-SNE) was run to visualize cells in 2-D space. Clustering is then run to group cells together that have similar expression profiles, based on their projection into PCA space. Two clustering methods were performed: graph-based and k-means.  For multiplexed samples, HTO data are processed using the \u201ccite-seq count, v1.4.3\u201d tool ( https://hoohm.github.io/CITE-seq-Count/ & https://zenodo.org/record/2590196). The results are read using the Seurat \"Read10X\" tool (https://satijalab.org/seurat/articles/hashing_vignette.html ). Only common cell barcodes from the HTO (from cite-seq count) and mRNA (from cellranger) data are retained. These barcodes represent the cells detected by cellranger and for which an HTO was assigned. Finally, the HTO arrays are normalized using the Log-Ratio Centered (CLR) method.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: 10x Genomics output files: barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz",
+          "Supplementary files format and content: 10x Genomics normalized tables: *normalized_table.tsv,"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "MADACI,,LAMIA"
+        ],
+        "contact_email": [
+          "lamia.madaci@inserm.fr"
+        ],
+        "contact_laboratory": [
+          "TAGC/U1090"
+        ],
+        "contact_institute": [
+          "INSERM/TAGC"
+        ],
+        "contact_address": [
+          "Parc Scientifique de Luminy case 928 163, avenue de Luminy"
+        ],
+        "contact_city": [
+          "MARSEILLE"
+        ],
+        "contact_zip/postal_code": [
+          "13009"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN30497961",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17212140"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507609/suppl/GSM6507609_CBF_R252_255_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507609/suppl/GSM6507609_CBF_R252_255_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507609/suppl/GSM6507609_CBF_R252_255_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE212038"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "disease": "acute myeloid leukemia",
+        "source_age_years": 47,
+        "source_sex": "male",
+        "source_preparation": "Unpooled peripheral-blood mononuclear-cell RNA capture",
+        "source_count_scope": "Original matrix includes raw droplet-whitelist rows; barcode rows are not called cells. Existing fixed RNA QC applied before AnnData construction.",
+        "source_demographics": "Exact draw dates/disease stage/treatment history not joined; no imputation",
+        "source_alias_review": "Two patients, canonical unpooled RNA captures. The paired UPN23/29 pooled mRNA and HTO captures are alternate assays of these patients, not extra independent specimens.",
+        "source_annotation_limitation": "SCimilarity labels do not establish malignant status or assign genotype to individual cells.",
+        "source_publication": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10366847/"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507609/suppl/GSM6507609_CBF_R252_255_features.tsv.gz",
+          "filename": "GSM6507609_CBF_R252_255_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507609/suppl/GSM6507609_CBF_R252_255_barcodes.tsv.gz",
+          "filename": "GSM6507609_CBF_R252_255_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6507nnn/GSM6507609/suppl/GSM6507609_CBF_R252_255_matrix.mtx.gz",
+          "filename": "GSM6507609_CBF_R252_255_matrix.mtx.gz"
+        }
+      ],
+      "genes_member": "GSM6507609_CBF_R252_255_features.tsv.gz",
+      "barcodes_member": "GSM6507609_CBF_R252_255_barcodes.tsv.gz",
+      "matrix_member": "GSM6507609_CBF_R252_255_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 2669443,
+        "genes": 36601,
+        "nonzeros": 44953915,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 2669443,
+        "RNA_positive_barcode_rows": 1635171,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "preconversion_min_rna_counts": 500
+}

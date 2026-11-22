@@ -1,0 +1,1249 @@
+{
+  "dataset_id": "GSE306378_genes001",
+  "study_id": "GSE306378",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Six original PBMC draws from six source people: three source NORMAL and three source SLE/primary LN. No longitudinal relationship inferred; treatment and reference-text discrepancies retained.",
+  "source_metadata": {
+    "accession": "GSE306378",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306378",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12895912/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306378",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+    "source_processing": [
+      "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+      "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+      "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+      "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+      "Assembly: hg38",
+      "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE306378_source_identity_review.json",
+      "sha256": "7f73899a45ac749a8cddf447c9a14c458b0fbf174743c1a1b7d165b3ea495df5"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9198093",
+      "donor_id": "N_rep1",
+      "source_metadata": {
+        "title": [
+          "PBMC\uff0cN_rep1"
+        ],
+        "geo_accession": [
+          "GSM9198093"
+        ],
+        "status": [
+          "Public on Jan 01 2026"
+        ],
+        "submission_date": [
+          "Aug 25 2025"
+        ],
+        "last_update_date": [
+          "Jan 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: CD4+ T lymphocytes, B lymphocytes",
+          "genotype: NORMAL",
+          "treatment: Immunosuppressant"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC cell suspensions were filtered using a 40 um nylon cell strainer and red blood cells were removed by 1X Red Blood Cell Lysis Solution (Thermo Fisher, Cat. no. 00-4333-57) . Dissociated cells were washed with 1x DPBS containing 2% FBS. Cells were stained with 0.4% Trypan blue (Thermo Fisher, Cat. no. 14190144) to check the viability on Countess\u5e90 II Automated Cell Counter (Thermo Fisher).",
+          "Using a Chromium Single Cell 3\u2032 Library and Gel Bead Kit v3 (10X Genomics),cell were immediately loaded onto a Chromium Single Cell Processor(10X Genomics) for barcoding of RNA from single cell. Sequencing libraries were constructed according to the manufacturer\u2019s instructions (10\u00d7 Genomics) and then sequenced in a NovaSeq 6000 sequencing system (Illumina, 20012866)."
+        ],
+        "description": [
+          "Library name: Sample1",
+          "10X Genomics"
+        ],
+        "data_processing": [
+          "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+          "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+          "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+          "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "lili,,cheng"
+        ],
+        "contact_email": [
+          "chuanbingh@ahtcm.edu.cn"
+        ],
+        "contact_institute": [
+          "The First Affiliated Hospital of Anhui University of Chinese Medicine"
+        ],
+        "contact_address": [
+          "No. 117, Meishan Road"
+        ],
+        "contact_city": [
+          "Hefei"
+        ],
+        "contact_state": [
+          "Anhui Province"
+        ],
+        "contact_zip/postal_code": [
+          "230012"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN50773839",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30228388"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198093/suppl/GSM9198093_1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198093/suppl/GSM9198093_1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198093/suppl/GSM9198093_1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE306378"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9198093",
+        "source_GEO_title": "PBMC\uff0cN_rep1",
+        "source_participant_code": "N_rep1",
+        "source_visit_code": "single_source_draw",
+        "condition": "NORMAL",
+        "source_disease_as_reported": "NORMAL",
+        "source_specimen": "PBMC",
+        "source_treatment_as_reported": "Immunosuppressant",
+        "source_characteristics_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"genotype\": \"NORMAL\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_BioSample": "SAMN50773839",
+        "source_BioSample_attributes_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"collection_date\": \"missing\", \"genotype\": \"NORMAL\", \"geo_loc_name\": \"missing\", \"source_name\": \"PBMC\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_identity_policy": "Six original PBMC RNA libraries correspond to primary three LN cases and three controls. Source rep labels refer to the six clinical specimens, not extra technical replication. No additional donors inferred from secondary public-data analysis.",
+        "source_coverage_policy": "Original PBMC suspensions and primary Ficoll PBMC isolation support whole-PBMC input. Primary text also calls these monocytes and GEO cell-type field highlights CD4/B cells; no additional sorting protocol established, no lineage selected from the deposited matrices.",
+        "source_preservation_policy": "Primary reports all six libraries prepared together and sequenced together. No per-specimen collection date or cryopreservation status inferred.",
+        "source_missingness_policy": "All GEO records including NORMAL report Immunosuppressant; primary says LN cases received no immunotherapy at enrollment. Preserve unresolved source discrepancy without assigning harmonized treated/untreated status. Clinical Table1 available but numeric patient rows have no verified per-GSM join; no individual ages or laboratory values inferred.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. GEO says mouse genome version hg38; primary explicitly human GRCh38. Native human gene coordinates must independently pass audit. Original source text/version differences retained; no normalized/integrated values used.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198093/suppl/GSM9198093_1_features.tsv.gz",
+          "filename": "GSM9198093_1_features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "481b723cc42e05464ad0e548fd685b6307b55aa321813335996e0f348ac3aa4a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198093/suppl/GSM9198093_1_barcodes.tsv.gz",
+          "filename": "GSM9198093_1_barcodes.tsv.gz",
+          "expected_bytes": 70868,
+          "sha256": "36440922d8b09ccb8eec65f3eeb1b062b8c0000549a24be202f032918ce6674d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198093/suppl/GSM9198093_1_matrix.mtx.gz",
+          "filename": "GSM9198093_1_matrix.mtx.gz",
+          "expected_bytes": 84335055,
+          "sha256": "85fe6c1a69e0a8f090bcccb5f74de0b8aff6eb43815344aa230a3ab6cd53f225"
+        }
+      ],
+      "genes_member": "GSM9198093_1_features.tsv.gz",
+      "barcodes_member": "GSM9198093_1_barcodes.tsv.gz",
+      "matrix_member": "GSM9198093_1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 14256,
+        "genes": 33694,
+        "nonzeros": 21674352,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 14256,
+        "RNA_positive_barcode_rows": 14256,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 76762055,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14256,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14256,
+          "source_positive_RNA_barcodes": 14256,
+          "full_source_RNA_counts": 76762055,
+          "selected_RNA_counts": 76762055,
+          "metadata": {
+            "path": "references/datasets/GSE306378_original_RNA_QC/GSM9198093.csv.gz",
+            "sha256": "4dabd6286447be19c2b07a1372c725ee794b52e6511fd64d9f3c61c2aad87d57"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9198094",
+      "donor_id": "N_rep2",
+      "source_metadata": {
+        "title": [
+          "PBMC\uff0cN_rep2"
+        ],
+        "geo_accession": [
+          "GSM9198094"
+        ],
+        "status": [
+          "Public on Jan 01 2026"
+        ],
+        "submission_date": [
+          "Aug 25 2025"
+        ],
+        "last_update_date": [
+          "Jan 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: CD4+ T lymphocytes, B lymphocytes",
+          "genotype: NORMAL",
+          "treatment: Immunosuppressant"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC cell suspensions were filtered using a 40 um nylon cell strainer and red blood cells were removed by 1X Red Blood Cell Lysis Solution (Thermo Fisher, Cat. no. 00-4333-57) . Dissociated cells were washed with 1x DPBS containing 2% FBS. Cells were stained with 0.4% Trypan blue (Thermo Fisher, Cat. no. 14190144) to check the viability on Countess\u5e90 II Automated Cell Counter (Thermo Fisher).",
+          "Using a Chromium Single Cell 3\u2032 Library and Gel Bead Kit v3 (10X Genomics),cell were immediately loaded onto a Chromium Single Cell Processor(10X Genomics) for barcoding of RNA from single cell. Sequencing libraries were constructed according to the manufacturer\u2019s instructions (10\u00d7 Genomics) and then sequenced in a NovaSeq 6000 sequencing system (Illumina, 20012866)."
+        ],
+        "description": [
+          "Library name: Sample2",
+          "10X Genomics"
+        ],
+        "data_processing": [
+          "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+          "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+          "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+          "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "lili,,cheng"
+        ],
+        "contact_email": [
+          "chuanbingh@ahtcm.edu.cn"
+        ],
+        "contact_institute": [
+          "The First Affiliated Hospital of Anhui University of Chinese Medicine"
+        ],
+        "contact_address": [
+          "No. 117, Meishan Road"
+        ],
+        "contact_city": [
+          "Hefei"
+        ],
+        "contact_state": [
+          "Anhui Province"
+        ],
+        "contact_zip/postal_code": [
+          "230012"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN50773838",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30228389"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198094/suppl/GSM9198094_2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198094/suppl/GSM9198094_2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198094/suppl/GSM9198094_2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE306378"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9198094",
+        "source_GEO_title": "PBMC\uff0cN_rep2",
+        "source_participant_code": "N_rep2",
+        "source_visit_code": "single_source_draw",
+        "condition": "NORMAL",
+        "source_disease_as_reported": "NORMAL",
+        "source_specimen": "PBMC",
+        "source_treatment_as_reported": "Immunosuppressant",
+        "source_characteristics_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"genotype\": \"NORMAL\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_BioSample": "SAMN50773838",
+        "source_BioSample_attributes_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"collection_date\": \"missing\", \"genotype\": \"NORMAL\", \"geo_loc_name\": \"missing\", \"source_name\": \"PBMC\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_identity_policy": "Six original PBMC RNA libraries correspond to primary three LN cases and three controls. Source rep labels refer to the six clinical specimens, not extra technical replication. No additional donors inferred from secondary public-data analysis.",
+        "source_coverage_policy": "Original PBMC suspensions and primary Ficoll PBMC isolation support whole-PBMC input. Primary text also calls these monocytes and GEO cell-type field highlights CD4/B cells; no additional sorting protocol established, no lineage selected from the deposited matrices.",
+        "source_preservation_policy": "Primary reports all six libraries prepared together and sequenced together. No per-specimen collection date or cryopreservation status inferred.",
+        "source_missingness_policy": "All GEO records including NORMAL report Immunosuppressant; primary says LN cases received no immunotherapy at enrollment. Preserve unresolved source discrepancy without assigning harmonized treated/untreated status. Clinical Table1 available but numeric patient rows have no verified per-GSM join; no individual ages or laboratory values inferred.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. GEO says mouse genome version hg38; primary explicitly human GRCh38. Native human gene coordinates must independently pass audit. Original source text/version differences retained; no normalized/integrated values used.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198094/suppl/GSM9198094_2_features.tsv.gz",
+          "filename": "GSM9198094_2_features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "9e26ea3b653b08a54d63b83bf856e56b366316294386f1efac33515bffa9b0f2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198094/suppl/GSM9198094_2_barcodes.tsv.gz",
+          "filename": "GSM9198094_2_barcodes.tsv.gz",
+          "expected_bytes": 65002,
+          "sha256": "f7a69c21e22f060e5a0c1ddad6734b7e2cbe426e1c299c92e30fc0ee7900ec7c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198094/suppl/GSM9198094_2_matrix.mtx.gz",
+          "filename": "GSM9198094_2_matrix.mtx.gz",
+          "expected_bytes": 81098280,
+          "sha256": "2d334a52d04fb01e27f5d745c78a67a5918a04a85628d01e4d8c55ef653e35ff"
+        }
+      ],
+      "genes_member": "GSM9198094_2_features.tsv.gz",
+      "barcodes_member": "GSM9198094_2_barcodes.tsv.gz",
+      "matrix_member": "GSM9198094_2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13037,
+        "genes": 33694,
+        "nonzeros": 20828258,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 13037,
+        "RNA_positive_barcode_rows": 13037,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 78743058,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13037,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13037,
+          "source_positive_RNA_barcodes": 13037,
+          "full_source_RNA_counts": 78743058,
+          "selected_RNA_counts": 78743058,
+          "metadata": {
+            "path": "references/datasets/GSE306378_original_RNA_QC/GSM9198094.csv.gz",
+            "sha256": "41b11acfe734d96085788a0bef6ba6c741a155dea2f596706252bcb1270b3bf7"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9198095",
+      "donor_id": "N_rep3",
+      "source_metadata": {
+        "title": [
+          "PBMC\uff0cN_rep3"
+        ],
+        "geo_accession": [
+          "GSM9198095"
+        ],
+        "status": [
+          "Public on Jan 01 2026"
+        ],
+        "submission_date": [
+          "Aug 25 2025"
+        ],
+        "last_update_date": [
+          "Jan 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: CD4+ T lymphocytes, B lymphocytes",
+          "genotype: NORMAL",
+          "treatment: Immunosuppressant"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC cell suspensions were filtered using a 40 um nylon cell strainer and red blood cells were removed by 1X Red Blood Cell Lysis Solution (Thermo Fisher, Cat. no. 00-4333-57) . Dissociated cells were washed with 1x DPBS containing 2% FBS. Cells were stained with 0.4% Trypan blue (Thermo Fisher, Cat. no. 14190144) to check the viability on Countess\u5e90 II Automated Cell Counter (Thermo Fisher).",
+          "Using a Chromium Single Cell 3\u2032 Library and Gel Bead Kit v3 (10X Genomics),cell were immediately loaded onto a Chromium Single Cell Processor(10X Genomics) for barcoding of RNA from single cell. Sequencing libraries were constructed according to the manufacturer\u2019s instructions (10\u00d7 Genomics) and then sequenced in a NovaSeq 6000 sequencing system (Illumina, 20012866)."
+        ],
+        "description": [
+          "Library name: Sample3",
+          "10X Genomics"
+        ],
+        "data_processing": [
+          "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+          "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+          "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+          "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "lili,,cheng"
+        ],
+        "contact_email": [
+          "chuanbingh@ahtcm.edu.cn"
+        ],
+        "contact_institute": [
+          "The First Affiliated Hospital of Anhui University of Chinese Medicine"
+        ],
+        "contact_address": [
+          "No. 117, Meishan Road"
+        ],
+        "contact_city": [
+          "Hefei"
+        ],
+        "contact_state": [
+          "Anhui Province"
+        ],
+        "contact_zip/postal_code": [
+          "230012"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN50773837",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30228390"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198095/suppl/GSM9198095_3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198095/suppl/GSM9198095_3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198095/suppl/GSM9198095_3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE306378"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9198095",
+        "source_GEO_title": "PBMC\uff0cN_rep3",
+        "source_participant_code": "N_rep3",
+        "source_visit_code": "single_source_draw",
+        "condition": "NORMAL",
+        "source_disease_as_reported": "NORMAL",
+        "source_specimen": "PBMC",
+        "source_treatment_as_reported": "Immunosuppressant",
+        "source_characteristics_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"genotype\": \"NORMAL\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_BioSample": "SAMN50773837",
+        "source_BioSample_attributes_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"collection_date\": \"missing\", \"genotype\": \"NORMAL\", \"geo_loc_name\": \"missing\", \"source_name\": \"PBMC\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_identity_policy": "Six original PBMC RNA libraries correspond to primary three LN cases and three controls. Source rep labels refer to the six clinical specimens, not extra technical replication. No additional donors inferred from secondary public-data analysis.",
+        "source_coverage_policy": "Original PBMC suspensions and primary Ficoll PBMC isolation support whole-PBMC input. Primary text also calls these monocytes and GEO cell-type field highlights CD4/B cells; no additional sorting protocol established, no lineage selected from the deposited matrices.",
+        "source_preservation_policy": "Primary reports all six libraries prepared together and sequenced together. No per-specimen collection date or cryopreservation status inferred.",
+        "source_missingness_policy": "All GEO records including NORMAL report Immunosuppressant; primary says LN cases received no immunotherapy at enrollment. Preserve unresolved source discrepancy without assigning harmonized treated/untreated status. Clinical Table1 available but numeric patient rows have no verified per-GSM join; no individual ages or laboratory values inferred.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. GEO says mouse genome version hg38; primary explicitly human GRCh38. Native human gene coordinates must independently pass audit. Original source text/version differences retained; no normalized/integrated values used.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198095/suppl/GSM9198095_3_features.tsv.gz",
+          "filename": "GSM9198095_3_features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "79948022ffc007cecb2f96257434097b3a998f15d0c360f45f431bc6dfb5713e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198095/suppl/GSM9198095_3_barcodes.tsv.gz",
+          "filename": "GSM9198095_3_barcodes.tsv.gz",
+          "expected_bytes": 68662,
+          "sha256": "cc0bf2987b77a1d3814e6f8ea08189ffb2eaeb325ba635205d16eaf677d2f4e3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198095/suppl/GSM9198095_3_matrix.mtx.gz",
+          "filename": "GSM9198095_3_matrix.mtx.gz",
+          "expected_bytes": 78537746,
+          "sha256": "6a03b3efc027b727108509e8963ef57653648374d49a490ada83d42251a7907a"
+        }
+      ],
+      "genes_member": "GSM9198095_3_features.tsv.gz",
+      "barcodes_member": "GSM9198095_3_barcodes.tsv.gz",
+      "matrix_member": "GSM9198095_3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13814,
+        "genes": 33694,
+        "nonzeros": 20230223,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 13814,
+        "RNA_positive_barcode_rows": 13814,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 68022978,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13814,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13814,
+          "source_positive_RNA_barcodes": 13814,
+          "full_source_RNA_counts": 68022978,
+          "selected_RNA_counts": 68022978,
+          "metadata": {
+            "path": "references/datasets/GSE306378_original_RNA_QC/GSM9198095.csv.gz",
+            "sha256": "3c12c5bdacebf7bce0dbeae0244df4c8a4a289178451952c7befa6a601413b6b"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9198096",
+      "donor_id": "SLE_rep1",
+      "source_metadata": {
+        "title": [
+          "PBMC\uff0cSLE_rep1"
+        ],
+        "geo_accession": [
+          "GSM9198096"
+        ],
+        "status": [
+          "Public on Jan 01 2026"
+        ],
+        "submission_date": [
+          "Aug 25 2025"
+        ],
+        "last_update_date": [
+          "Jan 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: CD4+ T lymphocytes, B lymphocytes",
+          "genotype: SLE",
+          "treatment: Immunosuppressant"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC cell suspensions were filtered using a 40 um nylon cell strainer and red blood cells were removed by 1X Red Blood Cell Lysis Solution (Thermo Fisher, Cat. no. 00-4333-57) . Dissociated cells were washed with 1x DPBS containing 2% FBS. Cells were stained with 0.4% Trypan blue (Thermo Fisher, Cat. no. 14190144) to check the viability on Countess\u5e90 II Automated Cell Counter (Thermo Fisher).",
+          "Using a Chromium Single Cell 3\u2032 Library and Gel Bead Kit v3 (10X Genomics),cell were immediately loaded onto a Chromium Single Cell Processor(10X Genomics) for barcoding of RNA from single cell. Sequencing libraries were constructed according to the manufacturer\u2019s instructions (10\u00d7 Genomics) and then sequenced in a NovaSeq 6000 sequencing system (Illumina, 20012866)."
+        ],
+        "description": [
+          "Library name: Sample4",
+          "10X Genomics"
+        ],
+        "data_processing": [
+          "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+          "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+          "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+          "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "lili,,cheng"
+        ],
+        "contact_email": [
+          "chuanbingh@ahtcm.edu.cn"
+        ],
+        "contact_institute": [
+          "The First Affiliated Hospital of Anhui University of Chinese Medicine"
+        ],
+        "contact_address": [
+          "No. 117, Meishan Road"
+        ],
+        "contact_city": [
+          "Hefei"
+        ],
+        "contact_state": [
+          "Anhui Province"
+        ],
+        "contact_zip/postal_code": [
+          "230012"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN50773836",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30228391"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198096/suppl/GSM9198096_A_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198096/suppl/GSM9198096_A_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198096/suppl/GSM9198096_A_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE306378"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9198096",
+        "source_GEO_title": "PBMC\uff0cSLE_rep1",
+        "source_participant_code": "SLE_rep1",
+        "source_visit_code": "single_source_draw",
+        "condition": "SLE",
+        "source_disease_as_reported": "SLE",
+        "source_specimen": "PBMC",
+        "source_treatment_as_reported": "Immunosuppressant",
+        "source_characteristics_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"genotype\": \"SLE\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_BioSample": "SAMN50773836",
+        "source_BioSample_attributes_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"collection_date\": \"missing\", \"genotype\": \"SLE\", \"geo_loc_name\": \"missing\", \"source_name\": \"PBMC\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_identity_policy": "Six original PBMC RNA libraries correspond to primary three LN cases and three controls. Source rep labels refer to the six clinical specimens, not extra technical replication. No additional donors inferred from secondary public-data analysis.",
+        "source_coverage_policy": "Original PBMC suspensions and primary Ficoll PBMC isolation support whole-PBMC input. Primary text also calls these monocytes and GEO cell-type field highlights CD4/B cells; no additional sorting protocol established, no lineage selected from the deposited matrices.",
+        "source_preservation_policy": "Primary reports all six libraries prepared together and sequenced together. No per-specimen collection date or cryopreservation status inferred.",
+        "source_missingness_policy": "All GEO records including NORMAL report Immunosuppressant; primary says LN cases received no immunotherapy at enrollment. Preserve unresolved source discrepancy without assigning harmonized treated/untreated status. Clinical Table1 available but numeric patient rows have no verified per-GSM join; no individual ages or laboratory values inferred.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. GEO says mouse genome version hg38; primary explicitly human GRCh38. Native human gene coordinates must independently pass audit. Original source text/version differences retained; no normalized/integrated values used.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198096/suppl/GSM9198096_A_features.tsv.gz",
+          "filename": "GSM9198096_A_features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "ab52c17d36b37493dd66d797d47a635453c063d44b1abe48093eb2e3a2fcdff5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198096/suppl/GSM9198096_A_barcodes.tsv.gz",
+          "filename": "GSM9198096_A_barcodes.tsv.gz",
+          "expected_bytes": 56797,
+          "sha256": "002b10e52b938c2774b794dd36b9673bfda4ea54e3add70206a6c4c9ba7ac295"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198096/suppl/GSM9198096_A_matrix.mtx.gz",
+          "filename": "GSM9198096_A_matrix.mtx.gz",
+          "expected_bytes": 67927380,
+          "sha256": "b379c76ca4e7e0eb5a3791113a1f94f30868a3ade32b9a20e2b6f417d032dff7"
+        }
+      ],
+      "genes_member": "GSM9198096_A_features.tsv.gz",
+      "barcodes_member": "GSM9198096_A_barcodes.tsv.gz",
+      "matrix_member": "GSM9198096_A_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 11240,
+        "genes": 33694,
+        "nonzeros": 17501292,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 11240,
+        "RNA_positive_barcode_rows": 11240,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 63447902,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11240,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11240,
+          "source_positive_RNA_barcodes": 11240,
+          "full_source_RNA_counts": 63447902,
+          "selected_RNA_counts": 63447902,
+          "metadata": {
+            "path": "references/datasets/GSE306378_original_RNA_QC/GSM9198096.csv.gz",
+            "sha256": "c47fd02f243f3b3fd0317d7467123b8dab3b2641fd0ffe1ca2f9e690b957530d"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9198097",
+      "donor_id": "SLE_rep2",
+      "source_metadata": {
+        "title": [
+          "PBMC\uff0cSLE_rep2"
+        ],
+        "geo_accession": [
+          "GSM9198097"
+        ],
+        "status": [
+          "Public on Jan 01 2026"
+        ],
+        "submission_date": [
+          "Aug 25 2025"
+        ],
+        "last_update_date": [
+          "Jan 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: CD4+ T lymphocytes, B lymphocytes",
+          "genotype: SLE",
+          "treatment: Immunosuppressant"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC cell suspensions were filtered using a 40 um nylon cell strainer and red blood cells were removed by 1X Red Blood Cell Lysis Solution (Thermo Fisher, Cat. no. 00-4333-57) . Dissociated cells were washed with 1x DPBS containing 2% FBS. Cells were stained with 0.4% Trypan blue (Thermo Fisher, Cat. no. 14190144) to check the viability on Countess\u5e90 II Automated Cell Counter (Thermo Fisher).",
+          "Using a Chromium Single Cell 3\u2032 Library and Gel Bead Kit v3 (10X Genomics),cell were immediately loaded onto a Chromium Single Cell Processor(10X Genomics) for barcoding of RNA from single cell. Sequencing libraries were constructed according to the manufacturer\u2019s instructions (10\u00d7 Genomics) and then sequenced in a NovaSeq 6000 sequencing system (Illumina, 20012866)."
+        ],
+        "description": [
+          "Library name: Sample5",
+          "10X Genomics"
+        ],
+        "data_processing": [
+          "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+          "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+          "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+          "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "lili,,cheng"
+        ],
+        "contact_email": [
+          "chuanbingh@ahtcm.edu.cn"
+        ],
+        "contact_institute": [
+          "The First Affiliated Hospital of Anhui University of Chinese Medicine"
+        ],
+        "contact_address": [
+          "No. 117, Meishan Road"
+        ],
+        "contact_city": [
+          "Hefei"
+        ],
+        "contact_state": [
+          "Anhui Province"
+        ],
+        "contact_zip/postal_code": [
+          "230012"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN50773835",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30228392"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198097/suppl/GSM9198097_B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198097/suppl/GSM9198097_B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198097/suppl/GSM9198097_B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE306378"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9198097",
+        "source_GEO_title": "PBMC\uff0cSLE_rep2",
+        "source_participant_code": "SLE_rep2",
+        "source_visit_code": "single_source_draw",
+        "condition": "SLE",
+        "source_disease_as_reported": "SLE",
+        "source_specimen": "PBMC",
+        "source_treatment_as_reported": "Immunosuppressant",
+        "source_characteristics_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"genotype\": \"SLE\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_BioSample": "SAMN50773835",
+        "source_BioSample_attributes_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"collection_date\": \"missing\", \"genotype\": \"SLE\", \"geo_loc_name\": \"missing\", \"source_name\": \"PBMC\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_identity_policy": "Six original PBMC RNA libraries correspond to primary three LN cases and three controls. Source rep labels refer to the six clinical specimens, not extra technical replication. No additional donors inferred from secondary public-data analysis.",
+        "source_coverage_policy": "Original PBMC suspensions and primary Ficoll PBMC isolation support whole-PBMC input. Primary text also calls these monocytes and GEO cell-type field highlights CD4/B cells; no additional sorting protocol established, no lineage selected from the deposited matrices.",
+        "source_preservation_policy": "Primary reports all six libraries prepared together and sequenced together. No per-specimen collection date or cryopreservation status inferred.",
+        "source_missingness_policy": "All GEO records including NORMAL report Immunosuppressant; primary says LN cases received no immunotherapy at enrollment. Preserve unresolved source discrepancy without assigning harmonized treated/untreated status. Clinical Table1 available but numeric patient rows have no verified per-GSM join; no individual ages or laboratory values inferred.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. GEO says mouse genome version hg38; primary explicitly human GRCh38. Native human gene coordinates must independently pass audit. Original source text/version differences retained; no normalized/integrated values used.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198097/suppl/GSM9198097_B_features.tsv.gz",
+          "filename": "GSM9198097_B_features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "55a60122e774eca33d4a7a87953f3269740223173c1e9e41a436ccc0d2d4b241"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198097/suppl/GSM9198097_B_barcodes.tsv.gz",
+          "filename": "GSM9198097_B_barcodes.tsv.gz",
+          "expected_bytes": 66753,
+          "sha256": "367881a549994767850c8ac458584d2a0ac97c15b0dffead73d77412dd383cd6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198097/suppl/GSM9198097_B_matrix.mtx.gz",
+          "filename": "GSM9198097_B_matrix.mtx.gz",
+          "expected_bytes": 77790909,
+          "sha256": "b140967b4dee388fe0c49fe3e698d39c55f06f59ffee2804c55a4187894c8a6d"
+        }
+      ],
+      "genes_member": "GSM9198097_B_features.tsv.gz",
+      "barcodes_member": "GSM9198097_B_barcodes.tsv.gz",
+      "matrix_member": "GSM9198097_B_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13380,
+        "genes": 33694,
+        "nonzeros": 19969523,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 13380,
+        "RNA_positive_barcode_rows": 13380,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 72745931,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13380,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13380,
+          "source_positive_RNA_barcodes": 13380,
+          "full_source_RNA_counts": 72745931,
+          "selected_RNA_counts": 72745931,
+          "metadata": {
+            "path": "references/datasets/GSE306378_original_RNA_QC/GSM9198097.csv.gz",
+            "sha256": "46e3203a7b84f885b04312aeb27aec052cd0e4ce7b98522847c00e9a2621f820"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM9198098",
+      "donor_id": "SLE_rep3",
+      "source_metadata": {
+        "title": [
+          "PBMC\uff0cSLE_rep3"
+        ],
+        "geo_accession": [
+          "GSM9198098"
+        ],
+        "status": [
+          "Public on Jan 01 2026"
+        ],
+        "submission_date": [
+          "Aug 25 2025"
+        ],
+        "last_update_date": [
+          "Jan 01 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: CD4+ T lymphocytes, B lymphocytes",
+          "genotype: SLE",
+          "treatment: Immunosuppressant"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC cell suspensions were filtered using a 40 um nylon cell strainer and red blood cells were removed by 1X Red Blood Cell Lysis Solution (Thermo Fisher, Cat. no. 00-4333-57) . Dissociated cells were washed with 1x DPBS containing 2% FBS. Cells were stained with 0.4% Trypan blue (Thermo Fisher, Cat. no. 14190144) to check the viability on Countess\u5e90 II Automated Cell Counter (Thermo Fisher).",
+          "Using a Chromium Single Cell 3\u2032 Library and Gel Bead Kit v3 (10X Genomics),cell were immediately loaded onto a Chromium Single Cell Processor(10X Genomics) for barcoding of RNA from single cell. Sequencing libraries were constructed according to the manufacturer\u2019s instructions (10\u00d7 Genomics) and then sequenced in a NovaSeq 6000 sequencing system (Illumina, 20012866)."
+        ],
+        "description": [
+          "Library name: Sample6",
+          "10X Genomics"
+        ],
+        "data_processing": [
+          "Reads were processed using the Cell Ranger 3.0.1 pipeline with default and recommended parameters. FASTQs generated from Illumina sequencing output were aligned to the mouse genome, version hg38, using the STAR algorithm. Next, Gene-Barcode matrices were generated for each individual sample by counting UMIs and filtering non-cell associated barcodes.Finally, we generate a gene-barcode matrix containing the barcoded cells and gene expression counts.",
+          "This output was then imported into the Seurat (v3.0.2) R toolkit for quality control and downstream analysis of our single cell RNAseq data. We excluded cells with fewer than 200 or more than 6000 detected genes (where each gene had to have at least one UMI aligned in at least three cells). The expression of mitochondria genes was calculated using PercentageFeatureSet function of the seurat package. To remove low activity cells, cells with more than 10 percent expression of mitochondria genes were excluded. The normalized data (NormalizeData function in Seurat package) was performed for extracting a subset of variable genes. Variable genes were identified while controlling for the strong relationship between variability and average expression.",
+          "Next, we integrated data from different samples after identifying \u2018anchors\u2019 between datasets using FindIntegrationAnchors and IntegrateData in the seurat package . Then we performed principal component analysis (PCA) and reduced the data to the top 30 PCA components after scaled the data. We visualized the clusters on a 2D map produced with t-distributed stochastic neighbor embedding (t-SNE).",
+          "Cells were clustered using graph-based clustering of the PCA reduced data with the Louvain Method after computing a shared nearest neighbor graph. For sub-clustering, we applied the same procedure of scaled, dimensionality reduction, and clustering to the specific set of data (usually restricted to one type of cell.) For each cluster, we used the Wilcoxon Rank-Sum Test to find significant deferentially expressed genes comparing the remaining clusters. SingleR and known marker genes were used to identify cell type.",
+          "Assembly: hg38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "lili,,cheng"
+        ],
+        "contact_email": [
+          "chuanbingh@ahtcm.edu.cn"
+        ],
+        "contact_institute": [
+          "The First Affiliated Hospital of Anhui University of Chinese Medicine"
+        ],
+        "contact_address": [
+          "No. 117, Meishan Road"
+        ],
+        "contact_city": [
+          "Hefei"
+        ],
+        "contact_state": [
+          "Anhui Province"
+        ],
+        "contact_zip/postal_code": [
+          "230012"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN50773834",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX30228393"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198098/suppl/GSM9198098_C_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198098/suppl/GSM9198098_C_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198098/suppl/GSM9198098_C_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE306378"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9198098",
+        "source_GEO_title": "PBMC\uff0cSLE_rep3",
+        "source_participant_code": "SLE_rep3",
+        "source_visit_code": "single_source_draw",
+        "condition": "SLE",
+        "source_disease_as_reported": "SLE",
+        "source_specimen": "PBMC",
+        "source_treatment_as_reported": "Immunosuppressant",
+        "source_characteristics_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"genotype\": \"SLE\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_BioSample": "SAMN50773834",
+        "source_BioSample_attributes_json": "{\"cell type\": \"CD4+ T lymphocytes, B lymphocytes\", \"collection_date\": \"missing\", \"genotype\": \"SLE\", \"geo_loc_name\": \"missing\", \"source_name\": \"PBMC\", \"tissue\": \"Blood\", \"treatment\": \"Immunosuppressant\"}",
+        "source_identity_policy": "Six original PBMC RNA libraries correspond to primary three LN cases and three controls. Source rep labels refer to the six clinical specimens, not extra technical replication. No additional donors inferred from secondary public-data analysis.",
+        "source_coverage_policy": "Original PBMC suspensions and primary Ficoll PBMC isolation support whole-PBMC input. Primary text also calls these monocytes and GEO cell-type field highlights CD4/B cells; no additional sorting protocol established, no lineage selected from the deposited matrices.",
+        "source_preservation_policy": "Primary reports all six libraries prepared together and sequenced together. No per-specimen collection date or cryopreservation status inferred.",
+        "source_missingness_policy": "All GEO records including NORMAL report Immunosuppressant; primary says LN cases received no immunotherapy at enrollment. Preserve unresolved source discrepancy without assigning harmonized treated/untreated status. Clinical Table1 available but numeric patient rows have no verified per-GSM join; no individual ages or laboratory values inferred.",
+        "source_count_policy": "Nonnegative integer native RNA triplets required. GEO says mouse genome version hg38; primary explicitly human GRCh38. Native human gene coordinates must independently pass audit. Original source text/version differences retained; no normalized/integrated values used.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198098/suppl/GSM9198098_C_features.tsv.gz",
+          "filename": "GSM9198098_C_features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "d13f3998d4abc4518a9048b4002ead2d10cf08facb5807b6680a23e4af55000b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198098/suppl/GSM9198098_C_barcodes.tsv.gz",
+          "filename": "GSM9198098_C_barcodes.tsv.gz",
+          "expected_bytes": 65464,
+          "sha256": "0f142ee8ee9a5611bc7382c092dc4394f1c39e91cfa8efcfc21140d3d6a32354"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9198nnn/GSM9198098/suppl/GSM9198098_C_matrix.mtx.gz",
+          "filename": "GSM9198098_C_matrix.mtx.gz",
+          "expected_bytes": 88476208,
+          "sha256": "9defd1be827105c0fac78951c79feeb28ebc0b963578e0c855156b47269be373"
+        }
+      ],
+      "genes_member": "GSM9198098_C_features.tsv.gz",
+      "barcodes_member": "GSM9198098_C_barcodes.tsv.gz",
+      "matrix_member": "GSM9198098_C_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13124,
+        "genes": 33694,
+        "nonzeros": 22841537,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 13124,
+        "RNA_positive_barcode_rows": 13124,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 81787488,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13124,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13124,
+          "source_positive_RNA_barcodes": 13124,
+          "full_source_RNA_counts": 81787488,
+          "selected_RNA_counts": 81787488,
+          "metadata": {
+            "path": "references/datasets/GSE306378_original_RNA_QC/GSM9198098.csv.gz",
+            "sha256": "f86d4844b4864c3427a7f9648836b7520e01363af85f2e75658ffb3ad9d7bcf1"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Six original PBMC draws from six source people: three source NORMAL and three source SLE/primary LN. No longitudinal relationship inferred; treatment and reference-text discrepancies retained."
+}

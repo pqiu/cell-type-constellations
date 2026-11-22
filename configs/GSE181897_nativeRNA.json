@@ -1,0 +1,90 @@
+{
+  "dataset_id": "GSE181897_nativeRNA",
+  "study_id": "GSE181897",
+  "input_format": "pooled_pbmc_181897",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "source_assets": {
+    "RNA": {
+      "filename": "GSE181897_aggr_raw_feature_bc_matrix.h5",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE181nnn/GSE181897/suppl/GSE181897_aggr_raw_feature_bc_matrix.h5",
+      "expected_bytes": 2610474951,
+      "sha256": "a58fb48b61f236a4c10d65f6b19890fa7d7eb40b60ef657ed300531812560b50"
+    },
+    "metadata": {
+      "filename": "GSE181897_concat.4.raw.h5ad.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE181nnn/GSE181897/suppl/GSE181897_concat.4.raw.h5ad.gz",
+      "expected_bytes": 1011162509,
+      "sha256": "7fe58432f2f238319e81c9218eb35b5f7fbdae6f10f3d87ce9a6044ee851675b"
+    }
+  },
+  "original_RNA_recovery_review": {
+    "path": "references/datasets/GSE181897_full_native_RNA_recovery_review.json",
+    "sha256": "c93070cea780c76fa64c39fad31e764cf5871aab38917c1a2ef5c8006c6af92c"
+  },
+  "sample_columns": [
+    "donor_id",
+    "source_condition_code"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "64conservative study-scoped donor/material groups supply replication. Repeated ex-vivo conditions and pooled capture views are dependent; no extra draws inferred. Global identity overlap unresolved.",
+  "physical_sample_mapping_evidence": "64conservative study-scoped donor/material groups supply replication. Repeated ex-vivo conditions and pooled capture views are dependent; no extra draws inferred. Global identity overlap unresolved.",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "exp_id",
+      "source_condition_code": "cond",
+      "source_capture_batch": "batch",
+      "author_cell_type": "ct2"
+    },
+    "constants": {
+      "tissue": "blood",
+      "source_specimen": "PBMC",
+      "condition": "clinical status not reported; ex-vivo condition encoded separately",
+      "source_condition_semantics": "Unresolved from accessible primary artifacts; retain original codes without guessed treatment names.",
+      "source_identity_policy": "64conservative study-scoped donor/material groups supply replication. Repeated ex-vivo conditions and pooled capture views are dependent; no extra draws inferred. Global identity overlap unresolved.",
+      "source_gene_coverage": "All33538original GRCh38RNA genes preserved. Geometry normalization uses full native RNA counts;96antibody rows of processed metadata object are excluded. No source gene outer zero fill.",
+      "source_missingness_policy": "Individual age/sex/clinical status/collection dates absent from deposited obs. No group demographics assigned.",
+      "source_annotation_policy": "Use only deposited author singlet/donor calls, audited pooling membership and common RNA QC. No genotype inference or confidence repair; label scores are uncalibrated.",
+      "split_assignment": "unassigned; keep all condition/capture views of each study-scoped donor together; cross-study identity overlap unresolved"
+    }
+  },
+  "exclude_source_values": {
+    "cond": [
+      "0"
+    ]
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE181897",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE181897",
+    "access": "Public original pooled RNA count matrix and author-assigned cell metadata",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "original_series_RNA_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE181nnn/GSE181897/suppl/GSE181897_aggr_raw_feature_bc_matrix.h5",
+    "original_author_metadata_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE181nnn/GSE181897/suppl/GSE181897_concat.4.raw.h5ad.gz",
+    "source_identity_review": {
+      "path": "references/datasets/GSE181897_source_identity_review.json",
+      "sha256": "7de47323be1337b3a7390596d5951f30fe9f614bee05b9b406a55d4a12eae4cd"
+    },
+    "source_count_identity_review": {
+      "path": "references/datasets/GSE181897_original_native_count_identity_review.json",
+      "sha256": "4515efc4e504d26362560d81e7913e80281a5fba1ecdfc6518388c647a0a17ae"
+    },
+    "publications": [
+      "https://doi.org/10.1101/2023.05.29.542756"
+    ],
+    "source_gene_coverage": "All33538original GRCh38RNA genes preserved. Geometry normalization uses full native RNA counts;96antibody rows of processed metadata object are excluded. No source gene outer zero fill."
+  }
+}

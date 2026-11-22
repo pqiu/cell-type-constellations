@@ -1,0 +1,517 @@
+{
+  "dataset_id": "GSE280258_genes001",
+  "study_id": "GSE280258",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Three adult acute dengue patients; exact source GEX titles and HTO2/3/4 donor-demultiplexed matrices. Paired TCR and combined RNA/CSP matrices are assay aliases, not additional blood specimens.",
+  "source_metadata": {
+    "accession": "GSE280258",
+    "publication": "https://pubmed.ncbi.nlm.nih.gov/40073863/",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE280258",
+    "access": "Public original CellRanger donor-filtered RNA/CSP triplets",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "source_processing": [
+      "Single-cell RNA sequencing (FASTQ) data from the 5\u2019 RNA expression, VDJ-TCR and CSP libraries were simultaneously processed using the cellranger multipipeline of Cell Ranger software v7.0.1 (10x Genomics). Unique molecular identifier (UMI) counts were assigned to the cell barcodes and mapped to reference genomes: GRCh38-2020-A for RNA, GRCh38-alts-ensembl-7.0.0 for VDJ-TCR, and TotalSeq-C (BioLegend) feature barcodes for CSP to generate a filtered RNA/CSP count matrix and filtered VDJ-TCR contig annotations. To demultiplex the cells from all three patients, raw reads from the 5\u2019 RNA expression and multiplexing capture (CSP) libraries were again processed with a cellranger multipipeline to generate a sample-filtered RNA count matrix for each sample. Cell barcodes from all three patients were assigned to their respective patient IDs, and unassigned or doublets were discarded during demultiplexing. Next, the demultiplexed filtered count data from all patients were merged and analyzed via the R platform-based Seurat v4.3.0 package.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: cellranger multi output matrix files: Combined_filtered_barcodes.tsv.gz, Combined_filtered_features.tsv.gz, Combined_filtered_matrix.mtx.gz",
+      "Supplementary files format and content: cellranger multi output vdj-t files: Combined_filtered_contig_annotations.csv",
+      "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO2_filtered_barcodes.tsv.gz, DemuxHTO2_filtered_features.tsv.gz, DemuxHTO2_filtered_matrix.mtx.gz",
+      "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO3_filtered_barcodes.tsv.gz, DemuxHTO3_filtered_features.tsv.gz, DemuxHTO3_filtered_matrix.mtx.gz",
+      "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO4_filtered_barcodes.tsv.gz, DemuxHTO4_filtered_features.tsv.gz, DemuxHTO4_filtered_matrix.mtx.gz"
+    ],
+    "gene_coordinate_sha256": "714726463c6ba3bf1a16fb0545911d84abc5b89e293da21a51c7ce6f24920839",
+    "expression_scope": "RNA Gene Expression features only; antibody features excluded before RNA library size and annotation"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8593265",
+      "donor_id": "P022.1",
+      "source_metadata": {
+        "title": [
+          "P022.1_GEX"
+        ],
+        "geo_accession": [
+          "GSM8593265"
+        ],
+        "status": [
+          "Public on Oct 31 2024"
+        ],
+        "submission_date": [
+          "Oct 24 2024"
+        ],
+        "last_update_date": [
+          "Oct 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: ICOS+CD38+ CD4+ T cells",
+          "treatment: Untreated, direct ex vivo"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs from three acute dengue patients (P022.1, P042.1, P032.1) were thawed and and revived in 10 mL of prewarmed RPMI 1640 at 37\u00b0C. The revived PBMCs were treated with DNase I (StemCell Technologies) at 100 \u00b5g/mL to prevent the cellular clumps. Revived PBMCs used for downstream analysis were >80% viable, as assessed by acridine orange (AO) and propidium iodide (PI) staining. The cells were washed with 20 mL of PBS-2 mM EDTA buffer. A total of 3x106 PBMCs were blocked with 10% heat-inactivated human plasma by incubating for 10 minutes at 4\u00b0C. The cells were surface stained with fluorochrome-tagged and TotalSeq-C (BioLegend) anti-human antibodies for 1 hour at 4\u00b0C according to the manufacturer\u2019s instructions. PBMCs from each patient were also stained with anti-human Hashtag antibodies (BioLegend) before pooling. The three PBMCs were stained with following Hashtag antibodies, HTO2, HTO3, and HTO4, respectively. For FACS sorting of activated CD4+ T cells, ICOS+CD38+ cells were gated on CD4+ T cells after excluding dead cells, CD14, CD16 monocytes, CD20 B cells and CD8 T cells. FACS-sorted ICOS+CD38+ CD4+ T cells from three patients were pooled together in equal numbers and resuspended at a density of 1100 cells/\u00b5L with >90% viability.",
+          "FACS-sorted ICOS+CD38+ CD4+ T cells were processed for gel bead-in-emulsion (GEM) generation, barcoding and cDNA preparation (10x Genomics) according to the manufacturer\u2019s recommendation. Single-cell RNA sequencing library preparation was performed using Chromium Next GEM Single-Cell 5\u2019 Reagent Kit v2.0 (Dual Index) with immune profiling (VDJ) and cell surface protein feature barcode technology (10x Genomics). The initial cDNA amplification was performed with 13 amplification cycles. After amplification, the cDNA pellet was used to amplify the VDJ T-cell receptor (TCR), after which the VDJ library was prepared via 8 cycles of amplification; preparation of the 5\u2019 gene expression library was performed via 14 cycles of amplification. A cell surface protein (CSP) library was generated from the amplified cDNA supernatant after 8 amplification cycles. The quality and concentration of the cDNA libraries were assessed using the 5200 Fragment Analyzer system (Agilent) with an Agilent DNF-474 HS NGS Fragment Kit and a Qubit 4.0 fluorometer (Thermo-Fisher) with a dsDNA HS assay kit according to the manufacturer\u2019s recommendations. In addition, the insert size of the library was determined using a TapeStation 4150 (Agilent) and an Agilent high-sensitivity D1000 ScreenTape assay.  The three libraries were pooled in molar concentrations according to a sequencing depth of ~30,000 reads/cell for 5\u2019 gene expression and ~5,000 reads/cell for the VDJ and CSP libraries and sequenced on an Illumina NovaSeq 6000 platform (150 bp, paired-end) with the following parameters: read1 - 26 cycles; read2 - 90 cycles; and i7 and i5 indexes - 10 cycles.",
+          "scRNA-seq with VDJ immune profiling and cell surface protein (CSP) expression"
+        ],
+        "description": [
+          "Gene Expression",
+          "DemuxHTO2_RNA"
+        ],
+        "data_processing": [
+          "Single-cell RNA sequencing (FASTQ) data from the 5\u2019 RNA expression, VDJ-TCR and CSP libraries were simultaneously processed using the cellranger multipipeline of Cell Ranger software v7.0.1 (10x Genomics). Unique molecular identifier (UMI) counts were assigned to the cell barcodes and mapped to reference genomes: GRCh38-2020-A for RNA, GRCh38-alts-ensembl-7.0.0 for VDJ-TCR, and TotalSeq-C (BioLegend) feature barcodes for CSP to generate a filtered RNA/CSP count matrix and filtered VDJ-TCR contig annotations. To demultiplex the cells from all three patients, raw reads from the 5\u2019 RNA expression and multiplexing capture (CSP) libraries were again processed with a cellranger multipipeline to generate a sample-filtered RNA count matrix for each sample. Cell barcodes from all three patients were assigned to their respective patient IDs, and unassigned or doublets were discarded during demultiplexing. Next, the demultiplexed filtered count data from all patients were merged and analyzed via the R platform-based Seurat v4.3.0 package.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: cellranger multi output matrix files: Combined_filtered_barcodes.tsv.gz, Combined_filtered_features.tsv.gz, Combined_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output vdj-t files: Combined_filtered_contig_annotations.csv",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO2_filtered_barcodes.tsv.gz, DemuxHTO2_filtered_features.tsv.gz, DemuxHTO2_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO3_filtered_barcodes.tsv.gz, DemuxHTO3_filtered_features.tsv.gz, DemuxHTO3_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO4_filtered_barcodes.tsv.gz, DemuxHTO4_filtered_features.tsv.gz, DemuxHTO4_filtered_matrix.mtx.gz"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Asgar,,Ansari"
+        ],
+        "contact_email": [
+          "asgaransari@nii.ac.in"
+        ],
+        "contact_laboratory": [
+          "Vaccine Immunology Laboratory,"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology,"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg, Jawaharlal Nehru University,"
+        ],
+        "contact_city": [
+          "New Delhi,"
+        ],
+        "contact_state": [
+          "Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44425757",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26490930"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593265/suppl/GSM8593265_DemuxHTO2_filtered_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593265/suppl/GSM8593265_DemuxHTO2_filtered_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593265/suppl/GSM8593265_DemuxHTO2_filtered_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280258"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593265/suppl/GSM8593265_DemuxHTO2_filtered_features.tsv.gz",
+          "filename": "GSM8593265_DemuxHTO2_filtered_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593265/suppl/GSM8593265_DemuxHTO2_filtered_barcodes.tsv.gz",
+          "filename": "GSM8593265_DemuxHTO2_filtered_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593265/suppl/GSM8593265_DemuxHTO2_filtered_matrix.mtx.gz",
+          "filename": "GSM8593265_DemuxHTO2_filtered_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "acute dengue",
+        "source_specimen_code": "P022.1",
+        "source_preparation": "Thawed cryopreserved PBMCs, FACS-sorted ICOS+CD38+ CD4 cells; three hashtagged patients pooled in one capture",
+        "source_composition_limitation": "Activated CD4 enrichment; no natural PBMC composition or absent-lineage expression inferred",
+        "source_assignment": "Published CellRanger7.0.1 sample-filtered donor matrices; source excludes unassigned/doublets; no probability supplied",
+        "source_demographics": "Adult acute patients; individual ages/sex/severity and exact draw dates not joined",
+        "source_primary": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12032839/"
+      },
+      "genes_member": "GSM8593265_DemuxHTO2_filtered_features.tsv.gz",
+      "barcodes_member": "GSM8593265_DemuxHTO2_filtered_barcodes.tsv.gz",
+      "matrix_member": "GSM8593265_DemuxHTO2_filtered_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 2304,
+        "source_features": 36609,
+        "RNA_genes": 36601,
+        "excluded_antibody_features": 8,
+        "RNA_gene_coordinate_sha256": "714726463c6ba3bf1a16fb0545911d84abc5b89e293da21a51c7ce6f24920839",
+        "integer_nonnegative_counts": true,
+        "source_demultiplexed_barcodes_disjoint": true
+      }
+    },
+    {
+      "accession": "GSM8593266",
+      "donor_id": "P042.1",
+      "source_metadata": {
+        "title": [
+          "P042.1_GEX"
+        ],
+        "geo_accession": [
+          "GSM8593266"
+        ],
+        "status": [
+          "Public on Oct 31 2024"
+        ],
+        "submission_date": [
+          "Oct 24 2024"
+        ],
+        "last_update_date": [
+          "Oct 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: ICOS+CD38+ CD4+ T cells",
+          "treatment: Untreated, direct ex vivo"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs from three acute dengue patients (P022.1, P042.1, P032.1) were thawed and and revived in 10 mL of prewarmed RPMI 1640 at 37\u00b0C. The revived PBMCs were treated with DNase I (StemCell Technologies) at 100 \u00b5g/mL to prevent the cellular clumps. Revived PBMCs used for downstream analysis were >80% viable, as assessed by acridine orange (AO) and propidium iodide (PI) staining. The cells were washed with 20 mL of PBS-2 mM EDTA buffer. A total of 3x106 PBMCs were blocked with 10% heat-inactivated human plasma by incubating for 10 minutes at 4\u00b0C. The cells were surface stained with fluorochrome-tagged and TotalSeq-C (BioLegend) anti-human antibodies for 1 hour at 4\u00b0C according to the manufacturer\u2019s instructions. PBMCs from each patient were also stained with anti-human Hashtag antibodies (BioLegend) before pooling. The three PBMCs were stained with following Hashtag antibodies, HTO2, HTO3, and HTO4, respectively. For FACS sorting of activated CD4+ T cells, ICOS+CD38+ cells were gated on CD4+ T cells after excluding dead cells, CD14, CD16 monocytes, CD20 B cells and CD8 T cells. FACS-sorted ICOS+CD38+ CD4+ T cells from three patients were pooled together in equal numbers and resuspended at a density of 1100 cells/\u00b5L with >90% viability.",
+          "FACS-sorted ICOS+CD38+ CD4+ T cells were processed for gel bead-in-emulsion (GEM) generation, barcoding and cDNA preparation (10x Genomics) according to the manufacturer\u2019s recommendation. Single-cell RNA sequencing library preparation was performed using Chromium Next GEM Single-Cell 5\u2019 Reagent Kit v2.0 (Dual Index) with immune profiling (VDJ) and cell surface protein feature barcode technology (10x Genomics). The initial cDNA amplification was performed with 13 amplification cycles. After amplification, the cDNA pellet was used to amplify the VDJ T-cell receptor (TCR), after which the VDJ library was prepared via 8 cycles of amplification; preparation of the 5\u2019 gene expression library was performed via 14 cycles of amplification. A cell surface protein (CSP) library was generated from the amplified cDNA supernatant after 8 amplification cycles. The quality and concentration of the cDNA libraries were assessed using the 5200 Fragment Analyzer system (Agilent) with an Agilent DNF-474 HS NGS Fragment Kit and a Qubit 4.0 fluorometer (Thermo-Fisher) with a dsDNA HS assay kit according to the manufacturer\u2019s recommendations. In addition, the insert size of the library was determined using a TapeStation 4150 (Agilent) and an Agilent high-sensitivity D1000 ScreenTape assay.  The three libraries were pooled in molar concentrations according to a sequencing depth of ~30,000 reads/cell for 5\u2019 gene expression and ~5,000 reads/cell for the VDJ and CSP libraries and sequenced on an Illumina NovaSeq 6000 platform (150 bp, paired-end) with the following parameters: read1 - 26 cycles; read2 - 90 cycles; and i7 and i5 indexes - 10 cycles.",
+          "scRNA-seq with VDJ immune profiling and cell surface protein (CSP) expression"
+        ],
+        "description": [
+          "Gene Expression",
+          "DemuxHTO3_RNA"
+        ],
+        "data_processing": [
+          "Single-cell RNA sequencing (FASTQ) data from the 5\u2019 RNA expression, VDJ-TCR and CSP libraries were simultaneously processed using the cellranger multipipeline of Cell Ranger software v7.0.1 (10x Genomics). Unique molecular identifier (UMI) counts were assigned to the cell barcodes and mapped to reference genomes: GRCh38-2020-A for RNA, GRCh38-alts-ensembl-7.0.0 for VDJ-TCR, and TotalSeq-C (BioLegend) feature barcodes for CSP to generate a filtered RNA/CSP count matrix and filtered VDJ-TCR contig annotations. To demultiplex the cells from all three patients, raw reads from the 5\u2019 RNA expression and multiplexing capture (CSP) libraries were again processed with a cellranger multipipeline to generate a sample-filtered RNA count matrix for each sample. Cell barcodes from all three patients were assigned to their respective patient IDs, and unassigned or doublets were discarded during demultiplexing. Next, the demultiplexed filtered count data from all patients were merged and analyzed via the R platform-based Seurat v4.3.0 package.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: cellranger multi output matrix files: Combined_filtered_barcodes.tsv.gz, Combined_filtered_features.tsv.gz, Combined_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output vdj-t files: Combined_filtered_contig_annotations.csv",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO2_filtered_barcodes.tsv.gz, DemuxHTO2_filtered_features.tsv.gz, DemuxHTO2_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO3_filtered_barcodes.tsv.gz, DemuxHTO3_filtered_features.tsv.gz, DemuxHTO3_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO4_filtered_barcodes.tsv.gz, DemuxHTO4_filtered_features.tsv.gz, DemuxHTO4_filtered_matrix.mtx.gz"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Asgar,,Ansari"
+        ],
+        "contact_email": [
+          "asgaransari@nii.ac.in"
+        ],
+        "contact_laboratory": [
+          "Vaccine Immunology Laboratory,"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology,"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg, Jawaharlal Nehru University,"
+        ],
+        "contact_city": [
+          "New Delhi,"
+        ],
+        "contact_state": [
+          "Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44425756",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26490931"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593266/suppl/GSM8593266_DemuxHTO3_filtered_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593266/suppl/GSM8593266_DemuxHTO3_filtered_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593266/suppl/GSM8593266_DemuxHTO3_filtered_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280258"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593266/suppl/GSM8593266_DemuxHTO3_filtered_features.tsv.gz",
+          "filename": "GSM8593266_DemuxHTO3_filtered_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593266/suppl/GSM8593266_DemuxHTO3_filtered_barcodes.tsv.gz",
+          "filename": "GSM8593266_DemuxHTO3_filtered_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593266/suppl/GSM8593266_DemuxHTO3_filtered_matrix.mtx.gz",
+          "filename": "GSM8593266_DemuxHTO3_filtered_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "acute dengue",
+        "source_specimen_code": "P042.1",
+        "source_preparation": "Thawed cryopreserved PBMCs, FACS-sorted ICOS+CD38+ CD4 cells; three hashtagged patients pooled in one capture",
+        "source_composition_limitation": "Activated CD4 enrichment; no natural PBMC composition or absent-lineage expression inferred",
+        "source_assignment": "Published CellRanger7.0.1 sample-filtered donor matrices; source excludes unassigned/doublets; no probability supplied",
+        "source_demographics": "Adult acute patients; individual ages/sex/severity and exact draw dates not joined",
+        "source_primary": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12032839/"
+      },
+      "genes_member": "GSM8593266_DemuxHTO3_filtered_features.tsv.gz",
+      "barcodes_member": "GSM8593266_DemuxHTO3_filtered_barcodes.tsv.gz",
+      "matrix_member": "GSM8593266_DemuxHTO3_filtered_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 2216,
+        "source_features": 36609,
+        "RNA_genes": 36601,
+        "excluded_antibody_features": 8,
+        "RNA_gene_coordinate_sha256": "714726463c6ba3bf1a16fb0545911d84abc5b89e293da21a51c7ce6f24920839",
+        "integer_nonnegative_counts": true,
+        "source_demultiplexed_barcodes_disjoint": true
+      }
+    },
+    {
+      "accession": "GSM8593267",
+      "donor_id": "P032.1",
+      "source_metadata": {
+        "title": [
+          "P032.1_GEX"
+        ],
+        "geo_accession": [
+          "GSM8593267"
+        ],
+        "status": [
+          "Public on Oct 31 2024"
+        ],
+        "submission_date": [
+          "Oct 24 2024"
+        ],
+        "last_update_date": [
+          "Oct 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: ICOS+CD38+ CD4+ T cells",
+          "treatment: Untreated, direct ex vivo"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Cryopreserved PBMCs from three acute dengue patients (P022.1, P042.1, P032.1) were thawed and and revived in 10 mL of prewarmed RPMI 1640 at 37\u00b0C. The revived PBMCs were treated with DNase I (StemCell Technologies) at 100 \u00b5g/mL to prevent the cellular clumps. Revived PBMCs used for downstream analysis were >80% viable, as assessed by acridine orange (AO) and propidium iodide (PI) staining. The cells were washed with 20 mL of PBS-2 mM EDTA buffer. A total of 3x106 PBMCs were blocked with 10% heat-inactivated human plasma by incubating for 10 minutes at 4\u00b0C. The cells were surface stained with fluorochrome-tagged and TotalSeq-C (BioLegend) anti-human antibodies for 1 hour at 4\u00b0C according to the manufacturer\u2019s instructions. PBMCs from each patient were also stained with anti-human Hashtag antibodies (BioLegend) before pooling. The three PBMCs were stained with following Hashtag antibodies, HTO2, HTO3, and HTO4, respectively. For FACS sorting of activated CD4+ T cells, ICOS+CD38+ cells were gated on CD4+ T cells after excluding dead cells, CD14, CD16 monocytes, CD20 B cells and CD8 T cells. FACS-sorted ICOS+CD38+ CD4+ T cells from three patients were pooled together in equal numbers and resuspended at a density of 1100 cells/\u00b5L with >90% viability.",
+          "FACS-sorted ICOS+CD38+ CD4+ T cells were processed for gel bead-in-emulsion (GEM) generation, barcoding and cDNA preparation (10x Genomics) according to the manufacturer\u2019s recommendation. Single-cell RNA sequencing library preparation was performed using Chromium Next GEM Single-Cell 5\u2019 Reagent Kit v2.0 (Dual Index) with immune profiling (VDJ) and cell surface protein feature barcode technology (10x Genomics). The initial cDNA amplification was performed with 13 amplification cycles. After amplification, the cDNA pellet was used to amplify the VDJ T-cell receptor (TCR), after which the VDJ library was prepared via 8 cycles of amplification; preparation of the 5\u2019 gene expression library was performed via 14 cycles of amplification. A cell surface protein (CSP) library was generated from the amplified cDNA supernatant after 8 amplification cycles. The quality and concentration of the cDNA libraries were assessed using the 5200 Fragment Analyzer system (Agilent) with an Agilent DNF-474 HS NGS Fragment Kit and a Qubit 4.0 fluorometer (Thermo-Fisher) with a dsDNA HS assay kit according to the manufacturer\u2019s recommendations. In addition, the insert size of the library was determined using a TapeStation 4150 (Agilent) and an Agilent high-sensitivity D1000 ScreenTape assay.  The three libraries were pooled in molar concentrations according to a sequencing depth of ~30,000 reads/cell for 5\u2019 gene expression and ~5,000 reads/cell for the VDJ and CSP libraries and sequenced on an Illumina NovaSeq 6000 platform (150 bp, paired-end) with the following parameters: read1 - 26 cycles; read2 - 90 cycles; and i7 and i5 indexes - 10 cycles.",
+          "scRNA-seq with VDJ immune profiling and cell surface protein (CSP) expression"
+        ],
+        "description": [
+          "Gene Expression",
+          "DemuxHTO4_RNA"
+        ],
+        "data_processing": [
+          "Single-cell RNA sequencing (FASTQ) data from the 5\u2019 RNA expression, VDJ-TCR and CSP libraries were simultaneously processed using the cellranger multipipeline of Cell Ranger software v7.0.1 (10x Genomics). Unique molecular identifier (UMI) counts were assigned to the cell barcodes and mapped to reference genomes: GRCh38-2020-A for RNA, GRCh38-alts-ensembl-7.0.0 for VDJ-TCR, and TotalSeq-C (BioLegend) feature barcodes for CSP to generate a filtered RNA/CSP count matrix and filtered VDJ-TCR contig annotations. To demultiplex the cells from all three patients, raw reads from the 5\u2019 RNA expression and multiplexing capture (CSP) libraries were again processed with a cellranger multipipeline to generate a sample-filtered RNA count matrix for each sample. Cell barcodes from all three patients were assigned to their respective patient IDs, and unassigned or doublets were discarded during demultiplexing. Next, the demultiplexed filtered count data from all patients were merged and analyzed via the R platform-based Seurat v4.3.0 package.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: cellranger multi output matrix files: Combined_filtered_barcodes.tsv.gz, Combined_filtered_features.tsv.gz, Combined_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output vdj-t files: Combined_filtered_contig_annotations.csv",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO2_filtered_barcodes.tsv.gz, DemuxHTO2_filtered_features.tsv.gz, DemuxHTO2_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO3_filtered_barcodes.tsv.gz, DemuxHTO3_filtered_features.tsv.gz, DemuxHTO3_filtered_matrix.mtx.gz",
+          "Supplementary files format and content: cellranger multi output matrix files: DemuxHTO4_filtered_barcodes.tsv.gz, DemuxHTO4_filtered_features.tsv.gz, DemuxHTO4_filtered_matrix.mtx.gz"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Asgar,,Ansari"
+        ],
+        "contact_email": [
+          "asgaransari@nii.ac.in"
+        ],
+        "contact_laboratory": [
+          "Vaccine Immunology Laboratory,"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology,"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg, Jawaharlal Nehru University,"
+        ],
+        "contact_city": [
+          "New Delhi,"
+        ],
+        "contact_state": [
+          "Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN44425755",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX26490932"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593267/suppl/GSM8593267_DemuxHTO4_filtered_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593267/suppl/GSM8593267_DemuxHTO4_filtered_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593267/suppl/GSM8593267_DemuxHTO4_filtered_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE280258"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593267/suppl/GSM8593267_DemuxHTO4_filtered_features.tsv.gz",
+          "filename": "GSM8593267_DemuxHTO4_filtered_features.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593267/suppl/GSM8593267_DemuxHTO4_filtered_barcodes.tsv.gz",
+          "filename": "GSM8593267_DemuxHTO4_filtered_barcodes.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8593nnn/GSM8593267/suppl/GSM8593267_DemuxHTO4_filtered_matrix.mtx.gz",
+          "filename": "GSM8593267_DemuxHTO4_filtered_matrix.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "acute dengue",
+        "source_specimen_code": "P032.1",
+        "source_preparation": "Thawed cryopreserved PBMCs, FACS-sorted ICOS+CD38+ CD4 cells; three hashtagged patients pooled in one capture",
+        "source_composition_limitation": "Activated CD4 enrichment; no natural PBMC composition or absent-lineage expression inferred",
+        "source_assignment": "Published CellRanger7.0.1 sample-filtered donor matrices; source excludes unassigned/doublets; no probability supplied",
+        "source_demographics": "Adult acute patients; individual ages/sex/severity and exact draw dates not joined",
+        "source_primary": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12032839/"
+      },
+      "genes_member": "GSM8593267_DemuxHTO4_filtered_features.tsv.gz",
+      "barcodes_member": "GSM8593267_DemuxHTO4_filtered_barcodes.tsv.gz",
+      "matrix_member": "GSM8593267_DemuxHTO4_filtered_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 1343,
+        "source_features": 36609,
+        "RNA_genes": 36601,
+        "excluded_antibody_features": 8,
+        "RNA_gene_coordinate_sha256": "714726463c6ba3bf1a16fb0545911d84abc5b89e293da21a51c7ce6f24920839",
+        "integer_nonnegative_counts": true,
+        "source_demultiplexed_barcodes_disjoint": true
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

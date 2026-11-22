@@ -1,0 +1,73 @@
+{
+  "dataset_id": "GSE277117",
+  "study_id": "GSE277117",
+  "input_format": "typed_h5ad",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "Patient",
+    "Drug",
+    "Stage"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Author deposited souporcell donor assignments and Drug/Stage define53donor-treatment-visits from25donors. Exclude Multiplet and unassigned Stage. Sample_num denotes technical library. KAS04 TNF/1mo combines libraries5/26 into one specimen; only2shared bare barcodes,0identical rows. KAS02 has separate GEO CITE Post and scRNA Pre records, not a contradictory single record.",
+  "source_metadata": {
+    "accession": "GSE277117",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277117",
+    "access": "Public processed H5AD; controlled WGS not required",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "source_processing": "CellRanger7.1.0 GRCh38-2020-A; aggr; souporcell donor assignments. Original counts in X verified in full.",
+    "gene_identifier_type": "Source Ensembl gene_ids with original symbols preserved",
+    "feature_selection": "Retain36601Gene Expression features; exclude163Antibody Capture features before library normalization",
+    "replicate_review": {
+      "donor": "KAS04",
+      "visit": "TNF/1mo",
+      "groups": {
+        "5": 3513,
+        "26": 1052
+      },
+      "source_note": "Distinct source library numbers map to same author-assigned biological visit; do not count as separate specimens.",
+      "shared_bare_barcodes": 2,
+      "identical_rows": 0,
+      "median_shared_cosine": 0.8042782843112946
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "source_asset": {
+    "filename": "GSE277117_All_cell.h5ad",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE277nnn/GSE277117/suppl/GSE277117_All_cell.h5ad",
+    "expected_bytes": 5027715999
+  },
+  "feature_type_column": "feature_types",
+  "gene_id_column": "gene_ids",
+  "source_cell_exclusions": {
+    "Patient": [
+      "Multiplet"
+    ],
+    "Stage": [
+      "NA"
+    ]
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "Patient",
+      "treatment": "Drug",
+      "visit": "Stage"
+    },
+    "constants": {
+      "tissue": "blood",
+      "disease": "ankylosing spondylitis",
+      "is_primary_data": true
+    }
+  }
+}

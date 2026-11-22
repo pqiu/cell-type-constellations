@@ -1,0 +1,1229 @@
+{
+  "dataset_id": "GSE350157",
+  "study_id": "GSE350157",
+  "input_format": "lyme_vireo",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_specimen_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Explicit GEO contributor/Vireo crosswalk:four Lyme donors T1/T4 plus eight baseline controls. L203264_T1 appears in two technical captures and is one biological specimen; combine cells while rejecting exact barcode/count duplication across libraries. Vireo model confidence>=0.90, doublet probability<=0.10, informative variants>0, exclude doublet/unassigned.",
+  "source_metadata": {
+    "accession": "GSE350157",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350157",
+    "access": "Public original RNA H5 and genetic donor-assignment tables; raw sequence not required",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "demographics": "Adult cohort; ages/sex absent from individual GEO records, no imputation",
+    "source_processing": [
+      "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+      "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+      "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+      "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+      "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+      "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+    ],
+    "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM10108009",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L204127_T1"
+        ],
+        "geo_accession": [
+          "GSM10108009"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L204127_T1",
+          "group=Lyme disease; contributors=L204127_T1,L202368_T1; vireo=donor0:L204127_T1,donor1:L202368_T1; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108009/suppl/GSM10108009_L204127_T1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108009/suppl/GSM10108009_L204127_T1_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L204127_T1",
+        "donor1": "L202368_T1"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108009/suppl/GSM10108009_L204127_T1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108009_L204127_T1_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108009/suppl/GSM10108009_L204127_T1_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108009_L204127_T1_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "Lyme disease",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108009",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108009_L204127_T1_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108009_L204127_T1_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          5502,
+          33538
+        ],
+        "nonzeros": 10008273,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108010",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L204127_T4"
+        ],
+        "geo_accession": [
+          "GSM10108010"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L204127_T4",
+          "group=Lyme disease; contributors=L204127_T4,L202368_T4,L203264_T1; vireo=donor0:L203264_T1,donor1:L202368_T4,donor2:L204127_T4; pooling=three contributors"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108010/suppl/GSM10108010_L204127_T4_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108010/suppl/GSM10108010_L204127_T4_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L203264_T1",
+        "donor1": "L202368_T4",
+        "donor2": "L204127_T4"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108010/suppl/GSM10108010_L204127_T4_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108010_L204127_T4_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108010/suppl/GSM10108010_L204127_T4_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108010_L204127_T4_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "Lyme disease",
+        "source_pooling": "three contributors",
+        "source_pool_gsm": "GSM10108010",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108010_L204127_T4_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108010_L204127_T4_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          4657,
+          33538
+        ],
+        "nonzeros": 9327835,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108011",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L204185_T1"
+        ],
+        "geo_accession": [
+          "GSM10108011"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L204185_T1",
+          "group=Lyme disease; contributors=L204185_T1,L203264_T1; vireo=donor0:L204185_T1,donor1:L203264_T1; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108011/suppl/GSM10108011_L204185_T1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108011/suppl/GSM10108011_L204185_T1_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L204185_T1",
+        "donor1": "L203264_T1"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108011/suppl/GSM10108011_L204185_T1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108011_L204185_T1_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108011/suppl/GSM10108011_L204185_T1_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108011_L204185_T1_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "Lyme disease",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108011",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108011_L204185_T1_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108011_L204185_T1_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          5513,
+          33538
+        ],
+        "nonzeros": 10020710,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108012",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L204185_T4"
+        ],
+        "geo_accession": [
+          "GSM10108012"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L204185_T4",
+          "group=Lyme disease; contributors=L204185_T4,L203264_T4; vireo=donor0:L203264_T4,donor1:L204185_T4; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108012/suppl/GSM10108012_L204185_T4_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108012/suppl/GSM10108012_L204185_T4_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L203264_T4",
+        "donor1": "L204185_T4"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108012/suppl/GSM10108012_L204185_T4_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108012_L204185_T4_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108012/suppl/GSM10108012_L204185_T4_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108012_L204185_T4_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "Lyme disease",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108012",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108012_L204185_T4_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108012_L204185_T4_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          6700,
+          33538
+        ],
+        "nonzeros": 12353193,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108013",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L211932_T1"
+        ],
+        "geo_accession": [
+          "GSM10108013"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L211932_T1",
+          "group=healthy control; contributors=L211932_T1,L211403_T1; vireo=donor0:L211932_T1,donor1:L211403_T1; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108013/suppl/GSM10108013_L211932_T1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108013/suppl/GSM10108013_L211932_T1_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L211932_T1",
+        "donor1": "L211403_T1"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108013/suppl/GSM10108013_L211932_T1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108013_L211932_T1_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108013/suppl/GSM10108013_L211932_T1_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108013_L211932_T1_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108013",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108013_L211932_T1_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108013_L211932_T1_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          6562,
+          33538
+        ],
+        "nonzeros": 12544912,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108014",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L214612_T1"
+        ],
+        "geo_accession": [
+          "GSM10108014"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L214612_T1",
+          "group=healthy control; contributors=L214612_T1,L212357_T1; vireo=donor0:L214612_T1,donor1:L212357_T1; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108014/suppl/GSM10108014_L214612_T1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108014/suppl/GSM10108014_L214612_T1_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L214612_T1",
+        "donor1": "L212357_T1"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108014/suppl/GSM10108014_L214612_T1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108014_L214612_T1_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108014/suppl/GSM10108014_L214612_T1_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108014_L214612_T1_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108014",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108014_L214612_T1_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108014_L214612_T1_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          5941,
+          33538
+        ],
+        "nonzeros": 11071610,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108015",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L218247_T1"
+        ],
+        "geo_accession": [
+          "GSM10108015"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L218247_T1",
+          "group=healthy control; contributors=L218247_T1,L217701_T1; vireo=donor0:L217701_T1,donor1:L218247_T1; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108015/suppl/GSM10108015_L218247_T1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108015/suppl/GSM10108015_L218247_T1_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L217701_T1",
+        "donor1": "L218247_T1"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108015/suppl/GSM10108015_L218247_T1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108015_L218247_T1_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108015/suppl/GSM10108015_L218247_T1_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108015_L218247_T1_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108015",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108015_L218247_T1_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108015_L218247_T1_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          7715,
+          33538
+        ],
+        "nonzeros": 14743135,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    },
+    {
+      "accession": "GSM10108016",
+      "donor_id": "pooled",
+      "source_metadata": {
+        "title": [
+          "PBMC pooled library L219519_T1"
+        ],
+        "geo_accession": [
+          "GSM10108016"
+        ],
+        "status": [
+          "Public on Oct 08 2026"
+        ],
+        "submission_date": [
+          "Oct 08 2026"
+        ],
+        "last_update_date": [
+          "Oct 08 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: peripheral blood mononuclear cells",
+          "batch: HY2YGDSX3"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in K2EDTA tubes and processed within two hours while maintained on ice. PBMCs were isolated by Ficoll density-gradient centrifugation (2,000 rpm for 20 min at room temperature, no brake), washed in RPMI (1,500 rpm for 7 min at room temperature), counted and assessed for viability. PBMCs were cryopreserved in 10% DMSO in FBS and stored in liquid nitrogen until use.",
+          "Eight 10x Genomics Chromium bead libraries were prepared from pooled PBMC specimens. The planned two-specimen pools used equal cell concentrations, targeting 4,000 cells per specimen. Libraries were sequenced on an Illumina NovaSeq instrument by the Northwest Genomic Center at the University of Washington. The read configuration was 28 cycles for Read 1, 10 cycles for i7 (Index 1), 10 cycles for i5 (Index 2), and 90 cycles for Read 2."
+        ],
+        "description": [
+          "Library name: L219519_T1",
+          "group=healthy control; contributors=L219519_T1,L214971_T1; vireo=donor0:L219519_T1,donor1:L214971_T1; pooling=planned pair"
+        ],
+        "data_processing": [
+          "Illumina base-call files were converted to demultiplexed FASTQ files with Cell Ranger mkfastq v6.0.1. The libraries were sequenced across four lanes of flow cell HY2YGDSX3.",
+          "FASTQ reads were aligned, cells identified and genes counted with Cell Ranger count v3.0.2 using the human GRCh38-3.0.0 reference and an expected cell number of 8,000 per library.",
+          "Cells in each library were assigned to Vireo donor clusters, doublet, or unassigned categories with Vireo v0.5.8. Donor labels were mapped to coded specimens using sex-linked expression and cohort records or genotype concordance across paired libraries, as applicable. Sample descriptions give the mappings.",
+          "Low-quality cells were removed with scuttle quickPerCellQC v1.14.0 based on library size and detected features; cells with a high proportion of mitochondrial transcripts were also removed.",
+          "Gene-by-cell matrices were log-normalized with Seurat NormalizeData and integrated by canonical correlation analysis in Seurat v5.3.0. Cells with fewer than 500 unique features were removed after integration. PCA, UMAP, and shared-nearest-neighbor clustering used the first 30 principal components; cell types were annotated with SingleR v2.6.0 using the Monaco reference.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-library 10x Genomics Cell Ranger filtered feature-barcode matrix in HDF5 format (.h5): genes by filtered cell barcodes, with UMI count values.",
+          "Supplementary files format and content: Each library has a tab-delimited Vireo donor-assignment file (.tsv) with columns cell, donor_id, prob_max, prob_doublet, n_vars, best_singlet, and best_doublet. Values of donor_id are donor0, donor1, donor2 where applicable, doublet, or unassigned. Sample descriptions map donor labels to coded patient specimens."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Naeha,,Subramanian"
+        ],
+        "contact_email": [
+          "nsubrama@systemsbiology.org"
+        ],
+        "contact_institute": [
+          "Institute for Systems Biology"
+        ],
+        "contact_address": [
+          "401 Terry Ave N"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "WA"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108016/suppl/GSM10108016_L219519_T1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108016/suppl/GSM10108016_L219519_T1_vireo_donor_ids.tsv.gz"
+        ],
+        "series_id": [
+          "GSE350157"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "vireo_mapping": {
+        "donor0": "L219519_T1",
+        "donor1": "L214971_T1"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108016/suppl/GSM10108016_L219519_T1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM10108016_L219519_T1_filtered_feature_bc_matrix.h5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM10108nnn/GSM10108016/suppl/GSM10108016_L219519_T1_vireo_donor_ids.tsv.gz",
+          "filename": "GSM10108016_L219519_T1_vireo_donor_ids.tsv.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_pooling": "planned pair",
+        "source_pool_gsm": "GSM10108016",
+        "source_nominal_followup": "T1 diagnosis/control baseline; T4 approximately one-year follow-up, no exact date imputation"
+      },
+      "matrix_h5_member": "GSM10108016_L219519_T1_filtered_feature_bc_matrix.h5",
+      "vireo_member": "GSM10108016_L219519_T1_vireo_donor_ids.tsv.gz",
+      "source_count_review": {
+        "shape": [
+          6868,
+          33538
+        ],
+        "nonzeros": 11188253,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "assignment_min_probability": 0.9,
+  "expected_specimens": [
+    "L202368_T1",
+    "L202368_T4",
+    "L203264_T1",
+    "L203264_T4",
+    "L204127_T1",
+    "L204127_T4",
+    "L204185_T1",
+    "L204185_T4",
+    "L211403_T1",
+    "L211932_T1",
+    "L212357_T1",
+    "L214612_T1",
+    "L214971_T1",
+    "L217701_T1",
+    "L218247_T1",
+    "L219519_T1"
+  ],
+  "expected_donors": [
+    "L202368",
+    "L203264",
+    "L204127",
+    "L204185",
+    "L211403",
+    "L211932",
+    "L212357",
+    "L214612",
+    "L214971",
+    "L217701",
+    "L218247",
+    "L219519"
+  ]
+}

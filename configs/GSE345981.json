@@ -1,0 +1,65 @@
+{
+  "dataset_id": "GSE345981",
+  "study_id": "GSE345981",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE345981_complete_original_RNA_audit.json",
+    "bytes": 91683,
+    "sha256": "ed18e3d57d43bd462113a20eaaec62cea0426636d9396b56e75572308c63f20d"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE345981_source_identity_review.json",
+    "bytes": 83701,
+    "sha256": "282bd7220f2e483c05c1a4c613d0821db5069564592586109c0e26389f3d01ab"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Literal original GEXtitle material token selects same-named original H5; exact original ADTtitle pair agrees on all clinical/tissue/batch fields.16study-coded donor/materialgroups,not32RNA/ADTrecords. Originalsummary explicitlydonors; no ordinal barcode, genotype, profile or demographic identity assignment.",
+  "physical_sample_mapping_evidence": "Original summary explicitly16PBMCdonors,4healthy/12MS. OriginalGEX/ADTtitlepair maps each supplied H5carrier to one literal material/donor code,not32people. No barcode/genotype/expression/demographic donor inference. Unknown cross-study aliases/relatedFLASH identity remain unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "age": "source_age",
+      "sex": "source_Sex"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE345981",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE345981",
+    "primary_PMID": null,
+    "access": "Public original filtered expression H5 carriers and original GEO metadata; no raw reads or controlled data.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "GEO count-data license not specified",
+    "source_sample_review": {
+      "path": "references/datasets/GSE345981_source_identity_review.json",
+      "bytes": 83701,
+      "sha256": "282bd7220f2e483c05c1a4c613d0821db5069564592586109c0e26389f3d01ab"
+    },
+    "source_unit": "Original summary explicitly16PBMCdonors,4healthy/12MS. OriginalGEX/ADTtitlepair maps each supplied H5carrier to one literal material/donor code,not32people. No barcode/genotype/expression/demographic donor inference. Unknown cross-study aliases/relatedFLASH identity remain unresolved.",
+    "identity_policy": "Literal original GEXtitle material token selects same-named original H5; exact original ADTtitle pair agrees on all clinical/tissue/batch fields.16study-coded donor/materialgroups,not32RNA/ADTrecords. Originalsummary explicitlydonors; no ordinal barcode, genotype, profile or demographic identity assignment.",
+    "clinical_policy": "Keep source MSsubtype, literal age with years unit, sex and batch. Healthyage/sex explicitly notprovided. Allhealthy batch1 versus MSbatch2/3confounded; no learned correction or phenotype claim. Exact sampling/treatment/visit clocks unavailable.",
+    "reuse_policy": "No completed output references this accession. Source metadata also mentions FLASH-seq; possible GSE346009cohort relationship remains unresolved and is not new independent-study replication. Its held fractional PISCES quantities are not used here. Keep potential related study together pending explicit alias review; no global uniqueness claim.",
+    "selection_policy": "All74140original filtered PBMCcells staged;66650pass fixed500counts/200genes/0.2MT/positiveRNA-library QC. No sourceSeurat integration, doublet/celltype/clinical phenotype selection or altered gene universe.",
+    "cell_calling_policy": "Use original CellRanger filtered typed H5counts; select nativeRNA by explicit feature_type, excluding42typedantibodyfeatures fromRNAdenominators. OriginalRDS/FLASHseq/ADTsequences are not inputs.",
+    "gene_policy": "All36601nativeGeneExpressionIDs with literal symbols/genome retained; duplicate symbols are separate axes.42AntibodyCapture rows excluded native/reference RNA normalization. No gene intersection, inferred IDs, normalization during staging or missing-type zeros.",
+    "source_limitations": "Healthy versus MS completely confounded with technicalbatch (healthy1,MS2/3). Healthyage/sex explicitlynotprovided; sourceMSageunits retained. No exactcollection/treatmentclocks or globalaliases. Possible relatedFLASHseqstudy not independent replication. Sourceoriginal filtered cellcalls only, noauthorSeurat/QCselection imposed. No annotation accuracy, clinical, causal orconstellation validation."
+  }
+}

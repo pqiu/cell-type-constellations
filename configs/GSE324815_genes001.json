@@ -1,0 +1,2372 @@
+{
+  "dataset_id": "GSE324815_genes001",
+  "study_id": "GSE324815",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "12PBMC-derived nuclear-RNA observations from3source people across4nominal visits each; typed Peaks/pairedATAC and broader32trial participants are not additional RNA specimens.",
+  "source_metadata": {
+    "accession": "GSE324815",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE324815",
+      "https://pubmed.ncbi.nlm.nih.gov/42013310/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE324815",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+    "source_processing": [
+      "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: atac_fragments.tsv.gz",
+      "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+      "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+      "Supplementary files format and content: atac_peaks.bed",
+      "Supplementary files format and content: per_barcode_metrics.csv"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE324815_source_identity_review.json",
+      "sha256": "7de7457fbc1b245ad01a0753fcc376c2dd78b275cf171a14b55593f5159e4df4"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9586646",
+      "donor_id": "Pt28",
+      "source_metadata": {
+        "title": [
+          "Pt28_BL scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586646"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt28",
+          "treatment: APX005M + Pembrolizumab",
+          "time: BL"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt28_BL_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496381",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495719"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586646/suppl/GSM9586646_Pt28_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586646/suppl/GSM9586646_Pt28_BL_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586646",
+        "source_GEO_title": "Pt28_BL scmultiome- scRNA",
+        "source_participant_code": "Pt28",
+        "source_visit_code": "BL",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt28\", \"time\": \"BL\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496381",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt28\", \"source_name\": \"PBMCs\", \"time\": \"BL\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586646_Pt28_BL_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3335,
+          36601
+        ],
+        "nonzeros": 5755515,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 3335,
+        "cells": 3335,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 70219,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 70219,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3335,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3148,
+          "full_source_RNA_counts": 13338001,
+          "selected_RNA_counts": 13293347,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586646.csv.gz",
+            "sha256": "85cd74e8b66280c624b00b120ef73e1c8972d36ba65f496e0827a722f30f618a"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586646/suppl/GSM9586646_Pt28_BL_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586646_Pt28_BL_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 38953250,
+          "sha256": "2e6c6ad7049f2f8952c43157484b5b6f851db212619815f6ac34aa565f6fef0d"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586647",
+      "donor_id": "Pt28",
+      "source_metadata": {
+        "title": [
+          "Pt28_C1D3 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586647"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt28",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C1D3"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt28_C1D3_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496380",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495720"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586647/suppl/GSM9586647_Pt28_C1D3_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586647/suppl/GSM9586647_Pt28_C1D3_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586647",
+        "source_GEO_title": "Pt28_C1D3 scmultiome- scRNA",
+        "source_participant_code": "Pt28",
+        "source_visit_code": "C1D3",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt28\", \"time\": \"C1D3\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496380",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt28\", \"source_name\": \"PBMCs\", \"time\": \"C1D3\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586647_Pt28_C1D3_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          5571,
+          36601
+        ],
+        "nonzeros": 9737106,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5571,
+        "cells": 5571,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 98278,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 98278,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5571,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5471,
+          "full_source_RNA_counts": 20190280,
+          "selected_RNA_counts": 20167023,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586647.csv.gz",
+            "sha256": "1a49a1cb2c48b6874a4374ff6b214697776860911b15a0f3a37a390be63ac1a5"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586647/suppl/GSM9586647_Pt28_C1D3_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586647_Pt28_C1D3_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 70935669,
+          "sha256": "17bbaa60b272ec43058383d898da0b566b2698f0b87bf5cd63ed6a4edec638b5"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586648",
+      "donor_id": "Pt28",
+      "source_metadata": {
+        "title": [
+          "Pt28_C1D8 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586648"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt28",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C1D8"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt28_C1D8_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496379",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495721"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586648/suppl/GSM9586648_Pt28_C1D8_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586648/suppl/GSM9586648_Pt28_C1D8_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586648",
+        "source_GEO_title": "Pt28_C1D8 scmultiome- scRNA",
+        "source_participant_code": "Pt28",
+        "source_visit_code": "C1D8",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt28\", \"time\": \"C1D8\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496379",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt28\", \"source_name\": \"PBMCs\", \"time\": \"C1D8\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586648_Pt28_C1D8_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          5990,
+          36601
+        ],
+        "nonzeros": 11813818,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5990,
+        "cells": 5990,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 92606,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 92606,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5990,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5904,
+          "full_source_RNA_counts": 27597180,
+          "selected_RNA_counts": 27575379,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586648.csv.gz",
+            "sha256": "fa862c2912c20c320d1da098a3956de40ade78658e1c2285f71191bf92856e97"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586648/suppl/GSM9586648_Pt28_C1D8_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586648_Pt28_C1D8_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 75859064,
+          "sha256": "70e03715cfb10c66dce24652b28d4d091d58a616084e84961b8ef49a2b886d62"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586649",
+      "donor_id": "Pt28",
+      "source_metadata": {
+        "title": [
+          "Pt28_C2D1 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586649"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt28",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C2D1"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt28_C2D1_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496378",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495722"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586649/suppl/GSM9586649_Pt28_C2D1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586649/suppl/GSM9586649_Pt28_C2D1_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586649",
+        "source_GEO_title": "Pt28_C2D1 scmultiome- scRNA",
+        "source_participant_code": "Pt28",
+        "source_visit_code": "C2D1",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt28\", \"time\": \"C2D1\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496378",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt28\", \"source_name\": \"PBMCs\", \"time\": \"C2D1\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586649_Pt28_C2D1_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3877,
+          36601
+        ],
+        "nonzeros": 7065042,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 3877,
+        "cells": 3877,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 84924,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 84924,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3877,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3739,
+          "full_source_RNA_counts": 16492144,
+          "selected_RNA_counts": 16459984,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586649.csv.gz",
+            "sha256": "f0ac08564f991668e8e47037253ac3b9525e99b1525f69468b02f28b8d69baa1"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586649/suppl/GSM9586649_Pt28_C2D1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586649_Pt28_C2D1_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 47707312,
+          "sha256": "bb12d3f624485008152db6127b85705bd84e0c20073e6b3ad9e501a8d1ec9d9a"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586650",
+      "donor_id": "Pt32",
+      "source_metadata": {
+        "title": [
+          "Pt32_BL scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586650"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt32",
+          "treatment: APX005M + Pembrolizumab",
+          "time: BL"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt32_BL_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496377",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495723"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586650/suppl/GSM9586650_Pt32_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586650/suppl/GSM9586650_Pt32_BL_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586650",
+        "source_GEO_title": "Pt32_BL scmultiome- scRNA",
+        "source_participant_code": "Pt32",
+        "source_visit_code": "BL",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt32\", \"time\": \"BL\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496377",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt32\", \"source_name\": \"PBMCs\", \"time\": \"BL\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586650_Pt32_BL_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          5442,
+          36601
+        ],
+        "nonzeros": 10597249,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5442,
+        "cells": 5442,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 78302,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 78302,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5442,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5257,
+          "full_source_RNA_counts": 24356671,
+          "selected_RNA_counts": 24323248,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586650.csv.gz",
+            "sha256": "e0d2a9ffe809e769a818c0b70bfa9e8469e095179c74be35a45a2c0dfead6cdf"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586650/suppl/GSM9586650_Pt32_BL_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586650_Pt32_BL_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 60469812,
+          "sha256": "1c6964c8394141f73bed902c99e11986df3f0fb869f1aae9cb7784f53591af8c"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586651",
+      "donor_id": "Pt32",
+      "source_metadata": {
+        "title": [
+          "Pt32_C1D3 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586651"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt32",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C1D3"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt32_C1D3_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496376",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495724"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586651/suppl/GSM9586651_Pt32_C1D3_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586651/suppl/GSM9586651_Pt32_C1D3_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586651",
+        "source_GEO_title": "Pt32_C1D3 scmultiome- scRNA",
+        "source_participant_code": "Pt32",
+        "source_visit_code": "C1D3",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt32\", \"time\": \"C1D3\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496376",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt32\", \"source_name\": \"PBMCs\", \"time\": \"C1D3\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586651_Pt32_C1D3_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          2265,
+          36601
+        ],
+        "nonzeros": 4346505,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 2265,
+        "cells": 2265,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 79761,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 79761,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2265,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2172,
+          "full_source_RNA_counts": 10074819,
+          "selected_RNA_counts": 10058921,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586651.csv.gz",
+            "sha256": "1346e9ca10ce2cc90b3b1aec7b00a2c981b7a4ad46248c5200af9e917b1d5620"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586651/suppl/GSM9586651_Pt32_C1D3_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586651_Pt32_C1D3_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 36196625,
+          "sha256": "2b6541f3b04e447cca44dd87e3d8a89d7935e08b0426b6002c82cdb5b38fffbf"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586652",
+      "donor_id": "Pt32",
+      "source_metadata": {
+        "title": [
+          "Pt32_C1D8 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586652"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt32",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C1D8"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt32_C1D8_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496375",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495725"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586652/suppl/GSM9586652_Pt32_C1D8_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586652/suppl/GSM9586652_Pt32_C1D8_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586652",
+        "source_GEO_title": "Pt32_C1D8 scmultiome- scRNA",
+        "source_participant_code": "Pt32",
+        "source_visit_code": "C1D8",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt32\", \"time\": \"C1D8\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496375",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt32\", \"source_name\": \"PBMCs\", \"time\": \"C1D8\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586652_Pt32_C1D8_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3698,
+          36601
+        ],
+        "nonzeros": 6254787,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 3698,
+        "cells": 3698,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 84761,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 84761,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3698,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3489,
+          "full_source_RNA_counts": 13700698,
+          "selected_RNA_counts": 13652512,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586652.csv.gz",
+            "sha256": "d5272471e841c9cbe780c5657b3270ac59a00c98ea14350998269331dd96a0bd"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586652/suppl/GSM9586652_Pt32_C1D8_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586652_Pt32_C1D8_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 49781639,
+          "sha256": "45bb73a8c56d536ab9ddb350e3a82f0bda7d47246b425ff87cc84ab0a8be584e"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586653",
+      "donor_id": "Pt32",
+      "source_metadata": {
+        "title": [
+          "Pt32_C2D1 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586653"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt32",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C2D1"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt32_C2D1_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496374",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495726"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586653/suppl/GSM9586653_Pt32_C2D1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586653/suppl/GSM9586653_Pt32_C2D1_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586653",
+        "source_GEO_title": "Pt32_C2D1 scmultiome- scRNA",
+        "source_participant_code": "Pt32",
+        "source_visit_code": "C2D1",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt32\", \"time\": \"C2D1\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496374",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt32\", \"source_name\": \"PBMCs\", \"time\": \"C2D1\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586653_Pt32_C2D1_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          5038,
+          36601
+        ],
+        "nonzeros": 9190122,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5038,
+        "cells": 5038,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 66836,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 66836,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5038,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4502,
+          "full_source_RNA_counts": 21120659,
+          "selected_RNA_counts": 21034394,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586653.csv.gz",
+            "sha256": "be165fd7330b40d8cc29955e97e0a53ea63bd255d3a8dcd8e67aee661077db6c"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586653/suppl/GSM9586653_Pt32_C2D1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586653_Pt32_C2D1_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 52134370,
+          "sha256": "33c8724dbf0b1d212137878c45f9150c625902f5e87218add3298bf3ef71af89"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586654",
+      "donor_id": "Pt37",
+      "source_metadata": {
+        "title": [
+          "Pt37_BL scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586654"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt37",
+          "treatment: APX005M + Pembrolizumab",
+          "time: BL"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt37_BL_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496373",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495727"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586654/suppl/GSM9586654_Pt37_BL_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586654/suppl/GSM9586654_Pt37_BL_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586654",
+        "source_GEO_title": "Pt37_BL scmultiome- scRNA",
+        "source_participant_code": "Pt37",
+        "source_visit_code": "BL",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt37\", \"time\": \"BL\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496373",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt37\", \"source_name\": \"PBMCs\", \"time\": \"BL\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586654_Pt37_BL_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3640,
+          36601
+        ],
+        "nonzeros": 6428629,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 3640,
+        "cells": 3640,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 87260,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 87260,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3640,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3512,
+          "full_source_RNA_counts": 14286694,
+          "selected_RNA_counts": 14259696,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586654.csv.gz",
+            "sha256": "98aac2311907fcc409afd24221d2c6643df6f53dfbe6e8c19626f7f8298788d1"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586654/suppl/GSM9586654_Pt37_BL_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586654_Pt37_BL_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 45154046,
+          "sha256": "8d72fd630fad006f02f4cb6f7fc24943e3d75049a0c32fce56ba5480d4436267"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586655",
+      "donor_id": "Pt37",
+      "source_metadata": {
+        "title": [
+          "Pt37_C1D3 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586655"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt37",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C1D3"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt37_C1D3_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496372",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495728"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586655/suppl/GSM9586655_Pt37_C1D3_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586655/suppl/GSM9586655_Pt37_C1D3_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586655",
+        "source_GEO_title": "Pt37_C1D3 scmultiome- scRNA",
+        "source_participant_code": "Pt37",
+        "source_visit_code": "C1D3",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt37\", \"time\": \"C1D3\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496372",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt37\", \"source_name\": \"PBMCs\", \"time\": \"C1D3\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586655_Pt37_C1D3_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          5550,
+          36601
+        ],
+        "nonzeros": 11819363,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5550,
+        "cells": 5550,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 94171,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 94171,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5550,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 5449,
+          "full_source_RNA_counts": 30807009,
+          "selected_RNA_counts": 30781814,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586655.csv.gz",
+            "sha256": "689c56eed1308ce0f92a210710d9cb401276b6b00968b1772acb914361d4bcc6"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586655/suppl/GSM9586655_Pt37_C1D3_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586655_Pt37_C1D3_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 74161429,
+          "sha256": "02c2532051d0b17e52bb093977c957a9ae4f9dd3f2f0c682b734814b22b96e86"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586656",
+      "donor_id": "Pt37",
+      "source_metadata": {
+        "title": [
+          "Pt37_C1D8 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586656"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt37",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C1D8"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt37_C1D8_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496371",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495729"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586656/suppl/GSM9586656_Pt37_C1D8_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586656/suppl/GSM9586656_Pt37_C1D8_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586656",
+        "source_GEO_title": "Pt37_C1D8 scmultiome- scRNA",
+        "source_participant_code": "Pt37",
+        "source_visit_code": "C1D8",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt37\", \"time\": \"C1D8\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496371",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt37\", \"source_name\": \"PBMCs\", \"time\": \"C1D8\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586656_Pt37_C1D8_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          5106,
+          36601
+        ],
+        "nonzeros": 10942474,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 5106,
+        "cells": 5106,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 93044,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 93044,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 5106,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4720,
+          "full_source_RNA_counts": 27251490,
+          "selected_RNA_counts": 27137374,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586656.csv.gz",
+            "sha256": "e6631d669d08fdc8ac99878a7500a78597698a83f4001217367a215de0406c2d"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586656/suppl/GSM9586656_Pt37_C1D8_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586656_Pt37_C1D8_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 65584383,
+          "sha256": "6c6e00cf193e377853bec78f1c53b4957436aa1e827bc357d3b121ff76b22c79"
+        }
+      ]
+    },
+    {
+      "accession": "GSM9586657",
+      "donor_id": "Pt37",
+      "source_metadata": {
+        "title": [
+          "Pt37_C2D1 scmultiome- scRNA"
+        ],
+        "geo_accession": [
+          "GSM9586657"
+        ],
+        "status": [
+          "Public on Apr 10 2026"
+        ],
+        "submission_date": [
+          "Mar 13 2026"
+        ],
+        "last_update_date": [
+          "Apr 10 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMCs",
+          "individual: Pt37",
+          "treatment: APX005M + Pembrolizumab",
+          "time: C2D1"
+        ],
+        "molecule_ch1": [
+          "nuclear RNA"
+        ],
+        "extract_protocol_ch1": [
+          "From cryopreserved PBMCs, nuclei were isolated using the Chromium Nuclei Isolation Kit from 10X genomics (PN-1000493) based on the manufacturer's protocol.",
+          "Single nuclei suspensions were processed using the Chromium Next GEM Single Cell Multiome ATAC + Gene Expression (10x Genomics, PN: 1000283) platform following the manufacturer\u2019s protocol, generating paired ATAC and gene expression libraries for each sample."
+        ],
+        "description": [
+          "Library name: Pt37_C2D1_GEX"
+        ],
+        "data_processing": [
+          "Initially, the raw multiome data comprising both gene expression and chromatin accessibility fragments were processed using 10x Genomics Cell Ranger ARC. The scRNAseq data from multiple samples were imported using import10xFeatureMatrix. For the ATAC modality, low-quality cells defined as those with TSS enrichment less than 5, fewer than 2,500 fragments, or missing RNA UMIs were filtered out. Cell barcodes were used to match and integrate scRNA-seq and scATAC-seq data in ArchR, retaining only shared cells using subsetArchRProject(). Gene expression data were incorporated with matched RNA constraints, and iterative LSI was applied separately to both RNA and ATAC matrices for dimensionality reduction. A combined low-dimensional embedding was then generated followed by UMAP visualization and clustering. Differential gene activity gene score matrix and chromatin accessibility peak matrix were identified, peaks calling was performed using MACS2. Subsequently, motif enrichment analysis was conducted using ENCODE and HOMER annotations to identify transcription factor binding patterns across clusters.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: atac_fragments.tsv.gz",
+          "Supplementary files format and content: atac_fragments.tsv.gz.tbi",
+          "Supplementary files format and content: filtered_feature_bc_matrix.h5",
+          "Supplementary files format and content: atac_peaks.bed",
+          "Supplementary files format and content: per_barcode_metrics.csv"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Veena,,Kochat"
+        ],
+        "contact_email": [
+          "vkswathi@gmail.com"
+        ],
+        "contact_phone": [
+          "9013640077"
+        ],
+        "contact_department": [
+          "Stem Cell Biology Lab"
+        ],
+        "contact_institute": [
+          "National Institute of Immunology"
+        ],
+        "contact_address": [
+          "Aruna Asaf Ali Marg"
+        ],
+        "contact_city": [
+          "New Delhi"
+        ],
+        "contact_state": [
+          "New Delhi"
+        ],
+        "contact_zip/postal_code": [
+          "110067"
+        ],
+        "contact_country": [
+          "India"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56496370",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32495730"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586657/suppl/GSM9586657_Pt37_C2D1_filtered_feature_bc_matrix.h5"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586657/suppl/GSM9586657_Pt37_C2D1_per_barcode_metrics.csv.gz"
+        ],
+        "series_id": [
+          "GSE324815"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9586657",
+        "source_GEO_title": "Pt37_C2D1 scmultiome- scRNA",
+        "source_participant_code": "Pt37",
+        "source_visit_code": "C2D1",
+        "source_capture_label": "PBMC_derived_single_nucleus_RNA",
+        "condition": "metastatic melanoma",
+        "source_molecule": "nuclear RNA",
+        "source_assay": "single-nucleus multiome RNA",
+        "source_treatment_as_reported": "APX005M + Pembrolizumab",
+        "source_specimen": "PBMC-derived nuclei",
+        "source_characteristics_json": "{\"individual\": \"Pt37\", \"time\": \"C2D1\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_BioSample": "SAMN56496370",
+        "source_BioSample_attributes_json": "{\"collection_date\": \"missing\", \"geo_loc_name\": \"missing\", \"individual\": \"Pt37\", \"source_name\": \"PBMCs\", \"time\": \"C2D1\", \"tissue\": \"PBMCs\", \"treatment\": \"APX005M + Pembrolizumab\"}",
+        "source_identity_policy": "Three full source patient codes, four distinct nominal visits each. Paired ATAC records describe the same specimens and are not additional samples. Numeric parts of patient codes are not ages, dates or enrollment counts.",
+        "source_tissue_policy": "Series overall design says tumor. Original specimen tissue/extraction and primary Figure3caption/methods explicitly identify12PBMC/blood-nuclei observations. Preserve the conflicting series statement in source scope review; use specimen-level and primary evidence for PBMC scope.",
+        "source_modality_policy": "Nuclear RNA from cryopreserved PBMC, not whole-cell RNA. Native RNA feature/count QC precedes annotation. Do not interpret assay differences as biological shifts or claim calibrated SCimilarity annotation for nuclei.",
+        "source_phase_policy": "Preserve BL/C1D3/C1D8/C2D1 labels. Publication reports baseline and3/8/21days; no calendar dates or schedule-derived harmonized days assigned. Baseline treatment field names the study regimen, not proof of prior administration.",
+        "source_selection_policy": "Primary selects three responding patients for multiome. Broader32trial participants, NanoString subset and mouse-tumor GSE325923 are not additional human single-cell specimens.",
+        "source_missingness_policy": "Individual age, sex, ancestry, exact collection dates and response categories unavailable in original records. BioSample missing strings remain only original metadata, not imputed values.",
+        "source_count_policy": "Original filtered CellRanger ARC integer counts. Audit all feature counts, then exclude typed Peaks from RNA QC, all RNA library denominators and centroid geometry. Native human gene IDs/symbols retained; no ArchR gene scores, joint embeddings or normalized expression used.",
+        "split_assignment": "unassigned; all four visits of each study-scoped person stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM9586657_Pt37_C2D1_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          4530,
+          36601
+        ],
+        "nonzeros": 9543828,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 4530,
+        "cells": 4530,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Peaks": 90187,
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 90187,
+        "reviewed_non_RNA_types": [
+          "Peaks"
+        ],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE324815_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "8b684eeb7ac744883c2af6852852e75af668e8cc41d3514e452dd016250e6484"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 4530,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4288,
+          "full_source_RNA_counts": 22443607,
+          "selected_RNA_counts": 22382641,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE324815_original_RNA_QC/GSM9586657.csv.gz",
+            "sha256": "ea43e0933404879e1111a102710a6ba2c5cbb62e1f9274a85611b53052c7bd4c"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9586nnn/GSM9586657/suppl/GSM9586657_Pt37_C2D1_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9586657_Pt37_C2D1_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 66236451,
+          "sha256": "73b118a7ea5a4dd8da69146fac05da87e4cebf6c8bb47f14399ca5bb1dbf8551"
+        }
+      ]
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "12PBMC-derived nuclear-RNA observations from3source people across4nominal visits each; typed Peaks/pairedATAC and broader32trial participants are not additional RNA specimens."
+}

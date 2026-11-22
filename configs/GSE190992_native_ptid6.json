@@ -1,0 +1,1282 @@
+{
+  "dataset_id": "GSE190992_native_ptid6",
+  "study_id": "GSE190992",
+  "input_format": "pinned_h5_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "donor_id",
+    "source_visit_label"
+  ],
+  "use_source_gene_availability": true,
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original participant/week labels plus exact author sample annotation and embedded material identity support24deposited visits from4participants;6visits perparticipant. Two benchmark controls,18ATACrecords andunrepresentedannotationrows excluded. Storage partitions by participant bound conversion memory without changing per-visit star statistics.",
+  "metadata_mapping": {
+    "aliases": {
+      "author_cell_type": "source_cell_seurat_pbmc_type"
+    }
+  },
+  "exclude_source_values": {
+    "source_cell_hto_category": [
+      "doublet",
+      "negative",
+      "unassigned"
+    ]
+  },
+  "source_metadata": {
+    "accession": "GSE190992",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE190992",
+    "primary_PMID": "36973282",
+    "author_sample_annotation": {
+      "path": "references/datasets/GSE190992_AIFI-data-annotation.csv.gz",
+      "sha256": "71bce6934518fbd2c0dba3aea10faa4ea91edf9599ddb264befa474ef4059f82"
+    },
+    "source_identity_review": "references/datasets/GSE190992_current_source_identity_review.json",
+    "source_native_audits": "references/datasets/GSE190992_native_RNA_audits.json",
+    "source_gene_reference": "Original H5GRCh38; source GEOreportsEnsemblGRCh38-3.0.0. Retain both without inferred coordinate conversion.",
+    "access": "Public original processed RNA H5 matrices; controlled raw sequencing reads not requested",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "raw_cell_identity_audit": {
+      "path": "references/datasets/GSE190992_raw_cell_identity_audit.json",
+      "sha256": "74d6d60d503770a8ce3281a0ca172c59eb61e8dac369a7adfd3affedf10ce121"
+    },
+    "publication": "https://doi.org/10.1038/s41467-023-37432-w"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM5737273",
+      "donor_id": "PTID6",
+      "matrix_h5_member": "GSM5737273_X001-P1_PTID6W2-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+      "source_metadata": {
+        "title": [
+          "PTID6_W2_Male_scRNA"
+        ],
+        "geo_accession": [
+          "GSM5737273"
+        ],
+        "status": [
+          "Public on Jan 11 2023"
+        ],
+        "submission_date": [
+          "Dec 15 2021"
+        ],
+        "last_update_date": [
+          "Jan 11 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "patient_id: PTID6",
+          "patient_visit: W2",
+          "Sex: Male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "30 mL of blood was drawn into BD NaHeparin vacutainer tubes (for\u00a0PBMC; BD #367874) or K2-EDTA vacutainer tubes (for plasma; BD #367863). Upon arrival at the processing lab all NaHeparin tubes for each donor were pooled into a sterile plastic receptacle to establish one common pool for all time points and stored at room temperature until processing (4 hours or less from draw). PBMC were isolated by Ficoll density gradient separation and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404). Thawed PBMC were assayed by cytometry and single-cell RNA sequencing in two batches (donors 5206BW and 7626BW, donors 1178BW and 2216BW) by a team of operators. Plasma was isolated and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404).",
+          "Single-cell RNA-seq libraries were generated using the 10x Genomics Chromium 3\u2019 Single Cell Gene Expression assay (#1000121) and Chromium Controller Instrument according to the manufacturer\u2019s published protocol with modifications for cell hashing21. To block off-target antibody binding, Blocking Solution (5 \u00b5L of Human Trustain FcX (BioLegend #422302), and 13.7 \u00b5L of a 10% Bovine Serum Albumin (BSA)) was added to 500,000 cells suspended in 50 \u00b5L Dulbecco\u2019s Phosphate Buffered Saline (DPBS; Corning Life Sciences #21-031-CM) and incubated for 10 minutes on ice. To stain samples, 0.5 \u00b5g (1 \u00b5L) of a TotalSeq\u2122-A anti-human Hashtag Antibody was suspended in 31.3 \u00b5L DPBS/2% BSA, then added to each sample. For each batch of samples, 100,000 cells from 12 hashed samples with a distinct Hashtag Antibody were pooled into the hashed poolPool 1; 8 additional samples were pooled into hashed pool. Roughly 20,000 cells from a Leukopak healthy control were also labeled with a distinct TotalSeq\u2122-A Hashtag Antibody and were spiked into each pool to serve as a batch control.\u00a0scATAC-seq libraries were prepared according to the Chromium Single Cell ATAC v1.1 Reagent Kits User Guide (CG000209 Rev B) with several modifications. 195,000 cells were loaded into each tagmentation reaction. Permeabilized cells were brought up to a volume of 129 \u00b5l in TD1 buffer (Illumina, 15027866) and mixed with 36 \u00b5l of Illumina TDE1 Tn5 transposase (Illumina, 15027916). Transposition was performed by incubating the prepared reactions on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module (Bio-Rad, 1851197) at 37\u00b0C for 60 minutes, followed by a brief hold at 4\u00b0C. A Chromium NextGEM Chip H (10x Genomics, 2000180) was placed in a Chromium Next GEM Secondary Holder (10x Genomics, 3000332) and 50% Glycerol (Teknova, G1798) was dispensed into all unused wells. A master mix composed of Barcoding Reagent B (10x Genomics, 2000194), Reducing Agent B (10x Genomics, 2000087), and Barcoding Enzyme (10x Genomics, 2000125) was then added to each sample well, pipette-mixed, and loaded into row 1 of the chip. Chromium Single Cell ATAC Gel Beads v1.1 (10x Genomics, 2000210) were vortexed for 30 seconds and loaded into row 2 of the chip, along with Partitioning Oil (10x Genomics, 2000190) in row 3. A 10x Gasket (10x Genomics, 370017) was placed over the chip and attached to the Secondary Holder. The chip was loaded into a Chromium Single Cell Controller instrument (10x Genomics, 120270) for GEM generation. At the completion of the run, GEMs were collected, and linear amplification was performed on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module: 72\u00b0C for 5 min, 98\u00b0C for 30 sec, 12 cycles of: 98\u00b0C for 10 sec, 59\u00b0C for 30 sec and 72\u00b0C for 1 min. Flow cytometry was performed as previously described (https://doi.org/10.1016/j.isci.2021.102404). In brief, cryopreserved PBMC were thawed, washed, and counted. 1-2 x106 cells were incubated with Human TruStain FcX (BioLegend #422302) and Fixable Viability Stain 510 (BD #564406) prior to staining with a 25-color cell surface panel (Key Resources Table) on ice for 25 minutes. Cells were washed and fixed with 4% paraformaldehyde (Electron Microscopy Sciences #15713) prior to acquisition on a BD Symphony cytometer. Plasma samples were submitted to Olink (Uppsala, Sweden) for assay using the Olink Proximity Extension assay, run on the Fluidigm Biomark system. Patient samples were distributed evenly across two plates, and all time points per patient were run on the same plate, with randomized well locations. Samples were assayed using the Olink Discovery Assay which encompasses all proteins across 13 panels (Cardiometabolic [V.3603], Cardiovascular II [V.5006], Cardiovascular III [V.6113], Cell Regulation [V.3701], Development [V.3512], Immune Response [V.3202], Inflammation [V.3021], Metabolism [V.3402], Neuro Exploratory [V.3901], Neurology [V.8012], Oncology II [V.7004], Oncology III [V.4001], Organ Damage [V.3311]).",
+          "Other: scRNA-seq, scATAC-seq, FlowCytometry, Olink, CBC"
+        ],
+        "description": [
+          "The FASTQs are from human subjects going into dbGAP so they are not listed here"
+        ],
+        "data_processing": [
+          "Binary Base Call (BCL) files were demultiplexed into FASTQ files was performed using 10x cellranger mkfastq (10x Genomics v.3.1.0)/cellranger-atac mkfastq (10x Genomics v.1.2.0).",
+          "10x cellranger/cellranger-atac count was used to process sequencing reads by performing adapter trimming and sequence alignment to the GRCh38 (hg38) reference genome (refdata-cellranger-atacGRCh38-1.1.0). The output files for rna: atac: fragments.tsv.gz and singlecell.csv were utilized for downstream processing and quality control analysis.",
+          "Hash Tag Oligo Counting: BarCounter v1.0 ; Default Parameters",
+          "HDF5 files (filtered) were then uploaded into R statistical programming language using the Seurat package (version 4.0) where normalization, scaling, integration and reference based label transfer was performed.",
+          "scATAC based fragments were submitted to ArchR package to create ArchR object for qulity analysis and downstram analysis",
+          "Flow Raw data were compensated and curated to remove unrepresentative events due to instrument fluidics variability (time gating), doublets (by FSC-H and FSC-W), and cells exhibiting membrane permeability (live/dead gating) prior to quantification using BD FlowJo software.",
+          "For Olink data, quality assessment, limited detection, and normalization were performed by using the plate bridging control, two positive controls, and three background controls.\u00a0",
+          "Genome_build: Ensembl GRCh38-3.0.0",
+          "Supplementary_files_format_and_content: Fragment TSVs (Tab separated), Single cell CSVs (Commas separated),  HDF5 file (Hierarchical Data Format), RDS (R Object Data), Rda (R Data)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24113507"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737273/suppl/GSM5737273_X001-P1_PTID6W2-01_2020-12-04T17-36-08-727256173Z_labeled.h5"
+        ],
+        "series_id": [
+          "GSE190992"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "shape": [
+          21423,
+          33538
+        ],
+        "nonzeros": 26935115,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+        "source_material_id": "PB7626W2-01",
+        "source_donor_id": "PTID6",
+        "source_visit_label": "W2",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_matrix_barcode_cell_uuid_matches": 21423,
+        "original_barcode_uniqueness": false,
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52_genes.csv.gz",
+          "sha256": "53f4d98feded694f540bf428fca153aa112f839713aa88d33fc2959ba7bad089"
+        },
+        "source_metadata": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737273.csv.gz",
+          "sha256": "41e80d42bc64fa650860a12af7881af4c00da8960df5c59278d03c9331982363"
+        },
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737273/suppl/GSM5737273_X001-P1_PTID6W2-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "retrieved_at": "2026-10-17T19:46:42.889053+00:00",
+          "bytes": 58326697,
+          "sha256": "345e9474f74ab14fd664742d47ac51e11d44505bd6418010d524a8359e39092e",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 19:46:41 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 18 Nov 2021 20:00:29 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "58326697",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 19:46:41 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "annotation_symbol_overlap": 28113,
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737273/suppl/GSM5737273_X001-P1_PTID6W2-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "filename": "GSM5737273_X001-P1_PTID6W2-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "expected_bytes": 58326697,
+          "sha256": "345e9474f74ab14fd664742d47ac51e11d44505bd6418010d524a8359e39092e"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSM5737273.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "PTID6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737273.csv.gz",
+          "sha256": "41e80d42bc64fa650860a12af7881af4c00da8960df5c59278d03c9331982363"
+        }
+      },
+      "metadata": {
+        "source_participant_code": "PTID6",
+        "source_visit_label": "W2",
+        "source_embedded_material_id": "PB7626W2-01",
+        "source_embedded_participant_prefix": "PB7626",
+        "source_sex": "Male",
+        "condition": "healthy",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_identity_policy": "Original GEO participant/week/sex agrees with exact Sample/PTID/Time/Sex row in author annotation CSV. Embedded constant material agrees with week; exact per-cell native RNA statistics establish row alignment. PTID-to-PB prefix crosswalk observed directly for each source, no order-based donor alias.",
+        "source_coordinate_policy": "Matrix barcode UUID is the native count coordinate. Preserve original_barcodes and cell_name separately; repeated original barcode strings across technical wells are not unique cell identities.",
+        "source_time_policy": "Source week tokens W2..W7 retained as nominal longitudinal visits; no calendar draw date or exact inter-draw duration inferred from processing filename timestamps.",
+        "source_demographic_policy": "Per-source sex retained; individual age not supplied by this join. Cohort age range not assigned to individuals.",
+        "source_selection_policy": "Original source hash calls are singlet; no new hashing thresholds or demultiplexing performed. Common RNA QC applied independently, with author cell labels preserved for comparison.",
+        "source_geometry_policy": "Only Gene Expression matrix counts used; H5 hash/PCA/well roots and author UMAP are metadata or other assays, not expression geometry.",
+        "source_alias_policy": "Cross-study participant/material identity remains unresolved. Leukopak IMM19 benchmark controls and all ATAC records excluded from this phase.",
+        "split_assignment": "unassigned; keep all visits of each participant together"
+      }
+    },
+    {
+      "accession": "GSM5737274",
+      "donor_id": "PTID6",
+      "matrix_h5_member": "GSM5737274_X001-P1_PTID6W3-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+      "source_metadata": {
+        "title": [
+          "PTID6_W3_Male_scRNA"
+        ],
+        "geo_accession": [
+          "GSM5737274"
+        ],
+        "status": [
+          "Public on Jan 11 2023"
+        ],
+        "submission_date": [
+          "Dec 15 2021"
+        ],
+        "last_update_date": [
+          "Jan 11 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "patient_id: PTID6",
+          "patient_visit: W3",
+          "Sex: Male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "30 mL of blood was drawn into BD NaHeparin vacutainer tubes (for\u00a0PBMC; BD #367874) or K2-EDTA vacutainer tubes (for plasma; BD #367863). Upon arrival at the processing lab all NaHeparin tubes for each donor were pooled into a sterile plastic receptacle to establish one common pool for all time points and stored at room temperature until processing (4 hours or less from draw). PBMC were isolated by Ficoll density gradient separation and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404). Thawed PBMC were assayed by cytometry and single-cell RNA sequencing in two batches (donors 5206BW and 7626BW, donors 1178BW and 2216BW) by a team of operators. Plasma was isolated and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404).",
+          "Single-cell RNA-seq libraries were generated using the 10x Genomics Chromium 3\u2019 Single Cell Gene Expression assay (#1000121) and Chromium Controller Instrument according to the manufacturer\u2019s published protocol with modifications for cell hashing21. To block off-target antibody binding, Blocking Solution (5 \u00b5L of Human Trustain FcX (BioLegend #422302), and 13.7 \u00b5L of a 10% Bovine Serum Albumin (BSA)) was added to 500,000 cells suspended in 50 \u00b5L Dulbecco\u2019s Phosphate Buffered Saline (DPBS; Corning Life Sciences #21-031-CM) and incubated for 10 minutes on ice. To stain samples, 0.5 \u00b5g (1 \u00b5L) of a TotalSeq\u2122-A anti-human Hashtag Antibody was suspended in 31.3 \u00b5L DPBS/2% BSA, then added to each sample. For each batch of samples, 100,000 cells from 12 hashed samples with a distinct Hashtag Antibody were pooled into the hashed poolPool 1; 8 additional samples were pooled into hashed pool. Roughly 20,000 cells from a Leukopak healthy control were also labeled with a distinct TotalSeq\u2122-A Hashtag Antibody and were spiked into each pool to serve as a batch control.\u00a0scATAC-seq libraries were prepared according to the Chromium Single Cell ATAC v1.1 Reagent Kits User Guide (CG000209 Rev B) with several modifications. 195,000 cells were loaded into each tagmentation reaction. Permeabilized cells were brought up to a volume of 129 \u00b5l in TD1 buffer (Illumina, 15027866) and mixed with 36 \u00b5l of Illumina TDE1 Tn5 transposase (Illumina, 15027916). Transposition was performed by incubating the prepared reactions on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module (Bio-Rad, 1851197) at 37\u00b0C for 60 minutes, followed by a brief hold at 4\u00b0C. A Chromium NextGEM Chip H (10x Genomics, 2000180) was placed in a Chromium Next GEM Secondary Holder (10x Genomics, 3000332) and 50% Glycerol (Teknova, G1798) was dispensed into all unused wells. A master mix composed of Barcoding Reagent B (10x Genomics, 2000194), Reducing Agent B (10x Genomics, 2000087), and Barcoding Enzyme (10x Genomics, 2000125) was then added to each sample well, pipette-mixed, and loaded into row 1 of the chip. Chromium Single Cell ATAC Gel Beads v1.1 (10x Genomics, 2000210) were vortexed for 30 seconds and loaded into row 2 of the chip, along with Partitioning Oil (10x Genomics, 2000190) in row 3. A 10x Gasket (10x Genomics, 370017) was placed over the chip and attached to the Secondary Holder. The chip was loaded into a Chromium Single Cell Controller instrument (10x Genomics, 120270) for GEM generation. At the completion of the run, GEMs were collected, and linear amplification was performed on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module: 72\u00b0C for 5 min, 98\u00b0C for 30 sec, 12 cycles of: 98\u00b0C for 10 sec, 59\u00b0C for 30 sec and 72\u00b0C for 1 min. Flow cytometry was performed as previously described (https://doi.org/10.1016/j.isci.2021.102404). In brief, cryopreserved PBMC were thawed, washed, and counted. 1-2 x106 cells were incubated with Human TruStain FcX (BioLegend #422302) and Fixable Viability Stain 510 (BD #564406) prior to staining with a 25-color cell surface panel (Key Resources Table) on ice for 25 minutes. Cells were washed and fixed with 4% paraformaldehyde (Electron Microscopy Sciences #15713) prior to acquisition on a BD Symphony cytometer. Plasma samples were submitted to Olink (Uppsala, Sweden) for assay using the Olink Proximity Extension assay, run on the Fluidigm Biomark system. Patient samples were distributed evenly across two plates, and all time points per patient were run on the same plate, with randomized well locations. Samples were assayed using the Olink Discovery Assay which encompasses all proteins across 13 panels (Cardiometabolic [V.3603], Cardiovascular II [V.5006], Cardiovascular III [V.6113], Cell Regulation [V.3701], Development [V.3512], Immune Response [V.3202], Inflammation [V.3021], Metabolism [V.3402], Neuro Exploratory [V.3901], Neurology [V.8012], Oncology II [V.7004], Oncology III [V.4001], Organ Damage [V.3311]).",
+          "Other: scRNA-seq, scATAC-seq, FlowCytometry, Olink, CBC"
+        ],
+        "description": [
+          "The FASTQs are from human subjects going into dbGAP so they are not listed here"
+        ],
+        "data_processing": [
+          "Binary Base Call (BCL) files were demultiplexed into FASTQ files was performed using 10x cellranger mkfastq (10x Genomics v.3.1.0)/cellranger-atac mkfastq (10x Genomics v.1.2.0).",
+          "10x cellranger/cellranger-atac count was used to process sequencing reads by performing adapter trimming and sequence alignment to the GRCh38 (hg38) reference genome (refdata-cellranger-atacGRCh38-1.1.0). The output files for rna: atac: fragments.tsv.gz and singlecell.csv were utilized for downstream processing and quality control analysis.",
+          "Hash Tag Oligo Counting: BarCounter v1.0 ; Default Parameters",
+          "HDF5 files (filtered) were then uploaded into R statistical programming language using the Seurat package (version 4.0) where normalization, scaling, integration and reference based label transfer was performed.",
+          "scATAC based fragments were submitted to ArchR package to create ArchR object for qulity analysis and downstram analysis",
+          "Flow Raw data were compensated and curated to remove unrepresentative events due to instrument fluidics variability (time gating), doublets (by FSC-H and FSC-W), and cells exhibiting membrane permeability (live/dead gating) prior to quantification using BD FlowJo software.",
+          "For Olink data, quality assessment, limited detection, and normalization were performed by using the plate bridging control, two positive controls, and three background controls.\u00a0",
+          "Genome_build: Ensembl GRCh38-3.0.0",
+          "Supplementary_files_format_and_content: Fragment TSVs (Tab separated), Single cell CSVs (Commas separated),  HDF5 file (Hierarchical Data Format), RDS (R Object Data), Rda (R Data)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24113508"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737274/suppl/GSM5737274_X001-P1_PTID6W3-01_2020-12-04T17-36-08-727256173Z_labeled.h5"
+        ],
+        "series_id": [
+          "GSE190992"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "shape": [
+          20772,
+          33538
+        ],
+        "nonzeros": 25693128,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+        "source_material_id": "PB7626W3-01",
+        "source_donor_id": "PTID6",
+        "source_visit_label": "W3",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_matrix_barcode_cell_uuid_matches": 20772,
+        "original_barcode_uniqueness": false,
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52_genes.csv.gz",
+          "sha256": "53f4d98feded694f540bf428fca153aa112f839713aa88d33fc2959ba7bad089"
+        },
+        "source_metadata": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737274.csv.gz",
+          "sha256": "08ff4441640f96118957e1b5fcf2354e642c8672e83cfa763294b9506a582c31"
+        },
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737274/suppl/GSM5737274_X001-P1_PTID6W3-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "retrieved_at": "2026-10-17T19:46:46.660982+00:00",
+          "bytes": 55748300,
+          "sha256": "fd63641fdeb1337803cff69f92b9348194121f932733f8f82a9e827eb06a5311",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 19:46:45 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 18 Nov 2021 20:00:32 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "55748300",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 19:46:45 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "annotation_symbol_overlap": 28113,
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737274/suppl/GSM5737274_X001-P1_PTID6W3-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "filename": "GSM5737274_X001-P1_PTID6W3-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "expected_bytes": 55748300,
+          "sha256": "fd63641fdeb1337803cff69f92b9348194121f932733f8f82a9e827eb06a5311"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSM5737274.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "PTID6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737274.csv.gz",
+          "sha256": "08ff4441640f96118957e1b5fcf2354e642c8672e83cfa763294b9506a582c31"
+        }
+      },
+      "metadata": {
+        "source_participant_code": "PTID6",
+        "source_visit_label": "W3",
+        "source_embedded_material_id": "PB7626W3-01",
+        "source_embedded_participant_prefix": "PB7626",
+        "source_sex": "Male",
+        "condition": "healthy",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_identity_policy": "Original GEO participant/week/sex agrees with exact Sample/PTID/Time/Sex row in author annotation CSV. Embedded constant material agrees with week; exact per-cell native RNA statistics establish row alignment. PTID-to-PB prefix crosswalk observed directly for each source, no order-based donor alias.",
+        "source_coordinate_policy": "Matrix barcode UUID is the native count coordinate. Preserve original_barcodes and cell_name separately; repeated original barcode strings across technical wells are not unique cell identities.",
+        "source_time_policy": "Source week tokens W2..W7 retained as nominal longitudinal visits; no calendar draw date or exact inter-draw duration inferred from processing filename timestamps.",
+        "source_demographic_policy": "Per-source sex retained; individual age not supplied by this join. Cohort age range not assigned to individuals.",
+        "source_selection_policy": "Original source hash calls are singlet; no new hashing thresholds or demultiplexing performed. Common RNA QC applied independently, with author cell labels preserved for comparison.",
+        "source_geometry_policy": "Only Gene Expression matrix counts used; H5 hash/PCA/well roots and author UMAP are metadata or other assays, not expression geometry.",
+        "source_alias_policy": "Cross-study participant/material identity remains unresolved. Leukopak IMM19 benchmark controls and all ATAC records excluded from this phase.",
+        "split_assignment": "unassigned; keep all visits of each participant together"
+      }
+    },
+    {
+      "accession": "GSM5737275",
+      "donor_id": "PTID6",
+      "matrix_h5_member": "GSM5737275_X001-P1_PTID6W4-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+      "source_metadata": {
+        "title": [
+          "PTID6_W4_Male_scRNA"
+        ],
+        "geo_accession": [
+          "GSM5737275"
+        ],
+        "status": [
+          "Public on Jan 11 2023"
+        ],
+        "submission_date": [
+          "Dec 15 2021"
+        ],
+        "last_update_date": [
+          "Jan 11 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "patient_id: PTID6",
+          "patient_visit: W4",
+          "Sex: Male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "30 mL of blood was drawn into BD NaHeparin vacutainer tubes (for\u00a0PBMC; BD #367874) or K2-EDTA vacutainer tubes (for plasma; BD #367863). Upon arrival at the processing lab all NaHeparin tubes for each donor were pooled into a sterile plastic receptacle to establish one common pool for all time points and stored at room temperature until processing (4 hours or less from draw). PBMC were isolated by Ficoll density gradient separation and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404). Thawed PBMC were assayed by cytometry and single-cell RNA sequencing in two batches (donors 5206BW and 7626BW, donors 1178BW and 2216BW) by a team of operators. Plasma was isolated and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404).",
+          "Single-cell RNA-seq libraries were generated using the 10x Genomics Chromium 3\u2019 Single Cell Gene Expression assay (#1000121) and Chromium Controller Instrument according to the manufacturer\u2019s published protocol with modifications for cell hashing21. To block off-target antibody binding, Blocking Solution (5 \u00b5L of Human Trustain FcX (BioLegend #422302), and 13.7 \u00b5L of a 10% Bovine Serum Albumin (BSA)) was added to 500,000 cells suspended in 50 \u00b5L Dulbecco\u2019s Phosphate Buffered Saline (DPBS; Corning Life Sciences #21-031-CM) and incubated for 10 minutes on ice. To stain samples, 0.5 \u00b5g (1 \u00b5L) of a TotalSeq\u2122-A anti-human Hashtag Antibody was suspended in 31.3 \u00b5L DPBS/2% BSA, then added to each sample. For each batch of samples, 100,000 cells from 12 hashed samples with a distinct Hashtag Antibody were pooled into the hashed poolPool 1; 8 additional samples were pooled into hashed pool. Roughly 20,000 cells from a Leukopak healthy control were also labeled with a distinct TotalSeq\u2122-A Hashtag Antibody and were spiked into each pool to serve as a batch control.\u00a0scATAC-seq libraries were prepared according to the Chromium Single Cell ATAC v1.1 Reagent Kits User Guide (CG000209 Rev B) with several modifications. 195,000 cells were loaded into each tagmentation reaction. Permeabilized cells were brought up to a volume of 129 \u00b5l in TD1 buffer (Illumina, 15027866) and mixed with 36 \u00b5l of Illumina TDE1 Tn5 transposase (Illumina, 15027916). Transposition was performed by incubating the prepared reactions on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module (Bio-Rad, 1851197) at 37\u00b0C for 60 minutes, followed by a brief hold at 4\u00b0C. A Chromium NextGEM Chip H (10x Genomics, 2000180) was placed in a Chromium Next GEM Secondary Holder (10x Genomics, 3000332) and 50% Glycerol (Teknova, G1798) was dispensed into all unused wells. A master mix composed of Barcoding Reagent B (10x Genomics, 2000194), Reducing Agent B (10x Genomics, 2000087), and Barcoding Enzyme (10x Genomics, 2000125) was then added to each sample well, pipette-mixed, and loaded into row 1 of the chip. Chromium Single Cell ATAC Gel Beads v1.1 (10x Genomics, 2000210) were vortexed for 30 seconds and loaded into row 2 of the chip, along with Partitioning Oil (10x Genomics, 2000190) in row 3. A 10x Gasket (10x Genomics, 370017) was placed over the chip and attached to the Secondary Holder. The chip was loaded into a Chromium Single Cell Controller instrument (10x Genomics, 120270) for GEM generation. At the completion of the run, GEMs were collected, and linear amplification was performed on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module: 72\u00b0C for 5 min, 98\u00b0C for 30 sec, 12 cycles of: 98\u00b0C for 10 sec, 59\u00b0C for 30 sec and 72\u00b0C for 1 min. Flow cytometry was performed as previously described (https://doi.org/10.1016/j.isci.2021.102404). In brief, cryopreserved PBMC were thawed, washed, and counted. 1-2 x106 cells were incubated with Human TruStain FcX (BioLegend #422302) and Fixable Viability Stain 510 (BD #564406) prior to staining with a 25-color cell surface panel (Key Resources Table) on ice for 25 minutes. Cells were washed and fixed with 4% paraformaldehyde (Electron Microscopy Sciences #15713) prior to acquisition on a BD Symphony cytometer. Plasma samples were submitted to Olink (Uppsala, Sweden) for assay using the Olink Proximity Extension assay, run on the Fluidigm Biomark system. Patient samples were distributed evenly across two plates, and all time points per patient were run on the same plate, with randomized well locations. Samples were assayed using the Olink Discovery Assay which encompasses all proteins across 13 panels (Cardiometabolic [V.3603], Cardiovascular II [V.5006], Cardiovascular III [V.6113], Cell Regulation [V.3701], Development [V.3512], Immune Response [V.3202], Inflammation [V.3021], Metabolism [V.3402], Neuro Exploratory [V.3901], Neurology [V.8012], Oncology II [V.7004], Oncology III [V.4001], Organ Damage [V.3311]).",
+          "Other: scRNA-seq, scATAC-seq, FlowCytometry, Olink, CBC"
+        ],
+        "description": [
+          "The FASTQs are from human subjects going into dbGAP so they are not listed here"
+        ],
+        "data_processing": [
+          "Binary Base Call (BCL) files were demultiplexed into FASTQ files was performed using 10x cellranger mkfastq (10x Genomics v.3.1.0)/cellranger-atac mkfastq (10x Genomics v.1.2.0).",
+          "10x cellranger/cellranger-atac count was used to process sequencing reads by performing adapter trimming and sequence alignment to the GRCh38 (hg38) reference genome (refdata-cellranger-atacGRCh38-1.1.0). The output files for rna: atac: fragments.tsv.gz and singlecell.csv were utilized for downstream processing and quality control analysis.",
+          "Hash Tag Oligo Counting: BarCounter v1.0 ; Default Parameters",
+          "HDF5 files (filtered) were then uploaded into R statistical programming language using the Seurat package (version 4.0) where normalization, scaling, integration and reference based label transfer was performed.",
+          "scATAC based fragments were submitted to ArchR package to create ArchR object for qulity analysis and downstram analysis",
+          "Flow Raw data were compensated and curated to remove unrepresentative events due to instrument fluidics variability (time gating), doublets (by FSC-H and FSC-W), and cells exhibiting membrane permeability (live/dead gating) prior to quantification using BD FlowJo software.",
+          "For Olink data, quality assessment, limited detection, and normalization were performed by using the plate bridging control, two positive controls, and three background controls.\u00a0",
+          "Genome_build: Ensembl GRCh38-3.0.0",
+          "Supplementary_files_format_and_content: Fragment TSVs (Tab separated), Single cell CSVs (Commas separated),  HDF5 file (Hierarchical Data Format), RDS (R Object Data), Rda (R Data)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24113523"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737275/suppl/GSM5737275_X001-P1_PTID6W4-01_2020-12-04T17-36-08-727256173Z_labeled.h5"
+        ],
+        "series_id": [
+          "GSE190992"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "shape": [
+          20119,
+          33538
+        ],
+        "nonzeros": 24331342,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+        "source_material_id": "PB7626W4-01",
+        "source_donor_id": "PTID6",
+        "source_visit_label": "W4",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_matrix_barcode_cell_uuid_matches": 20119,
+        "original_barcode_uniqueness": false,
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52_genes.csv.gz",
+          "sha256": "53f4d98feded694f540bf428fca153aa112f839713aa88d33fc2959ba7bad089"
+        },
+        "source_metadata": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737275.csv.gz",
+          "sha256": "262c93245bc100c3755cb4ab6f8a8adcf9972bd47a3e1e34da40eb736f5ef27b"
+        },
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737275/suppl/GSM5737275_X001-P1_PTID6W4-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "retrieved_at": "2026-10-17T19:46:50.444105+00:00",
+          "bytes": 53041163,
+          "sha256": "69c62d61ce3c2470b58fe898afa1c174c90665aed21ff709f1aa1ebbd2f6399c",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 19:46:49 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 18 Nov 2021 20:00:34 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "53041163",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 19:46:49 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "annotation_symbol_overlap": 28113,
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737275/suppl/GSM5737275_X001-P1_PTID6W4-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "filename": "GSM5737275_X001-P1_PTID6W4-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "expected_bytes": 53041163,
+          "sha256": "69c62d61ce3c2470b58fe898afa1c174c90665aed21ff709f1aa1ebbd2f6399c"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSM5737275.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "PTID6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737275.csv.gz",
+          "sha256": "262c93245bc100c3755cb4ab6f8a8adcf9972bd47a3e1e34da40eb736f5ef27b"
+        }
+      },
+      "metadata": {
+        "source_participant_code": "PTID6",
+        "source_visit_label": "W4",
+        "source_embedded_material_id": "PB7626W4-01",
+        "source_embedded_participant_prefix": "PB7626",
+        "source_sex": "Male",
+        "condition": "healthy",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_identity_policy": "Original GEO participant/week/sex agrees with exact Sample/PTID/Time/Sex row in author annotation CSV. Embedded constant material agrees with week; exact per-cell native RNA statistics establish row alignment. PTID-to-PB prefix crosswalk observed directly for each source, no order-based donor alias.",
+        "source_coordinate_policy": "Matrix barcode UUID is the native count coordinate. Preserve original_barcodes and cell_name separately; repeated original barcode strings across technical wells are not unique cell identities.",
+        "source_time_policy": "Source week tokens W2..W7 retained as nominal longitudinal visits; no calendar draw date or exact inter-draw duration inferred from processing filename timestamps.",
+        "source_demographic_policy": "Per-source sex retained; individual age not supplied by this join. Cohort age range not assigned to individuals.",
+        "source_selection_policy": "Original source hash calls are singlet; no new hashing thresholds or demultiplexing performed. Common RNA QC applied independently, with author cell labels preserved for comparison.",
+        "source_geometry_policy": "Only Gene Expression matrix counts used; H5 hash/PCA/well roots and author UMAP are metadata or other assays, not expression geometry.",
+        "source_alias_policy": "Cross-study participant/material identity remains unresolved. Leukopak IMM19 benchmark controls and all ATAC records excluded from this phase.",
+        "split_assignment": "unassigned; keep all visits of each participant together"
+      }
+    },
+    {
+      "accession": "GSM5737276",
+      "donor_id": "PTID6",
+      "matrix_h5_member": "GSM5737276_X001-P1_PTID6W5-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+      "source_metadata": {
+        "title": [
+          "PTID6_W5_Male_scRNA"
+        ],
+        "geo_accession": [
+          "GSM5737276"
+        ],
+        "status": [
+          "Public on Jan 11 2023"
+        ],
+        "submission_date": [
+          "Dec 15 2021"
+        ],
+        "last_update_date": [
+          "Jan 11 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "patient_id: PTID6",
+          "patient_visit: W5",
+          "Sex: Male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "30 mL of blood was drawn into BD NaHeparin vacutainer tubes (for\u00a0PBMC; BD #367874) or K2-EDTA vacutainer tubes (for plasma; BD #367863). Upon arrival at the processing lab all NaHeparin tubes for each donor were pooled into a sterile plastic receptacle to establish one common pool for all time points and stored at room temperature until processing (4 hours or less from draw). PBMC were isolated by Ficoll density gradient separation and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404). Thawed PBMC were assayed by cytometry and single-cell RNA sequencing in two batches (donors 5206BW and 7626BW, donors 1178BW and 2216BW) by a team of operators. Plasma was isolated and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404).",
+          "Single-cell RNA-seq libraries were generated using the 10x Genomics Chromium 3\u2019 Single Cell Gene Expression assay (#1000121) and Chromium Controller Instrument according to the manufacturer\u2019s published protocol with modifications for cell hashing21. To block off-target antibody binding, Blocking Solution (5 \u00b5L of Human Trustain FcX (BioLegend #422302), and 13.7 \u00b5L of a 10% Bovine Serum Albumin (BSA)) was added to 500,000 cells suspended in 50 \u00b5L Dulbecco\u2019s Phosphate Buffered Saline (DPBS; Corning Life Sciences #21-031-CM) and incubated for 10 minutes on ice. To stain samples, 0.5 \u00b5g (1 \u00b5L) of a TotalSeq\u2122-A anti-human Hashtag Antibody was suspended in 31.3 \u00b5L DPBS/2% BSA, then added to each sample. For each batch of samples, 100,000 cells from 12 hashed samples with a distinct Hashtag Antibody were pooled into the hashed poolPool 1; 8 additional samples were pooled into hashed pool. Roughly 20,000 cells from a Leukopak healthy control were also labeled with a distinct TotalSeq\u2122-A Hashtag Antibody and were spiked into each pool to serve as a batch control.\u00a0scATAC-seq libraries were prepared according to the Chromium Single Cell ATAC v1.1 Reagent Kits User Guide (CG000209 Rev B) with several modifications. 195,000 cells were loaded into each tagmentation reaction. Permeabilized cells were brought up to a volume of 129 \u00b5l in TD1 buffer (Illumina, 15027866) and mixed with 36 \u00b5l of Illumina TDE1 Tn5 transposase (Illumina, 15027916). Transposition was performed by incubating the prepared reactions on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module (Bio-Rad, 1851197) at 37\u00b0C for 60 minutes, followed by a brief hold at 4\u00b0C. A Chromium NextGEM Chip H (10x Genomics, 2000180) was placed in a Chromium Next GEM Secondary Holder (10x Genomics, 3000332) and 50% Glycerol (Teknova, G1798) was dispensed into all unused wells. A master mix composed of Barcoding Reagent B (10x Genomics, 2000194), Reducing Agent B (10x Genomics, 2000087), and Barcoding Enzyme (10x Genomics, 2000125) was then added to each sample well, pipette-mixed, and loaded into row 1 of the chip. Chromium Single Cell ATAC Gel Beads v1.1 (10x Genomics, 2000210) were vortexed for 30 seconds and loaded into row 2 of the chip, along with Partitioning Oil (10x Genomics, 2000190) in row 3. A 10x Gasket (10x Genomics, 370017) was placed over the chip and attached to the Secondary Holder. The chip was loaded into a Chromium Single Cell Controller instrument (10x Genomics, 120270) for GEM generation. At the completion of the run, GEMs were collected, and linear amplification was performed on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module: 72\u00b0C for 5 min, 98\u00b0C for 30 sec, 12 cycles of: 98\u00b0C for 10 sec, 59\u00b0C for 30 sec and 72\u00b0C for 1 min. Flow cytometry was performed as previously described (https://doi.org/10.1016/j.isci.2021.102404). In brief, cryopreserved PBMC were thawed, washed, and counted. 1-2 x106 cells were incubated with Human TruStain FcX (BioLegend #422302) and Fixable Viability Stain 510 (BD #564406) prior to staining with a 25-color cell surface panel (Key Resources Table) on ice for 25 minutes. Cells were washed and fixed with 4% paraformaldehyde (Electron Microscopy Sciences #15713) prior to acquisition on a BD Symphony cytometer. Plasma samples were submitted to Olink (Uppsala, Sweden) for assay using the Olink Proximity Extension assay, run on the Fluidigm Biomark system. Patient samples were distributed evenly across two plates, and all time points per patient were run on the same plate, with randomized well locations. Samples were assayed using the Olink Discovery Assay which encompasses all proteins across 13 panels (Cardiometabolic [V.3603], Cardiovascular II [V.5006], Cardiovascular III [V.6113], Cell Regulation [V.3701], Development [V.3512], Immune Response [V.3202], Inflammation [V.3021], Metabolism [V.3402], Neuro Exploratory [V.3901], Neurology [V.8012], Oncology II [V.7004], Oncology III [V.4001], Organ Damage [V.3311]).",
+          "Other: scRNA-seq, scATAC-seq, FlowCytometry, Olink, CBC"
+        ],
+        "description": [
+          "The FASTQs are from human subjects going into dbGAP so they are not listed here"
+        ],
+        "data_processing": [
+          "Binary Base Call (BCL) files were demultiplexed into FASTQ files was performed using 10x cellranger mkfastq (10x Genomics v.3.1.0)/cellranger-atac mkfastq (10x Genomics v.1.2.0).",
+          "10x cellranger/cellranger-atac count was used to process sequencing reads by performing adapter trimming and sequence alignment to the GRCh38 (hg38) reference genome (refdata-cellranger-atacGRCh38-1.1.0). The output files for rna: atac: fragments.tsv.gz and singlecell.csv were utilized for downstream processing and quality control analysis.",
+          "Hash Tag Oligo Counting: BarCounter v1.0 ; Default Parameters",
+          "HDF5 files (filtered) were then uploaded into R statistical programming language using the Seurat package (version 4.0) where normalization, scaling, integration and reference based label transfer was performed.",
+          "scATAC based fragments were submitted to ArchR package to create ArchR object for qulity analysis and downstram analysis",
+          "Flow Raw data were compensated and curated to remove unrepresentative events due to instrument fluidics variability (time gating), doublets (by FSC-H and FSC-W), and cells exhibiting membrane permeability (live/dead gating) prior to quantification using BD FlowJo software.",
+          "For Olink data, quality assessment, limited detection, and normalization were performed by using the plate bridging control, two positive controls, and three background controls.\u00a0",
+          "Genome_build: Ensembl GRCh38-3.0.0",
+          "Supplementary_files_format_and_content: Fragment TSVs (Tab separated), Single cell CSVs (Commas separated),  HDF5 file (Hierarchical Data Format), RDS (R Object Data), Rda (R Data)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24113524"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737276/suppl/GSM5737276_X001-P1_PTID6W5-01_2020-12-04T17-36-08-727256173Z_labeled.h5"
+        ],
+        "series_id": [
+          "GSE190992"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "shape": [
+          21668,
+          33538
+        ],
+        "nonzeros": 26436600,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+        "source_material_id": "PB7626W5-01",
+        "source_donor_id": "PTID6",
+        "source_visit_label": "W5",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_matrix_barcode_cell_uuid_matches": 21668,
+        "original_barcode_uniqueness": false,
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52_genes.csv.gz",
+          "sha256": "53f4d98feded694f540bf428fca153aa112f839713aa88d33fc2959ba7bad089"
+        },
+        "source_metadata": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737276.csv.gz",
+          "sha256": "b98fa5d7084b441ad6e3e0d3f07c5d000722633573ecf1897181371ebcc220ff"
+        },
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737276/suppl/GSM5737276_X001-P1_PTID6W5-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "retrieved_at": "2026-10-17T19:46:54.414089+00:00",
+          "bytes": 57430849,
+          "sha256": "649fb55ec100163cb1026e625be8a610d846a9c77c8371942e41f2323354639f",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 19:46:53 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 18 Nov 2021 20:00:37 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "57430849",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 19:46:53 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "annotation_symbol_overlap": 28113,
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737276/suppl/GSM5737276_X001-P1_PTID6W5-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "filename": "GSM5737276_X001-P1_PTID6W5-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "expected_bytes": 57430849,
+          "sha256": "649fb55ec100163cb1026e625be8a610d846a9c77c8371942e41f2323354639f"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSM5737276.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "PTID6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737276.csv.gz",
+          "sha256": "b98fa5d7084b441ad6e3e0d3f07c5d000722633573ecf1897181371ebcc220ff"
+        }
+      },
+      "metadata": {
+        "source_participant_code": "PTID6",
+        "source_visit_label": "W5",
+        "source_embedded_material_id": "PB7626W5-01",
+        "source_embedded_participant_prefix": "PB7626",
+        "source_sex": "Male",
+        "condition": "healthy",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_identity_policy": "Original GEO participant/week/sex agrees with exact Sample/PTID/Time/Sex row in author annotation CSV. Embedded constant material agrees with week; exact per-cell native RNA statistics establish row alignment. PTID-to-PB prefix crosswalk observed directly for each source, no order-based donor alias.",
+        "source_coordinate_policy": "Matrix barcode UUID is the native count coordinate. Preserve original_barcodes and cell_name separately; repeated original barcode strings across technical wells are not unique cell identities.",
+        "source_time_policy": "Source week tokens W2..W7 retained as nominal longitudinal visits; no calendar draw date or exact inter-draw duration inferred from processing filename timestamps.",
+        "source_demographic_policy": "Per-source sex retained; individual age not supplied by this join. Cohort age range not assigned to individuals.",
+        "source_selection_policy": "Original source hash calls are singlet; no new hashing thresholds or demultiplexing performed. Common RNA QC applied independently, with author cell labels preserved for comparison.",
+        "source_geometry_policy": "Only Gene Expression matrix counts used; H5 hash/PCA/well roots and author UMAP are metadata or other assays, not expression geometry.",
+        "source_alias_policy": "Cross-study participant/material identity remains unresolved. Leukopak IMM19 benchmark controls and all ATAC records excluded from this phase.",
+        "split_assignment": "unassigned; keep all visits of each participant together"
+      }
+    },
+    {
+      "accession": "GSM5737277",
+      "donor_id": "PTID6",
+      "matrix_h5_member": "GSM5737277_X001-P1_PTID6W6-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+      "source_metadata": {
+        "title": [
+          "PTID6_W6_Male_scRNA"
+        ],
+        "geo_accession": [
+          "GSM5737277"
+        ],
+        "status": [
+          "Public on Jan 11 2023"
+        ],
+        "submission_date": [
+          "Dec 15 2021"
+        ],
+        "last_update_date": [
+          "Jan 11 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "patient_id: PTID6",
+          "patient_visit: W6",
+          "Sex: Male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "30 mL of blood was drawn into BD NaHeparin vacutainer tubes (for\u00a0PBMC; BD #367874) or K2-EDTA vacutainer tubes (for plasma; BD #367863). Upon arrival at the processing lab all NaHeparin tubes for each donor were pooled into a sterile plastic receptacle to establish one common pool for all time points and stored at room temperature until processing (4 hours or less from draw). PBMC were isolated by Ficoll density gradient separation and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404). Thawed PBMC were assayed by cytometry and single-cell RNA sequencing in two batches (donors 5206BW and 7626BW, donors 1178BW and 2216BW) by a team of operators. Plasma was isolated and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404).",
+          "Single-cell RNA-seq libraries were generated using the 10x Genomics Chromium 3\u2019 Single Cell Gene Expression assay (#1000121) and Chromium Controller Instrument according to the manufacturer\u2019s published protocol with modifications for cell hashing21. To block off-target antibody binding, Blocking Solution (5 \u00b5L of Human Trustain FcX (BioLegend #422302), and 13.7 \u00b5L of a 10% Bovine Serum Albumin (BSA)) was added to 500,000 cells suspended in 50 \u00b5L Dulbecco\u2019s Phosphate Buffered Saline (DPBS; Corning Life Sciences #21-031-CM) and incubated for 10 minutes on ice. To stain samples, 0.5 \u00b5g (1 \u00b5L) of a TotalSeq\u2122-A anti-human Hashtag Antibody was suspended in 31.3 \u00b5L DPBS/2% BSA, then added to each sample. For each batch of samples, 100,000 cells from 12 hashed samples with a distinct Hashtag Antibody were pooled into the hashed poolPool 1; 8 additional samples were pooled into hashed pool. Roughly 20,000 cells from a Leukopak healthy control were also labeled with a distinct TotalSeq\u2122-A Hashtag Antibody and were spiked into each pool to serve as a batch control.\u00a0scATAC-seq libraries were prepared according to the Chromium Single Cell ATAC v1.1 Reagent Kits User Guide (CG000209 Rev B) with several modifications. 195,000 cells were loaded into each tagmentation reaction. Permeabilized cells were brought up to a volume of 129 \u00b5l in TD1 buffer (Illumina, 15027866) and mixed with 36 \u00b5l of Illumina TDE1 Tn5 transposase (Illumina, 15027916). Transposition was performed by incubating the prepared reactions on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module (Bio-Rad, 1851197) at 37\u00b0C for 60 minutes, followed by a brief hold at 4\u00b0C. A Chromium NextGEM Chip H (10x Genomics, 2000180) was placed in a Chromium Next GEM Secondary Holder (10x Genomics, 3000332) and 50% Glycerol (Teknova, G1798) was dispensed into all unused wells. A master mix composed of Barcoding Reagent B (10x Genomics, 2000194), Reducing Agent B (10x Genomics, 2000087), and Barcoding Enzyme (10x Genomics, 2000125) was then added to each sample well, pipette-mixed, and loaded into row 1 of the chip. Chromium Single Cell ATAC Gel Beads v1.1 (10x Genomics, 2000210) were vortexed for 30 seconds and loaded into row 2 of the chip, along with Partitioning Oil (10x Genomics, 2000190) in row 3. A 10x Gasket (10x Genomics, 370017) was placed over the chip and attached to the Secondary Holder. The chip was loaded into a Chromium Single Cell Controller instrument (10x Genomics, 120270) for GEM generation. At the completion of the run, GEMs were collected, and linear amplification was performed on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module: 72\u00b0C for 5 min, 98\u00b0C for 30 sec, 12 cycles of: 98\u00b0C for 10 sec, 59\u00b0C for 30 sec and 72\u00b0C for 1 min. Flow cytometry was performed as previously described (https://doi.org/10.1016/j.isci.2021.102404). In brief, cryopreserved PBMC were thawed, washed, and counted. 1-2 x106 cells were incubated with Human TruStain FcX (BioLegend #422302) and Fixable Viability Stain 510 (BD #564406) prior to staining with a 25-color cell surface panel (Key Resources Table) on ice for 25 minutes. Cells were washed and fixed with 4% paraformaldehyde (Electron Microscopy Sciences #15713) prior to acquisition on a BD Symphony cytometer. Plasma samples were submitted to Olink (Uppsala, Sweden) for assay using the Olink Proximity Extension assay, run on the Fluidigm Biomark system. Patient samples were distributed evenly across two plates, and all time points per patient were run on the same plate, with randomized well locations. Samples were assayed using the Olink Discovery Assay which encompasses all proteins across 13 panels (Cardiometabolic [V.3603], Cardiovascular II [V.5006], Cardiovascular III [V.6113], Cell Regulation [V.3701], Development [V.3512], Immune Response [V.3202], Inflammation [V.3021], Metabolism [V.3402], Neuro Exploratory [V.3901], Neurology [V.8012], Oncology II [V.7004], Oncology III [V.4001], Organ Damage [V.3311]).",
+          "Other: scRNA-seq, scATAC-seq, FlowCytometry, Olink, CBC"
+        ],
+        "description": [
+          "The FASTQs are from human subjects going into dbGAP so they are not listed here"
+        ],
+        "data_processing": [
+          "Binary Base Call (BCL) files were demultiplexed into FASTQ files was performed using 10x cellranger mkfastq (10x Genomics v.3.1.0)/cellranger-atac mkfastq (10x Genomics v.1.2.0).",
+          "10x cellranger/cellranger-atac count was used to process sequencing reads by performing adapter trimming and sequence alignment to the GRCh38 (hg38) reference genome (refdata-cellranger-atacGRCh38-1.1.0). The output files for rna: atac: fragments.tsv.gz and singlecell.csv were utilized for downstream processing and quality control analysis.",
+          "Hash Tag Oligo Counting: BarCounter v1.0 ; Default Parameters",
+          "HDF5 files (filtered) were then uploaded into R statistical programming language using the Seurat package (version 4.0) where normalization, scaling, integration and reference based label transfer was performed.",
+          "scATAC based fragments were submitted to ArchR package to create ArchR object for qulity analysis and downstram analysis",
+          "Flow Raw data were compensated and curated to remove unrepresentative events due to instrument fluidics variability (time gating), doublets (by FSC-H and FSC-W), and cells exhibiting membrane permeability (live/dead gating) prior to quantification using BD FlowJo software.",
+          "For Olink data, quality assessment, limited detection, and normalization were performed by using the plate bridging control, two positive controls, and three background controls.\u00a0",
+          "Genome_build: Ensembl GRCh38-3.0.0",
+          "Supplementary_files_format_and_content: Fragment TSVs (Tab separated), Single cell CSVs (Commas separated),  HDF5 file (Hierarchical Data Format), RDS (R Object Data), Rda (R Data)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24113525"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737277/suppl/GSM5737277_X001-P1_PTID6W6-01_2020-12-04T17-36-08-727256173Z_labeled.h5"
+        ],
+        "series_id": [
+          "GSE190992"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "shape": [
+          24291,
+          33538
+        ],
+        "nonzeros": 30221947,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+        "source_material_id": "PB7626W6-01",
+        "source_donor_id": "PTID6",
+        "source_visit_label": "W6",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_matrix_barcode_cell_uuid_matches": 24291,
+        "original_barcode_uniqueness": false,
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52_genes.csv.gz",
+          "sha256": "53f4d98feded694f540bf428fca153aa112f839713aa88d33fc2959ba7bad089"
+        },
+        "source_metadata": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737277.csv.gz",
+          "sha256": "10ad8f51630d58cb2db04f9f2e1555d4212f3040e657881a0ade89399d9f6cb1"
+        },
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737277/suppl/GSM5737277_X001-P1_PTID6W6-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "retrieved_at": "2026-10-17T19:46:58.943855+00:00",
+          "bytes": 65477355,
+          "sha256": "715161957fb05653777908ae4bbe58e2682404b61a1d547c366c7bcf388f977a",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 19:46:57 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 18 Nov 2021 20:00:40 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "65477355",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 19:46:57 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "annotation_symbol_overlap": 28113,
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737277/suppl/GSM5737277_X001-P1_PTID6W6-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "filename": "GSM5737277_X001-P1_PTID6W6-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "expected_bytes": 65477355,
+          "sha256": "715161957fb05653777908ae4bbe58e2682404b61a1d547c366c7bcf388f977a"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSM5737277.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "PTID6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737277.csv.gz",
+          "sha256": "10ad8f51630d58cb2db04f9f2e1555d4212f3040e657881a0ade89399d9f6cb1"
+        }
+      },
+      "metadata": {
+        "source_participant_code": "PTID6",
+        "source_visit_label": "W6",
+        "source_embedded_material_id": "PB7626W6-01",
+        "source_embedded_participant_prefix": "PB7626",
+        "source_sex": "Male",
+        "condition": "healthy",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_identity_policy": "Original GEO participant/week/sex agrees with exact Sample/PTID/Time/Sex row in author annotation CSV. Embedded constant material agrees with week; exact per-cell native RNA statistics establish row alignment. PTID-to-PB prefix crosswalk observed directly for each source, no order-based donor alias.",
+        "source_coordinate_policy": "Matrix barcode UUID is the native count coordinate. Preserve original_barcodes and cell_name separately; repeated original barcode strings across technical wells are not unique cell identities.",
+        "source_time_policy": "Source week tokens W2..W7 retained as nominal longitudinal visits; no calendar draw date or exact inter-draw duration inferred from processing filename timestamps.",
+        "source_demographic_policy": "Per-source sex retained; individual age not supplied by this join. Cohort age range not assigned to individuals.",
+        "source_selection_policy": "Original source hash calls are singlet; no new hashing thresholds or demultiplexing performed. Common RNA QC applied independently, with author cell labels preserved for comparison.",
+        "source_geometry_policy": "Only Gene Expression matrix counts used; H5 hash/PCA/well roots and author UMAP are metadata or other assays, not expression geometry.",
+        "source_alias_policy": "Cross-study participant/material identity remains unresolved. Leukopak IMM19 benchmark controls and all ATAC records excluded from this phase.",
+        "split_assignment": "unassigned; keep all visits of each participant together"
+      }
+    },
+    {
+      "accession": "GSM5737278",
+      "donor_id": "PTID6",
+      "matrix_h5_member": "GSM5737278_X001-P1_PTID6W7-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+      "source_metadata": {
+        "title": [
+          "PTID6_W7_Male_scRNA"
+        ],
+        "geo_accession": [
+          "GSM5737278"
+        ],
+        "status": [
+          "Public on Jan 11 2023"
+        ],
+        "submission_date": [
+          "Dec 15 2021"
+        ],
+        "last_update_date": [
+          "Jan 11 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "patient_id: PTID6",
+          "patient_visit: W7",
+          "Sex: Male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "30 mL of blood was drawn into BD NaHeparin vacutainer tubes (for\u00a0PBMC; BD #367874) or K2-EDTA vacutainer tubes (for plasma; BD #367863). Upon arrival at the processing lab all NaHeparin tubes for each donor were pooled into a sterile plastic receptacle to establish one common pool for all time points and stored at room temperature until processing (4 hours or less from draw). PBMC were isolated by Ficoll density gradient separation and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404). Thawed PBMC were assayed by cytometry and single-cell RNA sequencing in two batches (donors 5206BW and 7626BW, donors 1178BW and 2216BW) by a team of operators. Plasma was isolated and cryopreserved by a team of operators, as previously described (https://doi.org/10.1016/j.isci.2021.102404).",
+          "Single-cell RNA-seq libraries were generated using the 10x Genomics Chromium 3\u2019 Single Cell Gene Expression assay (#1000121) and Chromium Controller Instrument according to the manufacturer\u2019s published protocol with modifications for cell hashing21. To block off-target antibody binding, Blocking Solution (5 \u00b5L of Human Trustain FcX (BioLegend #422302), and 13.7 \u00b5L of a 10% Bovine Serum Albumin (BSA)) was added to 500,000 cells suspended in 50 \u00b5L Dulbecco\u2019s Phosphate Buffered Saline (DPBS; Corning Life Sciences #21-031-CM) and incubated for 10 minutes on ice. To stain samples, 0.5 \u00b5g (1 \u00b5L) of a TotalSeq\u2122-A anti-human Hashtag Antibody was suspended in 31.3 \u00b5L DPBS/2% BSA, then added to each sample. For each batch of samples, 100,000 cells from 12 hashed samples with a distinct Hashtag Antibody were pooled into the hashed poolPool 1; 8 additional samples were pooled into hashed pool. Roughly 20,000 cells from a Leukopak healthy control were also labeled with a distinct TotalSeq\u2122-A Hashtag Antibody and were spiked into each pool to serve as a batch control.\u00a0scATAC-seq libraries were prepared according to the Chromium Single Cell ATAC v1.1 Reagent Kits User Guide (CG000209 Rev B) with several modifications. 195,000 cells were loaded into each tagmentation reaction. Permeabilized cells were brought up to a volume of 129 \u00b5l in TD1 buffer (Illumina, 15027866) and mixed with 36 \u00b5l of Illumina TDE1 Tn5 transposase (Illumina, 15027916). Transposition was performed by incubating the prepared reactions on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module (Bio-Rad, 1851197) at 37\u00b0C for 60 minutes, followed by a brief hold at 4\u00b0C. A Chromium NextGEM Chip H (10x Genomics, 2000180) was placed in a Chromium Next GEM Secondary Holder (10x Genomics, 3000332) and 50% Glycerol (Teknova, G1798) was dispensed into all unused wells. A master mix composed of Barcoding Reagent B (10x Genomics, 2000194), Reducing Agent B (10x Genomics, 2000087), and Barcoding Enzyme (10x Genomics, 2000125) was then added to each sample well, pipette-mixed, and loaded into row 1 of the chip. Chromium Single Cell ATAC Gel Beads v1.1 (10x Genomics, 2000210) were vortexed for 30 seconds and loaded into row 2 of the chip, along with Partitioning Oil (10x Genomics, 2000190) in row 3. A 10x Gasket (10x Genomics, 370017) was placed over the chip and attached to the Secondary Holder. The chip was loaded into a Chromium Single Cell Controller instrument (10x Genomics, 120270) for GEM generation. At the completion of the run, GEMs were collected, and linear amplification was performed on a C1000 Touch thermal cycler with 96\u2013Deep Well Reaction Module: 72\u00b0C for 5 min, 98\u00b0C for 30 sec, 12 cycles of: 98\u00b0C for 10 sec, 59\u00b0C for 30 sec and 72\u00b0C for 1 min. Flow cytometry was performed as previously described (https://doi.org/10.1016/j.isci.2021.102404). In brief, cryopreserved PBMC were thawed, washed, and counted. 1-2 x106 cells were incubated with Human TruStain FcX (BioLegend #422302) and Fixable Viability Stain 510 (BD #564406) prior to staining with a 25-color cell surface panel (Key Resources Table) on ice for 25 minutes. Cells were washed and fixed with 4% paraformaldehyde (Electron Microscopy Sciences #15713) prior to acquisition on a BD Symphony cytometer. Plasma samples were submitted to Olink (Uppsala, Sweden) for assay using the Olink Proximity Extension assay, run on the Fluidigm Biomark system. Patient samples were distributed evenly across two plates, and all time points per patient were run on the same plate, with randomized well locations. Samples were assayed using the Olink Discovery Assay which encompasses all proteins across 13 panels (Cardiometabolic [V.3603], Cardiovascular II [V.5006], Cardiovascular III [V.6113], Cell Regulation [V.3701], Development [V.3512], Immune Response [V.3202], Inflammation [V.3021], Metabolism [V.3402], Neuro Exploratory [V.3901], Neurology [V.8012], Oncology II [V.7004], Oncology III [V.4001], Organ Damage [V.3311]).",
+          "Other: scRNA-seq, scATAC-seq, FlowCytometry, Olink, CBC"
+        ],
+        "description": [
+          "The FASTQs are from human subjects going into dbGAP so they are not listed here"
+        ],
+        "data_processing": [
+          "Binary Base Call (BCL) files were demultiplexed into FASTQ files was performed using 10x cellranger mkfastq (10x Genomics v.3.1.0)/cellranger-atac mkfastq (10x Genomics v.1.2.0).",
+          "10x cellranger/cellranger-atac count was used to process sequencing reads by performing adapter trimming and sequence alignment to the GRCh38 (hg38) reference genome (refdata-cellranger-atacGRCh38-1.1.0). The output files for rna: atac: fragments.tsv.gz and singlecell.csv were utilized for downstream processing and quality control analysis.",
+          "Hash Tag Oligo Counting: BarCounter v1.0 ; Default Parameters",
+          "HDF5 files (filtered) were then uploaded into R statistical programming language using the Seurat package (version 4.0) where normalization, scaling, integration and reference based label transfer was performed.",
+          "scATAC based fragments were submitted to ArchR package to create ArchR object for qulity analysis and downstram analysis",
+          "Flow Raw data were compensated and curated to remove unrepresentative events due to instrument fluidics variability (time gating), doublets (by FSC-H and FSC-W), and cells exhibiting membrane permeability (live/dead gating) prior to quantification using BD FlowJo software.",
+          "For Olink data, quality assessment, limited detection, and normalization were performed by using the plate bridging control, two positive controls, and three background controls.\u00a0",
+          "Genome_build: Ensembl GRCh38-3.0.0",
+          "Supplementary_files_format_and_content: Fragment TSVs (Tab separated), Single cell CSVs (Commas separated),  HDF5 file (Hierarchical Data Format), RDS (R Object Data), Rda (R Data)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Allen Institute,,For Immunology"
+        ],
+        "contact_email": [
+          "xiaojun.li@alleninstitute.org"
+        ],
+        "contact_phone": [
+          "2065487135"
+        ],
+        "contact_institute": [
+          "Allen Institute"
+        ],
+        "contact_address": [
+          "615 Westlake Ave N, Seattle, WA"
+        ],
+        "contact_city": [
+          "Seattle"
+        ],
+        "contact_state": [
+          "Washington"
+        ],
+        "contact_zip/postal_code": [
+          "98109"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24113526"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737278/suppl/GSM5737278_X001-P1_PTID6W7-01_2020-12-04T17-36-08-727256173Z_labeled.h5"
+        ],
+        "series_id": [
+          "GSE190992"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "source_count_review": {
+        "shape": [
+          20568,
+          33538
+        ],
+        "nonzeros": 26047948,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52",
+        "source_material_id": "PB7626W7-01",
+        "source_donor_id": "PTID6",
+        "source_visit_label": "W7",
+        "full_original_RNA_totals_gene_support_and_mito_counts_agree": true,
+        "source_matrix_barcode_cell_uuid_matches": 20568,
+        "original_barcode_uniqueness": false,
+        "native_gene_coordinates": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/1e138853e26900bc25aae1ab67c479ddbf23d5249541c7f7c3fc38cae0426f52_genes.csv.gz",
+          "sha256": "53f4d98feded694f540bf428fca153aa112f839713aa88d33fc2959ba7bad089"
+        },
+        "source_metadata": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737278.csv.gz",
+          "sha256": "fcdb66caa9bc9f065125f80a1fad33831ed51b0354c37bb31024da7db74ae329"
+        },
+        "source_manifest": {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737278/suppl/GSM5737278_X001-P1_PTID6W7-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "retrieved_at": "2026-10-17T19:47:03.037612+00:00",
+          "bytes": 56493690,
+          "sha256": "1df2ec9b8a61fd07cb2ae84693b1d75757b474ee0d9648b97382ba6426dfb625",
+          "response_headers": {
+            "Date": "Sat, 17 Oct 2026 19:47:02 GMT",
+            "Server": "Apache",
+            "Last-Modified": "Thu, 18 Nov 2021 20:00:42 GMT",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "56493690",
+            "Cache-Control": "public, max-age=86400",
+            "Expires": "Sat, 24 Oct 2026 19:47:02 GMT",
+            "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+            "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+            "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+            "Connection": "close"
+          }
+        },
+        "annotation_symbol_overlap": 28113,
+        "count_roots_used": [
+          "matrix"
+        ],
+        "other_root_assays_not_used": true
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5737nnn/GSM5737278/suppl/GSM5737278_X001-P1_PTID6W7-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "filename": "GSM5737278_X001-P1_PTID6W7-01_2020-12-04T17-36-08-727256173Z_labeled.h5",
+          "expected_bytes": 56493690,
+          "sha256": "1df2ec9b8a61fd07cb2ae84693b1d75757b474ee0d9648b97382ba6426dfb625"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSM5737278.csv.gz",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "PTID6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE190992_embedded_RNA_metadata/GSM5737278.csv.gz",
+          "sha256": "fcdb66caa9bc9f065125f80a1fad33831ed51b0354c37bb31024da7db74ae329"
+        }
+      },
+      "metadata": {
+        "source_participant_code": "PTID6",
+        "source_visit_label": "W7",
+        "source_embedded_material_id": "PB7626W7-01",
+        "source_embedded_participant_prefix": "PB7626",
+        "source_sex": "Male",
+        "condition": "healthy",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_identity_policy": "Original GEO participant/week/sex agrees with exact Sample/PTID/Time/Sex row in author annotation CSV. Embedded constant material agrees with week; exact per-cell native RNA statistics establish row alignment. PTID-to-PB prefix crosswalk observed directly for each source, no order-based donor alias.",
+        "source_coordinate_policy": "Matrix barcode UUID is the native count coordinate. Preserve original_barcodes and cell_name separately; repeated original barcode strings across technical wells are not unique cell identities.",
+        "source_time_policy": "Source week tokens W2..W7 retained as nominal longitudinal visits; no calendar draw date or exact inter-draw duration inferred from processing filename timestamps.",
+        "source_demographic_policy": "Per-source sex retained; individual age not supplied by this join. Cohort age range not assigned to individuals.",
+        "source_selection_policy": "Original source hash calls are singlet; no new hashing thresholds or demultiplexing performed. Common RNA QC applied independently, with author cell labels preserved for comparison.",
+        "source_geometry_policy": "Only Gene Expression matrix counts used; H5 hash/PCA/well roots and author UMAP are metadata or other assays, not expression geometry.",
+        "source_alias_policy": "Cross-study participant/material identity remains unresolved. Leukopak IMM19 benchmark controls and all ATAC records excluded from this phase.",
+        "split_assignment": "unassigned; keep all visits of each participant together"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

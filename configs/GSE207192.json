@@ -1,0 +1,77 @@
+{
+  "dataset_id": "GSE207192",
+  "study_id": "GSE207192",
+  "input_format": "lymphoma_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE207192_complete_original_post_RNA_audit.json",
+    "bytes": 4998,
+    "sha256": "793c9195ab75a10ea5193828cf94cdf33361b94a62ab93dd4fcbccf11d1fdf2d"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE207192_source_identity_review.json",
+    "bytes": 12526,
+    "sha256": "dee82167ed9b643f5d412cf698328f13bfa5c1f8ef6d332b65b233c3bcbd6355"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "patient",
+    "time"
+  ],
+  "physical_sample_columns": [
+    "patient",
+    "time"
+  ],
+  "sample_mapping_evidence": "Literal original cell/metadata join and exact patient/time agreement within CAR-labeled source captures, supported by explicit seven-patient author code mapping and primary publication. Numeric source identifiers are not substituted for author metadata.",
+  "physical_sample_mapping_evidence": "Twenty original author participant/time material groups from seven explicit participant codes. Repeated visits remain dependent; exact shared tubes and aliquots are unverified.",
+  "exclude_source_values": {
+    "source_capture_label": [
+      "028-d04-nonT",
+      "033-d10-nonT"
+    ]
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "patient",
+      "author_cell_type": "Final_celltype"
+    },
+    "constants": {
+      "condition": "Diffuse Large B-Cell Lymphoma",
+      "tissue": "blood",
+      "is_primary_data": true
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE207192",
+    "primary_PMID": "40328775",
+    "publication": "https://doi.org/10.1038/s41467-025-59298-w",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE207192",
+    "access": "Public original RNA counts and author patient/time metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "primary_author_code_license": "CC-BY-4.0",
+    "source_sample_review": {
+      "path": "references/datasets/GSE207192_source_identity_review.json",
+      "bytes": 12526,
+      "sha256": "dee82167ed9b643f5d412cf698328f13bfa5c1f8ef6d332b65b233c3bcbd6355"
+    },
+    "source_unit": "Twenty original author participant/time material groups from seven explicit participant codes. Repeated visits remain dependent; exact shared tubes and aliquots are unverified.",
+    "source_scope": "Post-infusion sorted PBMC-derived cell subset, not whole-PBMC composition. Infusion products and receptor profiling are outside this RNA centroid route.",
+    "gene_policy": "All33539provided native RNA gene symbols retained, including the supplied additional feature. Native denominators use the complete source axis; annotation uses its separately aligned reference.",
+    "time_policy": "Original author dNN visit labels retained unchanged. SourceGEOweekly pooled-capture names are separate nominal labels; do not convert WK4 to day28 or rewrite author day30. Day90remains an additional source visit outside main publication intervals.",
+    "demographic_policy": "PrimaryTable1usesP1-P7clinical display codes; exact clinical display aliases are not required or inferred here. Preserve original patientShortP01-P07values; age decades and treatment histories remain unassigned in per-specimen outputs.",
+    "source_limitations": "Two nonTcaptures contain45cells with author patient/time metadata but unresolved capture provenance. Exclude these exact captures from annotation and eligible specimen accounting; retain their original author values and explicit held status. Their absence does not establish source exhaustion. Post-infusion sorted PBMC-derived cell subset, not whole-PBMC composition. Infusion products and receptor profiling are outside this RNA centroid route."
+  }
+}

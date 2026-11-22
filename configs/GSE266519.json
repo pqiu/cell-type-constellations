@@ -1,0 +1,59 @@
+{
+  "dataset_id": "GSE266519",
+  "study_id": "GSE266519",
+  "input_format": "hsct_pbmc_original",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE266519_complete_original_RNA_and_exact_cell_identity_audit.json",
+    "sha256": "e805c75ae27cfe1259da082776a5fc7568b9030a1672dad79e206ed7eaf292de"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE266519_source_identity_review.json",
+    "sha256": "92ecdb95e0ad37b1307675d346d98a2f3990ba14713ba338815e40831694db14"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "origin"
+  ],
+  "physical_sample_columns": [
+    "origin"
+  ],
+  "sample_mapping_evidence": "Only literal RNA barcode matches to author-provided donor/origin/vaccination metadata. No origin inferred from numeric barcode suffix. Other RNA cells remain unassigned; the retained subset is conditioned on availability of those identity annotations.",
+  "physical_sample_mapping_evidence": "Sixteen explicit author origins joined to original GEX visit records across seven source participants. Repeated visits remain dependent within participant.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE266519",
+    "publication": "https://doi.org/10.1371/journal.pone.0320744",
+    "primary_PMID": "40294012",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE266519",
+    "access": "Public original RNA counts and coded source identity metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE266519_source_identity_review.json",
+      "sha256": "92ecdb95e0ad37b1307675d346d98a2f3990ba14713ba338815e40831694db14"
+    },
+    "source_unit": "Sixteen explicit author origins joined to original GEX visit records across seven source participants. Repeated visits remain dependent within participant.",
+    "identity_policy": "Only literal RNA barcode matches to author-provided donor/origin/vaccination metadata. No origin inferred from numeric barcode suffix. Other RNA cells remain unassigned; the retained subset is conditioned on availability of those identity annotations.",
+    "composition_policy": "PBMC-derived CD3/CD19-enriched cells; paired-annotation identity subset is not whole-PBMC composition. Source annotation-table membership is retained without inferring biological doublet status.",
+    "phase_policy": "Exact GEO source individuals and visit labels joined through origin. AuthorV04maps to GEOHealthyControl03via pbmc14/15, not code-number guessing. No clinical timing or individual age imputed.",
+    "gene_policy": "All36601provided native RNA genes; per-cell normalization uses all native RNA counts. Reference gene alignment is separate for annotation.",
+    "demographic_policy": "Individual age/sex unavailable in source GEO fields; do not impute. Preserve authorV04and GEOHealthyControl03 aliases through explicit origin."
+  }
+}

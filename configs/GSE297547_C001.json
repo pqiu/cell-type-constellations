@@ -1,0 +1,322 @@
+{
+  "dataset_id": "GSE297547_C001",
+  "study_id": "GSE297547",
+  "input_format": "h5ad",
+  "reviewed_pbmc": true,
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_rna_C001.h5ad",
+  "expected_bytes": 307731600,
+  "raw_location": "X",
+  "annotation_gene_column": "__index__",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original sample-separated RNA H5AD type3 codes exactly match original per-GSM RNA filenames. One source sample per file; six additional molecular-assay records are not extra RNA samples. Original source titles/age/sex/condition preserved, including condition-title ambiguity.",
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "type3"
+    },
+    "constants": {
+      "tissue": "blood",
+      "source_specimen": "PBMC",
+      "source_sample_id": "C001",
+      "is_primary_data": true,
+      "age": "45",
+      "sex": "male",
+      "source_GEO_accession": "GSM8994520",
+      "source_GEO_title": "PBMC from C01 sample",
+      "source_condition": "Control",
+      "source_RNA_assay_label": "WTA",
+      "source_selection_policy": "PBMC-derived T- and B-cell enrichment; not representative of unsorted PBMC composition.",
+      "source_assay_policy": "Original type2 WTA/TCR label preserved as source assay context. This input is the separately deposited RNA count matrix with thousands of positive gene-expression features; separate molecular-sequence files are not used.",
+      "source_count_policy": "Original deposited integer RNA X used unchanged; source Rhapsody/SevenBridges processing and RNA feature filtering retained. Per-gene summary statistics are not per-cell raw counts.",
+      "source_identity_policy": "Published sample-separated type3 codes agree with exact original RNA filenames. Use source codes as conservative donor groups; repeated donors or cross-study overlap not independently ruled out.",
+      "source_condition_policy": "Original type1 condition retained. Several GEO MG titles literally say control; preserve title and original condition rather than silently correcting source labels.",
+      "source_coverage_policy": "Original RNA gene universe retained separately for each file; unavailable genes across sources are not zero-imputed.",
+      "source_time_policy": "Individual collection date, treatment and visit interval not provided; not inferred from numeric suffixes.",
+      "split_assignment": "unassigned; no discovery model fitted"
+    }
+  },
+  "source_metadata": {
+    "accession": "GSE297547",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297547",
+    "source_RNA_record": "GSM8994520",
+    "source_file_manifest": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_rna_C001.h5ad",
+      "retrieved_at": "2026-10-17T16:03:32.402585+00:00",
+      "bytes": 307731600,
+      "sha256": "b1620151d3705ca903b3469183ba7e0c870e60268606a4ef4e64f78e5a1a8541",
+      "response_headers": {
+        "Date": "Sat, 17 Oct 2026 16:03:21 GMT",
+        "Server": "Apache",
+        "Last-Modified": "Sat, 12 Apr 2025 03:40:40 GMT",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "307731600",
+        "Cache-Control": "public, max-age=86400",
+        "Expires": "Sat, 24 Oct 2026 16:03:21 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+        "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+        "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+        "Connection": "close"
+      }
+    },
+    "original_GEO_record": {
+      "title": [
+        "PBMC from C01 sample"
+      ],
+      "geo_accession": [
+        "GSM8994520"
+      ],
+      "status": [
+        "Public on Jul 01 2025"
+      ],
+      "submission_date": [
+        "May 19 2025"
+      ],
+      "last_update_date": [
+        "Jul 01 2025"
+      ],
+      "type": [
+        "SRA"
+      ],
+      "channel_count": [
+        "1"
+      ],
+      "source_name_ch1": [
+        "PBMC"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "taxid_ch1": [
+        "9606"
+      ],
+      "characteristics_ch1": [
+        "tissue: PBMC",
+        "age: 45",
+        "Sex: male"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Peripheral blood was collected from all participants, and SepMate (STEMCELL Technologies, ST-8645, Vancouver, Canada) was used for PBMC isolation.",
+        "T and B cells were sorted from PBMC using a BD Melody cytometer. After 30-min incubation at 4 \u00b0C with sample tags and Abseq antibodies, the cells were washed and enumerated using a hemocytometer with Trypan blue. Cell viability was assessed, and the total cell number was quantified using a BD Rhapsody Scanner. A total of 20,000 cells were targeted and loaded onto BD Rhapsody cartridges, allowing single cells to remain stationary. If sample tags were used for pooled cells from two samples, we adjusted the target cell number accordingly. The libraries were prepared according to the BD Rhapsody protocol using the WTA amplification kit. They were then quantified and quality-assessed on an Agilent TapeStation."
+      ],
+      "description": [
+        "Library name: C01",
+        "Rhapsody"
+      ],
+      "data_processing": [
+        "The BCL file after sequencing was converted to a FASTQ file using bcl2fastq. The multiplex FASTQ was output as adata using sample tags and index information in sevenbridges. Subsequently, to facilitate analysis, files were created that were completely divided by sample as adata.The RNA expression matrix was analyzed with scanpy (v1.9.8).",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: adata file of RNA and Abseq for each sample, vdj data as xlsx"
+      ],
+      "platform_id": [
+        "GPL24676"
+      ],
+      "contact_name": [
+        "Hiroyuki,,Akamine"
+      ],
+      "contact_institute": [
+        "Chiba university"
+      ],
+      "contact_address": [
+        "chuoku inohana 1-8-1"
+      ],
+      "contact_city": [
+        "Chiba"
+      ],
+      "contact_zip/postal_code": [
+        "2608677"
+      ],
+      "contact_country": [
+        "Japan"
+      ],
+      "instrument_model": [
+        "Illumina NovaSeq 6000"
+      ],
+      "library_selection": [
+        "cDNA"
+      ],
+      "library_source": [
+        "transcriptomic single cell"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN48587643",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX28854889"
+      ],
+      "supplementary_file_1": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_adt_C001.h5ad"
+      ],
+      "supplementary_file_2": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_rna_C001.h5ad"
+      ],
+      "series_id": [
+        "GSE297547"
+      ],
+      "data_row_count": [
+        "0"
+      ]
+    },
+    "native_count_audit": {
+      "accession": "GSM8994520",
+      "source_code": "C001",
+      "source_manifest": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_rna_C001.h5ad",
+        "retrieved_at": "2026-10-17T16:03:32.402585+00:00",
+        "bytes": 307731600,
+        "sha256": "b1620151d3705ca903b3469183ba7e0c870e60268606a4ef4e64f78e5a1a8541",
+        "response_headers": {
+          "Date": "Sat, 17 Oct 2026 16:03:21 GMT",
+          "Server": "Apache",
+          "Last-Modified": "Sat, 12 Apr 2025 03:40:40 GMT",
+          "Accept-Ranges": "bytes",
+          "Content-Length": "307731600",
+          "Cache-Control": "public, max-age=86400",
+          "Expires": "Sat, 24 Oct 2026 16:03:21 GMT",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,POST,PUT,OPTIONS",
+          "Access-Control-Allow-Headers": "RANGE, Cache-control, If-None-Match, Content-Type",
+          "Access-Control-Expose-Headers": "Content-Length, Content-Range, Content-Type",
+          "Connection": "close"
+        }
+      },
+      "shape": [
+        11032,
+        25259
+      ],
+      "all_values_finite_nonnegative_integer": true,
+      "all_sparse_coordinates_checked": true,
+      "raw_location": "X",
+      "total_count": 68046164,
+      "nonzeros": 23537265,
+      "native_gene_symbol_sha256": "76bef932f4480344ce0fc61849a09819fbc098b8f60f2fd1fb6d6303010d3404",
+      "annotation_overlap": 16971,
+      "source_condition": "Control",
+      "source_assay_label": "WTA",
+      "positive_RNA_genes": 24328,
+      "observed_cell_identifiers_unique": true,
+      "source_GEO_record": {
+        "title": [
+          "PBMC from C01 sample"
+        ],
+        "geo_accession": [
+          "GSM8994520"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "May 19 2025"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "age: 45",
+          "Sex: male"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected from all participants, and SepMate (STEMCELL Technologies, ST-8645, Vancouver, Canada) was used for PBMC isolation.",
+          "T and B cells were sorted from PBMC using a BD Melody cytometer. After 30-min incubation at 4 \u00b0C with sample tags and Abseq antibodies, the cells were washed and enumerated using a hemocytometer with Trypan blue. Cell viability was assessed, and the total cell number was quantified using a BD Rhapsody Scanner. A total of 20,000 cells were targeted and loaded onto BD Rhapsody cartridges, allowing single cells to remain stationary. If sample tags were used for pooled cells from two samples, we adjusted the target cell number accordingly. The libraries were prepared according to the BD Rhapsody protocol using the WTA amplification kit. They were then quantified and quality-assessed on an Agilent TapeStation."
+        ],
+        "description": [
+          "Library name: C01",
+          "Rhapsody"
+        ],
+        "data_processing": [
+          "The BCL file after sequencing was converted to a FASTQ file using bcl2fastq. The multiplex FASTQ was output as adata using sample tags and index information in sevenbridges. Subsequently, to facilitate analysis, files were created that were completely divided by sample as adata.The RNA expression matrix was analyzed with scanpy (v1.9.8).",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: adata file of RNA and Abseq for each sample, vdj data as xlsx"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Hiroyuki,,Akamine"
+        ],
+        "contact_institute": [
+          "Chiba university"
+        ],
+        "contact_address": [
+          "chuoku inohana 1-8-1"
+        ],
+        "contact_city": [
+          "Chiba"
+        ],
+        "contact_zip/postal_code": [
+          "2608677"
+        ],
+        "contact_country": [
+          "Japan"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN48587643",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX28854889"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_adt_C001.h5ad"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8994nnn/GSM8994520/suppl/GSM8994520_rna_C001.h5ad"
+        ],
+        "series_id": [
+          "GSE297547"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      }
+    },
+    "access": "Public original sample-separated RNA H5AD",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/"
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

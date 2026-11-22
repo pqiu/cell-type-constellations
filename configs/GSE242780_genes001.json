@@ -1,0 +1,1125 @@
+{
+  "dataset_id": "GSE242780_genes001",
+  "study_id": "GSE242780",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Six study-scoped people and six conservative donor/material groups, one PBMC observation per code. Global identity overlap unresolved.",
+  "source_metadata": {
+    "accession": "GSE242780",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/39277735/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE242780",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+      "Assembly: GRCH38",
+      "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows are not extra cells or biological samples. Fixed500RNA gate before conversion; every original count and coordinate audited.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE242780_source_identity_review.json",
+      "sha256": "002c733eedb599b4076b801b16b41365a5468e74c972a0b10e4b2b27d7c8c046"
+    },
+    "native_coverage_policy": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7770408",
+      "donor_id": "sample1",
+      "source_metadata": {
+        "title": [
+          "PBMCs, Renal irAEs, sample1"
+        ],
+        "geo_accession": [
+          "GSM7770408"
+        ],
+        "status": [
+          "Public on Aug 31 2024"
+        ],
+        "submission_date": [
+          "Sep 08 2023"
+        ],
+        "last_update_date": [
+          "Aug 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "condition: renal irAEs",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients' blood  was collected on the first day of each hospitalization. Blood samples from the participates were collected into the EDTA anticoagulant tube for later management. Then PBMCs were separated on the day of blood collection, and Ficoll-Paque density gradient centrifugation was used to isolate PBMCs. Cell viability was assessed by microscopic examination using Taipan blue staining. Finally, samples with more than 85% viability can be used to conduct single-cell RNA-seq libraries.",
+          "Single-cell RNA-seq libraries were generated using Chromium Single-Cell 3\u2019 Library and Gel Bead Kit v2 (10\u00d7Genomics, Pleasanton, CA) according to the manufacturer\u2019s instructions. Then, the libraries were read on  Illumina NovaSeq 6000 system."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Shusu,,Liu"
+        ],
+        "contact_department": [
+          "Department of Nephrology"
+        ],
+        "contact_institute": [
+          "The Third Affiliated Hospital of Soochow University"
+        ],
+        "contact_address": [
+          "No 185\uff0cJuqian Road"
+        ],
+        "contact_city": [
+          "Changzhou"
+        ],
+        "contact_zip/postal_code": [
+          "213003"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37331365",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21706455"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770408/suppl/GSM7770408_sample1-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770408/suppl/GSM7770408_sample1-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770408/suppl/GSM7770408_sample1-matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE242780"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7770408",
+        "source_GEO_title": "PBMCs, Renal irAEs, sample1",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"condition: renal irAEs\", \"cell type: PBMC\"]",
+        "source_missingness_policy": "Individual ages, sex and collection dates not supplied in original GEO records. No clinical covariates joined from supplementary tables without an explicit source crosswalk.",
+        "source_processing_policy": "All unchanged original RNA values and native axes audited; common project500RNA/200genes/20percentMT QC. Source filtering, ambient-RNA correction and author final cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor and any later-linked visits together; cross-study identity overlap unresolved",
+        "source_native_RNA_genes": 36601,
+        "source_native_mito_features": 13,
+        "source_feature_table_columns": 3,
+        "source_gene_coverage": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred.",
+        "condition": "lung cancer with renal immune adverse events after PD-1 therapy",
+        "source_condition_as_reported": "renal irAEs",
+        "source_disease": "lung cancer",
+        "source_treatment": "anti-PD-1 therapy; primary cohort description",
+        "source_identity_policy": "Primary verifies three lung-cancer patients with renal immune adverse events and three treated lung-cancer controls without events. Six original sample codes, one PBMC capture per code; controls are not healthy donors.",
+        "source_diagnosis_policy": "Renal event classification is source-reported; primary describes empirical diagnosis without renal biopsy. No clinical diagnosis inferred from RNA.",
+        "source_cohort_demographics": "Primary reports selected cohort male only. This group-level fact is retained separately; individual GEO sex/age fields remain unspecified.",
+        "source_count_semantics": "GEO declares deposited triplets raw gene counts. Author processing also describes DecontX; unchanged native values must independently pass integer-count audit. No rounding or inverse normalization."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770408/suppl/GSM7770408_sample1-features.tsv.gz",
+          "filename": "GSM7770408_sample1-features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "f62d990b2de4fbd393938feed5748aaee549a748fa6b7795e765c2ba312f739d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770408/suppl/GSM7770408_sample1-barcodes.tsv.gz",
+          "filename": "GSM7770408_sample1-barcodes.tsv.gz",
+          "expected_bytes": 67578,
+          "sha256": "aa65990c43d6eb0b21db231ed08ead2f8ab9812f4c5c55b651e80b713b4433ce"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770408/suppl/GSM7770408_sample1-matrix.mtx.gz",
+          "filename": "GSM7770408_sample1-matrix.mtx.gz",
+          "expected_bytes": 85419035,
+          "sha256": "c9a24c8db6b73dedbaef3ef1a0ed2662f25603a0760826c3d94e477539c11126"
+        }
+      ],
+      "genes_member": "GSM7770408_sample1-features.tsv.gz",
+      "barcodes_member": "GSM7770408_sample1-barcodes.tsv.gz",
+      "matrix_member": "GSM7770408_sample1-matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 14188,
+        "genes": 36601,
+        "nonzeros": 22104459,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 14188,
+        "RNA_positive_barcode_rows": 14188,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 58559901,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM7770409",
+      "donor_id": "sample2",
+      "source_metadata": {
+        "title": [
+          "PBMCs, Renal irAEs, sample2"
+        ],
+        "geo_accession": [
+          "GSM7770409"
+        ],
+        "status": [
+          "Public on Aug 31 2024"
+        ],
+        "submission_date": [
+          "Sep 08 2023"
+        ],
+        "last_update_date": [
+          "Aug 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "condition: renal irAEs",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients' blood  was collected on the first day of each hospitalization. Blood samples from the participates were collected into the EDTA anticoagulant tube for later management. Then PBMCs were separated on the day of blood collection, and Ficoll-Paque density gradient centrifugation was used to isolate PBMCs. Cell viability was assessed by microscopic examination using Taipan blue staining. Finally, samples with more than 85% viability can be used to conduct single-cell RNA-seq libraries.",
+          "Single-cell RNA-seq libraries were generated using Chromium Single-Cell 3\u2019 Library and Gel Bead Kit v2 (10\u00d7Genomics, Pleasanton, CA) according to the manufacturer\u2019s instructions. Then, the libraries were read on  Illumina NovaSeq 6000 system."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Shusu,,Liu"
+        ],
+        "contact_department": [
+          "Department of Nephrology"
+        ],
+        "contact_institute": [
+          "The Third Affiliated Hospital of Soochow University"
+        ],
+        "contact_address": [
+          "No 185\uff0cJuqian Road"
+        ],
+        "contact_city": [
+          "Changzhou"
+        ],
+        "contact_zip/postal_code": [
+          "213003"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37331364",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21706456"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770409/suppl/GSM7770409_sample2-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770409/suppl/GSM7770409_sample2-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770409/suppl/GSM7770409_sample2-matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE242780"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7770409",
+        "source_GEO_title": "PBMCs, Renal irAEs, sample2",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"condition: renal irAEs\", \"cell type: PBMC\"]",
+        "source_missingness_policy": "Individual ages, sex and collection dates not supplied in original GEO records. No clinical covariates joined from supplementary tables without an explicit source crosswalk.",
+        "source_processing_policy": "All unchanged original RNA values and native axes audited; common project500RNA/200genes/20percentMT QC. Source filtering, ambient-RNA correction and author final cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor and any later-linked visits together; cross-study identity overlap unresolved",
+        "source_native_RNA_genes": 36601,
+        "source_native_mito_features": 13,
+        "source_feature_table_columns": 3,
+        "source_gene_coverage": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred.",
+        "condition": "lung cancer with renal immune adverse events after PD-1 therapy",
+        "source_condition_as_reported": "renal irAEs",
+        "source_disease": "lung cancer",
+        "source_treatment": "anti-PD-1 therapy; primary cohort description",
+        "source_identity_policy": "Primary verifies three lung-cancer patients with renal immune adverse events and three treated lung-cancer controls without events. Six original sample codes, one PBMC capture per code; controls are not healthy donors.",
+        "source_diagnosis_policy": "Renal event classification is source-reported; primary describes empirical diagnosis without renal biopsy. No clinical diagnosis inferred from RNA.",
+        "source_cohort_demographics": "Primary reports selected cohort male only. This group-level fact is retained separately; individual GEO sex/age fields remain unspecified.",
+        "source_count_semantics": "GEO declares deposited triplets raw gene counts. Author processing also describes DecontX; unchanged native values must independently pass integer-count audit. No rounding or inverse normalization."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770409/suppl/GSM7770409_sample2-features.tsv.gz",
+          "filename": "GSM7770409_sample2-features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "81bb2856b452d7f03728cfa056fb4e630d41af2df589aa31f35894c0208dd444"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770409/suppl/GSM7770409_sample2-barcodes.tsv.gz",
+          "filename": "GSM7770409_sample2-barcodes.tsv.gz",
+          "expected_bytes": 40851,
+          "sha256": "79ba4ea1a2ea30fbeb34fe6561319022d8066e4819903aad51b5caff37972a22"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770409/suppl/GSM7770409_sample2-matrix.mtx.gz",
+          "filename": "GSM7770409_sample2-matrix.mtx.gz",
+          "expected_bytes": 63118359,
+          "sha256": "fbf3c880e3f0b23ff2a1b47780f2e23265061923784ae1e0ff9fd4d1352d0018"
+        }
+      ],
+      "genes_member": "GSM7770409_sample2-features.tsv.gz",
+      "barcodes_member": "GSM7770409_sample2-barcodes.tsv.gz",
+      "matrix_member": "GSM7770409_sample2-matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8253,
+        "genes": 36601,
+        "nonzeros": 16689758,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 8253,
+        "RNA_positive_barcode_rows": 8253,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 44125144,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM7770410",
+      "donor_id": "sample3",
+      "source_metadata": {
+        "title": [
+          "PBMCs, Renal irAEs, sample3"
+        ],
+        "geo_accession": [
+          "GSM7770410"
+        ],
+        "status": [
+          "Public on Aug 31 2024"
+        ],
+        "submission_date": [
+          "Sep 08 2023"
+        ],
+        "last_update_date": [
+          "Aug 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "condition: renal irAEs",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients' blood  was collected on the first day of each hospitalization. Blood samples from the participates were collected into the EDTA anticoagulant tube for later management. Then PBMCs were separated on the day of blood collection, and Ficoll-Paque density gradient centrifugation was used to isolate PBMCs. Cell viability was assessed by microscopic examination using Taipan blue staining. Finally, samples with more than 85% viability can be used to conduct single-cell RNA-seq libraries.",
+          "Single-cell RNA-seq libraries were generated using Chromium Single-Cell 3\u2019 Library and Gel Bead Kit v2 (10\u00d7Genomics, Pleasanton, CA) according to the manufacturer\u2019s instructions. Then, the libraries were read on  Illumina NovaSeq 6000 system."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Shusu,,Liu"
+        ],
+        "contact_department": [
+          "Department of Nephrology"
+        ],
+        "contact_institute": [
+          "The Third Affiliated Hospital of Soochow University"
+        ],
+        "contact_address": [
+          "No 185\uff0cJuqian Road"
+        ],
+        "contact_city": [
+          "Changzhou"
+        ],
+        "contact_zip/postal_code": [
+          "213003"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37331363",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21706457"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770410/suppl/GSM7770410_sample3-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770410/suppl/GSM7770410_sample3-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770410/suppl/GSM7770410_sample3-matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE242780"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7770410",
+        "source_GEO_title": "PBMCs, Renal irAEs, sample3",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"condition: renal irAEs\", \"cell type: PBMC\"]",
+        "source_missingness_policy": "Individual ages, sex and collection dates not supplied in original GEO records. No clinical covariates joined from supplementary tables without an explicit source crosswalk.",
+        "source_processing_policy": "All unchanged original RNA values and native axes audited; common project500RNA/200genes/20percentMT QC. Source filtering, ambient-RNA correction and author final cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor and any later-linked visits together; cross-study identity overlap unresolved",
+        "source_native_RNA_genes": 36601,
+        "source_native_mito_features": 13,
+        "source_feature_table_columns": 3,
+        "source_gene_coverage": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred.",
+        "condition": "lung cancer with renal immune adverse events after PD-1 therapy",
+        "source_condition_as_reported": "renal irAEs",
+        "source_disease": "lung cancer",
+        "source_treatment": "anti-PD-1 therapy; primary cohort description",
+        "source_identity_policy": "Primary verifies three lung-cancer patients with renal immune adverse events and three treated lung-cancer controls without events. Six original sample codes, one PBMC capture per code; controls are not healthy donors.",
+        "source_diagnosis_policy": "Renal event classification is source-reported; primary describes empirical diagnosis without renal biopsy. No clinical diagnosis inferred from RNA.",
+        "source_cohort_demographics": "Primary reports selected cohort male only. This group-level fact is retained separately; individual GEO sex/age fields remain unspecified.",
+        "source_count_semantics": "GEO declares deposited triplets raw gene counts. Author processing also describes DecontX; unchanged native values must independently pass integer-count audit. No rounding or inverse normalization."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770410/suppl/GSM7770410_sample3-features.tsv.gz",
+          "filename": "GSM7770410_sample3-features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "56c82341cb69e0cdcbe63b9e87244cc8a83775f208cfae6dbf97160bfac69e76"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770410/suppl/GSM7770410_sample3-barcodes.tsv.gz",
+          "filename": "GSM7770410_sample3-barcodes.tsv.gz",
+          "expected_bytes": 37378,
+          "sha256": "0455ac7b20a727f65e9042c0316ae79a41ed1df6cc7385567d2a89d0817c3a63"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770410/suppl/GSM7770410_sample3-matrix.mtx.gz",
+          "filename": "GSM7770410_sample3-matrix.mtx.gz",
+          "expected_bytes": 47840167,
+          "sha256": "b73d0e19259429acb293ac7fb61d049435c501adfd404448836411553de2dafd"
+        }
+      ],
+      "genes_member": "GSM7770410_sample3-features.tsv.gz",
+      "barcodes_member": "GSM7770410_sample3-barcodes.tsv.gz",
+      "matrix_member": "GSM7770410_sample3-matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7500,
+        "genes": 36601,
+        "nonzeros": 12532336,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7500,
+        "RNA_positive_barcode_rows": 7500,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 33110127,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM7770411",
+      "donor_id": "sample4",
+      "source_metadata": {
+        "title": [
+          "PBMCs, Control, sample4"
+        ],
+        "geo_accession": [
+          "GSM7770411"
+        ],
+        "status": [
+          "Public on Aug 31 2024"
+        ],
+        "submission_date": [
+          "Sep 08 2023"
+        ],
+        "last_update_date": [
+          "Aug 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "condition: control",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients' blood  was collected on the first day of each hospitalization. Blood samples from the participates were collected into the EDTA anticoagulant tube for later management. Then PBMCs were separated on the day of blood collection, and Ficoll-Paque density gradient centrifugation was used to isolate PBMCs. Cell viability was assessed by microscopic examination using Taipan blue staining. Finally, samples with more than 85% viability can be used to conduct single-cell RNA-seq libraries.",
+          "Single-cell RNA-seq libraries were generated using Chromium Single-Cell 3\u2019 Library and Gel Bead Kit v2 (10\u00d7Genomics, Pleasanton, CA) according to the manufacturer\u2019s instructions. Then, the libraries were read on  Illumina NovaSeq 6000 system."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Shusu,,Liu"
+        ],
+        "contact_department": [
+          "Department of Nephrology"
+        ],
+        "contact_institute": [
+          "The Third Affiliated Hospital of Soochow University"
+        ],
+        "contact_address": [
+          "No 185\uff0cJuqian Road"
+        ],
+        "contact_city": [
+          "Changzhou"
+        ],
+        "contact_zip/postal_code": [
+          "213003"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37331362",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21706458"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770411/suppl/GSM7770411_sample4-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770411/suppl/GSM7770411_sample4-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770411/suppl/GSM7770411_sample4-matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE242780"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7770411",
+        "source_GEO_title": "PBMCs, Control, sample4",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"condition: control\", \"cell type: PBMC\"]",
+        "source_missingness_policy": "Individual ages, sex and collection dates not supplied in original GEO records. No clinical covariates joined from supplementary tables without an explicit source crosswalk.",
+        "source_processing_policy": "All unchanged original RNA values and native axes audited; common project500RNA/200genes/20percentMT QC. Source filtering, ambient-RNA correction and author final cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor and any later-linked visits together; cross-study identity overlap unresolved",
+        "source_native_RNA_genes": 36601,
+        "source_native_mito_features": 13,
+        "source_feature_table_columns": 3,
+        "source_gene_coverage": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred.",
+        "condition": "lung cancer without renal immune adverse events after PD-1 therapy",
+        "source_condition_as_reported": "control",
+        "source_disease": "lung cancer",
+        "source_treatment": "anti-PD-1 therapy; primary cohort description",
+        "source_identity_policy": "Primary verifies three lung-cancer patients with renal immune adverse events and three treated lung-cancer controls without events. Six original sample codes, one PBMC capture per code; controls are not healthy donors.",
+        "source_diagnosis_policy": "Renal event classification is source-reported; primary describes empirical diagnosis without renal biopsy. No clinical diagnosis inferred from RNA.",
+        "source_cohort_demographics": "Primary reports selected cohort male only. This group-level fact is retained separately; individual GEO sex/age fields remain unspecified.",
+        "source_count_semantics": "GEO declares deposited triplets raw gene counts. Author processing also describes DecontX; unchanged native values must independently pass integer-count audit. No rounding or inverse normalization."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770411/suppl/GSM7770411_sample4-features.tsv.gz",
+          "filename": "GSM7770411_sample4-features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "671b171ea62641bc693743dfdaf36b1ec86fe48cee8632b6fe32139b58cc1934"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770411/suppl/GSM7770411_sample4-barcodes.tsv.gz",
+          "filename": "GSM7770411_sample4-barcodes.tsv.gz",
+          "expected_bytes": 36914,
+          "sha256": "d7322c723811ae5300e28f921643639c872786875fda1703236370254a768fdb"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770411/suppl/GSM7770411_sample4-matrix.mtx.gz",
+          "filename": "GSM7770411_sample4-matrix.mtx.gz",
+          "expected_bytes": 43151672,
+          "sha256": "a9faa1553354b6be22a0ae0ce967a509a992ca26468a3cfcb18d7e7d05086dfd"
+        }
+      ],
+      "genes_member": "GSM7770411_sample4-features.tsv.gz",
+      "barcodes_member": "GSM7770411_sample4-barcodes.tsv.gz",
+      "matrix_member": "GSM7770411_sample4-matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7434,
+        "genes": 36601,
+        "nonzeros": 11236850,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7434,
+        "RNA_positive_barcode_rows": 7434,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 30445076,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM7770412",
+      "donor_id": "sample5",
+      "source_metadata": {
+        "title": [
+          "PBMCs, Control, sample5"
+        ],
+        "geo_accession": [
+          "GSM7770412"
+        ],
+        "status": [
+          "Public on Aug 31 2024"
+        ],
+        "submission_date": [
+          "Sep 08 2023"
+        ],
+        "last_update_date": [
+          "Aug 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "condition: control",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients' blood  was collected on the first day of each hospitalization. Blood samples from the participates were collected into the EDTA anticoagulant tube for later management. Then PBMCs were separated on the day of blood collection, and Ficoll-Paque density gradient centrifugation was used to isolate PBMCs. Cell viability was assessed by microscopic examination using Taipan blue staining. Finally, samples with more than 85% viability can be used to conduct single-cell RNA-seq libraries.",
+          "Single-cell RNA-seq libraries were generated using Chromium Single-Cell 3\u2019 Library and Gel Bead Kit v2 (10\u00d7Genomics, Pleasanton, CA) according to the manufacturer\u2019s instructions. Then, the libraries were read on  Illumina NovaSeq 6000 system."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Shusu,,Liu"
+        ],
+        "contact_department": [
+          "Department of Nephrology"
+        ],
+        "contact_institute": [
+          "The Third Affiliated Hospital of Soochow University"
+        ],
+        "contact_address": [
+          "No 185\uff0cJuqian Road"
+        ],
+        "contact_city": [
+          "Changzhou"
+        ],
+        "contact_zip/postal_code": [
+          "213003"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37331361",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21706459"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770412/suppl/GSM7770412_sample5-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770412/suppl/GSM7770412_sample5-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770412/suppl/GSM7770412_sample5-matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE242780"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7770412",
+        "source_GEO_title": "PBMCs, Control, sample5",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"condition: control\", \"cell type: PBMC\"]",
+        "source_missingness_policy": "Individual ages, sex and collection dates not supplied in original GEO records. No clinical covariates joined from supplementary tables without an explicit source crosswalk.",
+        "source_processing_policy": "All unchanged original RNA values and native axes audited; common project500RNA/200genes/20percentMT QC. Source filtering, ambient-RNA correction and author final cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor and any later-linked visits together; cross-study identity overlap unresolved",
+        "source_native_RNA_genes": 36601,
+        "source_native_mito_features": 13,
+        "source_feature_table_columns": 3,
+        "source_gene_coverage": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred.",
+        "condition": "lung cancer without renal immune adverse events after PD-1 therapy",
+        "source_condition_as_reported": "control",
+        "source_disease": "lung cancer",
+        "source_treatment": "anti-PD-1 therapy; primary cohort description",
+        "source_identity_policy": "Primary verifies three lung-cancer patients with renal immune adverse events and three treated lung-cancer controls without events. Six original sample codes, one PBMC capture per code; controls are not healthy donors.",
+        "source_diagnosis_policy": "Renal event classification is source-reported; primary describes empirical diagnosis without renal biopsy. No clinical diagnosis inferred from RNA.",
+        "source_cohort_demographics": "Primary reports selected cohort male only. This group-level fact is retained separately; individual GEO sex/age fields remain unspecified.",
+        "source_count_semantics": "GEO declares deposited triplets raw gene counts. Author processing also describes DecontX; unchanged native values must independently pass integer-count audit. No rounding or inverse normalization."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770412/suppl/GSM7770412_sample5-features.tsv.gz",
+          "filename": "GSM7770412_sample5-features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "57ee3e611a6936be9dbc5ae795c9c4738bd81b18760a6c3b05c33beb22234754"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770412/suppl/GSM7770412_sample5-barcodes.tsv.gz",
+          "filename": "GSM7770412_sample5-barcodes.tsv.gz",
+          "expected_bytes": 29339,
+          "sha256": "a195e9ecf3d40d196751039c24bf669b954ea1e2ec128e4c6a32a61f569f9b75"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770412/suppl/GSM7770412_sample5-matrix.mtx.gz",
+          "filename": "GSM7770412_sample5-matrix.mtx.gz",
+          "expected_bytes": 34845192,
+          "sha256": "f369f2dcbd2ed5ed0221278f9270b3ef9e5358f531b9864045d3f302dca78dfb"
+        }
+      ],
+      "genes_member": "GSM7770412_sample5-features.tsv.gz",
+      "barcodes_member": "GSM7770412_sample5-barcodes.tsv.gz",
+      "matrix_member": "GSM7770412_sample5-matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 5793,
+        "genes": 36601,
+        "nonzeros": 9125719,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 5793,
+        "RNA_positive_barcode_rows": 5793,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 24130487,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM7770413",
+      "donor_id": "sample6",
+      "source_metadata": {
+        "title": [
+          "PBMCs, Control, sample6"
+        ],
+        "geo_accession": [
+          "GSM7770413"
+        ],
+        "status": [
+          "Public on Aug 31 2024"
+        ],
+        "submission_date": [
+          "Sep 08 2023"
+        ],
+        "last_update_date": [
+          "Aug 31 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "condition: control",
+          "cell type: PBMC"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Patients' blood  was collected on the first day of each hospitalization. Blood samples from the participates were collected into the EDTA anticoagulant tube for later management. Then PBMCs were separated on the day of blood collection, and Ficoll-Paque density gradient centrifugation was used to isolate PBMCs. Cell viability was assessed by microscopic examination using Taipan blue staining. Finally, samples with more than 85% viability can be used to conduct single-cell RNA-seq libraries.",
+          "Single-cell RNA-seq libraries were generated using Chromium Single-Cell 3\u2019 Library and Gel Bead Kit v2 (10\u00d7Genomics, Pleasanton, CA) according to the manufacturer\u2019s instructions. Then, the libraries were read on  Illumina NovaSeq 6000 system."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Cell Ranger (version 5.0.0) from 10\u00d7Genomics was applied to process raw gene expression matrices from each sample\u2019s sequencing data. The R package Seurat (version 4.0.0) was used to process the unique molecular identifier (UMI) counting matrix, which was then used for quality control, normalization, dimensional reduction, batch effect removal, clustering, and visualization. DecontX, a novel Bayesian approach, was applied to eliminate the contamination in individual cells. To exclude low-quality captures and eliminate the possibility of multiple captures, cells were filtered out according to the following criteria: (1) gene numbers less than 400, (2) gene numbers more than 6000, (3) UMI larger than 50000, (4) percentage of mitochondrial RNA UMIs more than 10%, (5) percentage of ribosome RNA UMIs more than 40%, and (6) percentage of contamination in each cell more than 20%. Subsequently, use the \u201cNormalize Data\u201d function in Seurat to normalize and count the library size. Elimination of batch effects between individuals was achieved by identifying anchors between individuals and passing them to the \u201cIntegrateData\u201d function.",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: Matrix table with raw gene counts for every gene and every cell"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Shusu,,Liu"
+        ],
+        "contact_department": [
+          "Department of Nephrology"
+        ],
+        "contact_institute": [
+          "The Third Affiliated Hospital of Soochow University"
+        ],
+        "contact_address": [
+          "No 185\uff0cJuqian Road"
+        ],
+        "contact_city": [
+          "Changzhou"
+        ],
+        "contact_zip/postal_code": [
+          "213003"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37331360",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21706460"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770413/suppl/GSM7770413_sample6-barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770413/suppl/GSM7770413_sample6-features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770413/suppl/GSM7770413_sample6-matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE242780"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7770413",
+        "source_GEO_title": "PBMCs, Control, sample6",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"condition: control\", \"cell type: PBMC\"]",
+        "source_missingness_policy": "Individual ages, sex and collection dates not supplied in original GEO records. No clinical covariates joined from supplementary tables without an explicit source crosswalk.",
+        "source_processing_policy": "All unchanged original RNA values and native axes audited; common project500RNA/200genes/20percentMT QC. Source filtering, ambient-RNA correction and author final cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor and any later-linked visits together; cross-study identity overlap unresolved",
+        "source_native_RNA_genes": 36601,
+        "source_native_mito_features": 13,
+        "source_feature_table_columns": 3,
+        "source_gene_coverage": "Retain each deposited native RNA feature axis separately. TP10K and mitochondrial fractions use available native RNA counts/features; omitted genes remain unavailable, not zero filled. Gene-reference and condition effects can be confounded, especially the distinct healthy-control axis in GSE274381. No full-transcriptome-equivalent denominator or cross-reference-equivalent mitochondrial percentage inferred.",
+        "condition": "lung cancer without renal immune adverse events after PD-1 therapy",
+        "source_condition_as_reported": "control",
+        "source_disease": "lung cancer",
+        "source_treatment": "anti-PD-1 therapy; primary cohort description",
+        "source_identity_policy": "Primary verifies three lung-cancer patients with renal immune adverse events and three treated lung-cancer controls without events. Six original sample codes, one PBMC capture per code; controls are not healthy donors.",
+        "source_diagnosis_policy": "Renal event classification is source-reported; primary describes empirical diagnosis without renal biopsy. No clinical diagnosis inferred from RNA.",
+        "source_cohort_demographics": "Primary reports selected cohort male only. This group-level fact is retained separately; individual GEO sex/age fields remain unspecified.",
+        "source_count_semantics": "GEO declares deposited triplets raw gene counts. Author processing also describes DecontX; unchanged native values must independently pass integer-count audit. No rounding or inverse normalization."
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770413/suppl/GSM7770413_sample6-features.tsv.gz",
+          "filename": "GSM7770413_sample6-features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "6b61aadea51853ef41ee2782e2ce0f978f10ac29ea999dfa48809e3a08bc9197"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770413/suppl/GSM7770413_sample6-barcodes.tsv.gz",
+          "filename": "GSM7770413_sample6-barcodes.tsv.gz",
+          "expected_bytes": 18090,
+          "sha256": "fea2fe3f24c5e1b2d601da281d5fbcc2014c0054b5537b93624e4bc91d05eeac"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7770nnn/GSM7770413/suppl/GSM7770413_sample6-matrix.mtx.gz",
+          "filename": "GSM7770413_sample6-matrix.mtx.gz",
+          "expected_bytes": 22976658,
+          "sha256": "df430a9bc19b566429bc45a44840a882c7acf7ea1996d2a55dd458b5702fdfd3"
+        }
+      ],
+      "genes_member": "GSM7770413_sample6-features.tsv.gz",
+      "barcodes_member": "GSM7770413_sample6-barcodes.tsv.gz",
+      "matrix_member": "GSM7770413_sample6-matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 3450,
+        "genes": 36601,
+        "nonzeros": 6116898,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 3450,
+        "RNA_positive_barcode_rows": 3450,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 15805050,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_mapping_evidence": "Six study-scoped people and six conservative donor/material groups, one PBMC observation per code. Global identity overlap unresolved."
+}

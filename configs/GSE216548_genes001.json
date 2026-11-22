@@ -1,0 +1,1391 @@
+{
+  "dataset_id": "GSE216548_genes001",
+  "study_id": "GSE216548",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "8study-scoped donor/material groups, 8dependent RNA capture views; donor supplies replication, additional conditions/aliquots do not add donors.",
+  "source_metadata": {
+    "accession": "GSE216548",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/38291039/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE216548",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+    "source_processing": [
+      "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+      "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+      "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+      "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+      "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+      "Assembly: GRCh38-2020-A",
+      "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+      "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows, not automatically viable cells or extra biological samples. Fixed500RNA gate applied before AnnData construction; all original values/axes audited.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE216548_source_identity_review.json",
+      "sha256": "b13f125d32468d3c1fd05872965b48767f9fa73cc67ecae928045f8c948b7e55"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6679001",
+      "donor_id": "CONTROL1",
+      "source_metadata": {
+        "title": [
+          "CONTROL1"
+        ],
+        "geo_accession": [
+          "GSM6679001"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Control",
+          "disease: Healthy controls",
+          "mutation: no"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440626",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016420"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679001/suppl/GSM6679001_CONTROL1_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679001",
+        "source_GEO_title": "CONTROL1",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Control\", \"disease: Healthy controls\", \"mutation: no\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "Healthy controls",
+        "source_group_as_reported": "Control",
+        "source_marker_as_reported": "no",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679001_CONTROL1_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679001/suppl/GSM6679001_CONTROL1_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679001_CONTROL1_raw_feature_bc_matrix.h5",
+          "sha256": "a0981f85adb33156db90e41c64fa0d8cc5f8c9dd0999e2cbc8aff1ca46fa79e7",
+          "expected_bytes": 50525651
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 14059704,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6162,
+          "full_source_RNA_counts": 34597979,
+          "selected_RNA_counts": 27692638,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679001.csv.gz",
+            "sha256": "cbd73764a7b2ecfb02546bbfc3d3a5fe6c73112394e5e282d758bcc19600625d"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679002",
+      "donor_id": "CONTROL2",
+      "source_metadata": {
+        "title": [
+          "CONTROL2"
+        ],
+        "geo_accession": [
+          "GSM6679002"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Control",
+          "disease: Healthy controls",
+          "mutation: no"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440625",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016421"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679002/suppl/GSM6679002_CONTROL2_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679002",
+        "source_GEO_title": "CONTROL2",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Control\", \"disease: Healthy controls\", \"mutation: no\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "Healthy controls",
+        "source_group_as_reported": "Control",
+        "source_marker_as_reported": "no",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679002_CONTROL2_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679002/suppl/GSM6679002_CONTROL2_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679002_CONTROL2_raw_feature_bc_matrix.h5",
+          "sha256": "7561ec1c57ddbb1c4f4d0b2e8b694de6ae84534f37ca8bcf47c868753ac22089",
+          "expected_bytes": 51695680
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 14941921,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6369,
+          "full_source_RNA_counts": 39480815,
+          "selected_RNA_counts": 33703915,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679002.csv.gz",
+            "sha256": "21b795ee92e8103a2717347204db2c049659ed5c6eeba7eeb4cd17035bd4b85a"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679003",
+      "donor_id": "MDS1",
+      "source_metadata": {
+        "title": [
+          "MDS1"
+        ],
+        "geo_accession": [
+          "GSM6679003"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Patient",
+          "disease: low-risk myelodysplastic syndromes",
+          "mutation: no"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440624",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016422"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679003/suppl/GSM6679003_MDS1_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679003",
+        "source_GEO_title": "MDS1",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Patient\", \"disease: low-risk myelodysplastic syndromes\", \"mutation: no\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "low-risk myelodysplastic syndromes",
+        "source_group_as_reported": "Patient",
+        "source_marker_as_reported": "no",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679003_MDS1_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679003/suppl/GSM6679003_MDS1_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679003_MDS1_raw_feature_bc_matrix.h5",
+          "sha256": "78125660a5973e7f9a051a0d55c206c394c20a30df8ca7321971158ccbd82dfe",
+          "expected_bytes": 64239691
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 21699202,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 12541,
+          "full_source_RNA_counts": 58215311,
+          "selected_RNA_counts": 50278349,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679003.csv.gz",
+            "sha256": "e1b4f932d3a0d2b5beaf451c45d4ee43fa6e9bc1032a428b5e560920a77d9dcf"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679004",
+      "donor_id": "MDS2",
+      "source_metadata": {
+        "title": [
+          "MDS2"
+        ],
+        "geo_accession": [
+          "GSM6679004"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Patient",
+          "disease: low-risk myelodysplastic syndromes",
+          "mutation: no"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440623",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016423"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679004/suppl/GSM6679004_MDS2_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679004",
+        "source_GEO_title": "MDS2",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Patient\", \"disease: low-risk myelodysplastic syndromes\", \"mutation: no\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "low-risk myelodysplastic syndromes",
+        "source_group_as_reported": "Patient",
+        "source_marker_as_reported": "no",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679004_MDS2_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679004/suppl/GSM6679004_MDS2_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679004_MDS2_raw_feature_bc_matrix.h5",
+          "sha256": "867bafc19aac7b30036df3595f414a9b4bd84414b42236e4a6e8a8b7091cf232",
+          "expected_bytes": 65246904
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 22427220,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13498,
+          "full_source_RNA_counts": 63024310,
+          "selected_RNA_counts": 56152573,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679004.csv.gz",
+            "sha256": "c037f26a01bb2ba7edadf771539ca2f6f95368e97b234d205242dc996ec4b6ac"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679005",
+      "donor_id": "VEXAS1",
+      "source_metadata": {
+        "title": [
+          "VEXAS1"
+        ],
+        "geo_accession": [
+          "GSM6679005"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Patient",
+          "disease: Vexas syndrome",
+          "mutation: UBA1_p.Met41"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440622",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016424"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679005/suppl/GSM6679005_VEXAS1_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679005",
+        "source_GEO_title": "VEXAS1",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Patient\", \"disease: Vexas syndrome\", \"mutation: UBA1_p.Met41\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "Vexas syndrome",
+        "source_group_as_reported": "Patient",
+        "source_marker_as_reported": "UBA1_p.Met41",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679005_VEXAS1_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679005/suppl/GSM6679005_VEXAS1_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679005_VEXAS1_raw_feature_bc_matrix.h5",
+          "sha256": "4bb415050e1efef10e008fee61a640a110cd7ecba759dcb1ec08c57946fd01e1",
+          "expected_bytes": 56849833
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 17777780,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13142,
+          "full_source_RNA_counts": 51404005,
+          "selected_RNA_counts": 44633582,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679005.csv.gz",
+            "sha256": "7b011efa595f8a7a6f0a0d55fc8ba00f075c16401683143a340dc40a44505f91"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679006",
+      "donor_id": "VEXAS2",
+      "source_metadata": {
+        "title": [
+          "VEXAS2"
+        ],
+        "geo_accession": [
+          "GSM6679006"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Patient",
+          "disease: Vexas syndrome",
+          "mutation: UBA1_p.Met41"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440621",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016425"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679006/suppl/GSM6679006_VEXAS2_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679006",
+        "source_GEO_title": "VEXAS2",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Patient\", \"disease: Vexas syndrome\", \"mutation: UBA1_p.Met41\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "Vexas syndrome",
+        "source_group_as_reported": "Patient",
+        "source_marker_as_reported": "UBA1_p.Met41",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679006_VEXAS2_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679006/suppl/GSM6679006_VEXAS2_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679006_VEXAS2_raw_feature_bc_matrix.h5",
+          "sha256": "9221d3e7bbbc9f629204ff71ae17f4ed12f929d5fc9f8ad202e9d6dc8ccc63a5",
+          "expected_bytes": 40144020
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 8288955,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8441,
+          "full_source_RNA_counts": 25719021,
+          "selected_RNA_counts": 20839884,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679006.csv.gz",
+            "sha256": "210a05d78462725eea718f2e72070c70d4b5b5aae5b095536ed665c7f0cefd68"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679007",
+      "donor_id": "VEXASLIKE1",
+      "source_metadata": {
+        "title": [
+          "VEXASLIKE1"
+        ],
+        "geo_accession": [
+          "GSM6679007"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Patient",
+          "disease: autoinflammatory disease",
+          "mutation: no"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440620",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016426"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679007/suppl/GSM6679007_VEXASLIKE1_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679007",
+        "source_GEO_title": "VEXASLIKE1",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Patient\", \"disease: autoinflammatory disease\", \"mutation: no\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "autoinflammatory disease",
+        "source_group_as_reported": "Patient",
+        "source_marker_as_reported": "no",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679007_VEXASLIKE1_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679007/suppl/GSM6679007_VEXASLIKE1_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679007_VEXASLIKE1_raw_feature_bc_matrix.h5",
+          "sha256": "331157d635bf540c4b7affe629eac948a617cf7587a89b1159cdd61374dfd9a6",
+          "expected_bytes": 49343264
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 14049780,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8898,
+          "full_source_RNA_counts": 30494112,
+          "selected_RNA_counts": 26002327,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679007.csv.gz",
+            "sha256": "2eef9cc3dbd71349b3a702259c854e533de6878b79ec25e92ebb29d6acf97e04"
+          }
+        }
+      }
+    },
+    {
+      "accession": "GSM6679008",
+      "donor_id": "VEXASLIKE2",
+      "source_metadata": {
+        "title": [
+          "VEXASLIKE2"
+        ],
+        "geo_accession": [
+          "GSM6679008"
+        ],
+        "status": [
+          "Public on Nov 06 2023"
+        ],
+        "submission_date": [
+          "Oct 25 2022"
+        ],
+        "last_update_date": [
+          "Nov 06 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "pbmc"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: pbmc",
+          "group: Patient",
+          "disease: autoinflammatory disease",
+          "mutation: no"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (GRCh38-2020-A directly download from 10x), using the CellRanger Pipeline v5.0.1",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4.0.3 (Stuart et al., 2019) for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with fewer than 500 features or a mitochondrial content higher than 20%.",
+          "Data from each sample were SCT normalisedand scaled, before batch correction using Seurat\u2019s FindIntegratedAnchors.",
+          "On this integrated dataset, we computed the principal component analysis on the 2000 most variable genes. UMAP was carried out using the 20 most significant PCs, and community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 0.8 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMC subtypes (Monaco et al., 2019).  63630 cells were kept for further analysis.",
+          "Assembly: GRCh38-2020-A",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31440619",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18016427"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679008/suppl/GSM6679008_VEXASLIKE2_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE216548"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6679008",
+        "source_GEO_title": "VEXASLIKE2",
+        "source_specimen": "PBMC",
+        "source_characteristics_json": "[\"cell type: pbmc\", \"group: Patient\", \"disease: autoinflammatory disease\", \"mutation: no\"]",
+        "source_missingness_policy": "Collection dates and unjoined clinical covariates remain missing. Group-level publication characteristics are not assigned to individual source codes.",
+        "source_processing_policy": "Unchanged original RNA count matrix and native gene axis; common project500RNA/200genes/20percentMT QC. Author final QC/cell sets are not reproduced by assertion.",
+        "split_assignment": "unassigned; keep study-scoped donor, all repeated condition/storage views and any later-linked visits together; global identity overlap unresolved",
+        "condition": "autoinflammatory disease",
+        "source_group_as_reported": "Patient",
+        "source_marker_as_reported": "no",
+        "source_marker_policy": "Original source-reported clinical marker only; no genotype inferred from RNA and no germline interpretation.",
+        "source_preparation": "Primary scRNA section describes frozen PBMCs, two individuals per group. Broader wholeblood/skin/other-assay cohorts are not additional RNA specimens.",
+        "source_identity_policy": "Eight original source donor codes, oneRNA capture per code; two CONTROL,twoMDS,twoVEXAS,twoVEXASLIKE. Individual age/sex/treatment not joined from larger cohort tables without source crosswalk."
+      },
+      "matrix_h5_member": "GSM6679008_VEXASLIKE2_raw_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6679nnn/GSM6679008/suppl/GSM6679008_VEXASLIKE2_raw_feature_bc_matrix.h5",
+          "filename": "GSM6679008_VEXASLIKE2_raw_feature_bc_matrix.h5",
+          "sha256": "3737245dc608278441206d5cbfd247d1a34bebc9539298eea57289b22048de92",
+          "expected_bytes": 73158808
+        }
+      ],
+      "source_count_review": {
+        "shape": [
+          6794880,
+          36601
+        ],
+        "nonzeros": 27914342,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6794880,
+        "cells": 6794880,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE216548_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "6e7a91eefad9c1b43bbb2273f07b0fccedf457d2a484679bab66d84da7b06377"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6794880,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14547,
+          "full_source_RNA_counts": 75767636,
+          "selected_RNA_counts": 69388766,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE216548_original_RNA_QC/GSM6679008.csv.gz",
+            "sha256": "8870a69c6623b6b41f6b88caf2514e6f2c5c5203abf8e071fa16576f264e54ab"
+          }
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_mapping_evidence": "8study-scoped donor/material groups, 8dependent RNA capture views; donor supplies replication, additional conditions/aliquots do not add donors."
+}

@@ -1,0 +1,80 @@
+{
+  "dataset_id": "GSE306441",
+  "study_id": "GSE306441",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE306441_complete_original_RNA_audit.json",
+    "bytes": 20936,
+    "sha256": "ca522d61d443c10de62f2530737dd7f5ccbf34f3fbdbcf703ba375e538fa5219"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE306441_source_identity_review.json",
+    "bytes": 18787,
+    "sha256": "a9f3625dffaf05ff727e2082b9ed724ce157eb2e214b84adf30e60d7a9f0ea63"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Replay original author preprocess_C2.R aggregation rownames-cell_n/fullbarcode join with original32sample tables. Original multi_sampleA-H files, per_sample_outs source paths and GEOcapture records explicitly link four source IDs to each of8RNAcaptures. No new demultiplexing or genotype/profile-based identity inference. Recipient sampling-participant codes are not graft-donor identities. Keep original shared-publication participant keys across both cohorts together.",
+  "physical_sample_mapping_evidence": "Thirty-two explicit original recipient/sample codes from two identical released aggregation tables. Original author preprocess_C2.R defines aggregation rownames cell_n, joins full barcode suffix to that key and adds sample_id. Original multi_sampleA-H files and per_sample_outs source paths explicitly link4sampleIDs to each of8multiplexed RNA captures;16RNA/featureGEOrecords do not establish16independent samples. All32namespace keys cover deposited barcodes. Source-assigned per-sample metadata is replayed; no new demultiplexing, genotype or RNA-profile identity inference. No literal source-code overlap with61GSE229733codes, not proof of global person uniqueness. Recipient sampling identity is not immune-cell graft-donor identity.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE306441",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE306441",
+    "primary_PMID": "41950302",
+    "primary_DOI": "10.1126/scitranslmed.aeb7834",
+    "explicit_author_assignment_review": {
+      "path": "references/datasets/GSE306441_explicit_author_pool_and_aggregation_review.json",
+      "bytes": 7667,
+      "sha256": "19a0495d531e9b1ae29aabab5d89b812b099a226b3db804e1e2c989135178ac3"
+    },
+    "resolved_related_source_code_review": {
+      "path": "references/datasets/GSE306441_disjoint_related_source_code_review.json",
+      "bytes": 2743,
+      "sha256": "e70a0f9ab7553ebcd3d10aedbaa32ae2707663cd7f4667d3528b85f4f3e02e07"
+    },
+    "native_gene_support": {
+      "path": "references/datasets/GSE306441_original_RNA_protein_review/all_native_RNA_gene_support.csv.gz",
+      "bytes": 463414,
+      "sha256": "a5593cc14a87ab41830f97f0fa5397ded31c1081dcc75343fd23b9fcad0a04fd"
+    },
+    "access": "Public original typed RNA/protein matrix and original fixed-commit author aggregation/pool metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "GEO_count_data_not_specified; author_repository_MIT_notice_retained_with_original_README",
+    "source_sample_review": {
+      "path": "references/datasets/GSE306441_source_identity_review.json",
+      "bytes": 18787,
+      "sha256": "a9f3625dffaf05ff727e2082b9ed724ce157eb2e214b84adf30e60d7a9f0ea63"
+    },
+    "source_unit": "Thirty-two explicit original recipient/sample codes from two identical released aggregation tables. Original author preprocess_C2.R defines aggregation rownames cell_n, joins full barcode suffix to that key and adds sample_id. Original multi_sampleA-H files and per_sample_outs source paths explicitly link4sampleIDs to each of8multiplexed RNA captures;16RNA/featureGEOrecords do not establish16independent samples. All32namespace keys cover deposited barcodes. Source-assigned per-sample metadata is replayed; no new demultiplexing, genotype or RNA-profile identity inference. No literal source-code overlap with61GSE229733codes, not proof of global person uniqueness. Recipient sampling identity is not immune-cell graft-donor identity.",
+    "identity_policy": "Replay original author preprocess_C2.R aggregation rownames-cell_n/fullbarcode join with original32sample tables. Original multi_sampleA-H files, per_sample_outs source paths and GEOcapture records explicitly link four source IDs to each of8RNAcaptures. No new demultiplexing or genotype/profile-based identity inference. Recipient sampling-participant codes are not graft-donor identities. Keep original shared-publication participant keys across both cohorts together.",
+    "clinical_policy": "Original source group, diagnosis, grad_agvhd, CTC_R and del_sample fields retained literally; source NA values remain source claims, not imputed outcomes. Definition/units of del_sample and exact transplant/treatment clocks remain unassigned. Original GEO batch6/12/2025 is a literal source batch label, not an interpreted collection date. Both RNA and paired-feature capture identities preserved. Related primary-paper participant keys must stay together for evaluation; global aliases/graft donor/demographics unavailable. Preserve canonical condition as literal original author group codes. Do not assign clinical clock units or disease-severity meanings solely from code names. Exact dates/demographics/graft-donor identities remain unavailable.",
+    "reuse_policy": "Known same-publication GSE229733 output remains listed, not hidden. Pinned related-source review compares actual original61versus32code tables, native audits and the validated prior export; literal code intersection is empty in this author namespace. This is not proof of global participant uniqueness or independent-study replication. Sixteen paired RNA/feature GEOrecords are8multiplexed captures for32source material codes.",
+    "selection_policy": "All131151source cells enter staging;124173pass fixed counts>=500/detectedgenes>=200/MTfraction<=0.2/positive-library QC. No author group/diagnosis/CTC_R/grade/cell-type or source-analysis filtering. Related primary-paper participant keys are held together pending global alias audit.",
+    "cell_calling_policy": "Original native per-sample count aggregation is the supplied carrier. Select38606GeneExpression rows by explicit feature_type and exclude40AntibodyCapture rows from native/reference RNA libraries. Original source participant assignments are metadata, not a new demultiplexing analysis. Preserve native gene support and GEOtargeted-expression wording without asserting exhaustive molecular coverage.",
+    "gene_policy": "All38606original Gene Expression Ensembl IDs preserved with literal source symbols and separate duplicate-symbol axes.40AntibodyCapture rows excluded from native/reference RNA libraries. Original gene support retained without feature selection; no gene intersection, invented IDs, regression/integration/normalization during staging or missing-type zero fill.",
+    "count_semantics": "Every324060261original stored multimodal value finite/nonnegative/integer; all38606native GeneExpression IDs preserved,40AntibodyCapture rows excluded RNA/reference normalization. Source molecular coverage is not inferred solely from feature count: positive RNA gene support recorded without selecting genes. GEOdescription targeted-expression wording retained, original source preprocessing uses supplied native per-sample aggregation counts. No author phenotype/celltype/source-analysis QC selection imposed.",
+    "source_limitations": "Related primary-paper validation cohort, not an independent study.32source recipient/material codes,8RNAcaptures and16pairedGEOrecords. Empty original61vs32code overlap does not prove global uniqueness. Original clinical/batch/del_sample semantics retained without imputed clocks/dates/demographics/graft donors. GEOtargeted-assay wording remains an explicit molecularcoverage caveat. No clinical,annotation,causal orconstellation validation."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "dataset_id": "GSE254249",
+  "study_id": "GSE254249",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE254249_complete_original_RNA_audit.json",
+    "bytes": 14470,
+    "sha256": "f42425dd08b6ec22144567cdee6492ae6a5a763d775f03274da07587e559dc2b"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE254249_source_identity_review.json",
+    "bytes": 12355,
+    "sha256": "a132a7ce6b027608b45609acba2d3c7cd499fba89b816f344fbfb59bc8ebdccd"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exact full count-cell ID joins original per-cell metadata. Author Ident joins original GEOtitle; PatientID gives explicit donor codes and SampleTimePoint gives the literal visit/phase label. Preserve repeated patient observations, rather than counting44independentpeople. No barcodeordinal/profile/genotype/demographic mapping.",
+  "physical_sample_mapping_evidence": "Forty-four original author Ident PBMCspecimens from24explicit PatientIDcodes, withrepeated BL/nCT/nRT/nRCTviews linked. Notall26study participants supplydepositedPBMCmaps. Every original metadata cellID joins countbarcodes andIdent joins exactGEOtitle; no suffix ordinal/profile/genotype/demographic identityinference. SourceGEOcolorectumtissueconflict retained against explicit per-cellPBMC assignments andseries44blood/48tumordesign.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase",
+      "author_cell_type": "source_original_subCluster"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE254249",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE254249",
+    "primary_PMID": "41202810",
+    "primary_DOI": "10.1016/j.ccell.2025.10.008",
+    "primary_citation_review": {
+      "path": "references/datasets/GSE254249_primary_citation_review.json",
+      "bytes": 454,
+      "sha256": "18ad644db6f66ae46244e15520ef7d5e5efa5e381552f13de2e22dbd0e26acf7"
+    },
+    "access": "Public original RNAcounts andper-cell metadata; explicit author PBMCsubset withGEOtissueconflict retained.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE254249_source_identity_review.json",
+      "bytes": 12355,
+      "sha256": "a132a7ce6b027608b45609acba2d3c7cd499fba89b816f344fbfb59bc8ebdccd"
+    },
+    "source_unit": "Forty-four original author Ident PBMCspecimens from24explicit PatientIDcodes, withrepeated BL/nCT/nRT/nRCTviews linked. Notall26study participants supplydepositedPBMCmaps. Every original metadata cellID joins countbarcodes andIdent joins exactGEOtitle; no suffix ordinal/profile/genotype/demographic identityinference. SourceGEOcolorectumtissueconflict retained against explicit per-cellPBMC assignments andseries44blood/48tumordesign.",
+    "identity_policy": "Exact full count-cell ID joins original per-cell metadata. Author Ident joins original GEOtitle; PatientID gives explicit donor codes and SampleTimePoint gives the literal visit/phase label. Preserve repeated patient observations, rather than counting44independentpeople. No barcodeordinal/profile/genotype/demographic mapping.",
+    "clinical_policy": "Retain all original group/subCluster/PatientID/Tissue/SampleTimePoint/ImageEvaluation/ClinicalEvaluation fields. Source BL/nCT/nRT/nRCT labels remain literal; exact dates, intervals, age,sex,individualstage and medication unassigned. Do not assign later treatment or response as baseline exposure.",
+    "reuse_policy": "Only44author-labelled PBMCspecimens included from92source materials, across24deposited PBMCpatientcodes. Tumor RNA, bulkRNA andVDJassays do not addPBMCsamples. No completed original source/accession/PMID/HRAreference found at source review; globalidentityunion unresolved.",
+    "selection_policy": "Explicit author per-cell Tissue=PBMC selection after complete mixed-tissueRNAaudit. GEOtissue=colorectum conflict preserved; source overall design independently specifies44blood and48tumorspecimens. No phenotype, response, clinicalgroup or authorcelltype selection beyond fixedprojectRNAQC.",
+    "cell_calling_policy": "Source filtered author-labelled RNAcells; ownfull-nativeRNAQC andfixedSCimilarity annotation. Preserve original group/subCluster labels without independentbiologicalvalidation. No sourcebulklogTPM, VDJorintegratedvalues used as RNAcounts.",
+    "gene_policy": "All33538supplied unique literal gene symbols retained inoriginalorder, without geneintersection, geneIDinvention, modernization orcountreconstruction. Originalmixed-tissuecounts verified beforeexplicitPBMCrowselection; no tumor cells inPBMCbundle.",
+    "count_semantics": "Original integer count MatrixMarket carrier:all1225433375storedvalues/619635cells verified. Geometry uses unchanged fullgene counts for372929explicitlylabelledPBMCrows,372346ownRNAQC. Originalclinical/response/authorcelltype fields retained; source labels notindependently biologicallyvalidated.",
+    "source_limitations": "Original author PBMCselection conflicts withuniform GEOcolorectumtissue labels; both source assertionsretained. Repeated patient visits, author response fields and source ascertainment mustbeaudited. Individualclinical/demographic/globalaliases unresolved. No efficacy,causal,biologicalannotation orconstellationvalidation."
+  }
+}

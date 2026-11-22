@@ -1,0 +1,612 @@
+{
+  "dataset_id": "GSE334503_author_native",
+  "study_id": "GSE334503",
+  "input_format": "pinned_author_counts",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "annotation_gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "60published donor-visit PBMC materials/30source people;10Healthy+10SAD+10CVID donors, eachDay0/Day7;12technical captures pooled only within explicit material IDs",
+  "source_metadata": {
+    "accession": "GSE334503",
+    "source_url": "https://zenodo.org/records/20266085",
+    "GEO_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE334503",
+    "access": "Public original author count archive and published cell metadata",
+    "license": "CC-BY-4.0",
+    "annotation_model": "SCimilarity0.4.1/model_v1.1; human reference TP10K/log1p after alignment",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE334503_source_identity_review.json",
+      "sha256": "d997b0fef778b060d28d4c0d3c2013db877b29e08a30e8e263d06c8de32d32ce"
+    },
+    "gene_coordinate_sha256": "1a13be3840ccbf9e4bdd98ad49c69348d6e8fa7bab50c139971a55ce25d1604c",
+    "annotation_gene_policy": "Keep original source gene IDs and gene_symbols intact. A separate annotation_gene_symbols column applies only13count-vector-verified native CHM13-to-canonical mitochondrial aliases. No global underscore or suffix stripping.",
+    "source_QC_policy": "Existing500RNA/200genes/max0.2mitochondrial fraction; mitochondrial counts computed directly from the13verified native gene IDs, not imputed zero or unavailable.",
+    "source_assignment_policy": "Published final author assignments; agreement with independent two-CLR calls is recorded where available, not calibrated truth and not an extra inclusion filter.",
+    "metadata_policy": "Literal Healthy/SAD/CVID groups, original sex/age and explicit V1-Day0/V2-Day7 retained; no acronym expansion, date imputation or invented individual clinical fields.",
+    "source_author_metadata": {
+      "source_object_review_sha256": "6b1ad1c02511daa3a0a610d1831daaa042d8c77f957d72853442806a4e85c0eb",
+      "source_object_sha256": "291b3aad594a619dc44fdebc7fbf0e18cca7444f9066278301113c5529b236b1",
+      "source_object_class": "Seurat",
+      "source_object_Seurat_version": "5.0.2",
+      "local_Seurat_version": "5.6.0",
+      "source_metadata_rows": 322174,
+      "source_metadata_columns": 23,
+      "raw_metadata_RDS": {
+        "path": "references/datasets/GSE334503_author_cell_metadata/original_meta_data.rds",
+        "sha256": "33037a0281224ebb46333bff796fd8848beb2c1cf7f2d418ce06a3ee255de525"
+      },
+      "CSV": {
+        "path": "references/datasets/GSE334503_author_cell_metadata/original_meta_data.csv.gz",
+        "sha256": "01ee50e0bac2d808dd9e78e8912e59020f36a3a6f4831edb158b5ad1e3c09f64",
+        "caveat": "CSV uses empty fields for missing values; original_meta_data.rds preserves original types and missingness."
+      },
+      "column_summaries": [
+        {
+          "column": "DonorID",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 30
+        },
+        {
+          "column": "10x_capture",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 12
+        },
+        {
+          "column": "Batch",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 5
+        },
+        {
+          "column": "Group",
+          "source_class": "factor",
+          "missing": 0,
+          "distinct_values": 3
+        },
+        {
+          "column": "Sex",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 2
+        },
+        {
+          "column": "Age",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 21
+        },
+        {
+          "column": "vaccination_timepoint",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 2
+        },
+        {
+          "column": "celltype_broadres",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 22
+        },
+        {
+          "column": "celltype_highres",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 58
+        },
+        {
+          "column": "nCount_RNA",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 15589
+        },
+        {
+          "column": "nCount_HTO",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 11487
+        },
+        {
+          "column": "nCount_ADT",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 6705
+        },
+        {
+          "column": "nCount_SCT",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 6958
+        },
+        {
+          "column": "nFeature_RNA",
+          "source_class": "integer",
+          "missing": 0,
+          "distinct_values": 5127
+        },
+        {
+          "column": "nFeature_HTO",
+          "source_class": "integer",
+          "missing": 0,
+          "distinct_values": 12
+        },
+        {
+          "column": "nFeature_ADT",
+          "source_class": "integer",
+          "missing": 0,
+          "distinct_values": 97
+        },
+        {
+          "column": "nFeature_SCT",
+          "source_class": "integer",
+          "missing": 0,
+          "distinct_values": 3649
+        },
+        {
+          "column": "percent.mt",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 215455
+        },
+        {
+          "column": "hash.ID",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 60
+        },
+        {
+          "column": "hto.ID",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 14
+        },
+        {
+          "column": "S.Score",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 321438
+        },
+        {
+          "column": "G2M.Score",
+          "source_class": "numeric",
+          "missing": 0,
+          "distinct_values": 322174
+        },
+        {
+          "column": "Phase",
+          "source_class": "character",
+          "missing": 0,
+          "distinct_values": 3
+        }
+      ],
+      "assay_feature_axes": {
+        "RNA": {
+          "assay": "RNA",
+          "features": 36518,
+          "path": "references/datasets/GSE334503_author_cell_metadata/assay_RNA_features.txt.gz",
+          "sha256": "2b62e290b46764bf30e857310cf8e012c28c56fe3000795df80715da83c3db34"
+        },
+        "SCT": {
+          "assay": "SCT",
+          "features": 26431,
+          "path": "references/datasets/GSE334503_author_cell_metadata/assay_SCT_features.txt.gz",
+          "sha256": "338a65aa84e7db80365f21dcc6a983316f620a3286e2e0df89ebba26e994224d"
+        },
+        "HTO": {
+          "assay": "HTO",
+          "features": 61,
+          "path": "references/datasets/GSE334503_author_cell_metadata/assay_HTO_features.txt.gz",
+          "sha256": "65499657ac5579a7f31574f4260721b60828a32b6d888a859d36963eecb8391b"
+        },
+        "ADT": {
+          "assay": "ADT",
+          "features": 130,
+          "path": "references/datasets/GSE334503_author_cell_metadata/assay_ADT_features.txt.gz",
+          "sha256": "9d26ee44d6554decfafb54e673967680358ef2e42b5cb737898cc4955f571762"
+        }
+      },
+      "source_demultiplexing_commands_not_executed": true,
+      "cell_assignment_and_clinical_join_pending": true,
+      "counts_not_exported_or_used_from_processed_Seurat": true,
+      "sample_increment": 0,
+      "code_sha256": "841566679d3cc8d5452003de0e3a442b7b40111ce75bf308168c5c9cd44ef510"
+    },
+    "source_mito_identity_proof": {
+      "path": "references/datasets/GSE334503_native_mito_gene_identity_proof.json",
+      "sha256": "08ff9cb0ca2805c5038628ae581c36d4d245b773360072d9f157ce10a2a75ae6"
+    },
+    "technical_capture_policy": "Identical native RNA axes and distinct source cells allow pooling cells only within the same explicitly published donor/visit. Capture identity remains in cell metadata and source_capture_list.",
+    "source_gene_coverage": "All36878native RNA coordinates retained; no genes zero-padded across unrelated studies and no receptor-gene collapsing copied from author processed assays."
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_archive": {
+    "path": "data/downloads/GSE334503_author/citeseq.tar.gz",
+    "bytes": 4115042965,
+    "sha256": "b135c058bdb64b241e4d46ac72f9139fc0e0ca9712cf12e22043f0b3dd7f237f",
+    "published_md5_verified": "a405675bf41566f8e454af94bf256e29",
+    "url": "https://zenodo.org/api/records/20266085/files/citeseq.tar.gz/content"
+  },
+  "author_captures": [
+    {
+      "capture": "SAVI_Batch1_1A",
+      "source_total_RNA_counts": 16196770,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_1A_features.tsv.gz",
+          "bytes": 301948,
+          "sha256": "168450cb131cb03f06b4803d54b07d002f59fc560f165aaff8503a0fe5f48e92",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_1A_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_1A_barcodes.tsv.gz",
+          "bytes": 64341,
+          "sha256": "f3522a811c54f11f9ec4fa981f3cbde48f33932a9b4161bfbd5f707f52d4df56",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_1A_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_1A_matrix.mtx.gz",
+          "bytes": 37085357,
+          "sha256": "b6d8ad8b8a5ef34e8ace07d805579305d46cd2028909b5d28bf106df0c05a6ed",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_1A_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch1_1A.csv.gz",
+        "sha256": "6aaf4e5568bd1e5330d863d257f0c0d1e387e5561a1bcca83a04aad3ab1f537e"
+      }
+    },
+    {
+      "capture": "SAVI_Batch1_1B",
+      "source_total_RNA_counts": 74117351,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_1B_features.tsv.gz",
+          "bytes": 301948,
+          "sha256": "48d3d957380391433a07ff1b8d7a8ed3b8fc69d0c758476cab3e64d71e9015fe",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_1B_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_1B_barcodes.tsv.gz",
+          "bytes": 86244,
+          "sha256": "0e73a66715e51eabcd8c8c83c883c1325eaf6699f3c38450028048f1a6422bff",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_1B_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_1B_matrix.mtx.gz",
+          "bytes": 120716195,
+          "sha256": "b64da459f3e0f6193849350eca84876cf2cdd9c92486a690abd411377e4c55ee",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_1B_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch1_1B.csv.gz",
+        "sha256": "3f8c390346523951e750fd4a08f99511a386a7d4659f1584923e1cd73874ba87"
+      }
+    },
+    {
+      "capture": "SAVI_Batch1_2A",
+      "source_total_RNA_counts": 56343755,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_2A_features.tsv.gz",
+          "bytes": 301948,
+          "sha256": "5ac63b44525bf1964ee62609d227f9e387d6c925e6de3753e7b2355cc6c9e603",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_2A_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_2A_barcodes.tsv.gz",
+          "bytes": 74980,
+          "sha256": "8e321d0aebab1d3b93af4099d4e717b7c25b4a64fbb2a96d7635c2b53bcfaf57",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_2A_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_2A_matrix.mtx.gz",
+          "bytes": 93327902,
+          "sha256": "446d0e28856a998dba505dfe9b2c90bc6c86bfa6f55cbe8a4548428cb08324a3",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_2A_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch1_2A.csv.gz",
+        "sha256": "d092ad1a64e404ef4f8e786427d2e94a09a85dc322ed7ebd2d9268823a13fc98"
+      }
+    },
+    {
+      "capture": "SAVI_Batch1_2B",
+      "source_total_RNA_counts": 38253432,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_2B_features.tsv.gz",
+          "bytes": 301948,
+          "sha256": "7fbc5d1d3563c77c5dd8849e42f685e8769fc32fba2c5d1fe69e929ea53f49e8",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_2B_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_2B_barcodes.tsv.gz",
+          "bytes": 75672,
+          "sha256": "ef568e555146f76686a580afbda0b6e5332426c7cd2dc912e127734f5f71ac77",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_2B_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch1_2B_matrix.mtx.gz",
+          "bytes": 73239560,
+          "sha256": "0932cbbb5ec93ff3deca27ad9a25d0746f2b193dbe7b9e5569ddddabea3fab96",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch1_2B_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch1_2B.csv.gz",
+        "sha256": "3f6750955f2cd107b27a776b1ccd59c75d85925430f086fec53e7ea4ca2e8764"
+      }
+    },
+    {
+      "capture": "SAVI_Batch2_3",
+      "source_total_RNA_counts": 340532480,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch2_3_features.tsv.gz",
+          "bytes": 301954,
+          "sha256": "b24a5fd522da1647baffa44eb41b693ab07b407954ec20aeb292c7626ee7a123",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch2_3_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch2_3_barcodes.tsv.gz",
+          "bytes": 204195,
+          "sha256": "76740822bc186c0ed4a18ad025410493337e0bab58043d1003488326383fc9a6",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch2_3_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch2_3_matrix.mtx.gz",
+          "bytes": 460266055,
+          "sha256": "9483ae7a02165b1e803f11da00f6b19ff52773556db093f3746c2dec3afa641e",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch2_3_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch2_3.csv.gz",
+        "sha256": "ac5d624aaf4153707f18da511dd73a4f76d63bfd915828729406ec6ebeaa4a0e"
+      }
+    },
+    {
+      "capture": "SAVI_Batch2_4",
+      "source_total_RNA_counts": 345598290,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch2_4_features.tsv.gz",
+          "bytes": 301954,
+          "sha256": "65c0d5cd22550e97212f8df8803b3f2f78608f788e1504f8a9971e7ee0472d05",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch2_4_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch2_4_barcodes.tsv.gz",
+          "bytes": 203094,
+          "sha256": "04cc004d47208fb384f9a723e4c01b16add79dcd9db910b56c703468cea56e98",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch2_4_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch2_4_matrix.mtx.gz",
+          "bytes": 465601389,
+          "sha256": "14e85dcc17f1b264be1af683abc98e13a35df4cb891e63f683820ea106012607",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch2_4_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch2_4.csv.gz",
+        "sha256": "a9dcfb6ce0f40f3816426c19aafd238dca8f55f5ca593cb64dd34c318ba4d506"
+      }
+    },
+    {
+      "capture": "SAVI_Batch3_5",
+      "source_total_RNA_counts": 370751308,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch3_5_features.tsv.gz",
+          "bytes": 301952,
+          "sha256": "1c70b8fb690c0d34792b2542552aa2b2265fe30febbc359354f8720ad65209c7",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch3_5_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch3_5_barcodes.tsv.gz",
+          "bytes": 216998,
+          "sha256": "508597b7ef2d3c756947d278f97cfcec64946f8ba02004804e9fb40d176032a2",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch3_5_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch3_5_matrix.mtx.gz",
+          "bytes": 507754437,
+          "sha256": "86d6e88ad1e9bd755b0920558481e7622554627af049dba06d26139fcedbf3f6",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch3_5_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch3_5.csv.gz",
+        "sha256": "5c05548123a2b50688d67e8b9ce2847acfc9eda9cffc335b546bd2e88ee9096a"
+      }
+    },
+    {
+      "capture": "SAVI_Batch3_6",
+      "source_total_RNA_counts": 372276380,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch3_6_features.tsv.gz",
+          "bytes": 301952,
+          "sha256": "eaaa49ea99a33280cbdcf910d94fc8700ae1861432e2b949e9ca239c71d5b2a5",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch3_6_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch3_6_barcodes.tsv.gz",
+          "bytes": 214834,
+          "sha256": "ae6cd9e46f1f53b21018957b2db252dbc111fb8b4269a90f936db6ecc1deba23",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch3_6_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch3_6_matrix.mtx.gz",
+          "bytes": 503293448,
+          "sha256": "0eb38affacd12dea53fe9369831ccb3afd5cfc136e0e2c0f99f7ff28606955bd",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch3_6_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch3_6.csv.gz",
+        "sha256": "dcc8cc946d43bd5b35d5b4031e39127eee5c8cd916e7b92f3dddcb280a05ba5a"
+      }
+    },
+    {
+      "capture": "SAVI_Batch4_7",
+      "source_total_RNA_counts": 337445628,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch4_7_features.tsv.gz",
+          "bytes": 301954,
+          "sha256": "e6140f3765a1ffbd053f4d70fca5d78820afc0ae098014d66d066d2d57e6d755",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch4_7_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch4_7_barcodes.tsv.gz",
+          "bytes": 210507,
+          "sha256": "65a553ec9e65756db1a049fb527ea2cbb38daf5dcd5b07223b68a7b40eca68be",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch4_7_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch4_7_matrix.mtx.gz",
+          "bytes": 488205731,
+          "sha256": "289cf060f8aa4c558e2aeb99324cfdddea87c90f0253e149365b626de6ed8f25",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch4_7_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch4_7.csv.gz",
+        "sha256": "01126c5215e26d034133b98bb32e0300e4a6669c9ec10ccb09f7edb809d55954"
+      }
+    },
+    {
+      "capture": "SAVI_Batch4_8",
+      "source_total_RNA_counts": 455737998,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch4_8_features.tsv.gz",
+          "bytes": 301954,
+          "sha256": "d0179478b6bdc983b421776556d2de6b9ee1595303901c2f6775f876d01f99cf",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch4_8_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch4_8_barcodes.tsv.gz",
+          "bytes": 229052,
+          "sha256": "dcea91fad7de22ac6185ac1d6b7c8aa294aa1fcd55f3f299e6d3afd5b061252a",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch4_8_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch4_8_matrix.mtx.gz",
+          "bytes": 585042613,
+          "sha256": "1ca28483eea5c9935a40e6839729407e7229c1f5f286dd5a3d140ffe4cb16ca1",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch4_8_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch4_8.csv.gz",
+        "sha256": "44f08d7814068dbc0198ecf097725569e6e0180bc22df8854c8ccc5c06a0430b"
+      }
+    },
+    {
+      "capture": "SAVI_Batch5_10",
+      "source_total_RNA_counts": 244724663,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch5_10_features.tsv.gz",
+          "bytes": 301953,
+          "sha256": "ce79c96d18cdc6b61834646601347606e7c7619d91c22379facdf8efa9501492",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch5_10_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch5_10_barcodes.tsv.gz",
+          "bytes": 207045,
+          "sha256": "47dfc82286eed5af438624483bcdc7e8372f0578e8d36a28e10763ebc83a0867",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch5_10_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch5_10_matrix.mtx.gz",
+          "bytes": 374551557,
+          "sha256": "1e02e896b2baca596b2ed0fb58ec39cda5bfeab5ce0bd0cf80deb6573d89f69c",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch5_10_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch5_10.csv.gz",
+        "sha256": "0f6a5bfc5d9c21824a51346cfe674a57467560acab9d718ccf78b5d789988806"
+      }
+    },
+    {
+      "capture": "SAVI_Batch5_9",
+      "source_total_RNA_counts": 270037003,
+      "source_assets": [
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch5_9_features.tsv.gz",
+          "bytes": 301953,
+          "sha256": "8b31b2b529e25f4ad7915fb667a2e6bb8ebe69d8d5d7e3696e78518671fe13a5",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch5_9_features.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch5_9_barcodes.tsv.gz",
+          "bytes": 208269,
+          "sha256": "a9e8e1b392395dedd0f9f06d80d2a5c1a40e59a38f0d5ead73dce5182556d1d4",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch5_9_barcodes.tsv.gz"
+        },
+        {
+          "path": "data/downloads/GSE334503_author/native_triplets/SAVI_Batch5_9_matrix.mtx.gz",
+          "bytes": 399684827,
+          "sha256": "6ba02bf1ea76149d992a4442df25b37203300048a33905a08b5ac9a21e031ce2",
+          "member": "./citeseq/sample_filtered_feature_bc_matrix/SAVI_Batch5_9_matrix.mtx.gz"
+        }
+      ],
+      "assignment": {
+        "path": "references/datasets/GSE334503_published_author_assignments/SAVI_Batch5_9.csv.gz",
+        "sha256": "104f6d17a20912e96a6901cc0b65757fcb6ff85d7a0517d1809a0988c5d7c12f"
+      }
+    }
+  ],
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "60published donor-visit PBMC materials/30source people;10Healthy+10SAD+10CVID donors, eachDay0/Day7;12technical captures pooled only within explicit material IDs",
+  "annotation_gene_symbol_aliases": {
+    "mapping": {
+      "CHM13_G0057499": "MT-ND1",
+      "CHM13_G0057504": "MT-ND2",
+      "CHM13_G0057511": "MT-CO1",
+      "CHM13_G0057517": "MT-CO2",
+      "CHM13_G0057520": "MT-ATP8",
+      "CHM13_G0057522": "MT-ATP6",
+      "CHM13_G0057525": "MT-CO3",
+      "CHM13_G0057527": "MT-ND3",
+      "CHM13_G0057529": "MT-ND4L",
+      "CHM13_G0057530": "MT-ND4",
+      "CHM13_G0057534": "MT-ND5",
+      "CHM13_G0057535": "MT-ND6",
+      "CHM13_G0057537": "MT-CYB"
+    },
+    "evidence": {
+      "path": "references/datasets/GSE334503_native_mito_gene_identity_proof.json",
+      "sha256": "08ff9cb0ca2805c5038628ae581c36d4d245b773360072d9f157ce10a2a75ae6"
+    },
+    "evidence_mapping_key": "source_native_ID_to_canonical_MT_symbol"
+  },
+  "cell_metadata_constants": {
+    "mitochondrial_qc_available": true,
+    "source_assignment_policy": "Published author final-object cells and donor/visit assignments; independent CLR-stability flag retained without a new cell-selection threshold.",
+    "source_expression_policy": "Original native RNA counts and coordinates; ADT/HTO excluded, no integrated/SCT expression. Only13exactly verified mitochondrial aliases used for human-reference annotation and native-count QC.",
+    "split_assignment": "unassigned; all visits/captures per donor stay together; cross-study identity unresolved"
+  }
+}

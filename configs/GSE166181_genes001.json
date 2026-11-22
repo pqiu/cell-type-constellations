@@ -1,0 +1,111 @@
+{
+  "dataset_id": "GSE166181_genes001",
+  "study_id": "GSE166181",
+  "input_format": "pinned_cell_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_source_sample_code"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Twenty literal Mela donor codes and56observed donor/visit combinations;183library technical replicates do not create extra specimens. Source sample field is donor and subject field is visit; preserve original columns.",
+  "source_metadata": {
+    "accession": "GSE166181",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE166181",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/33723257/",
+      "https://doi.org/10.1038/s41467-021-21928-4"
+    ],
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE166181_source_identity_review.json",
+      "sha256": "6f7307531d88fba7d3921cc79750bb39ecdf4e38e1ccd97d573954fbd34c5a14"
+    },
+    "gene_coordinate_sha256": "c64fee56fb48a009bd8aaf869b1e34611ec3d9372e6211ae9b803772a78b06af",
+    "access": "Public deposited cell-level unnormalized UMI table and exact author cell metadata",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "expression_coverage": "Native source gene symbols retained literally as gene IDs; no invented Ensembl mappings or missing-gene zeros. Deposited gene subset excludes mitochondrial features; TP10K sums provided RNA genes before reference alignment. Original full RNA libraries are not recovered."
+  },
+  "geo_samples": [
+    {
+      "accession": "RNA_pool",
+      "donor_id": "Pooled RNA matrix; exact source cell assignments determine donor and visit",
+      "rna_table_member": "GSE166181_Raw_UMI_CountMatrix_unnormalized_.tsv.gz",
+      "rna_table_separator": "\t",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE166nnn/GSE166181/suppl/GSE166181_Raw_UMI_CountMatrix_unnormalized_.tsv.gz",
+          "filename": "GSE166181_Raw_UMI_CountMatrix_unnormalized_.tsv.gz",
+          "expected_bytes": 32931728,
+          "sha256": "23eac4e36f9e0ba50b3e1dd6f31576247b7e305622d31318eec57c77448a5955"
+        }
+      ],
+      "cell_assignment": {
+        "member": "GSE166181_exact_cell_assignments.csv.gz",
+        "retained_source": {
+          "path": "references/datasets/GSE166181_exact_cell_assignments.csv.gz",
+          "sha256": "a761736676782cf8b6977ac5a1a003f98e29898a7024bc852cd2e8b818cf6bc9"
+        },
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "Mela10",
+          "Mela11",
+          "Mela12",
+          "Mela13",
+          "Mela16",
+          "Mela17",
+          "Mela20",
+          "Mela21",
+          "Mela23",
+          "Mela24",
+          "Mela25",
+          "Mela26",
+          "Mela27",
+          "Mela28",
+          "Mela29",
+          "Mela3",
+          "Mela30",
+          "Mela31",
+          "Mela5",
+          "Mela7"
+        ],
+        "preserve_literal_na_strings": true
+      },
+      "source_metadata": {
+        "source_unit": "Twenty literal Mela donor codes and56observed donor/visit combinations;183library technical replicates do not create extra specimens. Source sample field is donor and subject field is visit; preserve original columns."
+      },
+      "metadata": {
+        "source_specimen": "PBMC-derived sorted CD3+CD8+ T cells",
+        "source_assay": "BioRad ddSEQ SureCell WTA3prime",
+        "source_genome": "GRCh37",
+        "source_count_semantics": "Original deposited unnormalized integer UMI table; integrated and normalized data excluded.",
+        "source_QC_policy": "Deposited51701purified cells are author-filtered from74404initial cells. Own500UMI/200genes/20percentMT gates differ from original130to1500genes/2500UMIupper/10percentMT/ribosomal filters. No reconstruction of original excluded cells. Use original author pct.mito/100; deposited RNA gene axis has no mitochondrial genes. Native mitochondrial totals/fraction remain NaN, not measured zero. Original author percentages are rounded and cannot be independently reconstructed from this gene subset.",
+        "source_clinical_policy": "GEO drug and response labels preserved; baseline treatment label denotes study therapy, not baseline exposure. T0before therapy/T1after first/T2after second cycle are nominal visits, not exact dates. Age/sex unjoined; donor number not age.",
+        "source_scope": "Sorted CD3+CD8+ cells from PBMC. Does not measure unselected PBMC composition.",
+        "source_gene_policy": "Native source gene symbols retained literally as gene IDs; no invented Ensembl mappings or missing-gene zeros. Deposited gene subset excludes mitochondrial features; TP10K sums provided RNA genes before reference alignment. Original full RNA libraries are not recovered."
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "physical_sample_columns": [
+    "source_cell_source_sample_code"
+  ],
+  "physical_sample_mapping_evidence": "Twenty literal Mela donor codes and56observed donor/visit combinations;183library technical replicates do not create extra specimens. Source sample field is donor and subject field is visit; preserve original columns.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_cell_source_condition",
+      "nominal_visit": "source_cell_nominal_visit"
+    }
+  },
+  "qc_mito_percent_column": "source_cell_author_pct_mito"
+}

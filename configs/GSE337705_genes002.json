@@ -1,0 +1,2502 @@
+{
+  "dataset_id": "GSE337705_genes002",
+  "study_id": "GSE337705",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Twenty-nine source donor/material groups across two original series; one original RNA capture per donor code. CanonicalGSE337705namespace prevents secondary-study notebook double counting.",
+  "source_metadata": {
+    "accession": "GSE337705",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/42443915/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE337705",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+    "source_processing": [
+      "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+      "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+      "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+      "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+      "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+    ],
+    "source_barcode_scope": "Original deposited filtered barcode rows, not raw droplet whitelist or extra biological samples. All original values audited before fixed500RNA gate.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE337705_source_identity_review.json",
+      "sha256": "875aa8d7bb362f261da42f9fc610d0cee40bb348aa8661dc7ac0a72fd4d006af"
+    },
+    "primary_PMID": "42443915",
+    "original_study_accessions": [
+      "GSE337705",
+      "GSE337706"
+    ],
+    "normalization_coverage": "Full native RNA denominator and MT-prefix feature set retained per source axis. Missing genes unavailable; no outer zero filling or assumed cross-platform denominator/QC equivalence."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9859768",
+      "donor_id": "BRCA 01",
+      "source_metadata": {
+        "title": [
+          "BRCA 01 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859768"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: Luminal B, HER2-negative breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: Luminal B, HER2-negative",
+          "Stage: cT2N0",
+          "grade: G1",
+          "age: 50",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 01"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC329_LumB_Her_minus",
+          "Cryopreserved buffy coat/PBMC cells from a patient with Luminal B, HER2-negative breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434225",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188331"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859768/suppl/GSM9859768_BC329_LumB_Her_minus_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859768/suppl/GSM9859768_BC329_LumB_Her_minus_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859768/suppl/GSM9859768_BC329_LumB_Her_minus_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859768",
+        "source_GEO_title": "BRCA 01 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: Luminal B, HER2-negative breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: Luminal B, HER2-negative\", \"Stage: cT2N0\", \"grade: G1\", \"age: 50\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 01\"]",
+        "source_original_sample_id_as_reported": "BRCA 01",
+        "source_patient_code": "BRCA 01",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 50,
+        "source_age_as_reported": "50",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "Luminal B, HER2-negative breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "Luminal B, HER2-negative",
+        "source_GEO_stage_as_reported": "cT2N0",
+        "source_GEO_grade_as_reported": "G1",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IIA",
+        "source_primary_grade_as_reported": "G1",
+        "source_primary_age_as_reported": "50",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859768/suppl/GSM9859768_BC329_LumB_Her_minus_features.tsv.gz",
+          "filename": "GSM9859768_BC329_LumB_Her_minus_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "51de452e02df06c87560231057e2756e0f71919fa83389b471aa6f5c639cff17"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859768/suppl/GSM9859768_BC329_LumB_Her_minus_barcodes.tsv.gz",
+          "filename": "GSM9859768_BC329_LumB_Her_minus_barcodes.tsv.gz",
+          "expected_bytes": 32696,
+          "sha256": "6d745349b05b827287a45b6ad5d42c65e49fcb020405eaba4c2af7aa5d9017b3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859768/suppl/GSM9859768_BC329_LumB_Her_minus_matrix.mtx.gz",
+          "filename": "GSM9859768_BC329_LumB_Her_minus_matrix.mtx.gz",
+          "expected_bytes": 16781314,
+          "sha256": "eb42b0589a29b7b057469b86b0bbec40ad5a66cb1d2dfe16ed408b348a6eed0c"
+        }
+      ],
+      "genes_member": "GSM9859768_BC329_LumB_Her_minus_features.tsv.gz",
+      "barcodes_member": "GSM9859768_BC329_LumB_Her_minus_barcodes.tsv.gz",
+      "matrix_member": "GSM9859768_BC329_LumB_Her_minus_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6332,
+        "genes": 58336,
+        "nonzeros": 5797197,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 6332,
+        "RNA_positive_barcode_rows": 6332,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 12344873,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859769",
+      "donor_id": "BRCA 02",
+      "source_metadata": {
+        "title": [
+          "BRCA 02 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859769"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: triple-negative breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: triple-negative",
+          "Stage: cT4bN2",
+          "grade: G3",
+          "age: 59",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 02"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC333_TNBC",
+          "Cryopreserved buffy coat/PBMC cells from a patient with triple-negative breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434224",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188332"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859769/suppl/GSM9859769_BC333_TNBC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859769/suppl/GSM9859769_BC333_TNBC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859769/suppl/GSM9859769_BC333_TNBC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859769",
+        "source_GEO_title": "BRCA 02 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: triple-negative breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: triple-negative\", \"Stage: cT4bN2\", \"grade: G3\", \"age: 59\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 02\"]",
+        "source_original_sample_id_as_reported": "BRCA 02",
+        "source_patient_code": "BRCA 02",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 59,
+        "source_age_as_reported": "59",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "triple-negative breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "triple-negative",
+        "source_GEO_stage_as_reported": "cT4bN2",
+        "source_GEO_grade_as_reported": "G3",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IIIB",
+        "source_primary_grade_as_reported": "G3",
+        "source_primary_age_as_reported": "59",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859769/suppl/GSM9859769_BC333_TNBC_features.tsv.gz",
+          "filename": "GSM9859769_BC333_TNBC_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "0c7be9248311455916b1594d81471a8d25312fec6e4874016052d8a980d1b210"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859769/suppl/GSM9859769_BC333_TNBC_barcodes.tsv.gz",
+          "filename": "GSM9859769_BC333_TNBC_barcodes.tsv.gz",
+          "expected_bytes": 52666,
+          "sha256": "4082a4846fee6a3dfbc0bb15dd1fcda8dfb0e6315f52e46c7130119d01496f16"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859769/suppl/GSM9859769_BC333_TNBC_matrix.mtx.gz",
+          "filename": "GSM9859769_BC333_TNBC_matrix.mtx.gz",
+          "expected_bytes": 26120119,
+          "sha256": "01edc06a24bddbde537b18193493e4eee86f2a0d7dc9f89dd12fde80ad4f80da"
+        }
+      ],
+      "genes_member": "GSM9859769_BC333_TNBC_features.tsv.gz",
+      "barcodes_member": "GSM9859769_BC333_TNBC_barcodes.tsv.gz",
+      "matrix_member": "GSM9859769_BC333_TNBC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10774,
+        "genes": 58336,
+        "nonzeros": 9008430,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 10774,
+        "RNA_positive_barcode_rows": 10774,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 18472041,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859770",
+      "donor_id": "BRCA 03",
+      "source_metadata": {
+        "title": [
+          "BRCA 03 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859770"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: Luminal B, HER2-negative breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: Luminal B, HER2-negative",
+          "Stage: cT2N0",
+          "grade: G3",
+          "age: 41",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 03"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC338_LumB_Her_minus",
+          "Cryopreserved buffy coat/PBMC cells from a patient with Luminal B, HER2-negative breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434223",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188333"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859770/suppl/GSM9859770_BC338_LumB_Her_minus_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859770/suppl/GSM9859770_BC338_LumB_Her_minus_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859770/suppl/GSM9859770_BC338_LumB_Her_minus_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859770",
+        "source_GEO_title": "BRCA 03 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: Luminal B, HER2-negative breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: Luminal B, HER2-negative\", \"Stage: cT2N0\", \"grade: G3\", \"age: 41\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 03\"]",
+        "source_original_sample_id_as_reported": "BRCA 03",
+        "source_patient_code": "BRCA 03",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 41,
+        "source_age_as_reported": "41",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "Luminal B, HER2-negative breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "Luminal B, HER2-negative",
+        "source_GEO_stage_as_reported": "cT2N0",
+        "source_GEO_grade_as_reported": "G3",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IIAc",
+        "source_primary_grade_as_reported": "G3",
+        "source_primary_age_as_reported": "41",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859770/suppl/GSM9859770_BC338_LumB_Her_minus_features.tsv.gz",
+          "filename": "GSM9859770_BC338_LumB_Her_minus_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "a488820f4e96211e0a2cc581df4b06a9609b30b6852a6ceb7c49e416fdf2e1fc"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859770/suppl/GSM9859770_BC338_LumB_Her_minus_barcodes.tsv.gz",
+          "filename": "GSM9859770_BC338_LumB_Her_minus_barcodes.tsv.gz",
+          "expected_bytes": 25553,
+          "sha256": "36a4705d073f2c36366a766b64e19d498c29c778bbb51b03c84d53c3c6cedab0"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859770/suppl/GSM9859770_BC338_LumB_Her_minus_matrix.mtx.gz",
+          "filename": "GSM9859770_BC338_LumB_Her_minus_matrix.mtx.gz",
+          "expected_bytes": 15103791,
+          "sha256": "060345303701e8a6543d94f3916dd4449011a90309942c5e397db6ce8dbb6d9d"
+        }
+      ],
+      "genes_member": "GSM9859770_BC338_LumB_Her_minus_features.tsv.gz",
+      "barcodes_member": "GSM9859770_BC338_LumB_Her_minus_barcodes.tsv.gz",
+      "matrix_member": "GSM9859770_BC338_LumB_Her_minus_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 4839,
+        "genes": 58336,
+        "nonzeros": 5241519,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 4839,
+        "RNA_positive_barcode_rows": 4839,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 12233086,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859771",
+      "donor_id": "BRCA 04",
+      "source_metadata": {
+        "title": [
+          "BRCA 04 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859771"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: Luminal B, HER2-positive breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: Luminal B, HER2-positive",
+          "Stage: cT1cN1",
+          "grade: G3",
+          "age: 56",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 04"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC340_LumB_Her_plus",
+          "Cryopreserved buffy coat/PBMC cells from a patient with Luminal B, HER2-positive breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434222",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188334"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859771/suppl/GSM9859771_BC340_LumB_Her_plus_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859771/suppl/GSM9859771_BC340_LumB_Her_plus_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859771/suppl/GSM9859771_BC340_LumB_Her_plus_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859771",
+        "source_GEO_title": "BRCA 04 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: Luminal B, HER2-positive breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: Luminal B, HER2-positive\", \"Stage: cT1cN1\", \"grade: G3\", \"age: 56\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 04\"]",
+        "source_original_sample_id_as_reported": "BRCA 04",
+        "source_patient_code": "BRCA 04",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 56,
+        "source_age_as_reported": "56",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "Luminal B, HER2-positive breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "Luminal B, HER2-positive",
+        "source_GEO_stage_as_reported": "cT1cN1",
+        "source_GEO_grade_as_reported": "G3",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IIA",
+        "source_primary_grade_as_reported": "G3",
+        "source_primary_age_as_reported": "56",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859771/suppl/GSM9859771_BC340_LumB_Her_plus_features.tsv.gz",
+          "filename": "GSM9859771_BC340_LumB_Her_plus_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "98fa3e73d7263d86122f06c7ce5920dfa9cece664a82d33c487b4367124dccb6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859771/suppl/GSM9859771_BC340_LumB_Her_plus_barcodes.tsv.gz",
+          "filename": "GSM9859771_BC340_LumB_Her_plus_barcodes.tsv.gz",
+          "expected_bytes": 31530,
+          "sha256": "32e68266b3025140424730a3627eacba899d41dfc6fa3f9b94542a7700ae6ddd"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859771/suppl/GSM9859771_BC340_LumB_Her_plus_matrix.mtx.gz",
+          "filename": "GSM9859771_BC340_LumB_Her_plus_matrix.mtx.gz",
+          "expected_bytes": 16732789,
+          "sha256": "0b3415bd7883ff46fd3653eecf3b3c14fb38bb65c62271d5e0c5474ade54fa88"
+        }
+      ],
+      "genes_member": "GSM9859771_BC340_LumB_Her_plus_features.tsv.gz",
+      "barcodes_member": "GSM9859771_BC340_LumB_Her_plus_barcodes.tsv.gz",
+      "matrix_member": "GSM9859771_BC340_LumB_Her_plus_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 6102,
+        "genes": 58336,
+        "nonzeros": 5766570,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 6102,
+        "RNA_positive_barcode_rows": 6102,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 12716700,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859772",
+      "donor_id": "BRCA 05",
+      "source_metadata": {
+        "title": [
+          "BRCA 05 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859772"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: triple-negative breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: triple-negative",
+          "Stage: cT3N1",
+          "grade: G3",
+          "age: 33",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 05"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC343_TNBC",
+          "Cryopreserved buffy coat/PBMC cells from a patient with triple-negative breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434221",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188335"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859772/suppl/GSM9859772_BC343_TNBC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859772/suppl/GSM9859772_BC343_TNBC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859772/suppl/GSM9859772_BC343_TNBC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859772",
+        "source_GEO_title": "BRCA 05 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: triple-negative breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: triple-negative\", \"Stage: cT3N1\", \"grade: G3\", \"age: 33\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 05\"]",
+        "source_original_sample_id_as_reported": "BRCA 05",
+        "source_patient_code": "BRCA 05",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 33,
+        "source_age_as_reported": "33",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "triple-negative breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "triple-negative",
+        "source_GEO_stage_as_reported": "cT3N1",
+        "source_GEO_grade_as_reported": "G3",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IIIA",
+        "source_primary_grade_as_reported": "G3",
+        "source_primary_age_as_reported": "33",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859772/suppl/GSM9859772_BC343_TNBC_features.tsv.gz",
+          "filename": "GSM9859772_BC343_TNBC_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "226461c4a4a2a5c13a2ce5f599b7d43add13e3bfb29ebf244dc749b820081a4c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859772/suppl/GSM9859772_BC343_TNBC_barcodes.tsv.gz",
+          "filename": "GSM9859772_BC343_TNBC_barcodes.tsv.gz",
+          "expected_bytes": 45353,
+          "sha256": "c10b6c76d543848318dfdc06b6e6eeed2fa8cfd66495da46e3f645d23a2e8132"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859772/suppl/GSM9859772_BC343_TNBC_matrix.mtx.gz",
+          "filename": "GSM9859772_BC343_TNBC_matrix.mtx.gz",
+          "expected_bytes": 27897805,
+          "sha256": "9a7a02afb9a910bb75dc03cf6a625bb65b892d4867ea199d7ba48f4461e8a797"
+        }
+      ],
+      "genes_member": "GSM9859772_BC343_TNBC_features.tsv.gz",
+      "barcodes_member": "GSM9859772_BC343_TNBC_barcodes.tsv.gz",
+      "matrix_member": "GSM9859772_BC343_TNBC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9127,
+        "genes": 58336,
+        "nonzeros": 9544579,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 9127,
+        "RNA_positive_barcode_rows": 9127,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 24672922,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859773",
+      "donor_id": "BRCA 06",
+      "source_metadata": {
+        "title": [
+          "BRCA 06 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859773"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: Luminal B, HER2-positive breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: Luminal B, HER2-positive",
+          "Stage: cT4N1M1",
+          "grade: G2",
+          "age: 78",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 06"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC344_LumB_Her_plus",
+          "Cryopreserved buffy coat/PBMC cells from a patient with Luminal B, HER2-positive breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434220",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188336"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859773/suppl/GSM9859773_BC344_LumB_Her_plus_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859773/suppl/GSM9859773_BC344_LumB_Her_plus_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859773/suppl/GSM9859773_BC344_LumB_Her_plus_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859773",
+        "source_GEO_title": "BRCA 06 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: Luminal B, HER2-positive breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: Luminal B, HER2-positive\", \"Stage: cT4N1M1\", \"grade: G2\", \"age: 78\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 06\"]",
+        "source_original_sample_id_as_reported": "BRCA 06",
+        "source_patient_code": "BRCA 06",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 78,
+        "source_age_as_reported": "78",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "Luminal B, HER2-positive breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "Luminal B, HER2-positive",
+        "source_GEO_stage_as_reported": "cT4N1M1",
+        "source_GEO_grade_as_reported": "G2",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IV",
+        "source_primary_grade_as_reported": "G2",
+        "source_primary_age_as_reported": "78",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859773/suppl/GSM9859773_BC344_LumB_Her_plus_features.tsv.gz",
+          "filename": "GSM9859773_BC344_LumB_Her_plus_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "cfcc46be797d0152a9fc1c85cc332f6969c21c9e479359fb218b492b250e7fd2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859773/suppl/GSM9859773_BC344_LumB_Her_plus_barcodes.tsv.gz",
+          "filename": "GSM9859773_BC344_LumB_Her_plus_barcodes.tsv.gz",
+          "expected_bytes": 41333,
+          "sha256": "1addcfba1e85e2a1b8f0af07c3712d7b935cd7f9c3c4dcba150d517a959df722"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859773/suppl/GSM9859773_BC344_LumB_Her_plus_matrix.mtx.gz",
+          "filename": "GSM9859773_BC344_LumB_Her_plus_matrix.mtx.gz",
+          "expected_bytes": 24763457,
+          "sha256": "1db684f01d7e3319f567b988d793c0750469c6df24c27c850f27ab43419fd7e4"
+        }
+      ],
+      "genes_member": "GSM9859773_BC344_LumB_Her_plus_features.tsv.gz",
+      "barcodes_member": "GSM9859773_BC344_LumB_Her_plus_barcodes.tsv.gz",
+      "matrix_member": "GSM9859773_BC344_LumB_Her_plus_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8240,
+        "genes": 58336,
+        "nonzeros": 8436182,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 8240,
+        "RNA_positive_barcode_rows": 8240,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 24732704,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859774",
+      "donor_id": "BRCA 07",
+      "source_metadata": {
+        "title": [
+          "BRCA 07 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859774"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: triple-negative breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: triple-negative",
+          "Stage: cT2(m)N0",
+          "grade: G3",
+          "age: 49",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 07"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC354_TNBC",
+          "Cryopreserved buffy coat/PBMC cells from a patient with triple-negative breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434219",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188337"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859774/suppl/GSM9859774_BC354_TNBC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859774/suppl/GSM9859774_BC354_TNBC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859774/suppl/GSM9859774_BC354_TNBC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859774",
+        "source_GEO_title": "BRCA 07 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: triple-negative breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: triple-negative\", \"Stage: cT2(m)N0\", \"grade: G3\", \"age: 49\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 07\"]",
+        "source_original_sample_id_as_reported": "BRCA 07",
+        "source_patient_code": "BRCA 07",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 49,
+        "source_age_as_reported": "49",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "triple-negative breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "triple-negative",
+        "source_GEO_stage_as_reported": "cT2(m)N0",
+        "source_GEO_grade_as_reported": "G3",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IIA",
+        "source_primary_grade_as_reported": "G3",
+        "source_primary_age_as_reported": "49",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859774/suppl/GSM9859774_BC354_TNBC_features.tsv.gz",
+          "filename": "GSM9859774_BC354_TNBC_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "ec219f848652d4d4fb84e2f33556082bf011c0a257e590cf14c92b1e389d3b4c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859774/suppl/GSM9859774_BC354_TNBC_barcodes.tsv.gz",
+          "filename": "GSM9859774_BC354_TNBC_barcodes.tsv.gz",
+          "expected_bytes": 52529,
+          "sha256": "871cba517ab636c8af0a216a0b241726aeb092e3d9490d7ffb0745bc54dbdcfa"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859774/suppl/GSM9859774_BC354_TNBC_matrix.mtx.gz",
+          "filename": "GSM9859774_BC354_TNBC_matrix.mtx.gz",
+          "expected_bytes": 30573509,
+          "sha256": "d460d5b5c891d77c213ad4026a13b69b8f4529f29e434d3d0e82dd674d9244bf"
+        }
+      ],
+      "genes_member": "GSM9859774_BC354_TNBC_features.tsv.gz",
+      "barcodes_member": "GSM9859774_BC354_TNBC_barcodes.tsv.gz",
+      "matrix_member": "GSM9859774_BC354_TNBC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10702,
+        "genes": 58336,
+        "nonzeros": 10294492,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 10702,
+        "RNA_positive_barcode_rows": 10702,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 31026152,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859775",
+      "donor_id": "BRCA 08",
+      "source_metadata": {
+        "title": [
+          "BRCA 08 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859775"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: cancer",
+          "diagnosis: triple-negative breast cancer",
+          "sample group: breast cancer",
+          "cancer type: breast cancer",
+          "subtype: triple-negative",
+          "Stage: cT4aN1M1",
+          "grade: G3",
+          "age: 68",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: BRCA 08"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: BC363_TNBC",
+          "Cryopreserved buffy coat/PBMC cells from a patient with triple-negative breast cancer. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434218",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188338"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859775/suppl/GSM9859775_BC363_TNBC_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859775/suppl/GSM9859775_BC363_TNBC_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859775/suppl/GSM9859775_BC363_TNBC_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859775",
+        "source_GEO_title": "BRCA 08 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: cancer\", \"diagnosis: triple-negative breast cancer\", \"sample group: breast cancer\", \"cancer type: breast cancer\", \"subtype: triple-negative\", \"Stage: cT4aN1M1\", \"grade: G3\", \"age: 68\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: BRCA 08\"]",
+        "source_original_sample_id_as_reported": "BRCA 08",
+        "source_patient_code": "BRCA 08",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": 68,
+        "source_age_as_reported": "68",
+        "source_disease_state_as_reported": "cancer",
+        "source_diagnosis_as_reported": "triple-negative breast cancer",
+        "source_group_as_reported": "breast cancer",
+        "source_subtype_as_reported": "triple-negative",
+        "source_GEO_stage_as_reported": "cT4aN1M1",
+        "source_GEO_grade_as_reported": "G3",
+        "source_primary_table": "Table 2",
+        "source_primary_stage_as_reported": "IV",
+        "source_primary_grade_as_reported": "G3",
+        "source_primary_age_as_reported": "68",
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859775/suppl/GSM9859775_BC363_TNBC_features.tsv.gz",
+          "filename": "GSM9859775_BC363_TNBC_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "d8c359deb64a8143edb8bf97cacf6d8c4e65af028404ace0e301d3434b832cf1"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859775/suppl/GSM9859775_BC363_TNBC_barcodes.tsv.gz",
+          "filename": "GSM9859775_BC363_TNBC_barcodes.tsv.gz",
+          "expected_bytes": 42430,
+          "sha256": "01b450db3071bccd8b2f6cbc02cdca42bb48627b1dc1485fae6eac1ac8f73311"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859775/suppl/GSM9859775_BC363_TNBC_matrix.mtx.gz",
+          "filename": "GSM9859775_BC363_TNBC_matrix.mtx.gz",
+          "expected_bytes": 30051656,
+          "sha256": "55a9e763048641161fe9a8d3565d84257349027a7ddf10bf4fdc4cb267bf3c03"
+        }
+      ],
+      "genes_member": "GSM9859775_BC363_TNBC_features.tsv.gz",
+      "barcodes_member": "GSM9859775_BC363_TNBC_barcodes.tsv.gz",
+      "matrix_member": "GSM9859775_BC363_TNBC_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8458,
+        "genes": 58336,
+        "nonzeros": 10263502,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 8458,
+        "RNA_positive_barcode_rows": 8458,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 30584347,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859778",
+      "donor_id": "HEALTHY CTRL 01",
+      "source_metadata": {
+        "title": [
+          "HEALTHY CTRL 01 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859778"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: healthy control",
+          "diagnosis: healthy donor control",
+          "sample group: healthy control",
+          "cancer type: not applicable",
+          "subtype: not provided",
+          "Stage: not applicable",
+          "grade: not applicable",
+          "age: not provided",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: HEALTHY CTRL 01"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: No2_CTRL",
+          "Cryopreserved buffy coat/PBMC cells from a healthy donor control. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434215",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188341"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859778/suppl/GSM9859778_No2_CTRL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859778/suppl/GSM9859778_No2_CTRL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859778/suppl/GSM9859778_No2_CTRL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859778",
+        "source_GEO_title": "HEALTHY CTRL 01 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: healthy control\", \"diagnosis: healthy donor control\", \"sample group: healthy control\", \"cancer type: not applicable\", \"subtype: not provided\", \"Stage: not applicable\", \"grade: not applicable\", \"age: not provided\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: HEALTHY CTRL 01\"]",
+        "source_original_sample_id_as_reported": "HEALTHY CTRL 01",
+        "source_patient_code": "HEALTHY CTRL 01",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": null,
+        "source_age_as_reported": "not provided",
+        "source_disease_state_as_reported": "healthy control",
+        "source_diagnosis_as_reported": "healthy donor control",
+        "source_group_as_reported": "healthy control",
+        "source_subtype_as_reported": "not provided",
+        "source_GEO_stage_as_reported": "not applicable",
+        "source_GEO_grade_as_reported": "not applicable",
+        "source_primary_table": null,
+        "source_primary_stage_as_reported": null,
+        "source_primary_grade_as_reported": null,
+        "source_primary_age_as_reported": null,
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859778/suppl/GSM9859778_No2_CTRL_features.tsv.gz",
+          "filename": "GSM9859778_No2_CTRL_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "cc6ada53dc06e3ed4e8ac37fc108da6137ad699b16a34297595b6fc1894ec601"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859778/suppl/GSM9859778_No2_CTRL_barcodes.tsv.gz",
+          "filename": "GSM9859778_No2_CTRL_barcodes.tsv.gz",
+          "expected_bytes": 44537,
+          "sha256": "22a122f82824fdf4520311948a3feab04f9bf84d0ad7d2b26cfa4b4bc0abbfd4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859778/suppl/GSM9859778_No2_CTRL_matrix.mtx.gz",
+          "filename": "GSM9859778_No2_CTRL_matrix.mtx.gz",
+          "expected_bytes": 23971407,
+          "sha256": "afd779bd0922f6a40cfb41f7e67bba35011b6126d674c678bd1c1a9f8ce1949b"
+        }
+      ],
+      "genes_member": "GSM9859778_No2_CTRL_features.tsv.gz",
+      "barcodes_member": "GSM9859778_No2_CTRL_barcodes.tsv.gz",
+      "matrix_member": "GSM9859778_No2_CTRL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8935,
+        "genes": 58336,
+        "nonzeros": 8178511,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 8935,
+        "RNA_positive_barcode_rows": 8935,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 22577671,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859779",
+      "donor_id": "HEALTHY CTRL 02",
+      "source_metadata": {
+        "title": [
+          "HEALTHY CTRL 02 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859779"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: healthy control",
+          "diagnosis: healthy donor control",
+          "sample group: healthy control",
+          "cancer type: not applicable",
+          "subtype: not provided",
+          "Stage: not applicable",
+          "grade: not applicable",
+          "age: not provided",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: HEALTHY CTRL 02"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: No3_CTRL",
+          "Cryopreserved buffy coat/PBMC cells from a healthy donor control. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434214",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188342"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859779/suppl/GSM9859779_No3_CTRL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859779/suppl/GSM9859779_No3_CTRL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859779/suppl/GSM9859779_No3_CTRL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859779",
+        "source_GEO_title": "HEALTHY CTRL 02 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: healthy control\", \"diagnosis: healthy donor control\", \"sample group: healthy control\", \"cancer type: not applicable\", \"subtype: not provided\", \"Stage: not applicable\", \"grade: not applicable\", \"age: not provided\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: HEALTHY CTRL 02\"]",
+        "source_original_sample_id_as_reported": "HEALTHY CTRL 02",
+        "source_patient_code": "HEALTHY CTRL 02",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": null,
+        "source_age_as_reported": "not provided",
+        "source_disease_state_as_reported": "healthy control",
+        "source_diagnosis_as_reported": "healthy donor control",
+        "source_group_as_reported": "healthy control",
+        "source_subtype_as_reported": "not provided",
+        "source_GEO_stage_as_reported": "not applicable",
+        "source_GEO_grade_as_reported": "not applicable",
+        "source_primary_table": null,
+        "source_primary_stage_as_reported": null,
+        "source_primary_grade_as_reported": null,
+        "source_primary_age_as_reported": null,
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859779/suppl/GSM9859779_No3_CTRL_features.tsv.gz",
+          "filename": "GSM9859779_No3_CTRL_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "51de452e02df06c87560231057e2756e0f71919fa83389b471aa6f5c639cff17"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859779/suppl/GSM9859779_No3_CTRL_barcodes.tsv.gz",
+          "filename": "GSM9859779_No3_CTRL_barcodes.tsv.gz",
+          "expected_bytes": 54460,
+          "sha256": "20cbbd88c92d2fb4f6db6cb1b1e484f509208d37a6875ec783d0823ec418deb8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859779/suppl/GSM9859779_No3_CTRL_matrix.mtx.gz",
+          "filename": "GSM9859779_No3_CTRL_matrix.mtx.gz",
+          "expected_bytes": 11797077,
+          "sha256": "c150d777f4ce9b3d42acdb4babdba5e9c5e05bbe7b065e5cdfd459c009660662"
+        }
+      ],
+      "genes_member": "GSM9859779_No3_CTRL_features.tsv.gz",
+      "barcodes_member": "GSM9859779_No3_CTRL_barcodes.tsv.gz",
+      "matrix_member": "GSM9859779_No3_CTRL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 11179,
+        "genes": 58336,
+        "nonzeros": 4074797,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 11179,
+        "RNA_positive_barcode_rows": 11179,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 6070525,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    },
+    {
+      "accession": "GSM9859780",
+      "donor_id": "HEALTHY CTRL 03",
+      "source_metadata": {
+        "title": [
+          "HEALTHY CTRL 03 PBMC/buffy coat single-cell RNA-seq"
+        ],
+        "geo_accession": [
+          "GSM9859780"
+        ],
+        "status": [
+          "Public on Jul 14 2026"
+        ],
+        "submission_date": [
+          "Jul 06 2026"
+        ],
+        "last_update_date": [
+          "Jul 14 2026"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "peripheral blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: peripheral blood",
+          "cell type: PBMC/buffy coat cell fraction",
+          "treatment: no ex vivo treatment; blood collected prior to processing",
+          "batch: SCOPE_Singleron",
+          "disease state: healthy control",
+          "diagnosis: healthy donor control",
+          "sample group: healthy control",
+          "cancer type: not applicable",
+          "subtype: not provided",
+          "Stage: not applicable",
+          "grade: not applicable",
+          "age: not provided",
+          "library platform: SCOPE-chip micro-well single-cell RNA-seq",
+          "processing site: Singleron Biotechnologies, Germany",
+          "source fraction: PBMC/buffy coat fraction",
+          "original sample id: HEALTHY CTRL 03"
+        ],
+        "treatment_protocol_ch1": [
+          "No ex vivo treatment was applied. Blood was collected before downstream single-cell processing."
+        ],
+        "growth_protocol_ch1": [
+          "Not applicable. Primary human peripheral blood-derived PBMC/buffy coat fractions were analyzed; no cell line culture or in vitro growth protocol was used."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Whole blood was collected into EDTA tubes and processed to obtain the PBMC/buffy coat fraction. Cells were cryopreserved and later thawed for single-cell sequencing. For the 10x-processed ovarian cancer and benign gynecological control samples, thawed cells were transferred with wide-bore tips into warm medium containing 10% FBS, centrifuged, resuspended, and assessed for concentration and viability by trypan blue on a Countess 3 FL counter. Samples with acceptable viability were resuspended in 1x PBS with 0.04% BSA before library preparation. Breast cancer and healthy donor samples were processed from cryopreserved PBMC/buffy coat material by Singleron Biotechnologies.",
+          "Ovarian cancer and benign gynecological control samples were prepared using the Chromium Next GEM Single Cell 3' Reagent Kit (10x Genomics) following the manufacturer's protocol. Breast cancer and healthy donor samples were prepared using the Singleron GEXSCOPE SCOPE-chip micro-well single-cell RNA-seq system according to the manufacturer's protocol. Libraries were sequenced as paired-end high-throughput sequencing libraries; instrument models are listed in the sample table."
+        ],
+        "description": [
+          "Library name: No4_CTRL",
+          "Cryopreserved buffy coat/PBMC cells from a healthy donor control. Single-cell RNA-seq library prepared using SCOPE-chip micro-well single-cell RNA-seq. Processed matrix files are sample-prefixed and gzip-compressed for GEO upload uniqueness."
+        ],
+        "data_processing": [
+          "Sequencing data were demultiplexed and converted to gzip-compressed FASTQ format. This workbook lists the final GEO-facing FASTQ filenames from the staged server manifest. Ovarian and benign 10x samples include R1/R2 read files and I1/I2 index files across three lanes; Singleron breast and healthy samples include one R1/R2 pair per sample.",
+          "UMI count matrices were generated using the GRCh38 human reference genome. Per-sample filtered feature-barcode matrices were retained as processed data.",
+          "Low-quality cells were filtered before downstream analysis using thresholds described in the associated manuscript, including minimum read and gene counts and maximum mitochondrial RNA fraction.",
+          "Downstream analysis was performed in R. Deposited processed files are the per-sample feature-barcode matrices used as the basis for downstream analysis; derived marker scores and plots are not substituted for the count matrices.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Per-sample 10x/Matrix Market feature-barcode matrices. Each sample is represented by one gzip-compressed matrix triplet: barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz, with sample-prefixed filenames for GEO uniqueness.",
+          "Supplementary files format and content: Per-sample Cell Ranger filtered feature-barcode matrices in gzip-compressed 10x format: matrix.mtx.gz (Matrix Market sparse UMI count matrix), features.tsv.gz (gene identifiers and symbols), and barcodes.tsv.gz (cell barcodes). One matrix triplet per sample."
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Krzysztof,,Pastuszak"
+        ],
+        "contact_email": [
+          "krzysztof.pastuszak.geo@gmail.com"
+        ],
+        "contact_department": [
+          "Translational Oncology"
+        ],
+        "contact_institute": [
+          "Medical University of Gdansk"
+        ],
+        "contact_address": [
+          "Debinki 1"
+        ],
+        "contact_city": [
+          "Gdansk"
+        ],
+        "contact_state": [
+          "Pomorskie"
+        ],
+        "contact_zip/postal_code": [
+          "80-233"
+        ],
+        "contact_country": [
+          "Poland"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN61434213",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX34188343"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859780/suppl/GSM9859780_No4_CTRL_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859780/suppl/GSM9859780_No4_CTRL_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859780/suppl/GSM9859780_No4_CTRL_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE337706"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM9859780",
+        "source_GEO_title": "HEALTHY CTRL 03 PBMC/buffy coat single-cell RNA-seq",
+        "source_original_GEO_study": "GSE337706",
+        "source_characteristics_json": "[\"tissue: peripheral blood\", \"cell type: PBMC/buffy coat cell fraction\", \"treatment: no ex vivo treatment; blood collected prior to processing\", \"batch: SCOPE_Singleron\", \"disease state: healthy control\", \"diagnosis: healthy donor control\", \"sample group: healthy control\", \"cancer type: not applicable\", \"subtype: not provided\", \"Stage: not applicable\", \"grade: not applicable\", \"age: not provided\", \"library platform: SCOPE-chip micro-well single-cell RNA-seq\", \"processing site: Singleron Biotechnologies, Germany\", \"source fraction: PBMC/buffy coat fraction\", \"original sample id: HEALTHY CTRL 03\"]",
+        "source_original_sample_id_as_reported": "HEALTHY CTRL 03",
+        "source_patient_code": "HEALTHY CTRL 03",
+        "source_specimen": "PBMC/buffy coat fraction",
+        "age": null,
+        "source_age_as_reported": "not provided",
+        "source_disease_state_as_reported": "healthy control",
+        "source_diagnosis_as_reported": "healthy donor control",
+        "source_group_as_reported": "healthy control",
+        "source_subtype_as_reported": "not provided",
+        "source_GEO_stage_as_reported": "not applicable",
+        "source_GEO_grade_as_reported": "not applicable",
+        "source_primary_table": null,
+        "source_primary_stage_as_reported": null,
+        "source_primary_grade_as_reported": null,
+        "source_primary_age_as_reported": null,
+        "source_platform_as_reported": "SCOPE-chip micro-well single-cell RNA-seq",
+        "source_processing_site_as_reported": "Singleron Biotechnologies, Germany",
+        "source_batch_as_reported": "SCOPE_Singleron",
+        "source_treatment_as_reported": "no ex vivo treatment; blood collected prior to processing",
+        "source_collection_timing": "Primary Methods: blood collected at diagnosis before treatment; exact date unknown",
+        "source_identity_policy": "One original sample per29unique source donor codes. Both deposited series share canonicalGSE337705namespace; secondary notebook reuses the same outputs and adds no duplicate people.",
+        "source_clinical_policy": "Original individual age/grade and22exact primary patient-ID joins retained. GEO clinical/TNM staging strings and primary stage strings stored separately without automatic conversion. Controls are4benign gynecological and3healthy by original records and Methods; abstract swaps3/4counts.",
+        "source_missingness_policy": "Sex, exact dates and unavailable individual control-table covariates remain missing. No demographics inferred from cancer type or cohort statistics.",
+        "source_scope_policy": "Density-gradient PBMC/buffy-coat fraction explicitly described in primary Methods. Deposited whole source matrices retained; no extra samples from rare platelet/tumor candidate subsets or bulk experiments.",
+        "source_platform_policy": "Ovarian/benign10x and breast/healthySingleron platform and cancer-type coupling retained. Native gene universe and MT-prefix QC may differ; no complete-transcriptome equivalence or biological platform correction assumed.",
+        "source_processing_policy": "Unchanged original native nonnegative integer RNA UMI matrices; all values/coordinates audited. Common500RNA/200genes/20percentMT QC, not an assertion of author final-cell replication.",
+        "split_assignment": "unassigned; keep all later-linked donor repeats and source aliases together; global cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859780/suppl/GSM9859780_No4_CTRL_features.tsv.gz",
+          "filename": "GSM9859780_No4_CTRL_features.tsv.gz",
+          "expected_bytes": 444451,
+          "sha256": "c0ce516b4e233d9c1213d8307016309361078c9fab128249a97d8eb437eb2422"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859780/suppl/GSM9859780_No4_CTRL_barcodes.tsv.gz",
+          "filename": "GSM9859780_No4_CTRL_barcodes.tsv.gz",
+          "expected_bytes": 44956,
+          "sha256": "6e8a4a2d744c9a207ccda6d59cacdb799420ac5b05b26b2e61b59d9538815255"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9859nnn/GSM9859780/suppl/GSM9859780_No4_CTRL_matrix.mtx.gz",
+          "filename": "GSM9859780_No4_CTRL_matrix.mtx.gz",
+          "expected_bytes": 27508929,
+          "sha256": "6d638d0f6883bb71e8dc352b9cf4cf8ecef3f44b83d9e2946acfcda66aaabc30"
+        }
+      ],
+      "genes_member": "GSM9859780_No4_CTRL_features.tsv.gz",
+      "barcodes_member": "GSM9859780_No4_CTRL_barcodes.tsv.gz",
+      "matrix_member": "GSM9859780_No4_CTRL_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9028,
+        "genes": 58336,
+        "nonzeros": 9431179,
+        "gene_coordinate_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "956a02db4f009c7b5046a6fbb944b5402912f07b8285a781055a3b3e2cbdc19d",
+        "source_features": 58336,
+        "source_barcode_rows": 9028,
+        "RNA_positive_barcode_rows": 9028,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 25557802,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_mapping_evidence": "Twenty-nine source donor/material groups across two original series; one original RNA capture per donor code. CanonicalGSE337705namespace prevents secondary-study notebook double counting."
+}

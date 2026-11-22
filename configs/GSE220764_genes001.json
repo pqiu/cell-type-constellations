@@ -1,0 +1,1515 @@
+{
+  "dataset_id": "GSE220764_genes001",
+  "study_id": "GSE220764",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Explicit original patient titles, treatment durations and series design support14source material/visit groups from13participants. Untreated AGS5patient2 and healthy1 replicate pairs retain shared physical identity; same patient before/after treatment remains linked. Per-source age/sex/therapy/batch and original library namespaces retained.",
+  "source_metadata": {
+    "accession": "GSE220764",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE220764"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE220764",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+    "source_processing": [
+      "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+      "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+      "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+      "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+      "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+      "Assembly: hg38",
+      "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+      "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "native_reference_review": [
+      {
+        "original_RNA_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "genes": 20621,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "source_coordinate_format": "Original H5 Ensembl ID/name arrays; literal per-source genome labels retained"
+      }
+    ],
+    "native_audit_implementation": {
+      "path": "src/native_h5_audit.py",
+      "sha256": "93f65a66cad81c3b91d134f6bb62e27675af3d6931aaf06cd3361b4c5af5d8f7"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6815423",
+      "donor_id": "AGS5_1",
+      "source_metadata": {
+        "title": [
+          "PBMC AGS5 patient n\u00b01, 5 month RTI treatment"
+        ],
+        "geo_accession": [
+          "GSM6815423"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: AGS5",
+          "Sex: M",
+          "age (year): 12",
+          "batch: AGSexp1",
+          "treatment: 5 month RTI",
+          "original name: AGS_5_1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175020",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654848"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815423/suppl/GSM6815423_AGS_5_1_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815423_AGS_5_1_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 13760126,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 20395,
+          "full_source_RNA_counts": 29192674,
+          "selected_RNA_counts": 25146417,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815423.csv.gz",
+            "sha256": "c1bb78a4bc9e5cebf1ed94b8a8e9a0696045aaf692aa03b036e36e9039c1d1f8"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815423/suppl/GSM6815423_AGS_5_1_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815423_AGS_5_1_raw_feature_bc_matrix.h5",
+          "expected_bytes": 27549510,
+          "sha256": "3958429f39a5285c89b9227a7d6de63ea4778607e9a8d8fc49dee521af6d23e2"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "AGS5_1",
+        "source_visit_code": "RTI_5months",
+        "source_capture_label": "primary",
+        "condition": "AGS5",
+        "source_age_years": "12",
+        "source_sex": "M",
+        "source_batch": "AGSexp1",
+        "source_treatment": "5 month RTI",
+        "source_original_library_name": "AGS_5_1",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815425",
+      "donor_id": "AGS5_2",
+      "source_metadata": {
+        "title": [
+          "PBMC AGS5 patient n\u00b02, rep1"
+        ],
+        "geo_accession": [
+          "GSM6815425"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: AGS5",
+          "Sex: M",
+          "age (year): 3",
+          "batch: AGSexp1",
+          "treatment: none",
+          "original name: AGS4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175019",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654849"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815425/suppl/GSM6815425_AGS4_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815425_AGS4_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 1627319,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1979,
+          "full_source_RNA_counts": 3311838,
+          "selected_RNA_counts": 2283262,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815425.csv.gz",
+            "sha256": "e50b6cd2142ae9d2de30b0f87cf77e4eec9242b0a4bafd52837f268e45f9749f"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815425/suppl/GSM6815425_AGS4_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815425_AGS4_raw_feature_bc_matrix.h5",
+          "expected_bytes": 6322196,
+          "sha256": "74c27ec2f877741192444d463a06bb382802bd2d50bfe4fc832ebea1ecaebdd7"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "AGS5_2",
+        "source_visit_code": "untreated_source_material",
+        "source_capture_label": "rep1",
+        "condition": "AGS5",
+        "source_age_years": "3",
+        "source_sex": "M",
+        "source_batch": "AGSexp1",
+        "source_treatment": "none",
+        "source_original_library_name": "AGS4",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815426",
+      "donor_id": "AGS5_2",
+      "source_metadata": {
+        "title": [
+          "PBMC AGS5 patient n\u00b02, rep2"
+        ],
+        "geo_accession": [
+          "GSM6815426"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: AGS5",
+          "Sex: M",
+          "age (year): 3",
+          "batch: AGSexp2",
+          "treatment: none",
+          "original name: AGS_5_2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175018",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654850"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815426/suppl/GSM6815426_AGS_5_2_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815426_AGS_5_2_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 9296433,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 12401,
+          "full_source_RNA_counts": 17420774,
+          "selected_RNA_counts": 13543915,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815426.csv.gz",
+            "sha256": "3f820a9b1a351ae0848550fb58f0cdc32093a6dfa2d8c5f90d57da261457f47b"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815426/suppl/GSM6815426_AGS_5_2_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815426_AGS_5_2_raw_feature_bc_matrix.h5",
+          "expected_bytes": 19881350,
+          "sha256": "b193ba36bd9dc9be92ac9013e829c7822f4cdc3ddaaef1aa3722a4015d1a5a7b"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "AGS5_2",
+        "source_visit_code": "untreated_source_material",
+        "source_capture_label": "rep2",
+        "condition": "AGS5",
+        "source_age_years": "3",
+        "source_sex": "M",
+        "source_batch": "AGSexp2",
+        "source_treatment": "none",
+        "source_original_library_name": "AGS_5_2",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815427",
+      "donor_id": "AGS5_2",
+      "source_metadata": {
+        "title": [
+          "PBMC AGS5 patient n\u00b02, 1 month RTI treatment"
+        ],
+        "geo_accession": [
+          "GSM6815427"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: AGS5",
+          "Sex: M",
+          "age (year): 3",
+          "batch: AGSexp2",
+          "treatment: 1 month RTI",
+          "original name: AGS3"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175017",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654851"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815427/suppl/GSM6815427_AGS3_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815427_AGS3_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 1035138,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 929,
+          "full_source_RNA_counts": 2041593,
+          "selected_RNA_counts": 1454195,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815427.csv.gz",
+            "sha256": "8edbdb42c6cf577a003c92323fff9bf135d007730dcfe52fa5535ef59ca1e6d7"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815427/suppl/GSM6815427_AGS3_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815427_AGS3_raw_feature_bc_matrix.h5",
+          "expected_bytes": 5181810,
+          "sha256": "9f36145e01f48542779bddc596d1ea3d9a15c1af6ae31a6eb0a61dd23c4c4c71"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "AGS5_2",
+        "source_visit_code": "RTI_1month",
+        "source_capture_label": "primary",
+        "condition": "AGS5",
+        "source_age_years": "3",
+        "source_sex": "M",
+        "source_batch": "AGSexp2",
+        "source_treatment": "1 month RTI",
+        "source_original_library_name": "AGS3",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815436",
+      "donor_id": "healthy_1",
+      "source_metadata": {
+        "title": [
+          "PBMC healthy n\u00b01, rep1"
+        ],
+        "geo_accession": [
+          "GSM6815436"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: healthy",
+          "Sex: M",
+          "age (year): 32",
+          "batch: AGSexp1",
+          "treatment: none",
+          "original name: C1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175010",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654858"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815436/suppl/GSM6815436_C1_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815436_C1_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 13671472,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 17801,
+          "full_source_RNA_counts": 27299130,
+          "selected_RNA_counts": 20874584,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815436.csv.gz",
+            "sha256": "0a98b2dbdbad10ef8d708bf6d4daa6cb0a3c3e104e192294d5f4a5467f44216b"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815436/suppl/GSM6815436_C1_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815436_C1_raw_feature_bc_matrix.h5",
+          "expected_bytes": 27657147,
+          "sha256": "e7a012efb96469ac8512ff81a764734feafa822fd850f8100dba7ebee2bb6dad"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "healthy_1",
+        "source_visit_code": "untreated_source_material",
+        "source_capture_label": "rep1",
+        "condition": "healthy",
+        "source_age_years": "32",
+        "source_sex": "M",
+        "source_batch": "AGSexp1",
+        "source_treatment": "none",
+        "source_original_library_name": "C1",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815437",
+      "donor_id": "healthy_1",
+      "source_metadata": {
+        "title": [
+          "PBMC healthy n\u00b01, rep2"
+        ],
+        "geo_accession": [
+          "GSM6815437"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: healthy",
+          "Sex: M",
+          "age (year): 32",
+          "batch: AGSexp2",
+          "treatment: none",
+          "original name: C4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175009",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654859"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815437/suppl/GSM6815437_C1-bis_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815437_C1-bis_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 1371986,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2028,
+          "full_source_RNA_counts": 3027974,
+          "selected_RNA_counts": 2384102,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815437.csv.gz",
+            "sha256": "fa52c3d4039c1ccba02ed0f195d39b9560c07ae2b14b88710472b63ad5dadfe8"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815437/suppl/GSM6815437_C1-bis_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815437_C1-bis_raw_feature_bc_matrix.h5",
+          "expected_bytes": 5832998,
+          "sha256": "f9dda57b259f64877fe3ca794364c717efd2003da7dbf1782357531bb3417e85"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "healthy_1",
+        "source_visit_code": "untreated_source_material",
+        "source_capture_label": "rep2",
+        "condition": "healthy",
+        "source_age_years": "32",
+        "source_sex": "M",
+        "source_batch": "AGSexp2",
+        "source_treatment": "none",
+        "source_original_library_name": "C4",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815438",
+      "donor_id": "healthy_2",
+      "source_metadata": {
+        "title": [
+          "PBMC healthy n\u00b02"
+        ],
+        "geo_accession": [
+          "GSM6815438"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: healthy",
+          "Sex: M",
+          "age (year): 32",
+          "batch: AGSexp1",
+          "treatment: none",
+          "original name: C2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175008",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654860"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815438/suppl/GSM6815438_C2_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815438_C2_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 11145396,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 15108,
+          "full_source_RNA_counts": 23498138,
+          "selected_RNA_counts": 20155092,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815438.csv.gz",
+            "sha256": "af9df05fd8e8914025c6558c4cf85cda2f947675102eb1e670d545a300ecd670"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815438/suppl/GSM6815438_C2_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815438_C2_raw_feature_bc_matrix.h5",
+          "expected_bytes": 23034574,
+          "sha256": "cb2bf7467b0d8bb34b695d0d66d350daa777379780468f14418772a93ff77777"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "healthy_2",
+        "source_visit_code": "untreated_source_material",
+        "source_capture_label": "primary",
+        "condition": "healthy",
+        "source_age_years": "32",
+        "source_sex": "M",
+        "source_batch": "AGSexp1",
+        "source_treatment": "none",
+        "source_original_library_name": "C2",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    },
+    {
+      "accession": "GSM6815439",
+      "donor_id": "healthy_3",
+      "source_metadata": {
+        "title": [
+          "PBMC healthy n\u00b03"
+        ],
+        "geo_accession": [
+          "GSM6815439"
+        ],
+        "status": [
+          "Public on Jul 01 2025"
+        ],
+        "submission_date": [
+          "Dec 12 2022"
+        ],
+        "last_update_date": [
+          "Jul 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "genotype: healthy",
+          "Sex: F",
+          "age (year): 25",
+          "batch: AGSexp2",
+          "treatment: none",
+          "original name: C3fresh"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were isolated by density gradient centrifugation (2200 rpm or 974g without break for 30 minutes) using Ficoll (Eurobio Scientific, Les Ulis, France). After centrifugation, the pellet was resuspended in Phosphate-buffered saline (PBS) (Thermo Fisher scientific, Illkirch, France) and cells were centrifuged at 1500 rpm (453g)  for 5 minutes. Finally, the pellet was frozen in a medium containing 90% of Fetal Bovine Serum (FBS) (GIBCO, Thermo Fisher scientific, Illkirch, France) and 10% of dimethyl sulfoxide (DMSO) (Sigma Aldrich, St. Quentin Fallavier, France), and stored in liquid nitrogen.  PBMCs were thawed according to 10X Genomics protocol.",
+          "The scRNA-seq libraries were generated using Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1 (for AGSexp1 and AGSexp2) or v.3 (for AGSexp3) (10x Genomics) according to the manufacturer\u2019s protocol. Briefly, cells were counted, diluted at 1000 cells/\u00b5L in PBS+0,04% and 20,000 cells were loaded in the 10x Chromium Controller to generate single-cell gel-beads in emulsion. After reverse transcription, gel-beads in emulsion were disrupted. Barcoded complementary DNA was isolated and amplified by PCR. Following fragmentation, end repair and A-tailing, sample indexes were added during index PCR"
+        ],
+        "description": [
+          "Chromium Single Cell 3\u2032 Library & Gel Bead Kit v.1",
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "Sequencing reads were demultiplexed and aligned to the human reference genome (hg38), using the CellRanger Pipeline v6.0",
+          "Unfiltered RNA UMI counts were loaded into Seurat v4 for quality control, data integration and downstream analyses. Apoptotic cells and empty sequencing capsules were excluded by filtering out cells with with low number of features (Filters were defined based on the batch : AGSexp1 and AGSexp2: nFeature <250 ; AGSexp3 <500) or a mitochondrial content higher than 20%.",
+          "Data from each sample were normalized using sctransform, before batch correction using Seurat\u2019s FindIntegratedAnchors, on the 3000 most variable features. To avoid over-aligning samples, a reciprocal principal component analysis (PCA) was used to find integration anchors",
+          "On the resulting integrated datasets, we computed the PCA on the 3000 most variable genes, before computing a UMAP on 20 PCs. Community detection was performed using the graph-based modularity-optimization Louvain algorithm from Seurat\u2019s FindClusters function with a 1.2 resolution.",
+          "Cell types labels were assigned to resulting clusters based on a manually curated list of marker genes as well as previously defined signatures of the well-known PBMCs subtypes.(Monaco et al., 2019)",
+          "Assembly: hg38",
+          "Supplementary files format and content: h5 files contain the raw count matrix for each sample",
+          "Supplementary files format and content: the rds file contains the Seurat object of all integrated samples"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Mickael,Mathieu,Menager"
+        ],
+        "contact_email": [
+          "mickael.menager@institutimagine.org"
+        ],
+        "contact_institute": [
+          "Institut Imagine"
+        ],
+        "contact_address": [
+          "24 Boulevard du Montparnasse"
+        ],
+        "contact_city": [
+          "Paris"
+        ],
+        "contact_zip/postal_code": [
+          "75015"
+        ],
+        "contact_country": [
+          "France"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN32175007",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX18654861"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815439/suppl/GSM6815439_C3_raw_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE220764"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6815439_C3_raw_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          737280,
+          20621
+        ],
+        "nonzeros": 1253237,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba",
+        "source_barcode_rows": 737280,
+        "cells": 737280,
+        "genes": 20621,
+        "source_feature_types": {
+          "Gene Expression": 20621
+        },
+        "source_genome_label": "GRCh38_r98",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 18644,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE220764_original_RNA_QC/17cea8bd4279e7909e767de160b646faf0d0c3bc1787d8c1e3c81aa878e14cba_genes.csv.gz",
+          "sha256": "141e453d1219d4ee6e9991cd334617193aa7d9adbc0b083635b5a3007aad200d"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 737280,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1496,
+          "full_source_RNA_counts": 2385301,
+          "selected_RNA_counts": 1583493,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE220764_original_RNA_QC/GSM6815439.csv.gz",
+            "sha256": "a4471ba61486e733831d378c9949dcf754700b9316584519cd78b3e1d4cdf967"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6815nnn/GSM6815439/suppl/GSM6815439_C3_raw_feature_bc_matrix.h5",
+          "filename": "GSM6815439_C3_raw_feature_bc_matrix.h5",
+          "expected_bytes": 5637312,
+          "sha256": "16a7316a4469e40cf9a6d5986b8068f56d59fbbd9e409411c1e9146fac3377af"
+        }
+      ],
+      "allowed_non_rna_feature_types": [],
+      "metadata": {
+        "source_participant_code": "healthy_3",
+        "source_visit_code": "untreated_source_material",
+        "source_capture_label": "primary",
+        "condition": "healthy",
+        "source_age_years": "25",
+        "source_sex": "F",
+        "source_batch": "AGSexp2",
+        "source_treatment": "none",
+        "source_original_library_name": "C3fresh",
+        "source_specimen": "Ficoll-isolated frozen/thawed PBMC",
+        "source_genome_label": "GRCh38_r98",
+        "source_modality_policy": "All original values checked before typed antibody exclusion. Only Gene Expression rows enter RNA library sizes, QC, annotation and centroids; original source feature types and exact RNA axes retained.",
+        "source_identity_policy": "Original title plus explicit series design establishes patient/visit and two replicate pairs. AGS5 patient2 untreated replicates share one physical material, with post-treatment visit separate; healthy1 replicates share one physical material. Original library names are not participant IDs.",
+        "source_library_alias_policy": "Healthy1 rep2 original name C4 maps to deposited C1-bis filename; healthy3 original name C3fresh maps to C3 filename. Preserve both literal source fields. These source library namespaces do not authorize donor reassignment.",
+        "source_time_policy": "RTI_1month and RTI_5months encode source-reported treatment duration; untreated_source_material is an explicit computational key. Exact draw dates and patient-specific treatment initiation dates unavailable.",
+        "source_demographic_policy": "Age(year), Sex, genotype, treatment and batch retained from original per-source characteristics without cohort imputation. Clinical age precision limited by source; age not converted to birth or draw date.",
+        "source_processing_policy": "Native unfiltered RNA UMI counts retained. Source downstream sctransform/integration is not used for star geometry. Literal native genome label retained separately for each source axis; no inferred assembly conversion.",
+        "source_chemistry_policy": "Source protocol states v1 library kit for AGSexp1/2 and v3 for AGSexp3. Batch and original protocol retained; no batch alignment or chemistry correction applied.",
+        "split_assignment": "unassigned; keep every visit and capture from each donor together"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Exact title and explicit replicate/longitudinal series design:14source donor/material or treatment-visit groups,16dependent captures,13participants. No extra draw inferred for a replicate."
+}

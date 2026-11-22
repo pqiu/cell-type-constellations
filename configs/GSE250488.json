@@ -1,0 +1,65 @@
+{
+  "dataset_id": "GSE250488",
+  "study_id": "GSE250488",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE250488_complete_original_RNA_audit.json",
+    "bytes": 10864,
+    "sha256": "35adaa71a9157d3ee0c1d7d0c93466c75e3b01076bef5e055f3080bd2fea3999"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE250488_source_identity_review.json",
+    "bytes": 8674,
+    "sha256": "40a6cc4579aeca6b3251aee7256559de5cd77f8f953598c42213b619a978fd6f"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_material_id"
+  ],
+  "sample_mapping_evidence": "Original H5AD supplies CoLabs_patient, CoLabs_ID, LIBRARY and orig.ident for every selected cell. Eleven explicit patients each have one source BLD1 material and four captures; pool technical captures by patient/material. Capture comes exclusively from explicit LIBRARY, verified against orig.ident and the original GEO title; exact original raw barcodes establish cell joins. No donor inference from suffix, genotype, expression or demographics.",
+  "physical_sample_mapping_evidence": "Eleven explicit CoLabs_patient codes with source CoLabs_ID BLD1 material identifiers, each across four technical captures. Pool captures within explicit patient/material; preserve44dependent patient-capture registrations. Twelve planned study participants do not establish12represented blood samples; HS5 is absent. No donor assignment from barcode suffix, expression, genotype or demographics.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE250488",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE250488",
+    "primary_PMID": "38374043",
+    "primary_DOI": "10.1038/s41467-024-45665-6",
+    "access": "Public original RNA MatrixMarket triplets and deposited author-annotated H5AD; raw reads withheld for privacy are not requested.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE250488_source_identity_review.json",
+      "bytes": 8674,
+      "sha256": "40a6cc4579aeca6b3251aee7256559de5cd77f8f953598c42213b619a978fd6f"
+    },
+    "source_unit": "Eleven explicit CoLabs_patient codes with source CoLabs_ID BLD1 material identifiers, each across four technical captures. Pool captures within explicit patient/material; preserve44dependent patient-capture registrations. Twelve planned study participants do not establish12represented blood samples; HS5 is absent. No donor assignment from barcode suffix, expression, genotype or demographics.",
+    "identity_policy": "Original H5AD supplies CoLabs_patient, CoLabs_ID, LIBRARY and orig.ident for every selected cell. Eleven explicit patients each have one source BLD1 material and four captures; pool technical captures by patient/material. Capture comes exclusively from explicit LIBRARY, verified against orig.ident and the original GEO title; exact original raw barcodes establish cell joins. No donor inference from suffix, genotype, expression or demographics.",
+    "clinical_policy": "Preserve original HC, UCNB and UCV condition codes and author cell annotations as reported. Primary PMID38374043 describes healthy controls and UC treatment groups in a cross-sectional design; do not derive individual treatment clocks, clinical response, age or sex from group labels. Twelve planned study patients do not supply a missing HS5 blood matrix.",
+    "reuse_policy": "No accession, primary PMID or DOI match found in completed run records. Eleven source patient/material groups,44dependent patient-capture registrations, not44people. Cross-study participant aliases unresolved.",
+    "selection_policy": "All20130deposited author-assigned RNA singlets enter native staging;16544pass fixed positive-library/counts>=500/detectedgenes>=200/MTfraction<=0.2. No phenotype or annotation-confidence filtering. Original nonselected raw droplets receive no invented patient identity or sample credit. Keep all captures of each donor together in eventual held-out evaluation.",
+    "cell_calling_policy": "Use author-selected singlets and original library/barcode joins. Preserve source count-release and filtered-gene-universe discrepancies against cached nCount_RNA/nFeature_RNA/percent.mt; full native source counts govern own RNAQC and geometry. Processed H5AD X/raw/counts layer is not the geometry input.",
+    "gene_policy": "Preserve all58051original Gene Expression Ensembl IDs and source symbols, including1748duplicate-symbol rows. No invented IDs, intersection with the22741gene processed object, or normalization on processed genes. Object expression/layers are not used as the geometry source.",
+    "count_semantics": "All stored original MatrixMarket RNA values across every raw droplet verified finite/nonnegative/integer. Geometry uses unchanged original counts for author-selected singlets only. Raw droplets without explicit author participant assignments are not counted as cells or people. Cached QC discrepancies are retained; original full-native counts govern independent RNAQC.",
+    "source_limitations": "Cryopreserved peripheral-blood leukocytes include source erythrocyte/platelet labels and no observed granulocytes per primary article. Preserve all assigned source cell types; SCimilarity remains the common annotation vocabulary. Eleven represented patients, one BLD1 material each, four technical captures each; individual demographics, dates and global aliases unassigned. Original raw counts differ from processed-object QC; no clinical, annotation, causal or constellation validation."
+  }
+}

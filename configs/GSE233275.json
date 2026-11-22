@@ -1,0 +1,1124 @@
+{
+  "dataset_id": "GSE233275",
+  "study_id": "GSE233275",
+  "input_format": "geo_10x_tar",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE233nnn/GSE233275/suppl/GSE233275_RAW.tar",
+  "expected_bytes": 371374080,
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original GEO biological specimen records and source donor IDs; all repeated patient IDs stay linked.  {\"selection\": \"Original per-participant PBMC count matrices; source group-specific identifiers prevent merging case and control numbers.\", \"metadata\": \"Demographics absent unless explicitly reported; Pediatric is an age category, not numeric years.\", \"access\": \"Public processed counts only; no restricted raw sequencing requested.\"}",
+  "source_metadata": {
+    "accession": "GSE233275",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE233275",
+    "access": "Public GEO processed count matrices; controlled raw sequence access not required",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "n_genes": 33694,
+    "gene_coordinate_sha256": "443845121b3c0913ca6d3887e54d89aa540774aaabb1c21e056d3a90fe756b3e",
+    "identity_review": "references/datasets/additional_disease_identity_review.json"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7421504",
+      "donor_id": "HC,_donor_1",
+      "source_metadata": {
+        "title": [
+          "HC, donor 1, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421504"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342556",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493517"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421504/suppl/GSM7421504_HC1.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421504/suppl/GSM7421504_HC1.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421504/suppl/GSM7421504_HC1.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421504_HC1.features.tsv.gz",
+      "barcodes_member": "GSM7421504_HC1.barcodes.tsv.gz",
+      "matrix_member": "GSM7421504_HC1.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Female",
+        "source_disease state": "Healthy",
+        "author_cell_type": "not_reported",
+        "sex": "Female",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Healthy",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421505",
+      "donor_id": "HC,_donor_2",
+      "source_metadata": {
+        "title": [
+          "HC, donor 2, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421505"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342555",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493518"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421505/suppl/GSM7421505_HC2.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421505/suppl/GSM7421505_HC2.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421505/suppl/GSM7421505_HC2.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421505_HC2.features.tsv.gz",
+      "barcodes_member": "GSM7421505_HC2.barcodes.tsv.gz",
+      "matrix_member": "GSM7421505_HC2.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Male",
+        "source_disease state": "Healthy",
+        "author_cell_type": "not_reported",
+        "sex": "Male",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Healthy",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421506",
+      "donor_id": "HC,_donor_3",
+      "source_metadata": {
+        "title": [
+          "HC, donor 3, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421506"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342554",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493519"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421506/suppl/GSM7421506_HC3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421506/suppl/GSM7421506_HC3.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421506/suppl/GSM7421506_HC3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421506_HC3.features.tsv.gz",
+      "barcodes_member": "GSM7421506_HC3.barcodes.tsv.gz",
+      "matrix_member": "GSM7421506_HC3.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Female",
+        "source_disease state": "Healthy",
+        "author_cell_type": "not_reported",
+        "sex": "Female",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Healthy",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421507",
+      "donor_id": "HC,_donor_4",
+      "source_metadata": {
+        "title": [
+          "HC, donor 4, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421507"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Healthy"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342553",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493520"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421507/suppl/GSM7421507_HC4.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421507/suppl/GSM7421507_HC4.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421507/suppl/GSM7421507_HC4.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421507_HC4.features.tsv.gz",
+      "barcodes_member": "GSM7421507_HC4.barcodes.tsv.gz",
+      "matrix_member": "GSM7421507_HC4.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Female",
+        "source_disease state": "Healthy",
+        "author_cell_type": "not_reported",
+        "sex": "Female",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Healthy",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421508",
+      "donor_id": "INS,_donor_1",
+      "source_metadata": {
+        "title": [
+          "INS, donor 1, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421508"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Active INS"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342552",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493521"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421508/suppl/GSM7421508_INS1.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421508/suppl/GSM7421508_INS1.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421508/suppl/GSM7421508_INS1.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421508_INS1.features.tsv.gz",
+      "barcodes_member": "GSM7421508_INS1.barcodes.tsv.gz",
+      "matrix_member": "GSM7421508_INS1.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Male",
+        "source_disease state": "Active INS",
+        "author_cell_type": "not_reported",
+        "sex": "Male",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Active INS",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421509",
+      "donor_id": "INS,_donor_2",
+      "source_metadata": {
+        "title": [
+          "INS, donor 2, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421509"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Active INS"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342551",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493522"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421509/suppl/GSM7421509_INS2.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421509/suppl/GSM7421509_INS2.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421509/suppl/GSM7421509_INS2.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421509_INS2.features.tsv.gz",
+      "barcodes_member": "GSM7421509_INS2.barcodes.tsv.gz",
+      "matrix_member": "GSM7421509_INS2.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Female",
+        "source_disease state": "Active INS",
+        "author_cell_type": "not_reported",
+        "sex": "Female",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Active INS",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421510",
+      "donor_id": "INS,_donor_3",
+      "source_metadata": {
+        "title": [
+          "INS, donor 3, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421510"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Active INS"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342550",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493523"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421510/suppl/GSM7421510_INS3.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421510/suppl/GSM7421510_INS3.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421510/suppl/GSM7421510_INS3.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421510_INS3.features.tsv.gz",
+      "barcodes_member": "GSM7421510_INS3.barcodes.tsv.gz",
+      "matrix_member": "GSM7421510_INS3.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Female",
+        "source_disease state": "Active INS",
+        "author_cell_type": "not_reported",
+        "sex": "Female",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Active INS",
+        "age_category": "Pediatric"
+      }
+    },
+    {
+      "accession": "GSM7421511",
+      "donor_id": "INS,_donor_4",
+      "source_metadata": {
+        "title": [
+          "INS, donor 4, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421511"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Active INS"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 250,000 live lymphocytes were FACS isolated on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data file for total PBMC .",
+          "Seurat (4.3.0) was used to further subcluster B cells and generate the processed data file for total B cells.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include pbmc_annotations.txt.gz (containing meta data for post-quality control total PBMC), pbmc_umi.txt.gz (containing non-normalised UMI count data for post-quality control total PBMC), bcell_annotations.txt.gz (containing meta data for post-quality control total B cells), and bcell_umi.txt.gz (containing non-normalised UMI count data for post-quality control total B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342549",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20493524"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421511/suppl/GSM7421511_INS4.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421511/suppl/GSM7421511_INS4.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421511/suppl/GSM7421511_INS4.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233275",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM7421511_INS4.features.tsv.gz",
+      "barcodes_member": "GSM7421511_INS4.barcodes.tsv.gz",
+      "matrix_member": "GSM7421511_INS4.matrix.mtx.gz",
+      "metadata": {
+        "source_tissue": "Blood",
+        "source_cell type": "PBMC",
+        "source_age": "Pediatric",
+        "source_Sex": "Female",
+        "source_disease state": "Active INS",
+        "author_cell_type": "not_reported",
+        "sex": "Female",
+        "age": "not_reported",
+        "age_unit": "not_applicable",
+        "disease": "Active INS",
+        "age_category": "Pediatric"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

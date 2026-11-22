@@ -1,0 +1,203 @@
+{
+  "dataset_id": "GSE130117_genes001",
+  "study_id": "GSE130117",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "OriginalGEOdescription explicitly identifiesonehealthyhumandonor forpbmc1_mrna. Primary32286626 describesreplicatecaptures; donor/drawlinksforotherbaselinesunresolved, so do not countallRNAaliquots as independentdonors. OnlycanonicaloriginalhumanRNAcountmatrixenabled; othercapturesretainidentityholds.",
+  "source_metadata": {
+    "accession": "GSE130117",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/32286626/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE130117",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+    "source_processing": [
+      "Data analysis pipeline and custom scripts are provided in a github repository (https://github.com/rnabioco/rhumba/tree/master/haircut). Single cell RNA-Seq libraries were preprocessed using the 10x genomics software cellranger (3.0.2). The single cell DNA repair libraries were preprocessed to append the read 1 sequence to the paired read 2 read id using umi_tools extract(v 1.0.0 --bc-pattern CCCCCCCCCCCCCCCCNNNNNNNNNN)(Smith et al. 2017) followed by poly(A) tail and template switching oligo removal from read 2 using cutadapt (v. 1.8.3 -a AAAAAAAAAAA -g AAGCAGTGGTATCAACGCAGAGTACATGGG --minimum-length=2)  (Martin 2011). Reads were next aligned with bowtie2 (v 2.3.2 Langmead B, Salzberg S. 2012) to a repair substrate reference.",
+      "Following alignment, BAM files were processed to extract the alignment hairpin and position into a tag (XT) within the BAM file (tag_bam). UMI groups were identified and added as a tag (CB) using umi_tools group (--read-length = True --per-cell --output-bam = True --output-unmapped = True). BAM files were then sorted by cell barcode tag using samtools sort (v 1.5-4 -t CB -@ 23) (Li 2009). UMIs per hairpin_position were enumerated per cell using umi-tools count (v 0.5.3) (Smith et al. 2017) using the directional method to disambiguate similar UMI sequences.",
+      "Count tables produced by umi_tools are then converted into sparseMatrix format using the scrunchy R package (https://github.com/hesselberthlab/scrunchy, umitools_to_mtx). Matrices are the filtered to include only the cell-associated barcodes using the scrunchy R package (filter_matrix). Cell-associated barcodes are identified from the mRNA data using cellranger (v 3.0.2) from the filtered barcodes.tsv output.",
+      "Genome_build: hg38, custom repair substrate reference",
+      "Supplementary_files_format_and_content: Text file containing cell barcodes, genes/features, and UMI counts per gene/feature per cell are provided"
+    ]
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM3732362",
+      "donor_id": "canonical_single_donor",
+      "source_metadata": {
+        "title": [
+          "pbmc1_mrna"
+        ],
+        "geo_accession": [
+          "GSM3732362"
+        ],
+        "status": [
+          "Public on Oct 02 2019"
+        ],
+        "submission_date": [
+          "Apr 22 2019"
+        ],
+        "last_update_date": [
+          "Apr 15 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cell type: Human PBMCs"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated from a healthy adult using standard protocols and captured on the 10x genomics single cell RNA-seq platform",
+          "10x genomics 3' end single cell RNA-seq kit. Alterations to protocol include, following GEM generation, RT was done at 37C for 60 min, then 53 C for 45 minutes. Following silane purification of RT products, mRNA was isolated using Ampure size selection of 0.6x. Read 1 positions 1-16 contain the 16bp cell barcode, and positions 17-26 contain a 10bp UMI. Read 2 contains the cDNA."
+        ],
+        "description": [
+          "Single cell RNAseq library from the 10X genomics 3\u00b4 end kit (v2 chemistry). Fresh PBMCs were isolated from a healthy human donor.",
+          "PBMC 1 mRNA"
+        ],
+        "data_processing": [
+          "Data analysis pipeline and custom scripts are provided in a github repository (https://github.com/rnabioco/rhumba/tree/master/haircut). Single cell RNA-Seq libraries were preprocessed using the 10x genomics software cellranger (3.0.2). The single cell DNA repair libraries were preprocessed to append the read 1 sequence to the paired read 2 read id using umi_tools extract(v 1.0.0 --bc-pattern CCCCCCCCCCCCCCCCNNNNNNNNNN)(Smith et al. 2017) followed by poly(A) tail and template switching oligo removal from read 2 using cutadapt (v. 1.8.3 -a AAAAAAAAAAA -g AAGCAGTGGTATCAACGCAGAGTACATGGG --minimum-length=2)  (Martin 2011). Reads were next aligned with bowtie2 (v 2.3.2 Langmead B, Salzberg S. 2012) to a repair substrate reference.",
+          "Following alignment, BAM files were processed to extract the alignment hairpin and position into a tag (XT) within the BAM file (tag_bam). UMI groups were identified and added as a tag (CB) using umi_tools group (--read-length = True --per-cell --output-bam = True --output-unmapped = True). BAM files were then sorted by cell barcode tag using samtools sort (v 1.5-4 -t CB -@ 23) (Li 2009). UMIs per hairpin_position were enumerated per cell using umi-tools count (v 0.5.3) (Smith et al. 2017) using the directional method to disambiguate similar UMI sequences.",
+          "Count tables produced by umi_tools are then converted into sparseMatrix format using the scrunchy R package (https://github.com/hesselberthlab/scrunchy, umitools_to_mtx). Matrices are the filtered to include only the cell-associated barcodes using the scrunchy R package (filter_matrix). Cell-associated barcodes are identified from the mRNA data using cellranger (v 3.0.2) from the filtered barcodes.tsv output.",
+          "Genome_build: hg38, custom repair substrate reference",
+          "Supplementary_files_format_and_content: Text file containing cell barcodes, genes/features, and UMI counts per gene/feature per cell are provided"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jay,R.,Hesselberth"
+        ],
+        "contact_email": [
+          "jay.hesselberth@cuanschutz.edu"
+        ],
+        "contact_laboratory": [
+          "Jay Hesselberth"
+        ],
+        "contact_department": [
+          "Biochemistry and Molecular Gentetics"
+        ],
+        "contact_institute": [
+          "University of Colorado School of Medicine"
+        ],
+        "contact_address": [
+          "12801 E 17TH AVE"
+        ],
+        "contact_city": [
+          "Aurora"
+        ],
+        "contact_state": [
+          "CO"
+        ],
+        "contact_zip/postal_code": [
+          "80045"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN11475446",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX5729458"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3732nnn/GSM3732362/suppl/GSM3732362_barcodes_pbmc1_mrna.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3732nnn/GSM3732362/suppl/GSM3732362_features_pbmc1_mrna.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3732nnn/GSM3732362/suppl/GSM3732362_matrix_pbmc1_mrna.mtx.gz"
+        ],
+        "series_id": [
+          "GSE130117"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3732nnn/GSM3732362/suppl/GSM3732362_features_pbmc1_mrna.tsv.gz",
+          "filename": "GSM3732362_features_pbmc1_mrna.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3732nnn/GSM3732362/suppl/GSM3732362_barcodes_pbmc1_mrna.tsv.gz",
+          "filename": "GSM3732362_barcodes_pbmc1_mrna.tsv.gz"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3732nnn/GSM3732362/suppl/GSM3732362_matrix_pbmc1_mrna.mtx.gz",
+          "filename": "GSM3732362_matrix_pbmc1_mrna.mtx.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy",
+        "source_preparation": "Canonical pbmc1_mrna capture; original RNA only",
+        "source_alias_review": "One explicit healthy single-donor RNA capture. Other baseline RNA replicates require donor/draw crosswalk; incubation-time aliquots and separate repair readouts are not extra physical specimens.",
+        "source_demographics": "Individual age/sex not reported; healthy-donor description retained without numerical age imputation",
+        "source_assay_context": "RNA from PBMC assay-benchmarking study; no repair readouts, synthetic assays or cell-line data used for RNA star geometry",
+        "source_publication": "https://pubmed.ncbi.nlm.nih.gov/32286626/"
+      },
+      "genes_member": "GSM3732362_features_pbmc1_mrna.tsv.gz",
+      "barcodes_member": "GSM3732362_barcodes_pbmc1_mrna.tsv.gz",
+      "matrix_member": "GSM3732362_matrix_pbmc1_mrna.mtx.gz",
+      "source_count_review": {
+        "cells": 4023,
+        "genes": 33694,
+        "nonzeros": 1374726,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 4023,
+        "RNA_positive_barcode_rows": 4023,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": []
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

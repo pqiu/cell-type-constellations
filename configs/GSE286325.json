@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE286325",
+  "study_id": "GSE286325",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE286325_complete_original_RNA_audit.json",
+    "bytes": 46952,
+    "sha256": "fea72c8a9db335fc2d60f19eab5df8315b9db9d6c35390ccab8ae096268f20fd"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE286325_source_identity_review.json",
+    "bytes": 25926,
+    "sha256": "e69987745470f99b887a3ff7762c1096768bc9491ba1fc0d0e9e522330bd7e5f"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Actual author Sample_Tag/Sample_Namecalls match original GSMst1..st12participantcodes. Native input has only explicitly assigned nonspike originalrows,with fullraw-row selection proofs andoriginalsource totals separately retained. No fabricated identities forunassigned,spike ormerged-run cells. Globalaliases unresolved.",
+  "physical_sample_mapping_evidence": "66explicit authorSample_Name/GEOst donor-code pairs from firstsix pooledruns. Include only original called nonspike tags; do not invent donorIDs forMultiplet/Undetermined/spike rows. CombinedRun7/Run8hasno per-cellrun discriminator,22participantcodesremainheld outside this processed subset. Raw-read/authorcrosswalk routeunexhausted. Globalaliases unresolved.",
+  "use_source_gene_availability": true,
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase",
+      "author_cell_type": "source_original_Cell_Type_Experimental"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE286325",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE286325",
+    "primary_PMID": "41280901",
+    "access": "Public original firstsixRNAtriplets/H5MUcarriers andtagpanel; explicit author assignments only.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE286325_source_identity_review.json",
+      "bytes": 25926,
+      "sha256": "e69987745470f99b887a3ff7762c1096768bc9491ba1fc0d0e9e522330bd7e5f"
+    },
+    "source_unit": "66explicit authorSample_Name/GEOst donor-code pairs from firstsix pooledruns. Include only original called nonspike tags; do not invent donorIDs forMultiplet/Undetermined/spike rows. CombinedRun7/Run8hasno per-cellrun discriminator,22participantcodesremainheld outside this processed subset. Raw-read/authorcrosswalk routeunexhausted. Globalaliases unresolved.",
+    "identity_policy": "Actual author Sample_Tag/Sample_Namecalls match original GSMst1..st12participantcodes. Native input has only explicitly assigned nonspike originalrows,with fullraw-row selection proofs andoriginalsource totals separately retained. No fabricated identities forunassigned,spike ormerged-run cells. Globalaliases unresolved.",
+    "clinical_policy": "Original source participant codes,tag calls andauthorCell_Type_Experimental retained. Age,sex,individual clinicalgroup,timing/phenotypes/globalaliases unassigned pending authoritative crosswalk; do not infer clinicalstatus from donor-code prefixes orRNAprofiles.",
+    "reuse_policy": "Only firstsix distinct pooled RNAcarriers contribute66called nonspikeparticipantcodes. WTA78combines twooriginalruns withoutper-cellrunidentifier; its22participantcodes remainunassigned outsideprocessed subset. Spike reference andMultiplet/Undeterminedcalls do notaddpeople. Sourceglobaloverlap unproven.",
+    "selection_policy": "Explicit author tag-call eligibility precedes projectRNAQC. All original used-carrierRNAvalues/observations audited before selection; raw87601observations,75345assigned inputrows,55469RNA-QCrows. This isidentity eligibility,not phenotype-informedselection. Source geneavailability preserves every nativeRNAfeature.",
+    "cell_calling_policy": "Retain original authorCell_Type_Experimental/tag/read metadata; called singlets andcelltypes not independently biologicallyvalidated. SCimilarity remains unrestricted/fixedreference. OwnRNAQC/normalization uses originalprovidedRNAcounts,not tagreadcounts orvelocitydata.",
+    "gene_policy": "Full union of every original native RNA symbol in the six used carriers,with exact source-library geneavailability. Preserve all source features; no intersection,Ensembl-ID invention orsymbolmodernization. Implicit zeros at unavailable carrier/gene coordinates are storage only; gene_n_cells andNaN statistics must mark those axes unobserved. No missing-feature zero imputation.",
+    "count_semantics": "All original MatrixMarketRNA andH5MUrna/X values/axes/CSR matched before explicit author-cell assignment selection. Expression counts unaltered. Preserve BD Rhapsody2.2.1/RSEC vendorprocessing context; source gene-level counters not used to reconstruct per-cellcounts. RNA libraries/centroidnormalization include all measured nativeRNAgenes separately fromaligned-reference annotation.",
+    "source_limitations": "NativeRNAaxes differ: source-library availability/gene_n_cells/NaNstatistics preserve unobservedgenes. No geneintersection/zeroimputation,Ensembl-ID invention orRNA-based donorinference. CombinedRun7/Run8outsideprocessedsubset; identityrouteunexhausted. Individualclinicalgroup/age/sex/timing/globalaliasesunassigned. No efficacy,causal,biologicalannotation orconstellationvalidation."
+  }
+}

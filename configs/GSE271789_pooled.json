@@ -1,0 +1,2941 @@
+{
+  "dataset_id": "GSE271789_pooled",
+  "study_id": "GSE271789",
+  "input_format": "pinned_cell_assignments",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_cell_source_participant_code"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Thirty-three additional Chicago PBMC donor/specimen codes (25FHP/8IPF) in14original pools. Existing42singletons and source20BALrecords are not new blood specimens; integrated older IPF cohort not counted again.",
+  "source_metadata": {
+    "accession": "GSE271789",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE271789",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/38924775/"
+    ],
+    "access": "Public original RNA counts and deposited demuxlet assignments",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "posterior_policy": "Source SNG and SNG.POSTERIOR>0.95, explicit singlet probability; donor identity confidence uncalibrated and exact author filtering not claimed.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE271789_pooled_source_identity_review.json",
+      "sha256": "66abb692a042782c72c7cad70a6184bb33d799bf749f4873163bf38b9cf27969"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM8385336",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix A10, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385336"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC1, HPC2, HPC3",
+          "age (singleton or multiplexed): 63, 81, 67",
+          "sex (singleton or multiplexed): pooled: M, F, M",
+          "disease (singleton or multiplexed): FHP, FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "A10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440305",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261729"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385336/suppl/GSM8385336_A10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385336/suppl/GSM8385336_A10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385336/suppl/GSM8385336_A10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385336/suppl/GSM8385336_A10_features.tsv.gz",
+          "filename": "GSM8385336_A10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "ef4ec34c7b3a4da92336a0f0989d7f6019fac3672430cf5a8e2210572f911c87"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385336/suppl/GSM8385336_A10_barcodes.tsv.gz",
+          "filename": "GSM8385336_A10_barcodes.tsv.gz",
+          "expected_bytes": 136935,
+          "sha256": "9d78b376ebb21d8e6e056396ac76ed2d505106a0e5a5ba3c95e0753aad7499e4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385336/suppl/GSM8385336_A10_matrix.mtx.gz",
+          "filename": "GSM8385336_A10_matrix.mtx.gz",
+          "expected_bytes": 122606981,
+          "sha256": "aa5543d90beda333af074c2725d5cfa3455f58daeca1344bb65559ed8fe91c7f"
+        }
+      ],
+      "genes_member": "GSM8385336_A10_features.tsv.gz",
+      "barcodes_member": "GSM8385336_A10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385336_A10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 30435,
+        "genes": 36601,
+        "nonzeros": 31429213,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 30435,
+        "RNA_positive_barcode_rows": 30435,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 63865893,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385336_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC1",
+          "HPC2",
+          "HPC3"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_A10_source_assignments.csv",
+          "sha256": "d288d257f9a35cd3059c256f261491da68d9516aa9dda59b82d03be38c9dfec7"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385336",
+        "source_GEO_title": "Chicago Mix A10, PBMC",
+        "source_pool": "A10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385337",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix B10, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385337"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC4, HPC5, HPC6",
+          "age (singleton or multiplexed): 70, 80, 74",
+          "sex (singleton or multiplexed): pooled: F, M, F",
+          "disease (singleton or multiplexed): FHP, FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "B10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440304",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261730"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385337/suppl/GSM8385337_B10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385337/suppl/GSM8385337_B10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385337/suppl/GSM8385337_B10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385337/suppl/GSM8385337_B10_features.tsv.gz",
+          "filename": "GSM8385337_B10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "b92f6e5d01a2f47815b2c14f5da34ef834cb8f92f44c1ce5fbf7c8b11e586adc"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385337/suppl/GSM8385337_B10_barcodes.tsv.gz",
+          "filename": "GSM8385337_B10_barcodes.tsv.gz",
+          "expected_bytes": 61735,
+          "sha256": "62329e42544d20e6db6aea83d65788887f45cfc0dd3efc531ed3304a8969247d"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385337/suppl/GSM8385337_B10_matrix.mtx.gz",
+          "filename": "GSM8385337_B10_matrix.mtx.gz",
+          "expected_bytes": 65782223,
+          "sha256": "8b292d565db0bdf16ea767f04dbaa1c73125576525aa35592b44049d1ad7f075"
+        }
+      ],
+      "genes_member": "GSM8385337_B10_features.tsv.gz",
+      "barcodes_member": "GSM8385337_B10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385337_B10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 12860,
+        "genes": 36601,
+        "nonzeros": 17007561,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 12860,
+        "RNA_positive_barcode_rows": 12860,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 41144256,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385337_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC4",
+          "HPC5",
+          "HPC6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_B10_source_assignments.csv",
+          "sha256": "8933513922e4ec7fdf8367f002bf19c5ed2f7b441a08e5989f4a821fb5d1392d"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385337",
+        "source_GEO_title": "Chicago Mix B10, PBMC",
+        "source_pool": "B10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385338",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix B11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385338"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC14, HPC15, HPC16",
+          "age (singleton or multiplexed): 75, 57, 78",
+          "sex (singleton or multiplexed): pooled: F, M, F",
+          "disease (singleton or multiplexed): FHP, FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "B11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440303",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261731"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385338/suppl/GSM8385338_B11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385338/suppl/GSM8385338_B11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385338/suppl/GSM8385338_B11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385338/suppl/GSM8385338_B11_features.tsv.gz",
+          "filename": "GSM8385338_B11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "29a12ce126b99cd40e799c3b61c18b8b9e81438c9bfe2e284749f6e961c286ae"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385338/suppl/GSM8385338_B11_barcodes.tsv.gz",
+          "filename": "GSM8385338_B11_barcodes.tsv.gz",
+          "expected_bytes": 138492,
+          "sha256": "51e70629f7c496292eee925b540ebca97a3201cfecf419f359c255817b735972"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385338/suppl/GSM8385338_B11_matrix.mtx.gz",
+          "filename": "GSM8385338_B11_matrix.mtx.gz",
+          "expected_bytes": 182322621,
+          "sha256": "113fb6cfe8fc82b6ad2bd1e82454c97472a9a007be434727105441d19af7d9b2"
+        }
+      ],
+      "genes_member": "GSM8385338_B11_features.tsv.gz",
+      "barcodes_member": "GSM8385338_B11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385338_B11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 30800,
+        "genes": 36601,
+        "nonzeros": 47253534,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 30800,
+        "RNA_positive_barcode_rows": 30800,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 117231192,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385338_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC14",
+          "HPC15",
+          "HPC16"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_B11_source_assignments.csv",
+          "sha256": "de2599a2d7174e8d30c60a5b520e5ad5f65338ce53e01b5488aac5982d4eaaf8"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385338",
+        "source_GEO_title": "Chicago Mix B11, PBMC",
+        "source_pool": "B11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385339",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix C10 , PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385339"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC7, HPC8, HPC9",
+          "age (singleton or multiplexed): 74, 46, 80",
+          "sex (singleton or multiplexed): pooled: M, F, M",
+          "disease (singleton or multiplexed): FHP, FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "C10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440302",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261732"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385339/suppl/GSM8385339_C10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385339/suppl/GSM8385339_C10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385339/suppl/GSM8385339_C10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385339/suppl/GSM8385339_C10_features.tsv.gz",
+          "filename": "GSM8385339_C10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "0cad2bef3a1a1e13f7593e3d6745fd013e4991b99d9e35c30e5e9991d6d8e8f8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385339/suppl/GSM8385339_C10_barcodes.tsv.gz",
+          "filename": "GSM8385339_C10_barcodes.tsv.gz",
+          "expected_bytes": 144984,
+          "sha256": "92f9e493321e0ecaf85e633cdf151ee312d2484ec45b2df23689f65174d05e63"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385339/suppl/GSM8385339_C10_matrix.mtx.gz",
+          "filename": "GSM8385339_C10_matrix.mtx.gz",
+          "expected_bytes": 149764206,
+          "sha256": "2974e216c693662c04cd0062ef2b7785d00bbf661e07579f3d9ade94cf04e4b5"
+        }
+      ],
+      "genes_member": "GSM8385339_C10_features.tsv.gz",
+      "barcodes_member": "GSM8385339_C10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385339_C10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 32356,
+        "genes": 36601,
+        "nonzeros": 38412450,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 32356,
+        "RNA_positive_barcode_rows": 32356,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 90174302,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385339_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC7",
+          "HPC8",
+          "HPC9"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_C10_source_assignments.csv",
+          "sha256": "f706cf43b0d3c23a5f888d4ac6e1672ee2f633939f158047b8915688a89c9cec"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385339",
+        "source_GEO_title": "Chicago Mix C10 , PBMC",
+        "source_pool": "C10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385340",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix C11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385340"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC17, HPC18, HPC19",
+          "age (singleton or multiplexed): 84, 63, 77",
+          "sex (singleton or multiplexed): pooled: M, F, F",
+          "disease (singleton or multiplexed): FHP, FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "C11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440301",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261733"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385340/suppl/GSM8385340_C11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385340/suppl/GSM8385340_C11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385340/suppl/GSM8385340_C11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385340/suppl/GSM8385340_C11_features.tsv.gz",
+          "filename": "GSM8385340_C11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "58e7129d391bcafe5bafc0e746b699e882cb7f376ee45ae2904b866988dd0a0f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385340/suppl/GSM8385340_C11_barcodes.tsv.gz",
+          "filename": "GSM8385340_C11_barcodes.tsv.gz",
+          "expected_bytes": 133091,
+          "sha256": "46fb29b2aa1fe8e7e2875f26032317b140cab0bbad515c127823b41c890791ec"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385340/suppl/GSM8385340_C11_matrix.mtx.gz",
+          "filename": "GSM8385340_C11_matrix.mtx.gz",
+          "expected_bytes": 176791102,
+          "sha256": "5aff4bf4c51f7e3ef36abc8e927c07a665db7c47095e1e67a0078b3444d9ce2a"
+        }
+      ],
+      "genes_member": "GSM8385340_C11_features.tsv.gz",
+      "barcodes_member": "GSM8385340_C11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385340_C11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 29496,
+        "genes": 36601,
+        "nonzeros": 45845569,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 29496,
+        "RNA_positive_barcode_rows": 29496,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 112601111,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385340_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC17",
+          "HPC18",
+          "HPC19"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_C11_source_assignments.csv",
+          "sha256": "adacb7043c67f6bacfb9b00ea27aa1497281ad92cc9fdeb9490f6f0e0d12ff62"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385340",
+        "source_GEO_title": "Chicago Mix C11, PBMC",
+        "source_pool": "C11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385341",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix D10, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385341"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): IPFC1, IPFC2",
+          "age (singleton or multiplexed): 69, 72",
+          "sex (singleton or multiplexed): pooled: M, F",
+          "disease (singleton or multiplexed): IPF, IPF",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "D10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440300",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261734"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385341/suppl/GSM8385341_D10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385341/suppl/GSM8385341_D10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385341/suppl/GSM8385341_D10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385341/suppl/GSM8385341_D10_features.tsv.gz",
+          "filename": "GSM8385341_D10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "0cad2bef3a1a1e13f7593e3d6745fd013e4991b99d9e35c30e5e9991d6d8e8f8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385341/suppl/GSM8385341_D10_barcodes.tsv.gz",
+          "filename": "GSM8385341_D10_barcodes.tsv.gz",
+          "expected_bytes": 100240,
+          "sha256": "63850a9f0ca45990a292f685647fba4bb5fed37f5e0ab1f150ea5b5e36bdb208"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385341/suppl/GSM8385341_D10_matrix.mtx.gz",
+          "filename": "GSM8385341_D10_matrix.mtx.gz",
+          "expected_bytes": 152075712,
+          "sha256": "f05e7ed66743d9589a1a9173e414afbe4d8b2ff932f1c9766532ef7fd3ba69f2"
+        }
+      ],
+      "genes_member": "GSM8385341_D10_features.tsv.gz",
+      "barcodes_member": "GSM8385341_D10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385341_D10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 21668,
+        "genes": 36601,
+        "nonzeros": 39735850,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 21668,
+        "RNA_positive_barcode_rows": 21668,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 99541388,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385341_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "IPFC1",
+          "IPFC2"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_D10_source_assignments.csv",
+          "sha256": "45e5b5e13bdf4c16dc44109836cf9fb350c184ef10a9d442b3398a75fa32169f"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385341",
+        "source_GEO_title": "Chicago Mix D10, PBMC",
+        "source_pool": "D10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385342",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix D11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385342"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC20, HPC21",
+          "age (singleton or multiplexed): 61, 66",
+          "sex (singleton or multiplexed): pooled: M, F",
+          "disease (singleton or multiplexed): FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "D11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440299",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261747"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385342/suppl/GSM8385342_D11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385342/suppl/GSM8385342_D11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385342/suppl/GSM8385342_D11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385342/suppl/GSM8385342_D11_features.tsv.gz",
+          "filename": "GSM8385342_D11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "5a5b4d2d43c7af24acc2cfb49a5d96b7e304920a925ddc9895cb7bb3e8b9741a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385342/suppl/GSM8385342_D11_barcodes.tsv.gz",
+          "filename": "GSM8385342_D11_barcodes.tsv.gz",
+          "expected_bytes": 38503,
+          "sha256": "e4abf1bcce5bfd66a40d1f89dfbdb8715b3b7e8bb08a5cb9f58ec66038df7371"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385342/suppl/GSM8385342_D11_matrix.mtx.gz",
+          "filename": "GSM8385342_D11_matrix.mtx.gz",
+          "expected_bytes": 45368493,
+          "sha256": "d5be175d108584292db5e55c6d812e3255a1abe8a1022a41d336236c4cd3a7fc"
+        }
+      ],
+      "genes_member": "GSM8385342_D11_features.tsv.gz",
+      "barcodes_member": "GSM8385342_D11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385342_D11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7748,
+        "genes": 36601,
+        "nonzeros": 11827193,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 7748,
+        "RNA_positive_barcode_rows": 7748,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 29268743,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385342_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC20",
+          "HPC21"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_D11_source_assignments.csv",
+          "sha256": "964a31d88415ab442ebe2ba476707b36f61c55ad90aab2f120e1ef1a135c0d4a"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385342",
+        "source_GEO_title": "Chicago Mix D11, PBMC",
+        "source_pool": "D11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385343",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix E10, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385343"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC10, HPC11",
+          "age (singleton or multiplexed): 68, 57",
+          "sex (singleton or multiplexed): pooled: F, F",
+          "disease (singleton or multiplexed): FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "E10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440298",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261748"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385343/suppl/GSM8385343_E10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385343/suppl/GSM8385343_E10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385343/suppl/GSM8385343_E10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385343/suppl/GSM8385343_E10_features.tsv.gz",
+          "filename": "GSM8385343_E10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "58e7129d391bcafe5bafc0e746b699e882cb7f376ee45ae2904b866988dd0a0f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385343/suppl/GSM8385343_E10_barcodes.tsv.gz",
+          "filename": "GSM8385343_E10_barcodes.tsv.gz",
+          "expected_bytes": 166794,
+          "sha256": "bb034a6f361e67b989e0658ff4f4a3749dfa20aaf24cef0ed309f5d27f45d7d1"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385343/suppl/GSM8385343_E10_matrix.mtx.gz",
+          "filename": "GSM8385343_E10_matrix.mtx.gz",
+          "expected_bytes": 190240624,
+          "sha256": "a472149b6009d17a62dfa52d45c9a79688557ba2fface08faecc44683597fc41"
+        }
+      ],
+      "genes_member": "GSM8385343_E10_features.tsv.gz",
+      "barcodes_member": "GSM8385343_E10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385343_E10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 37608,
+        "genes": 36601,
+        "nonzeros": 49059649,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 37608,
+        "RNA_positive_barcode_rows": 37608,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 112454444,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385343_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC10",
+          "HPC11"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_E10_source_assignments.csv",
+          "sha256": "d87f08929d41f9382180e523efcf780cf5f22cdea9582cd0bfeb81c7f5573663"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385343",
+        "source_GEO_title": "Chicago Mix E10, PBMC",
+        "source_pool": "E10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385344",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix E11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385344"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC22, HPC23",
+          "age (singleton or multiplexed): 78, 75",
+          "sex (singleton or multiplexed): pooled: F, F",
+          "disease (singleton or multiplexed): FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "E11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440297",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261749"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385344/suppl/GSM8385344_E11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385344/suppl/GSM8385344_E11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385344/suppl/GSM8385344_E11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385344/suppl/GSM8385344_E11_features.tsv.gz",
+          "filename": "GSM8385344_E11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "341f54792c373f4964d4c8ad7c51c2f1bc4e821ca2327893c63209699eeaa583"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385344/suppl/GSM8385344_E11_barcodes.tsv.gz",
+          "filename": "GSM8385344_E11_barcodes.tsv.gz",
+          "expected_bytes": 44574,
+          "sha256": "d62ef109aa71890531f86964ad1550b11cad20353146cf762a993f626c121d03"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385344/suppl/GSM8385344_E11_matrix.mtx.gz",
+          "filename": "GSM8385344_E11_matrix.mtx.gz",
+          "expected_bytes": 41253375,
+          "sha256": "e7909b2947adbc73cdf5916e34e34fd3fd8cafad289bcd718484097a9c6f6447"
+        }
+      ],
+      "genes_member": "GSM8385344_E11_features.tsv.gz",
+      "barcodes_member": "GSM8385344_E11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385344_E11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9065,
+        "genes": 36601,
+        "nonzeros": 10696989,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 9065,
+        "RNA_positive_barcode_rows": 9065,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 23250146,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385344_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC22",
+          "HPC23"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_E11_source_assignments.csv",
+          "sha256": "034cdcf5a0933d9889c5eaa3ee16b7919a6bd37ed117fa012e2fb07bee286826"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385344",
+        "source_GEO_title": "Chicago Mix E11, PBMC",
+        "source_pool": "E11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385345",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix F10, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385345"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC12, HPC13",
+          "age (singleton or multiplexed): 66, 77",
+          "sex (singleton or multiplexed): pooled: F, F",
+          "disease (singleton or multiplexed): FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "F10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440296",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261750"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385345/suppl/GSM8385345_F10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385345/suppl/GSM8385345_F10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385345/suppl/GSM8385345_F10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385345/suppl/GSM8385345_F10_features.tsv.gz",
+          "filename": "GSM8385345_F10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "d446c82aa62226fd2e138daa6858d8cfbf59ab68f47032a83da0eedcc26fd860"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385345/suppl/GSM8385345_F10_barcodes.tsv.gz",
+          "filename": "GSM8385345_F10_barcodes.tsv.gz",
+          "expected_bytes": 229054,
+          "sha256": "bcbb943c8816f6e7f3a20c96fae0c5b151bd52ca17d13a960572b86043803528"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385345/suppl/GSM8385345_F10_matrix.mtx.gz",
+          "filename": "GSM8385345_F10_matrix.mtx.gz",
+          "expected_bytes": 207255002,
+          "sha256": "6ed45c74017dea4bdfc83307395b0f0ce70eb34212df23523f58948e35f1bebb"
+        }
+      ],
+      "genes_member": "GSM8385345_F10_features.tsv.gz",
+      "barcodes_member": "GSM8385345_F10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385345_F10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 53084,
+        "genes": 36601,
+        "nonzeros": 53235863,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 53084,
+        "RNA_positive_barcode_rows": 53084,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 99273293,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385345_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC12",
+          "HPC13"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_F10_source_assignments.csv",
+          "sha256": "1eb460f671790ad2e544bafd57f82a3ae6d8a43e5950bfda488644f04d76c0c1"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385345",
+        "source_GEO_title": "Chicago Mix F10, PBMC",
+        "source_pool": "F10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385346",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix F11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385346"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): IPFC5, IPFC6",
+          "age (singleton or multiplexed): 66, 59",
+          "sex (singleton or multiplexed): pooled: M, F",
+          "disease (singleton or multiplexed): IPF, IPF",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "F11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440295",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261751"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385346/suppl/GSM8385346_F11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385346/suppl/GSM8385346_F11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385346/suppl/GSM8385346_F11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385346/suppl/GSM8385346_F11_features.tsv.gz",
+          "filename": "GSM8385346_F11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "fb19e560522653f099454837a8e1b60c3c9ad82d0c8842dff477e6f4db921323"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385346/suppl/GSM8385346_F11_barcodes.tsv.gz",
+          "filename": "GSM8385346_F11_barcodes.tsv.gz",
+          "expected_bytes": 47607,
+          "sha256": "6c56921bab42f8611afa16204cad02104ccb33be750c099b4d016a9e9af9a6d6"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385346/suppl/GSM8385346_F11_matrix.mtx.gz",
+          "filename": "GSM8385346_F11_matrix.mtx.gz",
+          "expected_bytes": 26224060,
+          "sha256": "4f6f3947d38794643013aa59efe44ecd5326b12d9445d43729b844beabcedfd8"
+        }
+      ],
+      "genes_member": "GSM8385346_F11_features.tsv.gz",
+      "barcodes_member": "GSM8385346_F11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385346_F11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9741,
+        "genes": 36601,
+        "nonzeros": 6693040,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 9741,
+        "RNA_positive_barcode_rows": 9741,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 13550378,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385346_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "IPFC5",
+          "IPFC6"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_F11_source_assignments.csv",
+          "sha256": "4bcb2e07ab590e2cd142786ab86708deecfe1dba046fe6c39feb13867465c9db"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385346",
+        "source_GEO_title": "Chicago Mix F11, PBMC",
+        "source_pool": "F11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385347",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix G11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385347"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): HPC24, HPC25",
+          "age (singleton or multiplexed): 66, 61",
+          "sex (singleton or multiplexed): pooled: F, F",
+          "disease (singleton or multiplexed): FHP, FHP",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "G11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440294",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261752"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385347/suppl/GSM8385347_G11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385347/suppl/GSM8385347_G11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385347/suppl/GSM8385347_G11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385347/suppl/GSM8385347_G11_features.tsv.gz",
+          "filename": "GSM8385347_G11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "a812d453973488f1a044267717754cdd8532ca3545ce6d1486158ea89d428bf4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385347/suppl/GSM8385347_G11_barcodes.tsv.gz",
+          "filename": "GSM8385347_G11_barcodes.tsv.gz",
+          "expected_bytes": 47398,
+          "sha256": "b6ebe0924bdabb276025ec3ceb6c6849465a015df74065c731745a41fcdb5e23"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385347/suppl/GSM8385347_G11_matrix.mtx.gz",
+          "filename": "GSM8385347_G11_matrix.mtx.gz",
+          "expected_bytes": 58658377,
+          "sha256": "56f369b6858a69d753a4f6e52238b38f1f8656e90b137f4cb68dd1df7bf26472"
+        }
+      ],
+      "genes_member": "GSM8385347_G11_features.tsv.gz",
+      "barcodes_member": "GSM8385347_G11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385347_G11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9702,
+        "genes": 36601,
+        "nonzeros": 15284709,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 9702,
+        "RNA_positive_barcode_rows": 9702,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 39507490,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385347_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "HPC24",
+          "HPC25"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_G11_source_assignments.csv",
+          "sha256": "3cf433536bdfae0bfc3eea8d6c0e9625972b4e23d8c2630e2623384b021bb4a0"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385347",
+        "source_GEO_title": "Chicago Mix G11, PBMC",
+        "source_pool": "G11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385348",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix H10 , PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385348"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): IPFC3, IPFC4",
+          "age (singleton or multiplexed): 56, 69",
+          "sex (singleton or multiplexed): pooled: F, M",
+          "disease (singleton or multiplexed): IPF, IPF",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "H10_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440293",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261753"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385348/suppl/GSM8385348_H10_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385348/suppl/GSM8385348_H10_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385348/suppl/GSM8385348_H10_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385348/suppl/GSM8385348_H10_features.tsv.gz",
+          "filename": "GSM8385348_H10_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "06e7f150e7f73c93348bca95648e93fa009ce7fd975f3fd7f95c48d548ae20db"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385348/suppl/GSM8385348_H10_barcodes.tsv.gz",
+          "filename": "GSM8385348_H10_barcodes.tsv.gz",
+          "expected_bytes": 14225,
+          "sha256": "95fc902e705a222ac25b764e499b3a6e9a0693efa1c8ae7fb3a31b568b08644c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385348/suppl/GSM8385348_H10_matrix.mtx.gz",
+          "filename": "GSM8385348_H10_matrix.mtx.gz",
+          "expected_bytes": 11020438,
+          "sha256": "452ab42009aaee4fec169652dbb5f67ea03ea07a1f47c36002098245024e2aa5"
+        }
+      ],
+      "genes_member": "GSM8385348_H10_features.tsv.gz",
+      "barcodes_member": "GSM8385348_H10_barcodes.tsv.gz",
+      "matrix_member": "GSM8385348_H10_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 2672,
+        "genes": 36601,
+        "nonzeros": 2866584,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 2672,
+        "RNA_positive_barcode_rows": 2672,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 6612476,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385348_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "IPFC3",
+          "IPFC4"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_H10_source_assignments.csv",
+          "sha256": "5eb7bc0f7618634f666339a81343a1f3fc55695feafae25555df7491fae74563"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385348",
+        "source_GEO_title": "Chicago Mix H10 , PBMC",
+        "source_pool": "H10",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    },
+    {
+      "accession": "GSM8385349",
+      "donor_id": "source_pool",
+      "source_metadata": {
+        "title": [
+          "Chicago Mix H11, PBMC"
+        ],
+        "geo_accession": [
+          "GSM8385349"
+        ],
+        "status": [
+          "Public on Jul 09 2024"
+        ],
+        "submission_date": [
+          "Jul 08 2024"
+        ],
+        "last_update_date": [
+          "Jul 12 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cohort: Chicago",
+          "samples multiplexed_(chicago_only): IPFC7, IPFC8",
+          "age (singleton or multiplexed): 69, 54",
+          "sex (singleton or multiplexed): pooled: F, F",
+          "disease (singleton or multiplexed): IPF, IPF",
+          "smoking status: NA",
+          "fev1: NA",
+          "dlco: NA"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "At each sample collection site, PBMCs were separated from the whole blood using density gradient centrifugation, and PBMC and BAL samples were cryopreserved in liquid nitrogen as separate samples for single-cell experiments. The PBMCs were cryopreserved in 1.5 ml cryotubes using 10% DMSO in heat-inactivated FBS and were stored long-term in liquid nitrogen. Initial PBMC sample collection, processing, and storage did not differ significantly among the three patient sample collection sites. In Mexico City, bronchoalveolar lavage samples were collected and stored long-term in liquid nitrogen using 10% DMSO in heat-inactivated FBS.",
+          "All patient samples were shipped for processing in New Haven, CT, to minimize technical and batch effects arising from sample processing. Samples were randomized based on age, sex, diagnosis, and smoking history into different batches for sample preparation and single-cell library construction. Sixteen samples were processed at a time to reduce batch effects. The sample preparation protocol used was modified from 10X Genomics with the following modifications. Cryopreserved samples were thawed in a 37 \u00b0C water bath, and 1.5 ml of 10% FBS in Dulbecco\u2019s Modified Eagle Medium (DMEM) was added to each tube. The cells were centrifuged, the supernatant was removed, and the cells were resuspended in D-PBS with 0.04% bovine serum albumin (BSA). The sample was passed through a 40 \u00b5m cell strainer into a 2-mL microcentrifuge tube. The cell concentration was determined using Trypan Blue solution, and Invitrogen Countess Automated Cell Counter. Samples with isolated single cells were diluted, and these cells were loaded into the chip with an anticipated recovery of 10,000 cells according to the manufacturer\u2019s protocol for Chromium Next GEM Single Cell 5\u2019 Reagent Kits v2 (Dual Index) (from samples from New Haven and Mexico City only). To further reduce batch effects, Chicago samples were pooled, such that each chip lane was loaded with two or three patient samples, with an anticipated recovery cell of 20,000 cells to 30,000 cells, respectively. Any leftover samples were fixed in 80% methanol and stored at -20C to preserve nucleotide integrity for downstream DNA extraction and whole-exome sequencing to SNP-demultiplex mixed patient samples from Chicago. All subsequent library construction steps were followed precisely, and all cDNA library QC was performed using an Agilent 2100 Bioanalyzer.",
+          "The single-cell cDNA libraries were sequenced using an Illumina HiSeq4000 machine at the Yale Stem Cell Genomics Center (samples from New Haven and Mexico City) and from an Illumina NovaSeq X at the Yale Center for Genomic Analysis (samples from Chicago). Samples were sequenced at a depth of 150 million reads per sample to allow for adequate transcriptome capture."
+        ],
+        "description": [
+          "H11_HHT",
+          "metadata in order of appearance of multiplexed samples"
+        ],
+        "data_processing": [
+          "The CellRanger v7.0.0 pipeline (mkfastq and count) was used to demultiplex the raw sequencing reads from the single-cell libraries and align them to the GRCh38 reference genome (CellRanger 2020-A).",
+          "To demultiplex the mixed samples from Chicago, the fastq files corresponding to the whole-exome sequencing data of these samples were aligned to the CellRanger reference fasta file (refdata-gex-GRCh38-2020-A/genome.fa) using bwa-mem. The resulting .sam files were converted to .bam files using picard. Picard was also used to sort, mark duplicates in, and build indices for the .bam files. The Genome Analysis Toolkit (GATK)\u2019s Best Practices for Germline Short Variant Discovery were followed. These .vcf files were filtered for common single nucleotide polymorphisms (SNPs) with a 5% minor allele frequency cutoff. Demuxlet, implemented in the Demuxafy framework, was used to demultiplex these samples based on their common SNPs [25]. Only samples that had a posterior likelihood of >0.95 were kept.",
+          "The feature-barcode matrices for each patient sample were loaded into R and converted into a Seurat (v4.0) object. Cells with fewer than 200 features and those expressing greater than 20% of mitochondrial genes were filtered out to remove dead and dying cells. Samples with fewer than 500 cells were removed to eliminate low-quality samples. The filtered gene expression matrix was normalized using Seurat's NormalizeData function with default settings. Genes with high cell-to-cell variation were identified using the FindVariableFeatures function with the \u201cvst\u201d method. The data was integrated on an assay level (5\u2019 v1 versus v2) using reciprocal PCA to reduce 10X assay-specific effects, and no significant batch effects were noted after this integration. The data were then scaled and centered using the ScaleData function, and the top 3,000 variable features were used for Principal Component Analysis. The top 30 principal components (PCs) were selected based on the elbow plot generated by the ElbowPlot function. Graph-based clustering was performed using the FindNeighbors and FindClusters functions with the selected 30 PCs.",
+          "Assembly: Assembly: GRCh38",
+          "Supplementary files format and content: Supplementary files format and content: For each sample, processed data include Cell Ranger Count filtered outputs: cell barcodes (barcodes.tsv.gz), genes (features.tsv.gz) and count matrix (matrix.mtx.gz).",
+          "Supplementary files format and content: demuxlet-outputs.zip (Chicago Mix A10, B10, C10, etc. include barcodes for multiple samples that were multiplexed together in a single 10X lane. demuxlet-outputs.zip contains the demuxlet.best files for each mix, which are the outputs the demultiplexing software demuxlet, that link each barcode to a specific sample (e.g. A10-demuxlet.best links each barcode to a sample). )"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Xiting,,Yan"
+        ],
+        "contact_email": [
+          "xiting.yan@yale.edu"
+        ],
+        "contact_phone": [
+          "2037855567"
+        ],
+        "contact_department": [
+          "Internal Medicine"
+        ],
+        "contact_institute": [
+          "Yale School of Medicine"
+        ],
+        "contact_address": [
+          "300 Cedar Street, Ste S441D"
+        ],
+        "contact_city": [
+          "New Haven"
+        ],
+        "contact_state": [
+          "Connecticut"
+        ],
+        "contact_zip/postal_code": [
+          "06519"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42440292",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25261754"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385349/suppl/GSM8385349_H11_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385349/suppl/GSM8385349_H11_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385349/suppl/GSM8385349_H11_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE271789"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385349/suppl/GSM8385349_H11_features.tsv.gz",
+          "filename": "GSM8385349_H11_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "f1ccd423c69f9a57ca516ef977339ab2c3daeb3ac4e40d48010a9e2a1f15c205"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385349/suppl/GSM8385349_H11_barcodes.tsv.gz",
+          "filename": "GSM8385349_H11_barcodes.tsv.gz",
+          "expected_bytes": 4946,
+          "sha256": "132bceea1b0133dcc67b6ea4c88b89335cef141bd3c97100107c2734e76c74c1"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8385nnn/GSM8385349/suppl/GSM8385349_H11_matrix.mtx.gz",
+          "filename": "GSM8385349_H11_matrix.mtx.gz",
+          "expected_bytes": 5193646,
+          "sha256": "01db789a4c8682ab571a28870f3260470d3d80b7b678b83e7a40e8a52c9584bb"
+        }
+      ],
+      "genes_member": "GSM8385349_H11_features.tsv.gz",
+      "barcodes_member": "GSM8385349_H11_barcodes.tsv.gz",
+      "matrix_member": "GSM8385349_H11_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 864,
+        "genes": 36601,
+        "nonzeros": 1401374,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 864,
+        "RNA_positive_barcode_rows": 864,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 3181754,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        }
+      },
+      "cell_assignment": {
+        "member": "GSM8385349_source_assignments.csv",
+        "barcode_prefix": "",
+        "donor_column": "biological_donor",
+        "expected_donors": [
+          "IPFC7",
+          "IPFC8"
+        ],
+        "retained_source": {
+          "path": "references/datasets/GSE271789_H11_source_assignments.csv",
+          "sha256": "76c446c49d00236365b6e7b442cc142da49b6db3e4a19f677d61bfdd217a175e"
+        }
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM8385349",
+        "source_GEO_title": "Chicago Mix H11, PBMC",
+        "source_pool": "H11",
+        "source_specimen": "PBMC",
+        "source_cohort": "Chicago",
+        "age_unit": "years",
+        "source_assignment_policy": "Published demuxlet SNG calls and SNG.POSTERIOR>0.95. This score is singlet probability, not calibrated donor-identity probability; exact author-filter equivalence not asserted.",
+        "source_population_policy": "Original Chicago PBMC pool participants only. BAL and earlier IPF cohort integrated into publication are not additional samples here.",
+        "source_clinical_policy": "Original ordered GEO pool fields join named donor codes; TableE1 source fields retained separately and discrepancies flagged. GEO age/sex/disease are canonical, matching existing singleton policy. Source race/ethnicity not inferred ancestry.",
+        "source_missingness_policy": "Exact collection dates, medication and unreported clinical fields not imputed. Missing types/genes remain missing. Source FEV1 and source TableFVC labels are not silently interchanged.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study overlap unresolved",
+        "source_publication_count_policy": "Original deposition contains33Chicago codes; final primary Table1 reports25Chicago FHP/6Chicago IPF. Exact author-excluded identities not established here. Primary says110postQC samples although group counts sum109; these publication totals are not acquired counts. Collection uses explicit common QC and records per-donor support, without asserting exact author cohort/filter reproduction."
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_cell_source_visit"
+  ],
+  "physical_sample_mapping_evidence": "Thirty-three additional Chicago PBMC donor/specimen codes (25FHP/8IPF) in14original pools. Existing42singletons and source20BALrecords are not new blood specimens; integrated older IPF cohort not counted again.",
+  "metadata_mapping": {
+    "aliases": {
+      "age": "source_cell_source_geo_age",
+      "sex": "source_cell_source_geo_sex",
+      "disease": "source_cell_source_geo_disease"
+    }
+  }
+}

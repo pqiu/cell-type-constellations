@@ -1,0 +1,69 @@
+{
+  "dataset_id": "GSE199445",
+  "study_id": "GSE199445",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE199445_complete_original_RNA_audit.json",
+    "bytes": 16243,
+    "sha256": "9987ba17d6ef88cf24936cd4180c05dd5ee0e92f3254b02e989bcef82f3ff3fd"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE199445_source_identity_review.json",
+    "bytes": 5298,
+    "sha256": "2b008c14e801692d98d22165d9dcf84db9f54a89dc4798eeb2b8798e57cda4a5"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Literal original GEO donor titles identify four healthy controls and four author-labelled patients, each with one separately deposited PBMC RNA library. Titles are study-scoped donor proxies. No patient alias is inferred from a variant, barcode, ordinal across other studies, expression or clinical similarity.",
+  "physical_sample_mapping_evidence": "Eight separately labelled GEO PBMC donors: four healthy controls and four author-labelled patients. One original GSM per source donor; original donor title is the study-scoped proxy. Distinct donor codes do not establish unrelatedness or global cross-study identity.",
+  "exclude_source_values": {
+    "source_human_reference_selection": [
+      "False"
+    ]
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE199445",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199445",
+    "associated_primary_PMID": "35587511",
+    "publication": "https://doi.org/10.1126/science.abm6380",
+    "access": "Public original human PBMC CellRanger count triplets and coded GEO metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_unit": "Eight separately labelled GEO PBMC donors: four healthy controls and four author-labelled patients. One original GSM per source donor; original donor title is the study-scoped proxy. Distinct donor codes do not establish unrelatedness or global cross-study identity.",
+    "identity_policy": "Literal original GEO donor titles identify four healthy controls and four author-labelled patients, each with one separately deposited PBMC RNA library. Titles are study-scoped donor proxies. No patient alias is inferred from a variant, barcode, ordinal across other studies, expression or clinical similarity.",
+    "clinical_policy": "Basal cryopreserved human PBMCs as stated in GEO. Preserve the two source cohort labels. Individual age, sex, treatment, collection date, family aliases and current clinical disease activity are unassigned; do not substitute broader publication demographics.",
+    "reuse_policy": "Only eight original PBMC count triplets acquired. No reused integrated atlas, cultured-cell experiments, clinical functional assays or non-PBMC expression data added. Global donor and family aliases unresolved.",
+    "gene_policy": "All64591original source feature coordinates audited unchanged. Human geometry retains all33538explicit GRCh38features in original order;31053explicit mm10features are excluded and separately documented. Source IDs/symbols preserved; exact GRCh38_ prefix removed only in the derived human symbol column. No feature selection, symbol modernization, intersection, inferred IDs or zero filling.",
+    "count_semantics": "Original CellRanger3.1.0 gene-cell counts. All mixed-reference stored values audited as finite nonnegative integers. Human-only counts are used for expression, mitochondrial QC and TP10K denominators; no inverse normalization or rounding.",
+    "species_selection_policy": "Select cells with human-reference RNA / all-reference RNA >=0.9, then require the common human-RNA QC thresholds. This is a conservative computational ambiguity filter, not a claim of biological species origin or contamination. Record all excluded-reference counts and preserve every source cell in output metadata.",
+    "source_sample_review": {
+      "path": "references/datasets/GSE199445_source_identity_review.json",
+      "bytes": 5298,
+      "sha256": "2b008c14e801692d98d22165d9dcf84db9f54a89dc4798eeb2b8798e57cda4a5"
+    },
+    "source_limitations": "Source donor proxies only; clinical/family/global aliases unresolved. The mm10reference axis is excluded without interpreting cell origin. No biological annotation or constellation validation claimed."
+  }
+}

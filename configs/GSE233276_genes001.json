@@ -1,0 +1,1686 @@
+{
+  "dataset_id": "GSE233276_genes001",
+  "study_id": "GSE233276",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "8originalPBMCderivedBcell relapse/remission draws/4sourceparticipantsINS15..18; unrelated replication4",
+  "source_metadata": {
+    "accession": "GSE233276",
+    "publications": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10667257/",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE233276"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE233276",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+    "source_processing": [
+      "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+      "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+      "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE233276_source_identity_review.json",
+      "sha256": "a5fec7d34a52826a20f6d49032d30093ba2db3394ea552f6448c30815145471c"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7421512",
+      "donor_id": "INS15",
+      "source_metadata": {
+        "title": [
+          "Post-RTX relapse, donor 1, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421512"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Relapse"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS15relapse"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342317",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494955"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421512/suppl/GSM7421512_INS15relapse.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421512/suppl/GSM7421512_INS15relapse.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421512/suppl/GSM7421512_INS15relapse.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421512",
+        "source_GEO_title": "Post-RTX relapse, donor 1, scRNAseq",
+        "source_participant_code": "INS15",
+        "source_title_donor_number": "1",
+        "source_visit_code": "relapse",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Female\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Relapse\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Relapse",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Female",
+        "sex": "female",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421512/suppl/GSM7421512_INS15relapse.features.tsv.gz",
+          "filename": "GSM7421512_INS15relapse.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "47960c0b30d2d0409b0108c7de3532eb5ac1d5a739930fd2a83a59d283cc2fb8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421512/suppl/GSM7421512_INS15relapse.barcodes.tsv.gz",
+          "filename": "GSM7421512_INS15relapse.barcodes.tsv.gz",
+          "expected_bytes": 39434,
+          "sha256": "62e81697de4541f48c6ef2cd007f09655a64f815cf7064149793757920aaf8b8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421512/suppl/GSM7421512_INS15relapse.matrix.mtx.gz",
+          "filename": "GSM7421512_INS15relapse.matrix.mtx.gz",
+          "expected_bytes": 51665011,
+          "sha256": "5a623614b7592366045f0686e66808b1e54c85e9f77413b3d7b63110110e6c34"
+        }
+      ],
+      "genes_member": "GSM7421512_INS15relapse.features.tsv.gz",
+      "barcodes_member": "GSM7421512_INS15relapse.barcodes.tsv.gz",
+      "matrix_member": "GSM7421512_INS15relapse.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7943,
+        "genes": 33694,
+        "nonzeros": 13492044,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 7943,
+        "RNA_positive_barcode_rows": 7943,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 44123098,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7943,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7943,
+          "source_positive_RNA_barcodes": 7943,
+          "full_source_RNA_counts": 44123098,
+          "selected_RNA_counts": 44123098,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421512.csv.gz",
+            "sha256": "944f7e6007e936d51204728a343413bc8215c25e2c5a3125ac1362a43c3c45dc"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421513",
+      "donor_id": "INS15",
+      "source_metadata": {
+        "title": [
+          "Post-RTX remission, donor 1, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421513"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Female",
+          "disease state: Remission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS15remission"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342316",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494956"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421513/suppl/GSM7421513_INS15remission.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421513/suppl/GSM7421513_INS15remission.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421513/suppl/GSM7421513_INS15remission.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421513",
+        "source_GEO_title": "Post-RTX remission, donor 1, scRNAseq",
+        "source_participant_code": "INS15",
+        "source_title_donor_number": "1",
+        "source_visit_code": "remission",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Female\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Remission\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Remission",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Female",
+        "sex": "female",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421513/suppl/GSM7421513_INS15remission.features.tsv.gz",
+          "filename": "GSM7421513_INS15remission.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "f707a610049d9e3e1f9efc284baa7aecd1b49d31f8bd8c92147333f363fcf44f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421513/suppl/GSM7421513_INS15remission.barcodes.tsv.gz",
+          "filename": "GSM7421513_INS15remission.barcodes.tsv.gz",
+          "expected_bytes": 42572,
+          "sha256": "8dc8aa5c1814eedddbdd0ec2d5abc65f4af4bc4fd10c6fe8354ecd1fe4f0192e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421513/suppl/GSM7421513_INS15remission.matrix.mtx.gz",
+          "filename": "GSM7421513_INS15remission.matrix.mtx.gz",
+          "expected_bytes": 60710765,
+          "sha256": "ea6538d0b9ca48d2813d55a644ada352429ed20d2a1335573052b991516012d4"
+        }
+      ],
+      "genes_member": "GSM7421513_INS15remission.features.tsv.gz",
+      "barcodes_member": "GSM7421513_INS15remission.barcodes.tsv.gz",
+      "matrix_member": "GSM7421513_INS15remission.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8626,
+        "genes": 33694,
+        "nonzeros": 15847662,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 8626,
+        "RNA_positive_barcode_rows": 8626,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 53919386,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8626,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8626,
+          "source_positive_RNA_barcodes": 8626,
+          "full_source_RNA_counts": 53919386,
+          "selected_RNA_counts": 53919386,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421513.csv.gz",
+            "sha256": "7ed7618ffc871e655432a8bb2231bf201f3993509276b7232c0e42bf58dffd86"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421514",
+      "donor_id": "INS16",
+      "source_metadata": {
+        "title": [
+          "Post-RTX relapse, donor 2, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421514"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Relapse"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS16relapse"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342315",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494957"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421514/suppl/GSM7421514_INS16relapse.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421514/suppl/GSM7421514_INS16relapse.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421514/suppl/GSM7421514_INS16relapse.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421514",
+        "source_GEO_title": "Post-RTX relapse, donor 2, scRNAseq",
+        "source_participant_code": "INS16",
+        "source_title_donor_number": "2",
+        "source_visit_code": "relapse",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Male\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Relapse\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Relapse",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Male",
+        "sex": "male",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421514/suppl/GSM7421514_INS16relapse.features.tsv.gz",
+          "filename": "GSM7421514_INS16relapse.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "f53dd4b90397c2e2ffb6546cda730b67056e3222160160f12c5f4d7323dcfaa9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421514/suppl/GSM7421514_INS16relapse.barcodes.tsv.gz",
+          "filename": "GSM7421514_INS16relapse.barcodes.tsv.gz",
+          "expected_bytes": 49927,
+          "sha256": "f744eb8eaf31c3df86d93b5f08ccf5be8786bee1955444bb98122286b559c84f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421514/suppl/GSM7421514_INS16relapse.matrix.mtx.gz",
+          "filename": "GSM7421514_INS16relapse.matrix.mtx.gz",
+          "expected_bytes": 65472707,
+          "sha256": "2d48b9b95d71d6ac5419a0f8bf8b894f98524bddebc81ee3e2381b07c97fde3b"
+        }
+      ],
+      "genes_member": "GSM7421514_INS16relapse.features.tsv.gz",
+      "barcodes_member": "GSM7421514_INS16relapse.barcodes.tsv.gz",
+      "matrix_member": "GSM7421514_INS16relapse.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10260,
+        "genes": 33694,
+        "nonzeros": 17126287,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 10260,
+        "RNA_positive_barcode_rows": 10260,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 55047181,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10260,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10260,
+          "source_positive_RNA_barcodes": 10260,
+          "full_source_RNA_counts": 55047181,
+          "selected_RNA_counts": 55047181,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421514.csv.gz",
+            "sha256": "5314140df68bf39605b445b1f59e4f66f39b68333fef87963740535e4824296e"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421515",
+      "donor_id": "INS16",
+      "source_metadata": {
+        "title": [
+          "Post-RTX remission, donor 2, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421515"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Remission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS16remission"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342314",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494958"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421515/suppl/GSM7421515_INS16remission.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421515/suppl/GSM7421515_INS16remission.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421515/suppl/GSM7421515_INS16remission.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421515",
+        "source_GEO_title": "Post-RTX remission, donor 2, scRNAseq",
+        "source_participant_code": "INS16",
+        "source_title_donor_number": "2",
+        "source_visit_code": "remission",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Male\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Remission\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Remission",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Male",
+        "sex": "male",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421515/suppl/GSM7421515_INS16remission.features.tsv.gz",
+          "filename": "GSM7421515_INS16remission.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "f321e8f34a8f25047c4b8759df8cf63840973c5ad4e19b229a228c97b7e290a8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421515/suppl/GSM7421515_INS16remission.barcodes.tsv.gz",
+          "filename": "GSM7421515_INS16remission.barcodes.tsv.gz",
+          "expected_bytes": 46665,
+          "sha256": "adf17d7e19309dc9d0693fa123979963a34c8b70ed766f0528eae1a34f353552"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421515/suppl/GSM7421515_INS16remission.matrix.mtx.gz",
+          "filename": "GSM7421515_INS16remission.matrix.mtx.gz",
+          "expected_bytes": 45468601,
+          "sha256": "eed2034469475e6f4b5c3da4e5b7e7f084e2db5cbf92ff295a1426d544f25772"
+        }
+      ],
+      "genes_member": "GSM7421515_INS16remission.features.tsv.gz",
+      "barcodes_member": "GSM7421515_INS16remission.barcodes.tsv.gz",
+      "matrix_member": "GSM7421515_INS16remission.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9544,
+        "genes": 33694,
+        "nonzeros": 11652001,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 9544,
+        "RNA_positive_barcode_rows": 9544,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 40136127,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9544,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9544,
+          "source_positive_RNA_barcodes": 9544,
+          "full_source_RNA_counts": 40136127,
+          "selected_RNA_counts": 40136127,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421515.csv.gz",
+            "sha256": "cfeac9999483d33071cc31cfb7500f2cfc8a33b98d68969eb4e0618e4e92afbb"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421516",
+      "donor_id": "INS17",
+      "source_metadata": {
+        "title": [
+          "Post-RTX relapse, donor 3, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421516"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Relapse"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS17relapse"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342313",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494959"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421516/suppl/GSM7421516_INS17relapse.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421516/suppl/GSM7421516_INS17relapse.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421516/suppl/GSM7421516_INS17relapse.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421516",
+        "source_GEO_title": "Post-RTX relapse, donor 3, scRNAseq",
+        "source_participant_code": "INS17",
+        "source_title_donor_number": "3",
+        "source_visit_code": "relapse",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Male\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Relapse\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Relapse",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Male",
+        "sex": "male",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421516/suppl/GSM7421516_INS17relapse.features.tsv.gz",
+          "filename": "GSM7421516_INS17relapse.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "b690bd30d0c290a4883d85961be15461ff0d9f765562d3afe5842c93bb2cf5d4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421516/suppl/GSM7421516_INS17relapse.barcodes.tsv.gz",
+          "filename": "GSM7421516_INS17relapse.barcodes.tsv.gz",
+          "expected_bytes": 35113,
+          "sha256": "2248d31a3fa56a5d0c34ceca1f00dd0c6a1486efc828d15989ccf22d75d3d117"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421516/suppl/GSM7421516_INS17relapse.matrix.mtx.gz",
+          "filename": "GSM7421516_INS17relapse.matrix.mtx.gz",
+          "expected_bytes": 46567410,
+          "sha256": "923c2836eae93a25b8384535e6864a725fa0ce5daf84ca148186594ad98774bf"
+        }
+      ],
+      "genes_member": "GSM7421516_INS17relapse.features.tsv.gz",
+      "barcodes_member": "GSM7421516_INS17relapse.barcodes.tsv.gz",
+      "matrix_member": "GSM7421516_INS17relapse.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7013,
+        "genes": 33694,
+        "nonzeros": 12231132,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 7013,
+        "RNA_positive_barcode_rows": 7013,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 35373559,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7013,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7013,
+          "source_positive_RNA_barcodes": 7013,
+          "full_source_RNA_counts": 35373559,
+          "selected_RNA_counts": 35373559,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421516.csv.gz",
+            "sha256": "34a5bb929c38e903512936c17e32f66f0ac04c7ea159b32f0d218e82e6c23f40"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421517",
+      "donor_id": "INS17",
+      "source_metadata": {
+        "title": [
+          "Post-RTX remission, donor 3, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421517"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Remission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS17remission"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342312",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494960"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421517/suppl/GSM7421517_INS17remission.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421517/suppl/GSM7421517_INS17remission.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421517/suppl/GSM7421517_INS17remission.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421517",
+        "source_GEO_title": "Post-RTX remission, donor 3, scRNAseq",
+        "source_participant_code": "INS17",
+        "source_title_donor_number": "3",
+        "source_visit_code": "remission",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Male\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Remission\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Remission",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Male",
+        "sex": "male",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421517/suppl/GSM7421517_INS17remission.features.tsv.gz",
+          "filename": "GSM7421517_INS17remission.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "bff664d272a82b4c12615b279ed7ffbd14190dd8d431d92b588e6b6180efe520"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421517/suppl/GSM7421517_INS17remission.barcodes.tsv.gz",
+          "filename": "GSM7421517_INS17remission.barcodes.tsv.gz",
+          "expected_bytes": 37861,
+          "sha256": "61bcdd83c6fda59733a83c1886282a12fad38cba4a2cf16f62388c74a3c03f57"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421517/suppl/GSM7421517_INS17remission.matrix.mtx.gz",
+          "filename": "GSM7421517_INS17remission.matrix.mtx.gz",
+          "expected_bytes": 49980855,
+          "sha256": "4dfdd5cce6d3819c0acd2d66af35c45244d9c8380887cdca649b5cbcf78ecd3d"
+        }
+      ],
+      "genes_member": "GSM7421517_INS17remission.features.tsv.gz",
+      "barcodes_member": "GSM7421517_INS17remission.barcodes.tsv.gz",
+      "matrix_member": "GSM7421517_INS17remission.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7614,
+        "genes": 33694,
+        "nonzeros": 13074389,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 7614,
+        "RNA_positive_barcode_rows": 7614,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 42378209,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7614,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7614,
+          "source_positive_RNA_barcodes": 7614,
+          "full_source_RNA_counts": 42378209,
+          "selected_RNA_counts": 42378209,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421517.csv.gz",
+            "sha256": "269f9e3a4b22d7bee3d1f8abddabb8e0309276b1078f93ee12baff78c0c4f8e5"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421518",
+      "donor_id": "INS18",
+      "source_metadata": {
+        "title": [
+          "Post-RTX relapse, donor 4, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421518"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Relapse"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS18relapse"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342311",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494961"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421518/suppl/GSM7421518_INS18relapse.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421518/suppl/GSM7421518_INS18relapse.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421518/suppl/GSM7421518_INS18relapse.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421518",
+        "source_GEO_title": "Post-RTX relapse, donor 4, scRNAseq",
+        "source_participant_code": "INS18",
+        "source_title_donor_number": "4",
+        "source_visit_code": "relapse",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Male\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Relapse\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Relapse",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Male",
+        "sex": "male",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421518/suppl/GSM7421518_INS18relapse.features.tsv.gz",
+          "filename": "GSM7421518_INS18relapse.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "a4f0622dfef68ebcc437fd4f94acea0acf1b1a69023d283e0b499654ed1b356b"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421518/suppl/GSM7421518_INS18relapse.barcodes.tsv.gz",
+          "filename": "GSM7421518_INS18relapse.barcodes.tsv.gz",
+          "expected_bytes": 44163,
+          "sha256": "a37836ab41970a324e292c8cc8825e204f78982e8792e04b8fdbf4175c36697c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421518/suppl/GSM7421518_INS18relapse.matrix.mtx.gz",
+          "filename": "GSM7421518_INS18relapse.matrix.mtx.gz",
+          "expected_bytes": 51262223,
+          "sha256": "77f63b40ae00ddf054309f64daf4f9d4d3bb70ef159d7aceb0fab05b6941fafd"
+        }
+      ],
+      "genes_member": "GSM7421518_INS18relapse.features.tsv.gz",
+      "barcodes_member": "GSM7421518_INS18relapse.barcodes.tsv.gz",
+      "matrix_member": "GSM7421518_INS18relapse.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8985,
+        "genes": 33694,
+        "nonzeros": 13251986,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 8985,
+        "RNA_positive_barcode_rows": 8985,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 47285503,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8985,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8985,
+          "source_positive_RNA_barcodes": 8985,
+          "full_source_RNA_counts": 47285503,
+          "selected_RNA_counts": 47285503,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421518.csv.gz",
+            "sha256": "9d897a9410d2757366878b54862c6d99aa28e99202bab4ed36cba06ae3881f21"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM7421519",
+      "donor_id": "INS18",
+      "source_metadata": {
+        "title": [
+          "Post-RTX remission, donor 4, scRNAseq"
+        ],
+        "geo_accession": [
+          "GSM7421519"
+        ],
+        "status": [
+          "Public on Oct 29 2023"
+        ],
+        "submission_date": [
+          "May 23 2023"
+        ],
+        "last_update_date": [
+          "Oct 29 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Blood"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: B cells",
+          "age: Pediatric",
+          "Sex: Male",
+          "disease state: Remission"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMC were isolated from fresh blood by Ficoll-paque density centrifugation and cryopreserved in FBS supplemented with 10% of DMSO. When all samples had been collected, PBMC were thawed at 37\u00b0C, treated with DNase I for 15 minutes, washed with RPMI containing 5% FBS and rested for 2 hours in a 37\u00b0C 5% CO2 incubator. Following rest, cells were washed twice with ice-cold PBS containing 2% FBS and stained with anti-human CD19 PerCp-Cy5.5 (BD Biosciences), anti-human CD4 Alexa Fluor 700 (BD Biosciences), and anti-human CD8\u03b1 V500 (BD Biosciences) for 15 minutes on ice. Cell were washed again with ice-cold PBS containing 2% FBS, filtered through a 40 \u00b5m mesh, and a maximum of 50,000 live B cells were FACS isolated as CD19+ CD4- CD8- cells and on the basis of size and granularity. Sorted cells were then washed twice with ice-cold PBS containing 0.04% BSA (0.22 \u00b5m filtered) and brought to a concentration of 1,000 cells/\u00b5l. Samples were subsequently processed according to the 10x Genomics Single Cell 5\u2019 v1.1 user guide to target 10,000 events. Briefly, single cell PBMC suspensions were loaded onto the 10x Single Cell Chip G along with 10x Genomics NextGem scRNA 5\u2019 V1.1 reagents. Complementary DNA (cDNA) and 5\u2019 gene expression libraries were generated using the standard 10x Genomics protocol.",
+          "5' gene expression libraries were constructed with 10X Genomics Chromium Single Cell 5' v1.1 Reagent Kits following the manufacturer's standard protocols."
+        ],
+        "description": [
+          "scRNAseq with 10X Genomics 5' v1.1",
+          "INS18remission"
+        ],
+        "data_processing": [
+          "CellRanger (v3.0.1) was used to align reads to the GRCh38 reference genome assembly and generate the filtered UMI matrix.",
+          "Seurat (4.3.0) was used to further filter the UMI matrix to eliminate doublets and cells with poor viability. Seurat was then subsequently used to aggregate the data, run integrated clustering, and generate the processed data files.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Processed data files include two GNU zipped tab-separated values (.tsv.gz) files, one file contains the filtered barcode UMIs (barcodes.tsv.gz) and the second file contains the filtered feature counts (features.tsv.gz), and one GNU zipped matrix (.mtx.gz) file containing the the filtered matrix of barcode UMIs and feature counts.",
+          "Supplementary files format and content: Supplementary processed data files include rtx_bcells_annotations.txt.gz (containing meta data for post-quality control total analyzed B cells), and rtx_bcells_umi.txt.gz (containing non-normalised UMI count data for post-quality control total analyzed B cells)."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Tho-Alfakar,,Al-Aubodah"
+        ],
+        "contact_email": [
+          "tho-alfakar.al-aubodah@mail.mcgill.ca"
+        ],
+        "contact_institute": [
+          "McGill University"
+        ],
+        "contact_address": [
+          "1001 boulevard Decarie"
+        ],
+        "contact_city": [
+          "Montreal"
+        ],
+        "contact_state": [
+          "Quebec"
+        ],
+        "contact_zip/postal_code": [
+          "H4A3J1"
+        ],
+        "contact_country": [
+          "Canada"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN35342310",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX20494962"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421519/suppl/GSM7421519_INS18remission.barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421519/suppl/GSM7421519_INS18remission.features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421519/suppl/GSM7421519_INS18remission.matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE233276",
+          "GSE233277"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM7421519",
+        "source_GEO_title": "Post-RTX remission, donor 4, scRNAseq",
+        "source_participant_code": "INS18",
+        "source_title_donor_number": "4",
+        "source_visit_code": "remission",
+        "source_capture_label": "PBMC_derived_FACS_B_cells",
+        "source_characteristics_json": "{\"Sex\": \"Male\", \"age\": \"Pediatric\", \"cell type\": \"B cells\", \"disease state\": \"Remission\", \"tissue\": \"Blood\"}",
+        "condition": "idiopathic nephrotic syndrome",
+        "source_disease_state_as_reported": "Remission",
+        "source_age_category_as_reported": "Pediatric",
+        "source_sex_as_reported": "Male",
+        "sex": "male",
+        "source_specimen": "Live B cells sorted from PBMC during post-rituximab B-cell recovery",
+        "source_coverage_policy": "FACS B-cell enrichment restricts lineage coverage; absent non-B lineages remain unavailable. Source sorted identity does not override SCimilarity annotations.",
+        "source_time_policy": "Original relapse/remission phase labels retained; no temporal order, elapsed interval, calendar dates or treatment dose inferred.",
+        "source_demographic_policy": "Pediatric is a source age category, not a numerical age. Individual ages unavailable; original sex retained.",
+        "source_identity_policy": "Original donor-number titles map explicitly to paired INS15..INS18 file labels. Repeated relapse/remission draws are not independent donors. Donor1..4 in companion GSE233275 use different INS1..INS4 labels and opposite sex fields; matching title numbers alone is not a cross-study alias.",
+        "source_alias_policy": "GSE233277 is the superseries; its reused records must not be counted again. Broader participant overlap with companion cohorts remains unresolved beyond original codes.",
+        "source_count_policy": "Deposited filtered CellRanger3.0.1 UMI matrices, GRCh38 source assembly. Preserve native RNA gene coordinates; no Seurat integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages, dates, intervals and unavailable types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; preserve both phases per original INS participant together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421519/suppl/GSM7421519_INS18remission.features.tsv.gz",
+          "filename": "GSM7421519_INS18remission.features.tsv.gz",
+          "expected_bytes": 318733,
+          "sha256": "b16f6f7349bb9ece12d809ca2dae938faa585dd1d84cacc46550245bf279611f"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421519/suppl/GSM7421519_INS18remission.barcodes.tsv.gz",
+          "filename": "GSM7421519_INS18remission.barcodes.tsv.gz",
+          "expected_bytes": 36608,
+          "sha256": "5923314d43158dc6ff80d4391d77ecb9c8e0805d39e6bd72d81923ee3cfa4cdc"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7421nnn/GSM7421519/suppl/GSM7421519_INS18remission.matrix.mtx.gz",
+          "filename": "GSM7421519_INS18remission.matrix.mtx.gz",
+          "expected_bytes": 54097911,
+          "sha256": "4001bcd2026b774f965ae2cbabe1b132fcfebb3ead2020dafc01f87b48cc468f"
+        }
+      ],
+      "genes_member": "GSM7421519_INS18remission.features.tsv.gz",
+      "barcodes_member": "GSM7421519_INS18remission.barcodes.tsv.gz",
+      "matrix_member": "GSM7421519_INS18remission.matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 7328,
+        "genes": 33694,
+        "nonzeros": 14121700,
+        "gene_coordinate_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "3b603a09f1ecb1a975e1a767edd11f647033369a611cf76f16444ab326749a13",
+        "source_features": 33694,
+        "source_barcode_rows": 7328,
+        "RNA_positive_barcode_rows": 7328,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 59662523,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7328,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7328,
+          "source_positive_RNA_barcodes": 7328,
+          "full_source_RNA_counts": 59662523,
+          "selected_RNA_counts": 59662523,
+          "metadata": {
+            "path": "references/datasets/GSE233276_original_RNA_QC/GSM7421519.csv.gz",
+            "sha256": "7399fd6d08fe4d6686073d1d3fd7b0b7a4be5ac250c1185fd165a003911ca79c"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "8originalPBMCderivedBcell relapse/remission draws/4sourceparticipantsINS15..18; unrelated replication4"
+}

@@ -1,0 +1,3312 @@
+{
+  "dataset_id": "GSE207633",
+  "study_id": "GSE207633",
+  "input_format": "geo_10x_tar",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE207nnn/GSE207633/suppl/GSE207633_RAW.tar",
+  "expected_bytes": 698019840,
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original GEO biological specimen records and source donor IDs; all repeated patient IDs stay linked. Patient 200758 has early and late visits; 26 specimens from 25 source donor IDs.",
+  "source_metadata": {
+    "accession": "GSE207633",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE207633",
+    "access": "Public GEO processed count matrices; controlled raw sequence access not required",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "n_genes": 32738,
+    "gene_coordinate_sha256": "f81901de4c46ac291e3bb08fcb3f2542f954955b8892b5a8073b57cadb8e973c",
+    "identity_review": "references/datasets/additional_disease_identity_review.json"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6304142",
+      "donor_id": "200704",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 200704"
+        ],
+        "geo_accession": [
+          "GSM6304142"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 9",
+          "disease subtype: Active SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304142/suppl/GSM6304142_Active_704_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304142_Active_704_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "9",
+        "source_disease subtype": "Active SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "9",
+        "age_unit": "years",
+        "disease": "Active SJIA",
+        "source_visit_description": "Active patient with ID 200704"
+      }
+    },
+    {
+      "accession": "GSM6304143",
+      "donor_id": "200794",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 200794"
+        ],
+        "geo_accession": [
+          "GSM6304143"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 4",
+          "disease subtype: Active SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304143/suppl/GSM6304143_Active_794_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304143_Active_794_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "4",
+        "source_disease subtype": "Active SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "4",
+        "age_unit": "years",
+        "disease": "Active SJIA",
+        "source_visit_description": "Active patient with ID 200794"
+      }
+    },
+    {
+      "accession": "GSM6304144",
+      "donor_id": "200673",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 200673"
+        ],
+        "geo_accession": [
+          "GSM6304144"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 2",
+          "disease subtype: Active SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304144/suppl/GSM6304144_Active_673_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304144_Active_673_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "2",
+        "source_disease subtype": "Active SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "2",
+        "age_unit": "years",
+        "disease": "Active SJIA",
+        "source_visit_description": "Active patient with ID 200673"
+      }
+    },
+    {
+      "accession": "GSM6304145",
+      "donor_id": "2001056",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 2001056"
+        ],
+        "geo_accession": [
+          "GSM6304145"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 3",
+          "disease subtype: Active SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304145/suppl/GSM6304145_Active_1056_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304145_Active_1056_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "3",
+        "source_disease subtype": "Active SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "3",
+        "age_unit": "years",
+        "disease": "Active SJIA",
+        "source_visit_description": "Active patient with ID 2001056"
+      }
+    },
+    {
+      "accession": "GSM6304146",
+      "donor_id": "200805",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 200805"
+        ],
+        "geo_accession": [
+          "GSM6304146"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 10",
+          "disease subtype: Active SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304146/suppl/GSM6304146_Active_805_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304146_Active_805_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "10",
+        "source_disease subtype": "Active SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "10",
+        "age_unit": "years",
+        "disease": "Active SJIA",
+        "source_visit_description": "Active patient with ID 200805"
+      }
+    },
+    {
+      "accession": "GSM6304147",
+      "donor_id": "2001295",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 2001295"
+        ],
+        "geo_accession": [
+          "GSM6304147"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 13",
+          "disease subtype: Active SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304147/suppl/GSM6304147_Active_1295_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304147_Active_1295_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "13",
+        "source_disease subtype": "Active SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "13",
+        "age_unit": "years",
+        "disease": "Active SJIA",
+        "source_visit_description": "Active patient with ID 2001295"
+      }
+    },
+    {
+      "accession": "GSM6304148",
+      "donor_id": "2001087",
+      "source_metadata": {
+        "title": [
+          "Active patient with ID 2001087"
+        ],
+        "geo_accession": [
+          "GSM6304148"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 2",
+          "disease subtype: Active SJIA (changed, was before inactive)"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304148/suppl/GSM6304148_Active_1087_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304148_Active_1087_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "2",
+        "source_disease subtype": "Active SJIA (changed, was before inactive)",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "2",
+        "age_unit": "years",
+        "disease": "Active SJIA (changed, was before inactive)",
+        "source_visit_description": "Active patient with ID 2001087"
+      }
+    },
+    {
+      "accession": "GSM6304149",
+      "donor_id": "200609",
+      "source_metadata": {
+        "title": [
+          "Control with ID 200609"
+        ],
+        "geo_accession": [
+          "GSM6304149"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 14",
+          "disease subtype: Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304149/suppl/GSM6304149_Healthy_609_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304149_Healthy_609_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "14",
+        "source_disease subtype": "Control",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "14",
+        "age_unit": "years",
+        "disease": "Control",
+        "source_visit_description": "Control with ID 200609"
+      }
+    },
+    {
+      "accession": "GSM6304150",
+      "donor_id": "200637",
+      "source_metadata": {
+        "title": [
+          "Control with ID 200637"
+        ],
+        "geo_accession": [
+          "GSM6304150"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 16",
+          "disease subtype: Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304150/suppl/GSM6304150_Healthy_637_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304150_Healthy_637_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "16",
+        "source_disease subtype": "Control",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "16",
+        "age_unit": "years",
+        "disease": "Control",
+        "source_visit_description": "Control with ID 200637"
+      }
+    },
+    {
+      "accession": "GSM6304151",
+      "donor_id": "200657",
+      "source_metadata": {
+        "title": [
+          "Control with ID 200657"
+        ],
+        "geo_accession": [
+          "GSM6304151"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 13",
+          "disease subtype: Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304151/suppl/GSM6304151_Healthy_657_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304151_Healthy_657_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "13",
+        "source_disease subtype": "Control",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "13",
+        "age_unit": "years",
+        "disease": "Control",
+        "source_visit_description": "Control with ID 200657"
+      }
+    },
+    {
+      "accession": "GSM6304152",
+      "donor_id": "200974",
+      "source_metadata": {
+        "title": [
+          "Control with ID 200974"
+        ],
+        "geo_accession": [
+          "GSM6304152"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 9",
+          "disease subtype: Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304152/suppl/GSM6304152_Healthy_974_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304152_Healthy_974_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "9",
+        "source_disease subtype": "Control",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "9",
+        "age_unit": "years",
+        "disease": "Control",
+        "source_visit_description": "Control with ID 200974"
+      }
+    },
+    {
+      "accession": "GSM6304153",
+      "donor_id": "200967",
+      "source_metadata": {
+        "title": [
+          "Control with ID 200967"
+        ],
+        "geo_accession": [
+          "GSM6304153"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 9",
+          "disease subtype: Control"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304153/suppl/GSM6304153_Healthy_967_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304153_Healthy_967_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "9",
+        "source_disease subtype": "Control",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "9",
+        "age_unit": "years",
+        "disease": "Control",
+        "source_visit_description": "Control with ID 200967"
+      }
+    },
+    {
+      "accession": "GSM6304154",
+      "donor_id": "200593",
+      "source_metadata": {
+        "title": [
+          "Inactive patient with ID 200593"
+        ],
+        "geo_accession": [
+          "GSM6304154"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 12",
+          "disease subtype: Inactive SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304154/suppl/GSM6304154_Inactive_593_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304154_Inactive_593_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "12",
+        "source_disease subtype": "Inactive SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "12",
+        "age_unit": "years",
+        "disease": "Inactive SJIA",
+        "source_visit_description": "Inactive patient with ID 200593"
+      }
+    },
+    {
+      "accession": "GSM6304155",
+      "donor_id": "200594",
+      "source_metadata": {
+        "title": [
+          "Inactive patient with ID 200594"
+        ],
+        "geo_accession": [
+          "GSM6304155"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 8",
+          "disease subtype: Inactive SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304155/suppl/GSM6304155_Inactive_594_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304155_Inactive_594_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "8",
+        "source_disease subtype": "Inactive SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "8",
+        "age_unit": "years",
+        "disease": "Inactive SJIA",
+        "source_visit_description": "Inactive patient with ID 200594"
+      }
+    },
+    {
+      "accession": "GSM6304156",
+      "donor_id": "200641",
+      "source_metadata": {
+        "title": [
+          "Inactive patient with ID 200641"
+        ],
+        "geo_accession": [
+          "GSM6304156"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 6",
+          "disease subtype: Inactive SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304156/suppl/GSM6304156_Inactive_641_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304156_Inactive_641_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "6",
+        "source_disease subtype": "Inactive SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "6",
+        "age_unit": "years",
+        "disease": "Inactive SJIA",
+        "source_visit_description": "Inactive patient with ID 200641"
+      }
+    },
+    {
+      "accession": "GSM6304157",
+      "donor_id": "200812",
+      "source_metadata": {
+        "title": [
+          "Inactive patient with ID 200812"
+        ],
+        "geo_accession": [
+          "GSM6304157"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 12",
+          "disease subtype: Inactive SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304157/suppl/GSM6304157_Inactive_812_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304157_Inactive_812_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "12",
+        "source_disease subtype": "Inactive SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "12",
+        "age_unit": "years",
+        "disease": "Inactive SJIA",
+        "source_visit_description": "Inactive patient with ID 200812"
+      }
+    },
+    {
+      "accession": "GSM6304158",
+      "donor_id": "200353",
+      "source_metadata": {
+        "title": [
+          "Inactive patient with ID 200353"
+        ],
+        "geo_accession": [
+          "GSM6304158"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 3",
+          "disease subtype: Inactive SJIA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304158/suppl/GSM6304158_Inactive_353_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304158_Inactive_353_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "3",
+        "source_disease subtype": "Inactive SJIA",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "3",
+        "age_unit": "years",
+        "disease": "Inactive SJIA",
+        "source_visit_description": "Inactive patient with ID 200353"
+      }
+    },
+    {
+      "accession": "GSM6304159",
+      "donor_id": "200622",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 200622"
+        ],
+        "geo_accession": [
+          "GSM6304159"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 2",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304159/suppl/GSM6304159_LungDisease_622_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304159_LungDisease_622_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "2",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "2",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 200622"
+      }
+    },
+    {
+      "accession": "GSM6304160",
+      "donor_id": "200758",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 200758 from an early timepoint"
+        ],
+        "geo_accession": [
+          "GSM6304160"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 5",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304160/suppl/GSM6304160_LungDisease_7581_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304160_LungDisease_7581_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "5",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "5",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 200758 from an early timepoint"
+      }
+    },
+    {
+      "accession": "GSM6304161",
+      "donor_id": "200396",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 200396"
+        ],
+        "geo_accession": [
+          "GSM6304161"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 6",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304161/suppl/GSM6304161_LungDisease_396_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304161_LungDisease_396_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "6",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "6",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 200396"
+      }
+    },
+    {
+      "accession": "GSM6304162",
+      "donor_id": "200758",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 200758 from a late timepoint"
+        ],
+        "geo_accession": [
+          "GSM6304162"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 6",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304162/suppl/GSM6304162_LungDisease_7582_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304162_LungDisease_7582_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "6",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "6",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 200758 from a late timepoint"
+      }
+    },
+    {
+      "accession": "GSM6304163",
+      "donor_id": "200965",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 200965"
+        ],
+        "geo_accession": [
+          "GSM6304163"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 3",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304163/suppl/GSM6304163_LungDisease_965_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304163_LungDisease_965_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "3",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "3",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 200965"
+      }
+    },
+    {
+      "accession": "GSM6304164",
+      "donor_id": "200970",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 200970"
+        ],
+        "geo_accession": [
+          "GSM6304164"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 4",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304164/suppl/GSM6304164_LungDisease_970_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304164_LungDisease_970_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "4",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "4",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 200970"
+      }
+    },
+    {
+      "accession": "GSM6304165",
+      "donor_id": "2001208",
+      "source_metadata": {
+        "title": [
+          "LungDisease patient with ID 2001208"
+        ],
+        "geo_accession": [
+          "GSM6304165"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 2",
+          "disease subtype: Lung disease"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304165/suppl/GSM6304165_LungDisease_1208_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304165_LungDisease_1208_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "2",
+        "source_disease subtype": "Lung disease",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "2",
+        "age_unit": "years",
+        "disease": "Lung disease",
+        "source_visit_description": "LungDisease patient with ID 2001208"
+      }
+    },
+    {
+      "accession": "GSM6304166",
+      "donor_id": "2001020",
+      "source_metadata": {
+        "title": [
+          "MAS patient with ID 2001020"
+        ],
+        "geo_accession": [
+          "GSM6304166"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 10",
+          "disease subtype: MAS"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304166/suppl/GSM6304166_MAS_1020_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304166_MAS_1020_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "10",
+        "source_disease subtype": "MAS",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "10",
+        "age_unit": "years",
+        "disease": "MAS",
+        "source_visit_description": "MAS patient with ID 2001020"
+      }
+    },
+    {
+      "accession": "GSM6304167",
+      "donor_id": "200785",
+      "source_metadata": {
+        "title": [
+          "MAS patient with ID 200785"
+        ],
+        "geo_accession": [
+          "GSM6304167"
+        ],
+        "status": [
+          "Public on Apr 12 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Apr 13 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "age (yrs): 1",
+          "disease subtype: MAS"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "sample collection protocol:",
+          "This study was approved by the CCHMC institutional review board (IRB# 2018-2408) and written informed consent was obtained from each parent or guardian, and child assent was obtained where appropriate. Clinical and laboratory features were obtained from the electronic medical record using a standardized case report form. All patients were diagnosed with SJIA based on the International League of Associations for Rheumatology (ILAR) criteria (Petty et al., 2004); however, for newly diagnosed patients samples were obtained and treatment initiated with a disease duration <6 months, using the operational definition of SJIA (DeWitt et al., 2012). Inactive disease was defined based on the Wallace criteria (Wallace et al., 2004); conversely patients were considered to have active SJIA if they had any active clinical features including arthritis, rash, fever, adenopathy, hepatosplenomegaly, or elevated c-reactive protein or erythrocyte sedimentation rate. Patients were diagnosed with MAS based on diagnosis of the treating physician. Patients were considered to have SJIA-LD if they had both clinical and radiographic features of lung disease based on definition of probable or definite SJIA-LD (Erkens et al., 2021).",
+          "cell isolation protocol:",
+          "Frozen PBMCs were thawed and washed twice with PBS. Dead cells were removed with dead cell removal kit following the manufacturer\u2019s instructions (Miltenyi Biotec, Bergisch Gladbach, Germany)), and then resuspended at 700-1,200 cells/\u03bcl in PBS (total count 12,800 cells). Samples were then sequenced with 10x Genomics (Pleasanton, CA, USA), version Chromium NextGEM (Chemistry: 3\u2019v3 Assay).",
+          "10x Genomics",
+          "Chromium NextGEM",
+          "Chemistry: 10x Genomics Chromium 3' v3 Assay"
+        ],
+        "description": [
+          "ScRNASeq-MetaData.xlsx",
+          "Patient_Clinical-MetaData.xlsx"
+        ],
+        "data_processing": [
+          "Raw FASTQ files were aligned to hg19 reference genome and transcriptome and provided as input for CellRanger version 3 to generate counts matrices for all samples. Seurat integrated analysis was performed on the counts matrices using Seurat version 3 for batch effect correction. We implemented the default VST approach for identifying highly variable genes from each sample and the Canonical correlation approach (CCA) approach on the first 50 CCA dimensions to integrate the samples. We followed the author-recommended workflow to scale the integrated data and performed principal component analysis (PCA) on first 50 dimensions. UMAP was determined from the first 36 PCs, which captured the majority of true signal, based on the elbow plot.  We derived 30 clusters using the cluster resolution set to 0.6. The marker genes of each cluster were determined using the FindAllMarkers function as per Seurat documentation. Unique marker genes for each cluster were selected based on maximum average log fold change value for a gene for a given cluster. Clusters were annotated using Azimuth, which uses an annotated reference dataset  of human PBMCs (Stuart et al., 2019) to automate the processing, analysis, and interpretation of single-cell RNA-seq data with a 'reference-based mapping' pipeline. Count matrices of each sample was provided as input to Azimuth and the default PBMC reference dataset, with 30 clusters, provided on Azimuth\u2019s web application was used. The annotations were refined based on the cluster\u2019s unique marker genes.",
+          "Assembly: hg19",
+          "Supplementary files format and content: HDF5 sparse matrices and Excel workbooks"
+        ],
+        "platform_id": [
+          "GPL11154"
+        ],
+        "contact_name": [
+          "Nathan,,Salomonis"
+        ],
+        "contact_email": [
+          "nathan.salomonis@cchmc.org"
+        ],
+        "contact_laboratory": [
+          "Nathan Salomonis"
+        ],
+        "contact_department": [
+          "Biomedical Informatics"
+        ],
+        "contact_institute": [
+          "Cincinnati Children's Hospital"
+        ],
+        "contact_address": [
+          "3333 Burnet Avenue"
+        ],
+        "contact_city": [
+          "Cincinnati"
+        ],
+        "contact_state": [
+          "OH"
+        ],
+        "contact_zip/postal_code": [
+          "45229"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 2000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6304nnn/GSM6304167/suppl/GSM6304167_MAS_785_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE207633"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM6304167_MAS_785_filtered_feature_bc_matrix.h5",
+      "metadata": {
+        "source_age (yrs)": "1",
+        "source_disease subtype": "MAS",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "1",
+        "age_unit": "years",
+        "disease": "MAS",
+        "source_visit_description": "MAS patient with ID 200785"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

@@ -1,0 +1,96 @@
+{
+  "dataset_id": "GSE287541",
+  "study_id": "GSE287541",
+  "input_format": "rds_seurat",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "PID_visit"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Source PID_visit identifies45specimens linked to28Person.CHILI.ID donors. N131V01 is repeated in Rd4a(4189cells) andRd5(2532cells); retain largerRd4a capture to avoid uncertain duplicate capture pooling. Preserve original visit/group fields, including N131TOL/ChILI label combination. Clinical paper reports40selected specimens; deposited object contains45, retained with explicit version/count discrepancy.",
+  "source_metadata": {
+    "accession": "GSE287541",
+    "publication": "https://doi.org/10.1136/jitc-2025-014178",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE287541",
+    "access": "Public processed Seurat object",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_identifier_type": "Deposited gene symbols",
+    "source_processing": "Source filtered Seurat RNA counts; normalized data slot and source annotations not used for centroids or SCimilarity annotation.",
+    "count_review": {
+      "cells": 176634,
+      "genes": 36601,
+      "nonzeros": 202199965,
+      "integer_counts_verified": true,
+      "metadata_columns": [
+        "PID_visit",
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "percent.mt",
+        "clonotype_id",
+        "chain",
+        "v_gene",
+        "j_gene",
+        "cdr3",
+        "full_length",
+        "cdr3s_aa",
+        "nCount_refAssay",
+        "nFeature_refAssay",
+        "predicted.celltype.l1.score",
+        "predicted.celltype.l1",
+        "predicted.celltype.l2.score",
+        "predicted.celltype.l2",
+        "predicted.celltype.l3.score",
+        "predicted.celltype.l3",
+        "mapping.score",
+        "round",
+        "Person.CHILI.ID",
+        "Time",
+        "Age",
+        "Gender",
+        "Type.of.cancer",
+        "Group",
+        "CPI.regime",
+        "Steroid_yn"
+      ]
+    },
+    "clinical_cautions": "Retain source Group/Time/clinical attributes verbatim; do not infer injury timing or causal treatment response from labels. N131V01 technical repeat excluded; sample count differs from primary manuscript."
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true,
+  "source_asset": {
+    "filename": "GSE287541_all_pbmc_combined_filtered_SeuratObj.RDS.gz",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE287nnn/GSE287541/suppl/GSE287541_all_pbmc_combined_filtered_SeuratObj.RDS.gz",
+    "expected_bytes": 943487488
+  },
+  "source_cell_exclusions": {
+    "orig.ident": [
+      "PBMCN131NSV01AC"
+    ]
+  },
+  "metadata_mapping": {
+    "aliases": {
+      "donor_id": "Person.CHILI.ID",
+      "age": "Age",
+      "sex": "Gender",
+      "treatment": "CPI.regime",
+      "visit": "Time",
+      "disease": "Type.of.cancer"
+    },
+    "constants": {
+      "tissue": "blood",
+      "is_primary_data": true
+    }
+  },
+  "source_assay": "RNA"
+}

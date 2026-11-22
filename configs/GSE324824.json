@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE324824",
+  "study_id": "GSE324824",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE324824_complete_original_RNA_audit.json",
+    "bytes": 8529,
+    "sha256": "3b2b5ccae8be8febdd6a32b9cb7843e529bb2b7fb58bde6614c53f4804257020"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE324824_source_identity_review.json",
+    "bytes": 5842,
+    "sha256": "e5a6787b0f21a2e34bc1b3a20dae4b8ee0627abc6a03c59c33eecd9640e8fa49"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exactauthor cell_barcode joins originalRNA countcolumns; per-cell sample joins exact GEOtitle. Author patient,timepoint,sex,age,disease_type,treatment,EDSSchecked againstGEO. Four patients remain linked acrossBaseline/Day14/Month6. No ordinal/barcode/genetic inference; globalaliases unresolved.",
+  "physical_sample_mapping_evidence": "Ten original PBMCspecimens from four exact author patientcodes acrossBaseline/Day14/Month6. Author per-cell cell_barcode exactly joins countcolumns; sample matches exact GEOtitle and patient/timepoint/demographics/clinicalfieldschecked againstGEO. CSFandADTassays do notaddPBMCspecimens. Globalaliases unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_original_timepoint",
+      "sex": "source_original_sex",
+      "age": "source_original_age"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE324824",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE324824",
+    "primary_PMIDs_as_reported": [],
+    "access": "Public original PBMC RNAtriplet andper-cell coded sample metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE324824_source_identity_review.json",
+      "bytes": 5842,
+      "sha256": "e5a6787b0f21a2e34bc1b3a20dae4b8ee0627abc6a03c59c33eecd9640e8fa49"
+    },
+    "source_unit": "Ten original PBMCspecimens from four exact author patientcodes acrossBaseline/Day14/Month6. Author per-cell cell_barcode exactly joins countcolumns; sample matches exact GEOtitle and patient/timepoint/demographics/clinicalfieldschecked againstGEO. CSFandADTassays do notaddPBMCspecimens. Globalaliases unresolved.",
+    "identity_policy": "Exactauthor cell_barcode joins originalRNA countcolumns; per-cell sample joins exact GEOtitle. Author patient,timepoint,sex,age,disease_type,treatment,EDSSchecked againstGEO. Four patients remain linked acrossBaseline/Day14/Month6. No ordinal/barcode/genetic inference; globalaliases unresolved.",
+    "clinical_policy": "Original coded patient,sex,age,disease_type,timepoint,treatment,EDSSandallauthorcellfields retained literally. Source treatment fieldtiming relative to cohortintervention not inferred. Authorcluster/doublet/ADTcelltype calls not independentlyvalidated. No clinicalefficacy/causalclaims.",
+    "reuse_policy": "Only eight original unmanipulated/thawed PBMC-derived RNA views included. Companion GSE295174is not yet processed; preserve same-subject/day overlap for future accounting. Culture-condition objects and larger trial counts do not add specimens.",
+    "selection_policy": "All supplied PBMC RNA cells retained for independentfixedQC; no phenotype-informedcellselection. CSF/ADTnotRNAgeometry. NativeRNAfeature axis retainedunchanged,includingoriginalcustomfeature label. MissingtypecentroidsremainNaN.",
+    "cell_calling_policy": "Own fixed RNAQC recomputed from unchanged original RNAcounts. Author source cell labels,predictions,clustering andcachedpercent.mt preserved without independent biological validation. No normalized/integrated/embedding data used as counts.",
+    "gene_policy": "Every unique native supplied RNAfeature symbol retained unchanged,including source custom CARTLentifeature. No sequence reconstruction,reference-ID invention,symbol modernization,intersection orzero filling. All native measured RNAfeatures contribute geometry and normalization; annotation uses aligned reference genes separately.",
+    "count_semantics": "Provided original RNAcounttriplet only. Every storedvaluechecked finite nonnegativeinteger; native RNAQC independently computed andcachedRNAQCdifferences recorded without altering counts. CSF/ADT/embedding values not used as RNAcounts.",
+    "source_limitations": "Supplied PBMC RNA countaxis includes a customfeature symbol,retainedwithoutsequencereconstruction. Originalclinical/demographic/authorcellfields retainedliterally; source treatment timing relative tocohortinterventionnotinferred. Rawreads notpubliclysubmittedperGEO; originalRNAcounts directlyverified. No efficacy,causal,biologicalannotation orconstellationvalidation."
+  }
+}

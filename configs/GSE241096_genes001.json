@@ -1,0 +1,1559 @@
+{
+  "dataset_id": "GSE241096_genes001",
+  "study_id": "GSE241096",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "8datedPBMCdraws/3sourceparticipant codes in one family; six repeatedCS3392dates plus oneCM3391 and oneCY0001; unrelated-donor replication is not3",
+  "source_metadata": {
+    "accession": "GSE241096",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/38170173/",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE241096"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE241096",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+    "source_processing": [
+      "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+      "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+      "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+      "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+      "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE241096_source_identity_review.json",
+      "sha256": "3cf1a897f7f61a49db088c75e3397bf26422c2e28ace5e3abdc0285d7eda5048"
+    },
+    "native_reference_review": [
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      },
+      {
+        "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+        "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+      }
+    ],
+    "native_audit_implementation": {
+      "path": "src/native_h5_audit.py",
+      "sha256": "e13e104ea9785334fc3eacbc4aaf2f1a3b967e1003faa6b6963c264d44005ce1"
+    },
+    "family_replication_warning": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM7716383",
+      "donor_id": "CM3391",
+      "source_metadata": {
+        "title": [
+          "PBMC of CM3391 on 6Dec21"
+        ],
+        "geo_accession": [
+          "GSM7716383"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CM3391"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037717",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394901"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716383/suppl/GSM7716383_CM3391_6Dec21GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716383_CM3391_6Dec21GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          6846,
+          36601
+        ],
+        "nonzeros": 9824353,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 6846,
+        "cells": 6846,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 6846,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 6846,
+          "full_source_RNA_counts": 21960873,
+          "selected_RNA_counts": 21960873,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716383.csv.gz",
+            "sha256": "5f9e2e2adbbc71884405e128437fa52089a52f6531e2dedc1bd70abbf780c6cd"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716383/suppl/GSM7716383_CM3391_6Dec21GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716383_CM3391_6Dec21GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 14728685,
+          "sha256": "9151567f0fd0e02c84f296d6984182dfdd955ef945c386b8d6182c813bf3f99e"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716383",
+        "source_GEO_title": "PBMC of CM3391 on 6Dec21",
+        "source_participant_code": "CM3391",
+        "source_visit_code": "2021-12-06",
+        "source_date_as_reported": "6Dec21",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716384",
+      "donor_id": "CS3392",
+      "source_metadata": {
+        "title": [
+          "PBMC of CS3392 on 10Nov20"
+        ],
+        "geo_accession": [
+          "GSM7716384"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037716",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394902"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716384/suppl/GSM7716384_CS3392_10Nov20GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716384_CS3392_10Nov20GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          11979,
+          36601
+        ],
+        "nonzeros": 18305360,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 11979,
+        "cells": 11979,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 11979,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 11979,
+          "full_source_RNA_counts": 36937555,
+          "selected_RNA_counts": 36937555,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716384.csv.gz",
+            "sha256": "b129893e34e30e3f744c072d2846a4758ca264654fdb3d28bccc0f5ce35fc354"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716384/suppl/GSM7716384_CS3392_10Nov20GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716384_CS3392_10Nov20GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 26866324,
+          "sha256": "2ff03a6b0708c7f6b84b027a9b1813c8abdcd8aeb05705496137a1c8ba03e5b5"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716384",
+        "source_GEO_title": "PBMC of CS3392 on 10Nov20",
+        "source_participant_code": "CS3392",
+        "source_visit_code": "2020-11-10",
+        "source_date_as_reported": "10Nov20",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716385",
+      "donor_id": "CS3392",
+      "source_metadata": {
+        "title": [
+          "PBMC of CS3392 on 12Aug20"
+        ],
+        "geo_accession": [
+          "GSM7716385"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037715",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394903"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716385/suppl/GSM7716385_CS3392_12Aug20GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716385_CS3392_12Aug20GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3589,
+          36601
+        ],
+        "nonzeros": 5467265,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 3589,
+        "cells": 3589,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3589,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3589,
+          "full_source_RNA_counts": 12124740,
+          "selected_RNA_counts": 12124740,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716385.csv.gz",
+            "sha256": "d3a698d6dab291f5e351e5da7e0e2b4a9f2f73748d7d44cb798770f1176906cb"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716385/suppl/GSM7716385_CS3392_12Aug20GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716385_CS3392_12Aug20GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 8383106,
+          "sha256": "c071f66dbdde59f0aa80fb1a165479c5da0f04a176a3eddce375cc9ce63bc7f2"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716385",
+        "source_GEO_title": "PBMC of CS3392 on 12Aug20",
+        "source_participant_code": "CS3392",
+        "source_visit_code": "2020-08-12",
+        "source_date_as_reported": "12Aug20",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716386",
+      "donor_id": "CS3392",
+      "source_metadata": {
+        "title": [
+          "PBMC of CS3392 on 17Jul20"
+        ],
+        "geo_accession": [
+          "GSM7716386"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037714",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394904"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716386/suppl/GSM7716386_CS3392_17Jul20GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716386_CS3392_17Jul20GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          8000,
+          36601
+        ],
+        "nonzeros": 13335773,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 8000,
+        "cells": 8000,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8000,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8000,
+          "full_source_RNA_counts": 29121096,
+          "selected_RNA_counts": 29121096,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716386.csv.gz",
+            "sha256": "aac3c31e1c5160db1b53a211f3b4e73ed98a90ea3c034d45eaa4687b85ee0940"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716386/suppl/GSM7716386_CS3392_17Jul20GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716386_CS3392_17Jul20GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 19778778,
+          "sha256": "c2ee44e88a5da4fc699e021bb9f7c9e2e6442a0c3b79ae8b20e0da6ce9346f73"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716386",
+        "source_GEO_title": "PBMC of CS3392 on 17Jul20",
+        "source_participant_code": "CS3392",
+        "source_visit_code": "2020-07-17",
+        "source_date_as_reported": "17Jul20",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716387",
+      "donor_id": "CS3392",
+      "source_metadata": {
+        "title": [
+          "PBMC of CS3392 on 27Jul20"
+        ],
+        "geo_accession": [
+          "GSM7716387"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037713",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394905"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716387/suppl/GSM7716387_CS3392_27Jul20GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716387_CS3392_27Jul20GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          7839,
+          36601
+        ],
+        "nonzeros": 16083951,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 7839,
+        "cells": 7839,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7839,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7839,
+          "full_source_RNA_counts": 35690744,
+          "selected_RNA_counts": 35690744,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716387.csv.gz",
+            "sha256": "a2f1480fea1be192a761e3fb462b2ce62aba07bf631e23cc64384c66093e3e67"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716387/suppl/GSM7716387_CS3392_27Jul20GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716387_CS3392_27Jul20GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 23336658,
+          "sha256": "72d09680ad5d9ed227af53307a08b2f20fd73f168be96bb476c1ba28bbb5469e"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716387",
+        "source_GEO_title": "PBMC of CS3392 on 27Jul20",
+        "source_participant_code": "CS3392",
+        "source_visit_code": "2020-07-27",
+        "source_date_as_reported": "27Jul20",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716388",
+      "donor_id": "CS3392",
+      "source_metadata": {
+        "title": [
+          "PBMC of CS3392 on 3Aug20"
+        ],
+        "geo_accession": [
+          "GSM7716388"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037712",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394906"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716388/suppl/GSM7716388_CS3392_3Aug20GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716388_CS3392_3Aug20GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          9807,
+          36601
+        ],
+        "nonzeros": 18629806,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 9807,
+        "cells": 9807,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9807,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9807,
+          "full_source_RNA_counts": 42574094,
+          "selected_RNA_counts": 42574094,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716388.csv.gz",
+            "sha256": "3084988dcf7cd83922bc3ce6e675e6feaa8f4c736aca8560c2ca156d2d523271"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716388/suppl/GSM7716388_CS3392_3Aug20GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716388_CS3392_3Aug20GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 27006191,
+          "sha256": "d235851e00a589f905c134561e643b55e94614b44af4d58c317c08dbf413c36a"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716388",
+        "source_GEO_title": "PBMC of CS3392 on 3Aug20",
+        "source_participant_code": "CS3392",
+        "source_visit_code": "2020-08-03",
+        "source_date_as_reported": "3Aug20",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716389",
+      "donor_id": "CS3392",
+      "source_metadata": {
+        "title": [
+          "PBMC of CS3392 on 6Dec21"
+        ],
+        "geo_accession": [
+          "GSM7716389"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037711",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394907"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716389/suppl/GSM7716389_CS3392_6Dec21GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716389_CS3392_6Dec21GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          7470,
+          36601
+        ],
+        "nonzeros": 14988483,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 7470,
+        "cells": 7470,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 7470,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 7470,
+          "full_source_RNA_counts": 37022784,
+          "selected_RNA_counts": 37022784,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716389.csv.gz",
+            "sha256": "ab69a6d1dea763a7beb8441f45cd553c97641d48bbfbdf9798bcffda08938d7c"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716389/suppl/GSM7716389_CS3392_6Dec21GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716389_CS3392_6Dec21GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 21763241,
+          "sha256": "22819b8f2dc7b2c89a5dd78eadc8ec5f8738a34a858660cef9bd031d468c1029"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716389",
+        "source_GEO_title": "PBMC of CS3392 on 6Dec21",
+        "source_participant_code": "CS3392",
+        "source_visit_code": "2021-12-06",
+        "source_date_as_reported": "6Dec21",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    },
+    {
+      "accession": "GSM7716390",
+      "donor_id": "CY0001",
+      "source_metadata": {
+        "title": [
+          "PBMC of CY0001 on 8Sep20"
+        ],
+        "geo_accession": [
+          "GSM7716390"
+        ],
+        "status": [
+          "Public on May 06 2024"
+        ],
+        "submission_date": [
+          "Aug 17 2023"
+        ],
+        "last_update_date": [
+          "May 06 2024"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "Sex: female",
+          "cell type: whole blood"
+        ],
+        "treatment_protocol_ch1": [
+          "NIL"
+        ],
+        "growth_protocol_ch1": [
+          "NIL"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single-cell RNA-seq (scRNAseq) libraries were prepared from tissue samples from Twin-CS (lymph node and bone marrow), as well as from peripheral blood mononuclear cells (PBMC) from the affected twins and unaffected sister. Tissues were dissociated into single cells using the Tumour Dissociation Kit, human (Miltenyi Biotec, Bergisch Gladbach, Germany) as per manufacturer\u2019s protocol.",
+          "Each cell was captured and uniquely-barcoded using the 10X Chromium Next GEM Single Cell 5' Kit v2 (PN1000265) and 10X Chromium Controller according to manufacturer\u2019s protocol (10X Genomics, CA, USA). Following Gel Beads-in-emulsion (GEMs) generation, cell lysis and dissolution of the Gel Bead within each reaction vesicle enabled reverse transcription of polyadenylated mRNA, producing cDNA tagged with both a universal cell barcode and unique molecular index (UMI). The reaction vesicles were then lysed for cDNA amplification followed by purification using Dynabeads MyOne SILANE magnetic beads. Quantification of cDNA was performed using Agilent Bioanalyzer High Sensitivity DNA Kit (Agilent Technologies, CA, USA). The generated cDNA from each sample was used for 5\u2019 gene expression (5'GEX) scRNA-seq library generation. Enzymatic fragmentation of the cDNA transcripts was carried out, followed by End-Repair and A-tailing, adaptor ligation and final library amplification PCR with unique sample indices for each sample. Final library quality was determined using the Agilent Bioanalyzer High Sensitivity DNA Kit.",
+          "scRNA-seq 10X 5' kit v2"
+        ],
+        "description": [
+          "Blood sample taken at one timepoint from CS3392"
+        ],
+        "data_processing": [
+          "The reads were demultiplexed and aligned against the GRCh38 reference genome using 10X Cell Ranger v6.0.1 (10X Genomics, CA, USA). The single-cell data were loaded into count matrices, and all 10 samples were merged using Seurat v4.1.",
+          "A total of 94,947 cells, which had less than 20% of transcripts mapping to mitochondrial genes and expressed at least 500 genes were retained for scaling, log-normalization of gene expression measurements, and principal component analysis with the top 2,000 genes selected by variance stabilizing transformation approach as implemented by Seurat, in addition to the 14 mitochondrial/rRNA genes (MT-ND1, MT-ND2, MT-CO1, MT-CO2, MT-ATP8, MT-ATP6, MT-CO3, MT-ND3, MT-ND4L, MT-ND4, MT-ND5, MT-ND6, MT-CYB, and RN7SL832P) that were removed from the dataset using our in-house annotated blacklist genes.",
+          "UMAP was used to visualize the distribution of cells in the projection of the significant principal components, and cell type annotation was accomplished with known markers from each cell type.",
+          "Up-regulated genes from each group were used for gene enrichment analysis with Gene Ontology (GO) Biological Process using enrichR.",
+          "To explore the effect of rituximab treatment, all six longitudinal PBMC samples from Twin-CS were merged and analyzed.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: all .h5 files: Each h5 contains the processed count matrixes, genes info and cell barcodes for each of our 12 scRNA-seq samples."
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Jing Quan,,Lim"
+        ],
+        "contact_department": [
+          "CMR"
+        ],
+        "contact_institute": [
+          "National Cancer Centre Singapore"
+        ],
+        "contact_address": [
+          "30 Hospital Boulevard"
+        ],
+        "contact_city": [
+          "Singapore"
+        ],
+        "contact_zip/postal_code": [
+          "168583"
+        ],
+        "contact_country": [
+          "Singapore"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN37037710",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX21394908"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716390/suppl/GSM7716390_CY0001_8Sep20GEX_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE241096",
+          "GSE241097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM7716390_CY0001_8Sep20GEX_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          10557,
+          36601
+        ],
+        "nonzeros": 17662076,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8",
+        "source_barcode_rows": 10557,
+        "cells": 10557,
+        "genes": 36601,
+        "source_gene_id_mode": "ensembl",
+        "source_feature_types": {
+          "Gene Expression": 36601
+        },
+        "source_genome_label": "GRCh38",
+        "excluded_non_RNA_features": 0,
+        "reviewed_non_RNA_types": [],
+        "annotation_symbol_overlap": 27574,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE241096_original_RNA_QC/8f642dd589e8ca62750b98514bb7f7671f303fa27f68bb831215bf7a094c15a8_genes.csv.gz",
+          "sha256": "5245cd60c35a7eda6223c0b3e98aed4ffecd81191896320b7540963e61ba40f8"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10557,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10557,
+          "full_source_RNA_counts": 37809426,
+          "selected_RNA_counts": 37809426,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE241096_original_RNA_QC/GSM7716390.csv.gz",
+            "sha256": "d8e1297c643c9297eeed2087c807bed17c424933eac4662a44c7f3198742bc67"
+          }
+        }
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7716nnn/GSM7716390/suppl/GSM7716390_CY0001_8Sep20GEX_filtered_feature_bc_matrix.h5",
+          "filename": "GSM7716390_CY0001_8Sep20GEX_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 26106789,
+          "sha256": "a4bc56141501bc00a9c99645ac0522ec91d998d6effd8b94ddfab4a6550d8446"
+        }
+      ],
+      "metadata": {
+        "source_GEO_accession": "GSM7716390",
+        "source_GEO_title": "PBMC of CY0001 on 8Sep20",
+        "source_participant_code": "CY0001",
+        "source_visit_code": "2020-09-08",
+        "source_date_as_reported": "8Sep20",
+        "source_capture_label": "dated_family_PBMC_RNA",
+        "source_characteristics_json": "{\"Sex\": \"female\", \"cell type\": \"whole blood\", \"tissue\": \"PBMC\"}",
+        "source_sex_as_reported": "female",
+        "sex": "female",
+        "condition": "unassigned individual diagnosis; source family includes affected twins and unaffected sister",
+        "source_specimen": "PBMC as specified by original tissue field and title",
+        "source_tissue_discrepancy": "GEO tissue/title specify PBMC, while cell type field says whole blood. Preserve both source fields and classify by explicitly deposited PBMC specimen.",
+        "source_family_group": "GSE241096:original_family",
+        "source_replication_policy": "Three source participant codes are members of one family, including identical twins. Eight dated materials are repeated draws, not eight unrelated donors. Keep family and participant groups together in held-out evaluation.",
+        "source_clinical_policy": "GEO does not map individual diagnosis, age or treatment details to each RNA record. Do not assign affected/control or treatment from code names or collection dates alone.",
+        "source_time_policy": "Exact title date retained and parsed as calendar date; treatment-relative intervals remain unavailable.",
+        "source_count_policy": "Audit deposited native 10x RNA count H5; source downstream mitochondrial blacklist and Seurat integration are not applied to gene-expression geometry.",
+        "source_missingness_policy": "Unknown age, individual diagnosis/treatment and unsupported types remain missing; no zero expression imputation.",
+        "split_assignment": "unassigned; preserve original family group and all repeated participant dates together; cross-study identity unresolved"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "8datedPBMCdraws/3sourceparticipant codes in one family; six repeatedCS3392dates plus oneCM3391 and oneCY0001; unrelated-donor replication is not3"
+}

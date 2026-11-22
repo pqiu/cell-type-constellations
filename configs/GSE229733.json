@@ -1,0 +1,81 @@
+{
+  "dataset_id": "GSE229733",
+  "study_id": "GSE229733",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE229733_complete_original_RNA_audit.json",
+    "bytes": 56558,
+    "sha256": "0221e78c471a7b9a33e00bb09772724f7a43d71e3e92a240d7424faa54548ccb"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE229733_source_identity_review.json",
+    "bytes": 54028,
+    "sha256": "6f8674de98bd1a45bef5253686e6c49a0d95d9547daf2ce63e4502d8199db9cb"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Replay explicit original author preprocess_C1.R aggregation-table rownames-to-cell_n/fullbarcode-suffix join. Both original aggregation tables provide the same61sample IDs/order, matching all original GEO RNA/protein IDs. Original source-assignment procedure supplies identity, not a project assumption from suffix or GEOordinal. SixHD and55Rrecipient codes identify sampling-participant/material groups, not hematopoietic graft donors. Preserve publication participant key across related validation source; keep related study together pending global alias review.",
+  "physical_sample_mapping_evidence": "Original author preprocess_C1.R explicitly defines cell_n from original aggregation-table row names, separates original full barcodes at hyphen into UMI/cell_n, joins those fields, and adds the original sample_id. Both released original aggregation tables supply identical61sample IDs in the same order; code-defined namespace keys cover every original barcode. This replays an explicit author assignment, not a project-inferred suffix-to-GEOordinal map. SixHD and55Rpatient material codes,122pairedRNA/protein records. Transplant recipients identify biological sampling units; hematopoietic graft-donor identity/origin remains unknown. Global aliases and exact repeated-draw accounting unproven.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE229733",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229733",
+    "primary_PMID": "41950302",
+    "primary_DOI": "10.1126/scitranslmed.aeb7834",
+    "source_author_code_URL": "https://gitlab.com/SophieLG/gvh_transcriptomic",
+    "author_repository_review": {
+      "path": "references/datasets/GSE229733_author_repository_acquisition_review.json",
+      "bytes": 9037,
+      "sha256": "3c8b1f247843763a696c64d50a49ebc0bf8f6540a20cf23f8361a34326a4b335"
+    },
+    "original_assay_command_review": {
+      "path": "references/datasets/GSE229733_original_assay_command_review.json",
+      "bytes": 1919,
+      "sha256": "54a0028a66f283911dd070f4d0bfea49940d7d0f54505b56264cd75af8ca479e"
+    },
+    "native_gene_support": {
+      "path": "references/datasets/GSE229733_original_native_RNA_audit/all_native_RNA_gene_support.csv.gz",
+      "bytes": 420910,
+      "sha256": "85974101c910ad795154db19fc49ee4116d9a4dbe11c22c947d0782cbe34b42d"
+    },
+    "access": "Public original typed RNA/protein matrix, gene/barcode axes and original author aggregation/clinical metadata text at fixed GitLab commit.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "GEO_count_data_not_specified; author_repository_MIT_notice_retained_in_original_README",
+    "source_sample_review": {
+      "path": "references/datasets/GSE229733_source_identity_review.json",
+      "bytes": 54028,
+      "sha256": "6f8674de98bd1a45bef5253686e6c49a0d95d9547daf2ce63e4502d8199db9cb"
+    },
+    "source_unit": "Original author preprocess_C1.R explicitly defines cell_n from original aggregation-table row names, separates original full barcodes at hyphen into UMI/cell_n, joins those fields, and adds the original sample_id. Both released original aggregation tables supply identical61sample IDs in the same order; code-defined namespace keys cover every original barcode. This replays an explicit author assignment, not a project-inferred suffix-to-GEOordinal map. SixHD and55Rpatient material codes,122pairedRNA/protein records. Transplant recipients identify biological sampling units; hematopoietic graft-donor identity/origin remains unknown. Global aliases and exact repeated-draw accounting unproven.",
+    "identity_policy": "Replay explicit original author preprocess_C1.R aggregation-table rownames-to-cell_n/fullbarcode-suffix join. Both original aggregation tables provide the same61sample IDs/order, matching all original GEO RNA/protein IDs. Original source-assignment procedure supplies identity, not a project assumption from suffix or GEOordinal. SixHD and55Rrecipient codes identify sampling-participant/material groups, not hematopoietic graft donors. Preserve publication participant key across related validation source; keep related study together pending global alias review.",
+    "clinical_policy": "Both original table clinical fields retained separately. R3486group differs A1versusS1; author code removes it for wrong collection time point. R2122andR3486molecule_h5 path leading slash differs, with same sampleIDs/order. GEOhealthy-control records carry generic transplant-treatment wording; preserve source disagreement instead of asserting healthy donors underwent transplantation. Author group/CTC_R/diagnosis/relapse/cmv values are reported fields, not independently validated outcomes. Full clinical tables referenced by author code are not acquired here. Canonical condition retains original source group codes except R3486, whose conflicting A1/S1group is left unassigned while both original values and wrong-timepoint flag remain. All61source materials remain in the collection; source-study specific timing exclusions do not erase otherwise valid RNA observations. Age,sex,draw dates,exact post-transplant/treatment clocks and missing source outcomes not imputed.",
+    "reuse_policy": "No original accession/PMID/DOI/preprint DOI reference found in completed run records.122RNA/protein GEOrecords represent61source material codes. Related GSE306441 is a separate validation cohort under the same paper; source IDs/participants must be explicitly checked before later credit. Original source R3486 wrong-timepoint flag retained. Global uniqueness and graft-donor overlap unresolved.",
+    "selection_policy": "All402442original supplied cells enter native staging.319962pass fixed counts>=500/detectedgenes>=200/MTfraction<=0.2/positive library. No source phenotype, relapse, group, CMV, cell-type, DoubletFinder or author clinical-analysis selection. R3486is retained with conflicting condition unassigned. Keep publication participant codes and related study together pending alias audit.",
+    "cell_calling_policy": "Original supplied multimodal matrix is the source cell carrier; select33538GeneExpression rows by explicit feature_type and exclude41AntibodyCapture rows from native/reference RNA libraries. No reconstruction from read sequences or new demultiplexing. Source command explicitly aggregates normalize=none. GEOtargeted-assay wording remains recorded; actual original gene support quantified without selecting or asserting exhaustive molecular coverage.",
+    "gene_policy": "All33538original Gene Expression Ensembl IDs and source symbols preserved; duplicate symbols remain separate native axes.41AntibodyCapture rows are excluded from native/reference RNA libraries. Per-gene observed support recorded without selecting genes. No invented IDs, gene intersection, normalization/regression/integration of the source or missing-type zero fill.",
+    "count_semantics": "Every stored original provided multimodal value verified finite/nonnegative/integer. NativeRNA selects33538explicitGeneExpression rows and excludes41AntibodyCapture rows from RNA/reference normalization. Source author preprocessing comments describe aggregation without10Xnormalization; no raw-read re-quantification proof is claimed. GEOdescription references targeted gene expression; retain assay wording and assess original gene support rather than infer whole-transcriptome coverage from rowcount alone. No author phenotype/cell-type/cachedQC filter imposed in this source review. Original author cell_ranger_loop.sh explicitly specifies cellranger aggr --normalize=none. This is source command evidence, not an independent raw-read rerun. Gene support is empirical; source targeted-expression wording remains unresolved at molecular-protocol scope.",
+    "source_limitations": "Source reported PBMC from healthy references and transplant recipients. OriginalR3486conditionconflict and wrongtimepoint flag retained with canonical condition unavailable. Healthy-title/generic-transplant-treatment wording conflict retained. Graft donor identity unknown. GEOtargeted-expression wording remains an assay limitation despite transcriptome-scale native gene support. No imputed demographics/clocks/outcomes/globalaliases. No clinical,annotation,causal orconstellation validation."
+  }
+}

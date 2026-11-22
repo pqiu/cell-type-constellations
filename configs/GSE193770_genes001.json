@@ -1,0 +1,1438 @@
+{
+  "dataset_id": "GSE193770_genes001",
+  "study_id": "GSE193770",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Ten originalRNAparticipants:6MS4healthy, oneGEOrecord each, pan-T PBMC preparation. Sourcefulltitles defineanonymousstudy-scopeddonors; no date-likeID temporal inference.25externalCOVIDCD8samplesfromE-MTAB-9357 notnew participants here.",
+  "source_metadata": {
+    "accession": "GSE193770",
+    "publication": "https://doi.org/10.1126/science.abi9591",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193770",
+    "access": "Publicoriginalgene-count tables",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_processing": [
+      "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+      "Downstream analysis was performed using the Seurat 3.0 package.",
+      "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+      "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+      "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+      "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+      "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+      "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+      "Genome_build: hg38",
+      "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+      "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+    ],
+    "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2",
+    "source_enrichment": "panT",
+    "external_dataset_excluded": "E-MTAB-9357 COVID-19CD8cell reanalysis; notadditionalRNA specimens"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM5820724",
+      "donor_id": "MS01092019",
+      "source_metadata": {
+        "title": [
+          "MS01092019"
+        ],
+        "geo_accession": [
+          "GSM5820724"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: multiple sclerosis"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037749",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803702"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820724/suppl/GSM5820724_MS01092019_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820724_MS01092019_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820724/suppl/GSM5820724_MS01092019_counts.txt.gz",
+          "filename": "GSM5820724_MS01092019_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "MS01092019",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          6858,
+          33562
+        ],
+        "nonzeros": 8539753,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820725",
+      "donor_id": "MS08162018",
+      "source_metadata": {
+        "title": [
+          "MS08162018"
+        ],
+        "geo_accession": [
+          "GSM5820725"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: multiple sclerosis"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037748",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803703"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820725/suppl/GSM5820725_MS08162018_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820725_MS08162018_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820725/suppl/GSM5820725_MS08162018_counts.txt.gz",
+          "filename": "GSM5820725_MS08162018_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "MS08162018",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          6547,
+          33562
+        ],
+        "nonzeros": 7803057,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820726",
+      "donor_id": "MS09102018",
+      "source_metadata": {
+        "title": [
+          "MS09102018"
+        ],
+        "geo_accession": [
+          "GSM5820726"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: multiple sclerosis"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037747",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803704"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820726/suppl/GSM5820726_MS09102018_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820726_MS09102018_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820726/suppl/GSM5820726_MS09102018_counts.txt.gz",
+          "filename": "GSM5820726_MS09102018_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "MS09102018",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          8843,
+          33562
+        ],
+        "nonzeros": 9526805,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820727",
+      "donor_id": "MS11132018",
+      "source_metadata": {
+        "title": [
+          "MS11132018"
+        ],
+        "geo_accession": [
+          "GSM5820727"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: multiple sclerosis"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037746",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803705"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820727/suppl/GSM5820727_MS11132018_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820727_MS11132018_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820727/suppl/GSM5820727_MS11132018_counts.txt.gz",
+          "filename": "GSM5820727_MS11132018_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "MS11132018",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          7970,
+          33562
+        ],
+        "nonzeros": 9793289,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820728",
+      "donor_id": "MS658",
+      "source_metadata": {
+        "title": [
+          "MS658"
+        ],
+        "geo_accession": [
+          "GSM5820728"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: multiple sclerosis"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037745",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803706"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820728/suppl/GSM5820728_MS658_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820728_MS658_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820728/suppl/GSM5820728_MS658_counts.txt.gz",
+          "filename": "GSM5820728_MS658_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "MS658",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          8380,
+          33562
+        ],
+        "nonzeros": 7794646,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820729",
+      "donor_id": "MS9020",
+      "source_metadata": {
+        "title": [
+          "MS9020"
+        ],
+        "geo_accession": [
+          "GSM5820729"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: multiple sclerosis"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037744",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803707"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820729/suppl/GSM5820729_MS9020_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820729_MS9020_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820729/suppl/GSM5820729_MS9020_counts.txt.gz",
+          "filename": "GSM5820729_MS9020_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "multiple sclerosis",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "MS9020",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          6266,
+          33562
+        ],
+        "nonzeros": 7805953,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820730",
+      "donor_id": "HC11",
+      "source_metadata": {
+        "title": [
+          "HC11"
+        ],
+        "geo_accession": [
+          "GSM5820730"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: healthy control"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037743",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803708"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820730/suppl/GSM5820730_HC11_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820730_HC11_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820730/suppl/GSM5820730_HC11_counts.txt.gz",
+          "filename": "GSM5820730_HC11_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "HC11",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          6051,
+          33562
+        ],
+        "nonzeros": 7073278,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820731",
+      "donor_id": "HC12",
+      "source_metadata": {
+        "title": [
+          "HC12"
+        ],
+        "geo_accession": [
+          "GSM5820731"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: healthy control"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037742",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803709"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820731/suppl/GSM5820731_HC12_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820731_HC12_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820731/suppl/GSM5820731_HC12_counts.txt.gz",
+          "filename": "GSM5820731_HC12_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "HC12",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          6959,
+          33562
+        ],
+        "nonzeros": 8163888,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820732",
+      "donor_id": "HC13",
+      "source_metadata": {
+        "title": [
+          "HC13"
+        ],
+        "geo_accession": [
+          "GSM5820732"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: healthy control"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037741",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803710"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820732/suppl/GSM5820732_HC13_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820732_HC13_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820732/suppl/GSM5820732_HC13_counts.txt.gz",
+          "filename": "GSM5820732_HC13_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "HC13",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          7410,
+          33562
+        ],
+        "nonzeros": 8501084,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    },
+    {
+      "accession": "GSM5820733",
+      "donor_id": "HC14",
+      "source_metadata": {
+        "title": [
+          "HC14"
+        ],
+        "geo_accession": [
+          "GSM5820733"
+        ],
+        "status": [
+          "Public on Mar 08 2022"
+        ],
+        "submission_date": [
+          "Jan 16 2022"
+        ],
+        "last_update_date": [
+          "Mar 08 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: pan T cells",
+          "disease state: healthy control"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Single cell suspension, barcoded Gel Beads and partitioning oil were loaded to Chromium Chip G to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later.",
+          "The downstream library constructions were performed using the Chromium Single Cell 5\u2019 library construction kit according to the manufacturer\u2019s protocol (10x Genomics)."
+        ],
+        "data_processing": [
+          "RNA-seq data were de-multiplexed, aligned to the GRCh38 reference genome, and converted into gene counts matrices using CellRanger 3.1.0.",
+          "Downstream analysis was performed using the Seurat 3.0 package.",
+          "Cells with fewer than 800 detected genes, more than 3000 detected genes or more than 10% mitochondrial genes were discarded.",
+          "CD8+ T cells (expressing CD8A and CD8B but not TRDC transcripts) from each individual were selected for further analysis.",
+          "To make counts comparable among cells, gene counts were normalized to 10,000 reads per cell, then log-transformed.",
+          "We identified highly-variable genes for each individual, then integrated gene expression data from all individuals using Seurat\u2019s integration anchor discovery algorithm",
+          "We performed PCA dimensionality reduction on the integrated data, then clustered cells with the Louvain algorithm and visualized the data using UMAP.",
+          "We identified canonical cell type marker genes that were conserved across conditions using the Wilcoxon rank-sum test implemented in the Seurat package\u2019s \u2018FindConservedMarkers\u2019 function.",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: tab-delimited text files of each healthy subject or MS patient",
+          "Supplementary_files_format_and_content: h5ad file for CD8 T cells from 25 COVID-19 patients"
+        ],
+        "platform_id": [
+          "GPL20301"
+        ],
+        "contact_name": [
+          "Mark,,Davis"
+        ],
+        "contact_email": [
+          "mmdavis@stanford.edu"
+        ],
+        "contact_institute": [
+          "Institute for Immunity, Transplantation and Infection"
+        ],
+        "contact_address": [
+          "Stanford University"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94304"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina HiSeq 4000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN25037740",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13803711"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820733/suppl/GSM5820733_HC14_counts.txt.gz"
+        ],
+        "series_id": [
+          "GSE193442",
+          "GSE193770"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "rna_table_member": "GSM5820733_HC14_counts.txt.gz",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5820nnn/GSM5820733/suppl/GSM5820733_HC14_counts.txt.gz",
+          "filename": "GSM5820733_HC14_counts.txt.gz"
+        }
+      ],
+      "metadata": {
+        "disease": "healthy control",
+        "source_enrichment": "pan-T isolation from PBMC",
+        "source_title": "HC14",
+        "source_demographics": "Individualage/sexnot supplied inGEO; date-likeMSsample label nottranslated into clinicalcollectiondate",
+        "source_composition_limitation": "RestrictedT-cell preparation; do notinfer wholePBMC composition",
+        "source_author_processing": "AuthorCD8selection/normalization/integration described; depositedtable independentlyverified integerfull-gene counts"
+      },
+      "source_count_review": {
+        "shape": [
+          6893,
+          33562
+        ],
+        "nonzeros": 8860467,
+        "integer_nonnegative_counts": true,
+        "source_gene_ids": "Uniqueoriginalgenesymbols; no inferredEnsemblIDs",
+        "gene_coordinate_sha256": "2ed2b5fa3de869c70e1e85d00ec66cd10459c7c0a7853684fe9e51b4c984c2c2"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

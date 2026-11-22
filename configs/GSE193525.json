@@ -1,0 +1,3516 @@
+{
+  "dataset_id": "GSE193525",
+  "study_id": "GSE193525",
+  "input_format": "geo_10x_tar",
+  "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193525/suppl/GSE193525_RAW.tar",
+  "expected_bytes": 823787520,
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Original GEO biological specimen records and source donor IDs; all repeated patient IDs stay linked.  {\"counts\": \"Original GSM triplets available alongside shared aggregate; count only one representation.\", \"time\": \"Pre-TTFields specimens are post-chemoradiation, not treatment-naive. Use explicit collection-time metadata; numeric suffix 1 means pre in some donors and post in others.\"}",
+  "source_metadata": {
+    "accession": "GSE193525",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE193525",
+    "access": "Public GEO processed count matrices; controlled raw sequence access not required",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "n_genes": 33694,
+    "gene_coordinate_sha256": "443845121b3c0913ca6d3887e54d89aa540774aaabb1c21e056d3a90fe756b3e",
+    "identity_review": "references/datasets/additional_disease_identity_review.json"
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM5813657",
+      "donor_id": "7",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #7 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813657"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 7_1",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892867",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746196"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813657/suppl/GSM5813657_7_1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813657/suppl/GSM5813657_7_1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813657/suppl/GSM5813657_7_1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813657_7_1_features.tsv.gz",
+      "barcodes_member": "GSM5813657_7_1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813657_7_1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "7_1",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "7_1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1751"
+      }
+    },
+    {
+      "accession": "GSM5813658",
+      "donor_id": "7",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #7 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813658"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 7_2",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892868",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746197"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813658/suppl/GSM5813658_7_2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813658/suppl/GSM5813658_7_2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813658/suppl/GSM5813658_7_2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813658_7_2_features.tsv.gz",
+      "barcodes_member": "GSM5813658_7_2_barcodes.tsv.gz",
+      "matrix_member": "GSM5813658_7_2_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "7_2",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "7_2",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1751"
+      }
+    },
+    {
+      "accession": "GSM5813659",
+      "donor_id": "9",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #9 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813659"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 9_1",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892869",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746198"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813659/suppl/GSM5813659_9_1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813659/suppl/GSM5813659_9_1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813659/suppl/GSM5813659_9_1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813659_9_1_features.tsv.gz",
+      "barcodes_member": "GSM5813659_9_1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813659_9_1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "9_1",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "9_1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1751"
+      }
+    },
+    {
+      "accession": "GSM5813660",
+      "donor_id": "9",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #9 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813660"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 9_2",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892870",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746199"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813660/suppl/GSM5813660_9_2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813660/suppl/GSM5813660_9_2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813660/suppl/GSM5813660_9_2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813660_9_2_features.tsv.gz",
+      "barcodes_member": "GSM5813660_9_2_barcodes.tsv.gz",
+      "matrix_member": "GSM5813660_9_2_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "9_2",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "9_2",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1751"
+      }
+    },
+    {
+      "accession": "GSM5813661",
+      "donor_id": "14",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #14 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813661"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 14-1",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892871",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746200"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813661/suppl/GSM5813661_14-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813661/suppl/GSM5813661_14-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813661/suppl/GSM5813661_14-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813661_14-1_features.tsv.gz",
+      "barcodes_member": "GSM5813661_14-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813661_14-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "14-1",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "14-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1848"
+      }
+    },
+    {
+      "accession": "GSM5813662",
+      "donor_id": "14",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #14 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813662"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 14-2",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892872",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746201"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813662/suppl/GSM5813662_14-2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813662/suppl/GSM5813662_14-2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813662/suppl/GSM5813662_14-2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813662_14-2_features.tsv.gz",
+      "barcodes_member": "GSM5813662_14-2_barcodes.tsv.gz",
+      "matrix_member": "GSM5813662_14-2_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "14-2",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "14-2",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1848"
+      }
+    },
+    {
+      "accession": "GSM5813663",
+      "donor_id": "16",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #16 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813663"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 16-1B",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892873",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746202"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813663/suppl/GSM5813663_16-1B_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813663/suppl/GSM5813663_16-1B_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813663/suppl/GSM5813663_16-1B_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813663_16-1B_features.tsv.gz",
+      "barcodes_member": "GSM5813663_16-1B_barcodes.tsv.gz",
+      "matrix_member": "GSM5813663_16-1B_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "16-1B",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "16-1B",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1848"
+      }
+    },
+    {
+      "accession": "GSM5813664",
+      "donor_id": "16",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #16 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813664"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 16-2",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892874",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746203"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813664/suppl/GSM5813664_16-2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813664/suppl/GSM5813664_16-2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813664/suppl/GSM5813664_16-2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813664_16-2_features.tsv.gz",
+      "barcodes_member": "GSM5813664_16-2_barcodes.tsv.gz",
+      "matrix_member": "GSM5813664_16-2_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "16-2",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "16-2",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS1848"
+      }
+    },
+    {
+      "accession": "GSM5813665",
+      "donor_id": "12",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #12 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813665"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 12-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892875",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746204"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813665/suppl/GSM5813665_12-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813665/suppl/GSM5813665_12-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813665/suppl/GSM5813665_12-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813665_12-0_features.tsv.gz",
+      "barcodes_member": "GSM5813665_12-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813665_12-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "12-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "12-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813666",
+      "donor_id": "12",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #12 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813666"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 12-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892876",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746205"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813666/suppl/GSM5813666_12-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813666/suppl/GSM5813666_12-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813666/suppl/GSM5813666_12-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813666_12-1_features.tsv.gz",
+      "barcodes_member": "GSM5813666_12-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813666_12-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "12-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "12-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813667",
+      "donor_id": "18",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #18 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813667"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 18-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892877",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746206"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813667/suppl/GSM5813667_18-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813667/suppl/GSM5813667_18-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813667/suppl/GSM5813667_18-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813667_18-0_features.tsv.gz",
+      "barcodes_member": "GSM5813667_18-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813667_18-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "18-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "18-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813668",
+      "donor_id": "18",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #18 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813668"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 18-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892878",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746207"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813668/suppl/GSM5813668_18-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813668/suppl/GSM5813668_18-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813668/suppl/GSM5813668_18-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813668_18-1_features.tsv.gz",
+      "barcodes_member": "GSM5813668_18-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813668_18-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "18-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "18-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813669",
+      "donor_id": "19",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #19 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813669"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 19-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892879",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746208"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813669/suppl/GSM5813669_19-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813669/suppl/GSM5813669_19-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813669/suppl/GSM5813669_19-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813669_19-0_features.tsv.gz",
+      "barcodes_member": "GSM5813669_19-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813669_19-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "19-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "19-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813670",
+      "donor_id": "19",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #19 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813670"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 19-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892880",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746209"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813670/suppl/GSM5813670_19-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813670/suppl/GSM5813670_19-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813670/suppl/GSM5813670_19-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813670_19-1_features.tsv.gz",
+      "barcodes_member": "GSM5813670_19-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813670_19-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "19-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "19-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813671",
+      "donor_id": "22",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #22 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813671"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 22-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892881",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746210"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813671/suppl/GSM5813671_22-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813671/suppl/GSM5813671_22-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813671/suppl/GSM5813671_22-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813671_22-0_features.tsv.gz",
+      "barcodes_member": "GSM5813671_22-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813671_22-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "22-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "22-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813672",
+      "donor_id": "22",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #22 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813672"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 22-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892882",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746211"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813672/suppl/GSM5813672_22-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813672/suppl/GSM5813672_22-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813672/suppl/GSM5813672_22-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813672_22-1_features.tsv.gz",
+      "barcodes_member": "GSM5813672_22-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813672_22-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "22-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "22-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813673",
+      "donor_id": "23",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #23 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813673"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 23-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892883",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746212"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813673/suppl/GSM5813673_23-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813673/suppl/GSM5813673_23-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813673/suppl/GSM5813673_23-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813673_23-0_features.tsv.gz",
+      "barcodes_member": "GSM5813673_23-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813673_23-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "23-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "23-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813674",
+      "donor_id": "23",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #23 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813674"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 23-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892884",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746213"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813674/suppl/GSM5813674_23-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813674/suppl/GSM5813674_23-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813674/suppl/GSM5813674_23-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813674_23-1_features.tsv.gz",
+      "barcodes_member": "GSM5813674_23-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813674_23-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "23-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "23-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813675",
+      "donor_id": "24",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #24 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813675"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 24-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892885",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746214"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813675/suppl/GSM5813675_24-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813675/suppl/GSM5813675_24-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813675/suppl/GSM5813675_24-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813675_24-0_features.tsv.gz",
+      "barcodes_member": "GSM5813675_24-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813675_24-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "24-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "24-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813676",
+      "donor_id": "24",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #24 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813676"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 24-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892886",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746215"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813676/suppl/GSM5813676_24-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813676/suppl/GSM5813676_24-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813676/suppl/GSM5813676_24-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813676_24-1_features.tsv.gz",
+      "barcodes_member": "GSM5813676_24-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813676_24-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "24-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "24-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813677",
+      "donor_id": "25",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #25 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813677"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 25-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892887",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746216"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813677/suppl/GSM5813677_25-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813677/suppl/GSM5813677_25-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813677/suppl/GSM5813677_25-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813677_25-0_features.tsv.gz",
+      "barcodes_member": "GSM5813677_25-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813677_25-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "25-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "25-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813678",
+      "donor_id": "25",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #25 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813678"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 25-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892888",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746217"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813678/suppl/GSM5813678_25-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813678/suppl/GSM5813678_25-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813678/suppl/GSM5813678_25-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813678_25-1_features.tsv.gz",
+      "barcodes_member": "GSM5813678_25-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813678_25-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "25-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "25-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813679",
+      "donor_id": "28",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #28 before TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813679"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 28-0",
+          "sample collection time: pre TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892889",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746218"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813679/suppl/GSM5813679_28-0_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813679/suppl/GSM5813679_28-0_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813679/suppl/GSM5813679_28-0_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813679_28-0_features.tsv.gz",
+      "barcodes_member": "GSM5813679_28-0_barcodes.tsv.gz",
+      "matrix_member": "GSM5813679_28-0_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "28-0",
+        "source_sample collection time": "pre TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "pre TTFields +TMZ",
+        "source_specimen_label": "28-0",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    },
+    {
+      "accession": "GSM5813680",
+      "donor_id": "28",
+      "source_metadata": {
+        "title": [
+          "PBMC of patient #28 after TTF treatment"
+        ],
+        "geo_accession": [
+          "GSM5813680"
+        ],
+        "status": [
+          "Public on Jan 01 2025"
+        ],
+        "submission_date": [
+          "Jan 12 2022"
+        ],
+        "last_update_date": [
+          "Jan 01 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood mononuclear cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "sample id: 28-1",
+          "sample collection time: post  TTFields +TMZ",
+          "disease: Glioblastoma"
+        ],
+        "treatment_protocol_ch1": [
+          "Blood was draw before and one month after TTField plus TMZ treatment started"
+        ],
+        "growth_protocol_ch1": [
+          "Peripheral blood mononuclear cells (PBMCs) were obtained from blood by density gradient centrifugation (Ficoll-Hypaque) and cryopreserved at liquid nitrogen until processed."
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMC samples were quickly taken from liquid nitrogen and counted 1.2e4 cells putting on a 10x Chromium instrument (10x Genomics) to export labeled RNA fragments using Chromium Single Cell 3\u2032 v3 Reagent Kit (PN-1000075).",
+          "Single-cell RNA-seq libraries were prepared using the Chromium Single Cell 3\u2032 v3 library construction Kit (PN-1000075)",
+          "End repair, A-tailing, adaptor ligation"
+        ],
+        "data_processing": [
+          "Conversion of the raw sequencing data from the bcl to fastq format and the subsequent alignment to the reference genome GRCh38 (GENCODE v.24) and gene count were performed using the cellranger software (10x Genomics, version 4.0.0) with the command cellranger mkfastq, the STAR aligner, and the command cellranger count, respectively.",
+          "Results from all libraries and batches were pooled together using the command cellranger aggr without normalization for dead cells as it will be handled downstream.",
+          "UMAP coordinates calculations were performed by using Seurat package (3.2.2), using top 75 PCA principle components as input features.",
+          "Cell clustering was  done using graph-based clustering approach implemented in the Seurat package(3.2.2) with command FindClusters",
+          "Genome_build: hg38",
+          "Supplementary_files_format_and_content: barcodes.tsv cell barcodes for all samples",
+          "Supplementary_files_format_and_content: features.tsv features for all samples",
+          "Supplementary_files_format_and_content: matrix.mtx Filtered feature-barcode matrices  in  sparse matrix MEX format for all samples",
+          "Supplementary_files_format_and_content: cell_metadata.txt metadata for each single cell, including information about cell barcode , nCount_RNA, nFeature_RNA  , percent.mt,  percent.tubulinA ,  library_id, patient , timepoint , batch, seurat_clusters, UMAP_1, UMAP_2 in tab -delimited text format",
+          "Supplementary_files_format_and_content: seurat_object.RDS seurat object file in RDS R object serialized format"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "SON,B,LE"
+        ],
+        "contact_email": [
+          "sble@usc.edu"
+        ],
+        "contact_phone": [
+          "3522843026"
+        ],
+        "contact_institute": [
+          "University of Southern California"
+        ],
+        "contact_address": [
+          "1645 Amberwood Drive, Unit 11"
+        ],
+        "contact_city": [
+          "SOUTH PASADENA"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "91030"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN24892890",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX13746219"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813680/suppl/GSM5813680_28-1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813680/suppl/GSM5813680_28-1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5813nnn/GSM5813680/suppl/GSM5813680_28-1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE193525"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "genes_member": "GSM5813680_28-1_features.tsv.gz",
+      "barcodes_member": "GSM5813680_28-1_barcodes.tsv.gz",
+      "matrix_member": "GSM5813680_28-1_matrix.mtx.gz",
+      "metadata": {
+        "source_sample id": "28-1",
+        "source_sample collection time": "post  TTFields +TMZ",
+        "source_disease": "Glioblastoma",
+        "author_cell_type": "not_reported",
+        "sex": "not_reported",
+        "age": "not_reported",
+        "age_unit": "years",
+        "disease": "Glioblastoma",
+        "source_collection_time": "post  TTFields +TMZ",
+        "source_specimen_label": "28-1",
+        "treatment": "TTFields plus temozolomide; both visits after chemoradiation",
+        "source_batch": "NS2050"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

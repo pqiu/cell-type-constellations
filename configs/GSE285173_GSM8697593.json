@@ -1,0 +1,172 @@
+{
+  "dataset_id": "GSE285173_GSM8697593",
+  "study_id": "GSE285173",
+  "input_format": "typed_h5ad",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "source_asset": {
+    "filename": "GSM8697593_Ado_002.h5ad",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8697nnn/GSM8697593/suppl/GSM8697593_Ado_002.h5ad",
+    "expected_bytes": 74398975,
+    "sha256": "b1a6d5b497cff629041aff0799aa63e4c60f78daa2461589a804026dd0efdfca"
+  },
+  "feature_type_column": "feature_types",
+  "gene_id_column": "gene_ids",
+  "source_cell_exclusions": {},
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "physical_sample_mapping_evidence": "Six study-scoped donor/material groups, each one original PBMC capture; three adolescent and three adult source groups. Globally unique donor identity unresolved.",
+  "sample_mapping_evidence": "Six study-scoped donor/material groups, each one original PBMC capture; three adolescent and three adult source groups. Globally unique donor identity unresolved.",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "metadata_mapping": {
+    "constants": {
+      "source_sample_id": "GSM8697593",
+      "donor_id": "Ado_002",
+      "tissue": "blood",
+      "condition": "recovered COVID-19",
+      "source_age_group_as_reported": "adolescents",
+      "source_GEO_title": "human PBMCs from recovered adolescents_002",
+      "source_characteristics_json": "[\"tissue: blood\", \"cell line: PBMCs\", \"cell type: PBMCs\"]",
+      "source_specimen": "PBMC",
+      "source_library_name": "Ado_002",
+      "source_missingness_policy": "No individual age, sex, collection date or vaccination status supplied. Series age descriptions differ: adolescents10-15 versus under15; adults over40 versus over45. Preserve source age-group labels, do not assign exact ages or reconcile limits by guess.",
+      "source_gene_coverage": "Source reports removal of genes detected in fewer than3cells. Retain each deposited native gene axis separately; omitted genes unavailable, no zero fill. RNA library denominators refer to available deposited RNA counts, not an asserted unfiltered whole transcriptome.",
+      "source_count_policy": "All deposited X values checked finite/nonnegative/integer; no raw slot or layers. Source describes later LogNormalize, but deposited X integer values are used unchanged, without inverse normalization.",
+      "source_identity_policy": "Series explicitly reports three recovered adolescents and three recovered adults, one original H5AD per library. Library names Ado001-003/Adult001-003 define six conservative study-scoped donor/material groups; source internal cell metadata preserved, global identity overlap unresolved.",
+      "split_assignment": "unassigned; keep study-scoped donor intact; cross-study identity unresolved"
+    }
+  },
+  "source_metadata": {
+    "accession": "GSE285173",
+    "original_source_record": "GSM8697593",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285173",
+    "access": "Public original deposited PBMC integer-count H5AD",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "original_source_metadata": {
+      "title": [
+        "human PBMCs from recovered adolescents_002"
+      ],
+      "geo_accession": [
+        "GSM8697593"
+      ],
+      "status": [
+        "Public on Feb 25 2025"
+      ],
+      "submission_date": [
+        "Dec 22 2024"
+      ],
+      "last_update_date": [
+        "Feb 25 2025"
+      ],
+      "type": [
+        "SRA"
+      ],
+      "channel_count": [
+        "1"
+      ],
+      "source_name_ch1": [
+        "blood"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "taxid_ch1": [
+        "9606"
+      ],
+      "characteristics_ch1": [
+        "tissue: blood",
+        "cell line: PBMCs",
+        "cell type: PBMCs"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Whole blood was collected in a tube containing ethylene diamine tetraacetic acid (EDTA). PBMCs were isolated by Ficoll-Hypaque density gradient centrifugation with LymphoprepTM solution (AXIS-SHIELD Poc AS, Oslo, Norway) according to the manufacturer\u2019s recommendations. The mononuclear cell layer was carefully transferred to a new 15 mL conical tube and washed twice with RPMI 1640 medium (Hyclone, Logan, UT, USA) by centrifuging at 486 \u00d7 g for 10 min at room temperature. PBMCs were resuspended in RPMI 1640 culture medium containing 10% fetal bovine serum (FBS) (Millipore, Danvers, MA, USA), 100 units/mL penicillin, and 100 \u03bcg/mL streptomycin (GIBCO, Grand Island, NY, USA).",
+        "Single cell RNA (sc-RNA) libraries of PBMCs were prepared according to the guideline from the Chromium Single Cell 5' v3 chemistry (10x Genomics, Cat No. 120237) based on the Drop-seq methodology. The libraries were sequenced using Illumina nova S6000 device by Genergy Biotechnology (Shanghai, China)."
+      ],
+      "description": [
+        "Library name: Ado_002"
+      ],
+      "data_processing": [
+        "scRNA sequencing reads were subjected to quality control based on FastQC software v0.11.9 (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Then, we used Cell Ranger software (version 3.1.0) to process, align, and summarize sequencing data. Demultiplex FASTQ reads were aligned to the human genome reference (GRCh38-3.0.0). Reads with low base-calling quality scores and assigned cell barcodes were filtered. Unique molecular identifier (UMI) counts of each transcript were quantified. UMI matrix was converted to Seurat objects by the R package Seurat v3. Further analysis was performed by R package. Raw UMI count matrices were filtered to remove the genes expressed in fewer than three cells and the cells with either fewer than 200 genes, or more than 6000 genes, or high percentages of mitochondrial genes (more than 15%). To account for the differences in sequencing depth across the cells, UMI count was then normalized by a global-scaling method, converted with a scaling factor (10,000 by the default) and log-transformed with the LogNormalize function in Seurat for downstream analysis.",
+        "Assembly: GRCh38-3.0.0",
+        "Supplementary files format and content: FASTQ Files"
+      ],
+      "platform_id": [
+        "GPL24676"
+      ],
+      "contact_name": [
+        "yangdian,,lai"
+      ],
+      "contact_email": [
+        "119710910052@sjtu.edu.cn"
+      ],
+      "contact_institute": [
+        "Shanghai Jiaotong University School of Medicine"
+      ],
+      "contact_address": [
+        "South Chongqing Road 281"
+      ],
+      "contact_city": [
+        "Shanghai"
+      ],
+      "contact_zip/postal_code": [
+        "200025"
+      ],
+      "contact_country": [
+        "China"
+      ],
+      "instrument_model": [
+        "Illumina NovaSeq 6000"
+      ],
+      "library_selection": [
+        "cDNA"
+      ],
+      "library_source": [
+        "transcriptomic single cell"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN45941702",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX27163645"
+      ],
+      "supplementary_file_1": [
+        "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM8697nnn/GSM8697593/suppl/GSM8697593_Ado_002.h5ad"
+      ],
+      "series_id": [
+        "GSE285173"
+      ],
+      "data_row_count": [
+        "0"
+      ]
+    },
+    "source_identity_review": {
+      "path": "references/datasets/GSE285173_source_identity_review.json",
+      "sha256": "e7795592dab35ab3b7eac786c2454367a5110c7b5c0f67031be5f3655e2b5fb6"
+    },
+    "source_count_review": {
+      "path": "references/datasets/GSE285173_GSM8697593_original_count_review.json",
+      "sha256": "63d552062c6411dd12ffcbf82ffd5c0e534d991a6974d6e6ff2e27499a64f95c"
+    },
+    "gene_coverage": "Source reports removal of genes detected in fewer than3cells. Retain each deposited native gene axis separately; omitted genes unavailable, no zero fill. RNA library denominators refer to available deposited RNA counts, not an asserted unfiltered whole transcriptome.",
+    "normalization_denominator": "Available source-filtered native RNA features; not a recovered unfiltered transcriptome"
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false
+}

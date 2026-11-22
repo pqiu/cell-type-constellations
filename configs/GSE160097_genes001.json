@@ -1,0 +1,3238 @@
+{
+  "dataset_id": "GSE160097_genes001",
+  "study_id": "GSE160097",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "7 conservative original participant/blood-material groups;19 dependent selected memory-T-cell RNA views; exact draw dates unavailable",
+  "source_metadata": {
+    "accession": "GSE160097",
+    "publications": [
+      "https://pubmed.ncbi.nlm.nih.gov/33296081/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE160097",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+    "source_processing": [
+      "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+      "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+      "Genome_build: hg19",
+      "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+    ],
+    "source_barcode_scope": "Original raw droplet whitelist; barcode rows are not called cells. Existing minimum RNA QC applied before constructing AnnData; no new threshold or RNA count changes.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE160097_source_identity_review.json",
+      "sha256": "75ca084d1b9ccb32db4ef1fde9c4c2695ab67389943eb1d654640dbcf89862a2"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM4859842",
+      "donor_id": "1",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Tcon 1"
+        ],
+        "geo_accession": [
+          "GSM4859842"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552305",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363616"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859842/suppl/GSM4859842_PM4_CD4_blood_p1_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859842/suppl/GSM4859842_PM4_CD4_blood_p1_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859842/suppl/GSM4859842_PM4_CD4_blood_p1_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859842",
+        "source_GEO_title": "PB CD4+ Tcon 1",
+        "source_participant_code": "1",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Tcon",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 1\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859842_PM4_CD4_blood_p1_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2961,
+          32738
+        ],
+        "nonzeros": 6390961,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2961,
+        "genes": 32738,
+        "source_barcode_rows": 2961,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2961,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2961,
+          "full_source_RNA_counts": 21611954,
+          "selected_RNA_counts": 21611954,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859842.csv.gz",
+            "sha256": "dc386d6d0d06cec314bf6c423dcbf7937e90b6b6c2956f23bdbeb01eb2ada08a"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859842/suppl/GSM4859842_PM4_CD4_blood_p1_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859842_PM4_CD4_blood_p1_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 10587831,
+          "sha256": "2ee65874775685d8d104e8472cb072721a776478450d3687bee6c240d796b717"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859843",
+      "donor_id": "2",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Tcon 2"
+        ],
+        "geo_accession": [
+          "GSM4859843"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552347",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363617"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859843/suppl/GSM4859843_PM4_CD4_blood_p2_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859843/suppl/GSM4859843_PM4_CD4_blood_p2_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859843/suppl/GSM4859843_PM4_CD4_blood_p2_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859843",
+        "source_GEO_title": "PB CD4+ Tcon 2",
+        "source_participant_code": "2",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Tcon",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 2\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859843_PM4_CD4_blood_p2_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2611,
+          32738
+        ],
+        "nonzeros": 4956615,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2611,
+        "genes": 32738,
+        "source_barcode_rows": 2611,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2611,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2611,
+          "full_source_RNA_counts": 17346872,
+          "selected_RNA_counts": 17346872,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859843.csv.gz",
+            "sha256": "7c6db75710228e9773d813c7f49c445cbb9f1cad13d969b8c90f41b276b2ad00"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859843/suppl/GSM4859843_PM4_CD4_blood_p2_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859843_PM4_CD4_blood_p2_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 8396351,
+          "sha256": "8f3848c7a57a94026865e0f7c736aeb53e439c905303a6efb930b89074e3adce"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859844",
+      "donor_id": "4",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Tcon 4"
+        ],
+        "geo_accession": [
+          "GSM4859844"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552346",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363618"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859844/suppl/GSM4859844_PM4_CD4_blood_p4_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859844/suppl/GSM4859844_PM4_CD4_blood_p4_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859844/suppl/GSM4859844_PM4_CD4_blood_p4_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859844",
+        "source_GEO_title": "PB CD4+ Tcon 4",
+        "source_participant_code": "4",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Tcon",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 4\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859844_PM4_CD4_blood_p4_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2324,
+          32738
+        ],
+        "nonzeros": 3862817,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2324,
+        "genes": 32738,
+        "source_barcode_rows": 2324,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2324,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2324,
+          "full_source_RNA_counts": 12724428,
+          "selected_RNA_counts": 12724428,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859844.csv.gz",
+            "sha256": "585364e2b24ec390c461e92efc0db97f58190acdc89f875e734446a3b9da00af"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859844/suppl/GSM4859844_PM4_CD4_blood_p4_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859844_PM4_CD4_blood_p4_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 6674302,
+          "sha256": "2d50ac0f4f401929234d321bee508fc176353718ed109b4b397e0c241e129a7d"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859845",
+      "donor_id": "5",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Tcon 5"
+        ],
+        "geo_accession": [
+          "GSM4859845"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 5"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552345",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363619"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859845/suppl/GSM4859845_PM4_CD4_blood_p5_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859845/suppl/GSM4859845_PM4_CD4_blood_p5_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859845/suppl/GSM4859845_PM4_CD4_blood_p5_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859845",
+        "source_GEO_title": "PB CD4+ Tcon 5",
+        "source_participant_code": "5",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Tcon",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 5\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859845_PM4_CD4_blood_p5_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          3863,
+          32738
+        ],
+        "nonzeros": 6714335,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 3863,
+        "genes": 32738,
+        "source_barcode_rows": 3863,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3863,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3863,
+          "full_source_RNA_counts": 22083019,
+          "selected_RNA_counts": 22083019,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859845.csv.gz",
+            "sha256": "a285b3ea5ffacb1ce181b2809a85a7bf126f002659bfed39c636095869a25ffe"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859845/suppl/GSM4859845_PM4_CD4_blood_p5_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859845_PM4_CD4_blood_p5_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 11314714,
+          "sha256": "096dce37c5517a0f4b42a7a623c477e6965a0bece5a2c89bc339a682e2f17d7c"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859846",
+      "donor_id": "6",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Tcon 6"
+        ],
+        "geo_accession": [
+          "GSM4859846"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 6"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552344",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363620"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859846/suppl/GSM4859846_PM4_CD4_blood_p6_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859846/suppl/GSM4859846_PM4_CD4_blood_p6_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859846/suppl/GSM4859846_PM4_CD4_blood_p6_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859846",
+        "source_GEO_title": "PB CD4+ Tcon 6",
+        "source_participant_code": "6",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Tcon",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 6\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859846_PM4_CD4_blood_p6_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          4317,
+          32738
+        ],
+        "nonzeros": 5767881,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 4317,
+        "genes": 32738,
+        "source_barcode_rows": 4317,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 4317,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4317,
+          "full_source_RNA_counts": 18229981,
+          "selected_RNA_counts": 18229981,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859846.csv.gz",
+            "sha256": "93f702ec1ecb009144d400f905fdbcb1d26ae5e6bd377473614193da478c0316"
+          }
+        },
+        "source_H5_layout": "modern_matrix_hg19_features"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859846/suppl/GSM4859846_PM4_CD4_blood_p6_filtered_feature_bc_matrix.h5",
+          "filename": "GSM4859846_PM4_CD4_blood_p6_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 10165914,
+          "sha256": "622d65dcc663eb511aa9ae2fef7d1c633cb197219faebee8ae1fc52481c3c588"
+        }
+      ]
+    },
+    {
+      "accession": "GSM4859847",
+      "donor_id": "7",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Tcon 7"
+        ],
+        "geo_accession": [
+          "GSM4859847"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 7"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD25- T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552343",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363621"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859847/suppl/GSM4859847_PM4_CD4_blood_p7_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859847/suppl/GSM4859847_PM4_CD4_blood_p7_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859847/suppl/GSM4859847_PM4_CD4_blood_p7_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859847",
+        "source_GEO_title": "PB CD4+ Tcon 7",
+        "source_participant_code": "7",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Tcon",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 7\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859847_PM4_CD4_blood_p7_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3210,
+          32738
+        ],
+        "nonzeros": 5497142,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 3210,
+        "genes": 32738,
+        "source_barcode_rows": 3210,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3210,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3210,
+          "full_source_RNA_counts": 19258631,
+          "selected_RNA_counts": 19258631,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859847.csv.gz",
+            "sha256": "8f9bea154137ddf9a3e9f6ce6a00c1335361606e086a67a9b9f0ed2f12ecdaec"
+          }
+        },
+        "source_H5_layout": "modern_matrix_hg19_features"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859847/suppl/GSM4859847_PM4_CD4_blood_p7_filtered_feature_bc_matrix.h5",
+          "filename": "GSM4859847_PM4_CD4_blood_p7_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 9624641,
+          "sha256": "fe9df163f4f572873e8bb209c3e15d2db21bc4204ffedcc14c1873c0dfaa198b"
+        }
+      ]
+    },
+    {
+      "accession": "GSM4859855",
+      "donor_id": "1",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 1"
+        ],
+        "geo_accession": [
+          "GSM4859855"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552313",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363629"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859855/suppl/GSM4859855_PM5_Treg_blood_p1_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859855/suppl/GSM4859855_PM5_Treg_blood_p1_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859855/suppl/GSM4859855_PM5_Treg_blood_p1_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859855",
+        "source_GEO_title": "PB CD4+ Treg 1",
+        "source_participant_code": "1",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 1\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859855_PM5_Treg_blood_p1_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2468,
+          32738
+        ],
+        "nonzeros": 5471115,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2468,
+        "genes": 32738,
+        "source_barcode_rows": 2468,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2468,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2468,
+          "full_source_RNA_counts": 16094314,
+          "selected_RNA_counts": 16094314,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859855.csv.gz",
+            "sha256": "a2c810a433777e23339b182bf4a42a9b1f8c9ed58253541633a8282e42157991"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859855/suppl/GSM4859855_PM5_Treg_blood_p1_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859855_PM5_Treg_blood_p1_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 9050683,
+          "sha256": "a372f30cff3d4d0b5cee4d19730421ec7984e7d3e86f4143b0bb1439dcf60dc3"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859856",
+      "donor_id": "2",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 2"
+        ],
+        "geo_accession": [
+          "GSM4859856"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552334",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363630"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859856/suppl/GSM4859856_PM5_Treg_blood_p2_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859856/suppl/GSM4859856_PM5_Treg_blood_p2_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859856/suppl/GSM4859856_PM5_Treg_blood_p2_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859856",
+        "source_GEO_title": "PB CD4+ Treg 2",
+        "source_participant_code": "2",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 2\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859856_PM5_Treg_blood_p2_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          1299,
+          32738
+        ],
+        "nonzeros": 3361756,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 1299,
+        "genes": 32738,
+        "source_barcode_rows": 1299,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1299,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1299,
+          "full_source_RNA_counts": 12783837,
+          "selected_RNA_counts": 12783837,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859856.csv.gz",
+            "sha256": "057ad4ccacca5d878a4db63e98d9d6f4e5bf42c4d59505ac8c9b715b50473e29"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859856/suppl/GSM4859856_PM5_Treg_blood_p2_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859856_PM5_Treg_blood_p2_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 5717403,
+          "sha256": "b888695522a29adb846c6ef24394fd5dc433b73f62511f6a0f799e5748d7878b"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859857",
+      "donor_id": "3",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 3"
+        ],
+        "geo_accession": [
+          "GSM4859857"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 3"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552333",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363631"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859857/suppl/GSM4859857_PM5_Treg_blood_p3_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859857/suppl/GSM4859857_PM5_Treg_blood_p3_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859857/suppl/GSM4859857_PM5_Treg_blood_p3_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859857",
+        "source_GEO_title": "PB CD4+ Treg 3",
+        "source_participant_code": "3",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 3\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859857_PM5_Treg_blood_p3_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          1662,
+          32738
+        ],
+        "nonzeros": 3773936,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 1662,
+        "genes": 32738,
+        "source_barcode_rows": 1662,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1662,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1662,
+          "full_source_RNA_counts": 12247879,
+          "selected_RNA_counts": 12247879,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859857.csv.gz",
+            "sha256": "63bcc5628b37c9fd15b5818b3f2d05f955432ba0de9d6b9aaa7f39e4a0ccb664"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859857/suppl/GSM4859857_PM5_Treg_blood_p3_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859857_PM5_Treg_blood_p3_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 6381319,
+          "sha256": "0b6ae5f90826e5d2c35c398f0e6ecd72230e12be1b841339ea8b389be35cf301"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859858",
+      "donor_id": "4",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 4"
+        ],
+        "geo_accession": [
+          "GSM4859858"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552332",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363632"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859858/suppl/GSM4859858_PM5_Treg_blood_p4_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859858/suppl/GSM4859858_PM5_Treg_blood_p4_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859858/suppl/GSM4859858_PM5_Treg_blood_p4_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859858",
+        "source_GEO_title": "PB CD4+ Treg 4",
+        "source_participant_code": "4",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 4\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859858_PM5_Treg_blood_p4_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2391,
+          32738
+        ],
+        "nonzeros": 4398427,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2391,
+        "genes": 32738,
+        "source_barcode_rows": 2391,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2391,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2391,
+          "full_source_RNA_counts": 13095191,
+          "selected_RNA_counts": 13095191,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859858.csv.gz",
+            "sha256": "76d8d50988526bea4e725770bf4ef019445f5318cc107a8f365cdd981433735b"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859858/suppl/GSM4859858_PM5_Treg_blood_p4_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859858_PM5_Treg_blood_p4_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 7493748,
+          "sha256": "31f4b0f282b814562b322f9f5ea204ada20157086ab771c0bc9f5470c12bf424"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859859",
+      "donor_id": "5",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 5"
+        ],
+        "geo_accession": [
+          "GSM4859859"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 5"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552316",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363633"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859859/suppl/GSM4859859_PM5_Treg_blood_p5_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859859/suppl/GSM4859859_PM5_Treg_blood_p5_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859859/suppl/GSM4859859_PM5_Treg_blood_p5_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859859",
+        "source_GEO_title": "PB CD4+ Treg 5",
+        "source_participant_code": "5",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 5\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859859_PM5_Treg_blood_p5_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          4197,
+          32738
+        ],
+        "nonzeros": 8209308,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 4197,
+        "genes": 32738,
+        "source_barcode_rows": 4197,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 4197,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 4197,
+          "full_source_RNA_counts": 25992443,
+          "selected_RNA_counts": 25992443,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859859.csv.gz",
+            "sha256": "654e034bb686a7a7f2c7220775017166461397edef2a36c523e499f671d89fd4"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859859/suppl/GSM4859859_PM5_Treg_blood_p5_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859859_PM5_Treg_blood_p5_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 13683586,
+          "sha256": "6d11c23060bec4d484ac7bd1ac4a9974f0c627edf6a87edd1c85f20973900f0c"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859860",
+      "donor_id": "6",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 6"
+        ],
+        "geo_accession": [
+          "GSM4859860"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 6"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552315",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363634"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859860/suppl/GSM4859860_PM5_Treg_blood_p6_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859860/suppl/GSM4859860_PM5_Treg_blood_p6_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859860/suppl/GSM4859860_PM5_Treg_blood_p6_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859860",
+        "source_GEO_title": "PB CD4+ Treg 6",
+        "source_participant_code": "6",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 6\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859860_PM5_Treg_blood_p6_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          2287,
+          32738
+        ],
+        "nonzeros": 4141042,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2287,
+        "genes": 32738,
+        "source_barcode_rows": 2287,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2287,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2287,
+          "full_source_RNA_counts": 13024031,
+          "selected_RNA_counts": 13024031,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859860.csv.gz",
+            "sha256": "c792dfd6e08b3b5e686b22fc030e00eca30d08210ee61e6fda69f0c847883608"
+          }
+        },
+        "source_H5_layout": "modern_matrix_hg19_features"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859860/suppl/GSM4859860_PM5_Treg_blood_p6_filtered_feature_bc_matrix.h5",
+          "filename": "GSM4859860_PM5_Treg_blood_p6_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 7679241,
+          "sha256": "b2a1066efb7c51d5c21d58d6fb81fa4a9baf5b221bbbb66d8a63019900f24c1f"
+        }
+      ]
+    },
+    {
+      "accession": "GSM4859861",
+      "donor_id": "7",
+      "source_metadata": {
+        "title": [
+          "PB CD4+ Treg 7"
+        ],
+        "geo_accession": [
+          "GSM4859861"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 7"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD4+CD45RO+CD127loCD25+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552331",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363635"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859861/suppl/GSM4859861_PM5_Treg_blood_p7_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859861/suppl/GSM4859861_PM5_Treg_blood_p7_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859861/suppl/GSM4859861_PM5_Treg_blood_p7_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859861",
+        "source_GEO_title": "PB CD4+ Treg 7",
+        "source_participant_code": "7",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD4+ Treg",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 7\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859861_PM5_Treg_blood_p7_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          356,
+          32738
+        ],
+        "nonzeros": 598752,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 356,
+        "genes": 32738,
+        "source_barcode_rows": 356,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 356,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 356,
+          "full_source_RNA_counts": 1900439,
+          "selected_RNA_counts": 1900439,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859861.csv.gz",
+            "sha256": "14a7e41e1120d20adcd2932758ecef30b8f705cb05d3dc811cd8357e64e37dc5"
+          }
+        },
+        "source_H5_layout": "modern_matrix_hg19_features"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859861/suppl/GSM4859861_PM5_Treg_blood_p7_filtered_feature_bc_matrix.h5",
+          "filename": "GSM4859861_PM5_Treg_blood_p7_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 2630391,
+          "sha256": "2d6c6558a15d898e2b614aefc0ab93f2f13a78f774d696f09865fe3290989f31"
+        }
+      ]
+    },
+    {
+      "accession": "GSM4859869",
+      "donor_id": "1",
+      "source_metadata": {
+        "title": [
+          "PB CD8+CD45RO+ T cell 1"
+        ],
+        "geo_accession": [
+          "GSM4859869"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD8+CD45RO+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 1"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD8+CD45RO+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552323",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363643"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859869/suppl/GSM4859869_PM6_CD8_blood_p1_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859869/suppl/GSM4859869_PM6_CD8_blood_p1_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859869/suppl/GSM4859869_PM6_CD8_blood_p1_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859869",
+        "source_GEO_title": "PB CD8+CD45RO+ T cell 1",
+        "source_participant_code": "1",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD8+CD45RO+ T cell",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 1\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859869_PM6_CD8_blood_p1_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2680,
+          32738
+        ],
+        "nonzeros": 5720638,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2680,
+        "genes": 32738,
+        "source_barcode_rows": 2680,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2680,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2680,
+          "full_source_RNA_counts": 17416567,
+          "selected_RNA_counts": 17416567,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859869.csv.gz",
+            "sha256": "40bdb326ba583a160840784fc5f971bba4c416bfa6500e4706738df425f28bf1"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859869/suppl/GSM4859869_PM6_CD8_blood_p1_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859869_PM6_CD8_blood_p1_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 9511053,
+          "sha256": "63081248ea542acb08adb61b2ec07105ba9dc5748d53c5d9fa6ac0d7a931de52"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859870",
+      "donor_id": "2",
+      "source_metadata": {
+        "title": [
+          "PB CD8+CD45RO+ T cell 2"
+        ],
+        "geo_accession": [
+          "GSM4859870"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD8+CD45RO+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 2"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD8+CD45RO+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552322",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363644"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859870/suppl/GSM4859870_PM6_CD8_blood_p2_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859870/suppl/GSM4859870_PM6_CD8_blood_p2_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859870/suppl/GSM4859870_PM6_CD8_blood_p2_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859870",
+        "source_GEO_title": "PB CD8+CD45RO+ T cell 2",
+        "source_participant_code": "2",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD8+CD45RO+ T cell",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 2\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859870_PM6_CD8_blood_p2_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          1829,
+          32738
+        ],
+        "nonzeros": 4021320,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 1829,
+        "genes": 32738,
+        "source_barcode_rows": 1829,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 1829,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 1829,
+          "full_source_RNA_counts": 14048200,
+          "selected_RNA_counts": 14048200,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859870.csv.gz",
+            "sha256": "7ae8de4274dcc8cdb6ed01817cee836dc8b1812c0722022600ba287c62ba2032"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859870/suppl/GSM4859870_PM6_CD8_blood_p2_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859870_PM6_CD8_blood_p2_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 6827141,
+          "sha256": "229bbde06a69bfb45600b4086ebbb07ff483dc8b2c306523335568144a6e3790"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859871",
+      "donor_id": "4",
+      "source_metadata": {
+        "title": [
+          "PB CD8+CD45RO+ T cell 4"
+        ],
+        "geo_accession": [
+          "GSM4859871"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD8+CD45RO+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 4"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD8+CD45RO+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552321",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363645"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859871/suppl/GSM4859871_PM6_CD8_blood_p4_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859871/suppl/GSM4859871_PM6_CD8_blood_p4_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859871/suppl/GSM4859871_PM6_CD8_blood_p4_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859871",
+        "source_GEO_title": "PB CD8+CD45RO+ T cell 4",
+        "source_participant_code": "4",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD8+CD45RO+ T cell",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 4\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859871_PM6_CD8_blood_p4_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          2802,
+          32738
+        ],
+        "nonzeros": 4901710,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 2802,
+        "genes": 32738,
+        "source_barcode_rows": 2802,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 2802,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 2802,
+          "full_source_RNA_counts": 15479782,
+          "selected_RNA_counts": 15479782,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859871.csv.gz",
+            "sha256": "6592478090f13277c3bad2596fbc50fc143c46630deee79f96fd1d9011e224cf"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859871/suppl/GSM4859871_PM6_CD8_blood_p4_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859871_PM6_CD8_blood_p4_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 8354302,
+          "sha256": "bdc343ab1a425a80e08d601bd3f2117cab0c10df28e6c56b570b996f37500795"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859872",
+      "donor_id": "5",
+      "source_metadata": {
+        "title": [
+          "PB CD8+CD45RO+ T cell 5"
+        ],
+        "geo_accession": [
+          "GSM4859872"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD8+CD45RO+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 5"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD8+CD45RO+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552320",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363646"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859872/suppl/GSM4859872_PM6_CD8_blood_p5_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859872/suppl/GSM4859872_PM6_CD8_blood_p5_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859872/suppl/GSM4859872_PM6_CD8_blood_p5_filtered_gene_bc_matrices_h5.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859872",
+        "source_GEO_title": "PB CD8+CD45RO+ T cell 5",
+        "source_participant_code": "5",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD8+CD45RO+ T cell",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 5\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859872_PM6_CD8_blood_p5_filtered_gene_bc_matrices_h5.h5",
+      "source_count_review": {
+        "shape": [
+          3195,
+          32738
+        ],
+        "nonzeros": 5070848,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 3195,
+        "genes": 32738,
+        "source_barcode_rows": 3195,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3195,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3195,
+          "full_source_RNA_counts": 14361225,
+          "selected_RNA_counts": 14361225,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859872.csv.gz",
+            "sha256": "c2324dc8e5c796b2c1dc65dfdcc923b1155f875642cd93007dbd8f04fd44700d"
+          }
+        },
+        "source_H5_layout": "legacy_hg19_group"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859872/suppl/GSM4859872_PM6_CD8_blood_p5_filtered_gene_bc_matrices_h5.h5",
+          "filename": "GSM4859872_PM6_CD8_blood_p5_filtered_gene_bc_matrices_h5.h5",
+          "expected_bytes": 8657179,
+          "sha256": "e6149c564547894d480b77eb4f8699692e44b9c567f2aee092072e35d818ce5b"
+        }
+      ],
+      "legacy_10x_genome": "hg19"
+    },
+    {
+      "accession": "GSM4859873",
+      "donor_id": "6",
+      "source_metadata": {
+        "title": [
+          "PB CD8+CD45RO+ T cell 6"
+        ],
+        "geo_accession": [
+          "GSM4859873"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD8+CD45RO+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 6"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD8+CD45RO+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552319",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363647"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859873/suppl/GSM4859873_PM6_CD8_blood_p6_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859873/suppl/GSM4859873_PM6_CD8_blood_p6_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859873/suppl/GSM4859873_PM6_CD8_blood_p6_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859873",
+        "source_GEO_title": "PB CD8+CD45RO+ T cell 6",
+        "source_participant_code": "6",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD8+CD45RO+ T cell",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 6\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859873_PM6_CD8_blood_p6_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3362,
+          32738
+        ],
+        "nonzeros": 5059485,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 3362,
+        "genes": 32738,
+        "source_barcode_rows": 3362,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3362,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3362,
+          "full_source_RNA_counts": 15113803,
+          "selected_RNA_counts": 15113803,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859873.csv.gz",
+            "sha256": "1b4b439bddf842592d39e6da36ba7e8bacd2040bc1fc0d1a81cd869cae9bde8b"
+          }
+        },
+        "source_H5_layout": "modern_matrix_hg19_features"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859873/suppl/GSM4859873_PM6_CD8_blood_p6_filtered_feature_bc_matrix.h5",
+          "filename": "GSM4859873_PM6_CD8_blood_p6_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 9044558,
+          "sha256": "ae0a5e08a584af1678be62fedc90d0e16eb893a5f84a68ef84fbb81e59bc7a97"
+        }
+      ]
+    },
+    {
+      "accession": "GSM4859874",
+      "donor_id": "7",
+      "source_metadata": {
+        "title": [
+          "PB CD8+CD45RO+ T cell 7"
+        ],
+        "geo_accession": [
+          "GSM4859874"
+        ],
+        "status": [
+          "Public on Nov 27 2020"
+        ],
+        "submission_date": [
+          "Oct 26 2020"
+        ],
+        "last_update_date": [
+          "Nov 28 2020"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood CD8+CD45RO+ T cells"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Peripheral Blood",
+          "patient id: JIA patient 7"
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Mononuclear cells from the peripheral blood (PBMCs) were isolated by Ficoll density\u2010gradient centrifugation and subsequent collection of the leukocyte-containing interphase. For the isolation of leukocytes from the synovial fluid, we diluted the viscous fluid with 5 mM ethylenediaminetetraacetic acid (EDTA)-containing phosphate-buffered saline (PBS) and filtered the cells using a 70 \u03bcm cell strainer (BD). Subsequently, cells were centrifuged at 300 g at 4 \u00b0C and resuspended in PBS containing 0.2% bovine serum albumin (PBS/BSA). Following an additional filtration step through a 70 \u03bcm cell strainer, cells were resuspended in PBS/BSA prior to depletion of CD15+ neutrophils by magnetic cell separation (MACS, Miltenyi Biotec). Single cell suspensions of PBMCs and CD15-depleted SF cells were blocked with human FcR blocking reagent (Miltenyi Biotec) and labeled for 15 min at 4 \u00b0C with antibodies for fluorescent activated cell sorting (FACS) using a FACS-Aria II (BD). Cells were sorted to obtain antigen-experienced (memory) CD4+CD45RO+CD25- T cells (Tcon), CD4+CD45RO+CD127loCD25+ regulatory T cells (Treg), and CD8+CD45RO+ T cells. Sorted cells then were subjected to single-cell sequencing by applying them to the 10X Genomics platform.",
+          "For single cell library preparation, FACS-sorted human T cells were applied to the 10X Genomics platform using the Chromium Single Cell 5\u2019 Library & Gel Bead Kit (10x Genomics) and following the manufacturer\u2019s instructions for capturing ~3000 cells. The amplified cDNA was used for simultaneous 5\u2019 gene expression (GEX) and TCR library preparation. TCR target enrichment was achieved using the Chromium Single Cell V(D)J Enrichment Kit for Human T cells. Through fragmentation, adapter ligation and index PCR the final libraries were obtained. The quality of single cell 5\u2019 GEX and TCR libraries was assessed by Qubit quantification, Bioanalyzer fragment analysis (HS DNA Kit, Agilent) and KAPA library quantification qPCR (Roche). The sequencing was performed on a NextSeq500 device (Illumina) using High Output v2 Kits (150 cycles) with the recommended sequencing conditions for 5\u2019 GEX libraries (read1: 26nt, read2: 98nt, index1: 8nt, index2: n.a.) and Mid Output v2 Kits (300 cycles) for TCR libraries (read1: 150nt, read2: 150nt, index1: 8nt, index2: n.a., 20% PhiX spike-in). Raw Illumina-NextSeq 500 data were processed using cellranger-2.1.1. Mkfastq, count commands and vdj commands were used with default parameter settings. The genome reference was refdata-cellranger-hg19-1.2.0. The vdj-reference was refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0. In both cases, the number of expected cells was set to 3000."
+        ],
+        "description": [
+          "Peripheral blood CD8+CD45RO+ T cells from JIA patient"
+        ],
+        "data_processing": [
+          "The Cell Ranger Single Cell Software Suite 3.0.2 was used to perform sample demultiplexing, barcode processing, and single cell 5\u2019 gene counting for transcriptome wirh refdata-cellranger-hg19-1.2.0 as reference and expected-cells number of 3000 for each sample; polymorphisms removed.",
+          "For immune profiling Cell Ranger Single Cell Software Suite 3.0.2 was used for demultiplexing, barcode processing and assembly of the TCR sequences, using the vdj command and refdata-cellranger-vdj-GRCh38-alts-ensembl-2.0.0 as reference.",
+          "Genome_build: hg19",
+          "Supplementary_files_format_and_content: Barcoded BAM, with Chromium cellular and molecular barcodes for each read, stored as TAG fields; h5: aggregated gene count matrix in hdf5 format. fasta: high-confidence contig sequences of immune receptors with the corresponding cellular barcode and contig-id; csv: results from single cell immune profiling, comprising the annotation of the immune receptor, cellular barcode and contig-id."
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "Pawel,,Durek"
+        ],
+        "contact_email": [
+          "pawel.durek@drfz.de"
+        ],
+        "contact_institute": [
+          "Deutsches Rheuma-Forschungszentrum"
+        ],
+        "contact_address": [
+          "Charit\u00e9platz 1"
+        ],
+        "contact_city": [
+          "Berlin"
+        ],
+        "contact_zip/postal_code": [
+          "10117"
+        ],
+        "contact_country": [
+          "Germany"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN16552348",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX9363648"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859874/suppl/GSM4859874_PM6_CD8_blood_p7_filtered_contig.fasta.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859874/suppl/GSM4859874_PM6_CD8_blood_p7_filtered_contig_annotations.csv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859874/suppl/GSM4859874_PM6_CD8_blood_p7_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE160097"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM4859874",
+        "source_GEO_title": "PB CD8+CD45RO+ T cell 7",
+        "source_participant_code": "7",
+        "source_visit_code": "unspecified_source_blood_material",
+        "source_capture_label": "CD8+CD45RO+ T cell",
+        "condition": "juvenile idiopathic arthritis",
+        "source_characteristics_json": "{\"patient id\": \"JIA patient 7\", \"tissue\": \"Peripheral Blood\"}",
+        "source_specimen": "Ficoll PBMC-derived sorted memory Tcon, Treg or CD8 T-cell fraction",
+        "source_identity_policy": "Original JIA patient code and exact blood filename agree. Blood fractions are dependent views grouped conservatively per participant and unspecified blood material; no extra draws inferred without collection dates.",
+        "source_coverage_policy": "Selected memory T-cell fractions; absent PBMC lineages unavailable, not zero. Fraction capture ratios are not natural PBMC subtype proportions.",
+        "source_processing_policy": "Native hg19 integer RNA counts and coordinates retained. Extraction says CellRanger2.1.1, processing says3.0.2; both original strings preserved without version correction. Receptor GRCh38 reference is separate from RNA hg19.",
+        "source_primary_access_policy": "Primary citation and abstract verified; publisher full text unavailable in current access. Deposited original GEO protocol explicitly identifies Ficoll PBMC preparation and memory T-cell sorting.",
+        "source_demographic_policy": "Individual numerical age, sex, treatment and collection dates not supplied in GEO; no patient-number-only join or imputation.",
+        "split_assignment": "unassigned; all fractions per original participant stay together; cross-study identity unresolved"
+      },
+      "matrix_h5_member": "GSM4859874_PM6_CD8_blood_p7_filtered_feature_bc_matrix.h5",
+      "source_count_review": {
+        "shape": [
+          3088,
+          32738
+        ],
+        "nonzeros": 5247399,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75",
+        "cells": 3088,
+        "genes": 32738,
+        "source_barcode_rows": 3088,
+        "source_genome_label": "hg19",
+        "annotation_symbol_overlap": 19510,
+        "retained_native_coordinates": {
+          "path": "references/datasets/GSE160097_original_RNA_QC/5779e7c51c2f89a2c8fbaa95d2e9ee3dedef4db905319806763fc81748f13a75_genes.csv.gz",
+          "sha256": "85310f70dd2a14e78788dac1a5d9d7ab37a436cece1541c2a7780933539433a2"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 3088,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 3088,
+          "full_source_RNA_counts": 16739354,
+          "selected_RNA_counts": 16739354,
+          "all_original_values_and_coordinates_checked": true,
+          "metadata": {
+            "path": "references/datasets/GSE160097_original_RNA_QC/GSM4859874.csv.gz",
+            "sha256": "839651988a312f46579a1fc960f450ada5f4fbce36ba0180cdb15719a413f7c4"
+          }
+        },
+        "source_H5_layout": "modern_matrix_hg19_features"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4859nnn/GSM4859874/suppl/GSM4859874_PM6_CD8_blood_p7_filtered_feature_bc_matrix.h5",
+          "filename": "GSM4859874_PM6_CD8_blood_p7_filtered_feature_bc_matrix.h5",
+          "expected_bytes": 9208929,
+          "sha256": "377b47d14808fac81840ca6cf673272e38dd5fdf866edb7423a55e489310243a"
+        }
+      ]
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "7 conservative original participant/blood-material groups;19 dependent selected memory-T-cell RNA views; exact draw dates unavailable"
+}

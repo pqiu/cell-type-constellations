@@ -1,0 +1,1621 @@
+{
+  "dataset_id": "GSE214985_genes001",
+  "study_id": "GSE214985",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "8originalclinicalPBMCdraws/4pairedsourceparticipants; originalpre/postlabels, primaryscRNA visitbaseline/20weeks",
+  "source_metadata": {
+    "accession": "GSE214985",
+    "publications": [
+      "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.1054422/full",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214985"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214985",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+    "source_processing": [
+      "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+      "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+      "Assembly: GRCh38",
+      "Supplementary files format and content: Tab-separated values files and matrix files"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE214985_source_identity_review.json",
+      "sha256": "f889d10e6c09a6f071ed386f92033270f5de40da44a419380541ee20a481923e"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6619651",
+      "donor_id": "ZZY",
+      "source_metadata": {
+        "title": [
+          "ZZY_pre"
+        ],
+        "geo_accession": [
+          "GSM6619651"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: pre_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206707",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826074"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619651/suppl/GSM6619651_pre-P1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619651/suppl/GSM6619651_pre-P1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619651/suppl/GSM6619651_pre-P1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619651",
+        "source_GEO_title": "ZZY_pre",
+        "source_participant_code": "ZZY",
+        "source_filename_participant_code": "P1",
+        "source_visit_code": "pre",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"pre_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "pre_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "0",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619651/suppl/GSM6619651_pre-P1_features.tsv.gz",
+          "filename": "GSM6619651_pre-P1_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "caa1a5b43652acdcaea69befbad34c5ca8f48f9d64b95d92d5ffcc2902b65c8e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619651/suppl/GSM6619651_pre-P1_barcodes.tsv.gz",
+          "filename": "GSM6619651_pre-P1_barcodes.tsv.gz",
+          "expected_bytes": 53037,
+          "sha256": "3238e8dc6902679c06d1c363da4e6d91dbeac84880fdf80d93c448b52d5f9896"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619651/suppl/GSM6619651_pre-P1_matrix.mtx.gz",
+          "filename": "GSM6619651_pre-P1_matrix.mtx.gz",
+          "expected_bytes": 45495962,
+          "sha256": "b9cf75b90b2c2389abdfb9897454409df7ac1a1f8552e8d143c0e8f13f9495fa"
+        }
+      ],
+      "genes_member": "GSM6619651_pre-P1_features.tsv.gz",
+      "barcodes_member": "GSM6619651_pre-P1_barcodes.tsv.gz",
+      "matrix_member": "GSM6619651_pre-P1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10962,
+        "genes": 36601,
+        "nonzeros": 11746607,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 10962,
+        "RNA_positive_barcode_rows": 10962,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 24850322,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10962,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10962,
+          "source_positive_RNA_barcodes": 10962,
+          "full_source_RNA_counts": 24850322,
+          "selected_RNA_counts": 24850322,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619651.csv.gz",
+            "sha256": "ead36fd994aeb823095e9fd91d94a4c143efd0a2d73cb9e6476214236e70e573"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619652",
+      "donor_id": "FXX",
+      "source_metadata": {
+        "title": [
+          "FXX_pre"
+        ],
+        "geo_accession": [
+          "GSM6619652"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: pre_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206706",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826075"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619652/suppl/GSM6619652_pre-P2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619652/suppl/GSM6619652_pre-P2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619652/suppl/GSM6619652_pre-P2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619652",
+        "source_GEO_title": "FXX_pre",
+        "source_participant_code": "FXX",
+        "source_filename_participant_code": "P2",
+        "source_visit_code": "pre",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"pre_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "pre_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "0",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619652/suppl/GSM6619652_pre-P2_features.tsv.gz",
+          "filename": "GSM6619652_pre-P2_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "337b681c768a965407bc08cc72abdf31e176e6e5cd0a71b3386a9b522e809fd2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619652/suppl/GSM6619652_pre-P2_barcodes.tsv.gz",
+          "filename": "GSM6619652_pre-P2_barcodes.tsv.gz",
+          "expected_bytes": 61274,
+          "sha256": "6716881f6af1055cf9f0e9b6ffebf0e29dd6e6d33e305a04eb11a8e69ad173a2"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619652/suppl/GSM6619652_pre-P2_matrix.mtx.gz",
+          "filename": "GSM6619652_pre-P2_matrix.mtx.gz",
+          "expected_bytes": 79365204,
+          "sha256": "68ce310d4f74bedb272f16ced8edef64be75249d6328c0066659332d07ea3b16"
+        }
+      ],
+      "genes_member": "GSM6619652_pre-P2_features.tsv.gz",
+      "barcodes_member": "GSM6619652_pre-P2_barcodes.tsv.gz",
+      "matrix_member": "GSM6619652_pre-P2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 12771,
+        "genes": 36601,
+        "nonzeros": 20644085,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 12771,
+        "RNA_positive_barcode_rows": 12771,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 56532955,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 12771,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 12771,
+          "source_positive_RNA_barcodes": 12771,
+          "full_source_RNA_counts": 56532955,
+          "selected_RNA_counts": 56532955,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619652.csv.gz",
+            "sha256": "9db7626184d817d8a674bda7eeea207d1e701423953179392caa8488139afa4a"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619653",
+      "donor_id": "CYT",
+      "source_metadata": {
+        "title": [
+          "CYT_pre"
+        ],
+        "geo_accession": [
+          "GSM6619653"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: pre_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206705",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826076"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619653/suppl/GSM6619653_pre-P3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619653/suppl/GSM6619653_pre-P3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619653/suppl/GSM6619653_pre-P3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619653",
+        "source_GEO_title": "CYT_pre",
+        "source_participant_code": "CYT",
+        "source_filename_participant_code": "P3",
+        "source_visit_code": "pre",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"pre_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "pre_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "0",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619653/suppl/GSM6619653_pre-P3_features.tsv.gz",
+          "filename": "GSM6619653_pre-P3_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "079655a855a8507e88a5ad881959929a98dc549fd4b233934f26671003ea5c9c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619653/suppl/GSM6619653_pre-P3_barcodes.tsv.gz",
+          "filename": "GSM6619653_pre-P3_barcodes.tsv.gz",
+          "expected_bytes": 52039,
+          "sha256": "cd5367fd34f2e650fd22e1531bd45295e1c284ddcb4bcbea8bd73a8ad99ea5f9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619653/suppl/GSM6619653_pre-P3_matrix.mtx.gz",
+          "filename": "GSM6619653_pre-P3_matrix.mtx.gz",
+          "expected_bytes": 65713658,
+          "sha256": "0d891242cbea27b062cf690d1134e52c65f1f46b28dc85517732dca102712ddc"
+        }
+      ],
+      "genes_member": "GSM6619653_pre-P3_features.tsv.gz",
+      "barcodes_member": "GSM6619653_pre-P3_barcodes.tsv.gz",
+      "matrix_member": "GSM6619653_pre-P3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 10725,
+        "genes": 36601,
+        "nonzeros": 17105758,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 10725,
+        "RNA_positive_barcode_rows": 10725,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 46694476,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 10725,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 10725,
+          "source_positive_RNA_barcodes": 10725,
+          "full_source_RNA_counts": 46694476,
+          "selected_RNA_counts": 46694476,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619653.csv.gz",
+            "sha256": "9984cfbc9df523b6e6687dd163648578805d254b368c3176839874d0c5bd60c7"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619654",
+      "donor_id": "ZYQ",
+      "source_metadata": {
+        "title": [
+          "ZYQ_pre"
+        ],
+        "geo_accession": [
+          "GSM6619654"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: pre_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206704",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826077"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619654/suppl/GSM6619654_pre-P4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619654/suppl/GSM6619654_pre-P4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619654/suppl/GSM6619654_pre-P4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619654",
+        "source_GEO_title": "ZYQ_pre",
+        "source_participant_code": "ZYQ",
+        "source_filename_participant_code": "P4",
+        "source_visit_code": "pre",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"pre_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "pre_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "0",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619654/suppl/GSM6619654_pre-P4_features.tsv.gz",
+          "filename": "GSM6619654_pre-P4_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "9de4577561710c4140df70d03caf65b27f7528216aa596d8e746177864006577"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619654/suppl/GSM6619654_pre-P4_barcodes.tsv.gz",
+          "filename": "GSM6619654_pre-P4_barcodes.tsv.gz",
+          "expected_bytes": 66847,
+          "sha256": "4fdecaa579313f91ee28ef7243606b761de737c1309af3f97c17e453c75ef509"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619654/suppl/GSM6619654_pre-P4_matrix.mtx.gz",
+          "filename": "GSM6619654_pre-P4_matrix.mtx.gz",
+          "expected_bytes": 96538228,
+          "sha256": "6155b66b4c5f8dd340ced4dd3aceec75877bb9bd8675ae66da9a1331019ae15f"
+        }
+      ],
+      "genes_member": "GSM6619654_pre-P4_features.tsv.gz",
+      "barcodes_member": "GSM6619654_pre-P4_barcodes.tsv.gz",
+      "matrix_member": "GSM6619654_pre-P4_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 14036,
+        "genes": 36601,
+        "nonzeros": 25169286,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 14036,
+        "RNA_positive_barcode_rows": 14036,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 71504079,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14036,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14036,
+          "source_positive_RNA_barcodes": 14036,
+          "full_source_RNA_counts": 71504079,
+          "selected_RNA_counts": 71504079,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619654.csv.gz",
+            "sha256": "8cdf265aceb94ee22991dab0659d105c1b8caaf4e8295f72b99238f4b9d4da2f"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619655",
+      "donor_id": "ZZY",
+      "source_metadata": {
+        "title": [
+          "ZZY_post"
+        ],
+        "geo_accession": [
+          "GSM6619655"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: post_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206703",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826078"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619655/suppl/GSM6619655_post-P1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619655/suppl/GSM6619655_post-P1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619655/suppl/GSM6619655_post-P1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619655",
+        "source_GEO_title": "ZZY_post",
+        "source_participant_code": "ZZY",
+        "source_filename_participant_code": "P1",
+        "source_visit_code": "post",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"post_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "post_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "20",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619655/suppl/GSM6619655_post-P1_features.tsv.gz",
+          "filename": "GSM6619655_post-P1_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "13469f7bedc7c2fc56b83e621c7052035b5d1e3294e41623cd5fcdd717d81f23"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619655/suppl/GSM6619655_post-P1_barcodes.tsv.gz",
+          "filename": "GSM6619655_post-P1_barcodes.tsv.gz",
+          "expected_bytes": 70896,
+          "sha256": "e6b00019c3da64d1d4c1e7d33aafdd70780abb1fa52410a1fda2b7511ab4a00c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619655/suppl/GSM6619655_post-P1_matrix.mtx.gz",
+          "filename": "GSM6619655_post-P1_matrix.mtx.gz",
+          "expected_bytes": 97739823,
+          "sha256": "3f5c47ed2091347d7dda6da7277573832127bf685c498d0afdd818bf4a955c03"
+        }
+      ],
+      "genes_member": "GSM6619655_post-P1_features.tsv.gz",
+      "barcodes_member": "GSM6619655_post-P1_barcodes.tsv.gz",
+      "matrix_member": "GSM6619655_post-P1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 14919,
+        "genes": 36601,
+        "nonzeros": 25384524,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 14919,
+        "RNA_positive_barcode_rows": 14919,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 70673664,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14919,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14919,
+          "source_positive_RNA_barcodes": 14919,
+          "full_source_RNA_counts": 70673664,
+          "selected_RNA_counts": 70673664,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619655.csv.gz",
+            "sha256": "63f9b21da659ee7124f09dd79934f1a334c8a27110d7537c51503682189dddd5"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619656",
+      "donor_id": "FXX",
+      "source_metadata": {
+        "title": [
+          "FXX_post"
+        ],
+        "geo_accession": [
+          "GSM6619656"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: post_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206702",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826079"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619656/suppl/GSM6619656_post-P2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619656/suppl/GSM6619656_post-P2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619656/suppl/GSM6619656_post-P2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619656",
+        "source_GEO_title": "FXX_post",
+        "source_participant_code": "FXX",
+        "source_filename_participant_code": "P2",
+        "source_visit_code": "post",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"post_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "post_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "20",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619656/suppl/GSM6619656_post-P2_features.tsv.gz",
+          "filename": "GSM6619656_post-P2_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "57f707b4c6f6c36e04688adf87eafe14331b83bb9c0b4ce930d612ed145121ce"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619656/suppl/GSM6619656_post-P2_barcodes.tsv.gz",
+          "filename": "GSM6619656_post-P2_barcodes.tsv.gz",
+          "expected_bytes": 69569,
+          "sha256": "726519a847535f5ea5b495ed0c92158362b03689b0502f131427d1a7b6c8c072"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619656/suppl/GSM6619656_post-P2_matrix.mtx.gz",
+          "filename": "GSM6619656_post-P2_matrix.mtx.gz",
+          "expected_bytes": 104164623,
+          "sha256": "2b45916f0b0f2dd607925498cf7d544aa9c5649272fa8345e8a1f6813be33266"
+        }
+      ],
+      "genes_member": "GSM6619656_post-P2_features.tsv.gz",
+      "barcodes_member": "GSM6619656_post-P2_barcodes.tsv.gz",
+      "matrix_member": "GSM6619656_post-P2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 14665,
+        "genes": 36601,
+        "nonzeros": 27064289,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 14665,
+        "RNA_positive_barcode_rows": 14665,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 87090264,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 14665,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 14665,
+          "source_positive_RNA_barcodes": 14665,
+          "full_source_RNA_counts": 87090264,
+          "selected_RNA_counts": 87090264,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619656.csv.gz",
+            "sha256": "0db8c363a63822e1947c1ee3242127b0b64c745c8ad7a6c9a5b4c4c365376b44"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619657",
+      "donor_id": "CYT",
+      "source_metadata": {
+        "title": [
+          "CYT_post"
+        ],
+        "geo_accession": [
+          "GSM6619657"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: post_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206701",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826080"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619657/suppl/GSM6619657_post-P3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619657/suppl/GSM6619657_post-P3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619657/suppl/GSM6619657_post-P3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619657",
+        "source_GEO_title": "CYT_post",
+        "source_participant_code": "CYT",
+        "source_filename_participant_code": "P3",
+        "source_visit_code": "post",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"post_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "post_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "20",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619657/suppl/GSM6619657_post-P3_features.tsv.gz",
+          "filename": "GSM6619657_post-P3_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "1430091c5bdcb5c8ac9d5c227fbcfe521f8797ac7576ec9d2d13526b38734088"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619657/suppl/GSM6619657_post-P3_barcodes.tsv.gz",
+          "filename": "GSM6619657_post-P3_barcodes.tsv.gz",
+          "expected_bytes": 88478,
+          "sha256": "2a093ad8cca935b000bdb91bf9dc6438d5534a932991de43ab59514866f815a8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619657/suppl/GSM6619657_post-P3_matrix.mtx.gz",
+          "filename": "GSM6619657_post-P3_matrix.mtx.gz",
+          "expected_bytes": 120658632,
+          "sha256": "4f6e2a945b08a21b903f4ec53264e26c1b832fb466fae2eb9f12bf5385bd4892"
+        }
+      ],
+      "genes_member": "GSM6619657_post-P3_features.tsv.gz",
+      "barcodes_member": "GSM6619657_post-P3_barcodes.tsv.gz",
+      "matrix_member": "GSM6619657_post-P3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 18980,
+        "genes": 36601,
+        "nonzeros": 31290945,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 18980,
+        "RNA_positive_barcode_rows": 18980,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 88715516,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 18980,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 18980,
+          "source_positive_RNA_barcodes": 18980,
+          "full_source_RNA_counts": 88715516,
+          "selected_RNA_counts": 88715516,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619657.csv.gz",
+            "sha256": "33889e2e95bebdb1c04cdd7c5e091e85eb4033bb4dca5e2bd50c7e47cb421652"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6619658",
+      "donor_id": "ZYQ",
+      "source_metadata": {
+        "title": [
+          "ZYQ_post"
+        ],
+        "geo_accession": [
+          "GSM6619658"
+        ],
+        "status": [
+          "Public on Dec 28 2022"
+        ],
+        "submission_date": [
+          "Oct 07 2022"
+        ],
+        "last_update_date": [
+          "Dec 28 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: Immune cell",
+          "genotype: WT",
+          "treatment: post_treat"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "The protoplast suspension was loaded into Chromium microfluidic chips with 30 (v3) chemistry and barcoded with a 10\u00d7 Chromium Controller (10X Genomics). RNA from the barcoded cells was subsequently reverse-transcribed and sequencing libraries constructed with reagents from a Chromium Single Cell 30 v3 reagent kit (10X Genomics) according to the manufacturer\u2019s instructions. Sequencing was performed with Illumina (NovaSeq 6000) according to the manufacturer\u2019s instructions (Illumina).",
+          "Raw reads were demultiplexed and mapped to the reference genome by 10X Genomics Cell Ranger pipeline (https://support.10xgenomics.com/single-cell-gene- expression/software/pipelines/latest/what-is-cell-ranger) using default parameters. All downstream single-cell analyses were performed using Cell Ranger and Seurat",
+          "In brief, for each gene and each cell barcode (filtered by CellRanger), unique molecule identifiers were counted to construct digital expression matrices. Secondary filtration by Seurat : A gene with expression in more than 3 cells was considered as expressed, and each cell was required to have at least 200 expressed genes. And filter out some of the foreign cells."
+        ],
+        "description": [
+          "10x Genomics"
+        ],
+        "data_processing": [
+          "The 10x Genomics Cell Ranger (7.0.1 version) pipeline was used to demultiplex raw files into FASTQ files, extract barcodes and UMI, filter, and map reads to the corresponding reference genome, and generate a matrix containing UMI counts.",
+          "A 10x Genomics Cell Ranger pipeline was used to identify clonotypes by alignment and annotation with the default settings.",
+          "Assembly: GRCh38",
+          "Supplementary files format and content: Tab-separated values files and matrix files"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Xiaoming,,Bai"
+        ],
+        "contact_email": [
+          "xiaomingbai@cqmu.edu.cn"
+        ],
+        "contact_institute": [
+          "children's hospital of chongqing medical universty"
+        ],
+        "contact_address": [
+          "Zhongshan Road, Yuzhong district"
+        ],
+        "contact_city": [
+          "Chongqing"
+        ],
+        "contact_zip/postal_code": [
+          "400014"
+        ],
+        "contact_country": [
+          "China"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN31206700",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX17826081"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619658/suppl/GSM6619658_post-P4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619658/suppl/GSM6619658_post-P4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619658/suppl/GSM6619658_post-P4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE214985"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6619658",
+        "source_GEO_title": "ZYQ_post",
+        "source_participant_code": "ZYQ",
+        "source_filename_participant_code": "P4",
+        "source_visit_code": "post",
+        "source_capture_label": "primary_PBMC_RNA",
+        "source_characteristics_json": "{\"cell type\": \"Immune cell\", \"genotype\": \"WT\", \"tissue\": \"PBMC\", \"treatment\": \"post_treat\"}",
+        "condition": "Netherton syndrome",
+        "source_treatment_as_reported": "post_treat",
+        "source_genotype_as_reported": "WT",
+        "source_specimen": "Original clinical PBMC from the four-participant source cohort",
+        "source_time_policy": "Primary explicitly describes scRNA PBMC at baseline and20weeks after treatment. Original pre/post labels retained; no calendar dates inferred.",
+        "source_primary_scRNA_visit_weeks": "20",
+        "source_demographic_policy": "Primary cohort is pediatric; no individual numerical age/sex join inferred from patient numbers alone. Original title codes and explicit fileP1..P4 aliases retained.",
+        "source_genotype_policy": "Literal GEO WT field retained; it does not supply an individual SPINK5 genotype or establish a healthy/mutation-negative participant.",
+        "source_identity_policy": "Four explicit participant title codes have paired pre/post RNA records. Each exact original GEO link supplies its corresponding fileP1..P4 alias; repeated visits are not independent people.",
+        "source_count_policy": "Original CellRanger7.0.1 UMI matrices with source GRCh38 assembly; native RNA axes and values retained, no integration or expression inversion.",
+        "source_missingness_policy": "Unknown numerical ages/sex/calendar dates, molecular genotypes and missing cell types are not imputed or zero-filled.",
+        "split_assignment": "unassigned; both source phases per original participant stay together; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619658/suppl/GSM6619658_post-P4_features.tsv.gz",
+          "filename": "GSM6619658_post-P4_features.tsv.gz",
+          "expected_bytes": 333437,
+          "sha256": "bef78c085f2a3edcdc7253c92593cb8805ee7ac88826c94f5e7e88d1b4f4ac79"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619658/suppl/GSM6619658_post-P4_barcodes.tsv.gz",
+          "filename": "GSM6619658_post-P4_barcodes.tsv.gz",
+          "expected_bytes": 77161,
+          "sha256": "72984876f8333dd7bcf66296ef194102b626c3f13c00ddae30574b22afac1f3a"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6619nnn/GSM6619658/suppl/GSM6619658_post-P4_matrix.mtx.gz",
+          "filename": "GSM6619658_post-P4_matrix.mtx.gz",
+          "expected_bytes": 105018175,
+          "sha256": "d6a1fbcb4d72d5ef67368090698af2494b5373f548829e92f4d039666d43c19f"
+        }
+      ],
+      "genes_member": "GSM6619658_post-P4_features.tsv.gz",
+      "barcodes_member": "GSM6619658_post-P4_barcodes.tsv.gz",
+      "matrix_member": "GSM6619658_post-P4_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 16352,
+        "genes": 36601,
+        "nonzeros": 27193418,
+        "gene_coordinate_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "28fa7d6a0994e5fe6c1d2a39a3363ee1655916481e3ee240efd6cc8a361959c9",
+        "source_features": 36601,
+        "source_barcode_rows": 16352,
+        "RNA_positive_barcode_rows": 16352,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 77607330,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 16352,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 16352,
+          "source_positive_RNA_barcodes": 16352,
+          "full_source_RNA_counts": 77607330,
+          "selected_RNA_counts": 77607330,
+          "metadata": {
+            "path": "references/datasets/GSE214985_original_RNA_QC/GSM6619658.csv.gz",
+            "sha256": "75b95b0ea998987f41870164efd49e70b44c7be74334fbcf4c46dd667363af36"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "8originalclinicalPBMCdraws/4pairedsourceparticipants; originalpre/postlabels, primaryscRNA visitbaseline/20weeks"
+}

@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE178429",
+  "study_id": "GSE178429",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE178429_complete_original_RNA_audit.json",
+    "bytes": 17925,
+    "sha256": "705027d64a4a1fd46b8b6cba054c28aa63c10ec62bbb885a0d0584760deedd01"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE178429_source_identity_review.json",
+    "bytes": 15705,
+    "sha256": "5595a90e10026d1330707aa869897a01b604c0aee073978d1ac2123d3d983512"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "donor_id"
+  ],
+  "sample_mapping_evidence": "OriginalGEO explicitly defines geneNames/cellMeta as count row/column axes. Preserve their original order. Author cellBarcode/Condition/Donor joins exact originalGEOtitle; cached RNA count/feature totals match every original column. No identity inferred by RNA-profile matching or barcode ordinal.",
+  "physical_sample_mapping_evidence": "Four original study donor/materialgroups across42dependent ex vivo condition/time/Golgi-inhibitor views. Exact originalcellMeta Condition+Donor joins GEOtitle; allsourcecachedRNAcounts/detectedgenes match originalprovided orderedmatrixcolumns. OriginalGEOexplicitlydefines geneNames/cellMeta asmatrixaxes. Physicalblooddraw relationships/demographics/globalaliases unassigned; no barcodeordinal orRNAprofile identityinference.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "qc_mito_unavailable": true,
+  "qc_mito_unavailable_reason": "Originalsource explicitly filterschrM/rRNA/sncRNA reads beforegenicUMIcounting; provided19222genes containnoMTcoordinates andcellMeta hasno mitochondrialpercentage. Projectmitofraction must beNaN, notzero; onlycount/detectedgene/positive-library gates can beapplied.",
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE178429",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178429",
+    "primary_PMID": "36204155",
+    "access": "Public original decomposedRNAcounts, orderedgeneNames/cellMeta andGEOmetadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE178429_source_identity_review.json",
+      "bytes": 15705,
+      "sha256": "5595a90e10026d1330707aa869897a01b604c0aee073978d1ac2123d3d983512"
+    },
+    "source_unit": "Four original study donor/materialgroups across42dependent ex vivo condition/time/Golgi-inhibitor views. Exact originalcellMeta Condition+Donor joins GEOtitle; allsourcecachedRNAcounts/detectedgenes match originalprovided orderedmatrixcolumns. OriginalGEOexplicitlydefines geneNames/cellMeta asmatrixaxes. Physicalblooddraw relationships/demographics/globalaliases unassigned; no barcodeordinal orRNAprofile identityinference.",
+    "identity_policy": "OriginalGEO explicitly defines geneNames/cellMeta as count row/column axes. Preserve their original order. Author cellBarcode/Condition/Donor joins exact originalGEOtitle; cached RNA count/feature totals match every original column. No identity inferred by RNA-profile matching or barcode ordinal.",
+    "clinical_policy": "Retain original Condition,StimType,Donor and originalGEO stimulation/time fields. Time1h/6h is ex vivo treatment time, not a longitudinal clinical clock. Individual donor health status, age,sex and blooddrawdates unassigned; mock-treatment Control does not establish healthy-donor status.",
+    "reuse_policy": "Four conservative donor/material groups with42dependent ex vivo views. No original accession/GSM/PMID36204155/superseriesGSE178431 or companionGSE178430 reference found in completed run/source records. Companion RNA/ATAC modalities require explicit reuse review before further sample credit; globalidentityunion unresolved.",
+    "selection_policy": "All23754supplied source cells retained before projectQC. Project count>=500/detectedgenes>=200/positive-library gates retain22436cells. MitochondrialQC unavailable because originalsource filteredchrM/rRNA/sncRNA before genicUMIcounts; record NaN,neverzero. No phenotype-informedselection.",
+    "cell_calling_policy": "Provided source cells underwent author genicUMI/cell/doublet filtering; not independently biologicallyvalidated. Preserve all19222supplied hg19/RefSeqsymbols, includingLOCnames. Normalization denominators use this supplied filtered gene universe; no omittedgene reconstruction orfull-transcriptome claim.",
+    "gene_policy": "All19222 originalunique literal hg19/RefSeqsymbols retained unchanged, includingLOCnames. Originalsource filterschrM/rRNA/sncRNA; library-size normalization denominators useonlytheprovided geneuniverse. No omittedgene reconstruction, modernizedsymbol orEnsembl-IDinvention. Fixedreference annotation matches16550literal symbols.",
+    "count_semantics": "Provided decomposed MatrixMarket genicUMIcounts, every23245171storedvalue finite/nonnegative/integer. Originalsource removes abundant-feature reads andperforms sourcecell/doublet filtering; SCT/scaledvalues are not used ascounts. UnavailablemitochondrialQC explicitly recorded; no biologicalannotation orsourcecallingvalidation.",
+    "source_limitations": "Four original donor/material groups, not42independent samples. UpstreamchrM/rRNA/sncRNA removal limits gene coverage/normalization comparability and makes mitochondrialQC unavailable. Source calling, individualclinical/demographic/globalaliases unvalidated. No causal,efficacy,biologicalannotation orconstellationvalidation."
+  }
+}

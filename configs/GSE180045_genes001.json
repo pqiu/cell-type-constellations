@@ -1,0 +1,1287 @@
+{
+  "dataset_id": "GSE180045_genes001",
+  "study_id": "GSE180045",
+  "input_format": "geo_10x_assets",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE180045",
+  "expected_bytes": null,
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Ten unpooled human Total RNA records; source Group C Patient 1 Early/Late share donor C1. Other group/patient labels unique. Five hashed human pools and all mouse/TCR assays excluded.",
+  "source_metadata": {
+    "accession": "GSE180045",
+    "publication": "https://doi.org/10.1161/CIRCULATIONAHA.121.056730",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE180045",
+    "access": "Public processed nested CellRanger count matrices",
+    "license": "not_specified_in_record",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_identifier_type": "Source Ensembl IDs and gene symbols; only Gene Expression features",
+    "source_processing": [
+      "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+      "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+      "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+      "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+      "Genome_build: h38",
+      "Supplementary_files_format_and_content: Cell Ranger output"
+    ],
+    "gene_coordinate_sha256": "423db22c17a061b3802c8172cce4c4765700c9db8f294c42149df657a987f4b9",
+    "expression_coverage": "Distinct source RNA gene universes remain separate; unmeasured genes are not zero-filled."
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM5449974",
+      "donor_id": "A1",
+      "nested_archive_member": "GSM5449974_A1-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "A1-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "A1-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "A1-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group A - Patient 1"
+        ],
+        "geo_accession": [
+          "GSM5449974"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: No irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "A1"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203649",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436680"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449974/suppl/GSM5449974_A1-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449974_A1-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449974/suppl/GSM5449974_A1-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 22579313
+        }
+      ],
+      "metadata": {
+        "disease": "No irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "A",
+        "source_title": "Group A - Patient 1"
+      }
+    },
+    {
+      "accession": "GSM5449975",
+      "donor_id": "A2",
+      "nested_archive_member": "GSM5449975_A2-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "A2-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "A2-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "A2-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group A - Patient 2"
+        ],
+        "geo_accession": [
+          "GSM5449975"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: No irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "A2"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203648",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436681"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449975/suppl/GSM5449975_A2-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449975_A2-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449975/suppl/GSM5449975_A2-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 182598309
+        }
+      ],
+      "metadata": {
+        "disease": "No irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "A",
+        "source_title": "Group A - Patient 2"
+      }
+    },
+    {
+      "accession": "GSM5449976",
+      "donor_id": "A3",
+      "nested_archive_member": "GSM5449976_A3-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "A3-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "A3-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "A3-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group A - Patient 3"
+        ],
+        "geo_accession": [
+          "GSM5449976"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: No irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "A3"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203647",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436682"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449976/suppl/GSM5449976_A3-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449976_A3-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449976/suppl/GSM5449976_A3-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 28794179
+        }
+      ],
+      "metadata": {
+        "disease": "No irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "A",
+        "source_title": "Group A - Patient 3"
+      }
+    },
+    {
+      "accession": "GSM5449978",
+      "donor_id": "B1",
+      "nested_archive_member": "GSM5449978_B1-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "B1-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "B1-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "B1-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group B - Patient 1"
+        ],
+        "geo_accession": [
+          "GSM5449978"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: Non-Myocarditis irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "B1"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203646",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436683"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449978/suppl/GSM5449978_B1-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449978_B1-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449978/suppl/GSM5449978_B1-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 28743066
+        }
+      ],
+      "metadata": {
+        "disease": "Non-Myocarditis irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "B",
+        "source_title": "Group B - Patient 1"
+      }
+    },
+    {
+      "accession": "GSM5449979",
+      "donor_id": "B2",
+      "nested_archive_member": "GSM5449979_B2-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "B2-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "B2-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "B2-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group B - Patient 2"
+        ],
+        "geo_accession": [
+          "GSM5449979"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: Non-Myocarditis irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "B2"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203645",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436684"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449979/suppl/GSM5449979_B2-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449979_B2-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449979/suppl/GSM5449979_B2-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 13533506
+        }
+      ],
+      "metadata": {
+        "disease": "Non-Myocarditis irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "B",
+        "source_title": "Group B - Patient 2"
+      }
+    },
+    {
+      "accession": "GSM5449980",
+      "donor_id": "B3",
+      "nested_archive_member": "GSM5449980_B3-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "B3-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "B3-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "B3-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group B - Patient 3"
+        ],
+        "geo_accession": [
+          "GSM5449980"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: Non-Myocarditis irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "B3"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203642",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436685"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449980/suppl/GSM5449980_B3-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449980_B3-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449980/suppl/GSM5449980_B3-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 20292793
+        }
+      ],
+      "metadata": {
+        "disease": "Non-Myocarditis irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "B",
+        "source_title": "Group B - Patient 3"
+      }
+    },
+    {
+      "accession": "GSM5449981",
+      "donor_id": "C1",
+      "nested_archive_member": "GSM5449981_MCE1-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "MCE1-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "MCE1-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "MCE1-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group C - Patient 1 Early"
+        ],
+        "geo_accession": [
+          "GSM5449981"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: Myocarditis irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "MCE1"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203641",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436686"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449981/suppl/GSM5449981_MCE1-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449981_MCE1-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449981/suppl/GSM5449981_MCE1-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 60356172
+        }
+      ],
+      "metadata": {
+        "disease": "Myocarditis irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "Early",
+        "source_group": "C",
+        "source_title": "Group C - Patient 1 Early"
+      }
+    },
+    {
+      "accession": "GSM5449982",
+      "donor_id": "C2",
+      "nested_archive_member": "GSM5449982_MCE2-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "MCE2-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "MCE2-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "MCE2-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group C - Patient 2"
+        ],
+        "geo_accession": [
+          "GSM5449982"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: Myocarditis irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "MCE2"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203640",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436687"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449982/suppl/GSM5449982_MCE2-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449982_MCE2-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449982/suppl/GSM5449982_MCE2-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 85788948
+        }
+      ],
+      "metadata": {
+        "disease": "Myocarditis irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "C",
+        "source_title": "Group C - Patient 2"
+      }
+    },
+    {
+      "accession": "GSM5449985",
+      "donor_id": "C3",
+      "nested_archive_member": "GSM5449985_MCL3-filtered_feature_bc_matrix.tar.gz",
+      "genes_member": "MCL3-filtered_feature_bc_matrix/features.tsv.gz",
+      "barcodes_member": "MCL3-filtered_feature_bc_matrix/barcodes.tsv.gz",
+      "matrix_member": "MCL3-filtered_feature_bc_matrix/matrix.mtx.gz",
+      "source_metadata": {
+        "title": [
+          "Group C - Patient 3"
+        ],
+        "geo_accession": [
+          "GSM5449985"
+        ],
+        "status": [
+          "Public on Jun 29 2022"
+        ],
+        "submission_date": [
+          "Jul 13 2021"
+        ],
+        "last_update_date": [
+          "Jul 18 2022"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Human PBMCs"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: Blood",
+          "cell type: PBMC",
+          "treatment: Immune Checkpoint Inhibitor",
+          "disease state: Myocarditis irAE",
+          "molecule subtype: Total RNA"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Frozen PBMCs were removed from liquid nitrogen and resuspended in warm RPMI media + 10% FBS (@ 37\u00baC) by adding 1 mL, 3 mL, 4 mL, 8 mL 16 mL media at 30-60 second intervals. Cells were washed and passed through a 40 um filter, centrifuged @ 300 rcf x 5 min and resuspended in PBS with 50 ul 1% BSA and Biolegend Fc Receptor Blocking Solution (Human TrueStain FcX (Cat. No. 422301) for 20 minutes. Afterwards, another 50 uL of antibody mastermix containing Biolegend TotalSeq-C antibodies for staining (Biolegend TotalSeq\u2122-C0063 anti-human CD45RA Antibody Cat. No. 304163; Biolegend TotalSeq\u2122-C0072 anti-human CD4 Antibody Cat. No. 300567; Biolegend TotalSeq\u2122-C0046 anti-human CD8 Antibody Cat. No. 344753) for final manufacture-recommended concentration of 1.0 ug of antibody in 100 ul of staining buffer for every 1 million cells for a total of 10-15 minutes incubation. After incubation, cells were washed 2x by resuspending in 1.5 mL PBS + 1% RNase-free BSA (MACS BSA Stock Solution No. 130-091-376) and then 1 mL PBS + 0.04% BSA. 10 uL of cell suspension was then taken for counting and appropriate volume of PSA + 0.04% BSA was added (200-500 uL) to aim for final target concentration of 1 million cells/mL). Cells were then loaded into Chromium Next GEM Chip G (10x PN 2000177) to achieve 6000-8000 target cell recovery per sample according to the manufacture\u2019s protocol.",
+          "All steps from cDNA isolation to library preparation were completed according to 10x\u2019s manufacturing protocols for the Chromium Next GEM Single Cell V(D)J Reagent Kits v1.1. Isolated cDNA was amplified (14 cycles), and then cDNA was allocated for TCR enrichment, feature barcode library generation, and 5\u2019 cDNA library generation. cDNA and library quality was evaluated using the high sensitivity DNA kit on the Agilent 2100 Bioanalyzer."
+        ],
+        "description": [
+          "scRNA-seq data",
+          "MCL3"
+        ],
+        "data_processing": [
+          "Raw single-cell RNA-seq data were processed using 10x Genomics Cell Ranger (4.0.3) to demultiplex the FASTQ reads in order to align them to the human reference genome (GRCh38, v4.0.0, from 10X Genomics) and count the unique molecular identifier (UMI) (through the \u201ccellranger count\u201d function).",
+          "Raw T cell receptor (TCR) sequencing data were processed using 10x Genomics Cell Ranger (v4.0.3). In summary, the algorithm aligned FASTQ reads to human GRCh38 V(D)J reference genome (v4.0.0, from 10X Genomics) by using the \u201ccellranger vdj\u201d function, resulting in the assembly of V(D)J sequences and clonotypes (38).",
+          "Individual sample gene expression matrices were loaded into Seurat v4.0.0 R package (https://satijalab.org/seurat/) for further analysis.",
+          "To filter out poor quality data from cells with high mitochondrial gene expression likely to be dead/damaged cells (59), we removed cells with greater than >15% mitochondrial genes present (60). Additionally, we removed cells for which less than 500 genes were detected.",
+          "Genome_build: h38",
+          "Supplementary_files_format_and_content: Cell Ranger output"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Han,,Zhu"
+        ],
+        "contact_email": [
+          "hanzhu@stanford.edu"
+        ],
+        "contact_laboratory": [
+          "Sean Wu Lab"
+        ],
+        "contact_department": [
+          "Cardiovascular Medicine"
+        ],
+        "contact_institute": [
+          "Stanford University"
+        ],
+        "contact_address": [
+          "G1105, 265 Campus Drive"
+        ],
+        "contact_city": [
+          "Stanford"
+        ],
+        "contact_state": [
+          "CA"
+        ],
+        "contact_zip/postal_code": [
+          "94305"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN20203644",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX11436689"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449985/suppl/GSM5449985_MCL3-filtered_feature_bc_matrix.tar.gz"
+        ],
+        "series_id": [
+          "GSE180045"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "assets": [
+        {
+          "filename": "GSM5449985_MCL3-filtered_feature_bc_matrix.tar.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5449nnn/GSM5449985/suppl/GSM5449985_MCL3-filtered_feature_bc_matrix.tar.gz",
+          "expected_bytes": 14749521
+        }
+      ],
+      "metadata": {
+        "disease": "Myocarditis irAE",
+        "treatment": "Immune Checkpoint Inhibitor",
+        "visit": "not_reported",
+        "source_group": "C",
+        "source_title": "Group C - Patient 3"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}

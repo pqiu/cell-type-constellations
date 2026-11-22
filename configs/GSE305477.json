@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE305477",
+  "study_id": "GSE305477",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE305477_complete_original_RNA_audit.json",
+    "bytes": 5395,
+    "sha256": "c697da3739c56ac2543cbd817c729e1111478ae2f27bc0b8d06fb146da9134e9"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE305477_source_identity_review.json",
+    "bytes": 4185,
+    "sha256": "24acd6f5da3cfb05af31b3a69168757be7237402877930a48bb8ad074b525ae5"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exact Library name fields in original GEOdescriptions match RDS sample/orig.ident labels, including nonconsecutive S7/S8/S9/S14. Full GEOtitles are study-scoped donor proxies; original GSM is the specimen key. No bare sample-number, barcode-suffix, genotype or expression inference. Global aliases unresolved.",
+  "physical_sample_mapping_evidence": "Eight original PBMC-derived single-nucleus specimens. Explicit GEOdescription Library name joins native sample/orig.ident fields exactly, including nonconsecutive original S7/S8/S9/S14labels; no ordinal inference. Full GEOtitles are study-scoped donor proxies; global aliases unresolved.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase",
+      "age": "source_age_as_reported",
+      "sex": "source_sex_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE305477",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE305477",
+    "primary_PMID": "not assigned in reviewed GEOmetadata",
+    "access": "Public original PBMC-derived single-nucleus Seurat RNAcount object and coded sample metadata.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE305477_source_identity_review.json",
+      "bytes": 4185,
+      "sha256": "24acd6f5da3cfb05af31b3a69168757be7237402877930a48bb8ad074b525ae5"
+    },
+    "source_unit": "Eight original PBMC-derived single-nucleus specimens. Explicit GEOdescription Library name joins native sample/orig.ident fields exactly, including nonconsecutive original S7/S8/S9/S14labels; no ordinal inference. Full GEOtitles are study-scoped donor proxies; global aliases unresolved.",
+    "identity_policy": "Exact Library name fields in original GEOdescriptions match RDS sample/orig.ident labels, including nonconsecutive S7/S8/S9/S14. Full GEOtitles are study-scoped donor proxies; original GSM is the specimen key. No bare sample-number, barcode-suffix, genotype or expression inference. Global aliases unresolved.",
+    "clinical_policy": "Preserve original Multiple sclerosis (RRMS) and Heathy (CTRL)condition strings, including source spelling, plus supplied age (years) and Sex. Collection phase/date, disease duration/activity, medication and global identities unassigned.",
+    "reuse_policy": "Only eight original PBMC-derived nuclear RNA specimens included. No completed original source match found; cross-study/global identities remain unproven.",
+    "selection_policy": "Nuclei were extracted from Ficoll-isolated PBMCs. Preserve nuclear modality for technical/batch audits; these counts and SCimilarity confidence are not validated as equivalent to whole-cell measurements. Source deposited nuclei already labelled Singlet/Keep; those are author metadata, not independently validated doublet calls.",
+    "cell_calling_policy": "Own fixed RNAQC is recomputed from provided native counts. All supplied native RNA genes retained, including originally explicit sparse zeros. Source cluster resolutions and author cell labels do not determine unrestricted SCimilarity labels. No biological annotation, diagnostic or constellation validation.",
+    "gene_policy": "All36601native RNAcount-slot gene symbols retained unchanged in supplied order; no symbol modernization, intersection or zero filling.13MT-prefix features supplied;27574reference symbols overlap.",
+    "count_semantics": "Provided original Seurat RNA counts slot, not normalized/scale/embedding values. All stored counts finite nonnegative integer. Source provided nuclei are labelled Singlet/Keep; preserve author labels without independently validating those calls. Apply own RNAQC; nuclear modality remains a study covariate.",
+    "source_limitations": "PBMC-derived nuclear RNA modality; annotation equivalence to whole cells unvalidated. Source Heathy(CTRL)spelling and age/Sex retained. Disease duration/activity, medication, collection phase/date and global aliases unassigned. No clinical, causal, biological annotation or constellation validation."
+  }
+}

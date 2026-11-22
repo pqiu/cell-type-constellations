@@ -1,0 +1,1357 @@
+{
+  "dataset_id": "GSE207679_genes001",
+  "study_id": "GSE207679",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Seven original PBMC-derived selected CD4+CD26- RNA specimens/seven source people; no additional VDJ, broader11person enrollment or atlas mirror increment.",
+  "source_metadata": {
+    "accession": "GSE207679",
+    "publications": [
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE207679",
+      "https://pubmed.ncbi.nlm.nih.gov/37531660/"
+    ],
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE207679",
+    "access": "Public original RNA count matrices",
+    "license": "not_specified_in_GEO",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+    "source_processing": [
+      "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+      "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+      "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+      "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+      "Assembly: GRCH38",
+      "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+      "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+    ],
+    "source_barcode_scope": "Original deposited matrix barcode rows; source cell-calling status is not inferred from dimensions. Apply unchanged500RNAcounts before conversion. Original RNA coordinate/value audit covers all source rows; retained per-barcode RNA statistics independently pin subsequent QC.",
+    "original_sample_identity_review": {
+      "path": "references/datasets/GSE207679_source_identity_review.json",
+      "sha256": "bd08c8197a94ce712073cabb1254a1dc18589ba66d3bb144deb66f4df3c31ba0"
+    }
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM6307588",
+      "donor_id": "MF1",
+      "source_metadata": {
+        "title": [
+          "MF1-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307588"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Mycosis Fungoides"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Mycosis fungoides",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584220"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307588/suppl/GSM6307588_MF1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307588/suppl/GSM6307588_MF1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307588/suppl/GSM6307588_MF1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307588",
+        "source_GEO_title": "MF1-GEX",
+        "source_participant_code": "MF1",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Mycosis fungoides",
+        "source_characteristics_json": "{\"cancer type\": \"Mycosis fungoides\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307588/suppl/GSM6307588_MF1_features.tsv.gz",
+          "filename": "GSM6307588_MF1_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "8d73f76be09266a888cf6a8c301d11b56ec6d128467e3815a172d82976678500"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307588/suppl/GSM6307588_MF1_barcodes.tsv.gz",
+          "filename": "GSM6307588_MF1_barcodes.tsv.gz",
+          "expected_bytes": 192401,
+          "sha256": "f40a7df00a4994478fb5c2226baaed218701d7a16d92b1733a1adf4d457b86c4"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307588/suppl/GSM6307588_MF1_matrix.mtx.gz",
+          "filename": "GSM6307588_MF1_matrix.mtx.gz",
+          "expected_bytes": 244478892,
+          "sha256": "4746a07fe0f5c4528a0f077dffc626faa7a6597ef02c1cc4cfde06df0a53e921"
+        }
+      ],
+      "genes_member": "GSM6307588_MF1_features.tsv.gz",
+      "barcodes_member": "GSM6307588_MF1_barcodes.tsv.gz",
+      "matrix_member": "GSM6307588_MF1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 43948,
+        "genes": 33538,
+        "nonzeros": 62677952,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 43948,
+        "RNA_positive_barcode_rows": 43948,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 218606082,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 43948,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 43948,
+          "source_positive_RNA_barcodes": 43948,
+          "full_source_RNA_counts": 218606082,
+          "selected_RNA_counts": 218606082,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307588.csv.gz",
+            "sha256": "d260c0441921bd5507214de202288958b63595271f1c86b31a5a278570052b38"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6307589",
+      "donor_id": "MF2",
+      "source_metadata": {
+        "title": [
+          "MF2-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307589"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Mycosis Fungoides"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Mycosis fungoides",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584219",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX16071541"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307589/suppl/GSM6307589_MF2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307589/suppl/GSM6307589_MF2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307589/suppl/GSM6307589_MF2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307589",
+        "source_GEO_title": "MF2-GEX",
+        "source_participant_code": "MF2",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Mycosis fungoides",
+        "source_characteristics_json": "{\"cancer type\": \"Mycosis fungoides\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307589/suppl/GSM6307589_MF2_features.tsv.gz",
+          "filename": "GSM6307589_MF2_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "cca39a98ba7c2330f5ba8b34951378f0e450edf9e1e611facb636148e6b56a41"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307589/suppl/GSM6307589_MF2_barcodes.tsv.gz",
+          "filename": "GSM6307589_MF2_barcodes.tsv.gz",
+          "expected_bytes": 105658,
+          "sha256": "e893628714cccca3a71915ab70f7a0b351ed12de99037efd9bb6ece023954207"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307589/suppl/GSM6307589_MF2_matrix.mtx.gz",
+          "filename": "GSM6307589_MF2_matrix.mtx.gz",
+          "expected_bytes": 116316798,
+          "sha256": "3c1e9484000df2a115f1588bfaba451761f3e778ac1391f8f06ad07f5d3fa462"
+        }
+      ],
+      "genes_member": "GSM6307589_MF2_features.tsv.gz",
+      "barcodes_member": "GSM6307589_MF2_barcodes.tsv.gz",
+      "matrix_member": "GSM6307589_MF2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 22945,
+        "genes": 33538,
+        "nonzeros": 29908689,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 22945,
+        "RNA_positive_barcode_rows": 22945,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 87891664,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 22945,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 22945,
+          "source_positive_RNA_barcodes": 22945,
+          "full_source_RNA_counts": 87891664,
+          "selected_RNA_counts": 87891664,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307589.csv.gz",
+            "sha256": "c6cf68fba44e5d6851903cb5910e24ca1eaf42016e1512fd42cff3e5b57f3070"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6307590",
+      "donor_id": "MF3",
+      "source_metadata": {
+        "title": [
+          "MF3-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307590"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Mycosis Fungoides"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Mycosis fungoides",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584218",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX16071542"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307590/suppl/GSM6307590_MF3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307590/suppl/GSM6307590_MF3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307590/suppl/GSM6307590_MF3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307590",
+        "source_GEO_title": "MF3-GEX",
+        "source_participant_code": "MF3",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Mycosis fungoides",
+        "source_characteristics_json": "{\"cancer type\": \"Mycosis fungoides\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307590/suppl/GSM6307590_MF3_features.tsv.gz",
+          "filename": "GSM6307590_MF3_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "197de028c9b9f15617bd213c80bdf3e346443e2058514602cc6f66b9afbfdca5"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307590/suppl/GSM6307590_MF3_barcodes.tsv.gz",
+          "filename": "GSM6307590_MF3_barcodes.tsv.gz",
+          "expected_bytes": 66734,
+          "sha256": "c7d048f30ff95391afc3aef0b2ec88bdfefba9e2a4bbeb2db8d6fe9c92c9eea9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307590/suppl/GSM6307590_MF3_matrix.mtx.gz",
+          "filename": "GSM6307590_MF3_matrix.mtx.gz",
+          "expected_bytes": 67925200,
+          "sha256": "c209692b1e07e5d7e5c7b550a8145a6b3836fa3b6b001949fbc0803e8fe89f13"
+        }
+      ],
+      "genes_member": "GSM6307590_MF3_features.tsv.gz",
+      "barcodes_member": "GSM6307590_MF3_barcodes.tsv.gz",
+      "matrix_member": "GSM6307590_MF3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 13980,
+        "genes": 33538,
+        "nonzeros": 17467837,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 13980,
+        "RNA_positive_barcode_rows": 13980,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 50431117,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 13980,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 13980,
+          "source_positive_RNA_barcodes": 13980,
+          "full_source_RNA_counts": 50431117,
+          "selected_RNA_counts": 50431117,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307590.csv.gz",
+            "sha256": "5c75620139b888186299be39755be9222526ace957ddb68163825e4893cdf696"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6307591",
+      "donor_id": "SS1",
+      "source_metadata": {
+        "title": [
+          "SS1-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307591"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Sezary syndrome"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Sezary syndrome",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584217",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX16071543"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307591/suppl/GSM6307591_SS1_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307591/suppl/GSM6307591_SS1_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307591/suppl/GSM6307591_SS1_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307591",
+        "source_GEO_title": "SS1-GEX",
+        "source_participant_code": "SS1",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Sezary syndrome",
+        "source_characteristics_json": "{\"cancer type\": \"Sezary syndrome\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307591/suppl/GSM6307591_SS1_features.tsv.gz",
+          "filename": "GSM6307591_SS1_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "dd1c3f3717bdfbddc68ef6b70c37c8fe75f80d297fdfd109d55e78b47a2d18b8"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307591/suppl/GSM6307591_SS1_barcodes.tsv.gz",
+          "filename": "GSM6307591_SS1_barcodes.tsv.gz",
+          "expected_bytes": 84110,
+          "sha256": "82809b38aab7fbc2547dfc2ef51cee59257b76b72b84dbef75c820960293b4a3"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307591/suppl/GSM6307591_SS1_matrix.mtx.gz",
+          "filename": "GSM6307591_SS1_matrix.mtx.gz",
+          "expected_bytes": 75216063,
+          "sha256": "0ec597c6392b82a52f112100d8b54ec8b03204f4cf6b800e9e187ae2026d3c9a"
+        }
+      ],
+      "genes_member": "GSM6307591_SS1_features.tsv.gz",
+      "barcodes_member": "GSM6307591_SS1_barcodes.tsv.gz",
+      "matrix_member": "GSM6307591_SS1_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 17938,
+        "genes": 33538,
+        "nonzeros": 19309088,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 17938,
+        "RNA_positive_barcode_rows": 17938,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 49901392,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 17938,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 17938,
+          "source_positive_RNA_barcodes": 17938,
+          "full_source_RNA_counts": 49901392,
+          "selected_RNA_counts": 49901392,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307591.csv.gz",
+            "sha256": "f5a5ffb6fa1e0516f3fa82c40f6f979085528d5677abc5374726d4403b5ba035"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6307592",
+      "donor_id": "SS2",
+      "source_metadata": {
+        "title": [
+          "SS2-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307592"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Sezary syndrome"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Sezary syndrome",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584216",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX16071544"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307592/suppl/GSM6307592_SS2_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307592/suppl/GSM6307592_SS2_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307592/suppl/GSM6307592_SS2_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307592",
+        "source_GEO_title": "SS2-GEX",
+        "source_participant_code": "SS2",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Sezary syndrome",
+        "source_characteristics_json": "{\"cancer type\": \"Sezary syndrome\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307592/suppl/GSM6307592_SS2_features.tsv.gz",
+          "filename": "GSM6307592_SS2_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "1188c403d275110fc25d86e57335f241011bc154ccfc339657e0fc2178d6d81e"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307592/suppl/GSM6307592_SS2_barcodes.tsv.gz",
+          "filename": "GSM6307592_SS2_barcodes.tsv.gz",
+          "expected_bytes": 43968,
+          "sha256": "49aa95cd2e291fb3c7c6acf4028e4eb4efacf444fd60233cbbf819000995efd9"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307592/suppl/GSM6307592_SS2_matrix.mtx.gz",
+          "filename": "GSM6307592_SS2_matrix.mtx.gz",
+          "expected_bytes": 57335566,
+          "sha256": "51b937648d9c5f33c5121a60e34027ce84152be2419a47e348b0a34c80d93494"
+        }
+      ],
+      "genes_member": "GSM6307592_SS2_features.tsv.gz",
+      "barcodes_member": "GSM6307592_SS2_barcodes.tsv.gz",
+      "matrix_member": "GSM6307592_SS2_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 8947,
+        "genes": 33538,
+        "nonzeros": 14906660,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 8947,
+        "RNA_positive_barcode_rows": 8947,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 52905849,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 8947,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 8947,
+          "source_positive_RNA_barcodes": 8947,
+          "full_source_RNA_counts": 52905849,
+          "selected_RNA_counts": 52905849,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307592.csv.gz",
+            "sha256": "388453b069ffea0774cb19ca1ed4ecb279aab1a49aa1bd80a298b0b81645bc83"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6307593",
+      "donor_id": "SS3",
+      "source_metadata": {
+        "title": [
+          "SS3-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307593"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Sezary syndrome"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Sezary syndrome",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584215",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX16071545"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307593/suppl/GSM6307593_SS3_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307593/suppl/GSM6307593_SS3_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307593/suppl/GSM6307593_SS3_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307593",
+        "source_GEO_title": "SS3-GEX",
+        "source_participant_code": "SS3",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Sezary syndrome",
+        "source_characteristics_json": "{\"cancer type\": \"Sezary syndrome\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307593/suppl/GSM6307593_SS3_features.tsv.gz",
+          "filename": "GSM6307593_SS3_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "e51a4ac0dd4b0308323925819106cd739e41868ff05af50b7aa33289bd979dfa"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307593/suppl/GSM6307593_SS3_barcodes.tsv.gz",
+          "filename": "GSM6307593_SS3_barcodes.tsv.gz",
+          "expected_bytes": 98963,
+          "sha256": "deec3b64ccf2b7a3a420558181b82783750ef9370f0d329a26bceacc4a5d00e7"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307593/suppl/GSM6307593_SS3_matrix.mtx.gz",
+          "filename": "GSM6307593_SS3_matrix.mtx.gz",
+          "expected_bytes": 123645913,
+          "sha256": "5bdb118192775c2a0db0c002a2f6e3bbf8d2ad8af9887e6a03903f9726ca34bc"
+        }
+      ],
+      "genes_member": "GSM6307593_SS3_features.tsv.gz",
+      "barcodes_member": "GSM6307593_SS3_barcodes.tsv.gz",
+      "matrix_member": "GSM6307593_SS3_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 21394,
+        "genes": 33538,
+        "nonzeros": 32117166,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 21394,
+        "RNA_positive_barcode_rows": 21394,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 85593219,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 21394,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 21394,
+          "source_positive_RNA_barcodes": 21394,
+          "full_source_RNA_counts": 85593219,
+          "selected_RNA_counts": 85593219,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307593.csv.gz",
+            "sha256": "8be4470443f03069e0cc09d8f21a93ef144bf2c2915c9cbb842e2c816f092796"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    },
+    {
+      "accession": "GSM6307594",
+      "donor_id": "SS4",
+      "source_metadata": {
+        "title": [
+          "SS4-GEX"
+        ],
+        "geo_accession": [
+          "GSM6307594"
+        ],
+        "status": [
+          "Public on Aug 16 2023"
+        ],
+        "submission_date": [
+          "Jul 07 2022"
+        ],
+        "last_update_date": [
+          "Aug 16 2023"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "Peripheral blood of Sezary syndrome"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "cancer type: Sezary syndrome",
+          "cell type: CD4+ CD26- T cells"
+        ],
+        "molecule_ch1": [
+          "total RNA"
+        ],
+        "extract_protocol_ch1": [
+          "Peripheral blood was collected in green tip herapin tubes or via apheresis (ECP). PBMCs were sorted to CD4+CD26- T cells via STEM CELL kits.",
+          "The scRNA-Seq libraries were prepared following the protocol provided by the 10X genomics. The cDNA and VDJ-enriched libraries were completed in a single bulk reaction using the 10X Genomics Chromium NextGEM Single Cell 5\u2019 v 1.1 and V(D)J Reagent Kits.  50,000 or 5,000 sequencing reads per cell for scRNA-seq or VDJ libraries, respectively, were generated on the Illumina NextSeq 500 instrument."
+        ],
+        "data_processing": [
+          "Raw sequencing reads from scRNA-seq were processed using Cell Ranger (v3.0, 10X Genomics). Cell barcodes and UMIs associated with the aligned reads were subjected to correction and filtering. Filtered gene-barcodes matrices containing only barcodes with UMI counts passing threshold for cell detection were imported to Seurat v4.0 for downstream analysis.",
+          "Barcodes with fewer than 200 genes expressed, or more than 10% UMIs originated from mitochondrial genes, were excluded filtered out; genes expressed in fewer than 3 barcodes were also excluded.",
+          "TCR reads sequenced by V(D)J assay were aligned to GRCh38 reference transcriptome using Cell Ranger VDJ. T cells were assigned with productive CDR3 regions for TCR alpha and TCR beta chains.",
+          "Each clonotype was assigned with a unique identifier based on amino acid sequences of the CDR3 regions and V(D)J genes of the two chains, which was then used to match clonotypes across samples",
+          "Assembly: GRCH38",
+          "Supplementary files format and content: csv files include assembled TCR heavy chain and light chain sequences and VDJ annotation for each T cell",
+          "Supplementary files format and content: csv files include the number of UMIs associated with a gene (row) and a cell (column) measured from single-cell RNA-seq"
+        ],
+        "platform_id": [
+          "GPL18573"
+        ],
+        "contact_name": [
+          "jiqiang,,yao"
+        ],
+        "contact_institute": [
+          "moffitt cancer center"
+        ],
+        "contact_address": [
+          "12902 USF Magnolia Drive"
+        ],
+        "contact_city": [
+          "Tampa"
+        ],
+        "contact_zip/postal_code": [
+          "33612"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "NextSeq 500"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN29584214",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX16071546"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307594/suppl/GSM6307594_SS4_barcodes.tsv.gz"
+        ],
+        "supplementary_file_2": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307594/suppl/GSM6307594_SS4_features.tsv.gz"
+        ],
+        "supplementary_file_3": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307594/suppl/GSM6307594_SS4_matrix.mtx.gz"
+        ],
+        "series_id": [
+          "GSE207679"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "metadata": {
+        "source_GEO_accession": "GSM6307594",
+        "source_GEO_title": "SS4-GEX",
+        "source_participant_code": "SS4",
+        "source_visit_code": "single_source_draw",
+        "source_capture_label": "PBMC_derived_selected_CD4_CD26negative_RNA",
+        "condition": "Sezary syndrome",
+        "source_characteristics_json": "{\"cancer type\": \"Sezary syndrome\", \"cell type\": \"CD4+ CD26- T cells\"}",
+        "source_specimen": "PBMC-derived selected CD4+ CD26- T cells",
+        "source_coverage_policy": "Restricted selected T-cell population, not a whole-PBMC composition survey. SCimilarity labels are not calibrated for malignant cells; do not infer malignant status from a normal reference label.",
+        "source_identity_policy": "Seven source codes MF1-MF3/SS1-SS4, each one RNA record; companion VDJ records are not additional specimens. Original GEO states seven blood samples and primary abstract seven patients.",
+        "source_demographic_policy": "Original GEO and BioSample records lack individual age, sex, collection date and treatment. Primary Table1 summarizes11people across assays; do not assign those aggregate demographics to these7RNA specimens.",
+        "source_collection_policy": "Original record permits peripheral blood collection or apheresis without an individual crosswalk; collection method remains unknown per specimen.",
+        "source_count_policy": "Original CellRanger3.0 GRCH38 UMI counts, selected human RNA gene axes retained; no source integrated/normalized expression or VDJ sequence input used.",
+        "source_mirror_policy": "CELLxGENE fe067858-1282-46ea-9553-b8cd19167266 contains these same source codes and remains gated/unprocessed locally. Acquire original GEO counts once; atlas mirror is not a new sample.",
+        "split_assignment": "unassigned; study-scoped donor kept intact; cross-study identity unresolved"
+      },
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307594/suppl/GSM6307594_SS4_features.tsv.gz",
+          "filename": "GSM6307594_SS4_features.tsv.gz",
+          "expected_bytes": 304728,
+          "sha256": "3e7016465b1273704ef68dc39590f4ed18138b57e1e14b1b5f73926887ea415c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307594/suppl/GSM6307594_SS4_barcodes.tsv.gz",
+          "filename": "GSM6307594_SS4_barcodes.tsv.gz",
+          "expected_bytes": 48682,
+          "sha256": "ccafc4016f08079f6f16846576c7becd98f4d8319551b9ba5e37754b1ee81f7c"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM6307nnn/GSM6307594/suppl/GSM6307594_SS4_matrix.mtx.gz",
+          "filename": "GSM6307594_SS4_matrix.mtx.gz",
+          "expected_bytes": 47706958,
+          "sha256": "272ad3e72796ac045fc357fe81fa22d5a915bf374b7ee54ab14c159a8ce40fca"
+        }
+      ],
+      "genes_member": "GSM6307594_SS4_features.tsv.gz",
+      "barcodes_member": "GSM6307594_SS4_barcodes.tsv.gz",
+      "matrix_member": "GSM6307594_SS4_matrix.mtx.gz",
+      "source_count_review": {
+        "cells": 9975,
+        "genes": 33538,
+        "nonzeros": 12372363,
+        "gene_coordinate_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "integer_nonnegative_counts": true,
+        "original_gene_symbols_preserved": true,
+        "source_feature_table_sha256": "f1a89ff8c58903f1d6e653c868b27dc489be2af39b4faeebb963205ef2dc419e",
+        "source_features": 33538,
+        "source_barcode_rows": 9975,
+        "RNA_positive_barcode_rows": 9975,
+        "excluded_ambiguous_barcode_rows": 0,
+        "excluded_ambiguous_barcode_ids": [],
+        "source_total_RNA_counts": 35338677,
+        "excluded_ambiguous_RNA_counts": 0,
+        "barcode_scope": "Source matrix barcode rows; not automatically called or viable cells",
+        "excluded_non_rna_features": 0,
+        "reviewed_non_rna_types": [],
+        "explicit_non_rna_feature_ids": [],
+        "source_member_encodings": {
+          "genes_member": "gzip",
+          "barcodes_member": "gzip",
+          "matrix_member": "gzip"
+        },
+        "preconversion_RNA_QC_review": {
+          "source_barcode_rows": 9975,
+          "minimum_RNA_counts": 500,
+          "preconversion_selected_barcodes": 9975,
+          "source_positive_RNA_barcodes": 9975,
+          "full_source_RNA_counts": 35338677,
+          "selected_RNA_counts": 35338677,
+          "metadata": {
+            "path": "references/datasets/GSE207679_original_RNA_QC/GSM6307594.csv.gz",
+            "sha256": "cd69524a68cbbd506b622477e0bb2df66f260f1a8611f7ff911087b643704738"
+          },
+          "all_original_values_and_coordinates_checked": true
+        }
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "preconversion_min_rna_counts": 500,
+  "physical_sample_columns": [
+    "donor_id",
+    "source_visit_code"
+  ],
+  "physical_sample_mapping_evidence": "Seven original PBMC-derived selected CD4+CD26- RNA specimens/seven source people; no additional VDJ, broader11person enrollment or atlas mirror increment."
+}

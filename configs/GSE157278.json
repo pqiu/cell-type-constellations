@@ -1,0 +1,67 @@
+{
+  "dataset_id": "GSE157278",
+  "study_id": "GSE157278",
+  "input_format": "reviewed_native_bundle",
+  "reviewed_pbmc": true,
+  "raw_location": "X",
+  "annotation_gene_column": "gene_symbols",
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "native_count_audit": {
+    "path": "references/datasets/GSE157278_complete_original_RNA_audit.json",
+    "bytes": 7401,
+    "sha256": "0436ed94d62ff35daac367c672cab98f6881f03009a12fc38bd6608ce1998fd8"
+  },
+  "source_identity_review": {
+    "path": "references/datasets/GSE157278_source_identity_review.json",
+    "bytes": 3975,
+    "sha256": "10327af7286d71ec018120f89a406f5e4835546de68a1c480d7cca6c6c2691a4"
+  },
+  "eligible_for_sample_checkpoint": true,
+  "sample_columns": [
+    "source_sample_id"
+  ],
+  "physical_sample_columns": [
+    "source_sample_id"
+  ],
+  "sample_mapping_evidence": "Exact ordered author cell_batch labels match ten literal GEOtitles HC-1throughHC-5/pSS-1throughpSS-5. These labels are participant proxies supported by the primary five-control/five-patient cohort. Original GSM is the specimen key; no barcode-suffix or clinical similarity inference. Global aliases unresolved.",
+  "physical_sample_mapping_evidence": "Ten original PBMC specimens from five author-labelled controls and five pSSparticipants. Exact ordered cell_batch labels match GEOtitles; no barcode-suffix identity inference. Primary57288postQCcells are not substituted for61405provided observations. Source GEOdisease-state field reports oral and ocular dryness on all ten records; retain it alongside primary cohort labels without assuming symptom-free controls.",
+  "metadata_mapping": {
+    "aliases": {
+      "condition": "source_condition_as_reported",
+      "timepoint": "source_collection_phase",
+      "sex": "source_sex_as_reported"
+    }
+  },
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": false,
+  "source_metadata": {
+    "accession": "GSE157278",
+    "primary_PMID": "33603736",
+    "publication": "https://doi.org/10.3389/fimmu.2020.594658",
+    "source_URL": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157278",
+    "access": "Public original merged PBMC RNA count triplet and explicit per-cell sample-assignment table.",
+    "access_terms_URL": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "source_sample_review": {
+      "path": "references/datasets/GSE157278_source_identity_review.json",
+      "bytes": 3975,
+      "sha256": "10327af7286d71ec018120f89a406f5e4835546de68a1c480d7cca6c6c2691a4"
+    },
+    "source_unit": "Ten original PBMC specimens from five author-labelled controls and five pSSparticipants. Exact ordered cell_batch labels match GEOtitles; no barcode-suffix identity inference. Primary57288postQCcells are not substituted for61405provided observations. Source GEOdisease-state field reports oral and ocular dryness on all ten records; retain it alongside primary cohort labels without assuming symptom-free controls.",
+    "identity_policy": "Exact ordered author cell_batch labels match ten literal GEOtitles HC-1throughHC-5/pSS-1throughpSS-5. These labels are participant proxies supported by the primary five-control/five-patient cohort. Original GSM is the specimen key; no barcode-suffix or clinical similarity inference. Global aliases unresolved.",
+    "clinical_policy": "Preserve primary author healthy-control/pSScohort labels alongside literal GEOdisease state oral and ocular dryness on every record, including HC. Do not silently relabel controls as symptom-free or resolve this source discrepancy. Sex is supplied as female. Exact age, collection phase/date, disease activity, medication and clinical ordinal aliases unassigned.",
+    "reuse_policy": "Only ten original PBMC RNA specimens included. Other studies reusing this cohort and larger flow-cytometry groups in the paper do not add sequenced donors. No clinical efficacy, diagnostic or causal inference. Global aliases unresolved.",
+    "selection_policy": "The provided matrix contains61405observations; the paper reports57288postQCcells. Preserve all provided rows and apply own fixed QC, without claiming reproduction of author cell/doublet selection. Cohort recruitment and metadata discrepancies remain study covariates.",
+    "cell_calling_policy": "Own fixed RNAQC, not a reproduction of author final cell/doublet/cluster selection. Model labels unrestricted; no independently biologically validated annotation or doublet-free claim.",
+    "gene_policy": "All33694original supplied RNA feature IDs and legacy symbols retained unchanged in original order. No gene intersection, symbol modernization, inferred identity or zero filling.",
+    "count_semantics": "Provided original CellRanger RNAcount matrix; all original stored values audited. Own fixed QC is distinct from author57288cell selection; no inverse normalization or rounding.",
+    "source_limitations": "Ten original participants; primary cohort labels and literal GEOdisease-state discrepancy both preserved. Exact age/day/medication/clinical/global aliases unassigned. No biological annotation, diagnostic, causal or constellation validation."
+  }
+}

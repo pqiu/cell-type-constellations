@@ -1,0 +1,1297 @@
+{
+  "dataset_id": "GSE313894_genes001",
+  "study_id": "GSE313894",
+  "input_format": "geo_10x_assets",
+  "reviewed_pbmc": true,
+  "raw_location": "raw.X",
+  "annotation_gene_column": "gene_symbols",
+  "sample_columns": [
+    "donor_id"
+  ],
+  "annotation_normalization": "aligned_reference_tp10k_log1p",
+  "processing_generation": 2,
+  "sample_mapping_evidence": "Nine single-donor untreated PBMC libraries from Donor1-8; Donor4 technical reps combined. Donor1-3 total PBMC; Donor4-8 CD4-enriched. Colon/PMA stimulation excluded. PooledDonor9-11 held until demultiplexing. Source control culture retained.",
+  "source_metadata": {
+    "accession": "GSE313894",
+    "publication": "https://doi.org/10.1172/JCI196536",
+    "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE313894",
+    "access": "Public original CellRanger filtered RNA H5 counts",
+    "access_terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+    "license": "not_specified_in_GEO",
+    "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+    "expression_coverage": "Original custom human/HIV RNA coordinates; viral features retained in geometry and denominator, annotation aligns human reference genes",
+    "demographics": "Cohort summaries do not provide donor ages/sex; no imputation",
+    "specimen_count": 8,
+    "donor_count": 8
+  },
+  "geo_samples": [
+    {
+      "accession": "GSM9377205",
+      "donor_id": "Donor_1",
+      "source_metadata": {
+        "title": [
+          "Donor_1,PBMC,total,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377205"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: total immune cells",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor1_sample3"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134144",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490578"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377205/suppl/GSM9377205_Donor1_sample3_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377205_Donor1_sample3_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377205/suppl/GSM9377205_Donor1_sample3_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377205_Donor1_sample3_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "total",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          8345
+        ],
+        "nonzeros": 24263260,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377215",
+      "donor_id": "Donor_2",
+      "source_metadata": {
+        "title": [
+          "Donor_2,PBMC,total,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377215"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: total immune cells",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor2_sample9"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134134",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490620"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377215/suppl/GSM9377215_Donor2_sample9_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377215_Donor2_sample9_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377215/suppl/GSM9377215_Donor2_sample9_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377215_Donor2_sample9_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "total",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          11560
+        ],
+        "nonzeros": 31508929,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377221",
+      "donor_id": "Donor_3",
+      "source_metadata": {
+        "title": [
+          "Donor_3,PBMC,total,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377221"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: total immune cells",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor3_sample5"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL24676"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq 6000"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134128",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490626"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377221/suppl/GSM9377221_Donor3_sample5_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377221_Donor3_sample5_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377221/suppl/GSM9377221_Donor3_sample5_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377221_Donor3_sample5_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "total",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          9009
+        ],
+        "nonzeros": 25897282,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377226",
+      "donor_id": "Donor_4",
+      "source_metadata": {
+        "title": [
+          "Donor_4,PBMC,CD4,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377226"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: isolated CD4",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor4_sample4"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134123",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490637"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377226/suppl/GSM9377226_Donor4_sample4_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377226_Donor4_sample4_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377226/suppl/GSM9377226_Donor4_sample4_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377226_Donor4_sample4_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "CD4",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          9498
+        ],
+        "nonzeros": 22171872,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377227",
+      "donor_id": "Donor_4",
+      "source_metadata": {
+        "title": [
+          "Donor_4,PBMC,CD4,Untreated,rep2"
+        ],
+        "geo_accession": [
+          "GSM9377227"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: isolated CD4",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor4_sample5"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134122",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490638"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377227/suppl/GSM9377227_Donor4_sample5_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377227_Donor4_sample5_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377227/suppl/GSM9377227_Donor4_sample5_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377227_Donor4_sample5_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "CD4",
+        "source_technical_replicate": "2",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          8501
+        ],
+        "nonzeros": 20193680,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377233",
+      "donor_id": "Donor_5",
+      "source_metadata": {
+        "title": [
+          "Donor_5,PBMC,CD4,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377233"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: isolated CD4",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor5_sample5"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134116",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490606"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377233/suppl/GSM9377233_Donor5_sample5_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377233_Donor5_sample5_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377233/suppl/GSM9377233_Donor5_sample5_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377233_Donor5_sample5_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "CD4",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          11465
+        ],
+        "nonzeros": 30525661,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377238",
+      "donor_id": "Donor_6",
+      "source_metadata": {
+        "title": [
+          "Donor_6,PBMC,CD4,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377238"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: isolated CD4",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor6_sample4"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134111",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490632"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377238/suppl/GSM9377238_Donor6_sample4_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377238_Donor6_sample4_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377238/suppl/GSM9377238_Donor6_sample4_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377238_Donor6_sample4_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "CD4",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          9938
+        ],
+        "nonzeros": 25677877,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377245",
+      "donor_id": "Donor_7",
+      "source_metadata": {
+        "title": [
+          "Donor_7,PBMC,CD4,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377245"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: isolated CD4",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor7_sample6"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134104",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490585"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377245/suppl/GSM9377245_Donor7_sample6_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377245_Donor7_sample6_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377245/suppl/GSM9377245_Donor7_sample6_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377245_Donor7_sample6_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "CD4",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          9676
+        ],
+        "nonzeros": 27650617,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    },
+    {
+      "accession": "GSM9377249",
+      "donor_id": "Donor_8",
+      "source_metadata": {
+        "title": [
+          "Donor_8,PBMC,CD4,Untreated,rep1"
+        ],
+        "geo_accession": [
+          "GSM9377249"
+        ],
+        "status": [
+          "Public on Dec 17 2025"
+        ],
+        "submission_date": [
+          "Dec 16 2025"
+        ],
+        "last_update_date": [
+          "Dec 17 2025"
+        ],
+        "type": [
+          "SRA"
+        ],
+        "channel_count": [
+          "1"
+        ],
+        "source_name_ch1": [
+          "PBMC"
+        ],
+        "organism_ch1": [
+          "Homo sapiens"
+        ],
+        "taxid_ch1": [
+          "9606"
+        ],
+        "characteristics_ch1": [
+          "tissue: PBMC",
+          "cell type: isolated CD4",
+          "treatment: Untreated"
+        ],
+        "treatment_protocol_ch1": [
+          "Following overnight rest, cultures were split and treatment cultures were stimulated with PMA/ionomycin (16nM/1\u03bcM) and IL-2 (100U/mL) for 6 hours"
+        ],
+        "growth_protocol_ch1": [
+          "After isolation (colon-derived) or thawing (blood-derived), cells were rested overnight at >1M/mL in complete RPMI-1640 (Gibco) containing 10U/mL of IL-2, 10\u00b5M ZVAD-FMK caspase inhibitors (Selleck Chem,), and 500nM Raltegravir (Selleck Chem)."
+        ],
+        "molecule_ch1": [
+          "polyA RNA"
+        ],
+        "extract_protocol_ch1": [
+          "PBMCs were isolated by Ficoll gradient centrifugation with ammonium-chloride-potassium buffer-based red-blood cell lysis and viably frozen in liquid nitrogen. Intra-epithelial lymphocytes (IEL) and Lamina propria-resident immune cells (LP cells) were isolated in the method of Trapecar et al. DOI:10.1089/aid.2017.0208 and pooled after isolation. Epithelial stripping was performed in an EDTA+DTT buffer with mechanical disruption on a gentleMACS dissociator, with IEL cells liberated to the supernatant. The remaining lamina propria fraction was digested in CLSPA+DNAse buffer and subjected to additional gentleMACS dissociation and mechanical disruption by syringe. LP cells were isolated by filtration of the supernatant through a 70 micron filter. LP and IEL cells were treated with DNAse, filtered through a 40 micron filter, and rinsed in complete RPMI culture media. Cells were then subjected to a dead cell removal protocol (Biolegend) to remove epithelial debris.",
+          "scRNAseq libraries were prepared according to manufacturer instructions (10x Genomics scRNAseq v3.1 3\u2019 sequencing, catalog 1000269, protocol ). Gel-bead and cell emulsions (GEMs) were generated using the Chromium controller, subjected to reverse transcription, and first-strand cDNA was extracted from GEMs. Purified cDNA was PCR pre-amplified (12-cycles, 1-minute extension) with primers binding the P7 region and the Template Switching Oligo, cleaned up by solid-phase reversible immobilization (SPRI) beads, analyzed by HS DNA 5000 capillary electrophoresis (Agilent), and concentration calculated by Qubit (ThermoFisher).  From this material, 25% was used for Illumina NGS library construction involving fragmentation, end-repair/A-tailing, adapter TA ligation, and SPRI double-sided size selection to remove adapters and unfragmented products.  Libraries were amplified with Illumina indexing/sequencing i5 and i7 primers (13 cycles), then cleaned with SPRI beads before being quantified by Qubit and the fragment size determined using a Tapestation (Agilent).  Libraries were then pooled at an equimolar concentration and sequencing was performed using NovaSeq or NovaseqX sequencing (Illumina). CITE seq was performed as above, but with the following additional steps. The TotalSeq-B Universal Human antibody panel (Biolegend, catalog 399904) of lyophilized DNA-tagged antibodies was resuspended and spun down according to manufacturer\u2019s instructions.  Meanwhile, cells were treated with Human TruStain FcX (Biolegend, catalog 422301) to prevent antibody binding by human Fc receptors.  Next, cells from each donor were stained with Totalseq-B hash-tag oligonucleotide antibodies (Biolegend, catalog 155831, 155833, and 155835) then added to three pools comprising untreated PBMCs, untreated CD4 cells, and PMA/ionomycin stimulated CD4 T cells. Pooled samples were stained in parallel with the TotalSeq-B Universal Human antibody panel, washed, and prepared for scRNA seq library construction as above but with additional PCR amplification of cell surface feature libraries following manufacturer instructions (10x Genomics protocol #CG000206)."
+        ],
+        "description": [
+          "Library name: Donor8_sample3"
+        ],
+        "data_processing": [
+          "Alignment and cell-calling was performed on the UNC high performance computing cluster with cellranger v7.1.0 (10x Genomics) against a custom human-HIV reference genome. Alignment was performed for all files using cellranger count function with default parameters but --jobmode=slurm to run on the UNC high-performance computing cluster.",
+          "CITE-seq analysis was performed with cellranger v7.1.0 (10x Genomics) using the human-HIV reference genome and a feature reference .csv. The feature reference file: \"TotalSeq_B_Human_Universal_Cocktail_V1_399904_Antibody_reference_UMI_counting_CellRanger_addHTO.csv\"  was derived from the manufacturer supplied document with 6 TotalSeq B anti-human hashtag antibodies (TotalSeq B0251-B0256) added as the final 6 entries in the feature reference file. Gene expression (GEX) and CITE-seq surface (ADT) data were split in Seurat from the contents of the cellranger output directories \"filtered_feature_barcode_matrix\", renamed, and uploaded as separate files for each GEX and ADT library.",
+          "The custom human-HIV reference genome was generated from concatenating GRCh38 fasta and .gtf files to an additional contig containing consensus clade B HIV sequence fasta and .gtf files and compiling with the cellranger mkref function.",
+          "Assembly: human genome (GRCh38), version 32 (Ensembl 98)",
+          "Supplementary files format and content: hdf5 files containing machine readable scRNA seq cell-by-feature matrices",
+          "Supplementary files format and content: separate matrix.mtx, barcodes.tsv, and features.tsv files split for GEX and ADT data"
+        ],
+        "platform_id": [
+          "GPL34281"
+        ],
+        "contact_name": [
+          "Edward,Patrick,Browne"
+        ],
+        "contact_institute": [
+          "UNC-Chapel Hill"
+        ],
+        "contact_address": [
+          "120 Mason Farm Road"
+        ],
+        "contact_city": [
+          "Chapel Hill"
+        ],
+        "contact_state": [
+          "NC"
+        ],
+        "contact_zip/postal_code": [
+          "27514"
+        ],
+        "contact_country": [
+          "USA"
+        ],
+        "instrument_model": [
+          "Illumina NovaSeq X"
+        ],
+        "library_selection": [
+          "cDNA"
+        ],
+        "library_source": [
+          "transcriptomic single cell"
+        ],
+        "library_strategy": [
+          "RNA-Seq"
+        ],
+        "relation": [
+          "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN54134100",
+          "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX31490589"
+        ],
+        "supplementary_file_1": [
+          "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377249/suppl/GSM9377249_Donor8_sample3_filtered_feature_bc_matrix.h5"
+        ],
+        "series_id": [
+          "GSE313894"
+        ],
+        "data_row_count": [
+          "0"
+        ]
+      },
+      "matrix_h5_member": "GSM9377249_Donor8_sample3_filtered_feature_bc_matrix.h5",
+      "assets": [
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM9377nnn/GSM9377249/suppl/GSM9377249_Donor8_sample3_filtered_feature_bc_matrix.h5",
+          "filename": "GSM9377249_Donor8_sample3_filtered_feature_bc_matrix.h5"
+        }
+      ],
+      "metadata": {
+        "disease": "HIV on suppressive ART",
+        "source_enrichment": "CD4",
+        "source_technical_replicate": "1",
+        "source_treatment": "Untreated control culture",
+        "source_culture": "Thawed PBMC rested overnight with IL-2/ZVAD-FMK/raltegravir, further resting six hours; source Untreated is not freshly isolated uncultured blood",
+        "source_primary_doi": "10.1172/JCI196536",
+        "source_design": "One PBMC specimen per donor; technical replicates combined"
+      },
+      "source_count_review": {
+        "shape": [
+          36602,
+          9471
+        ],
+        "nonzeros": 24851267,
+        "integer_nonnegative_counts": true,
+        "gene_coordinate_sha256": "bc894046b2dae3305dca13767761b11fe72a0144d27190dd3fbf9f3a97be09a0",
+        "source": "CellRanger7.1.0 default count using custom GRCh38 plus HIV clade B reference"
+      }
+    }
+  ],
+  "qc": {
+    "min_counts": 500,
+    "min_genes": 200,
+    "max_mito_fraction": 0.2
+  },
+  "min_cells_per_star": 20,
+  "block_size": 1024,
+  "cleanup_download": true
+}
